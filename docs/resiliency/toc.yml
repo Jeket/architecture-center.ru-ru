@@ -1,0 +1,24 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Проектирование для обеспечения устойчивости
+  items:
+    - name: Проектирование устойчивых приложений
+      href: index.md
+    - name: Контрольный список для обеспечения устойчивости
+      href: ../checklist/resiliency.md?toc=/azure/architecture/resiliency/toc.json
+    - name: Анализ режима сбоя
+      href: failure-mode-analysis.md
+    - name: Дополнительные рекомендации
+      items:
+        - name: Аварийное восстановление
+          href: disaster-recovery-azure-applications.md
+        - name: высокую доступность;
+          href: high-availability-azure-applications.md
+        - name: Восстановление данных после повреждения или случайного удаления
+          href: recovery-data-corruption.md
+        - name: Восстановление после локальных сбоев
+          href: recovery-local-failures.md
+        - name: Восстановление после прерывания работы служб во всем регионе
+          href: recovery-loss-azure-region.md
+        - name: Восстановление из локальной среды в Azure
+          href: recovery-on-premises-azure.md

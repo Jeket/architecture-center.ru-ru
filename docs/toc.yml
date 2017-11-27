@@ -1,0 +1,145 @@
+- name: Центр архитектуры Azure
+  href: index.md
+- name: Руководство по архитектуре приложений
+  href: guide/index.md
+  items:
+    - name: Стили архитектуры
+      href: guide/architecture-styles/index.md
+    - name: Выбор технологий
+      href: guide/technology-choices/index.md
+      items: null
+    - name: Принципы проектирования
+      href: guide/design-principles/index.md
+    - name: Основные аспекты качества программного обеспечения
+      href: guide/pillars.md
+    - name: Шаблоны проектирования
+      href: patterns/index.md?toc=/azure/architecture/guide/toc.json
+- name: Эталонные образцы архитектуры
+  href: reference-architectures/index.md
+  items:
+    - name: Управление удостоверениями
+      href: reference-architectures/identity/index.md
+    - name: Гибридная сеть
+      href: reference-architectures/hybrid-networking/index.md
+    - name: Веб-приложение службы приложений
+      href: reference-architectures/app-service-web-app/index.md
+    - name: Сеть периметра
+      href: reference-architectures/dmz/index.md
+    - name: SAP NetWeaver и SAP HANA
+      href: reference-architectures/sap/index.md
+    - name: SharePoint Server 2016
+      href: reference-architectures/sharepoint/index.md
+    - name: Рабочие нагрузки виртуальных машин (Linux)
+      href: reference-architectures/virtual-machines-linux/index.md
+    - name: Рабочие нагрузки виртуальных машин (Windows)
+      href: reference-architectures/virtual-machines-windows/index.md
+- name: Конструктивные шаблоны облачных решений
+  href: patterns/index.md
+  items:
+    - name: Шаблоны доступности
+      href: patterns/category/availability.md
+    - name: Шаблоны управления данными
+      href: patterns/category/data-management.md
+    - name: Шаблоны по проектированию и реализации
+      href: patterns/category/design-implementation.md
+    - name: Шаблоны по управлению и мониторингу
+      href: patterns/category/management-monitoring.md
+    - name: Шаблоны обмена сообщениями
+      href: patterns/category/messaging.md
+    - name: Шаблоны производительности и масштабирования
+      href: patterns/category/performance-scalability.md
+    - name: Шаблоны устойчивости
+      href: patterns/category/resiliency.md
+    - name: Шаблоны безопасности
+      href: patterns/category/security.md
+- name: Рекомендации
+  items:
+    - name: Проектирование API
+      href: best-practices/api-design.md
+    - name: Реализация API
+      href: best-practices/api-implementation.md
+    - name: Автомасштабирование
+      href: best-practices/auto-scaling.md
+    - name: Фоновые задания
+      href: best-practices/background-jobs.md
+    - name: Caching
+      href: best-practices/caching.md
+    - name: Сеть доставки содержимого
+      href: best-practices/cdn.md
+    - name: Секционирование данных
+      href: best-practices/data-partitioning.md
+    - name: Мониторинг и диагностика.
+      href: best-practices/monitoring.md
+    - name: Соглашения об именовании.
+      href: best-practices/naming-conventions.md
+    - name: Обработка временного сбоя
+      href: best-practices/transient-faults.md
+    - name: Руководство по механизму повторов для отдельных служб
+      href: best-practices/retry-service-specific.md
+- name: Антишаблоны производительности
+  href: antipatterns/index.md
+  items:
+    - name: Занятость базы данных
+      href: antipatterns/busy-database/index.md
+    - name: Занятость внешнего интерфейса
+      href: antipatterns/busy-front-end/index.md
+    - name: Отправка множественных операций ввода-вывода
+      href: antipatterns/chatty-io/index.md
+    - name: Лишняя выборка
+      href: antipatterns/extraneous-fetching/index.md
+    - name: Неправильное создание экземпляров
+      href: antipatterns/improper-instantiation/index.md
+    - name: Монолитная сохраняемость
+      href: antipatterns/monolithic-persistence/index.md
+    - name: Без кэширования
+      href: antipatterns/no-caching/index.md
+    - name: Синхронный ввод-вывод
+      href: antipatterns/synchronous-io/index.md
+- name: Контрольные списки проверки проекта
+  items:
+    - name: Доступность
+      href: checklist/availability.md
+    - name: Разработка и операции
+      href: checklist/dev-ops.md
+    - name: Устойчивость
+      href: checklist/resiliency.md
+    - name: Масштабируемость
+      href: checklist/scalability.md
+- name: Проектирование для обеспечения устойчивости
+  items:
+    - name: Проектирование устойчивых приложений
+      href: resiliency/index.md
+    - name: Контрольный список для обеспечения устойчивости
+      href: checklist/resiliency.md?toc=/azure/architecture/resiliency/toc.json
+    - name: Анализ режима сбоя
+      href: resiliency/failure-mode-analysis.md
+- name: Руководства по сценариям
+  items:
+    - name: Azure для специалистов AWS
+      href: aws-professional/index.md
+    - name: Управление удостоверением в мультитенантных приложениях
+      href: multitenant-identity/index.md
+    - name: Миграция из облачных служб в Service Fabric
+      href: service-fabric/migrate-from-cloud-services.md
+    - name: Запуск Elasticsearch в Azure
+      href: elasticsearch/index.md
+    - name: Расширение функциональности шаблонов Azure Resource Manager
+      href: building-blocks/extending-templates/index.md
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Центр управления безопасностью Майкрософт для Azure
+      href: 'https://www.microsoft.com/en-us/trustcenter/cloudservices/azure'
+    - name: Значки и схемы
+      href: resources/diagrams.md
+    - name: Календарь обновлений Azure
+      href: 'https://azure.microsoft.com/updates/'
+    - name: Обучение
+      href: 'https://azure.microsoft.com/community/training/'
+    - name: Блог SQLCAT
+      href: 'https://blogs.msdn.microsoft.com/sqlcat/'
+    - name: Блог AzureCAT
+      href: 'https://blogs.msdn.microsoft.com/azurecat/'
+    - name: Технические документы
+      href: 'https://azure.microsoft.com/resources/whitepapers/'

@@ -1,0 +1,75 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Эталонные образцы архитектуры
+  href: index.md
+  items:
+    - name: Веб-приложение службы приложений
+      href: app-service-web-app/index.md
+      items:
+        - name: Базовое веб-приложение
+          href: app-service-web-app/basic-web-app.md
+        - name: Улучшенная масштабируемость
+          href: app-service-web-app/scalable-web-app.md
+        - name: Развертывание в нескольких регионах
+          href: app-service-web-app/multi-region.md
+    - name: Управление удостоверениями
+      href: identity/index.md
+      items:
+        - name: Какой вариант следует использовать?
+          href: identity/considerations.md
+        - name: Интеграция локальных AD с Azure AD
+          href: identity/azure-ad.md
+        - name: Расширение AD DS в Azure
+          href: identity/adds-extend-domain.md
+        - name: Создание леса AD DS в Azure
+          href: identity/adds-forest.md
+        - name: Расширение AD FS в Azure
+          href: identity/adfs.md
+    - name: Гибридная сеть
+      href: hybrid-networking/index.md
+      items:
+        - name: Какой вариант следует использовать?
+          href: hybrid-networking/considerations.md
+        - name: Виртуальная частная сеть
+          href: hybrid-networking/vpn.md
+        - name: ExpressRoute
+          href: hybrid-networking/expressroute.md
+        - name: ExpressRoute с отработкой отказа VPN
+          href: hybrid-networking/expressroute-vpn-failover.md
+        - name: Звездообразная топология
+          href: hybrid-networking/hub-spoke.md
+    - name: Сеть периметра
+      href: dmz/index.md
+      items:
+        - name: Сеть периметра между Azure и локальной средой
+          href: dmz/secure-vnet-hybrid.md
+        - name: Сеть периметра между Azure и Интернетом
+          href: dmz/secure-vnet-dmz.md
+        - name: Сетевые виртуальные модули высокой доступности
+          href: dmz/nva-ha.md
+    - name: Рабочие нагрузки виртуальных машин (Linux)
+      href: virtual-machines-linux/index.md
+      items:
+        - name: Одиночная виртуальная машина
+          href: virtual-machines-linux/single-vm.md
+        - name: Виртуальные машины с балансировкой нагрузки
+          href: virtual-machines-linux/multi-vm.md
+        - name: n-уровневневое приложение
+          href: virtual-machines-linux/n-tier.md
+        - name: Приложение для нескольких регионов
+          href: virtual-machines-linux/multi-region-application.md
+    - name: Рабочие нагрузки виртуальных машин (Windows)
+      href: virtual-machines-windows/index.md
+      items:
+        - name: Одиночная виртуальная машина
+          href: virtual-machines-windows/single-vm.md
+        - name: Виртуальные машины с балансировкой нагрузки
+          href: virtual-machines-windows/multi-vm.md
+        - name: n-уровневневое приложение
+          href: virtual-machines-windows/n-tier.md
+        - name: Приложение для нескольких регионов
+          href: virtual-machines-windows/multi-region-application.md
+    - name: SAP NetWeaver и SAP HANA
+      href: sap/index.md
+    - name: SharePoint Server 2016
+      href: sharepoint/index.md
