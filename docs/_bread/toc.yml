@@ -1,0 +1,47 @@
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+    - name: Архитектура
+      tocHref: /azure/architecture/
+      topicHref: /azure/architecture
+      items:
+        - name: Рекомендации
+          tocHref: /azure/architecture/best-practices
+          topicHref: /azure/architecture/best-practices
+        - name: Azure для специалистов AWS
+          tocHref: /azure/architecture/aws-professional
+          topicHref: /azure/architecture/aws-professional
+        - name: Проектирование для обеспечения устойчивости
+          tocHref: /azure/architecture/resiliency
+          topicHref: /azure/architecture/resiliency
+        - name: Контрольные списки проверки проекта
+          tocHref: /azure/architecture/checklist
+          topicHref: /azure/architecture/checklist
+        - name: Elasticsearch
+          tocHref: /azure/architecture/elasticsearch
+          topicHref: /azure/architecture/elasticsearch
+        - name: Управление удостоверением в мультитенантных приложениях
+          tocHref: /azure/architecture/multitenant-identity
+        - name: Эталонные образцы архитектуры
+          tocHref: /azure/architecture/reference-architectures
+          topicHref: /azure/architecture/reference-architectures
+        - name: Конструктивные шаблоны облачных решений
+          tocHref: /azure/architecture/patterns
+          topicHref: /azure/architecture/patterns
+        - name: Ресурсы
+          tocHref: /azure/architecture/resources
+          topicHref: /azure/architecture/resources
+        - name: Руководство
+          tocHref: /azure/architecture/guide
+          topicHref: /azure/architecture/guide
+        - name: Антишаблоны производительности
+          tocHref: /azure/architecture/antipatterns
+          topicHref: /azure/architecture/
+        - name: Соответствие нормативным требованиям
+          tocHref: /azure/architecture/compliance
+          topicHref: /azure/architecture/compliance
+          items:
+            - name: PCI-DSS
+              tocHref: /azure/architecture/compliance/pci-dss
+              topicHref: /azure/architecture/compliance/pci-dss

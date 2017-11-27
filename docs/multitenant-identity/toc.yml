@@ -1,0 +1,30 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Управление удостоверением в мультитенантных приложениях
+  items:
+    - name: Введение
+      href: index.md
+    - name: Сценарий "Tailspin"
+      href: tailspin.md
+    - name: Аутентификация
+      href: authenticate.md
+    - name: 'Удостоверения, основанные на утверждениях'
+      href: claims.md
+    - name: Регистрация клиента
+      href: signup.md
+    - name: Роли приложений
+      href: app-roles.md
+    - name: Авторизация
+      href: authorize.md
+    - name: Обеспечение безопасности веб-API
+      href: web-api.md
+    - name: Кэширование маркеров доступа
+      href: token-cache.md
+    - name: Утверждение клиента
+      href: client-assertion.md
+    - name: Защита секретов приложения
+      href: key-vault.md
+    - name: Федерация с клиентской службой AD FS
+      href: adfs.md
+    - name: Запуск приложения Surveys
+      href: run-the-app.md

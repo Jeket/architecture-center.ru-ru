@@ -1,0 +1,12 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Контрольные списки проверки проекта
+  items:
+    - name: Доступность
+      href: availability.md
+    - name: Разработка и операции
+      href: dev-ops.md
+    - name: Устойчивость
+      href: resiliency.md
+    - name: Масштабируемость
+      href: scalability.md
