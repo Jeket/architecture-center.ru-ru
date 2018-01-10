@@ -2,11 +2,11 @@
 title: "Центр архитектуры Azure"
 description: "Для создания решений с помощью Microsoft Azure используется центр архитектуры Azure, являющийся официальным центром, в котором содержатся руководства, проекты, шаблоны и рекомендации. Центр архитектуры Azure курирует команда разработчиков шаблонов и рекомендаций Майкрософт."
 layout: LandingPage
-ms.openlocfilehash: 3afe907b8ea1fe59d6c2eb9505ddb34775fdcd62
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: d48861a1001c9bef8cad152a3664077f2ad915c6
+ms.sourcegitcommit: a8453c4bc7c870fa1a12bb3c02e3b310db87530c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/29/2017
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -84,20 +84,20 @@ ms.lasthandoff: 11/14/2017
             </div>
         </a>
     </li>
-    <!-- Performance anti-practices -->
+    <!-- Microservices -->
     <li>
-        <a href="/azure/architecture/antipatterns">
+        <a href="/azure/architecture/microservices">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
                         <div class="cardImageOuter">
                             <div class="cardImage">
-                                <img src="_images/performance.svg" alt="Performance antipatterns" />
+                                <img src="_images/new-content.svg" alt="Designing, building, and operating microservices on Azure" />
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>Антишаблоны производительности</h3>
-                            <p>Как обнаруживать и устранять некоторые общие причины проблем с производительностью и масштабируемостью в облачных приложениях.</p>
+                            <h3>Проектирование микрослужб в Azure</h3>
+                            <p>Эта серия руководств поможет вам приступить к разработке и созданию архитектуры микрослужб в Azure. Также доступен пример реализации.</p>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,27 @@ ms.lasthandoff: 11/14/2017
             </div>
         </a>
     </li>
-    <!-- Azure for AWS Professionals -->
+    <!-- Azure Virtual Datacenter -->
+    <li>
+        <a href="https://aka.ms/vdc">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/virtual-datacenter.svg" alt="Azure Virtual Datacenter e-book" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Электронная книга: виртуальный центр обработки данных Azure</h3>
+                            <p>В этой электронной книге показано, как развертывать рабочие нагрузки предприятия в облачной платформе Azure, соблюдая существующие сетевые политики и политики безопасности.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+        <!-- Azure for AWS Professionals -->
     <li>
         <a href="/azure/architecture/aws-professional">
             <div class="cardSize">
@@ -178,6 +198,26 @@ ms.lasthandoff: 11/14/2017
                         <div class="cardText">
                             <h3>Стандартные блоки Azure</h3>
                             <p>Упрощенное развертывание ресурсов Azure. С помощью одного файла параметров развертывайте сложные архитектуры в Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- Performance anti-practices -->
+    <li>
+        <a href="/azure/architecture/antipatterns">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/performance.svg" alt="Performance antipatterns" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Антишаблоны производительности</h3>
+                            <p>Как обнаруживать и устранять некоторые общие причины проблем с производительностью и масштабируемостью в облачных приложениях.</p>
                         </div>
                     </div>
                 </div>
@@ -238,26 +278,6 @@ ms.lasthandoff: 11/14/2017
                         <div class="cardText">
                             <h3>Управление удостоверениями для мультитенантных приложений</h3>
                             <p>Рекомендации по мультитенантным приложениям при использовании Azure AD для управления удостоверениями.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- ElasticSearch -->
-    <li>
-        <a href="/azure/architecture/elasticsearch">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/elasticsearch.svg" alt="Run Elasticsearch on Azure" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Запуск Elasticsearch в Azure</h3>
-                            <p>Дополнительные сведения о развертывании, администрировании и настройке кластера Elasticsearch в Azure.</p>
                         </div>
                     </div>
                 </div>

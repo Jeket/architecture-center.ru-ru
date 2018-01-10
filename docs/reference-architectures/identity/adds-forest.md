@@ -7,11 +7,11 @@ pnp.series.title: Identity management
 pnp.series.prev: adds-extend-domain
 pnp.series.next: adfs
 cardTitle: Create an AD DS forest in Azure
-ms.openlocfilehash: bb7e57af2afacf1faa7679c854bf49217918eba8
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: b946afa91e8bd303c51f97e18be170c4105cc8c5
+ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="create-an-active-directory-domain-services-ad-ds-resource-forest-in-azure"></a>Создание леса ресурсов доменных служб Active Directory (AD DS) в Azure
 
@@ -133,7 +133,7 @@ Active Directory автоматически масштабируется для 
 
 9. Подождите несколько минут, пока не завершится выполнение предыдущих шагов, а затем подключитесь к виртуальной машине в локальной среде и выполните шаги, описанные в статье [Проверка доверия][verify-a-trust], чтобы определить, правильно ли настроено отношение доверия между доменами *contoso.com* и *treyresearch.com*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Изучите рекомендации по [расширению локальных доменов доменных служб Active Directory в Azure][adds-extend-domain]
 * Изучите рекомендации по [созданию инфраструктуры служб федерации Active Directory (AD FS)][adfs] в Azure.

@@ -6,11 +6,11 @@ ms.date: 11/28/2016
 pnp.series.title: Identity management
 pnp.series.prev: adds-forest
 cardTitle: Extend AD FS to Azure
-ms.openlocfilehash: b24f4e72b13331437d92f20a228e3ba8121db90a
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: b8c9ae0621c087c68d449dd13e60046104c01513
+ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="extend-active-directory-federation-services-ad-fs-to-azure"></a>Расширение служб федерации Active Directory (AD FS) в Azure
 
@@ -280,7 +280,7 @@ AD FS используют протокол HTTPS, поэтому убедите
 
 13. Следуйте инструкциям в скрипте, чтобы проверить всю конфигурацию прокси-сервера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Документация Azure Active Directory][aad].
 * [Документация по Active Directory B2C][aadb2c].

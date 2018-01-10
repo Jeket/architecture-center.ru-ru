@@ -2,13 +2,13 @@
 title: "Базовое веб-приложение"
 description: "Рекомендуемые архитектуры для базовых веб-приложений, работающих в Microsoft Azure."
 author: MikeWasson
-ms.date: 11/23/2016
+ms.date: 12/12/2017
 cardTitle: Basic web application
-ms.openlocfilehash: b7475c4087a184bb7608d0c45ffecee912c920d7
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 598eb547f0e96ae334af391183a792637caa8631
+ms.sourcegitcommit: 1c0465cea4ceb9ba9bb5e8f1a8a04d3ba2fa5acd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="basic-web-application"></a>Базовое веб-приложение
 [!INCLUDE [header](../../_includes/header.md)]
@@ -29,15 +29,23 @@ ms.lasthandoff: 11/14/2017
 Архитектура состоит из следующих компонентов.
 
 * **Группа ресурсов**. [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) — это логический контейнер для ресурсов Azure.
+
 * **Приложение службы приложений.** [Служба приложений Azure][app-service] — это полностью управляемая платформа для создания и развертывания облачных приложений.     
+
 * **План службы приложений.** [План служб приложений][app-service-plans] предоставляет управляемые виртуальные машины для размещения приложения. Все приложения, связанные с одним планом, выполняются на одних тех же экземплярах виртуальной машины.
 
 * **Слоты развертывания.**  [Слот развертывания][deployment-slots] позволяет заранее подготовить развертывание, а затем переключить его на рабочую среду. Это дает возможность избежать развертываний непосредственно в рабочей среде. В разделе об [управляемости](#manageability-considerations) приводится несколько конкретных рекомендаций.
 
-* **IP-адрес.** Для приложения службы приложений используется общедоступный IP-адрес и доменное имя. К доменному имени добавляется имя поддомена `azurewebsites.net`, например: `contoso.azurewebsites.net`. Чтобы использовать пользовательское доменное имя, например `contoso.com`, создайте записи в службе DNS, которые позволяют сопоставить это доменное имя с IP-адресом. Дополнительные сведения см. в статье [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure][custom-domain-name].
+* **IP-адрес.** Для приложения службы приложений используется общедоступный IP-адрес и доменное имя. К доменному имени добавляется имя поддомена `azurewebsites.net`, например: `contoso.azurewebsites.net`.  
+
+* **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure. Чтобы использовать пользовательское доменное имя, например `contoso.com`, создайте записи DNS, которые позволяют сопоставить это доменное имя с IP-адресом. Дополнительные сведения см. в статье [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure][custom-domain-name].  
+
 * **База данных SQL Azure**. Служба [База данных SQL Azure][sql-db] — это реляционная база данных, которая предоставляется как облачная служба.
+
 * **Логический сервер.** На логическом сервере в службе "База данных SQL Azure" размещаются базы данных. Вы можете создать несколько баз данных на одном логическом сервере.
+
 * **Хранилище Azure.** Создайте учетную запись хранения Azure и в ней — контейнер больших двоичных объектов для хранения журналов диагностики.
+
 * **Azure Active Directory** (Azure AD). Выполняйте аутентификацию при помощи Azure AD или другого поставщика удостоверений.
 
 ## <a name="recommendations"></a>Рекомендации
@@ -131,7 +139,7 @@ ms.lasthandoff: 11/14/2017
 
 Не используйте слоты рабочего развертывания для тестирования, так как для всех приложений в одном плане службы приложений используются одни и те же экземпляры виртуальных машин. Например, нагрузочные тесты могут привести к ухудшению производительности активного рабочего сайта. Вместо этого создайте дополнительные планы службы приложений для рабочей и тестовой сред. Поместив тестовые развертывания в отдельный план, можно изолировать их от рабочей версии.
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 Сохраняйте конфигурацию в виде [настроек приложений][app-settings]. Определите параметры приложения в шаблонах Resource Manager или с помощью PowerShell. В среде выполнения параметры приложений доступны из приложения как переменные среды.
 
 Ни в коем случае не помещайте пароли, ключи доступа или строки подключения в систему управления версиями. Вместо этого передавайте их в качестве параметров в скрипт развертывания, где эти значения сохранятся как параметры приложения.
@@ -169,7 +177,7 @@ ms.lasthandoff: 11/14/2017
 
 Из соображений безопасности следует принудительно применять в приложении протокол HTTPS, перенаправляя все HTTP-запросы. Такое перенаправление можно реализовать в самом приложении или с помощью правила подстановки URL-адресов, как описано в разделе [Принудительное использование HTTPS][ssl-redirect].
 
-### <a name="authentication"></a>Аутентификация
+### <a name="authentication"></a>Authentication
 Мы рекомендуем выполнять аутентификацию при помощи поставщика удостоверений, например Azure AD, Facebook, Google или Twitter. Используйте в потоке аутентификации маркеры OAuth 2 или OpenID Connect (OIDC). Azure AD предоставляет функциональные возможности для управления пользователями и группами, создания ролей приложений, интеграции локальных служб идентификации и подключения серверных служб, например Office 365 и Skype для бизнеса.
 
 Избегайте прямого управления учетными данными в приложении, так как это может повысить уязвимость.  Если вам необходим такой подход, реализуйте по меньшей мере подтверждение по электронной почте, восстановление паролей и многофакторную проверку подлинности, а также проверяйте надежность паролей и храните только их хэши. Крупные поставщики удостоверений берут на себя заботу обо всех этих компонентах, постоянно контролируют и улучшают все меры по обеспечению безопасности.
@@ -215,6 +223,7 @@ New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <r
 [app-service-security]: /azure/app-service-web/web-sites-security
 [app-settings]: /azure/app-service-web/web-sites-configure
 [arm-template]: /azure/azure-resource-manager/resource-group-overview#resource-groups
+[azure-dns]: /azure/dns/dns-overview
 [custom-domain-name]: /azure/app-service-web/web-sites-custom-domain-name
 [deploy]: /azure/app-service-web/web-sites-deploy
 [deploy-arm-template]: /azure/resource-group-template-deploy
@@ -223,7 +232,7 @@ New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <r
 [kudu]: https://azure.microsoft.com/blog/windows-azure-websites-online-tools-you-should-know-about/
 [monitoring-guidance]: ../../best-practices/monitoring.md
 [new-relic]: http://newrelic.com/
-[paas-basic-arm-template]: https://github.com/mspnp/reference-architectures/tree/master/app-service-web-app/basic-web-app/Paas-Basic/Templates
+[paas-basic-arm-template]: https://github.com/mspnp/reference-architectures/tree/master/managed-web-app/basic-web-app/Paas-Basic/Templates
 [perf-analysis]: https://github.com/mspnp/performance-optimization/blob/master/Performance-Analysis-Primer.md
 [rbac]: /azure/active-directory/role-based-access-control-what-is
 [resource-group]: /azure/azure-resource-manager/resource-group-overview

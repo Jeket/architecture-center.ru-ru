@@ -1,7 +1,7 @@
 ---
 title: "Балансировка нагрузка на основе очередей"
-description: "Для сглаживания кратковременных всплесков нагрузки используйте очередь, которая служит буфером между задачей и вызываемой ею службой."
-keywords: "конструктивный шаблон"
+description: "Очередь выполняет роль буфера между задачей и службой, которую она вызывает, позволяя сгладить кратковременные всплески нагрузки."
+keywords: "Конструктивный шаблон"
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
@@ -10,11 +10,11 @@ pnp.pattern.categories:
 - availability
 - performance-scalability
 - resiliency
-ms.openlocfilehash: d8b010648d4ec0edcfbb24f9b03243a79a34a40b
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 99b226511fe14bffdab3cdcf65d4e6cffe89bba6
+ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="queue-based-load-leveling-pattern"></a>Шаблон балансировки нагрузки на основе очередей
 

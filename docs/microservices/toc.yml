@@ -1,0 +1,24 @@
+- name: Центр архитектуры Azure
+  href: ../index.md
+- name: Проектирование микрослужб в Azure
+  items:
+    - name: Введение
+      href: index.md
+    - name: Анализ домена
+      href: domain-analysis.md
+    - name: Определение границ микрослужбы
+      href: microservice-boundaries.md
+    - name: Рекомендации по работе с данными
+      href: data-considerations.md
+    - name: Обмен данными между службами
+      href: interservice-communication.md
+    - name: Проектирование API
+      href: api-design.md
+    - name: Прием данных и рабочий процесс
+      href: ingestion-workflow.md
+    - name: Шлюзы API
+      href: gateway.md
+    - name: Ведение журналов и мониторинг
+      href: logging-monitoring.md
+    - name: CI/CD
+      href: ci-cd.md
