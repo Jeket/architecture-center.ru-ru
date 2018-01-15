@@ -5,11 +5,11 @@ author: MikeWasson
 ms.date: 11/22/2016
 pnp.series.title: Windows VM workloads
 pnp.series.prev: n-tier
-ms.openlocfilehash: b3f1fcf1403a5199191cb37dfed4fbe86695766d
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 9c54959da96115e55ba8a5c9e0f3c358d29ce5dd
+ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="run-windows-vms-in-multiple-regions-for-high-availability"></a>Запуск виртуальных машин Windows в нескольких регионах для обеспечения высокой доступности
 
@@ -23,7 +23,8 @@ ms.lasthandoff: 11/14/2017
 
 Эта архитектура создана на основе архитектуры, описанной в статье [Запуск виртуальных машин Windows для n-уровневого приложения](n-tier.md). 
 
-* **Основной и дополнительный регионы.** Чтобы достичь более высокого уровня доступности, используйте два региона Azure, один из которых является основным, а второй предназначен для отработки отказа. 
+* **Основной и дополнительный регионы.** Чтобы достичь более высокого уровня доступности, используйте два региона Azure, один из которых является основным, а второй предназначен для отработки отказа.
+* **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 * **Диспетчер трафика Azure.** [Диспетчер трафика][traffic-manager] направляет входящие запросы к одному из регионов. При обычной работе он направляет запросы в основной регион. Если этот регион становится недоступным, диспетчер трафика выполняет отработку отказа в дополнительный регион. Дополнительные сведения см. в разделе [Конфигурация диспетчера трафика](#traffic-manager-configuration).
 * **Группы ресурсов.** Создайте отдельные [группы ресурсов][resource groups] для основного и вторичного регионов, а также для диспетчера трафика. Так вы получите возможность управлять каждым регионом как одной коллекцией ресурсов. Например, можно повторно развернуть один регион, не отключая другой. [Свяжите группы ресурсов][resource-group-links], чтобы запустить запрос на перечисление всех ресурсов приложения.
 * **Виртуальные сети.** Создайте отдельные виртуальные сети для каждого региона. Убедитесь, что указанные пространства адресов не перекрываются. 
@@ -164,7 +165,7 @@ azure network traffic-manager  endpoint set --resource-group <resource-group> --
 
 <!-- Links -->
 [hybrid-vpn]: ../hybrid-networking/vpn.md
-
+[azure-dns]: /azure/dns/dns-overview
 [azure-sla]: https://azure.microsoft.com/support/legal/sla/
 [azure-sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
 [health-endpoint-monitoring-pattern]: https://msdn.microsoft.com/library/dn589789.aspx

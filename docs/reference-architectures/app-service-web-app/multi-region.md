@@ -4,11 +4,11 @@ description: "Рекомендуемая архитектура для веб-п
 author: MikeWasson
 ms.date: 11/23/2016
 cardTitle: Run in multiple regions
-ms.openlocfilehash: 2d7d0c38bef3efc73a7ba2dd61e4190d07deb1b5
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 60caa121d0ce2f1aa2638650229bed8048804c22
+ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="run-a-web-application-in-multiple-regions"></a>Выполнение веб-приложения в нескольких регионах
 [!INCLUDE [header](../../_includes/header.md)]
@@ -24,6 +24,7 @@ ms.lasthandoff: 11/14/2017
 Эта архитектура создана на основе архитектуры из статьи [Improve scalability in a web application][guidance-web-apps-scalability] (Повышение масштабируемости в веб-приложении). Основные различия:
 
 * **Основной и дополнительный регионы.** Эта архитектура использует два региона для достижения более высокого уровня доступности. Приложение развертывается в каждом регионе. При обычной работе трафик направляется в основной регион. Если основной регион становится недоступным, трафик направляется в дополнительный. 
+* **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 * **Диспетчер трафика Azure.** [Диспетчер трафика][traffic-manager] направляет входящие запросы в основной регион. Если приложение, работающее в этом регионе, становится недоступным, диспетчер трафика выполняет отработку отказа в дополнительный регион.
 * **Георепликация** базы данных SQL и Cosmos DB. 
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 11/14/2017
 
 ## <a name="recommendations"></a>Рекомендации
 
-Требования могут отличаться от архитектуры, описанной здесь. В качестве отправной точки используйте рекомендации в этом разделе.
+Описанная здесь архитектура может не соответствовать вашим требованиям. Используйте рекомендации из этого раздела в качестве отправной точки.
 
 ### <a name="regional-pairing"></a>Региональные пары
 Каждый регион Azure образует пару с другим регионом в пределах одной географической территории. В общем случае выбирайте регионы из одной региональной пары (например, восточная часть США 2, центральная часть США). Преимущества:
@@ -147,6 +148,7 @@ azure network traffic-manager endpoint set --name <endpoint> --profile-name <pro
 <!-- links -->
 
 [azure-sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
+[azure-dns]: /azure/dns/dns-overview
 [docdb-geo]: /azure/documentdb/documentdb-distribute-data-globally
 [guidance-web-apps-scalability]: ./scalable-web-app.md
 [health-endpoint-monitoring-pattern]: https://msdn.microsoft.com/library/dn589789.aspx

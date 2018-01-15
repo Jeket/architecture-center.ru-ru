@@ -5,11 +5,11 @@ author: MikeWasson
 ms.date: 11/22/2016
 pnp.series.title: Linux VM workloads
 pnp.series.prev: n-tier
-ms.openlocfilehash: 3b68f6fc79ba4b29e41ba2b04537b834bb8859b0
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 7d720a004d21edbffc0ddeba54e291aa817550e0
+ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="run-linux-vms-in-multiple-regions-for-high-availability"></a>Запуск виртуальных машин Linux в нескольких регионах для обеспечения высокой доступности
 
@@ -24,6 +24,7 @@ ms.lasthandoff: 11/14/2017
 Эта архитектура создана на основе архитектуры, описанной в статье [Запуск виртуальных машин Linux для n-уровневого приложения](n-tier.md). 
 
 * **Основной и дополнительный регионы.** Чтобы достичь более высокого уровня доступности, используйте два региона Azure, один из которых является основным, а второй предназначен для отработки отказа.
+* **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 * **Диспетчер трафика Azure.** [Диспетчер трафика][traffic-manager] направляет входящие запросы к одному из регионов. При обычной работе он направляет запросы в основной регион. Если этот регион становится недоступным, диспетчер трафика выполняет отработку отказа в дополнительный регион. Дополнительные сведения см. в разделе [Конфигурация диспетчера трафика](#traffic-manager-configuration).
 * **Группы ресурсов.** Создайте отдельные [группы ресурсов][resource groups] для основного и вторичного регионов, а также для диспетчера трафика. Так вы получите возможность управлять каждым регионом как одной коллекцией ресурсов. Например, можно повторно развернуть один регион, не отключая другой. [Свяжите группы ресурсов][resource-group-links], чтобы запустить запрос на перечисление всех ресурсов приложения.
 * **Виртуальные сети.** Создайте отдельные виртуальные сети для каждого региона. Убедитесь, что указанные пространства адресов не перекрываются.
@@ -128,7 +129,7 @@ azure network traffic-manager  endpoint set --resource-group <resource-group> --
 
 <!-- Links -->
 [hybrid-vpn]: ../hybrid-networking/vpn.md
-
+[azure-dns]: /azure/dns/dns-overview
 [cassandra-in-azure]: https://academy.datastax.com/resources/deployment-guide-azure
 [cassandra-consistency]: http://docs.datastax.com/en/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html
 [cassandra-replication]: http://www.planetcassandra.org/data-replication-in-nosql-databases-explained/

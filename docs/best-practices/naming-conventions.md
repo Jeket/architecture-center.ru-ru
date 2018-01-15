@@ -4,11 +4,11 @@ description: "Соглашения об именовании для ресурс
 author: telmosampaio
 ms.date: 05/18/2017
 pnp.series.title: Best Practices
-ms.openlocfilehash: 20f090c4cc39f96887cd58ffd2a9c7736e77de57
-ms.sourcegitcommit: 1c0465cea4ceb9ba9bb5e8f1a8a04d3ba2fa5acd
+ms.openlocfilehash: 364735dec9658b4d2a9d21330f38c57f6fa694bd
+ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="naming-conventions"></a>Соглашения об именовании.
 
@@ -109,7 +109,7 @@ ms.lasthandoff: 01/02/2018
 | Сущность | Область | Длина | Регистр | Допустимые символы | Рекомендуемый шаблон | Пример |
 | --- | --- | --- | --- | --- | --- | --- |
 |Виртуальная сеть (VNet) |Группа ресурсов |2–64 |Без учета регистра |Буквы, цифры, тире, символ подчеркивания, точка |`<service short name>-vnet` |`profx-vnet` |
-|Подсеть |Родительская виртуальная сеть |От 2 до 80 |Без учета регистра |Буквы, цифры, символ подчеркивания, тире и точка |`<descriptive context>` |`web` |
+|Подсеть |Родительская виртуальная сеть |От 2 до 80 |Без учета регистра |Буквы, цифры, тире, символ подчеркивания, точка |`<descriptive context>` |`web` |
 |Сетевой интерфейс |Группа ресурсов |От 1 до 80 |Без учета регистра |Буквы, цифры, тире, символ подчеркивания, точка |`<vmname>-nic<num>` |`profx-sql1-nic1` |
 |Группа безопасности сети |Группа ресурсов |От 1 до 80 |Без учета регистра |Буквы, цифры, тире, символ подчеркивания, точка |`<service short name>-<context>-nsg` |`profx-app-nsg` |
 |Правило группы безопасности сети |Группа ресурсов |От 1 до 80 |Без учета регистра |Буквы, цифры, тире, символ подчеркивания, точка |`<descriptive context>` |`sql-allow` |
