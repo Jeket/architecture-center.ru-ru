@@ -2,11 +2,11 @@
 title: "Эталонная архитектура Azure"
 description: "Эталонные архитектуры, проекты и рекомендуемые руководства по реализации для общих нагрузок в Azure."
 layout: LandingPage
-ms.openlocfilehash: eaff531c28faeb0aac774acf70d4334fb4e1f319
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 0cc03f87dae39517e1a72a65d4767dcc21879d8f
+ms.sourcegitcommit: 9998334bebccb86be0f715ac7dffc0c3175aea68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
@@ -137,6 +137,26 @@ ms.lasthandoff: 11/14/2017
     </ul>
 
 <ul class="panelContent cardsI">
+<li>
+    <a href="./jenkins/index.md">
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="./jenkins/images/logo.svg" alt="Jenkins" height="100%" />
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>Сервер сборки Jenkins</h3>
+                    <p>Развертывание и использование масштабируемого корпоративного сервера Jenkins в Azure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+</li>
+
 <li>
     <a href="./sharepoint/index.md">
     <div class="cardSize">
