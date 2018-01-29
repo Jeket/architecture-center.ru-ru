@@ -17,12 +17,14 @@
 - name: Эталонные образцы архитектуры
   href: reference-architectures/index.md
   items:
+    - name: Веб-приложения службы приложений
+      href: reference-architectures/app-service-web-app/index.md
+    - name: Гибридные сети
+      href: reference-architectures/hybrid-networking/index.md
     - name: Управление удостоверениями
       href: reference-architectures/identity/index.md
-    - name: Гибридная сеть
-      href: reference-architectures/hybrid-networking/index.md
-    - name: Веб-приложение службы приложений
-      href: reference-architectures/app-service-web-app/index.md
+    - name: Сервер Jenkins
+      href: reference-architectures/jenkins/index.md
     - name: Сеть периметра
       href: reference-architectures/dmz/index.md
     - name: SAP NetWeaver и SAP HANA
@@ -72,9 +74,9 @@
       href: best-practices/monitoring.md
     - name: Соглашения об именовании.
       href: best-practices/naming-conventions.md
-    - name: Обработка временного сбоя
+    - name: Обработка временных сбоев
       href: best-practices/transient-faults.md
-    - name: Руководство по механизму повторов для отдельных служб
+    - name: Руководство по использованию механизма повторов для отдельных служб
       href: best-practices/retry-service-specific.md
 - name: Антишаблоны производительности
   href: antipatterns/index.md
