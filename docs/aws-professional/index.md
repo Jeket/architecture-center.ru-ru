@@ -5,11 +5,11 @@ keywords: AWS experts, Azure comparison, AWS comparison, difference between azur
 author: lbrader
 ms.date: 03/24/2017
 pnp.series.title: Azure for AWS Professionals
-ms.openlocfilehash: ac96110e3fe69b4bb69714e18fd0f193208bc244
-ms.sourcegitcommit: 744ad1381e01bbda6a1a7eff4b25e1a337385553
+ms.openlocfilehash: e5f7cb5062b0b4a8526f3b29a9fa4ddaff399fc0
+ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="azure-for-aws-professionals"></a>Azure для специалистов AWS
 
@@ -311,7 +311,7 @@ Azure предоставляет несколько служб реляцион�
 
 -   [Настройка георепликации для службы "База данных SQL" с помощью портала Azure](https://azure.microsoft.com/documentation/articles/sql-database-geo-replication-portal/).
 
--   [Знакомство с Cosmos DB: база данных NoSQL JSON](https://azure.microsoft.com/documentation/articles/documentdb-introduction/).
+-   [Знакомство с Cosmos DB: база данных NoSQL JSON](/azure/cosmos-db/sql-api-introduction).
 
 -   [Использование табличного хранилища Azure из Node.js](https://azure.microsoft.com/documentation/articles/storage-nodejs-how-to-use-table-storage/)
 
