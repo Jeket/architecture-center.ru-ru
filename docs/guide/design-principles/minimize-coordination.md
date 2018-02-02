@@ -3,11 +3,11 @@ title: "Минимизация координации"
 description: "Сведите к минимуму координацию между службами приложений, чтобы обеспечить масштабируемость"
 author: MikeWasson
 layout: LandingPage
-ms.openlocfilehash: 1f8caa8b7cd85593c937f1d99d582492d4cf9a8b
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 3cab05b539612234fd8e66517b140ac5257c3e70
+ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="minimize-coordination"></a>Минимизация координации 
 
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/14/2017
 
 **Используйте оптимистическую блокировку, если это возможно**. Пессимистическое управление параллелизмом подразумевает блокировку базы данных для предотвращения конфликтов. Это может снижать производительность и доступность системы. Если применить оптимистическое управление параллелизмом, каждая транзакция изменит собственную копию (моментальный снимок) данных. Когда транзакция будет зафиксирована, ядро СУБД проверит эту транзакцию и отклонит ее, если она может повлиять на согласованность базы данных. 
 
-База данных SQL Azure и SQL Server поддерживают оптимистический параллелизм, выполняя [изоляцию моментальных снимков][sql-snapshot-isolation]. Некоторые службы хранилища Azure поддерживают оптимистический параллелизм с помощью тэгов eTag, как например [API DocumentDB][docdb-faq] и [служба хранилища Azure][storage-concurrency].
+База данных SQL Azure и SQL Server поддерживают оптимистический параллелизм, выполняя [изоляцию моментальных снимков][sql-snapshot-isolation]. Некоторые службы хранилища Azure, например [Azure Cosmos DB][cosmosdb-faq] и [служба хранилища Azure][storage-concurrency], поддерживают оптимистическую блокировку с помощью тэгов eTag.
 
 **Применяйте MapReduce или другой алгоритм распределенной параллельной обработки**. В зависимости от характера данных и выполняемой работы, иногда ее можно разделить на несколько независимых задач, чтобы выполнять эти задачи параллельно на нескольких узлах. См. статью [Стиль архитектуры для больших вычислений][big-compute].
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/14/2017
 [compensating-transaction]: ../../patterns/compensating-transaction.md
 [cqrs-style]: ../architecture-styles/cqrs.md
 [cqrs-pattern]: ../../patterns/cqrs.md
-[docdb-faq]: /azure/documentdb/documentdb-faq
+[cosmosdb-faq]: /azure/cosmos-db/faq
 [domain-event]: https://martinfowler.com/eaaDev/DomainEvent.html
 [event-sourcing]: ../../patterns/event-sourcing.md
 [leader-election]: ../../patterns/leader-election.md
