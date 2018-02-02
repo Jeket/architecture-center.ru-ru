@@ -4,11 +4,11 @@ description: "Рекомендуемая архитектура для веб-п
 author: MikeWasson
 ms.date: 11/23/2016
 cardTitle: Run in multiple regions
-ms.openlocfilehash: 60caa121d0ce2f1aa2638650229bed8048804c22
-ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
+ms.openlocfilehash: 50ac9636e1e3c25bd0403c89281a3a06915d065f
+ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="run-a-web-application-in-multiple-regions"></a>Выполнение веб-приложения в нескольких регионах
 [!INCLUDE [header](../../_includes/header.md)]
@@ -71,7 +71,7 @@ ms.lasthandoff: 01/08/2018
 ### <a name="cosmos-db"></a>База данных Cosmos
 Cosmos DB поддерживает географическую репликацию данных между регионами. Один регион обозначается как доступный для записи, а другие являются доступными только для чтения репликами.
 
-При региональном сбое можно выполнить отработку отказа, выбрав другой доступный для записи регион. Пакет SDK клиента автоматически отправляет запросы на запись в текущий регион записи, поэтому вам не нужно обновлять конфигурацию клиента после отработки отказа. Дополнительные сведения см. в статье [Как работает глобальное распределение данных в Azure с помощью Cosmos DB][docdb-geo].
+При региональном сбое можно выполнить отработку отказа, выбрав другой доступный для записи регион. Пакет SDK клиента автоматически отправляет запросы на запись в текущий регион записи, поэтому вам не нужно обновлять конфигурацию клиента после отработки отказа. Дополнительные сведения см. в статье [Как работает глобальное распределение данных в Azure с помощью Cosmos DB][cosmosdb-geo].
 
 > [!NOTE]
 > Все реплики принадлежат к одной группе ресурсов.
@@ -149,7 +149,7 @@ azure network traffic-manager endpoint set --name <endpoint> --profile-name <pro
 
 [azure-sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
 [azure-dns]: /azure/dns/dns-overview
-[docdb-geo]: /azure/documentdb/documentdb-distribute-data-globally
+[cosmosdb-geo]: /azure/cosmos-db/distribute-data-globally
 [guidance-web-apps-scalability]: ./scalable-web-app.md
 [health-endpoint-monitoring-pattern]: https://msdn.microsoft.com/library/dn589789.aspx
 [ra-grs]: /azure/storage/storage-redundancy#read-access-geo-redundant-storage
