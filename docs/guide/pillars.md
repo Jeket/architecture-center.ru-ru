@@ -2,17 +2,17 @@
 title: "Основные аспекты качества программного обеспечения"
 description: "Здесь описаны следующие пять основных аспектов качества программного обеспечения: масштабируемость, доступность, устойчивость, управление и безопасность."
 author: MikeWasson
-ms.openlocfilehash: 78e613368a07718f5923d619ace335d399b0cc80
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 1d5e30602cafa0d39f92de3101974e77ae258595
+ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="pillars-of-software-quality"></a>Основные аспекты качества программного обеспечения 
 
 Чтобы успешно разработать облачное приложение, обратите внимание на следующие пять основных аспектов качества программного обеспечения: масштабируемость, доступность, устойчивость, управление и безопасность.
 
-| Аспект | Описание |
+| Аспект | ОПИСАНИЕ |
 |--------|-------------|
 | Масштабируемость | Способность системы успешно функционировать при повышении нагрузки. |
 | Доступность | Доля времени, на протяжении которого система работает надлежащим образом. |
@@ -153,7 +153,7 @@ ms.lasthandoff: 11/14/2017
 
 Убедитесь, что данные остаются в надлежащей геополитической зоне при использовании функции высокой доступности Azure. В хранилище Azure с георепликацией используется понятие [пар регионов][paired-region] в одном геополитическом регионе. 
 
-Для защиты криптографических ключей и секретов используйте Key Vault. В Key Vault вы можете зашифровать ключи и секреты с использованием ключей, которые защищены аппаратными модулями безопасности (HSM). Многие службы хранилищ и баз данных Azure поддерживают шифрование неактивных данных, включая [службу хранилища Azure][storage-encryption], [службу "База данных SQL Azure"][sql-db-encryption], [хранилище данных SQL Azure][data-warehouse-encryption] и [Cosmos DB][documentdb-encryption].
+Для защиты криптографических ключей и секретов используйте Key Vault. В Key Vault вы можете зашифровать ключи и секреты с использованием ключей, которые защищены аппаратными модулями безопасности (HSM). Многие службы хранилищ и баз данных Azure поддерживают шифрование неактивных данных, включая [службу хранилища Azure][storage-encryption], [службу "База данных SQL Azure"][sql-db-encryption], [хранилище данных SQL Azure][data-warehouse-encryption] и [Cosmos DB][cosmosdb-encryption].
 
 ### <a name="security-resources"></a>Ресурсы, посвященные безопасности:
 
@@ -171,7 +171,7 @@ ms.lasthandoff: 11/14/2017
 
 [ad-subscriptions]: /azure/active-directory/active-directory-how-subscriptions-associated-directory
 [data-warehouse-encryption]: /azure/data-lake-store/data-lake-store-security-overview#data-protection
-[documentdb-encryption]: /azure/documentdb/documentdb-nosql-database-security
+[cosmosdb-encryption]: /azure/cosmos-db/database-security
 [rbac]: /azure/active-directory/role-based-access-control-what-is
 [paired-region]: /azure/best-practices-availability-paired-regions
 [resource-manager-auditing]: /azure/azure-resource-manager/resource-group-audit

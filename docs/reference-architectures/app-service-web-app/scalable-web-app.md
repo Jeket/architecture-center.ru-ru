@@ -7,11 +7,11 @@ pnp.series.prev: basic-web-app
 pnp.series.next: multi-region-web-app
 ms.date: 11/23/2016
 cardTitle: Improve scalability
-ms.openlocfilehash: 1fdaf6e3695cb814fa4c275a4a273f9fa9a7b71b
-ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
+ms.openlocfilehash: 4ad12fb041a79fcb706530c9968fd0f96211d7f9
+ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="improve-scalability-in-a-web-application"></a>Повышение масштабируемости в веб-приложении
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/08/2018
 * **Очередь.** В архитектуре, показанной здесь, приложение выполняет запрос фоновых заданий путем помещения сообщения в очередь [хранилища очередей Azure][queue-storage]. Сообщение вызывает функцию в веб-задании. В качестве альтернативы можно использовать очереди служебной шины. Сравнение см. в статье [Очереди службы хранилища и очереди служебной шины: сходства и различия][queues-compared].
 * **Кэш.** Храните полустатические данные в [кэше Redis для Azure][azure-redis].  
 * **CDN.** Используйте [сеть доставки содержимого Azure][azure-cdn] (CDN), чтобы выполнять кэширование общедоступного содержимого с меньшей задержкой и более быстрой доставкой содержимого.
-* **Хранилище данных.** Используйте [базу данных SQL Azure][sql-db] для реляционных данных. Для нереляционных данных рассмотрите возможность использования хранилища NoSQL (например, [Cosmos DB][documentdb]).
+* **Хранилище данных.** Используйте [базу данных SQL Azure][sql-db] для реляционных данных. Для нереляционных данных рассмотрите возможность использования хранилища NoSQL (например, [Cosmos DB][cosmosdb]).
 * **Поиск Azure.** Используйте [Поиск Azure][azure-search], чтобы добавлять функции поиска (такие как, например, поисковые запросы, поиск нечетких соответствий и языковой поиск). Служба "Поиск Azure" обычно используется в сочетании с другим хранилищем данных, особенно если первичное хранилище данных требует строгой согласованности. При использовании этого подхода храните достоверные данные в другом хранилище данных и используйте другой индекс поиска в службе "Поиск Azure". Служба "Поиск Azure" может также использоваться для консолидации одного индекса поиска из нескольких хранилищ данных.  
 * **Электронные и текстовые сообщения.** Используйте службы сторонних разработчиков, например SendGrid или Twilio, чтобы отправлять сообщения электронной почты или SMS-сообщения вместо создания этой функции непосредственно в данном приложении.
 * **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
@@ -140,7 +140,7 @@ ms.lasthandoff: 01/08/2018
 [cdn-storage-account]: /azure/cdn/cdn-create-a-storage-account-with-cdn
 [cdn-guidance]: ../../best-practices/cdn.md
 [cors]: /azure/app-service-api/app-service-api-cors-consume-javascript
-[documentdb]: https://azure.microsoft.com/documentation/services/documentdb/
+[cosmosdb]: /azure/cosmos-db/
 [queue-storage]: /azure/storage/storage-dotnet-how-to-use-queues
 [queues-compared]: /azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
 [resource-group]: /azure/azure-resource-manager/resource-group-overview#resource-groups
