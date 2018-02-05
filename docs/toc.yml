@@ -123,6 +123,8 @@
       href: multitenant-identity/index.md
     - name: Миграция из облачных служб в Service Fabric
       href: service-fabric/migrate-from-cloud-services.md
+    - name: 'Рефакторинг приложения, перенесенного из облачных служб Azure в Azure Service Fabric'
+      href: service-fabric/refactor-migrated-app.md
     - name: Запуск Elasticsearch в Azure
       href: elasticsearch/index.md
     - name: Расширение функциональности шаблонов Azure Resource Manager
