@@ -3,11 +3,11 @@ title: "Перенос приложения облачных служб Azure в
 description: "Сведения о том, как перенести приложения из облачных служб Azure в Azure Service Fabric."
 author: MikeWasson
 ms.date: 04/27/2017
-ms.openlocfilehash: 22b6cca0d4714dd4cde0fd7449340d6e1f45e65b
-ms.sourcegitcommit: fbcf9a1c25db13b2627a8a58bbc985cd01ea668d
+ms.openlocfilehash: 73e34c53ffd2f2eeb466d12a5f6c65dcfdaae389
+ms.sourcegitcommit: 2c9a8edf3e44360d7c02e626ea8ac3b03fdfadba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="migrate-an-azure-cloud-services-application-to-azure-service-fabric"></a>Перенос приложения облачных служб Azure в Azure Service Fabric 
 
@@ -176,7 +176,7 @@ Service Fabric используется различными службами М
 
  Облачная служба содержит следующие файлы конфигурации и пакета:
 
-| Файл | Описание |
+| Файл | ОПИСАНИЕ |
 |------|-------------|
 | Определение службы (CSDEF) | Параметры, используемые Azure для настройки облачной службы. Определяет роли, конечные точки, задачи запуска и имена параметров конфигурации. |
 | Конфигурация службы (CSCFG) | Параметры развертывания, включающие число экземпляров роли, номера портов конечной точки и значения параметров конфигурации. 
@@ -198,7 +198,7 @@ Application package
 
 Приложение Service Fabric содержит следующие файлы конфигурации:
 
-| Файл | Расположение | Описание |
+| Файл | Расположение | ОПИСАНИЕ |
 |------|----------|-------------|
 | ApplicationManifest.xml | Пакет приложения | Определяет службы, входящие в состав приложения. |
 | ServiceManifest.xml | Пакет службы| Описывает одну или несколько служб. |
@@ -289,9 +289,9 @@ Application package
 
 Кроме того, развертывание изменено с облачных служб на кластер Service Fabric, работающий в масштабируемом наборе виртуальных машин.
 
-Однако на этом этапе приложение не получает все преимущества микрослужб, такие как независимое развертывание служб и управление их версиями. Чтобы воспользоваться всеми преимуществами Service Fabric, Tailspin нужно оптимизировать приложение чуточку больше.
+## <a name="next-steps"></a>Дополнительная информация
 
-
+Теперь, когда приложение Surveys успешно перенесено, компания Tailspin хочет воспользоваться такими преимуществами функций Service Fabric, как независимые функции развертывания служб и управления их версиями. Дополнительные сведения о том, как компании Tailspin удалось преобразовать эти службы для детализированной настройки архитектуры, чтобы воспользоваться преимуществами этих функций Service Fabric, см. в руководстве по [выполнению рефакторинга приложения Azure Service Fabric, перенесенного из облачных служб Azure][refactor-surveys].
 
 <!-- links -->
 
@@ -308,6 +308,7 @@ Application package
 [kestrel]: https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel
 [lb-probes]: /azure/load-balancer/load-balancer-custom-probe-overview
 [owin]: https://www.asp.net/aspnet/overview/owin-and-katana
+[refactor-surveys]: refactor-migrated-app.md
 [sample-code]: https://github.com/mspnp/cloud-services-to-service-fabric
 [sf-application-model]: /azure/service-fabric/service-fabric-application-model
 [sf-aspnet-core]: /azure/service-fabric/service-fabric-add-a-web-frontend
