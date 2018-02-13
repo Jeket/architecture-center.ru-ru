@@ -53,7 +53,7 @@
                 - name: Пояснения. Знакомство с виртуальной сетью Azure
                   href: /azure/virtual-network/virtual-networks-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json
                 - name: Инструкции. Развертывание виртуальной сети в Azure
-                  href: /azure/virtual-network/virtual-networks-create-vnet-arm-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json
+                  href: /azure/virtual-network/virtual-networks-create-vnet-arm-pportal?toc=/azure/architecture/cloud-adoption-guide/toc.json
                 - name: Инструкции. Развертывание одной рабочей нагрузки IaaS для виртуальной машины Windows в Azure
                   href: /azure/virtual-machines/windows/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json
                 - name: Руководство. Рекомендации по развертыванию виртуальной машины Windows в Azure
