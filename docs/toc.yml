@@ -1,5 +1,10 @@
 - name: Центр архитектуры Azure
   href: index.md
+- name: Руководство по внедрению облака Azure
+  href: cloud-adoption-guide/index.md
+  items:
+    - name: Базовый этап внедрения
+      href: cloud-adoption-guide/adoption-intro/overview.md
 - name: Руководство по архитектуре приложений
   href: guide/index.md
   items:
