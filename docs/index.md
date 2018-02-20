@@ -2,11 +2,11 @@
 title: "Центр архитектуры Azure"
 description: "Для создания решений с помощью Microsoft Azure используется центр архитектуры Azure, являющийся официальным центром, в котором содержатся руководства, проекты, шаблоны и рекомендации. Центр архитектуры Azure курирует команда разработчиков шаблонов и рекомендаций Майкрософт."
 layout: LandingPage
-ms.openlocfilehash: 204d32c8de934665fff7b1a321bfdf893ac69983
-ms.sourcegitcommit: 441185360db49cfb3cf39527b68f318d17d4cb3d
+ms.openlocfilehash: eb069ae80ce70eb66ef57b1e0e21f7181d17d21f
+ms.sourcegitcommit: 475064f0a3c2fac23e1286ba159aaded287eec86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -64,26 +64,6 @@ ms.lasthandoff: 01/19/2018
 
 <!-- Second panel -->
 <ul class="panelContent cardsI">
-    <!-- Best practices -->
-    <li>
-        <a href="/azure/architecture/best-practices/">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/best-practices.svg" alt="Best Practices" height="100%" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Советы и рекомендации для облачных приложений</h3>
-                            <p>Рекомендации для облачных приложений, охватывающие такие аспекты, как автоматическое масштабирование, кэширование, секционирование данных, структуру API и другое.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
     <!-- Microservices -->
     <li>
         <a href="/azure/architecture/microservices">
@@ -96,8 +76,88 @@ ms.lasthandoff: 01/19/2018
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>Проектирование микрослужб в Azure</h3>
+                            <h3>Создание микрослужб в Azure</h3>
                             <p>Эта серия руководств поможет вам приступить к разработке и созданию архитектуры микрослужб в Azure. Также доступен пример реализации.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- data guide -->
+    <li>
+        <a href="/azure/architecture/data-guide/">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/data-guide.svg" alt="Data Architecture Guide"  />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Руководство по архитектуре данных в Azure</h3>
+                            <p>Cтруктурированный подход к разработке решений для обработки данных в Microsoft Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- Best practices -->
+    <li>
+        <a href="/azure/architecture/best-practices/">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/best-practices.svg" alt="Best Practices" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Советы и рекомендации для облачных приложений</h3>
+                            <p>Рекомендации для облачных приложений, охватывающие такие аспекты, как автоматическое масштабирование, кэширование, секционирование данных, структуру API и другое.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- Resiliency -->
+    <li>
+        <a href="/azure/architecture/resiliency">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/resiliency.svg" alt="Designing for Resiliency" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Проектирование для обеспечения устойчивости</h3>
+                            <p>Дополнительные сведения о разработке устойчивых приложений для Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- Building blocks -->
+    <li>
+        <a href="https://github.com/mspnp/template-building-blocks/wiki">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/azbb.svg" alt="Azure Building Blocks" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Стандартные блоки Azure</h3>
+                            <p>Упрощенное развертывание ресурсов Azure. С помощью одного файла параметров развертывайте сложные архитектуры в Azure.</p>
                         </div>
                     </div>
                 </div>
@@ -158,46 +218,6 @@ ms.lasthandoff: 01/19/2018
                         <div class="cardText">
                             <h3>Azure для специалистов AWS</h3>
                             <p>Используйте опыт работы с AWS в Microsoft Azure.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- Resiliency -->
-    <li>
-        <a href="/azure/architecture/resiliency">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/resiliency.svg" alt="Designing for Resiliency" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Проектирование для обеспечения устойчивости</h3>
-                            <p>Дополнительные сведения о разработке устойчивых приложений для Azure.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- Building blocks -->
-    <li>
-        <a href="https://github.com/mspnp/template-building-blocks/wiki">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/azbb.svg" alt="Azure Building Blocks" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Стандартные блоки Azure</h3>
-                            <p>Упрощенное развертывание ресурсов Azure. С помощью одного файла параметров развертывайте сложные архитектуры в Azure.</p>
                         </div>
                     </div>
                 </div>
