@@ -1,18 +1,18 @@
 ---
 title: "Кэш на стороне"
-description: "Загрузка данных по запросу из хранилища данных в кэш"
-keywords: "конструктивный шаблон"
+description: "Загрузка данных по запросу из хранилища данных в кэш."
+keywords: "Конструктивный шаблон"
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - data-management
 - performance-scalability
-ms.openlocfilehash: e0a6a91fda6ea43236f6eea552f7b8f8d31160ad
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 1536a33884c9c9faa1e3702c951067249e691bf8
+ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="cache-aside-pattern"></a>Шаблон "Кэш на стороне"
 
@@ -125,7 +125,7 @@ public async Task<MyEntity> GetMyEntityAsync(int id)
 }
 ```
 
->  В этих примерах для получения доступа к хранилищу и сведений из кэша используется API-интерфейс кэша Redis для Azure. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](https://docs.microsoft.com/en-us/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](https://docs.microsoft.com/en-us/azure/redis-cache/cache-web-app-howto)
+>  В этих примерах для получения доступа к хранилищу и сведений из кэша используется API-интерфейс кэша Redis для Azure. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](https://docs.microsoft.com/azure/redis-cache/cache-web-app-howto)
 
 В методе `UpdateEntityAsync`, показанном ниже, демонстрируется, как сделать объект недействительным в кэше при изменении значения приложением. Этот код обновляет хранилище исходных данных, а затем удаляет кэшированный элемент из кэша.
 
@@ -151,6 +151,6 @@ public async Task UpdateEntityAsync(MyEntity entity)
 
 К реализации этого шаблона могут относиться следующие сведения:
 
-- [Caching](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching) (Кэширование). Здесь предоставлены дополнительные сведения о том, как можно кэшировать данные в облачном решении, а также показаны проблемы, которые следует учитывать при реализации кэширования.
+- [Caching](https://docs.microsoft.com/azure/architecture/best-practices/caching) (Кэширование). Здесь предоставлены дополнительные сведения о том, как можно кэшировать данные в облачном решении, а также показаны проблемы, которые следует учитывать при реализации кэширования.
 
 - [Data Consistency Primer](https://msdn.microsoft.com/library/dn589800.aspx) (Руководство по обеспечению согласованности данных). Облачные приложения обычно используют данные, которые распределены по хранилищам данных. Управление и поддержание согласованности данных в этой среде — это важнейший аспект системы, в частности проблемы параллелизма и доступности, которые могут возникнуть. В этом руководстве описаны проблемы согласованности в распределенных данных и способы реализации окончательной согласованности в приложении для обеспечения доступности данных.

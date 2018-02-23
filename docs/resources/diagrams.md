@@ -1,11 +1,11 @@
 ---
 title: "Значки и другие ресурсы для архитектурной схемы"
 description: "Значки, шаблоны Viso, файлы SVG и PNG, которые полезны для создания архитектурных схем"
-ms.openlocfilehash: 863c5cd479e6c4b6d57299176b80d02661e5466b
-ms.sourcegitcommit: 662f27f37d45f778ad1b6355fb6fb66e3c65558c
+ms.openlocfilehash: 58a2046c0d463c1f331ea3f950f0c11c273ffc36
+ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="icons-and-diagrams"></a>Значки и схемы
 
@@ -18,7 +18,7 @@ ms.lasthandoff: 12/11/2017
 
 ![Облачный и корпоративный набор символов и значков](./_images/CnESymbols.png)
 
-Дополнительные символы для Microsoft Office и связанные технологии доступны в [наборе элементов Microsoft Office Visio](http://www.microsoft.com/en-us/download/details.aspx?id=35772). Они не оптимизированы для архитектурных схем.   
+Дополнительные символы для Microsoft Office и связанные технологии доступны в [наборе элементов Microsoft Office Visio](http://www.microsoft.com/download/details.aspx?id=35772). Они не оптимизированы для архитектурных схем.   
 
 > [!NOTE]
 > Эти ресурсы не предназначены для использования в пользовательском интерфейсе. Сторонние символы не принадлежат корпорации Майкрософт.
