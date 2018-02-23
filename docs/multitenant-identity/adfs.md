@@ -6,11 +6,11 @@ ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: token-cache
 pnp.series.next: client-assertion
-ms.openlocfilehash: bf385ccc988a709a61d9bee5fb1ee084a133138d
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: a5dc25a4b61ffd13d86f1abb2b839054e5fb4c7f
+ms.sourcegitcommit: 475064f0a3c2fac23e1286ba159aaded287eec86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="federate-with-a-customers-ad-fs"></a>Федерация с клиентской службой AD FS
 
@@ -55,7 +55,7 @@ Azure Active Directory (Azure AD) упрощает процесс входа п�
 ## <a name="limitations"></a>Ограничения
 По умолчанию приложение проверяющей стороны получает через id_token только фиксированный набор утверждений, которые перечислены в приведенной ниже таблице. В AD FS 2016 вы можете настроить id_token для сценариев OpenID Connect. Дополнительные сведения см. в разделе [Custom ID Tokens in AD FS](/windows-server/identity/ad-fs/development/customize-id-token-ad-fs-2016) (Пользовательские маркеры идентификаторов в Azure AD FS).
 
-| Утверждение | Описание |
+| Утверждение | ОПИСАНИЕ |
 | --- | --- |
 | aud |Аудитория. Это приложение, для которого выданы утверждения. |
 | authenticationinstant |[Время выполнения аутентификации.] Время, когда происходила аутентификация. |
