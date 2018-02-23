@@ -19,6 +19,8 @@
       href: guide/pillars.md
     - name: Шаблоны проектирования
       href: patterns/index.md?toc=/azure/architecture/guide/toc.json
+- name: Руководство по архитектуре данных
+  href: data-guide/index.md
 - name: Эталонные образцы архитектуры
   href: reference-architectures/index.md
   items:

@@ -1,0 +1,93 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Руководство по архитектуре данных
+  href: index.md
+  items:
+    - name: Традиционная реляционная СУБД
+      items:
+        - name: Основные понятия
+          items:
+            - name: Реляционные данные
+              href: concepts/relational-data.md
+            - name: Данные о транзакциях
+              href: concepts/transactional-data.md
+            - name: Семантическое моделирование
+              href: concepts/semantic-modeling.md
+        - name: Сценарии
+          items:
+            - name: Оперативная обработка транзакций (OLTP)
+              href: scenarios/online-transaction-processing.md
+            - name: Оперативная аналитическая обработка (OLAP)
+              href: scenarios/online-analytical-processing.md
+            - name: Хранение данных
+              href: scenarios/data-warehousing.md
+            - name: 'Извлечение, преобразование и загрузка (ETL)'
+              href: scenarios/etl.md
+        - name: Выбор технологий
+          items:
+            - name: Хранилища данных
+              href: technology-choices/data-warehouses.md
+            - name: Оперативная аналитическая обработка (OLAP)
+              href: technology-choices/olap-data-stores.md
+            - name: Оперативная обработка транзакций (OLTP)
+              href: technology-choices/oltp-data-stores.md
+    - name: Большие данные и NoSQL
+      items:
+        - name: Основные понятия
+          items:
+            - name: Нереляционные хранилища данных
+              href: concepts/non-relational-data.md
+            - name: Работа с CSV- и JSON-файлами
+              href: concepts/csv-and-json.md
+            - name: Варианты архитектуры для обработки больших данных
+              href: concepts/big-data.md
+            - name: Расширенная аналитика
+              href: concepts/advanced-analytics.md
+            - name: Машинное обучение с поддержкой масштабирования
+              href: concepts/machine-learning-at-scale.md
+        - name: Сценарии
+          items:
+            - name: Пакетная обработка
+              href: scenarios/batch-processing.md
+            - name: Обработка в режиме реального времени
+              href: scenarios/real-time-processing.md
+            - name: Текстовый поиск со свободной формой записи
+              href: scenarios/search.md
+            - name: Интерактивное исследование данных
+              href: scenarios/interactive-data-exploration.md
+            - name: Обработка естественного языка
+              href: scenarios/natural-language-processing.md
+            - name: Решения для временных рядов
+              href: scenarios/time-series.md
+        - name: Выбор технологий
+          items:
+            - name: Хранилища аналитических данных
+              href: technology-choices/analytical-data-stores.md
+            - name: Аналитика и отчетность
+              href: technology-choices/analysis-visualizations-reporting.md
+            - name: Пакетная обработка
+              href: technology-choices/batch-processing.md
+            - name: Cognitive Services
+              href: technology-choices/cognitive-services.md
+            - name: Хранилище данных
+              href: technology-choices/data-storage.md
+            - name: Машинное обучение
+              href: technology-choices/data-science-and-machine-learning.md
+            - name: Обработка естественного языка
+              href: technology-choices/natural-language-processing.md
+            - name: Оркестрация конвейеров
+              href: technology-choices/pipeline-orchestration-data-movement.md
+            - name: Прием сообщений в реальном времени
+              href: technology-choices/real-time-ingestion.md
+            - name: Поиск в хранилищах данных
+              href: technology-choices/search-options.md
+            - name: Потоковая обработка
+              href: technology-choices/stream-processing.md
+    - name: Сквозные функции
+      items:
+        - name: Передача данных
+          href: scenarios/data-transfer.md
+        - name: Расширение локальных решений для работы с данными в облако
+          href: scenarios/hybrid-on-premises-and-cloud.md
+        - name: Защита решений для работы с данными
+          href: scenarios/securing-data-solutions.md
