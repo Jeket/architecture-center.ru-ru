@@ -3,11 +3,11 @@ title: "Антишаблон неправильного создания экз�
 description: "Не следует постоянно создавать экземпляры объекта, который нужно создать раз, а затем использовать совместно."
 author: dragon119
 ms.date: 06/05/2017
-ms.openlocfilehash: 8955f37e76c8b5e66c1ed7737d200d11ed321612
-ms.sourcegitcommit: 9ba82cf84cee06ccba398ec04c51dab0e1ca8974
+ms.openlocfilehash: 4d5ef9ad9e675b46df94b51e81d7a4bd4c1b25e9
+ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="improper-instantiation-antipattern"></a>Антишаблон неправильного создания экземпляров
 
@@ -22,9 +22,7 @@ ms.lasthandoff: 02/13/2018
 - `Microsoft.Azure.Documents.Client.DocumentClient`. Подключается к экземпляру Cosmos DB.
 - `StackExchange.Redis.ConnectionMultiplexer`. Подключается к Redis, включая кэш Redis для Azure.
 
-Для этих классов экземпляры создаются единожды, а затем используются на протяжении всего времени существования приложения. Однако распространенное заблуждение заключается в том, что эти классы нужно получать только по мере необходимости и быстро освобождать. (Здесь перечислены библиотеки .NET, но шаблон не является уникальным для .NET.)
-
-В следующем примере ASP.NET создается экземпляр `HttpClient` для взаимодействия с удаленной службой. Полный пример см. [здесь][sample-app].
+Для этих классов экземпляры создаются единожды, а затем используются на протяжении всего времени существования приложения. Однако распространенное заблуждение заключается в том, что эти классы нужно получать только по мере необходимости и быстро освобождать. (Здесь перечислены библиотеки .NET, но шаблон не является уникальным для .NET.) В следующем примере ASP.NET создается экземпляр `HttpClient` для взаимодействия с удаленной службой. Полный пример см. [здесь][sample-app].
 
 ```csharp
 public class NewHttpClientInstancePerRequestController : ApiController
@@ -76,18 +74,18 @@ public class ExpensiveToCreateService
 ```csharp
 public class SingleHttpClientInstanceController : ApiController
 {
-    private static readonly HttpClient HttpClient;
+    private static readonly HttpClient httpClient;
 
     static SingleHttpClientInstanceController()
     {
-        HttpClient = new HttpClient();
+        httpClient = new HttpClient();
     }
 
     // This method uses the shared instance of HttpClient for every call to GetProductAsync.
     public async Task<Product> GetProductAsync(string id)
     {
         var hostName = HttpContext.Current.Request.Url.Host;
-        var result = await HttpClient.GetStringAsync(string.Format("http://{0}:8080/api/...", hostName));
+        var result = await httpClient.GetStringAsync(string.Format("http://{0}:8080/api/...", hostName));
         return new Product { Name = result };
     }
 }
