@@ -1,6 +1,6 @@
 - name: Центр архитектуры Azure
   href: /azure/architecture
-- name: Руководство по внедрению облака Azure
+- name: Руководство по внедрению облака
   href: index.md
   items:
     - name: Базовое внедрение Azure

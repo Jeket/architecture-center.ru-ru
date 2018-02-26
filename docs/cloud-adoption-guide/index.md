@@ -1,12 +1,12 @@
 ---
 layout: LandingPage
-ms.openlocfilehash: e39a744b6f0226a5b0bb14d03a0b8a3d4479e01b
-ms.sourcegitcommit: 2e8b06e9c07875d65b91d5431bfd4bc465a7a242
+ms.openlocfilehash: b5c88ac0307c7d47f5bde73322bedd7063136576
+ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="azure-cloud-adoption-guide"></a>Руководство по внедрению облака Azure
+# <a name="cloud-adoption-guide"></a>Руководство по внедрению облака
 
 Облачные решения кардинально повлияли на способы приобретения и использования технологических ресурсов предприятий. В прошлом технологии любого уровня — от инфраструктуры до программного обеспечения — находились в собственности и рамках ответственности организаций. Теперь облако позволяет изменить способ использования технологий: ресурсы подготавливаются и потребляются по мере необходимости.
 
