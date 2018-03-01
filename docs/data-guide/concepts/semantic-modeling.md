@@ -3,11 +3,11 @@ title: "Семантическое моделирование"
 description: 
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: e989a7a5a58e7d05e261931005069bb12bd79186
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.openlocfilehash: 343d17af0d933d515c724a062237c8d5df3a9e31
+ms.sourcegitcommit: 29fbcb1eec44802d2c01b6d3bcf7d7bd0bae65fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="semantic-modeling"></a>Семантическое моделирование
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 02/14/2018
 * **Многомерная.** Используются традиционные конструкции моделирования OLAP (кубы, измерения, меры).
 
 Соответствующие службы Azure:
-- [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/)
+- [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/);
 
 ## <a name="example-use-case"></a>Примеры использования
 
@@ -46,10 +46,9 @@ ms.lasthandoff: 02/14/2018
 
 | Требование | ОПИСАНИЕ |
 | --- | --- |
-| Нормализация | Высокая степень нормализации |
 | Схема | Схема при записи (строгое соблюдение)|
 | Использование транзакций | Нет  |
-| Стратегия блокировки | Нет |
+| Стратегия блокировки | None |
 | Возможность обновления | Нет (обычно требуется повторное вычисление куба) |
 | Возможность добавления | Нет (обычно требуется повторное вычисление куба) |
 | Рабочая нагрузка | Большое число операций чтения, только для чтения |
