@@ -3,7 +3,7 @@
 - name: Руководство по архитектуре данных
   href: index.md
   items:
-    - name: Традиционная реляционная СУБД
+    - name: Традиционные реляционные СУБД
       items:
         - name: Основные понятия
           items:
@@ -39,6 +39,8 @@
               href: concepts/non-relational-data.md
             - name: Работа с CSV- и JSON-файлами
               href: concepts/csv-and-json.md
+            - name: Data Lake
+              href: concepts/data-lake.md
             - name: Варианты архитектуры для обработки больших данных
               href: concepts/big-data.md
             - name: Расширенная аналитика
