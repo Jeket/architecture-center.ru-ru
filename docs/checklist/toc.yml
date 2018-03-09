@@ -6,7 +6,9 @@
       href: availability.md
     - name: Разработка и операции
       href: dev-ops.md
-    - name: Устойчивость
+    - name: Устойчивость (общая)
       href: resiliency.md
+    - name: Устойчивость (службы Azure)
+      href: resiliency-per-service.md
     - name: Масштабируемость
       href: scalability.md
