@@ -3,11 +3,11 @@ title: "Выбор технологии потоковой обработки"
 description: 
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: e06f46e2951159219bd8cc430102e2ec0c5d6d4d
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.openlocfilehash: 23d9849c14964b0905300f191a41084b589fd127
+ms.sourcegitcommit: 943e671a8d522cef5ddc8c6e04848134b03c2de4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 
@@ -19,6 +19,7 @@ ms.lasthandoff: 02/14/2018
 Все следующие хранилища данных в Azure будут соответствовать основным требованиям к обработке в реальном времени:
 - [Azure Stream Analytics](/azure/stream-analytics/)
 - [HDInsight с потоковой передачей Spark](/azure/hdinsight/spark/apache-spark-streaming-overview);
+- [Apache Spark в Azure Databricks](/azure/azure-databricks/)
 - [HDInsight со Storm](/azure/hdinsight/storm/apache-storm-overview);
 - [Функции Azure](/azure/azure-functions/functions-overview)
 - [веб-задания службы приложений Azure](/azure/app-service/web-sites-create-web-jobs)
@@ -40,25 +41,25 @@ ms.lasthandoff: 02/14/2018
 В следующих таблицах перечислены основные различия в возможностях. 
 
 ### <a name="general-capabilities"></a>Общие возможности
-| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
-| --- | --- | --- | --- | --- | --- | 
-| Программируемость | Язык запросов Stream Analytics, JavaScript | Scala, Python, Java | Java, C# | C#, F#, Node.js | C#, Node.js, PHP, Java, Python |
-| Парадигма программирования | Декларативный подход | Сочетание декларативного и принудительного подхода | Императивная | Императивная | Императивная |    
-| Модель ценообразования | За единицы потоковой передачи | За час работы кластера | За час работы кластера | За выполнение функции и использование ресурсов | За час согласно плану службы приложений |  
+| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
+| --- | --- | --- | --- | --- | --- | --- | 
+| Программируемость | Язык запросов Stream Analytics, JavaScript | Scala, Python, Java | Scala, Python, Java, R | Java, C# | C#, F#, Node.js | C#, Node.js, PHP, Java, Python |
+| Парадигма программирования | Декларативный подход | Сочетание декларативного и принудительного подхода | Сочетание декларативного и принудительного подхода | Императивная | Императивная | Императивная |    
+| Модель ценообразования | [Единицы потоковой передачи](https://azure.microsoft.com/pricing/details/stream-analytics/) | На час работы кластера | [Единицы Databricks](https://azure.microsoft.com/pricing/details/databricks/) | На час работы кластера | За выполнение функции и использование ресурсов | За час согласно плану службы приложений |  
 
 ### <a name="integration-capabilities"></a>Возможности интеграции
-| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
-| --- | --- | --- | --- | --- | --- | 
-| Входные данные | [Входные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-inputs)  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
-| Приемники |  [Выходные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-outputs) | HDFS | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
+| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
+| --- | --- | --- | --- | --- | --- | --- | 
+| Входные данные | [Входные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-inputs)  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
+| Приемники |  [Выходные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-outputs) | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
 
 ### <a name="processing-capabilities"></a>Возможности обработки
-| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
-| --- | --- | --- | --- | --- | --- | 
-| Встроенная поддержка обработки темпоральной информации или обработки методом окна | Yes | Yes | Yes | Нет  | Нет  |
-| Форматы входных данных | Avro, JSON или CSV, данные в кодировке UTF-8 | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода |
-| Масштабируемость | [Секции запросов](/azure/stream-analytics/stream-analytics-parallelization) | Ограничивается размером кластера | Ограничивается размером кластера | До 200 экземпляров приложений-функций, обрабатываемых одновременно | Ограничивается емкостью, предоставляемой согласно плану службы приложений | 
-| Поддержка обработки событий, наступивших с задержкой, и неупорядоченных событий | Yes | Yes | Yes | Нет  | Нет  |
+| | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
+| --- | --- | --- | --- | --- | --- | --- | 
+| Встроенная поддержка обработки темпоральной информации или обработки методом окна | Yes | Yes | Yes | Yes | Нет  | Нет  |
+| Форматы входных данных | Avro, JSON или CSV, данные в кодировке UTF-8 | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода |
+| Масштабируемость | [Секции запросов](/azure/stream-analytics/stream-analytics-parallelization) | Ограничивается размером кластера | Ограничивается конфигурацией масштабирования кластера Databricks | Ограничивается размером кластера | До 200 экземпляров приложений-функций, обрабатываемых одновременно | Ограничивается емкостью, предоставляемой согласно плану службы приложений | 
+| Поддержка обработки событий, наступивших с задержкой, и неупорядоченных событий | Yes | Yes | Yes | Yes | Нет  | Нет  |
 
 См. также:
 

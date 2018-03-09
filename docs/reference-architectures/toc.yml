@@ -25,6 +25,8 @@
           href: hybrid-networking/expressroute-vpn-failover.md
         - name: Звездообразная топология
           href: hybrid-networking/hub-spoke.md
+        - name: Звездообразная топология с общими службами
+          href: hybrid-networking/shared-services.md
     - name: Управление удостоверениями
       href: identity/index.md
       items:

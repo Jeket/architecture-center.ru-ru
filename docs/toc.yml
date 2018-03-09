@@ -110,8 +110,10 @@
       href: checklist/availability.md
     - name: Разработка и операции
       href: checklist/dev-ops.md
-    - name: Устойчивость
+    - name: Устойчивость (общая)
       href: checklist/resiliency.md
+    - name: Устойчивость (службы Azure)
+      href: checklist/resiliency-per-service.md
     - name: Масштабируемость
       href: checklist/scalability.md
 - name: Проектирование для обеспечения устойчивости
@@ -132,8 +134,6 @@
       href: service-fabric/migrate-from-cloud-services.md
     - name: 'Рефакторинг приложения, перенесенного из облачных служб Azure в Azure Service Fabric'
       href: service-fabric/refactor-migrated-app.md
-    - name: Запуск Elasticsearch в Azure
-      href: elasticsearch/index.md
     - name: Расширение функциональности шаблонов Azure Resource Manager
       href: building-blocks/extending-templates/index.md
 - name: Ресурсы
