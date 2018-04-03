@@ -68,7 +68,7 @@
   href: priority-queue.md
 - name: Выравнивание нагрузки на основе очередей
   href: queue-based-load-leveling.md
-- name: Retry
+- name: Повторить попытку
   href: retry.md
 - name: '"Планировщик, агент, контролер"'
   href: scheduler-agent-supervisor.md
