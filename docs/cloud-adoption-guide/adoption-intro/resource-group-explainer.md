@@ -1,6 +1,6 @@
 ---
-title: "Пояснения. Знакомство с группой ресурсов Azure"
-description: "Описание работы группы ресурсов в Azure"
+title: Пояснения. Знакомство с группой ресурсов Azure
+description: Описание работы группы ресурсов в Azure
 author: petertay
 ms.openlocfilehash: e7c7334bd88c28f57498486bd2bed3c349565222
 ms.sourcegitcommit: 2e8b06e9c07875d65b91d5431bfd4bc465a7a242

@@ -1,6 +1,6 @@
 ---
-title: "Защита серверного веб-API в мультитенантном приложении"
-description: "Защита серверного веб-API"
+title: Защита серверного веб-API в мультитенантном приложении
+description: Защита серверного веб-API
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
@@ -272,8 +272,11 @@ public void ConfigureServices(IServiceCollection services)
 [Tailspin Surveys]: tailspin.md
 [IdentityServer3]: https://github.com/IdentityServer/IdentityServer3
 [обновлении манифестов приложения]: ./run-the-app.md#update-the-application-manifests
+[Update the application manifests]: ./run-the-app.md#update-the-application-manifests
 [о кэшировании маркеров]: token-cache.md
+[Token caching]: token-cache.md
 [регистрацию клиента]: signup.md
+[tenant sign-up]: signup.md
 [claims-transformation]: claims.md#claims-transformations
 [Authorization]: authorize.md
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance

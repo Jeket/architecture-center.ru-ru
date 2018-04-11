@@ -1,6 +1,6 @@
 ---
-title: "Создание преобразователя и сборщика свойств в шаблоне Azure Resource Manager"
-description: "В статье описано, как создать преобразователь и сборщик свойств в шаблоне Azure Resource Manager"
+title: Создание преобразователя и сборщика свойств в шаблоне Azure Resource Manager
+description: В статье описано, как создать преобразователь и сборщик свойств в шаблоне Azure Resource Manager
 author: petertay
 ms.date: 06/09/2017
 ms.openlocfilehash: 893779e652b845b3d936d11936dc767ef632fa43

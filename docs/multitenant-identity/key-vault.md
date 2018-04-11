@@ -1,6 +1,6 @@
 ---
-title: "Использование Key Vault для защиты секретов приложения"
-description: "Как использовать службу Key Vault для хранения секретов приложения"
+title: Использование Key Vault для защиты секретов приложения
+description: Как использовать службу Key Vault для хранения секретов приложения
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

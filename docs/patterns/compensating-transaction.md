@@ -1,11 +1,12 @@
 ---
-title: "Компенсирующие транзакции"
-description: "Отмена работы с выполнением серии шагов, которые вместе определяют согласованную в конечном счете операцию."
-keywords: "Конструктивный шаблон"
+title: Компенсирующие транзакции
+description: Отмена работы с выполнением серии шагов, которые вместе определяют согласованную в конечном счете операцию.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
-pnp.pattern.categories: resiliency
+pnp.pattern.categories:
+- resiliency
 ms.openlocfilehash: a822de990d6ce933024207073b110e98f8da40bf
 ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
 ms.translationtype: HT

@@ -1,6 +1,6 @@
 ---
-title: "Проверка подлинности в мультитенантных приложениях"
-description: "Проверка подлинности пользователей Azure AD в мультитенантных приложениях"
+title: Проверка подлинности в мультитенантных приложениях
+description: Проверка подлинности пользователей Azure AD в мультитенантных приложениях
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

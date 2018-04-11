@@ -1,6 +1,6 @@
 ---
-title: "Регистрация и адаптация клиентов в мультитенантных приложениях"
-description: "Адаптация клиентов в мультитенантном приложении"
+title: Регистрация и адаптация клиентов в мультитенантных приложениях
+description: Адаптация клиентов в мультитенантном приложении
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
@@ -260,4 +260,5 @@ private async Task<Tenant> SignUpTenantAsync(BaseControlContext context, TenantM
 
 [state]: http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
 [Проверка подлинности]: authenticate.md
+[Authentication]: authenticate.md
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance

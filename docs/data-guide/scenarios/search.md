@@ -1,6 +1,6 @@
 ---
-title: "Обработка текста в свободной форме для поиска"
-description: 
+title: Обработка текста в свободной форме для поиска
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
 ms.openlocfilehash: e53730bd2e179c82399e0f92b6c5ce7f451a2f46

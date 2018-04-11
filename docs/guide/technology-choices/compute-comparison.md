@@ -1,6 +1,6 @@
 ---
-title: "Критерии для выбора вычислительной службы Azure"
-description: "Сравнение вычислительных служб Azure по нескольким критериям."
+title: Критерии для выбора вычислительной службы Azure
+description: Сравнение вычислительных служб Azure по нескольким критериям.
 author: MikeWasson
 layout: LandingPage
 ms.openlocfilehash: 36b57d1fb674b5a1452a0e8208de836963b2b01b

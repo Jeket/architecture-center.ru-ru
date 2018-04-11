@@ -1,6 +1,6 @@
 ---
-title: "Роли приложений"
-description: "Выполнение авторизации с помощью ролей приложения"
+title: Роли приложений
+description: Выполнение авторизации с помощью ролей приложения
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
@@ -166,6 +166,9 @@ if (context.User.HasClaim(ClaimTypes.Role, "Admin")) { ... }
 [Tailspin]: tailspin.md
 
 [авторизации]: authorize.md
+[authorization]: authorize.md
 [обеспечении безопасности серверного веб-API]: web-api.md
+[Securing a backend web API]: web-api.md
 [манифесте приложения]: /azure/active-directory/active-directory-application-manifest/
+[application manifest]: /azure/active-directory/active-directory-application-manifest/
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance

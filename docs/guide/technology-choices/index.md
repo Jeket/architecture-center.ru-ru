@@ -1,6 +1,6 @@
 ---
-title: "Выбор подходящих технологий для приложений Azure"
-description: "Выберите подходящую технологию для приложений Azure."
+title: Выбор подходящих технологий для приложений Azure
+description: Выберите подходящую технологию для приложений Azure.
 author: MikeWasson
 layout: LandingPage
 ms.openlocfilehash: 7681aeb7a6064d06674e781292c444dba9d410f2

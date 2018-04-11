@@ -1,6 +1,6 @@
 ---
-title: "Перенос приложения облачных служб Azure в Azure Service Fabric"
-description: "Сведения о том, как перенести приложения из облачных служб Azure в Azure Service Fabric."
+title: Перенос приложения облачных служб Azure в Azure Service Fabric
+description: Сведения о том, как перенести приложения из облачных служб Azure в Azure Service Fabric.
 author: MikeWasson
 ms.date: 04/27/2017
 ms.openlocfilehash: ce9c138a6b093fb7f0329c619c75bd4f4aacc2e7

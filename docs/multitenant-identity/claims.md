@@ -1,6 +1,6 @@
 ---
-title: "Работа с удостоверениями на основе утверждений в мультитенантных приложениях"
-description: "Использование утверждений для проверки издателя и авторизации"
+title: Работа с удостоверениями на основе утверждений в мультитенантных приложениях
+description: Использование утверждений для проверки издателя и авторизации
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
@@ -117,9 +117,13 @@ ms.lasthandoff: 11/14/2017
 <!-- Links -->
 
 [параметром области]: http://nat.sakimura.org/2012/01/26/scopes-and-claims-in-openid-connect/
+[scope parameter]: http://nat.sakimura.org/2012/01/26/scopes-and-claims-in-openid-connect/
 [Справочник по токенам в Azure AD]: /azure/active-directory/active-directory-token-and-claims/
+[Supported Token and Claim Types]: /azure/active-directory/active-directory-token-and-claims/
 [Издатель]: http://openid.net/specs/openid-connect-core-1_0.html#IDToken
+[issuer]: http://openid.net/specs/openid-connect-core-1_0.html#IDToken
 [События аутентификации]: authenticate.md#authentication-events
+[Authentication events]: authenticate.md#authentication-events
 [signup]: signup.md
 [Claims-Based Authorization]: /aspnet/core/security/authorization/claims
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance

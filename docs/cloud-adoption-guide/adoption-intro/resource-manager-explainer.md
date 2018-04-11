@@ -1,6 +1,6 @@
 ---
-title: "Пояснения. Знакомство с Azure Resource Manager"
-description: "Описание принципов работы Azure Resource Manager"
+title: Пояснения. Знакомство с Azure Resource Manager
+description: Описание принципов работы Azure Resource Manager
 author: petertay
 ms.openlocfilehash: 60f09901bdc4b292abd73335b78c7d56a76f27a6
 ms.sourcegitcommit: 2e8b06e9c07875d65b91d5431bfd4bc465a7a242
