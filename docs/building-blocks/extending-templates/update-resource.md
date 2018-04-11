@@ -1,6 +1,6 @@
 ---
-title: "Обновление ресурсов в шаблоне Azure Resource Manager"
-description: "Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для обновления ресурса."
+title: Обновление ресурсов в шаблоне Azure Resource Manager
+description: Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для обновления ресурса.
 author: petertay
 ms.date: 06/09/2017
 ms.openlocfilehash: fc2565819c66ee7695224ef5793e7276e6e552e0

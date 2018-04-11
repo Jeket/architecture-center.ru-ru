@@ -1,6 +1,6 @@
 ---
-title: "Обмен данными между микрослужбами"
-description: "Обмен данными между микрослужбами"
+title: Обмен данными между микрослужбами
+description: Обмен данными между микрослужбами
 author: MikeWasson
 ms.date: 12/08/2017
 ms.openlocfilehash: aff2fb7b2be25ca32d6224cee15363880cfb1488

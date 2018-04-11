@@ -1,6 +1,6 @@
 ---
-title: "Azure для специалистов AWS"
-description: "Получите представление об учетных записях, платформе и службах Microsoft Azure. А также изучите основные общие черты и различия между AWS и платформами Azure. Используйте навыки работы с AWS в Azure."
+title: Azure для специалистов AWS
+description: Получите представление об учетных записях, платформе и службах Microsoft Azure. А также изучите основные общие черты и различия между AWS и платформами Azure. Используйте навыки работы с AWS в Azure.
 keywords: AWS experts, Azure comparison, AWS comparison, difference between azure and aws, azure and aws
 author: lbrader
 ms.date: 03/24/2017

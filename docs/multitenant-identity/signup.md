@@ -1,6 +1,6 @@
 ---
-title: "Регистрация и адаптация клиентов в мультитенантных приложениях"
-description: "Адаптация клиентов в мультитенантном приложении"
+title: Регистрация и адаптация клиентов в мультитенантных приложениях
+description: Адаптация клиентов в мультитенантном приложении
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

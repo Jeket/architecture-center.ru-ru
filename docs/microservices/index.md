@@ -1,6 +1,6 @@
 ---
-title: "Проектирование, создание и использование микрослужб в Azure с помощью Kubernetes"
-description: "Проектирование, создание и использование микрослужб в Azure"
+title: Проектирование, создание и использование микрослужб в Azure с помощью Kubernetes
+description: Проектирование, создание и использование микрослужб в Azure
 author: MikeWasson
 ms.date: 12/08/2017
 ms.openlocfilehash: 857e91a8eeefec18b459f2e66fde9a4f8bbe7b21

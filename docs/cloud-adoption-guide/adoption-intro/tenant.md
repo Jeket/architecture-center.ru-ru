@@ -1,6 +1,6 @@
 ---
-title: "Руководство. Разработка клиента Azure AD"
-description: "Руководство по разработке клиента Azure в рамках базовой стратегии внедрения облака"
+title: Руководство. Разработка клиента Azure AD
+description: Руководство по разработке клиента Azure в рамках базовой стратегии внедрения облака
 author: telmosampaio
 ms.openlocfilehash: 9ac52e9fd44bd8b9c777625002d5960f4f269be2
 ms.sourcegitcommit: 29fbcb1eec44802d2c01b6d3bcf7d7bd0bae65fc

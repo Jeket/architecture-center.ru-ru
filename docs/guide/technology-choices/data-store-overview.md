@@ -1,6 +1,6 @@
 ---
-title: "Выбор правильного хранилища данных"
-description: "Общие сведения о выборе хранилища данных в Azure"
+title: Выбор правильного хранилища данных
+description: Общие сведения о выборе хранилища данных в Azure
 author: MikeWasson
 ms.openlocfilehash: 3a5780c4a2dbd8a41e9c7bfa7f68d8a7916a7374
 ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60

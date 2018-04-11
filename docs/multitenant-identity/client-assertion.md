@@ -1,6 +1,6 @@
 ---
-title: "Получение маркеров доступа из Azure AD с помощью утверждений клиентов"
-description: "Сведения об использовании утверждений клиентов для получения маркеров доступа из Azure AD."
+title: Получение маркеров доступа из Azure AD с помощью утверждений клиентов
+description: Сведения об использовании утверждений клиентов для получения маркеров доступа из Azure AD.
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

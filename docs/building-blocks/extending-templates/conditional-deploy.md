@@ -1,6 +1,6 @@
 ---
-title: "Условное развертывание ресурсов в шаблоне Azure Resource Manager"
-description: "Расширение возможностей в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения какого-то параметра"
+title: Условное развертывание ресурсов в шаблоне Azure Resource Manager
+description: Расширение возможностей в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения какого-то параметра
 author: petertay
 ms.date: 06/09/2017
 ms.openlocfilehash: e911e7dc41b4f71ebfaf13a00f8cdbb5b4e2578b

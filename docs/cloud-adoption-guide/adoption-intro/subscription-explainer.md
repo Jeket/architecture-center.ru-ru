@@ -1,6 +1,6 @@
 ---
-title: "Пояснения. Знакомство с подпиской Azure"
-description: "Пояснения о подписках, учетных записях и предложениях Azure"
+title: Пояснения. Знакомство с подпиской Azure
+description: Пояснения о подписках, учетных записях и предложениях Azure
 author: alexbuckgit
 ms.openlocfilehash: 1650d90d6f78b46b7fe4128d2dab6a80bd6cca78
 ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb

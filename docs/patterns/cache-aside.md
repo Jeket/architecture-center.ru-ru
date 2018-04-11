@@ -1,7 +1,7 @@
 ---
-title: "Кэш на стороне"
-description: "Загрузка данных по запросу из хранилища данных в кэш."
-keywords: "Конструктивный шаблон"
+title: Кэш на стороне
+description: Загрузка данных по запросу из хранилища данных в кэш.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns

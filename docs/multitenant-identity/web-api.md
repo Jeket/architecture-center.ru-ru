@@ -1,6 +1,6 @@
 ---
-title: "Защита серверного веб-API в мультитенантном приложении"
-description: "Защита серверного веб-API"
+title: Защита серверного веб-API в мультитенантном приложении
+description: Защита серверного веб-API
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

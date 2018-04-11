@@ -1,6 +1,6 @@
 ---
-title: "Роли приложений"
-description: "Выполнение авторизации с помощью ролей приложения"
+title: Роли приложений
+description: Выполнение авторизации с помощью ролей приложения
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications

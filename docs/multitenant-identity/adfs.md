@@ -1,6 +1,6 @@
 ---
-title: "Федерация с клиентской службой AD FS"
-description: "Создание федерации с AD FS клиента в мультитенантном приложении"
+title: Федерация с клиентской службой AD FS
+description: Создание федерации с AD FS клиента в мультитенантном приложении
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
