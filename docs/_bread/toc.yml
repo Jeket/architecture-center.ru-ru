@@ -38,13 +38,9 @@
         - name: Руководство по архитектуре данных
           tocHref: /azure/architecture/data-guide
           topicHref: /azure/architecture/data-guide
+        - name: Проектирование микрослужб
+          tocHref: /azure/architecture/microservices
+          topicHref: /azure/architecture/microservices
         - name: Антишаблоны производительности
           tocHref: /azure/architecture/antipatterns
           topicHref: /azure/architecture/
-        - name: Соответствие нормативным требованиям
-          tocHref: /azure/architecture/compliance
-          topicHref: /azure/architecture/compliance
-          items:
-            - name: PCI-DSS
-              tocHref: /azure/architecture/compliance/pci-dss
-              topicHref: /azure/architecture/compliance/pci-dss

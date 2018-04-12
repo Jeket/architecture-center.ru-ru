@@ -3,56 +3,36 @@
 - name: Руководство по архитектуре данных
   href: index.md
   items:
-    - name: Традиционные реляционные СУБД
+    - name: Рабочие нагрузки традиционных реляционных СУБД
       items:
-        - name: Основные понятия
-          items:
-            - name: Реляционные данные
-              href: concepts/relational-data.md
-            - name: Данные о транзакциях
-              href: concepts/transactional-data.md
-            - name: Семантическое моделирование
-              href: concepts/semantic-modeling.md
+        - name: Обзор
+          href: relational-data/index.md
+        - name: Оперативная обработка транзакций (OLTP)
+          href: relational-data/online-transaction-processing.md
+        - name: Хранение данных
+          href: relational-data/data-warehousing.md
+        - name: Оперативная аналитическая обработка (OLAP)
+          href: relational-data/online-analytical-processing.md
+        - name: 'Извлечение, преобразование и загрузка (ETL)'
+          href: relational-data/etl.md
+    - name: Варианты архитектуры для обработки больших данных
+      items:
+        - name: Обзор
+          href: big-data/index.md
+        - name: Пакетная обработка
+          href: big-data/batch-processing.md
+        - name: Обработка в режиме реального времени
+          href: big-data/real-time-processing.md
+        - name: Машинное обучение с поддержкой масштабирования
+          href: big-data/machine-learning-at-scale.md
+        - name: Нереляционные хранилища данных
+          href: big-data/non-relational-data.md
         - name: Сценарии
           items:
-            - name: Оперативная обработка транзакций (OLTP)
-              href: scenarios/online-transaction-processing.md
-            - name: Оперативная аналитическая обработка (OLAP)
-              href: scenarios/online-analytical-processing.md
-            - name: Хранение данных
-              href: scenarios/data-warehousing.md
-            - name: 'Извлечение, преобразование и загрузка (ETL)'
-              href: scenarios/etl.md
-        - name: Выбор технологий
-          items:
-            - name: Хранилища данных
-              href: technology-choices/data-warehouses.md
-            - name: Оперативная аналитическая обработка (OLAP)
-              href: technology-choices/olap-data-stores.md
-            - name: Оперативная обработка транзакций (OLTP)
-              href: technology-choices/oltp-data-stores.md
-    - name: Большие данные и NoSQL
-      items:
-        - name: Основные понятия
-          items:
-            - name: Нереляционные хранилища данных
-              href: concepts/non-relational-data.md
-            - name: Работа с CSV- и JSON-файлами
-              href: concepts/csv-and-json.md
-            - name: Data Lake
-              href: concepts/data-lake.md
-            - name: Варианты архитектуры для обработки больших данных
-              href: concepts/big-data.md
             - name: Расширенная аналитика
-              href: concepts/advanced-analytics.md
-            - name: Машинное обучение с поддержкой масштабирования
-              href: concepts/machine-learning-at-scale.md
-        - name: Сценарии
-          items:
-            - name: Пакетная обработка
-              href: scenarios/batch-processing.md
-            - name: Обработка в режиме реального времени
-              href: scenarios/real-time-processing.md
+              href: scenarios/advanced-analytics.md
+            - name: Data Lake
+              href: scenarios/data-lake.md
             - name: Текстовый поиск со свободной формой записи
               href: scenarios/search.md
             - name: Интерактивное исследование данных
@@ -61,6 +41,8 @@
               href: scenarios/natural-language-processing.md
             - name: Решения для временных рядов
               href: scenarios/time-series.md
+            - name: Работа с CSV- и JSON-файлами
+              href: scenarios/csv-and-json.md
         - name: Выбор технологий
           items:
             - name: Хранилища аналитических данных
