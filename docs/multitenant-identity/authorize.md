@@ -1,16 +1,16 @@
 ---
-title: "Авторизация в мультитенантных приложениях"
-description: "Выполнение авторизации в мультитенантном приложении"
+title: Авторизация в мультитенантных приложениях
+description: Выполнение авторизации в мультитенантном приложении
 author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: app-roles
 pnp.series.next: web-api
-ms.openlocfilehash: 86c308d21f19bb3ac2a4a2240a9a03a504de5cf4
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 03c4d5fa10c75437a7b066534619ba9a123c350c
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="role-based-and-resource-based-authorization"></a>Авторизация на основе ролей и ресурсов
 
@@ -102,7 +102,6 @@ public IActionResult Create()
 ```csharp
 // old way
 [Authorize(Roles = "SurveyCreator")]
-
 ```
 
 Эта возможность все еще поддерживается в ASP.NET Core, но она имеет определенные недостатки по сравнению с политиками авторизации.
@@ -155,17 +154,17 @@ if (await _authorizationService.AuthorizeAsync(User, survey, Operations.Read) ==
 Ниже приведен пример из приложения Surveys. Приложение определяет несколько типов разрешений:
 
 * Администратор
-* Участник
+* участник;
 * создатель;
-* Владелец
-* читатель.
+* Владелец.
+* Читатель
 
 Приложение также определяет набор возможных операций с опросами:
 
 * Создание
 * чтение
 * Блокировка изменений
-* Удалить
+* Delete
 * Опубликовать
 * Отмена публикации
 

@@ -1,7 +1,7 @@
 ---
 title: CQRS
-description: "Вы можете разделить интерфейсы для операций считывания и записи данных."
-keywords: "Конструктивный шаблон"
+description: Вы можете разделить интерфейсы для операций считывания и записи данных.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
@@ -9,11 +9,11 @@ pnp.pattern.categories:
 - data-management
 - design-implementation
 - performance-scalability
-ms.openlocfilehash: 80f4a8880cf2212acf82dadb67b0181e1cbae099
-ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
+ms.openlocfilehash: ce8d20ae82ae7d5ba00b4bc264a5c4d90fc383bd
+ms.sourcegitcommit: ea7108f71dab09175ff69322874d1bcba800a37a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="command-and-query-responsibility-segregation-cqrs-pattern"></a>Шаблон CQRS
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/30/2018
 
 - Попробуйте применить подход CQRS в ограниченных разделах системы, где эффект от него будет заметным.
 
-- Чтобы обеспечить итоговую согласованность, традиционно шаблон CQRS дополняется шаблоном источников событий. В такой архитектуре модель записи данных сохраняет поток событий, несущий информацию о каждой команде, в хранилище постоянного пополнения. Затем на основе этих событий обновляются материализованные представления в модели для чтения. Дополнительные сведения см. в разделе о [применении источников событий совместно с CQRS](https://msdn.microsoft.com/library/dn568103.aspx#EventSourcingandCQRS).
+- Чтобы обеспечить итоговую согласованность, традиционно шаблон CQRS дополняется шаблоном источников событий. В такой архитектуре модель записи данных сохраняет поток событий, несущий информацию о каждой команде, в хранилище постоянного пополнения. Затем на основе этих событий обновляются материализованные представления в модели для чтения. Дополнительные сведения см. в разделе о [применении источников событий совместно с CQRS](/azure/architecture/patterns/cqrs#event-sourcing-and-cqrs).
 
 ## <a name="when-to-use-this-pattern"></a>Когда следует использовать этот шаблон
 

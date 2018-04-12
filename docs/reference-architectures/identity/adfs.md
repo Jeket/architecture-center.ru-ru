@@ -1,16 +1,19 @@
 ---
-title: "Реализация служб федерации Active Directory (AD FS) в Azure"
-description: "Способы реализации защищенной гибридной сетевой архитектуры с помощью авторизации AD FS в Azure.\nрекомендации,vpn-шлюз,expressroute,подсистема балансировки нагрузки,виртуальная сеть,active directory"
+title: Реализация служб федерации Active Directory (AD FS) в Azure
+description: >-
+  Способы реализации защищенной гибридной сетевой архитектуры с помощью авторизации AD FS в Azure.
+
+  рекомендации,vpn-шлюз,expressroute,подсистема балансировки нагрузки,виртуальная сеть,active directory
 author: telmosampaio
 ms.date: 11/28/2016
 pnp.series.title: Identity management
 pnp.series.prev: adds-forest
 cardTitle: Extend AD FS to Azure
-ms.openlocfilehash: b8c9ae0621c087c68d449dd13e60046104c01513
-ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
+ms.openlocfilehash: 87489b7b81cf323c221466c539ee14ea90e23c14
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="extend-active-directory-federation-services-ad-fs-to-azure"></a>Расширение служб федерации Active Directory (AD FS) в Azure
 
@@ -247,7 +250,7 @@ AD FS используют протокол HTTPS, поэтому убедите
 
 5. Перезапустите переходную среду (*ra-adfs-mgmt-vm1* в группе *ra-adfs-security-rg*), чтобы разрешить применение ее настроек DNS.
 
-6. [Получите SSL-сертификат для служб AD FS][adfs_certificates] и установите этот сертификат на виртуальных машинах AD FS. Обратите внимание, что можно подключаться к ним через переходную среду. IP-адреса: *10.0.5.4* и *10.0.5.5*. Именем пользователя по умолчанию является *contoso\testuser*, а паролем — *AweSome@PW*.
+6. [Получите SSL-сертификат для служб AD FS][adfs_certificates] и установите этот сертификат на виртуальных машинах AD FS. Обратите внимание, что можно подключаться к ним через переходную среду. IP-адреса: <em>10.0.5.4</em> и <em>10.0.5.5</em>. Именем пользователя по умолчанию является <em>contoso\testuser</em>, а паролем — <em>AweSome@PW</em>.
    
    > [!NOTE]
    > Комментарии в скрипте Deploy-ReferenceArchitecture.ps1 на этом этапе содержат подробные инструкции по созданию самозаверяющего тестового сертификата и полномочий с помощью команды `makecert`. Однако выполните эти действия только в виде **тестирования** и не используйте сертификаты, созданные с помощью makecert, в рабочей среде.
@@ -260,7 +263,7 @@ AD FS используют протокол HTTPS, поэтому убедите
     .\Deploy-ReferenceArchitecture.ps1 <subscription id> <location> Adfs
     ``` 
 
-8. В переходной среде перейдите по адресу `https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm`, чтобы проверить установку AD FS (может появиться предупреждение о сертификате, которое можно игнорировать в этом тестировании). Убедитесь, что отображается страница входа в корпорацию Contoso. Выполните вход с именем пользователя *contoso\testuser* и паролем — *AweS0me@PW*.
+8. В переходной среде перейдите по адресу `https://adfs.contoso.com/adfs/ls/idpinitiatedsignon.htm`, чтобы проверить установку AD FS (может появиться предупреждение о сертификате, которое можно игнорировать в этом тестировании). Убедитесь, что отображается страница входа в корпорацию Contoso. Выполните вход с именем пользователя <em>contoso\testuser</em> и паролем — <em>AweS0me@PW</em>.
 
 9. Установите SSL-сертификат на виртуальных машинах прокси-сервера AD FS. IP-адреса: *10.0.6.4* и *10.0.6.5*.
 
@@ -319,5 +322,5 @@ AD FS используют протокол HTTPS, поэтому убедите
 [github]: https://github.com/mspnp/reference-architectures/tree/master/identity/adfs
 [adfs_certificates]: https://technet.microsoft.com/library/dn781428(v=ws.11).aspx
 [considerations]: ./considerations.md
-[visio-download]: https://archcenter.azureedge.net/cdn/identity-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/identity-architectures.vsdx
 [0]: ./images/adfs.png "Безопасная гибридная сетевая архитектура с Active Directory"

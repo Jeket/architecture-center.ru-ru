@@ -1,19 +1,19 @@
 ---
-title: "Выбор технологии потоковой обработки"
-description: 
+title: Выбор технологии потоковой обработки
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 23d9849c14964b0905300f191a41084b589fd127
-ms.sourcegitcommit: 943e671a8d522cef5ddc8c6e04848134b03c2de4
+ms.openlocfilehash: 29e4cd3d5ea6e10f036bfe226152290512dafa65
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 
 В этой статье сравниваются варианты технологий потоковой обработки в реальном времени в Azure.
 
-При потоковой обработке в реальном времени система получает сообщения из очередей или файлового хранилища, затем обрабатывает их и пересылает результат в другую очередь сообщений, файловое хранилище или базу данных. Процесс обработки может включать такие задачи, как запрашивание, фильтрация и агрегирование сообщений. Системы потоковой обработки должны иметь возможность получать неограниченное число потоков данных и выводить результаты с минимальной задержкой. Дополнительные сведения см. в статье [об обработке в реальном времени](../scenarios/real-time-processing.md).
+При потоковой обработке в реальном времени система получает сообщения из очередей или файлового хранилища, затем обрабатывает их и пересылает результат в другую очередь сообщений, файловое хранилище или базу данных. Процесс обработки может включать такие задачи, как запрашивание, фильтрация и агрегирование сообщений. Системы потоковой обработки должны иметь возможность получать неограниченное число потоков данных и выводить результаты с минимальной задержкой. Дополнительные сведения см. в статье [об обработке в реальном времени](../big-data/real-time-processing.md).
 
 ## <a name="what-are-your-options-when-choosing-a-technology-for-real-time-processing"></a>Варианты при выборе технологии для обработки в реальном времени
 Все следующие хранилища данных в Azure будут соответствовать основным требованиям к обработке в реальном времени:
@@ -41,6 +41,7 @@ ms.lasthandoff: 03/05/2018
 В следующих таблицах перечислены основные различия в возможностях. 
 
 ### <a name="general-capabilities"></a>Общие возможности
+
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
 | Программируемость | Язык запросов Stream Analytics, JavaScript | Scala, Python, Java | Scala, Python, Java, R | Java, C# | C#, F#, Node.js | C#, Node.js, PHP, Java, Python |
@@ -48,12 +49,14 @@ ms.lasthandoff: 03/05/2018
 | Модель ценообразования | [Единицы потоковой передачи](https://azure.microsoft.com/pricing/details/stream-analytics/) | На час работы кластера | [Единицы Databricks](https://azure.microsoft.com/pricing/details/databricks/) | На час работы кластера | За выполнение функции и использование ресурсов | За час согласно плану службы приложений |  
 
 ### <a name="integration-capabilities"></a>Возможности интеграции
+
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
 | Входные данные | [Входные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-inputs)  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
 | Приемники |  [Выходные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-outputs) | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
 
 ### <a name="processing-capabilities"></a>Возможности обработки
+
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
 | Встроенная поддержка обработки темпоральной информации или обработки методом окна | Yes | Yes | Yes | Yes | Нет  | Нет  |
@@ -65,4 +68,4 @@ ms.lasthandoff: 03/05/2018
 
 - [Выбор технологии приема сообщений в реальном времени в Azure](./real-time-ingestion.md)
 - [Выбор платформы потоковой аналитики: сравнение Apache Storm и Azure Stream Analytics](/azure/stream-analytics/stream-analytics-comparison-storm)
-- [Обработка в режиме реального времени](../scenarios/real-time-processing.md)
+- [Обработка в режиме реального времени](../big-data/real-time-processing.md)

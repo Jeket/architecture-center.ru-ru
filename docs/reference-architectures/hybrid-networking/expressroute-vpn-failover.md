@@ -1,16 +1,16 @@
 ---
-title: "Реализация архитектуры высокодоступной гибридной сети"
-description: "Инструкции по реализации архитектуры защищенной сети типа \"сеть — сеть\", которая охватывает виртуальную сеть Azure и локальную сеть, подключенные с помощью ExpressRoute с отработкой отказа VPN-шлюза."
+title: Реализация архитектуры высокодоступной гибридной сети
+description: Инструкции по реализации архитектуры защищенной сети типа "сеть — сеть", которая охватывает виртуальную сеть Azure и локальную сеть, подключенные с помощью ExpressRoute с отработкой отказа VPN-шлюза.
 author: telmosampaio
 ms.date: 11/28/2016
 pnp.series.title: Connect an on-premises network to Azure
 pnp.series.prev: expressroute
 cardTitle: Improving availability
-ms.openlocfilehash: 4c101f17e5e91085b61178f9efb2bc5acb61189c
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 81298215c814cee805eff57fdc28f7c127148b5f
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-expressroute-with-vpn-failover"></a>Подключение локальной сети к Azure с помощью ExpressRoute с отработкой отказа VPN
 
@@ -24,13 +24,13 @@ ms.lasthandoff: 11/14/2017
 
 ## <a name="architecture"></a>Архитектура 
 
-Архитектура состоит из следующих компонентов.
+Архитектура состоит из следующих компонентов:
 
 * **Локальная сеть.** Частная локальная сеть, работающая внутри организации.
 
 * **VPN-устройство.** Устройство или служба, предоставляющая возможность внешнего подключения к локальной сети. VPN-устройство может быть аппаратным устройством или программным решением, таким как служба маршрутизации и удаленного доступа (RRAS) в Windows Server 2012. Список поддерживаемых VPN-устройств и информацию о настройке выбранных VPN-устройств для подключения к Azure см. в статье [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз][vpn-appliance].
 
-* **Канал ExpressRoute.** Это канал уровня 2 или 3, который предоставляет поставщик подключения. Он позволяет соединить локальную сеть с Azure через пограничные маршрутизаторы. Канал использует инфраструктуру оборудования, настроенную поставщиком подключения.
+* **Канал ExpressRoute.** Это канал уровня 2 или 3, который предоставляет поставщик подключения. Он позволяет подключиться к локальной сети с Azure через пограничные маршрутизаторы. Канал использует инфраструктуру оборудования, настроенную поставщиком подключения.
 
 * **Шлюз виртуальной сети ExpressRoute.** Шлюз виртуальной сети ExpressRoute позволяет виртуальной сети подключаться к каналу ExpressRoute, который используется для подключения к вашей локальной сети.
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/14/2017
 
 * **Подсеть шлюза.** Шлюзы виртуальных сетей хранятся в одной подсети.
 
-* **Облачное приложение.** Приложение, размещенное в Azure. Оно может содержать несколько уровней с несколькими подсетями, подключенными через подсистемы балансировки нагрузки Azure. Дополнительные сведения об инфраструктуре приложений см. в статьях [Running Windows VM workloads][windows-vm-ra] (Выполнение рабочих нагрузок виртуальных машин Windows) и [Running Linux VM workloads][linux-vm-ra] (Выполнение рабочих нагрузок виртуальных машин Linux).
+* **Облачное приложение.** Приложение, размещенное в Azure. Оно может содержать несколько уровней с несколькими подсетями, подключенными через подсистемы балансировки нагрузки Azure. Дополнительные сведения об инфраструктуре приложений см. в статьях [Запуск рабочих нагрузок на виртуальных машинах Windows][windows-vm-ra] и [Запуск рабочих нагрузок на виртуальной машине Linux][linux-vm-ra].
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -134,5 +134,5 @@ Remove-AzureRmVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <
 [guidance-expressroute]: ./expressroute.md
 [guidance-vpn]: ./vpn.md
 [best-practices-security]: /azure/best-practices-network-security
-[visio-download]: https://archcenter.azureedge.net/cdn/hybrid-network-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/hybrid-network-architectures.vsdx
 [0]: ./images/expressroute-vpn-failover.png "Архитектура высокодоступной гибридной сети с использованием ExpressRoute и VPN-шлюза"

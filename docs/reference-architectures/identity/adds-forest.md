@@ -1,17 +1,20 @@
 ---
-title: "Создание леса ресурсов доменных служб Active Directory в Azure"
-description: "Инструкции по созданию доверенного домена Active Directory в Azure.\nрекомендации,vpn-шлюз,expressroute,подсистема балансировки нагрузки,виртуальная сеть,active directory"
+title: Создание леса ресурсов доменных служб Active Directory в Azure
+description: >-
+  Инструкции по созданию доверенного домена Active Directory в Azure.
+
+  рекомендации,vpn-шлюз,expressroute,подсистема балансировки нагрузки,виртуальная сеть,active directory
 author: telmosampaio
 ms.date: 11/28/2016
 pnp.series.title: Identity management
 pnp.series.prev: adds-extend-domain
 pnp.series.next: adfs
 cardTitle: Create an AD DS forest in Azure
-ms.openlocfilehash: b946afa91e8bd303c51f97e18be170c4105cc8c5
-ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
+ms.openlocfilehash: e32a6420821e70c84e77d2c39614f0c45efbb7e2
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="create-an-active-directory-domain-services-ad-ds-resource-forest-in-azure"></a>Создание леса ресурсов доменных служб Active Directory (AD DS) в Azure
 
@@ -117,8 +120,8 @@ Active Directory автоматически масштабируется для 
      
 5. При использовании имитированной локальной конфигурации настройте входящее отношение доверия.
    
-   1. Подключитесь к полю перехода (*ra-adtrust-mgmt-vm1* в группе ресурсов *ra-adtrust-security-rg*). Войдите в систему в качестве тестового пользователя *testuser*, используя пароль *AweS0me@PW*.
-   2. В окне перехода откройте сеанс RDP на первой виртуальной машине в домене *contoso.com* (локальный домен). Эта виртуальная машина имеет IP-адрес 192.168.0.4. Именем пользователя является *contoso\testuser*, а паролем — *AweS0me@PW*.
+   1. Подключитесь к полю перехода (<em>ra-adtrust-mgmt-vm1</em> в группе ресурсов <em>ra-adtrust-security-rg</em>). Войдите в систему в качестве тестового пользователя <em>testuser</em>, используя пароль <em>AweS0me@PW</em>.
+   2. В окне перехода откройте сеанс RDP на первой виртуальной машине в домене <em>contoso.com</em> (локальный домен). Эта виртуальная машина имеет IP-адрес 192.168.0.4. Именем пользователя является <em>contoso\testuser</em>, а паролем — <em>AweS0me@PW</em>.
    3. Скачайте сценарий [incoming-trust.ps1][incoming-trust] и запустите его, чтобы создать входящее отношение доверия из домена *treyresearch.com*.
 
 6. Если вы используете собственную локальную инфраструктуру, сделайте следующее:
@@ -127,7 +130,7 @@ Active Directory автоматически масштабируется для 
    2. Измените его и замените значения переменной `$TrustedDomainName` именем собственного домена.
    3. Выполните скрипт.
 
-7. В поле перехода подключитесь к первой виртуальной машине в домене *treyresearch.com* (домен в облаке). Эта виртуальная машина имеет IP-адрес 10.0.4.4. Именем пользователя является *treyresearch\testuser*, а паролем *AweS0me@PW*.
+7. В поле перехода подключитесь к первой виртуальной машине в домене <em>treyresearch.com</em> (домен в облаке). Эта виртуальная машина имеет IP-адрес 10.0.4.4. Именем пользователя является <em>treyresearch\testuser</em>, а паролем <em>AweS0me@PW</em>.
 
 8. Скачайте сценарий [outgoing-trust.ps1][outgoing-trust] и запустите его, чтобы создать входящее отношение доверия из домена *treyresearch.com*. Если используются собственные локальные компьютеры, сначала нужно изменить сценарий. Задайте переменную `$TrustedDomainName` для имени вашего домена в локальной среде и укажите IP-адреса серверов доменных служб Active Directory для этого домена в переменной `$TrustedDomainDnsIpAddresses`.
 
@@ -162,5 +165,5 @@ Active Directory автоматически масштабируется для 
 [standby-operations-masters]: https://technet.microsoft.com/library/cc794737(v=ws.10).aspx
 [outgoing-trust]: https://raw.githubusercontent.com/mspnp/reference-architectures/master/identity/adds-forest/extensions/outgoing-trust.ps1
 [verify-a-trust]: https://technet.microsoft.com/library/cc753821.aspx
-[visio-download]: https://archcenter.azureedge.net/cdn/identity-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/identity-architectures.vsdx
 [0]: ./images/adds-forest.png "Безопасная гибридная сетевая архитектура с несколькими доменами Active Directory"

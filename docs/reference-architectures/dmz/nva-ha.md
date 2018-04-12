@@ -1,22 +1,22 @@
 ---
-title: "Развертывание высокодоступных виртуальных сетевых модулей"
-description: "Инструкция по развертыванию высокодоступных виртуальных сетевых модулей."
+title: Развертывание высокодоступных виртуальных сетевых модулей
+description: Инструкция по развертыванию высокодоступных виртуальных сетевых модулей.
 author: telmosampaio
 ms.date: 12/06/2016
 pnp.series.title: Network DMZ
 pnp.series.prev: secure-vnet-dmz
 cardTitle: Deploy highly available network virtual appliances
-ms.openlocfilehash: 844c87f535d2a8cb415489cb2c8e840f8c585d7d
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: fe279eea3f9cb024d6c6c14943013b9b9a87bc9c
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="deploy-highly-available-network-virtual-appliances"></a>Развертывание высокодоступных виртуальных сетевых модулей
 
 В этой статье показано, как развернуть набор виртуальных сетевых модулей (NVA) для обеспечения высокой доступности в Azure. Виртуальный сетевой модуль обычно используется для управления передачей сетевого трафика из сети периметра к другим сетям и подсетям. Дополнительные сведения о реализации сети периметра в Azure см. в статье [Облачные службы Microsoft Cloud и сетевая безопасность][cloud-security]. Статья включает примеры архитектуры для передачи входящего и исходящего трафика по отдельности и вместе. 
 
-**Необходимые условия.** В этой статье предполагается, что вы имеете базовое представление о сети Azure, [подсистеме балансировки нагрузки Azure][lb-overview] и [определяемых пользователем маршрутах][udr-overview]. 
+<strong>Необходимые условия.</strong> В этой статье предполагается, что вы имеете базовое представление о сети Azure, [подсистеме балансировки нагрузки Azure][lb-overview] и [определяемых пользователем маршрутах][udr-overview]. 
 
 
 ## <a name="architecture-diagrams"></a>Схемы архитектуры
@@ -88,7 +88,7 @@ ms.lasthandoff: 11/14/2017
 
 <!-- instructions for deploying this solution here --> 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Узнайте, как [внедрить сеть периметра между Azure и локальным центром данных][dmz-on-prem] с помощью NVA уровня 7.
 * Узнайте, как [внедрить сеть периметра между Azure и Интернетом][dmz-internet] с помощью NVA уровня 7.
 

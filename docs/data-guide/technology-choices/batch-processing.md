@@ -1,13 +1,13 @@
 ---
-title: "Выбор технологии пакетной обработки"
-description: 
+title: Выбор технологии пакетной обработки
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: bfb850ee8e9d8fd41927b4ca3b612e15b5ae6b11
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.openlocfilehash: 0117798af82f2caa6704dc86e88be57f09c381ea
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="choosing-a-batch-processing-technology-in-azure"></a>Выбор технологии пакетной обработки в Azure
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/14/2018
 
 | | Аналитика озера данных Azure | Хранилище данных SQL Azure | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
 | --- | --- | --- | --- | --- | --- |
-| Управляемая служба | Yes | Yes | Да <sup>1</sup> | Да <sup>1</sup> | Да <sup>1</sup> |
+| Является управляемой службой | Yes | Yes | Да <sup>1</sup> | Да <sup>1</sup> | Да <sup>1</sup> |
 | Поддержка приостановки вычислительных ресурсов | Нет  | Yes | Нет  | Нет  | Нет  |
 | Реляционное хранилище данных | Yes | Yes | Нет  | Нет  | Нет  |
 | Программируемость | U-SQL | T-SQL | Python, Scala, Java, R | HiveQL | HiveQL |
@@ -53,8 +53,9 @@ ms.lasthandoff: 02/14/2018
 | Модель ценообразования | За пакетное задание | За час работы кластера | За час работы кластера | За час работы кластера | За час работы кластера |  
 
 [1] Настройка и масштабирование вручную.
- 
+
 ### <a name="integration-capabilities"></a>Возможности интеграции
+
 | | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
 | --- | --- | --- | --- | --- | --- |
 | Доступ из Azure Data Lake Store | Yes | Yes | Yes | Yes | Yes |
@@ -62,6 +63,7 @@ ms.lasthandoff: 02/14/2018
 | Отправка запросов из внешних реляционных хранилищ | Yes | Нет  | Yes | Нет  | Нет  |
 
 ### <a name="scalability-capabilities"></a>Масштабируемость
+
 | | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
 | --- | --- | --- | --- | --- | --- |
 | Степень детализации при горизонтальном масштабировании  | По заданиям | По кластерам | По кластерам | По кластерам | По кластерам |
@@ -69,6 +71,7 @@ ms.lasthandoff: 02/14/2018
 | Выполняющееся в памяти кэширование данных | Нет  | Yes | Yes | Нет  | Yes | 
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
+
 | | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | Apache Hive в HDInsight | Hive LLAP в HDInsight |
 | --- | --- | --- | --- | --- | --- |
 | Authentication  | Azure Active Directory (Azure AD) | SQL / Azure AD | Нет  | Локальные средства или Azure AD <sup>1</sup> | Локальные средства или Azure AD <sup>1</sup> |
@@ -79,7 +82,7 @@ ms.lasthandoff: 02/14/2018
 | Поддержка брандмауэров | Yes | Yes | Yes | Да <sup>3</sup> | Да <sup>3</sup> |
 | Динамическое маскирование данных | Нет  | Нет  | Нет  | Да <sup>1</sup> | Да <sup>1</sup> |
 
-[1] [Требуется использовать присоединенный к домену кластер HDInsight](/azure/hdinsight/domain-joined/apache-domain-joined-introduction).
+[1] Требуется использовать [присоединенный к домену кластер HDInsight](/azure/hdinsight/domain-joined/apache-domain-joined-introduction).
 
 [2] Требуется использовать прозрачное шифрование данных (TDE) для шифрования и расшифровки неактивных данных.
 

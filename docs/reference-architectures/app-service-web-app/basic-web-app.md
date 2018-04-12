@@ -1,14 +1,14 @@
 ---
-title: "Базовое веб-приложение"
-description: "Рекомендуемые архитектуры для базовых веб-приложений, работающих в Microsoft Azure."
+title: Базовое веб-приложение
+description: Рекомендуемые архитектуры для базовых веб-приложений, работающих в Microsoft Azure.
 author: MikeWasson
 ms.date: 12/12/2017
 cardTitle: Basic web application
-ms.openlocfilehash: 38b0739cc61d679742b610b99e92aaad8d3b394d
-ms.sourcegitcommit: 2123c25b1a0b5501ff1887f98030787191cf6994
+ms.openlocfilehash: efd831b1f54fa0662bdfa9874318e7b314172215
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="basic-web-application"></a>Базовое веб-приложение
 [!INCLUDE [header](../../_includes/header.md)]
@@ -157,7 +157,7 @@ ms.lasthandoff: 03/08/2018
 
 * Используйте [колонку устранения неполадок][troubleshoot-blade] на портале Azure, чтобы найти решения для распространенных проблем.
 * Включите [потоковую передачу журналов][web-app-log-stream], чтобы получать данные из журналов практически в режиме реального времени.
-* [Панель мониторинга Kudu][kudu] предоставляет несколько средств для мониторинга и отладки приложения. Дополнительные сведения см. в статье [Azure Websites online tools you should know about][kudu] (Интерактивные инструменты веб-сайтов Azure, о которых вам нужно знать). Панель мониторинга Kudu можно открыть на портале Azure. Для этого откройте колонку приложения и щелкните **Средства**, затем выберите **Kudu**.
+* [Панель мониторинга Kudu][kudu] предоставляет несколько средств для мониторинга и отладки приложения. Дополнительные сведения см. в статье [Azure Websites online tools you should know about][kudu] (Интерактивные инструменты веб-сайтов Azure, о которых вам нужно знать). Панель мониторинга Kudu можно открыть на портале Azure. Для этого откройте колонку приложения и щелкните <strong>Средства</strong>, затем выберите <strong>Kudu</strong>.
 * Если вы используете Visual Studio, изучите статью [Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio][troubleshoot-web-app], в которой предлагаются советы по отладке и устранению неполадок.
 
 ## <a name="security-considerations"></a>Вопросы безопасности
@@ -252,7 +252,7 @@ New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <r
 [ssl-cert]: /azure/app-service-web/web-sites-purchase-ssl-web-site
 [troubleshoot-blade]: https://azure.microsoft.com/updates/self-service-troubleshooting-for-app-service-web-apps-customers/
 [troubleshoot-web-app]: /azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio
-[visio-download]: https://archcenter.azureedge.net/cdn/app-service-reference-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/app-service-reference-architectures.vsdx
 [vsts]: https://www.visualstudio.com/features/vso-cloud-load-testing-vs.aspx
 [web-app-autoscale]: /azure/app-service-web/web-sites-scale
 [web-app-backup]: /azure/app-service-web/web-sites-backup

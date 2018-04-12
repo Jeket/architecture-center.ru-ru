@@ -1,16 +1,17 @@
 ---
-title: "Автоматическое выключение"
-description: "Обработка ошибок, которая может занять разное количество времени при подключении к удаленной службе или ресурсу."
-keywords: "конструктивный шаблон"
+title: Автоматическое выключение
+description: Обработка ошибок при подключении к удаленной службе или ресурсу, устранение которых может занять непредсказуемое количество времени.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
-pnp.pattern.categories: resiliency
-ms.openlocfilehash: ce110d0bbda600575d328895f2feca5aa253479d
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+pnp.pattern.categories:
+- resiliency
+ms.openlocfilehash: 0f93c1ef664c8e7385895e3854835699f674ee0e
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="circuit-breaker-pattern"></a>Шаблон автоматического выключения
 
@@ -212,7 +213,7 @@ public class CircuitBreaker
         bool lockTaken = false;
         try
         {
-          Monitor.TryEnter(halfOpenSyncObject, ref lockTaken)
+          Monitor.TryEnter(halfOpenSyncObject, ref lockTaken);
           if (lockTaken)
           {
             // Set the circuit breaker state to HalfOpen.

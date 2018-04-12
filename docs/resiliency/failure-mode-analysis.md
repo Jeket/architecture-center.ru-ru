@@ -1,15 +1,15 @@
 ---
-title: "Анализ режима сбоя"
-description: "Эта статья содержит сведения о выполнении анализа режима сбоя для облачных решений на платформе Azure."
+title: Анализ режима сбоя
+description: Эта статья содержит сведения о выполнении анализа режима сбоя для облачных решений на платформе Azure.
 author: MikeWasson
 ms.date: 03/24/2017
 ms.custom: resiliency
 pnp.series.title: Design for Resiliency
-ms.openlocfilehash: aca2088cb007728c5717a968969000c0a19bcd07
-ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
+ms.openlocfilehash: 8786c411249267e502003a90d5f2ff5e4c786803
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="failure-mode-analysis"></a>Анализ режима сбоя
 [!INCLUDE [header](../_includes/header.md)]
@@ -122,7 +122,7 @@ ms.lasthandoff: 01/30/2018
 ### <a name="web-or-worker-roles-are-unexpectedlybeing-shut-down"></a>Веб-роли или рабочие роли неожиданно завершают работу.
 **Обнаружение.** Появляется событие [RoleEnvironment.Stopping][RoleEnvironment.Stopping].
 
-**Восстановление**. Переопределите метод [RoleEntryPoint.OnStop][RoleEntryPoint.OnStop], чтобы выполнить корректную очистку. Дополнительные сведения см. в записи блога [The Right Way to Handle Azure OnStop Events][onstop-events] (Правильный способ обработки событий Azure OnStop).
+<strong>Восстановление</strong>. Переопределите метод [RoleEntryPoint.OnStop][RoleEntryPoint.OnStop], чтобы выполнить корректную очистку. Дополнительные сведения см. в записи блога [The Right Way to Handle Azure OnStop Events][onstop-events] (Правильный способ обработки событий Azure OnStop).
 
 ## <a name="cosmos-db"></a>База данных Cosmos 
 ### <a name="reading-data-fails"></a>Считывание данных завершается сбоем.

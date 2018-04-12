@@ -1,17 +1,17 @@
 ---
-title: "Масштабируемое веб-приложение"
-description: "Повышение масштабируемости в веб-приложении, работающем в Microsoft Azure."
+title: Масштабируемое веб-приложение
+description: Повышение масштабируемости в веб-приложении, работающем в Microsoft Azure.
 author: MikeWasson
 pnp.series.title: Azure App Service
 pnp.series.prev: basic-web-app
 pnp.series.next: multi-region-web-app
 ms.date: 11/23/2016
 cardTitle: Improve scalability
-ms.openlocfilehash: 4ad12fb041a79fcb706530c9968fd0f96211d7f9
-ms.sourcegitcommit: a7aae13569e165d4e768ce0aaaac154ba612934f
+ms.openlocfilehash: 6459acebfa25491332e2118b9e8fe51d5fc79ff3
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="improve-scalability-in-a-web-application"></a>Повышение масштабируемости в веб-приложении
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/30/2018
 * **Веб-задание.** Используйте [веб-задания Azure][webjobs], чтобы выполнять длительные задачи в фоновом режиме. Веб-задания запускаются по расписанию, непрерывно или в ответ на срабатывание триггера, например на помещение сообщения в очередь. Веб-задание выполняется как фоновый процесс в контексте приложения службы приложений.
 * **Очередь.** В архитектуре, показанной здесь, приложение выполняет запрос фоновых заданий путем помещения сообщения в очередь [хранилища очередей Azure][queue-storage]. Сообщение вызывает функцию в веб-задании. В качестве альтернативы можно использовать очереди служебной шины. Сравнение см. в статье [Очереди службы хранилища и очереди служебной шины: сходства и различия][queues-compared].
 * **Кэш.** Храните полустатические данные в [кэше Redis для Azure][azure-redis].  
-* **CDN.** Используйте [сеть доставки содержимого Azure][azure-cdn] (CDN), чтобы выполнять кэширование общедоступного содержимого с меньшей задержкой и более быстрой доставкой содержимого.
+* <strong>CDN.</strong> Используйте [сеть доставки содержимого Azure][azure-cdn] (CDN), чтобы выполнять кэширование общедоступного содержимого с меньшей задержкой и более быстрой доставкой содержимого.
 * **Хранилище данных.** Используйте [базу данных SQL Azure][sql-db] для реляционных данных. Для нереляционных данных рассмотрите возможность использования хранилища NoSQL (например, [Cosmos DB][cosmosdb]).
 * **Поиск Azure.** Используйте [Поиск Azure][azure-search], чтобы добавлять функции поиска (такие как, например, поисковые запросы, поиск нечетких соответствий и языковой поиск). Служба "Поиск Azure" обычно используется в сочетании с другим хранилищем данных, особенно если первичное хранилище данных требует строгой согласованности. При использовании этого подхода храните достоверные данные в другом хранилище данных и используйте другой индекс поиска в службе "Поиск Azure". Служба "Поиск Azure" может также использоваться для консолидации одного индекса поиска из нескольких хранилищ данных.  
 * **Электронные и текстовые сообщения.** Используйте службы сторонних разработчиков, например SendGrid или Twilio, чтобы отправлять сообщения электронной почты или SMS-сообщения вместо создания этой функции непосредственно в данном приложении.
@@ -148,7 +148,7 @@ ms.lasthandoff: 01/30/2018
 [sql-elastic]: /azure/sql-database/sql-database-elastic-scale-introduction
 [sql-encryption]: https://msdn.microsoft.com/library/dn948096.aspx
 [tm]: https://azure.microsoft.com/services/traffic-manager/
-[visio-download]: https://archcenter.azureedge.net/cdn/app-service-reference-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/app-service-reference-architectures.vsdx
 [web-app-multi-region]: ./multi-region.md
 [webjobs-guidance]: ../../best-practices/background-jobs.md
 [webjobs]: /azure/app-service/app-service-webjobs-readme

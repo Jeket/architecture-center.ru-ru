@@ -1,17 +1,17 @@
 ---
-title: "Подключение локальной сети к Azure с помощью ExpressRoute"
-description: "Инструкции по реализации архитектуры защищенной сети \"сеть — сеть\", которая включает виртуальную сеть Azure и локальную сеть, подключенные с помощью Azure ExpressRoute."
+title: Подключение локальной сети к Azure с помощью ExpressRoute
+description: Инструкции по реализации архитектуры защищенной сети "сеть — сеть", которая включает виртуальную сеть Azure и локальную сеть, подключенные с помощью Azure ExpressRoute.
 author: telmosampaio
 ms.date: 11/28/2016
 pnp.series.title: Connect an on-premises network to Azure
 pnp.series.next: expressroute-vpn-failover
 pnp.series.prev: vpn
 cardTitle: ExpressRoute
-ms.openlocfilehash: 671be5118faaefab5ba5348de81642d8a8124b59
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: ada07f399925da6da28b24260f5c73f1e106fd7d
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-expressroute"></a>Подключение локальной сети к Azure с помощью ExpressRoute
 
@@ -153,7 +153,7 @@ Remove-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<re
 
 * увеличивает ограничение на число маршрутов для общедоступных и частных пирингов; 
 * увеличивает число связей виртуальных сетей на канал ExpressRoute; 
-* обеспечивает глобальные подключения для служб.
+* глобальные подключения для служб.
 
 Дополнительные сведения см. на странице [цен на ExpressRoute][expressroute-pricing]. 
 
@@ -278,7 +278,7 @@ ExpressRoute работает на уровне 3. Угрозы на уровн�
 [expressroute-pricing]: https://azure.microsoft.com/pricing/details/expressroute/
 [expressroute-limits]: /azure/azure-subscription-service-limits#networking-limits
 [azurect]: https://github.com/Azure/NetworkMonitoring/tree/master/AzureCT
-[visio-download]: https://archcenter.azureedge.net/cdn/hybrid-network-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/hybrid-network-architectures.vsdx
 [er-circuit-parameters]: https://github.com/mspnp/reference-architectures/tree/master/hybrid-networking/expressroute/parameters/expressRouteCircuit.parameters.json
 [azure-powershell-download]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
 [azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/

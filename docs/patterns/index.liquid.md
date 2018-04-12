@@ -1,12 +1,12 @@
 ---
-title: "Конструктивные шаблоны облачных решений"
-description: "Конструктивные шаблоны облачных решений для Microsoft Azure"
-keywords: "Таблицы Azure"
-ms.openlocfilehash: 264b8296a428f9c1b87314b782efcabc89cf010f
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+title: Конструктивные шаблоны облачных решений
+description: Конструктивные шаблоны облачных решений для Microsoft Azure
+keywords: Таблицы Azure
+ms.openlocfilehash: 4747c896fc6fc5866be782d76c5290d6b49ad451
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="cloud-design-patterns"></a>Конструктивные шаблоны облачных решений
 
@@ -29,5 +29,7 @@ ms.lasthandoff: 11/14/2017
 ## <a name="catalog-of-patterns"></a>Каталог шаблонов
 
 | Модель | Сводка |
-| ------- | ------- |
+|---------|---------|
+|         |         |
+
 {%- for pattern in patterns %} | [{{ pattern.title }}](./{{ pattern.file }}) | {{ pattern.description }} | {%- endfor %}

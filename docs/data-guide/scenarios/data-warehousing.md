@@ -1,13 +1,13 @@
 ---
-title: "Хранение данных и киоски данных"
-description: 
+title: Хранение данных и киоски данных
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
 ms.openlocfilehash: eec883c68cf94637c3061814d0841c73b58d7e52
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/31/2018
 ---
 # <a name="data-warehousing-and-data-marts"></a>Хранение данных и киоски данных
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/14/2018
 * [база данных SQL Azure;](/azure/sql-database/)
 * [SQL Server на виртуальной машине](/sql/sql-server/sql-server-technical-documentation);
 * [хранилище данных Azure](/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is);
-* [Apache Hive в HDInsight](/azure/hdinsight/hadoop/hdinsight-use-hive);
+* [Apache Hive в HDInsight;](/azure/hdinsight/hadoop/hdinsight-use-hive)
 * [Interactive Query (Hive LLAP) в HDInsight](/azure/hdinsight/interactive-query/apache-interactive-query-get-started).
 
 

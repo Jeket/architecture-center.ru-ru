@@ -1,14 +1,14 @@
 ---
-title: "Конкретные рекомендации по использованию механизма повторов"
-description: "Конкретные рекомендации по настройке механизма повторов."
+title: Конкретные рекомендации по использованию механизма повторов
+description: Конкретные рекомендации по настройке механизма повторов.
 author: dragon119
 ms.date: 07/13/2016
 pnp.series.title: Best Practices
-ms.openlocfilehash: 6bb623bd8be89573178f250570407bf83d62c098
-ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
+ms.openlocfilehash: 332f96e73def360926b6a934bbb1361b2254ec41
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="retry-guidance-for-specific-services"></a>Руководство по использованию механизма повторов для отдельных служб
 
@@ -21,14 +21,14 @@ ms.lasthandoff: 02/23/2018
 | **Служба** | **Ключевые возможности** | **Настройки политики** | **Область** | **Функции телеметрии** |
 | --- | --- | --- | --- | --- |
 | **[Служба хранилища Azure](#azure-storage-retry-guidelines)** |Машинный код в клиенте |Программный |Клиентские и индивидуальные операции |TraceSource |
-| **[База данных SQL с Entity Framework](#sql-database-using-entity-framework-6-retry-guidelines)** |Машинный код в клиенте |Программный |Глобальные каждого домена приложения |Нет |
-| **[База данных SQL с Entity Framework Core](#sql-database-using-entity-framework-core-retry-guidelines)** |Машинный код в клиенте |Программный |Глобальные каждого домена приложения |Нет |
+| **[База данных SQL с Entity Framework](#sql-database-using-entity-framework-6-retry-guidelines)** |Машинный код в клиенте |Программный |Глобальные каждого домена приложения |None |
+| **[База данных SQL с Entity Framework Core](#sql-database-using-entity-framework-core-retry-guidelines)** |Машинный код в клиенте |Программный |Глобальные каждого домена приложения |None |
 | **[База данных SQL с ADO.NET](#sql-database-using-adonet-retry-guidelines)** |[Polly](#transient-fault-handling-with-polly) |Декларативные и программные |Единые инструкции или блоки кода |Пользовательская |
 | **[Служебная шина](#service-bus-retry-guidelines)** |Машинный код в клиенте |Программный |Диспетчер пространств имен, фабрика сообщений и клиент |Трассировка событий Windows |
 | **[Кэш Redis для Azure](#azure-redis-cache-retry-guidelines)** |Машинный код в клиенте |Программный |Клиент |TextWriter |
 | **[Cosmos DB](#cosmos-db-retry-guidelines)** |Машинный код в службе |Ненастраиваемые |Глобальные |TraceSource |
 | **[Поиск Azure](#azure-storage-retry-guidelines)** |Машинный код в клиенте |Программный |Клиент |Трассировка событий Windows или пользовательская |
-| **[Azure Active Directory](#azure-active-directory-retry-guidelines)** |Машинный код в библиотеке ADAL |Встроена в библиотеку ADAL |Внутренний |None |
+| **[Azure Active Directory](#azure-active-directory-retry-guidelines)** |Машинный код в библиотеке ADAL |Встроена в библиотеку ADAL |Внутренний |Нет |
 | **[Service Fabric](#service-fabric-retry-guidelines)** |Машинный код в клиенте |Программный |Клиент |None | 
 | **[Концентраторы событий Azure](#azure-event-hubs-retry-guidelines)** |Машинный код в клиенте |Программный |Клиент |None |
 
@@ -102,7 +102,7 @@ var stats = await client.GetServiceStatsAsync(interactiveRequestOption, operatio
 | --- | --- | --- |
 | MaximumExecutionTime | 120 секунд | Максимальное время выполнения запроса, включая все потенциальные повторные попытки. |
 | ServerTimeOut | None | Интервал времени ожидания сервера для запроса (значение округляется до секунд). Если не указан, он будет использовать значение по умолчанию для всех запросов к серверу. Как правило, лучше всего опустить этот параметр, чтобы использовать значение сервера по умолчанию. | 
-| LocationMode | Нет | Если учетная запись хранения создается с вариантом репликации на географически избыточном хранилище с доступом для чтения (RA-GRS), то можно использовать режим расположения, чтобы указать расположение, где запрос должен быть получен. Например, если указано **PrimaryThenSecondary**, запросы всегда будут отправляться сначала в основное расположение. Если запрос завершается ошибкой, он направляется во вторичное расположение. |
+| LocationMode | None | Если учетная запись хранения создается с вариантом репликации на географически избыточном хранилище с доступом для чтения (RA-GRS), то можно использовать режим расположения, чтобы указать расположение, где запрос должен быть получен. Например, если указано **PrimaryThenSecondary**, запросы всегда будут отправляться сначала в основное расположение. Если запрос завершается ошибкой, он направляется во вторичное расположение. |
 | политика RetryPolicy | ExponentialPolicy | Сведения о каждом параметре смотрите далее. |
 
 **Экспоненциальная политика** 
@@ -478,7 +478,6 @@ public async static Task<SqlDataReader> ExecuteReaderWithRetryAsync(this SqlComm
 
     }, cancellationToken);
 }
-
 ```
 
 Этот асинхронный метод расширения можно использовать следующим образом.
@@ -792,7 +791,7 @@ namespace RetryCodeSamples
                 try
                 {
                     var retryTimeInMilliseconds = TimeSpan.FromSeconds(4).Milliseconds; // delay between retries
-                    
+
                     // Using object-based configuration.
                     var options = new ConfigurationOptions
                                         {

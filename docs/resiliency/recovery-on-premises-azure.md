@@ -1,15 +1,16 @@
 ---
-title: "Техническое руководство по обеспечению устойчивости. Восстановление из локальной инфраструктуры в Azure"
-description: "Это статья посвящена описанию и разработке систем восстановления из локальной инфраструктуры в Azure"
+title: Техническое руководство по обеспечению устойчивости. Восстановление из локальной инфраструктуры в Azure
+description: Это статья посвящена описанию и разработке систем восстановления из локальной инфраструктуры в Azure
 author: adamglick
 ms.date: 08/18/2016
-ms.openlocfilehash: f5ce86dbd605fa7dc74e6a7cc97f0d6c6acd79e5
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 6992e27d148074b3d60c282318741f45974d1afd
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/06/2018
 ---
 [!INCLUDE [header](../_includes/header.md)]
+
 # <a name="azure-resiliency-technical-guidance-recovery-from-on-premises-to-azure"></a>Техническое руководство по обеспечению устойчивости в Azure. Восстановление из локальной среды в Azure
 Azure предоставляет широкий набор служб для расширения локального центра обработки данных в Azure. Это позволяет повысить доступность и использовать аварийное восстановление.
 

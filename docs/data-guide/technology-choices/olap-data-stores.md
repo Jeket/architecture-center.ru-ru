@@ -1,13 +1,13 @@
 ---
-title: "Выбор хранилища данных OLAP"
-description: 
+title: Выбор хранилища данных OLAP
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
 ms.openlocfilehash: f3041b95696c9408a2c9ab747fe1ec3041db0743
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/31/2018
 ---
 # <a name="choosing-an-olap-data-store-in-azure"></a>Выбор хранилища данных OLAP в Azure
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/14/2018
 
 | | Службы Azure Analysis Services | SQL Server Analysis Services | SQL Server с индексами columnstore | База данных SQL Azure с индексами columnstore |
 | --- | --- | --- | --- | --- |
-| Управляемая служба | Yes | Нет  | Нет  | Yes |
+| Является управляемой службой | Yes | Нет  | Нет  | Yes |
 | Поддержка многомерных кубов | Нет  | Yes | Нет  | Нет  |
 | Поддержка табличных семантических моделей | Yes | Yes | Нет  | Нет  |
 | Простая интеграция нескольких источников данных | Yes | Yes | Нет <sup>1</sup> | Нет <sup>1</sup> |

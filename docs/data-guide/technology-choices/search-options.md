@@ -1,13 +1,13 @@
 ---
-title: "Выбор хранилища данных для поиска"
-description: 
+title: Выбор хранилища данных для поиска
+description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 7fe5952c880921984beb30c71458fd1ef72ef239
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.openlocfilehash: ead07e307e96696faa5ddf48505eee378027523c
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="choosing-a-search-data-store-in-azure"></a>Выбор хранилища данных для поиска в Azure
 
@@ -42,6 +42,7 @@ ms.lasthandoff: 02/14/2018
 В следующих таблицах перечислены основные различия в возможностях.
 
 ### <a name="general-capabilities"></a>Общие возможности
+
 | | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
 | Является управляемой службой | Yes | Нет  | Yes | Yes |  
@@ -50,12 +51,14 @@ ms.lasthandoff: 02/14/2018
 | Индексаторы документов для стандартных типов файлов (PDF, DOCX, TXT и т. д.) | Yes | Нет  | Yes | Нет  |
 
 ### <a name="manageability-capabilities"></a>Возможности управления
+
 | | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- |
 | Обновляемая схема | Нет  | Yes | Yes | Yes |
 | Поддержка горизонтального масштабирования  | Yes | Yes | Yes | Нет  |
 
 ### <a name="analytic-workload-capabilities"></a>Возможности для поддержки аналитических рабочих нагрузок
+
 | | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
 | Поддержка других функций аналитики, помимо полнотекстового поиска | Нет  | Yes | Yes | Yes |
@@ -63,6 +66,7 @@ ms.lasthandoff: 02/14/2018
 | Поддержка семантического поиска | Да (только поиск похожих документов) | Yes | Yes | Yes | 
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
+
 | | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
 | Безопасность на уровне строк | Частично (требуется запрос приложения для фильтрации по идентификатору группы) | Частично (требуется запрос приложения для фильтрации по идентификатору группы) | Yes | Yes | 
