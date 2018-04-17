@@ -109,5 +109,5 @@ ms.lasthandoff: 04/06/2018
 [0]: ./images/nva-ha/single-nva.png "Архитектура одного NVA"
 [1]: ./images/nva-ha/l7-ingress.png "Входящий трафик уровня 7"
 [2]: ./images/nva-ha/l7-ingress-egress.png "Исходящий трафик уровня 7"
-[3]: ./images/nva-ha/active-passive.png "Кластер типа "активный — пассивный""
+[3]: ./images/nva-ha/active-passive.png "Кластер типа активный пассивный"
 [4]: ./images/nva-ha/l7-ingress-egress-ag.png

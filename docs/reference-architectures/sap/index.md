@@ -238,4 +238,4 @@ SAP имеет свой собственный механизм управлен
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/SAP-HANA-architecture.vsdx
 [vm-sizes-mem]: /azure/virtual-machines/windows/sizes-memory
 [swd]: https://help.sap.com/doc/saphelp_nw70ehp2/7.02.16/en-us/48/8fe37933114e6fe10000000a421937/frameset.htm
-[0]: ./images/sap-hana.png "Архитектура SAP HANA с использованием Microsoft Azure".
+[0]: ./images/sap-hana.png "Архитектура SAP HANA с использованием Microsoft Azure"
