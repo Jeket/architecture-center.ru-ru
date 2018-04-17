@@ -1,11 +1,11 @@
 ---
-title: "Значки и другие ресурсы для архитектурной схемы"
-description: "Значки, шаблоны Viso, файлы SVG и PNG, которые полезны для создания архитектурных схем"
-ms.openlocfilehash: 58a2046c0d463c1f331ea3f950f0c11c273ffc36
-ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
+title: Значки и другие ресурсы для архитектурной схемы
+description: Значки, шаблоны Viso, файлы SVG и PNG, которые полезны для создания архитектурных схем
+ms.openlocfilehash: f65a09450ba1b7154e6d43bbc7bdb65212b21828
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="icons-and-diagrams"></a>Значки и схемы
 
@@ -27,6 +27,10 @@ ms.lasthandoff: 02/23/2018
 ## <a name="reference-architectures-visio-template"></a>Шаблон эталонных архитектур Visio 
 
 Версия схем, используемых на странице [Эталонная архитектура Azure](../reference-architectures/index.md), доступна для [скачивания в формате Visio](https://aka.ms/arch-diagrams).
+
+## <a name="solution-architecture-diagrams"></a>Схемы архитектуры решений
+
+Корпорация Майкрософт публикует [архитектуры решений и соответствующие схемы](https://azure.microsoft.com/solutions/architecture/). Схемы можно скачать в формате SVG. SVG-файл можно открыть и изменить с помощью различных средств, включая Visio и PowerPoint. Если разгруппировать схему, можно выбрать отдельные значки.   
 
 ## <a name="3d-blueprint-visio-template"></a>шаблон трехмерных проектов Visio
 

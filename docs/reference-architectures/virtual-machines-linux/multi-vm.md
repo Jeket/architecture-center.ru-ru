@@ -1,16 +1,16 @@
 ---
-title: "Запуск виртуальных машин с балансировкой нагрузки в Azure для обеспечения масштабируемости и доступности"
-description: "Узнайте, как запустить несколько виртуальных машин Linux в Azure для обеспечения масштабируемости и доступности."
+title: Запуск виртуальных машин с балансировкой нагрузки в Azure для обеспечения масштабируемости и доступности
+description: Узнайте, как запустить несколько виртуальных машин Linux в Azure для обеспечения масштабируемости и доступности.
 author: telmosampaio
 ms.date: 11/16/2017
 pnp.series.title: Linux VM workloads
 pnp.series.next: n-tier
 pnp.series.prev: single-vm
-ms.openlocfilehash: 8f081baa40355b4f02b83c308466df8333d7ad87
-ms.sourcegitcommit: c9e6d8edb069b8c513de748ce8114c879bad5f49
+ms.openlocfilehash: 2c8b1310e0a76ae0cea0a52cdbd2a0e5d3205d6e
+ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="run-load-balanced-vms-for-scalability-and-availability"></a>Запуск виртуальных машин с балансировкой нагрузки для обеспечения масштабируемости и доступности
 
@@ -125,11 +125,11 @@ ms.lasthandoff: 01/08/2018
   * Подсистема балансировки нагрузки, которая находится перед масштабируемым набором виртуальной машины.
   * группу безопасности сети с правилами для входящего трафика, позволяющими передавать HTTP-трафик в масштабируемый набор виртуальных машин.
 
-### <a name="prerequisites"></a>Необходимые компоненты
+### <a name="prerequisites"></a>предварительным требованиям
 
 Перед развертыванием эталонной архитектуры в собственной подписке необходимо выполнить следующие действия.
 
-1. Клонируйте и скачайте ZIP-файл [с эталонными архитектурами AzureCAT][ref-arch-repo] в репозитории GitHub, а также выполните его разветвление.
+1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
 
 2. Убедитесь, что Azure CLI 2.0 установлен на компьютере. См. инструкции по [установке Azure CLI 2.0][azure-cli-2].
 
@@ -137,9 +137,9 @@ ms.lasthandoff: 01/08/2018
 
 4. В командной строке, строке bash или строке PowerShell войдите в свою учетную запись Azure с помощью одной из приведенных ниже команд и следуйте инструкциям.
 
-  ```bash
-  az login
-  ```
+   ```bash
+   az login
+   ```
 
 ### <a name="deploy-the-solution-using-azbb"></a>Развертывание решения с помощью azbb
 
@@ -149,16 +149,16 @@ ms.lasthandoff: 01/08/2018
 
 2. Откройте файл `multi-vm-v2.json` и введите имя пользователя и ключ SSH в кавычках, как показано ниже, а затем сохраните файл.
 
-  ```bash
-  "adminUsername": "",
-  "sshPublicKey": "",
-  ```
+   ```bash
+   "adminUsername": "",
+   "sshPublicKey": "",
+   ```
 
 3. Запустите `azbb`, чтобы развернуть виртуальные машины, как показано ниже.
 
-  ```bash
-  azbb -s <subscription_id> -g <resource_group_name> -l <location> -p multi-vm-v2.json --deploy
-  ```
+   ```bash
+   azbb -s <subscription_id> -g <resource_group_name> -l <location> -p multi-vm-v2.json --deploy
+   ```
 
 Дополнительные сведения о развертывании этого примера эталонной архитектуры см. в [нашем репозитории GitHub][git].
 
@@ -187,7 +187,7 @@ ms.lasthandoff: 01/08/2018
 [runbook-gallery]: /azure/automation/automation-runbook-gallery#runbooks-in-runbook-gallery
 [single-vm]: single-vm.md
 [subscription-limits]: /azure/azure-subscription-service-limits
-[visio-download]: https://archcenter.azureedge.net/cdn/vm-reference-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/vm-reference-architectures.vsdx
 [vm-disk-limits]: /azure/azure-subscription-service-limits#virtual-machine-disk-limits
 [vm-scaleset]: /azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview
 [vm-sizes]: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-sizes/

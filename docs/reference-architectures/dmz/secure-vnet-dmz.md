@@ -1,17 +1,17 @@
 ---
-title: "Реализация сети периметра между Azure и Интернетом"
-description: "Способы реализации защищенной гибридной сетевой архитектуры с доступом к Интернету в Azure."
+title: Реализация сети периметра между Azure и Интернетом
+description: Способы реализации защищенной гибридной сетевой архитектуры с доступом к Интернету в Azure.
 author: telmosampaio
 ms.date: 11/23/2016
 pnp.series.title: Network DMZ
 pnp.series.next: nva-ha
 pnp.series.prev: secure-vnet-hybrid
 cardTitle: DMZ between Azure and the Internet
-ms.openlocfilehash: 372d5bb0fc0e3c272843e062210dec5c15b2b78a
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: c88545b1fcae49b413e7e2b6ac5bd92d3fd3456d
+ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="dmz-between-azure-and-the-internet"></a>Сеть периметра между Azure и Интернетом
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/14/2017
 
 ## <a name="architecture"></a>Архитектура
 
-Архитектура состоит из следующих компонентов.
+Архитектура состоит из следующих компонентов:
 
 * **Общедоступный IP-адрес (PIP).** IP-адрес общедоступной конечной точки. Внешние пользователи, подключенные к Интернету, могут получить доступ к системе через этот адрес.
 * **Виртуальный сетевой модуль (NVA).** Эта архитектура включает в себя отдельный пул NVA для исходящего трафика в Интернете.
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/14/2017
 
 ## <a name="manageability-considerations"></a>Вопросы управляемости
 
-Операции мониторинга и управления для NVA в общедоступной сети периметра должны выполняться в подсети управления с помощью jumpbox. Определите один сетевой маршрут из локальной сети через шлюз к jumpbox, чтобы ограничить доступ, как было сказано в статье [DMZ between Azure and your on-premises datacenter][implementing-a-secure-hybrid-network-architecture] (Сеть периметра между Azure и локальным центром данных).
+Все операции мониторинга и управления для NVA в общедоступной сети периметра должны выполняться в подсети управления с помощью jumpbox. Определите один сетевой маршрут из локальной сети через шлюз к jumpbox, чтобы ограничить доступ, как было сказано в статье [DMZ between Azure and your on-premises datacenter][implementing-a-secure-hybrid-network-architecture] (Сеть периметра между Azure и локальным центром данных).
 
 При разрыве подключения шлюза из локальной сети в Azure можно по-прежнему подключиться к jumpbox путем развертывания общедоступного IP-адреса, добавив его в jumpbox и выполнив вход из Интернета.
 
@@ -80,7 +80,7 @@ ms.lasthandoff: 11/14/2017
 
 ## <a name="solution-deployment"></a>Развертывание решения
 
-В репозитории [GitHub][github-folder] доступен шаблон развертывания эталонной архитектуры, реализующей эти рекомендации. Эталонную архитектуру можно развернуть с помощью виртуальных машин Windows или Linux, следуя приведенным ниже инструкциям:
+В репозитории [GitHub][github-folder] есть шаблон развертывания эталонной архитектуры, для которого реализованы эти рекомендации. Эталонную архитектуру можно развернуть с помощью виртуальных машин Windows или Linux, следуя приведенным ниже инструкциям:
 
 1. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fdmz%2Fsecure-vnet-dmz%2FvirtualNetwork.azuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 2. Ссылка откроется на портале Azure, где нужно задать значения для следующих параметров.
@@ -119,7 +119,7 @@ ms.lasthandoff: 11/14/2017
 [load-balancer]: /azure/load-balancer/load-balancer-Internet-overview
 [network-security-group]: /azure/virtual-network/virtual-networks-nsg
 
-[visio-download]: https://archcenter.azureedge.net/cdn/dmz-reference-architectures.vsdx
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/dmz-reference-architectures.vsdx
 
 
 [0]: ./images/dmz-public.png "Архитектура защищенной гибридной сети"
