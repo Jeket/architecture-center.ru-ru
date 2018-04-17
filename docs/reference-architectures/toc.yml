@@ -12,6 +12,10 @@
           href: app-service-web-app/scalable-web-app.md
         - name: Развертывание в нескольких регионах
           href: app-service-web-app/multi-region.md
+    - name: Варианты архитектуры для обработки данных
+      items:
+        - name: Корпоративная бизнес-аналитика с использованием хранилища данных SQL
+          href: data/enterprise-bi-sqldw.md
     - name: Гибридные сети
       href: hybrid-networking/index.md
       items:
