@@ -4,11 +4,11 @@ description: Соглашения об именовании для ресурс�
 author: telmosampaio
 ms.date: 05/18/2017
 pnp.series.title: Best Practices
-ms.openlocfilehash: f814201901af69b816d7f1588e58057b252b22db
-ms.sourcegitcommit: 2e8b06e9c07875d65b91d5431bfd4bc465a7a242
+ms.openlocfilehash: f3f010ceb3c810caafa53523de63aa787d392aa1
+ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="naming-conventions"></a>Соглашения об именовании.
 
@@ -102,7 +102,7 @@ ms.lasthandoff: 02/09/2018
 |Имя очереди |Учетная запись хранения |От 3 до 63 |Нижний регистр |Буквы, цифры, дефис |`<service short name>-<context>-<num>` |`awesomeservice-messages-001` |
 |Имя таблицы | Учетная запись хранения |От 3 до 63 |Без учета регистра |Буквенно-цифровой |`<service short name><context>` |`awesomeservicelogs` |
 |Имя файла | Учетная запись хранения |От 3 до 63 |Нижний регистр | Буквенно-цифровой |`<variable based on blob usage>` |`<variable based on blob usage>` |
-|Data Lake Store | Глобальные |От 3 до 24 |Нижний регистр | Буквенно-цифровой |`<name>-dls` |`telemetry-dls` |
+|Data Lake Store | Глобальные |От 3 до 24 |Нижний регистр | Буквенно-цифровой |`<name>dls` |`telemetrydls` |
 
 ### <a name="networking"></a>Сеть
 
