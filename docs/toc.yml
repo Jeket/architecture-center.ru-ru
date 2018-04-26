@@ -10,9 +10,10 @@
   items:
     - name: Стили архитектуры
       href: guide/architecture-styles/index.md
-    - name: Выбор технологий
-      href: guide/technology-choices/index.md
-      items: null
+    - name: Выбор службы вычислений
+      href: guide/technology-choices/compute-overview.md
+    - name: Выбор хранилища данных
+      href: guide/technology-choices/data-store-overview.md
     - name: Принципы проектирования
       href: guide/design-principles/index.md
     - name: Основные аспекты качества программного обеспечения

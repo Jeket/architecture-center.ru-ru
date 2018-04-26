@@ -20,14 +20,17 @@
           href: architecture-styles/big-data.md
         - name: Большие вычисления
           href: architecture-styles/big-compute.md
-    - name: Выбор технологий
-      href: technology-choices/index.md
+    - name: Выбор службы вычислений
       items:
-        - name: Общие сведения о вариантах вычислений
+        - name: Обзор
           href: technology-choices/compute-overview.md
+        - name: Дерево принятия решений
+          href: technology-choices/compute-decision-tree.md
         - name: Сравнение вычислений
           href: technology-choices/compute-comparison.md
-        - name: Общие сведения о хранилище данных
+    - name: Выбор хранилища данных
+      items:
+        - name: Обзор
           href: technology-choices/data-store-overview.md
         - name: Сравнение хранилищ данных
           href: technology-choices/data-store-comparison.md
