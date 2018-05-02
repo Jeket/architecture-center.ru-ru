@@ -5,11 +5,11 @@ author: telmosampaio
 ms.date: 04/09/2018
 pnp.series.title: Implement a hub-spoke network topology in Azure
 pnp.series.prev: expressroute
-ms.openlocfilehash: f04af90f328a0434d44ca7ea90309f3209a3b69d
-ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
+ms.openlocfilehash: 3b19526a9ed77c1605325a9eec101ffbee7c8401
+ms.sourcegitcommit: 3846a0ab2b2b2552202a3c9c21af0097a145ffc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/29/2018
 ---
 # <a name="implement-a-hub-spoke-network-topology-in-azure"></a>Реализация звездообразной топологии сети в Azure
 
@@ -194,7 +194,7 @@ ms.lasthandoff: 04/16/2018
 
 1. Используйте портал Azure для поиска в группе ресурсов `onprem-jb-rg` виртуальной машины с именем `jb-vm1`.
 
-2. Нажмите `Connect`, чтобы открыть сеанс подключения к рабочему столу на виртуальной машине. Используйте пароль, указанный в файле параметров `onprem.json`.
+2. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Используйте пароль, указанный в файле параметров `onprem.json`.
 
 3. Откройте консоль PowerShell в виртуальной машине и используйте командлет `Test-NetConnection`, чтобы убедиться, что вы можете подключиться к виртуальной машине Jumpbox в виртуальной сети концентратора.
 
@@ -270,7 +270,7 @@ TcpTestSucceeded : True
 
 1. Используйте портал Azure для поиска в группе ресурсов `onprem-jb-rg` виртуальной машины с именем `jb-vm1`.
 
-2. Нажмите `Connect`, чтобы открыть сеанс подключения к рабочему столу на виртуальной машине. Используйте пароль, указанный в файле параметров `onprem.json`.
+2. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Используйте пароль, указанный в файле параметров `onprem.json`.
 
 3. Откройте консоль PowerShell в виртуальной машине и используйте командлет `Test-NetConnection`, чтобы убедиться, что вы можете подключиться к виртуальной машине Jumpbox в виртуальной сети концентратора.
 
