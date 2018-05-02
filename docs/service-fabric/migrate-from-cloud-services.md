@@ -3,11 +3,11 @@ title: Перенос приложения облачных служб Azure в 
 description: Сведения о том, как перенести приложения из облачных служб Azure в Azure Service Fabric.
 author: MikeWasson
 ms.date: 04/27/2017
-ms.openlocfilehash: ce9c138a6b093fb7f0329c619c75bd4f4aacc2e7
-ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
+ms.openlocfilehash: b9ecbc88ae74da99a0ff3bb8814a9cb3422f79d5
+ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="migrate-an-azure-cloud-services-application-to-azure-service-fabric"></a>Перенос приложения облачных служб Azure в Azure Service Fabric 
 
@@ -141,9 +141,9 @@ Service Fabric используется различными службами М
 
 - Перенос веб-роли в ASP.NET Core, которая может быть размещена автономно.
 - Преобразование веб-сайта в приложение с одной страницей (SPA), которое вызывает веб-API, реализованный с помощью веб-API ASP.NET. Это потребовало бы полной переработки веб-интерфейса.
-- Сохранение имеющегося кода ASP.NET MVC и развертывание служб IIS в контейнере Windows Server в Service Fabric. Такой подход потребует минимум изменений кода или не потребует их вовсе. Тем не менее [поддержка контейнеров][sf-containers] в Service Fabric сейчас находится на стадии предварительной версии.
+- Сохранение имеющегося кода ASP.NET MVC и развертывание служб IIS в контейнере Windows Server в Service Fabric. Такой подход потребует минимум изменений кода или не потребует их вовсе. 
 
-Исходя из указанного, мы выбрали первый вариант — перенос в ASP.NET Core. Для этого мы выполнили инструкции из статьи [Migrating From ASP.NET MVC to ASP.NET Core MVC][aspnet-migration] (Миграция из ASP.NET MVC в ASP.NET Core MVC). 
+Первый вариант — перенос ASP.NET Core, что позволит использовать преимущества новейших функций в ASP.NET Core. Для преобразования мы выполнили инструкции из статьи [Migrating From ASP.NET MVC to ASP.NET Core MVC][aspnet-migration] (Миграция из ASP.NET MVC в ASP.NET Core MVC). 
 
 > [!NOTE]
 > По соображениям безопасности при использовании ASP.NET Core с Kestrel необходимо поместить перед Kestrel обратный прокси-сервер для обработки трафика из Интернета. Дополнительные сведения см. в статье [Kestrel web server implementation in ASP.NET Core][kestrel] (Реализация веб-сервера Kestrel в ASP.NET Core). В разделе [Развертывание приложения](#deploying-the-application) описывается рекомендуемое развертывание Azure.

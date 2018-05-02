@@ -1,23 +1,20 @@
 ---
-title: Расширение доменных служб Active Directory (AD DS) в Azure
-description: >-
-  Способы реализации защищенной гибридной сетевой архитектуры с помощью авторизации Active Directory в Azure.
-
-  рекомендации,vpn-шлюз,expressroute,подсистема балансировки нагрузки,виртуальная сеть,active directory
+title: Расширение доменных служб Active Directory в Azure
+description: Расширьте локальный домен Active Directory в Azure
 author: telmosampaio
-ms.date: 11/28/2016
+ms.date: 04/13/2018
 pnp.series.title: Identity management
 pnp.series.prev: azure-ad
 pnp.series.next: adds-forest
-ms.openlocfilehash: 007d244f29bf11c6e2bd703c7f4f245d22c02f0f
-ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
+ms.openlocfilehash: bcd1e2b1b925a5d64665c5651c24589a77e39ec9
+ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
 
-На схеме эталонной архитектуры представлены способы расширения среды Active Directory в Azure для предоставления распределенных служб аутентификации с помощью [доменных служб Active Directory (AD DS)][active-directory-domain-services].  [**Разверните это решение**.](#deploy-the-solution)
+На схеме эталонной архитектуры представлены способы расширения среды Active Directory в Azure для предоставления распределенных служб аутентификации с помощью доменных служб Active Directory (AD DS). [**Разверните это решение**.](#deploy-the-solution)
 
 [![0]][0] 
 
@@ -103,27 +100,113 @@ ms.lasthandoff: 03/30/2018
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Решение для развертывания этой эталонной архитектуры доступно на портале [GitHub][github]. Для выполнения сценария Powershell, который развертывает решение, вам потребуется последняя версия [Azure CLI][azure-powershell]. Чтобы развернуть эту эталонную архитектуру, сделайте следующее:
+Пример развертывания для этой архитектуры можно найти на портале [GitHub][github]. Обратите внимание, что для полного развертывания может потребоваться до двух часов, включая создание VPN-шлюза и запуск скриптов, которые настраивают доменные службы Active Directory.
 
-1. Скачайте или клонируйте папку решения с портала [Github][github] на локальный компьютер.
+### <a name="prerequisites"></a>предварительным требованиям
 
-2. Откройте Azure CLI и перейдите к папке локального решения.
+1. Клонируйте или скачайте ZIP-файл с эталонными архитектурами [reference architectures][ref-arch-repo] в репозитории GitHub или выполните его разветвление.
 
-3. Выполните следующую команду:
-    ```Powershell
-    .\Deploy-ReferenceArchitecture.ps1 <subscription id> <location> <mode>
+2. Установите [Azure CLI 2.0][azure-cli-2].
+
+3. Установите пакет npm [стандартных блоков Azure][azbb].
+
+4. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure с помощью приведенной ниже команды.
+
+   ```bash
+   az login
+   ```
+
+### <a name="deploy-the-simulated-on-premises-datacenter"></a>Развертывание имитации локального центра обработки данных
+
+1. Перейдите в папку `identity/adds-extend-domain` в репозитории эталонных архитектур.
+
+2. Откройте файл `onprem.json` . Найдите `adminPassword` и добавьте значения для кодов доступа. В файле есть три экземпляра.
+
+    ```bash
+    "adminUsername": "testuser",
+    "adminPassword": "<password>",
     ```
-    Замените `<subscription id>` идентификатором своей подписки Azure.
-    В качестве значения `<location>` укажите регион Azure (например, `eastus` или `westus`).
-    Параметр `<mode>` управляет степенью детализации развертывания и может принимать одно из следующих значений:
-    * `Onpremise` — развертывает имитированную локальную среду.
-    * `Infrastructure` — развертывает виртуальную сеть и переходит к полю в Azure.
-    * `CreateVpn` — развертывает шлюз виртуальной сети Azure и подключает его к имитированной локальной сети.
-    * `AzureADDS` — выполняет развертывание виртуальных машин, действующих как серверы доменных служб Active Directory, развертывает Active Directory в этих виртуальных машинах, а так же развертывает домен в Azure.
-    * `Workload` — развертывает открытые и закрытые сети периметра, а также уровень рабочей нагрузки.
-    * `All` — выполняет все предыдущие развертывания. **Мы рекомендуем использовать этот параметр при отсутствии имеющейся локальной сети и при необходимости развернуть полную эталонную архитектуру, описанную выше, для тестирования или вычисления.**
 
-4. Дождитесь завершения развертывания. Если вы выполняете развертывание `All`, это займет несколько часов.
+3. В том же файле найдите `protectedSettings` и добавьте значения для кодов доступа. Есть два экземпляра `protectedSettings`, по одному для каждого сервера AD.
+
+    ```bash
+    "protectedSettings": {
+      "configurationArguments": {
+        ...
+        "AdminCreds": {
+          "UserName": "testadminuser",
+          "Password": "<password>"
+        },
+        "SafeModeAdminCreds": {
+          "UserName": "testsafeadminuser",
+          "Password": "<password>"
+        }
+      }
+    }
+    ```
+
+4. Выполните следующую команду и дождитесь завершения развертывания:
+
+    ```bash
+    azbb -s <subscription_id> -g <resource group> -l <location> -p onprem.json --deploy
+    ```
+
+### <a name="deploy-the-azure-vnet"></a>Развертывание виртуальной сети Azure
+
+1. Откройте файл `azure.json` .  Найдите `adminPassword` и добавьте значения для кодов доступа. В файле есть три экземпляра.
+
+    ```bash
+    "adminUsername": "testuser",
+    "adminPassword": "<password>",
+    ```
+
+2. В том же файле найдите `protectedSettings` и добавьте значения для кодов доступа. Есть два экземпляра `protectedSettings`, по одному для каждого сервера AD.
+
+    ```bash
+    "protectedSettings": {
+      "configurationArguments": {
+        ...
+        "AdminCreds": {
+          "UserName": "testadminuser",
+          "Password": "<password>"
+        },
+        "SafeModeAdminCreds": {
+          "UserName": "testsafeadminuser",
+          "Password": "<password>"
+        }
+      }
+    }
+    ```
+
+3. Для `sharedKey` введите общий ключ VPN-подключения. В файле параметров есть два экземпляра `sharedKey`.
+
+    ```bash
+    "sharedKey": "",
+    ```
+
+4. Выполните следующую команду и дождитесь завершения развертывания.
+
+    ```bash
+    azbb -s <subscription_id> -g <resource group> -l <location> -p onoprem.json --deploy
+    ```
+
+   Разверните ту же группу ресурсов, что и локальная виртуальная сеть.
+
+### <a name="test-connectivity-with-the-azure-vnet"></a>Проверка подключения виртуальной сети Azure
+
+По завершении развертывания можно протестировать подключение к виртуальной сети Azure из моделируемой локальной среды.
+
+1. Используйте портал Azure для поиска виртуальной машины с именем `ra-onpremise-mgmt-vm1`.
+
+2. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `onprem.json`.
+
+3. Вовремя сеанса удаленного рабочего стола откройте еще один сеанс удаленного рабочего стола к виртуальной машине `adds-vm1` с IP-адресом 10.0.4.4. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `azure.json`.
+
+4. Во время сеанса подключения к удаленному рабочему столу для `adds-vm1` перейдите к **диспетчеру сервера** и выберите команду **Добавить другие серверы для управления**. 
+
+5. На вкладке **Active Directory** нажмите **Найти сейчас**. Вы должны увидеть список AD, доменных служб Active Directory и виртуальных машин с веб-подключением.
+
+   ![](./images/add-servers-dialog.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -131,27 +214,27 @@ ms.lasthandoff: 03/30/2018
 * Изучите рекомендации по [созданию инфраструктуры службы федерации Active Directory (AD FS)][adfs] в Azure.
 
 <!-- links -->
+
 [adds-resource-forest]: adds-forest.md
 [adfs]: adfs.md
-
+[azure-cli-2]: /azure/install-azure-cli
+[azbb]: https://github.com/mspnp/template-building-blocks/wiki/Install-Azure-Building-Blocks
 [implementing-a-secure-hybrid-network-architecture]: ../dmz/secure-vnet-hybrid.md
 [implementing-a-secure-hybrid-network-architecture-with-internet-access]: ../dmz/secure-vnet-dmz.md
 
-[active-directory-domain-services]: https://technet.microsoft.com/library/dd448614.aspx
 [adds-data-disks]: https://msdn.microsoft.com/library/azure/jj156090.aspx#BKMK_PlaceDB
 [ad-ds-operations-masters]: https://technet.microsoft.com/library/cc779716(v=ws.10).aspx
 [ad-ds-ports]: https://technet.microsoft.com/library/dd772723(v=ws.11).aspx
 [availability-set]: /azure/virtual-machines/virtual-machines-windows-create-availability-set
-[azure-expressroute]: https://azure.microsoft.com/documentation/articles/expressroute-introduction/
-[azure-powershell]: /powershell/azureps-cmdlets-docs
-[azure-vpn-gateway]: https://azure.microsoft.com/documentation/articles/vpn-gateway-about-vpngateways/
+[azure-expressroute]: /azure/expressroute/expressroute-introduction
+[azure-vpn-gateway]: /azure/vpn-gateway/vpn-gateway-about-vpngateways
 [capacity-planning-for-adds]: http://social.technet.microsoft.com/wiki/contents/articles/14355.capacity-planning-for-active-directory-domain-services.aspx
 [considerations]: ./considerations.md
 [GitHub]: https://github.com/mspnp/reference-architectures/tree/master/identity/adds-extend-domain
 [microsoft_systems_center]: https://www.microsoft.com/server-cloud/products/system-center-2016/
 [monitoring_ad]: https://msdn.microsoft.com/library/bb727046.aspx
 [security-considerations]: #security-considerations
-[set-a-static-ip-address]: https://azure.microsoft.com/documentation/articles/virtual-networks-static-private-ip-arm-pportal/
+[set-a-static-ip-address]: /azure/virtual-network/virtual-networks-static-private-ip-arm-pportal
 [standby-operations-masters]: https://technet.microsoft.com/library/cc794737(v=ws.10).aspx
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/identity-architectures.vsdx
 [vm-windows-sizes]: /azure/virtual-machines/virtual-machines-windows-sizes

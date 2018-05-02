@@ -2,11 +2,12 @@
 title: Обзор вычислительных служб в Azure
 description: Обзор вычислительных служб в Azure
 author: MikeWasson
-ms.openlocfilehash: a23dd49f24bc52db6f357540e3ebccb19e0497ee
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.date: 04/21/2018
+ms.openlocfilehash: 6781e1f1f6e239e3853920cb544092538cccfc62
+ms.sourcegitcommit: d702b4d27e96e7a5a248dc4f2f0e25cf6e82c134
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="overview-of-azure-compute-options"></a>Обзор вычислительных служб в Azure
 
@@ -42,4 +43,6 @@ ms.lasthandoff: 11/14/2017
 - Каковы общие ограничения для каждой службы? 
 - Какие архитектуры приложения подходят для этой службы? 
 
-Более подробное сравнение вычислительных служб в Azure см. в статье [Criteria for choosing an Azure compute option](./compute-comparison.md) (Критерии для выбора вычислительной службы Azure).
+Чтобы помочь выбрать вычислительную службу для приложения, ознакомьтесь со статьей [Decision tree for Azure compute services](./compute-decision-tree.md) (Дерево принятия решений для вычислительных служб Azure)
+
+Более подробное сравнение вычислительных служб в Azure см. в статье [Критерии для выбора вычислительной службы Azure](./compute-comparison.md).
