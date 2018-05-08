@@ -33,16 +33,14 @@
       href: reference-architectures/identity/index.md
     - name: Сервер Jenkins
       href: reference-architectures/jenkins/index.md
+    - name: n-уровневневое приложение
+      href: reference-architectures/n-tier/index.md
     - name: Сеть периметра
       href: reference-architectures/dmz/index.md
     - name: SAP NetWeaver и SAP HANA
       href: reference-architectures/sap/index.md
     - name: SharePoint Server 2016
       href: reference-architectures/sharepoint/index.md
-    - name: Рабочие нагрузки виртуальных машин (Linux)
-      href: reference-architectures/virtual-machines-linux/index.md
-    - name: Рабочие нагрузки виртуальных машин (Windows)
-      href: reference-architectures/virtual-machines-windows/index.md
 - name: Конструктивные шаблоны облачных решений
   href: patterns/index.md
   items:
@@ -109,7 +107,7 @@
   items:
     - name: Доступность
       href: checklist/availability.md
-    - name: Разработка и операции
+    - name: DevOps
       href: checklist/dev-ops.md
     - name: Устойчивость (общая)
       href: checklist/resiliency.md

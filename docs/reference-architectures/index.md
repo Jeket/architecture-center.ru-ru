@@ -3,11 +3,11 @@ title: Эталонная архитектура Azure
 description: Эталонные архитектуры, проекты и рекомендуемые руководства по реализации для общих нагрузок в Azure.
 layout: LandingPage
 ms.topic: landing-page
-ms.openlocfilehash: 9708c975e543a04cafe22f38194e833be44d7b81
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 4c0006404ed0c0f603e9599cd9c04e6d02fdbfeb
+ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/06/2018
 ---
 <!-- This file is generated! -->
 <!-- See the templates in ./build/reference-architectures  -->
@@ -19,47 +19,30 @@ ms.lasthandoff: 04/06/2018
 
 <section class="series">
     <ul class="panelContent">
-    <!-- Windows VM workloads -->
+
+<!-- N-tier -->
 <li style="display: flex; flex-direction: column;">
-    <a href="./virtual-machines-windows/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <a href="./n-tier/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
             <div class="cardPadding" style="display: flex;">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="./virtual-machines-windows/images/n-tier.svg" height="140px" />
+                            <img src="./n-tier/images/n-tier-sql-server.svg" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Рабочие нагрузки виртуальных машин Windows</h3>
-                        <p>Эта статьи начинаются с рекомендаций по запуску одной виртуальной машины Windows, а затем нескольких виртуальных машин с балансировкой нагрузки и, наконец, запуском n-уровневого приложения в нескольких регионах.</p>
+                        <h3>n-уровневневое приложение</h3>
+                        <p>Развертывание n-уровневого приложения в Azure для Windows или Linux.</p>
+                        <p>Конфигурации для SQL Server и Apache Cassandra. Чтобы обеспечить высокий уровень доступности, разверните активную и пассивную конфигурации в двух регионах.</p>
                     </div>
                 </div>
             </div>
         </div>
     </a>
 </li>
-    <!-- Linux VM workloads -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./virtual-machines-linux/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./virtual-machines-linux/images/n-tier.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Рабочие нагрузки виртуальных машин Linux</h3>
-                        <p>Эта статьи начинаются с рекомендации по запуску одной виртуальной машины Linux, а затем нескольких виртуальных машин с балансировкой нагрузки и, наконец, запуском n-уровневого приложения в нескольких регионах.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Hybrid network -->
+
+<!-- Hybrid network -->
 <li style="display: flex; flex-direction: column;">
     <a href="./hybrid-networking/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
@@ -73,6 +56,7 @@ ms.lasthandoff: 04/06/2018
                     <div class="cardText">
                         <h3>Гибридная сеть</h3>
                         <p>В этих статьях показаны варианты создания сетевого соединения между локальной сетью и Azure.</p>
+                        <p>Конфигурации включают VPN типа "сеть-сеть" или Azure ExpressRoute для частного выделенного подключения.</p>
                     </div>
                 </div>
             </div>
