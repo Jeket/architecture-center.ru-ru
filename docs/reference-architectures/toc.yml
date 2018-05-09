@@ -3,7 +3,7 @@
 - name: Эталонные образцы архитектуры
   href: index.md
   items:
-    - name: Веб-приложения службы приложений
+    - name: Веб-приложение службы приложений
       href: app-service-web-app/index.md
       items:
         - name: Базовое веб-приложение
@@ -44,6 +44,19 @@
           href: identity/adds-forest.md
         - name: Расширение AD FS в Azure
           href: identity/adfs.md
+    - name: n-уровневневое приложение
+      href: n-tier/index.md
+      items:
+        - name: N-уровневое приложение с SQL Server
+          href: n-tier/n-tier-sql-server.md
+        - name: N-уровневое приложение с поддержкой нескольких регионов
+          href: n-tier/multi-region-sql-server.md
+        - name: N-уровневое приложение с Cassandra
+          href: n-tier/n-tier-cassandra.md
+        - name: Развертывание виртуальной машины Linux
+          href: n-tier/linux-vm.md
+        - name: Развертывание виртуальной машины Windows
+          href: n-tier/windows-vm.md
     - name: Сеть периметра
       href: dmz/index.md
       items:
@@ -53,28 +66,6 @@
           href: dmz/secure-vnet-dmz.md
         - name: Сетевые виртуальные модули высокой доступности
           href: dmz/nva-ha.md
-    - name: Рабочие нагрузки виртуальных машин (Linux)
-      href: virtual-machines-linux/index.md
-      items:
-        - name: Одиночная виртуальная машина
-          href: virtual-machines-linux/single-vm.md
-        - name: Виртуальные машины с балансировкой нагрузки
-          href: virtual-machines-linux/multi-vm.md
-        - name: n-уровневневое приложение
-          href: virtual-machines-linux/n-tier.md
-        - name: Приложение для нескольких регионов
-          href: virtual-machines-linux/multi-region-application.md
-    - name: Рабочие нагрузки виртуальных машин (Windows)
-      href: virtual-machines-windows/index.md
-      items:
-        - name: Одиночная виртуальная машина
-          href: virtual-machines-windows/single-vm.md
-        - name: Виртуальные машины с балансировкой нагрузки
-          href: virtual-machines-windows/multi-vm.md
-        - name: n-уровневневое приложение
-          href: virtual-machines-windows/n-tier.md
-        - name: Приложение для нескольких регионов
-          href: virtual-machines-windows/multi-region-application.md
     - name: Сервер Jenkins
       href: jenkins/index.md
     - name: SAP NetWeaver и SAP HANA
