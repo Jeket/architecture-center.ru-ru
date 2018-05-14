@@ -2,15 +2,15 @@
 title: Расширение доменных служб Active Directory в Azure
 description: Расширьте локальный домен Active Directory в Azure
 author: telmosampaio
-ms.date: 04/13/2018
+ms.date: 05/02/2018
 pnp.series.title: Identity management
 pnp.series.prev: azure-ad
 pnp.series.next: adds-forest
-ms.openlocfilehash: bcd1e2b1b925a5d64665c5651c24589a77e39ec9
-ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
+ms.openlocfilehash: 763fffd321a1b50a562ef462dab59aafae717908
+ms.sourcegitcommit: 0de300b6570e9990e5c25efc060946cb9d079954
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
 
@@ -104,7 +104,7 @@ ms.lasthandoff: 04/16/2018
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл с эталонными архитектурами [reference architectures][ref-arch-repo] в репозитории GitHub или выполните его разветвление.
+1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][github] в репозитории GitHub либо создайте для него вилку.
 
 2. Установите [Azure CLI 2.0][azure-cli-2].
 
@@ -118,34 +118,11 @@ ms.lasthandoff: 04/16/2018
 
 ### <a name="deploy-the-simulated-on-premises-datacenter"></a>Развертывание имитации локального центра обработки данных
 
-1. Перейдите в папку `identity/adds-extend-domain` в репозитории эталонных архитектур.
+1. Перейдите в папку `identity/adds-extend-domain` в репозитории GitHub.
 
-2. Откройте файл `onprem.json` . Найдите `adminPassword` и добавьте значения для кодов доступа. В файле есть три экземпляра.
+2. Откройте файл `onprem.json` . Найдите экземпляры `adminPassword` и `Password` и добавьте значения для паролей.
 
-    ```bash
-    "adminUsername": "testuser",
-    "adminPassword": "<password>",
-    ```
-
-3. В том же файле найдите `protectedSettings` и добавьте значения для кодов доступа. Есть два экземпляра `protectedSettings`, по одному для каждого сервера AD.
-
-    ```bash
-    "protectedSettings": {
-      "configurationArguments": {
-        ...
-        "AdminCreds": {
-          "UserName": "testadminuser",
-          "Password": "<password>"
-        },
-        "SafeModeAdminCreds": {
-          "UserName": "testsafeadminuser",
-          "Password": "<password>"
-        }
-      }
-    }
-    ```
-
-4. Выполните следующую команду и дождитесь завершения развертывания:
+3. Выполните следующую команду и дождитесь завершения развертывания:
 
     ```bash
     azbb -s <subscription_id> -g <resource group> -l <location> -p onprem.json --deploy
@@ -153,38 +130,15 @@ ms.lasthandoff: 04/16/2018
 
 ### <a name="deploy-the-azure-vnet"></a>Развертывание виртуальной сети Azure
 
-1. Откройте файл `azure.json` .  Найдите `adminPassword` и добавьте значения для кодов доступа. В файле есть три экземпляра.
+1. Откройте файл `azure.json` .  Найдите экземпляры `adminPassword` и `Password` и добавьте значения для паролей. 
 
-    ```bash
-    "adminUsername": "testuser",
-    "adminPassword": "<password>",
-    ```
-
-2. В том же файле найдите `protectedSettings` и добавьте значения для кодов доступа. Есть два экземпляра `protectedSettings`, по одному для каждого сервера AD.
-
-    ```bash
-    "protectedSettings": {
-      "configurationArguments": {
-        ...
-        "AdminCreds": {
-          "UserName": "testadminuser",
-          "Password": "<password>"
-        },
-        "SafeModeAdminCreds": {
-          "UserName": "testsafeadminuser",
-          "Password": "<password>"
-        }
-      }
-    }
-    ```
-
-3. Для `sharedKey` введите общий ключ VPN-подключения. В файле параметров есть два экземпляра `sharedKey`.
+2. В том же файле найдите экземпляры `sharedKey` и введите общие ключи для VPN-подключения. 
 
     ```bash
     "sharedKey": "",
     ```
 
-4. Выполните следующую команду и дождитесь завершения развертывания.
+3. Выполните следующую команду и дождитесь завершения развертывания.
 
     ```bash
     azbb -s <subscription_id> -g <resource group> -l <location> -p onoprem.json --deploy
@@ -196,15 +150,17 @@ ms.lasthandoff: 04/16/2018
 
 По завершении развертывания можно протестировать подключение к виртуальной сети Azure из моделируемой локальной среды.
 
-1. Используйте портал Azure для поиска виртуальной машины с именем `ra-onpremise-mgmt-vm1`.
+1. На портале Azure перейдите к созданной группе ресурсов.
 
-2. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `onprem.json`.
+2. Найдите виртуальную машину с именем `ra-onpremise-mgmt-vm1`.
 
-3. Вовремя сеанса удаленного рабочего стола откройте еще один сеанс удаленного рабочего стола к виртуальной машине `adds-vm1` с IP-адресом 10.0.4.4. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `azure.json`.
+3. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `onprem.json`.
 
-4. Во время сеанса подключения к удаленному рабочему столу для `adds-vm1` перейдите к **диспетчеру сервера** и выберите команду **Добавить другие серверы для управления**. 
+4. Вовремя сеанса удаленного рабочего стола откройте еще один сеанс удаленного рабочего стола к виртуальной машине `adds-vm1` с IP-адресом 10.0.4.4. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `azure.json`.
 
-5. На вкладке **Active Directory** нажмите **Найти сейчас**. Вы должны увидеть список AD, доменных служб Active Directory и виртуальных машин с веб-подключением.
+5. Во время сеанса подключения к удаленному рабочему столу для `adds-vm1` перейдите к **диспетчеру сервера** и выберите команду **Добавить другие серверы для управления**. 
+
+6. На вкладке **Active Directory** нажмите **Найти сейчас**. Вы должны увидеть список AD, доменных служб Active Directory и виртуальных машин с веб-подключением.
 
    ![](./images/add-servers-dialog.png)
 
