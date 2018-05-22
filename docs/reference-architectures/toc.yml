@@ -66,9 +66,16 @@
           href: dmz/secure-vnet-dmz.md
         - name: Сетевые виртуальные модули высокой доступности
           href: dmz/nva-ha.md
+    - name: SAP
+      href: sap/index.md
+      items:
+        - name: SAP NetWeaver для баз данных сторонних поставщиков (AnyDB)
+          href: sap/sap-netweaver.md
+        - name: SAP S/4 HANA
+          href: sap/sap-s4hana.md
+        - name: SAP HANA на крупных экземплярах Azure
+          href: sap/hana-large-instances.md
     - name: Сервер Jenkins
       href: jenkins/index.md
-    - name: SAP NetWeaver и SAP HANA
-      href: sap/index.md
     - name: SharePoint Server 2016
       href: sharepoint/index.md
