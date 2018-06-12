@@ -10,6 +10,8 @@
           items:
             - name: Пояснения. Принцип работы Azure
               href: adoption-intro/azure-explainer.md
+            - name: Пояснения. Знакомство с системой управления облачными ресурсами
+              href: adoption-intro/governance-explainer.md
         - name: Основные сведения о цифровых удостоверениях в Azure
           items:
             - name: Пояснения. Знакомство с клиентом Azure Active Directory
@@ -62,3 +64,8 @@
                   href: /azure/virtual-machines/linux/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json
                 - name: Руководство. Рекомендации по развертыванию виртуальной машины Linux в Azure
                   href: /azure/architecture/reference-architectures/virtual-machines-linux/single-vm?toc=/azure/architecture/cloud-adoption-guide/toc.json
+    - name: Промежуточное внедрение Azure
+      href: intermediate-stage/overview.md
+      items:
+        - name: Руководство по проектированию системы управления
+          href: intermediate-stage/governance-design-guide.md
