@@ -127,12 +127,16 @@
   items:
     - name: Azure для специалистов AWS
       href: aws-professional/index.md
+    - name: Создание микрослужб в Azure
+      href: ./microservices/index.md
     - name: Управление удостоверением в мультитенантных приложениях
       href: multitenant-identity/index.md
     - name: Миграция из облачных служб в Service Fabric
-      href: service-fabric/migrate-from-cloud-services.md
-    - name: 'Рефакторинг приложения, перенесенного из облачных служб Azure в Azure Service Fabric'
-      href: service-fabric/refactor-migrated-app.md
+      items:
+        - name: Перенос приложения облачных служб в Service Fabric
+          href: service-fabric/migrate-from-cloud-services.md
+        - name: Рефакторинг приложения Service Fabric
+          href: service-fabric/refactor-migrated-app.md
     - name: Расширение функциональности шаблонов Azure Resource Manager
       href: building-blocks/extending-templates/index.md
 - name: Ресурсы
