@@ -3,11 +3,12 @@ title: Хранение данных и киоски данных
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 552cdfad2d571c93f83bc1e4ff0d09ac12d0b6a4
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 9b90d77ce1a81cd4a7532f5d4230ada8b4991d13
+ms.sourcegitcommit: 85334ab0ccb072dac80de78aa82bcfa0f0044d3f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35252811"
 ---
 # <a name="data-warehousing-and-data-marts"></a>Хранение данных и киоски данных
 
@@ -117,7 +118,7 @@ MPP:
 
 ### <a name="general-capabilities"></a>Общие возможности
 
-| | Базы данных SQL Azure | SQL Server (виртуальная машина) | Хранилище данных SQL. | Apache Hive в HDInsight | Hive LLAP в HDInsight |
+| | Базы данных SQL Azure | SQL Server (виртуальная машина) | Хранилище данных SQL | Apache Hive в HDInsight | Hive LLAP в HDInsight |
 | --- | --- | --- | --- | --- | --- | -- |
 | Является управляемой службой | Yes | Нет  | Yes | Да <sup>1</sup> | Да <sup>1</sup> |
 | Требуется оркестрация данных (содержит копию простых или исторических данных) | Нет  | Нет  | Yes | Yes | Yes |
@@ -138,18 +139,18 @@ MPP:
 
 ### <a name="scalability-capabilities"></a>Масштабируемость
 
-| | Базы данных SQL Azure | SQL Server (виртуальная машина) |  Хранилище данных SQL. | Apache Hive в HDInsight | Hive LLAP в HDInsight |
+| | Базы данных SQL Azure | SQL Server (виртуальная машина) |  Хранилище данных SQL | Apache Hive в HDInsight | Hive LLAP в HDInsight |
 | --- | --- | --- | --- | --- | --- | -- |
 | Избыточные региональные серверы для высокого уровня доступности  | Yes | Yes | Yes | Нет  | Нет  |
 | Поддержка масштабирования запросов (распределенных)  | Нет  | Нет  | Yes | Yes | Yes |
-| Динамическая масштабируемость (увеличение масштаба)  | Yes | Нет  | Да <sup>1</sup> | Нет  | Нет  |
+| Динамическая масштабируемость | Yes | Нет  | Да <sup>1</sup> | Нет  | Нет  |
 | Выполняющееся в памяти кэширование данных | Yes |  Yes | Нет  | Yes | Yes |
 
 [1] Хранилище данных SQL позволяет выполнять вертикальное или горизонтальное масштабирование, настраивая количество единиц использования хранилища данных (DWU). Дополнительные сведения см. в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure (обзор)](/azure/sql-data-warehouse/sql-data-warehouse-manage-compute-overview).
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
 
-|                         |           Базы данных SQL Azure            |  SQL Server на виртуальной машине  | Хранилище данных SQL. |   Apache Hive в HDInsight    |    Hive LLAP в HDInsight     |
+|                         |           Базы данных SQL Azure            |  SQL Server на виртуальной машине  | Хранилище данных SQL |   Apache Hive в HDInsight    |    Hive LLAP в HDInsight     |
 |-------------------------|-----------------------------------------|-----------------------------------|--------------------|-------------------------------|-------------------------------|
 |     Authentication      | SQL / Azure Active Directory (Azure AD) | SQL / Azure AD / Active Directory |   SQL / Azure AD   | Локальные средства или Azure AD <sup>1</sup> | Локальные средства или Azure AD <sup>1</sup> |
 |      Авторизация      |                   Yes                   |                Yes                |        Yes         |              Yes              |       Да <sup>1</sup>        |
