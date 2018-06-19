@@ -2,422 +2,423 @@
 title: Критерии выбора хранилища данных
 description: Обзор вычислительных служб в Azure
 author: MikeWasson
-ms.openlocfilehash: 9cb2f77b854a38450490bc96bf0b6a2998ceb1c7
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 70f746f80c29623004620d83eb38747777df7f84
+ms.sourcegitcommit: 85334ab0ccb072dac80de78aa82bcfa0f0044d3f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35252879"
 ---
-# <a name="criteria-for-choosing-a-data-store"></a><span data-ttu-id="e0634-103">Критерии выбора хранилища данных</span><span class="sxs-lookup"><span data-stu-id="e0634-103">Criteria for choosing a data store</span></span>
+# <a name="criteria-for-choosing-a-data-store"></a><span data-ttu-id="8af57-103">Критерии выбора хранилища данных</span><span class="sxs-lookup"><span data-stu-id="8af57-103">Criteria for choosing a data store</span></span>
 
-<span data-ttu-id="e0634-104">Azure поддерживает различные типы решений для хранения данных с различными функциями и возможностями.</span><span class="sxs-lookup"><span data-stu-id="e0634-104">Azure supports many types of data storage solutions, each providing different features and capabilities.</span></span> <span data-ttu-id="e0634-105">В этой статье описываются критерии сравнения, которые следует применять при оценке хранилища данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-105">This article describes the comparison criteria you should use when evaluating a data store.</span></span> <span data-ttu-id="e0634-106">Эти сведения помогут выбрать оптимальное хранилище данных в соответствии с требованиями решения.</span><span class="sxs-lookup"><span data-stu-id="e0634-106">The goal is to help you determine which data storage types can meet your solution's requirements.</span></span>
+<span data-ttu-id="8af57-104">Azure поддерживает различные типы решений для хранения данных с различными функциями и возможностями.</span><span class="sxs-lookup"><span data-stu-id="8af57-104">Azure supports many types of data storage solutions, each providing different features and capabilities.</span></span> <span data-ttu-id="8af57-105">В этой статье описываются критерии сравнения, которые следует применять при оценке хранилища данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-105">This article describes the comparison criteria you should use when evaluating a data store.</span></span> <span data-ttu-id="8af57-106">Эти сведения помогут выбрать оптимальное хранилище данных в соответствии с требованиями решения.</span><span class="sxs-lookup"><span data-stu-id="8af57-106">The goal is to help you determine which data storage types can meet your solution's requirements.</span></span>
 
-## <a name="general-considerations"></a><span data-ttu-id="e0634-107">Общие рекомендации</span><span class="sxs-lookup"><span data-stu-id="e0634-107">General Considerations</span></span>
+## <a name="general-considerations"></a><span data-ttu-id="8af57-107">Общие рекомендации</span><span class="sxs-lookup"><span data-stu-id="8af57-107">General Considerations</span></span>
 
-<span data-ttu-id="e0634-108">Для начала соберите как можно больше сведений о требованиях к данным.</span><span class="sxs-lookup"><span data-stu-id="e0634-108">To start your comparison, gather as much of the following information as you can about your data needs.</span></span> <span data-ttu-id="e0634-109">Эти сведения помогут определить тип хранилища данных в соответствии с вашими требованиями.</span><span class="sxs-lookup"><span data-stu-id="e0634-109">This information will help you to determine which data storage types will meet your needs.</span></span>
+<span data-ttu-id="8af57-108">Для начала соберите как можно больше сведений о требованиях к данным.</span><span class="sxs-lookup"><span data-stu-id="8af57-108">To start your comparison, gather as much of the following information as you can about your data needs.</span></span> <span data-ttu-id="8af57-109">Эти сведения помогут определить тип хранилища данных в соответствии с вашими требованиями.</span><span class="sxs-lookup"><span data-stu-id="8af57-109">This information will help you to determine which data storage types will meet your needs.</span></span>
 
-### <a name="functional-requirements"></a><span data-ttu-id="e0634-110">Функциональные требования</span><span class="sxs-lookup"><span data-stu-id="e0634-110">Functional requirements</span></span>
+### <a name="functional-requirements"></a><span data-ttu-id="8af57-110">Функциональные требования</span><span class="sxs-lookup"><span data-stu-id="8af57-110">Functional requirements</span></span>
 
-- <span data-ttu-id="e0634-111">**Формат данных.**</span><span class="sxs-lookup"><span data-stu-id="e0634-111">**Data format**.</span></span> <span data-ttu-id="e0634-112">Данные какого типа требуется хранить?</span><span class="sxs-lookup"><span data-stu-id="e0634-112">What type of data are you intending to store?</span></span> <span data-ttu-id="e0634-113">Распространенные типы: данные о транзакциях, объекты JSON, телеметрия, индексы поиска или неструктурированные файлы.</span><span class="sxs-lookup"><span data-stu-id="e0634-113">Common types include transactional data, JSON objects, telemetry, search indexes, or flat files.</span></span>
-- <span data-ttu-id="e0634-114">**Размер данных.**</span><span class="sxs-lookup"><span data-stu-id="e0634-114">**Data size**.</span></span> <span data-ttu-id="e0634-115">Каков размер сущностей, которые нужно хранить?</span><span class="sxs-lookup"><span data-stu-id="e0634-115">How large are the entities you need to store?</span></span> <span data-ttu-id="e0634-116">Эти сущности следует использовать как один документ или их можно разбить на несколько документов, таблиц, коллекций и т. д.?</span><span class="sxs-lookup"><span data-stu-id="e0634-116">Will these entities need to be maintained as a single document, or can they be split across multiple documents, tables, collections, and so forth?</span></span>
-- <span data-ttu-id="e0634-117">**Масштаб и структура.**</span><span class="sxs-lookup"><span data-stu-id="e0634-117">**Scale and structure**.</span></span> <span data-ttu-id="e0634-118">Какова требуемая емкость хранилища?</span><span class="sxs-lookup"><span data-stu-id="e0634-118">What is the overall amount of storage capacity you need?</span></span> <span data-ttu-id="e0634-119">Планируется ли секционирование данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-119">Do you anticipate partitioning your data?</span></span> 
-- <span data-ttu-id="e0634-120">**Связи между данными.**</span><span class="sxs-lookup"><span data-stu-id="e0634-120">**Data relationships**.</span></span> <span data-ttu-id="e0634-121">Какой тип связи требуется реализовать в данных: "один ко многим" или "многие ко многим"?</span><span class="sxs-lookup"><span data-stu-id="e0634-121">Will your data need to support one-to-many or many-to-many relationships?</span></span> <span data-ttu-id="e0634-122">Сами связи являются важной частью данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-122">Are relationships themselves an important part of the data?</span></span> <span data-ttu-id="e0634-123">Вам понадобится объединить данные из одного набора данных или из внешних наборов данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-123">Will you need to join or otherwise combine data from within the same dataset, or from external datasets?</span></span> 
-- <span data-ttu-id="e0634-124">**Модель согласованности.**</span><span class="sxs-lookup"><span data-stu-id="e0634-124">**Consistency model**.</span></span> <span data-ttu-id="e0634-125">Насколько важно, чтобы обновления одного узла отображались на других узлах перед дальнейшим внесением изменений?</span><span class="sxs-lookup"><span data-stu-id="e0634-125">How important is it for updates made in one node to appear in other nodes, before further changes can be made?</span></span> <span data-ttu-id="e0634-126">Возможно ли принять итоговую согласованность?</span><span class="sxs-lookup"><span data-stu-id="e0634-126">Can you accept eventual consistency?</span></span> <span data-ttu-id="e0634-127">Требуются ли гарантии ACID для транзакций?</span><span class="sxs-lookup"><span data-stu-id="e0634-127">Do you need ACID guarantees for transactions?</span></span>
-- <span data-ttu-id="e0634-128">**Гибкость схемы.**</span><span class="sxs-lookup"><span data-stu-id="e0634-128">**Schema flexibility**.</span></span> <span data-ttu-id="e0634-129">Какие схемы будут применяться к данным?</span><span class="sxs-lookup"><span data-stu-id="e0634-129">What kind of schemas will you apply to your data?</span></span> <span data-ttu-id="e0634-130">Какой подход будет применяться: фиксированная схема, схема по записи или схема по чтению?</span><span class="sxs-lookup"><span data-stu-id="e0634-130">Will you use a fixed schema, a schema-on-write approach, or a schema-on-read approach?</span></span>
-- <span data-ttu-id="e0634-131">**Параллелизм.**</span><span class="sxs-lookup"><span data-stu-id="e0634-131">**Concurrency**.</span></span> <span data-ttu-id="e0634-132">Какой механизм параллелизма следует использовать при обновлении и синхронизации данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-132">What kind of concurrency mechanism do you want to use when updating and synchronizing data?</span></span> <span data-ttu-id="e0634-133">Будет ли в приложении выполняться большое количество обновлений, которые потенциально могут конфликтовать?</span><span class="sxs-lookup"><span data-stu-id="e0634-133">Will the application perform many updates that could potentially conflict.</span></span> <span data-ttu-id="e0634-134">В этом случае может потребоваться блокировка записей и контроль пессимистичной блокировки.</span><span class="sxs-lookup"><span data-stu-id="e0634-134">If so, you may requiring record locking and pessimistic concurrency control.</span></span> <span data-ttu-id="e0634-135">Кроме того, поддерживает ли система элементы управления оптимистичной блокировкой?</span><span class="sxs-lookup"><span data-stu-id="e0634-135">Alternatively, can you support optimistic concurrency controls?</span></span> <span data-ttu-id="e0634-136">Если ответ положительный, достаточно ли простого контроля параллелизма на основе меток времени или требуются дополнительные возможности по контролю параллелизма в нескольких версиях?</span><span class="sxs-lookup"><span data-stu-id="e0634-136">If so, is simple timestamp-based concurrency control enough, or do you need the added functionality of multi-version concurrency control?</span></span>
-- <span data-ttu-id="e0634-137">**Перемещение данных.**</span><span class="sxs-lookup"><span data-stu-id="e0634-137">**Data movement**.</span></span> <span data-ttu-id="e0634-138">Понадобится ли решению выполнять задачи ETL для переноса данных в другие хранилища данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-138">Will your solution need to perform ETL tasks to move data to other stores or data warehouses?</span></span>
-- <span data-ttu-id="e0634-139">**Жизненный цикл данных.**</span><span class="sxs-lookup"><span data-stu-id="e0634-139">**Data lifecycle**.</span></span> <span data-ttu-id="e0634-140">Принадлежат ли данные к типу "однократная запись, многократное чтение"?</span><span class="sxs-lookup"><span data-stu-id="e0634-140">Is the data write-once, read-many?</span></span> <span data-ttu-id="e0634-141">Можно ли их переместить в "горячее" или "холодное" хранилище?</span><span class="sxs-lookup"><span data-stu-id="e0634-141">Can it be moved into cool or cold storage?</span></span>
-- <span data-ttu-id="e0634-142">**Другие поддерживаемые функции.**</span><span class="sxs-lookup"><span data-stu-id="e0634-142">**Other supported features**.</span></span> <span data-ttu-id="e0634-143">Требуются ли другие специальные функции, например проверка схемы, агрегирование, индексирование, полнотекстовый поиск, MapReduce или другие возможности запросов?</span><span class="sxs-lookup"><span data-stu-id="e0634-143">Do you need any other specific features, such as schema validation, aggregation, indexing, full-text search, MapReduce, or other query capabilities?</span></span>
+- <span data-ttu-id="8af57-111">**Формат данных.**</span><span class="sxs-lookup"><span data-stu-id="8af57-111">**Data format**.</span></span> <span data-ttu-id="8af57-112">Данные какого типа требуется хранить?</span><span class="sxs-lookup"><span data-stu-id="8af57-112">What type of data are you intending to store?</span></span> <span data-ttu-id="8af57-113">Распространенные типы: данные о транзакциях, объекты JSON, телеметрия, индексы поиска или неструктурированные файлы.</span><span class="sxs-lookup"><span data-stu-id="8af57-113">Common types include transactional data, JSON objects, telemetry, search indexes, or flat files.</span></span>
+- <span data-ttu-id="8af57-114">**Размер данных.**</span><span class="sxs-lookup"><span data-stu-id="8af57-114">**Data size**.</span></span> <span data-ttu-id="8af57-115">Каков размер сущностей, которые нужно хранить?</span><span class="sxs-lookup"><span data-stu-id="8af57-115">How large are the entities you need to store?</span></span> <span data-ttu-id="8af57-116">Эти сущности следует использовать как один документ или их можно разбить на несколько документов, таблиц, коллекций и т. д.?</span><span class="sxs-lookup"><span data-stu-id="8af57-116">Will these entities need to be maintained as a single document, or can they be split across multiple documents, tables, collections, and so forth?</span></span>
+- <span data-ttu-id="8af57-117">**Масштаб и структура.**</span><span class="sxs-lookup"><span data-stu-id="8af57-117">**Scale and structure**.</span></span> <span data-ttu-id="8af57-118">Какова требуемая емкость хранилища?</span><span class="sxs-lookup"><span data-stu-id="8af57-118">What is the overall amount of storage capacity you need?</span></span> <span data-ttu-id="8af57-119">Планируется ли секционирование данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-119">Do you anticipate partitioning your data?</span></span> 
+- <span data-ttu-id="8af57-120">**Связи между данными.**</span><span class="sxs-lookup"><span data-stu-id="8af57-120">**Data relationships**.</span></span> <span data-ttu-id="8af57-121">Какой тип связи требуется реализовать в данных: "один ко многим" или "многие ко многим"?</span><span class="sxs-lookup"><span data-stu-id="8af57-121">Will your data need to support one-to-many or many-to-many relationships?</span></span> <span data-ttu-id="8af57-122">Сами связи являются важной частью данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-122">Are relationships themselves an important part of the data?</span></span> <span data-ttu-id="8af57-123">Вам понадобится объединить данные из одного набора данных или из внешних наборов данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-123">Will you need to join or otherwise combine data from within the same dataset, or from external datasets?</span></span> 
+- <span data-ttu-id="8af57-124">**Модель согласованности.**</span><span class="sxs-lookup"><span data-stu-id="8af57-124">**Consistency model**.</span></span> <span data-ttu-id="8af57-125">Насколько важно, чтобы обновления одного узла отображались на других узлах перед дальнейшим внесением изменений?</span><span class="sxs-lookup"><span data-stu-id="8af57-125">How important is it for updates made in one node to appear in other nodes, before further changes can be made?</span></span> <span data-ttu-id="8af57-126">Возможно ли принять итоговую согласованность?</span><span class="sxs-lookup"><span data-stu-id="8af57-126">Can you accept eventual consistency?</span></span> <span data-ttu-id="8af57-127">Требуются ли гарантии ACID для транзакций?</span><span class="sxs-lookup"><span data-stu-id="8af57-127">Do you need ACID guarantees for transactions?</span></span>
+- <span data-ttu-id="8af57-128">**Гибкость схемы.**</span><span class="sxs-lookup"><span data-stu-id="8af57-128">**Schema flexibility**.</span></span> <span data-ttu-id="8af57-129">Какие схемы будут применяться к данным?</span><span class="sxs-lookup"><span data-stu-id="8af57-129">What kind of schemas will you apply to your data?</span></span> <span data-ttu-id="8af57-130">Какой подход будет применяться: фиксированная схема, схема по записи или схема по чтению?</span><span class="sxs-lookup"><span data-stu-id="8af57-130">Will you use a fixed schema, a schema-on-write approach, or a schema-on-read approach?</span></span>
+- <span data-ttu-id="8af57-131">**Параллелизм.**</span><span class="sxs-lookup"><span data-stu-id="8af57-131">**Concurrency**.</span></span> <span data-ttu-id="8af57-132">Какой механизм параллелизма следует использовать при обновлении и синхронизации данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-132">What kind of concurrency mechanism do you want to use when updating and synchronizing data?</span></span> <span data-ttu-id="8af57-133">Будет ли в приложении выполняться большое количество обновлений, которые потенциально могут конфликтовать?</span><span class="sxs-lookup"><span data-stu-id="8af57-133">Will the application perform many updates that could potentially conflict.</span></span> <span data-ttu-id="8af57-134">В этом случае может потребоваться блокировка записей и контроль пессимистичной блокировки.</span><span class="sxs-lookup"><span data-stu-id="8af57-134">If so, you may require record locking and pessimistic concurrency control.</span></span> <span data-ttu-id="8af57-135">Кроме того, поддерживает ли система элементы управления оптимистичной блокировкой?</span><span class="sxs-lookup"><span data-stu-id="8af57-135">Alternatively, can you support optimistic concurrency controls?</span></span> <span data-ttu-id="8af57-136">Если ответ положительный, достаточно ли простого контроля параллелизма на основе меток времени или требуются дополнительные возможности по контролю параллелизма в нескольких версиях?</span><span class="sxs-lookup"><span data-stu-id="8af57-136">If so, is simple timestamp-based concurrency control enough, or do you need the added functionality of multi-version concurrency control?</span></span>
+- <span data-ttu-id="8af57-137">**Перемещение данных.**</span><span class="sxs-lookup"><span data-stu-id="8af57-137">**Data movement**.</span></span> <span data-ttu-id="8af57-138">Понадобится ли решению выполнять задачи ETL для переноса данных в другие хранилища данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-138">Will your solution need to perform ETL tasks to move data to other stores or data warehouses?</span></span>
+- <span data-ttu-id="8af57-139">**Жизненный цикл данных.**</span><span class="sxs-lookup"><span data-stu-id="8af57-139">**Data lifecycle**.</span></span> <span data-ttu-id="8af57-140">Принадлежат ли данные к типу "однократная запись, многократное чтение"?</span><span class="sxs-lookup"><span data-stu-id="8af57-140">Is the data write-once, read-many?</span></span> <span data-ttu-id="8af57-141">Можно ли их переместить в "горячее" или "холодное" хранилище?</span><span class="sxs-lookup"><span data-stu-id="8af57-141">Can it be moved into cool or cold storage?</span></span>
+- <span data-ttu-id="8af57-142">**Другие поддерживаемые функции.**</span><span class="sxs-lookup"><span data-stu-id="8af57-142">**Other supported features**.</span></span> <span data-ttu-id="8af57-143">Требуются ли другие специальные функции, например проверка схемы, агрегирование, индексирование, полнотекстовый поиск, MapReduce или другие возможности запросов?</span><span class="sxs-lookup"><span data-stu-id="8af57-143">Do you need any other specific features, such as schema validation, aggregation, indexing, full-text search, MapReduce, or other query capabilities?</span></span>
 
-### <a name="non-functional-requirements"></a><span data-ttu-id="e0634-144">Нефункциональные требования</span><span class="sxs-lookup"><span data-stu-id="e0634-144">Non-functional requirements</span></span>
+### <a name="non-functional-requirements"></a><span data-ttu-id="8af57-144">Нефункциональные требования</span><span class="sxs-lookup"><span data-stu-id="8af57-144">Non-functional requirements</span></span>
 
-- <span data-ttu-id="e0634-145">**Производительность и масштабирование.**</span><span class="sxs-lookup"><span data-stu-id="e0634-145">**Performance and scalability**.</span></span> <span data-ttu-id="e0634-146">Каковы требования к производительности данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-146">What are your data performance requirements?</span></span> <span data-ttu-id="e0634-147">Имеются ли специальные требования к приему и скорости обработки данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-147">Do you have specific requirements for data ingestion rates and data processing rates?</span></span> <span data-ttu-id="e0634-148">Каково приемлемое время отклика для обращения к данным и их статистической обработки после приема?</span><span class="sxs-lookup"><span data-stu-id="e0634-148">What are the acceptable response times for querying and aggregation of data once ingested?</span></span> <span data-ttu-id="e0634-149">На сколько требуется увеличить масштаб хранилища данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-149">How large will you need the data store to scale up?</span></span> <span data-ttu-id="e0634-150">Каких операций больше в рабочей нагрузке: чтения или записи?</span><span class="sxs-lookup"><span data-stu-id="e0634-150">Is your workload more read-heavy or write-heavy?</span></span>
-- <span data-ttu-id="e0634-151">**Надежность.**</span><span class="sxs-lookup"><span data-stu-id="e0634-151">**Reliability**.</span></span> <span data-ttu-id="e0634-152">Какие общие Соглашения об уровне обслуживания требуется поддерживать?</span><span class="sxs-lookup"><span data-stu-id="e0634-152">What overall SLA do you need to support?</span></span> <span data-ttu-id="e0634-153">Какой уровень отказоустойчивости необходимо предоставить для потребителей данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-153">What level of fault-tolerance do you need to provide for data consumers?</span></span> <span data-ttu-id="e0634-154">Какие возможности резервного копирования и восстановления требуются?</span><span class="sxs-lookup"><span data-stu-id="e0634-154">What kind of backup and restore capabilities do you need?</span></span> 
-- <span data-ttu-id="e0634-155">**Репликация.**</span><span class="sxs-lookup"><span data-stu-id="e0634-155">**Replication**.</span></span> <span data-ttu-id="e0634-156">Понадобится ли распределить данные по нескольким репликам или регионам?</span><span class="sxs-lookup"><span data-stu-id="e0634-156">Will your data need to be distributed among multiple replicas or regions?</span></span> <span data-ttu-id="e0634-157">Какие возможности репликации данных требуются?</span><span class="sxs-lookup"><span data-stu-id="e0634-157">What kind of data replication capabilities do you require?</span></span> 
-- <span data-ttu-id="e0634-158">**Ограничения.**</span><span class="sxs-lookup"><span data-stu-id="e0634-158">**Limits**.</span></span> <span data-ttu-id="e0634-159">Будут ли ограничения конкретного хранилища данных поддерживать ваши требования к масштабированию, числу подключений и пропускной способности?</span><span class="sxs-lookup"><span data-stu-id="e0634-159">Will the limits of a particular data store support your requirements for scale, number of connections, and throughput?</span></span> 
+- <span data-ttu-id="8af57-145">**Производительность и масштабирование.**</span><span class="sxs-lookup"><span data-stu-id="8af57-145">**Performance and scalability**.</span></span> <span data-ttu-id="8af57-146">Каковы требования к производительности данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-146">What are your data performance requirements?</span></span> <span data-ttu-id="8af57-147">Имеются ли специальные требования к приему и скорости обработки данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-147">Do you have specific requirements for data ingestion rates and data processing rates?</span></span> <span data-ttu-id="8af57-148">Каково приемлемое время отклика для обращения к данным и их статистической обработки после приема?</span><span class="sxs-lookup"><span data-stu-id="8af57-148">What are the acceptable response times for querying and aggregation of data once ingested?</span></span> <span data-ttu-id="8af57-149">На сколько требуется увеличить масштаб хранилища данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-149">How large will you need the data store to scale up?</span></span> <span data-ttu-id="8af57-150">Каких операций больше в рабочей нагрузке: чтения или записи?</span><span class="sxs-lookup"><span data-stu-id="8af57-150">Is your workload more read-heavy or write-heavy?</span></span>
+- <span data-ttu-id="8af57-151">**Надежность.**</span><span class="sxs-lookup"><span data-stu-id="8af57-151">**Reliability**.</span></span> <span data-ttu-id="8af57-152">Какие общие Соглашения об уровне обслуживания требуется поддерживать?</span><span class="sxs-lookup"><span data-stu-id="8af57-152">What overall SLA do you need to support?</span></span> <span data-ttu-id="8af57-153">Какой уровень отказоустойчивости необходимо предоставить для потребителей данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-153">What level of fault-tolerance do you need to provide for data consumers?</span></span> <span data-ttu-id="8af57-154">Какие возможности резервного копирования и восстановления требуются?</span><span class="sxs-lookup"><span data-stu-id="8af57-154">What kind of backup and restore capabilities do you need?</span></span> 
+- <span data-ttu-id="8af57-155">**Репликация.**</span><span class="sxs-lookup"><span data-stu-id="8af57-155">**Replication**.</span></span> <span data-ttu-id="8af57-156">Понадобится ли распределить данные по нескольким репликам или регионам?</span><span class="sxs-lookup"><span data-stu-id="8af57-156">Will your data need to be distributed among multiple replicas or regions?</span></span> <span data-ttu-id="8af57-157">Какие возможности репликации данных требуются?</span><span class="sxs-lookup"><span data-stu-id="8af57-157">What kind of data replication capabilities do you require?</span></span> 
+- <span data-ttu-id="8af57-158">**Ограничения.**</span><span class="sxs-lookup"><span data-stu-id="8af57-158">**Limits**.</span></span> <span data-ttu-id="8af57-159">Будут ли ограничения конкретного хранилища данных поддерживать ваши требования к масштабированию, числу подключений и пропускной способности?</span><span class="sxs-lookup"><span data-stu-id="8af57-159">Will the limits of a particular data store support your requirements for scale, number of connections, and throughput?</span></span> 
 
-### <a name="management-and-cost"></a><span data-ttu-id="e0634-160">Управление и затраты</span><span class="sxs-lookup"><span data-stu-id="e0634-160">Management and cost</span></span>
+### <a name="management-and-cost"></a><span data-ttu-id="8af57-160">Управление и затраты</span><span class="sxs-lookup"><span data-stu-id="8af57-160">Management and cost</span></span>
 
-- <span data-ttu-id="e0634-161">**Управляемая служба.**</span><span class="sxs-lookup"><span data-stu-id="e0634-161">**Managed service**.</span></span> <span data-ttu-id="e0634-162">По возможности используйте управляемую службу данных, если вам не требуются конкретные возможности, доступные только в хранилище данных, размещенном в IaaS.</span><span class="sxs-lookup"><span data-stu-id="e0634-162">When possible, use a managed data service, unless you require specific capabilities that can only be found in an IaaS-hosted data store.</span></span>
-- <span data-ttu-id="e0634-163">**Доступность по регионам.**</span><span class="sxs-lookup"><span data-stu-id="e0634-163">**Region availability**.</span></span> <span data-ttu-id="e0634-164">Доступна ли управляемая служба во всех регионах Azure?</span><span class="sxs-lookup"><span data-stu-id="e0634-164">For managed services, is the service available in all Azure regions?</span></span> <span data-ttu-id="e0634-165">Нужно ли разместить решение в определенных регионах Azure?</span><span class="sxs-lookup"><span data-stu-id="e0634-165">Does your solution need to be hosted in certain Azure regions?</span></span>
-- <span data-ttu-id="e0634-166">**Мобильность.**</span><span class="sxs-lookup"><span data-stu-id="e0634-166">**Portability**.</span></span> <span data-ttu-id="e0634-167">Потребуется ли переносить данные в локальную среду, во внешние центры обработки данных или другие облачные среды размещения?</span><span class="sxs-lookup"><span data-stu-id="e0634-167">Will your data need to migrated to on-premises, external datacenters, or other cloud hosting environments?</span></span>
-- <span data-ttu-id="e0634-168">**Лицензирование.**</span><span class="sxs-lookup"><span data-stu-id="e0634-168">**Licensing**.</span></span> <span data-ttu-id="e0634-169">Что вы предпочитаете: частную лицензию или лицензию OSS?</span><span class="sxs-lookup"><span data-stu-id="e0634-169">Do you have a preference of a proprietary versus OSS license type?</span></span> <span data-ttu-id="e0634-170">Существуют ли другие внешние ограничения по типу лицензии, который следует использовать?</span><span class="sxs-lookup"><span data-stu-id="e0634-170">Are there any other external restrictions on what type of license you can use?</span></span>
-- <span data-ttu-id="e0634-171">**Общая стоимость.**</span><span class="sxs-lookup"><span data-stu-id="e0634-171">**Overall cost**.</span></span> <span data-ttu-id="e0634-172">Какова общая стоимость использования службы в решении?</span><span class="sxs-lookup"><span data-stu-id="e0634-172">What is the overall cost of using the service within your solution?</span></span> <span data-ttu-id="e0634-173">Сколько экземпляров потребуется в соответствии с требованиями к бесперебойной работе и пропускной способности?</span><span class="sxs-lookup"><span data-stu-id="e0634-173">How many instances will need to run, to support your uptime and throughput requirements?</span></span> <span data-ttu-id="e0634-174">Рассчитывая это, учтите эксплуатационные расходы.</span><span class="sxs-lookup"><span data-stu-id="e0634-174">Consider operations costs in this calculation.</span></span> <span data-ttu-id="e0634-175">Одна из причин для выбора управляемых служб — низкие эксплуатационные расходы.</span><span class="sxs-lookup"><span data-stu-id="e0634-175">One reason to prefer managed services is the reduced operational cost.</span></span>
-- <span data-ttu-id="e0634-176">**Экономичность.**</span><span class="sxs-lookup"><span data-stu-id="e0634-176">**Cost effectiveness**.</span></span> <span data-ttu-id="e0634-177">Можно ли секционировать данные для более экономичного хранения?</span><span class="sxs-lookup"><span data-stu-id="e0634-177">Can you partition your data, to store it more cost effectively?</span></span> <span data-ttu-id="e0634-178">Например, можно ли переместить большие объекты из дорогой реляционной базы данных в хранилище объектов?</span><span class="sxs-lookup"><span data-stu-id="e0634-178">For example, can you move large objects out of an expensive relational database into an object store?</span></span>
+- <span data-ttu-id="8af57-161">**Управляемая служба.**</span><span class="sxs-lookup"><span data-stu-id="8af57-161">**Managed service**.</span></span> <span data-ttu-id="8af57-162">По возможности используйте управляемую службу данных, если вам не требуются конкретные возможности, доступные только в хранилище данных, размещенном в IaaS.</span><span class="sxs-lookup"><span data-stu-id="8af57-162">When possible, use a managed data service, unless you require specific capabilities that can only be found in an IaaS-hosted data store.</span></span>
+- <span data-ttu-id="8af57-163">**Доступность по регионам.**</span><span class="sxs-lookup"><span data-stu-id="8af57-163">**Region availability**.</span></span> <span data-ttu-id="8af57-164">Доступна ли управляемая служба во всех регионах Azure?</span><span class="sxs-lookup"><span data-stu-id="8af57-164">For managed services, is the service available in all Azure regions?</span></span> <span data-ttu-id="8af57-165">Нужно ли разместить решение в определенных регионах Azure?</span><span class="sxs-lookup"><span data-stu-id="8af57-165">Does your solution need to be hosted in certain Azure regions?</span></span>
+- <span data-ttu-id="8af57-166">**Мобильность.**</span><span class="sxs-lookup"><span data-stu-id="8af57-166">**Portability**.</span></span> <span data-ttu-id="8af57-167">Потребуется ли переносить данные в локальную среду, во внешние центры обработки данных или другие облачные среды размещения?</span><span class="sxs-lookup"><span data-stu-id="8af57-167">Will your data need to migrated to on-premises, external datacenters, or other cloud hosting environments?</span></span>
+- <span data-ttu-id="8af57-168">**Лицензирование.**</span><span class="sxs-lookup"><span data-stu-id="8af57-168">**Licensing**.</span></span> <span data-ttu-id="8af57-169">Что вы предпочитаете: частную лицензию или лицензию OSS?</span><span class="sxs-lookup"><span data-stu-id="8af57-169">Do you have a preference of a proprietary versus OSS license type?</span></span> <span data-ttu-id="8af57-170">Существуют ли другие внешние ограничения по типу лицензии, который следует использовать?</span><span class="sxs-lookup"><span data-stu-id="8af57-170">Are there any other external restrictions on what type of license you can use?</span></span>
+- <span data-ttu-id="8af57-171">**Общая стоимость.**</span><span class="sxs-lookup"><span data-stu-id="8af57-171">**Overall cost**.</span></span> <span data-ttu-id="8af57-172">Какова общая стоимость использования службы в решении?</span><span class="sxs-lookup"><span data-stu-id="8af57-172">What is the overall cost of using the service within your solution?</span></span> <span data-ttu-id="8af57-173">Сколько экземпляров потребуется в соответствии с требованиями к бесперебойной работе и пропускной способности?</span><span class="sxs-lookup"><span data-stu-id="8af57-173">How many instances will need to run, to support your uptime and throughput requirements?</span></span> <span data-ttu-id="8af57-174">Рассчитывая это, учтите эксплуатационные расходы.</span><span class="sxs-lookup"><span data-stu-id="8af57-174">Consider operations costs in this calculation.</span></span> <span data-ttu-id="8af57-175">Одна из причин для выбора управляемых служб — низкие эксплуатационные расходы.</span><span class="sxs-lookup"><span data-stu-id="8af57-175">One reason to prefer managed services is the reduced operational cost.</span></span>
+- <span data-ttu-id="8af57-176">**Экономичность.**</span><span class="sxs-lookup"><span data-stu-id="8af57-176">**Cost effectiveness**.</span></span> <span data-ttu-id="8af57-177">Можно ли секционировать данные для более экономичного хранения?</span><span class="sxs-lookup"><span data-stu-id="8af57-177">Can you partition your data, to store it more cost effectively?</span></span> <span data-ttu-id="8af57-178">Например, можно ли переместить большие объекты из дорогой реляционной базы данных в хранилище объектов?</span><span class="sxs-lookup"><span data-stu-id="8af57-178">For example, can you move large objects out of an expensive relational database into an object store?</span></span>
 
-### <a name="security"></a><span data-ttu-id="e0634-179">Безопасность</span><span class="sxs-lookup"><span data-stu-id="e0634-179">Security</span></span>
+### <a name="security"></a><span data-ttu-id="8af57-179">Безопасность</span><span class="sxs-lookup"><span data-stu-id="8af57-179">Security</span></span>
 
-- <span data-ttu-id="e0634-180">**Безопасность**.</span><span class="sxs-lookup"><span data-stu-id="e0634-180">**Security**.</span></span> <span data-ttu-id="e0634-181">Какой тип шифрования нужен?</span><span class="sxs-lookup"><span data-stu-id="e0634-181">What type of encryption do you require?</span></span> <span data-ttu-id="e0634-182">Требуется ли шифрование неактивных данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-182">Do you need encryption at rest?</span></span> <span data-ttu-id="e0634-183">Какой метод аутентификации нужно использовать для подключения к данным?</span><span class="sxs-lookup"><span data-stu-id="e0634-183">What authentication mechanism do you want to use to connect to your data?</span></span>
-- <span data-ttu-id="e0634-184">**Аудит.**</span><span class="sxs-lookup"><span data-stu-id="e0634-184">**Auditing**.</span></span> <span data-ttu-id="e0634-185">Журнал какого типа аудита необходимо создать?</span><span class="sxs-lookup"><span data-stu-id="e0634-185">What kind of audit log do you need to generate?</span></span>
-- <span data-ttu-id="e0634-186">**Требования к сети.**</span><span class="sxs-lookup"><span data-stu-id="e0634-186">**Networking requirements**.</span></span> <span data-ttu-id="e0634-187">Необходимо ли ограничить доступ к данным из других сетевых ресурсов или управлять доступом иным образом?</span><span class="sxs-lookup"><span data-stu-id="e0634-187">Do you need to restrict or otherwise manage access to your data from other network resources?</span></span> <span data-ttu-id="e0634-188">Данные должны быть доступны только в среде Azure?</span><span class="sxs-lookup"><span data-stu-id="e0634-188">Does data need to be accessible only from inside the Azure environment?</span></span> <span data-ttu-id="e0634-189">Требуется ли использовать конкретный IP-адрес или подсеть для доступа к данным?</span><span class="sxs-lookup"><span data-stu-id="e0634-189">Does the data need to be accessible from specific IP addresses or subnets?</span></span> <span data-ttu-id="e0634-190">Нужно ли предоставить доступ к данным из приложений или служб, размещенных локально или в других внешних центрах обработки данных?</span><span class="sxs-lookup"><span data-stu-id="e0634-190">Does it need to be accessible from applications or services hosted on-premises or in other external datacenters?</span></span>
+- <span data-ttu-id="8af57-180">**Безопасность**.</span><span class="sxs-lookup"><span data-stu-id="8af57-180">**Security**.</span></span> <span data-ttu-id="8af57-181">Какой тип шифрования нужен?</span><span class="sxs-lookup"><span data-stu-id="8af57-181">What type of encryption do you require?</span></span> <span data-ttu-id="8af57-182">Требуется ли шифрование неактивных данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-182">Do you need encryption at rest?</span></span> <span data-ttu-id="8af57-183">Какой метод аутентификации нужно использовать для подключения к данным?</span><span class="sxs-lookup"><span data-stu-id="8af57-183">What authentication mechanism do you want to use to connect to your data?</span></span>
+- <span data-ttu-id="8af57-184">**Аудит.**</span><span class="sxs-lookup"><span data-stu-id="8af57-184">**Auditing**.</span></span> <span data-ttu-id="8af57-185">Журнал какого типа аудита необходимо создать?</span><span class="sxs-lookup"><span data-stu-id="8af57-185">What kind of audit log do you need to generate?</span></span>
+- <span data-ttu-id="8af57-186">**Требования к сети.**</span><span class="sxs-lookup"><span data-stu-id="8af57-186">**Networking requirements**.</span></span> <span data-ttu-id="8af57-187">Необходимо ли ограничить доступ к данным из других сетевых ресурсов или управлять доступом иным образом?</span><span class="sxs-lookup"><span data-stu-id="8af57-187">Do you need to restrict or otherwise manage access to your data from other network resources?</span></span> <span data-ttu-id="8af57-188">Данные должны быть доступны только в среде Azure?</span><span class="sxs-lookup"><span data-stu-id="8af57-188">Does data need to be accessible only from inside the Azure environment?</span></span> <span data-ttu-id="8af57-189">Требуется ли использовать конкретный IP-адрес или подсеть для доступа к данным?</span><span class="sxs-lookup"><span data-stu-id="8af57-189">Does the data need to be accessible from specific IP addresses or subnets?</span></span> <span data-ttu-id="8af57-190">Нужно ли предоставить доступ к данным из приложений или служб, размещенных локально или в других внешних центрах обработки данных?</span><span class="sxs-lookup"><span data-stu-id="8af57-190">Does it need to be accessible from applications or services hosted on-premises or in other external datacenters?</span></span>
 
-### <a name="devops"></a><span data-ttu-id="e0634-191">Разработка и операции</span><span class="sxs-lookup"><span data-stu-id="e0634-191">DevOps</span></span>
+### <a name="devops"></a><span data-ttu-id="8af57-191">DevOps</span><span class="sxs-lookup"><span data-stu-id="8af57-191">DevOps</span></span>
 
-- <span data-ttu-id="e0634-192">**Навыки.**</span><span class="sxs-lookup"><span data-stu-id="e0634-192">**Skill set**.</span></span> <span data-ttu-id="e0634-193">Освоила ли ваша команда определенные языки программирования, работу с операционными системами или с другими технологиями?</span><span class="sxs-lookup"><span data-stu-id="e0634-193">Are there particular programming languages, operating systems, or other technology that your team is particularly adept at using?</span></span> <span data-ttu-id="e0634-194">При работе с какими технологиями и системами у вашей команды возникают проблемы?</span><span class="sxs-lookup"><span data-stu-id="e0634-194">Are there others that would be difficult for your team to work with?</span></span>
-- <span data-ttu-id="e0634-195">**Клиенты.** Предоставляется ли поддержка клиентов для ваших языков разработки на должном уровне?</span><span class="sxs-lookup"><span data-stu-id="e0634-195">**Clients** Is there good client support for your development languages?</span></span>
+- <span data-ttu-id="8af57-192">**Навыки.**</span><span class="sxs-lookup"><span data-stu-id="8af57-192">**Skill set**.</span></span> <span data-ttu-id="8af57-193">Освоила ли ваша команда определенные языки программирования, работу с операционными системами или с другими технологиями?</span><span class="sxs-lookup"><span data-stu-id="8af57-193">Are there particular programming languages, operating systems, or other technology that your team is particularly adept at using?</span></span> <span data-ttu-id="8af57-194">При работе с какими технологиями и системами у вашей команды возникают проблемы?</span><span class="sxs-lookup"><span data-stu-id="8af57-194">Are there others that would be difficult for your team to work with?</span></span>
+- <span data-ttu-id="8af57-195">**Клиенты.** Предоставляется ли поддержка клиентов для ваших языков разработки на должном уровне?</span><span class="sxs-lookup"><span data-stu-id="8af57-195">**Clients** Is there good client support for your development languages?</span></span>
 
-<span data-ttu-id="e0634-196">В следующих разделах сравниваются различные модели хранилища данных с точки зрения профиля рабочей нагрузки, типов данных и примеров использования.</span><span class="sxs-lookup"><span data-stu-id="e0634-196">The following sections compare various data store models in terms of workload profile, data types, and example use cases.</span></span>
+<span data-ttu-id="8af57-196">В следующих разделах сравниваются различные модели хранилища данных с точки зрения профиля рабочей нагрузки, типов данных и примеров использования.</span><span class="sxs-lookup"><span data-stu-id="8af57-196">The following sections compare various data store models in terms of workload profile, data types, and example use cases.</span></span>
 
-## <a name="relational-database-management-systems-rdbms"></a><span data-ttu-id="e0634-197">Реляционные СУБД</span><span class="sxs-lookup"><span data-stu-id="e0634-197">Relational database management systems (RDBMS)</span></span>
+## <a name="relational-database-management-systems-rdbms"></a><span data-ttu-id="8af57-197">Реляционные СУБД</span><span class="sxs-lookup"><span data-stu-id="8af57-197">Relational database management systems (RDBMS)</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-198"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-198"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-198"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-198"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-199">Записи создаются и имеющиеся данные обновляются регулярно.</span><span class="sxs-lookup"><span data-stu-id="e0634-199">Both the creation of new records and updates to existing data happen regularly.</span></span></li>
-            <li><span data-ttu-id="e0634-200">Несколько операций должны выполниться в одной транзакции.</span><span class="sxs-lookup"><span data-stu-id="e0634-200">Multiple operations have to be completed in a single transaction.</span></span></li>
-            <li><span data-ttu-id="e0634-201">Требуются функции агрегирования для выполнения перекрестной табуляции.</span><span class="sxs-lookup"><span data-stu-id="e0634-201">Requires aggregation functions to perform cross-tabulation.</span></span></li>
-            <li><span data-ttu-id="e0634-202">Требуется тесная интеграция с инструментами создания отчетов.</span><span class="sxs-lookup"><span data-stu-id="e0634-202">Strong integration with reporting tools is required.</span></span></li>
-            <li><span data-ttu-id="e0634-203">Связи задаются по ограничениям базы данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-203">Relationships are enforced using database constraints.</span></span></li>
-            <li><span data-ttu-id="e0634-204">Индексы используются для оптимизации производительности запросов.</span><span class="sxs-lookup"><span data-stu-id="e0634-204">Indexes are used to optimize query performance.</span></span></li>
-            <li><span data-ttu-id="e0634-205">Разрешается доступ к определенному подмножеству данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-205">Allows access to specific subsets of data.</span></span></li>
+            <li><span data-ttu-id="8af57-199">Записи создаются и имеющиеся данные обновляются регулярно.</span><span class="sxs-lookup"><span data-stu-id="8af57-199">Both the creation of new records and updates to existing data happen regularly.</span></span></li>
+            <li><span data-ttu-id="8af57-200">Несколько операций должны выполниться в одной транзакции.</span><span class="sxs-lookup"><span data-stu-id="8af57-200">Multiple operations have to be completed in a single transaction.</span></span></li>
+            <li><span data-ttu-id="8af57-201">Требуются функции агрегирования для выполнения перекрестной табуляции.</span><span class="sxs-lookup"><span data-stu-id="8af57-201">Requires aggregation functions to perform cross-tabulation.</span></span></li>
+            <li><span data-ttu-id="8af57-202">Требуется тесная интеграция с инструментами создания отчетов.</span><span class="sxs-lookup"><span data-stu-id="8af57-202">Strong integration with reporting tools is required.</span></span></li>
+            <li><span data-ttu-id="8af57-203">Связи задаются по ограничениям базы данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-203">Relationships are enforced using database constraints.</span></span></li>
+            <li><span data-ttu-id="8af57-204">Индексы используются для оптимизации производительности запросов.</span><span class="sxs-lookup"><span data-stu-id="8af57-204">Indexes are used to optimize query performance.</span></span></li>
+            <li><span data-ttu-id="8af57-205">Разрешается доступ к определенному подмножеству данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-205">Allows access to specific subsets of data.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-206"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-206"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-206"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-206"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-207">Данные имеют высокую степень нормализации.</span><span class="sxs-lookup"><span data-stu-id="e0634-207">Data is highly normalized.</span></span></li>
-            <li><span data-ttu-id="e0634-208">Схемы базы данных требуются и принудительно применяются.</span><span class="sxs-lookup"><span data-stu-id="e0634-208">Database schemas are required and enforced.</span></span></li>
-            <li><span data-ttu-id="e0634-209">Для данных в базе данных настроена связь "многие ко многим".</span><span class="sxs-lookup"><span data-stu-id="e0634-209">Many-to-many relationships between data entities in the database.</span></span></li>
-            <li><span data-ttu-id="e0634-210">Ограничения определяются в схеме и применяются к любым данным в базе данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-210">Constraints are defined in the schema and imposed on any data in the database.</span></span></li>
-            <li><span data-ttu-id="e0634-211">Данные требуют высокого уровня целостности.</span><span class="sxs-lookup"><span data-stu-id="e0634-211">Data requires high integrity.</span></span> <span data-ttu-id="e0634-212">Индексы и связи требуют осторожного использования.</span><span class="sxs-lookup"><span data-stu-id="e0634-212">Indexes and relationships need to be maintained accurately.</span></span></li>
-            <li><span data-ttu-id="e0634-213">Данные требуют строгой согласованности.</span><span class="sxs-lookup"><span data-stu-id="e0634-213">Data requires strong consistency.</span></span> <span data-ttu-id="e0634-214">Транзакции осуществляются таким образом, который гарантирует, что все данные полностью согласованы для всех пользователей и процессов</span><span class="sxs-lookup"><span data-stu-id="e0634-214">Transactions operate in a way that ensures all data are 100% consistent for all users and processes.</span></span></li>
-            <li><span data-ttu-id="e0634-215">Отдельные записи представлены в малом и среднем размере.</span><span class="sxs-lookup"><span data-stu-id="e0634-215">Size of individual data entries is intended to be small to medium-sized.</span></span></li>
+            <li><span data-ttu-id="8af57-207">Данные имеют высокую степень нормализации.</span><span class="sxs-lookup"><span data-stu-id="8af57-207">Data is highly normalized.</span></span></li>
+            <li><span data-ttu-id="8af57-208">Схемы базы данных требуются и принудительно применяются.</span><span class="sxs-lookup"><span data-stu-id="8af57-208">Database schemas are required and enforced.</span></span></li>
+            <li><span data-ttu-id="8af57-209">Для данных в базе данных настроена связь "многие ко многим".</span><span class="sxs-lookup"><span data-stu-id="8af57-209">Many-to-many relationships between data entities in the database.</span></span></li>
+            <li><span data-ttu-id="8af57-210">Ограничения определяются в схеме и применяются к любым данным в базе данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-210">Constraints are defined in the schema and imposed on any data in the database.</span></span></li>
+            <li><span data-ttu-id="8af57-211">Данные требуют высокого уровня целостности.</span><span class="sxs-lookup"><span data-stu-id="8af57-211">Data requires high integrity.</span></span> <span data-ttu-id="8af57-212">Индексы и связи требуют осторожного использования.</span><span class="sxs-lookup"><span data-stu-id="8af57-212">Indexes and relationships need to be maintained accurately.</span></span></li>
+            <li><span data-ttu-id="8af57-213">Данные требуют строгой согласованности.</span><span class="sxs-lookup"><span data-stu-id="8af57-213">Data requires strong consistency.</span></span> <span data-ttu-id="8af57-214">Транзакции осуществляются таким образом, который гарантирует, что все данные полностью согласованы для всех пользователей и процессов</span><span class="sxs-lookup"><span data-stu-id="8af57-214">Transactions operate in a way that ensures all data are 100% consistent for all users and processes.</span></span></li>
+            <li><span data-ttu-id="8af57-215">Отдельные записи представлены в малом и среднем размере.</span><span class="sxs-lookup"><span data-stu-id="8af57-215">Size of individual data entries is intended to be small to medium-sized.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-216"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-216"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-216"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-216"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-217">Бизнес-приложения (управление человеческими ресурсами, управление взаимоотношениями с клиентами, планирование ресурсов предприятия)</span><span class="sxs-lookup"><span data-stu-id="e0634-217">Line of business  (human capital management, customer relationship management, enterprise resource planning)</span></span></li>
-            <li><span data-ttu-id="e0634-218">Управление запасами</span><span class="sxs-lookup"><span data-stu-id="e0634-218">Inventory management</span></span></li>
-            <li><span data-ttu-id="e0634-219">База данных отчетов</span><span class="sxs-lookup"><span data-stu-id="e0634-219">Reporting database</span></span></li>
-            <li><span data-ttu-id="e0634-220">Учет</span><span class="sxs-lookup"><span data-stu-id="e0634-220">Accounting</span></span></li>
-            <li><span data-ttu-id="e0634-221">Управление ресурсами</span><span class="sxs-lookup"><span data-stu-id="e0634-221">Asset management</span></span></li>
-            <li><span data-ttu-id="e0634-222">Управление средствами</span><span class="sxs-lookup"><span data-stu-id="e0634-222">Fund management</span></span></li>
-            <li><span data-ttu-id="e0634-223">Управление заказами</span><span class="sxs-lookup"><span data-stu-id="e0634-223">Order management</span></span></li>
+            <li><span data-ttu-id="8af57-217">Бизнес-приложения (управление человеческими ресурсами, управление взаимоотношениями с клиентами, планирование ресурсов предприятия)</span><span class="sxs-lookup"><span data-stu-id="8af57-217">Line of business  (human capital management, customer relationship management, enterprise resource planning)</span></span></li>
+            <li><span data-ttu-id="8af57-218">Управление запасами</span><span class="sxs-lookup"><span data-stu-id="8af57-218">Inventory management</span></span></li>
+            <li><span data-ttu-id="8af57-219">База данных отчетов</span><span class="sxs-lookup"><span data-stu-id="8af57-219">Reporting database</span></span></li>
+            <li><span data-ttu-id="8af57-220">Учет</span><span class="sxs-lookup"><span data-stu-id="8af57-220">Accounting</span></span></li>
+            <li><span data-ttu-id="8af57-221">Управление ресурсами</span><span class="sxs-lookup"><span data-stu-id="8af57-221">Asset management</span></span></li>
+            <li><span data-ttu-id="8af57-222">Управление средствами</span><span class="sxs-lookup"><span data-stu-id="8af57-222">Fund management</span></span></li>
+            <li><span data-ttu-id="8af57-223">Управление заказами</span><span class="sxs-lookup"><span data-stu-id="8af57-223">Order management</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="document-databases"></a><span data-ttu-id="e0634-224">Базы данных документов</span><span class="sxs-lookup"><span data-stu-id="e0634-224">Document databases</span></span>
+## <a name="document-databases"></a><span data-ttu-id="8af57-224">Базы данных документов</span><span class="sxs-lookup"><span data-stu-id="8af57-224">Document databases</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-225"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-225"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-225"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-225"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-226">Общего назначения.</span><span class="sxs-lookup"><span data-stu-id="e0634-226">General purpose.</span></span></li>
-            <li><span data-ttu-id="e0634-227">Операции вставки и обновления являются общими.</span><span class="sxs-lookup"><span data-stu-id="e0634-227">Insert and update operations are common.</span></span> <span data-ttu-id="e0634-228">Записи создаются и имеющиеся данные обновляются регулярно.</span><span class="sxs-lookup"><span data-stu-id="e0634-228">Both the creation of new records and updates to existing data happen regularly.</span></span></li>
-            <li><span data-ttu-id="e0634-229">Нет объектно-реляционной несогласованности.</span><span class="sxs-lookup"><span data-stu-id="e0634-229">No object-relational impedance mismatch.</span></span> <span data-ttu-id="e0634-230">Документы можно эффективнее сопоставить со структурами объектов, используемыми в коде приложения.</span><span class="sxs-lookup"><span data-stu-id="e0634-230">Documents can better match the object structures used in application code.</span></span></li>
-            <li><span data-ttu-id="e0634-231">Чаще используется оптимистичная блокировка.</span><span class="sxs-lookup"><span data-stu-id="e0634-231">Optimistic concurrency is more commonly used.</span></span></li>
-            <li><span data-ttu-id="e0634-232">Данные должно изменять и обрабатывать использующее их приложение.</span><span class="sxs-lookup"><span data-stu-id="e0634-232">Data must be modified and processed by consuming application.</span></span></li>
-            <li><span data-ttu-id="e0634-233">Данным требуется индекс по нескольким полям.</span><span class="sxs-lookup"><span data-stu-id="e0634-233">Data requires index on multiple fields.</span></span></li>
-            <li><span data-ttu-id="e0634-234">Отдельные документы извлекаются и записываются как единый блок.</span><span class="sxs-lookup"><span data-stu-id="e0634-234">Individual documents are retrieved and written as a single block.</span></span></li>
+            <li><span data-ttu-id="8af57-226">Общего назначения.</span><span class="sxs-lookup"><span data-stu-id="8af57-226">General purpose.</span></span></li>
+            <li><span data-ttu-id="8af57-227">Операции вставки и обновления являются общими.</span><span class="sxs-lookup"><span data-stu-id="8af57-227">Insert and update operations are common.</span></span> <span data-ttu-id="8af57-228">Записи создаются и имеющиеся данные обновляются регулярно.</span><span class="sxs-lookup"><span data-stu-id="8af57-228">Both the creation of new records and updates to existing data happen regularly.</span></span></li>
+            <li><span data-ttu-id="8af57-229">Нет объектно-реляционной несогласованности.</span><span class="sxs-lookup"><span data-stu-id="8af57-229">No object-relational impedance mismatch.</span></span> <span data-ttu-id="8af57-230">Документы можно эффективнее сопоставить со структурами объектов, используемыми в коде приложения.</span><span class="sxs-lookup"><span data-stu-id="8af57-230">Documents can better match the object structures used in application code.</span></span></li>
+            <li><span data-ttu-id="8af57-231">Чаще используется оптимистичная блокировка.</span><span class="sxs-lookup"><span data-stu-id="8af57-231">Optimistic concurrency is more commonly used.</span></span></li>
+            <li><span data-ttu-id="8af57-232">Данные должно изменять и обрабатывать использующее их приложение.</span><span class="sxs-lookup"><span data-stu-id="8af57-232">Data must be modified and processed by consuming application.</span></span></li>
+            <li><span data-ttu-id="8af57-233">Данным требуется индекс по нескольким полям.</span><span class="sxs-lookup"><span data-stu-id="8af57-233">Data requires index on multiple fields.</span></span></li>
+            <li><span data-ttu-id="8af57-234">Отдельные документы извлекаются и записываются как единый блок.</span><span class="sxs-lookup"><span data-stu-id="8af57-234">Individual documents are retrieved and written as a single block.</span></span></li>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-235"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-235"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-235"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-235"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-236">Данными можно управлять не нормализованно.</span><span class="sxs-lookup"><span data-stu-id="e0634-236">Data can be managed in de-normalized way.</span></span></li>
-            <li><span data-ttu-id="e0634-237">Размер отдельных блоков данных документа относительно невелик.</span><span class="sxs-lookup"><span data-stu-id="e0634-237">Size of individual document data is relatively small.</span></span></li>
-            <li><span data-ttu-id="e0634-238">Тип каждого документа может использовать собственную схему.</span><span class="sxs-lookup"><span data-stu-id="e0634-238">Each document type can use its own schema.</span></span></li>
-            <li><span data-ttu-id="e0634-239">Документы могут содержать дополнительные поля.</span><span class="sxs-lookup"><span data-stu-id="e0634-239">Documents can include optional fields.</span></span></li>
-            <li><span data-ttu-id="e0634-240">Данные документа полуструктурированные. Это означает, что типы данных каждого поля не строго определены.</span><span class="sxs-lookup"><span data-stu-id="e0634-240">Document data is semi-structured, meaning that data types of each field are not strictly defined.</span></span></li>
-            <li><span data-ttu-id="e0634-241">Объединение данных поддерживается.</span><span class="sxs-lookup"><span data-stu-id="e0634-241">Data aggregation is supported.</span></span></li>
+            <li><span data-ttu-id="8af57-236">Данными можно управлять не нормализованно.</span><span class="sxs-lookup"><span data-stu-id="8af57-236">Data can be managed in de-normalized way.</span></span></li>
+            <li><span data-ttu-id="8af57-237">Размер отдельных блоков данных документа относительно невелик.</span><span class="sxs-lookup"><span data-stu-id="8af57-237">Size of individual document data is relatively small.</span></span></li>
+            <li><span data-ttu-id="8af57-238">Тип каждого документа может использовать собственную схему.</span><span class="sxs-lookup"><span data-stu-id="8af57-238">Each document type can use its own schema.</span></span></li>
+            <li><span data-ttu-id="8af57-239">Документы могут содержать дополнительные поля.</span><span class="sxs-lookup"><span data-stu-id="8af57-239">Documents can include optional fields.</span></span></li>
+            <li><span data-ttu-id="8af57-240">Данные документа полуструктурированные. Это означает, что типы данных каждого поля не строго определены.</span><span class="sxs-lookup"><span data-stu-id="8af57-240">Document data is semi-structured, meaning that data types of each field are not strictly defined.</span></span></li>
+            <li><span data-ttu-id="8af57-241">Объединение данных поддерживается.</span><span class="sxs-lookup"><span data-stu-id="8af57-241">Data aggregation is supported.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-242"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-242"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-242"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-242"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-243">Каталог продукции</span><span class="sxs-lookup"><span data-stu-id="e0634-243">Product catalog</span></span></li>
-            <li><span data-ttu-id="e0634-244">Учетные записи пользователей</span><span class="sxs-lookup"><span data-stu-id="e0634-244">User accounts</span></span></li>
-            <li><span data-ttu-id="e0634-245">Спецификация</span><span class="sxs-lookup"><span data-stu-id="e0634-245">Bill of materials</span></span></li>
-            <li><span data-ttu-id="e0634-246">Персонализация</span><span class="sxs-lookup"><span data-stu-id="e0634-246">Personalization</span></span></li>
-            <li><span data-ttu-id="e0634-247">Управление содержимым</span><span class="sxs-lookup"><span data-stu-id="e0634-247">Content management</span></span></li>
-            <li><span data-ttu-id="e0634-248">Рабочие данные</span><span class="sxs-lookup"><span data-stu-id="e0634-248">Operations data</span></span></li>
-            <li><span data-ttu-id="e0634-249">Управление запасами</span><span class="sxs-lookup"><span data-stu-id="e0634-249">Inventory management</span></span></li>
-            <li><span data-ttu-id="e0634-250">Данные журнала транзакций</span><span class="sxs-lookup"><span data-stu-id="e0634-250">Transaction history data</span></span></li>
-            <li><span data-ttu-id="e0634-251">Материализованное представление других хранилищ NoSQL</span><span class="sxs-lookup"><span data-stu-id="e0634-251">Materialized view of other NoSQL stores.</span></span> <span data-ttu-id="e0634-252">Заменяет индексацию файлов или больших двоичных объектов.</span><span class="sxs-lookup"><span data-stu-id="e0634-252">Replaces file/BLOB indexing.</span></span></li>
+            <li><span data-ttu-id="8af57-243">Каталог продукции</span><span class="sxs-lookup"><span data-stu-id="8af57-243">Product catalog</span></span></li>
+            <li><span data-ttu-id="8af57-244">Учетные записи пользователей</span><span class="sxs-lookup"><span data-stu-id="8af57-244">User accounts</span></span></li>
+            <li><span data-ttu-id="8af57-245">Спецификация</span><span class="sxs-lookup"><span data-stu-id="8af57-245">Bill of materials</span></span></li>
+            <li><span data-ttu-id="8af57-246">Персонализация</span><span class="sxs-lookup"><span data-stu-id="8af57-246">Personalization</span></span></li>
+            <li><span data-ttu-id="8af57-247">Управление содержимым</span><span class="sxs-lookup"><span data-stu-id="8af57-247">Content management</span></span></li>
+            <li><span data-ttu-id="8af57-248">Рабочие данные</span><span class="sxs-lookup"><span data-stu-id="8af57-248">Operations data</span></span></li>
+            <li><span data-ttu-id="8af57-249">Управление запасами</span><span class="sxs-lookup"><span data-stu-id="8af57-249">Inventory management</span></span></li>
+            <li><span data-ttu-id="8af57-250">Данные журнала транзакций</span><span class="sxs-lookup"><span data-stu-id="8af57-250">Transaction history data</span></span></li>
+            <li><span data-ttu-id="8af57-251">Материализованное представление других хранилищ NoSQL</span><span class="sxs-lookup"><span data-stu-id="8af57-251">Materialized view of other NoSQL stores.</span></span> <span data-ttu-id="8af57-252">Заменяет индексацию файлов или больших двоичных объектов.</span><span class="sxs-lookup"><span data-stu-id="8af57-252">Replaces file/BLOB indexing.</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="keyvalue-stores"></a><span data-ttu-id="e0634-253">Хранилище пар "ключ — значение"</span><span class="sxs-lookup"><span data-stu-id="e0634-253">Key/value stores</span></span>
+## <a name="keyvalue-stores"></a><span data-ttu-id="8af57-253">Хранилище пар "ключ — значение"</span><span class="sxs-lookup"><span data-stu-id="8af57-253">Key/value stores</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-254"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-254"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-254"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-254"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-255">Данные идентифицируются, и к ним получается доступ с помощью одного ключа идентификатора, например словаря.</span><span class="sxs-lookup"><span data-stu-id="e0634-255">Data is identified and accessed using a single ID key, like a dictionary.</span></span></li>
-            <li><span data-ttu-id="e0634-256">Высокая масштабируемость.</span><span class="sxs-lookup"><span data-stu-id="e0634-256">Massively scalable.</span></span></li>
-            <li><span data-ttu-id="e0634-257">Соединения, блокировки или объединения не нужны.</span><span class="sxs-lookup"><span data-stu-id="e0634-257">No joins, lock, or unions are required.</span></span></li>
-            <li><span data-ttu-id="e0634-258">Механизмы статистической обработки не используются.</span><span class="sxs-lookup"><span data-stu-id="e0634-258">No aggregation mechanisms are used.</span></span></li>
-            <li><span data-ttu-id="e0634-259">Как правило, вторичные индексы не используются.</span><span class="sxs-lookup"><span data-stu-id="e0634-259">Secondary indexes are generally not used.</span></span></li>
+            <li><span data-ttu-id="8af57-255">Данные идентифицируются, и к ним получается доступ с помощью одного ключа идентификатора, например словаря.</span><span class="sxs-lookup"><span data-stu-id="8af57-255">Data is identified and accessed using a single ID key, like a dictionary.</span></span></li>
+            <li><span data-ttu-id="8af57-256">Высокая масштабируемость.</span><span class="sxs-lookup"><span data-stu-id="8af57-256">Massively scalable.</span></span></li>
+            <li><span data-ttu-id="8af57-257">Соединения, блокировки или объединения не нужны.</span><span class="sxs-lookup"><span data-stu-id="8af57-257">No joins, lock, or unions are required.</span></span></li>
+            <li><span data-ttu-id="8af57-258">Механизмы статистической обработки не используются.</span><span class="sxs-lookup"><span data-stu-id="8af57-258">No aggregation mechanisms are used.</span></span></li>
+            <li><span data-ttu-id="8af57-259">Как правило, вторичные индексы не используются.</span><span class="sxs-lookup"><span data-stu-id="8af57-259">Secondary indexes are generally not used.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-260"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-260"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-260"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-260"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-261">Размер данных, как правило, большой.</span><span class="sxs-lookup"><span data-stu-id="e0634-261">Data size tends to be large.</span></span></li>
-            <li><span data-ttu-id="e0634-262">Каждый ключ связан с одним значением, которое является неуправляемым большим двоичным объектом данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-262">Each key is associated with a single value, which is an unmanaged data BLOB.</span></span></li>
-            <li><span data-ttu-id="e0634-263">Схема не применяется.</span><span class="sxs-lookup"><span data-stu-id="e0634-263">There is no schema enforcement.</span></span></li>
-            <li><span data-ttu-id="e0634-264">Сущности не связаны.</span><span class="sxs-lookup"><span data-stu-id="e0634-264">No relationships between entities.</span></span></li>
+            <li><span data-ttu-id="8af57-261">Размер данных, как правило, большой.</span><span class="sxs-lookup"><span data-stu-id="8af57-261">Data size tends to be large.</span></span></li>
+            <li><span data-ttu-id="8af57-262">Каждый ключ связан с одним значением, которое является неуправляемым большим двоичным объектом данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-262">Each key is associated with a single value, which is an unmanaged data BLOB.</span></span></li>
+            <li><span data-ttu-id="8af57-263">Схема не применяется.</span><span class="sxs-lookup"><span data-stu-id="8af57-263">There is no schema enforcement.</span></span></li>
+            <li><span data-ttu-id="8af57-264">Сущности не связаны.</span><span class="sxs-lookup"><span data-stu-id="8af57-264">No relationships between entities.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-265"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-265"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-265"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-265"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-266">Кэширование данных</span><span class="sxs-lookup"><span data-stu-id="e0634-266">Data caching</span></span></li>
-            <li><span data-ttu-id="e0634-267">Управление сеансом</span><span class="sxs-lookup"><span data-stu-id="e0634-267">Session management</span></span></li>
-            <li><span data-ttu-id="e0634-268">Управления параметрами и профилями пользователя</span><span class="sxs-lookup"><span data-stu-id="e0634-268">User preference and profile management</span></span></li>
-            <li><span data-ttu-id="e0634-269">Рекомендации по продуктам и реклама</span><span class="sxs-lookup"><span data-stu-id="e0634-269">Product recommendation and ad serving</span></span></li>
-            <li><span data-ttu-id="e0634-270">Словари</span><span class="sxs-lookup"><span data-stu-id="e0634-270">Dictionaries</span></span></li>
+            <li><span data-ttu-id="8af57-266">Кэширование данных</span><span class="sxs-lookup"><span data-stu-id="8af57-266">Data caching</span></span></li>
+            <li><span data-ttu-id="8af57-267">Управление сеансом</span><span class="sxs-lookup"><span data-stu-id="8af57-267">Session management</span></span></li>
+            <li><span data-ttu-id="8af57-268">Управления параметрами и профилями пользователя</span><span class="sxs-lookup"><span data-stu-id="8af57-268">User preference and profile management</span></span></li>
+            <li><span data-ttu-id="8af57-269">Рекомендации по продуктам и реклама</span><span class="sxs-lookup"><span data-stu-id="8af57-269">Product recommendation and ad serving</span></span></li>
+            <li><span data-ttu-id="8af57-270">Словари</span><span class="sxs-lookup"><span data-stu-id="8af57-270">Dictionaries</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="graph-databases"></a><span data-ttu-id="e0634-271">Базы данных графов</span><span class="sxs-lookup"><span data-stu-id="e0634-271">Graph databases</span></span>
+## <a name="graph-databases"></a><span data-ttu-id="8af57-271">Базы данных графов</span><span class="sxs-lookup"><span data-stu-id="8af57-271">Graph databases</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-272"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-272"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-272"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-272"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-273">Связи между элементами данных очень сложные и включают много переходов между связанными элементами данных.</span><span class="sxs-lookup"><span data-stu-id="e0634-273">The relationships between data items are very complex, involving many hops between related data items.</span></span></li>
-            <li><span data-ttu-id="e0634-274">Связи между элементами данных динамические и изменяются со временем.</span><span class="sxs-lookup"><span data-stu-id="e0634-274">The relationship between data items are dynamic and change over time.</span></span></li>
-            <li><span data-ttu-id="e0634-275">Отношения между объектами являются привилегированными. Для обхода не требуются внешние ключи и соединения.</span><span class="sxs-lookup"><span data-stu-id="e0634-275">Relationships between objects are first-class citizens, without requiring foreign-keys and joins to traverse.</span></span></li>
+            <li><span data-ttu-id="8af57-273">Связи между элементами данных очень сложные и включают много переходов между связанными элементами данных.</span><span class="sxs-lookup"><span data-stu-id="8af57-273">The relationships between data items are very complex, involving many hops between related data items.</span></span></li>
+            <li><span data-ttu-id="8af57-274">Связи между элементами данных динамические и изменяются со временем.</span><span class="sxs-lookup"><span data-stu-id="8af57-274">The relationship between data items are dynamic and change over time.</span></span></li>
+            <li><span data-ttu-id="8af57-275">Отношения между объектами являются привилегированными. Для обхода не требуются внешние ключи и соединения.</span><span class="sxs-lookup"><span data-stu-id="8af57-275">Relationships between objects are first-class citizens, without requiring foreign-keys and joins to traverse.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-276"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-276"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-276"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-276"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-277">Данные состоят из узлов и связей.</span><span class="sxs-lookup"><span data-stu-id="e0634-277">Data is comprised of nodes and relationships.</span></span></li>
-            <li><span data-ttu-id="e0634-278">Узлы похожи на строки таблицы или документы JSON.</span><span class="sxs-lookup"><span data-stu-id="e0634-278">Nodes are similar to table rows or JSON documents.</span></span></li>
-            <li><span data-ttu-id="e0634-279">Связи так же важны, как и узлы, и явно предоставляются на языке запросов.</span><span class="sxs-lookup"><span data-stu-id="e0634-279">Relationships are just as important as nodes, and are exposed directly in the query language.</span></span></li>
-            <li><span data-ttu-id="e0634-280">Составные объекты, такие как пользователь с несколькими телефонными номерами, как правило, разделяются на несколько отдельных небольших узлов в сочетании с переходными связями.</span><span class="sxs-lookup"><span data-stu-id="e0634-280">Composite objects, such as a person with multiple phone numbers, tend to be broken into separate, smaller nodes, combined with traversable relationships</span></span> </li>
+            <li><span data-ttu-id="8af57-277">Данные состоят из узлов и связей.</span><span class="sxs-lookup"><span data-stu-id="8af57-277">Data is comprised of nodes and relationships.</span></span></li>
+            <li><span data-ttu-id="8af57-278">Узлы похожи на строки таблицы или документы JSON.</span><span class="sxs-lookup"><span data-stu-id="8af57-278">Nodes are similar to table rows or JSON documents.</span></span></li>
+            <li><span data-ttu-id="8af57-279">Связи так же важны, как и узлы, и явно предоставляются на языке запросов.</span><span class="sxs-lookup"><span data-stu-id="8af57-279">Relationships are just as important as nodes, and are exposed directly in the query language.</span></span></li>
+            <li><span data-ttu-id="8af57-280">Составные объекты, такие как пользователь с несколькими телефонными номерами, как правило, разделяются на несколько отдельных небольших узлов в сочетании с переходными связями.</span><span class="sxs-lookup"><span data-stu-id="8af57-280">Composite objects, such as a person with multiple phone numbers, tend to be broken into separate, smaller nodes, combined with traversable relationships</span></span> </li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-281"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-281"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-281"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-281"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-282">Организационные диаграммы</span><span class="sxs-lookup"><span data-stu-id="e0634-282">Organization charts</span></span></li>
-            <li><span data-ttu-id="e0634-283">Графы социальных сетей</span><span class="sxs-lookup"><span data-stu-id="e0634-283">Social graphs</span></span></li>
-            <li><span data-ttu-id="e0634-284">Обнаружение мошенничества.</span><span class="sxs-lookup"><span data-stu-id="e0634-284">Fraud detection</span></span></li>
-            <li><span data-ttu-id="e0634-285">Аналитика</span><span class="sxs-lookup"><span data-stu-id="e0634-285">Analytics</span></span></li>
-            <li><span data-ttu-id="e0634-286">Системы рекомендаций</span><span class="sxs-lookup"><span data-stu-id="e0634-286">Recommendation engines</span></span></li>
+            <li><span data-ttu-id="8af57-282">Организационные диаграммы</span><span class="sxs-lookup"><span data-stu-id="8af57-282">Organization charts</span></span></li>
+            <li><span data-ttu-id="8af57-283">Графы социальных сетей</span><span class="sxs-lookup"><span data-stu-id="8af57-283">Social graphs</span></span></li>
+            <li><span data-ttu-id="8af57-284">Обнаружение мошенничества.</span><span class="sxs-lookup"><span data-stu-id="8af57-284">Fraud detection</span></span></li>
+            <li><span data-ttu-id="8af57-285">Analytics</span><span class="sxs-lookup"><span data-stu-id="8af57-285">Analytics</span></span></li>
+            <li><span data-ttu-id="8af57-286">Системы рекомендаций</span><span class="sxs-lookup"><span data-stu-id="8af57-286">Recommendation engines</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="column-family-databases"></a><span data-ttu-id="e0634-287">Базы данных столбцов</span><span class="sxs-lookup"><span data-stu-id="e0634-287">Column-family databases</span></span>
+## <a name="column-family-databases"></a><span data-ttu-id="8af57-287">Базы данных столбцов</span><span class="sxs-lookup"><span data-stu-id="8af57-287">Column-family databases</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-288"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-288"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-288"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-288"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-289">В большинстве баз данных столбцов операции записи выполняются очень быстро.</span><span class="sxs-lookup"><span data-stu-id="e0634-289">Most column-family databases perform write operations extremely quickly.</span></span></li>
-            <li><span data-ttu-id="e0634-290">Операции обновления и удаления выполняются редко.</span><span class="sxs-lookup"><span data-stu-id="e0634-290">Update and delete operations are rare.</span></span></li>
-            <li><span data-ttu-id="e0634-291">Предназначены для обеспечения доступа с высокой пропускной способностью и малой задержкой.</span><span class="sxs-lookup"><span data-stu-id="e0634-291">Designed to provide high throughput and low-latency access.</span></span></li>
-            <li><span data-ttu-id="e0634-292">Поддерживают простой доступ с выполнением запроса к конкретному набору полей в большой записи.</span><span class="sxs-lookup"><span data-stu-id="e0634-292">Supports easy query access to a particular set of fields within a much larger record.</span></span></li>
-            <li><span data-ttu-id="e0634-293">Высокая масштабируемость.</span><span class="sxs-lookup"><span data-stu-id="e0634-293">Massively scalable.</span></span></li>
+            <li><span data-ttu-id="8af57-289">В большинстве баз данных столбцов операции записи выполняются очень быстро.</span><span class="sxs-lookup"><span data-stu-id="8af57-289">Most column-family databases perform write operations extremely quickly.</span></span></li>
+            <li><span data-ttu-id="8af57-290">Операции обновления и удаления выполняются редко.</span><span class="sxs-lookup"><span data-stu-id="8af57-290">Update and delete operations are rare.</span></span></li>
+            <li><span data-ttu-id="8af57-291">Предназначены для обеспечения доступа с высокой пропускной способностью и малой задержкой.</span><span class="sxs-lookup"><span data-stu-id="8af57-291">Designed to provide high throughput and low-latency access.</span></span></li>
+            <li><span data-ttu-id="8af57-292">Поддерживают простой доступ с выполнением запроса к конкретному набору полей в большой записи.</span><span class="sxs-lookup"><span data-stu-id="8af57-292">Supports easy query access to a particular set of fields within a much larger record.</span></span></li>
+            <li><span data-ttu-id="8af57-293">Высокая масштабируемость.</span><span class="sxs-lookup"><span data-stu-id="8af57-293">Massively scalable.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-294"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-294"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-294"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-294"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-295">Данные хранятся в таблицах, состоящих из ключевого столбца и одного или нескольких наборов столбцов.</span><span class="sxs-lookup"><span data-stu-id="e0634-295">Data is stored in tables consisting of a key column and one or more column families.</span></span></li>
-            <li><span data-ttu-id="e0634-296">Определенные столбцы изменяются в зависимости от отдельных строк.</span><span class="sxs-lookup"><span data-stu-id="e0634-296">Specific columns can vary by individual rows.</span></span></li>
-            <li><span data-ttu-id="e0634-297">Доступ к отдельным ячейкам осуществляется с использованием команд GET и PUT.</span><span class="sxs-lookup"><span data-stu-id="e0634-297">Individual cells are accessed via get and put commands</span></span></li>
-            <li><span data-ttu-id="e0634-298">Несколько строк возвращаются с использованием команды проверки.</span><span class="sxs-lookup"><span data-stu-id="e0634-298">Multiple rows are returned using a scan command.</span></span></li>
+            <li><span data-ttu-id="8af57-295">Данные хранятся в таблицах, состоящих из ключевого столбца и одного или нескольких наборов столбцов.</span><span class="sxs-lookup"><span data-stu-id="8af57-295">Data is stored in tables consisting of a key column and one or more column families.</span></span></li>
+            <li><span data-ttu-id="8af57-296">Определенные столбцы изменяются в зависимости от отдельных строк.</span><span class="sxs-lookup"><span data-stu-id="8af57-296">Specific columns can vary by individual rows.</span></span></li>
+            <li><span data-ttu-id="8af57-297">Доступ к отдельным ячейкам осуществляется с использованием команд GET и PUT.</span><span class="sxs-lookup"><span data-stu-id="8af57-297">Individual cells are accessed via get and put commands</span></span></li>
+            <li><span data-ttu-id="8af57-298">Несколько строк возвращаются с использованием команды проверки.</span><span class="sxs-lookup"><span data-stu-id="8af57-298">Multiple rows are returned using a scan command.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-299"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-299"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-299"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-299"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-300">Рекомендации</span><span class="sxs-lookup"><span data-stu-id="e0634-300">Recommendations</span></span></li>
-            <li><span data-ttu-id="e0634-301">Персонализация</span><span class="sxs-lookup"><span data-stu-id="e0634-301">Personalization</span></span></li>
-            <li><span data-ttu-id="e0634-302">Данные от датчиков</span><span class="sxs-lookup"><span data-stu-id="e0634-302">Sensor data</span></span></li>
-            <li><span data-ttu-id="e0634-303">Телеметрия</span><span class="sxs-lookup"><span data-stu-id="e0634-303">Telemetry</span></span></li>
-            <li><span data-ttu-id="e0634-304">Обмен сообщениями</span><span class="sxs-lookup"><span data-stu-id="e0634-304">Messaging</span></span></li>
-            <li><span data-ttu-id="e0634-305">Анализ социальных сетей</span><span class="sxs-lookup"><span data-stu-id="e0634-305">Social media analytics</span></span></li>
-            <li><span data-ttu-id="e0634-306">Веб-аналитика</span><span class="sxs-lookup"><span data-stu-id="e0634-306">Web analytics</span></span></li>
-            <li><span data-ttu-id="e0634-307">Мониторинг активности</span><span class="sxs-lookup"><span data-stu-id="e0634-307">Activity monitoring</span></span></li>
-            <li><span data-ttu-id="e0634-308">Прогнозные данные и другие данные временных рядов</span><span class="sxs-lookup"><span data-stu-id="e0634-308">Weather and other time-series data</span></span></li>
+            <li><span data-ttu-id="8af57-300">Рекомендации</span><span class="sxs-lookup"><span data-stu-id="8af57-300">Recommendations</span></span></li>
+            <li><span data-ttu-id="8af57-301">Персонализация</span><span class="sxs-lookup"><span data-stu-id="8af57-301">Personalization</span></span></li>
+            <li><span data-ttu-id="8af57-302">Данные от датчиков</span><span class="sxs-lookup"><span data-stu-id="8af57-302">Sensor data</span></span></li>
+            <li><span data-ttu-id="8af57-303">Телеметрия</span><span class="sxs-lookup"><span data-stu-id="8af57-303">Telemetry</span></span></li>
+            <li><span data-ttu-id="8af57-304">Обмен сообщениями</span><span class="sxs-lookup"><span data-stu-id="8af57-304">Messaging</span></span></li>
+            <li><span data-ttu-id="8af57-305">Анализ социальных сетей</span><span class="sxs-lookup"><span data-stu-id="8af57-305">Social media analytics</span></span></li>
+            <li><span data-ttu-id="8af57-306">Веб-аналитика</span><span class="sxs-lookup"><span data-stu-id="8af57-306">Web analytics</span></span></li>
+            <li><span data-ttu-id="8af57-307">Мониторинг активности</span><span class="sxs-lookup"><span data-stu-id="8af57-307">Activity monitoring</span></span></li>
+            <li><span data-ttu-id="8af57-308">Прогнозные данные и другие данные временных рядов</span><span class="sxs-lookup"><span data-stu-id="8af57-308">Weather and other time-series data</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="search-engine-databases"></a><span data-ttu-id="e0634-309">Базы данных поисковой системы</span><span class="sxs-lookup"><span data-stu-id="e0634-309">Search engine databases</span></span>
+## <a name="search-engine-databases"></a><span data-ttu-id="8af57-309">Базы данных поисковой системы</span><span class="sxs-lookup"><span data-stu-id="8af57-309">Search engine databases</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-310"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-310"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-310"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-310"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-311">Индексирование данных из нескольких источников и служб.</span><span class="sxs-lookup"><span data-stu-id="e0634-311">Indexing data from multiple sources and services.</span></span></li>
-            <li><span data-ttu-id="e0634-312">Запросы являются специализированными и могут быть сложными.</span><span class="sxs-lookup"><span data-stu-id="e0634-312">Queries are ad-hoc and can be complex.</span></span></li>
-            <li><span data-ttu-id="e0634-313">Требуется статистическая обработка.</span><span class="sxs-lookup"><span data-stu-id="e0634-313">Requires aggregation.</span></span></li>
-            <li><span data-ttu-id="e0634-314">Требуется полнотекстовый поиск.</span><span class="sxs-lookup"><span data-stu-id="e0634-314">Full text search is required.</span></span></li>
-            <li><span data-ttu-id="e0634-315">Требуется специализированный запрос на самообслуживание.</span><span class="sxs-lookup"><span data-stu-id="e0634-315">Ad hoc self-service query is required.</span></span></li>
-            <li><span data-ttu-id="e0634-316">Требуется анализ данных с индексом по всем полям.</span><span class="sxs-lookup"><span data-stu-id="e0634-316">Data analysis with index on all fields is required.</span></span></li>
+            <li><span data-ttu-id="8af57-311">Индексирование данных из нескольких источников и служб.</span><span class="sxs-lookup"><span data-stu-id="8af57-311">Indexing data from multiple sources and services.</span></span></li>
+            <li><span data-ttu-id="8af57-312">Запросы являются специализированными и могут быть сложными.</span><span class="sxs-lookup"><span data-stu-id="8af57-312">Queries are ad-hoc and can be complex.</span></span></li>
+            <li><span data-ttu-id="8af57-313">Требуется статистическая обработка.</span><span class="sxs-lookup"><span data-stu-id="8af57-313">Requires aggregation.</span></span></li>
+            <li><span data-ttu-id="8af57-314">Требуется полнотекстовый поиск.</span><span class="sxs-lookup"><span data-stu-id="8af57-314">Full text search is required.</span></span></li>
+            <li><span data-ttu-id="8af57-315">Требуется специализированный запрос на самообслуживание.</span><span class="sxs-lookup"><span data-stu-id="8af57-315">Ad hoc self-service query is required.</span></span></li>
+            <li><span data-ttu-id="8af57-316">Требуется анализ данных с индексом по всем полям.</span><span class="sxs-lookup"><span data-stu-id="8af57-316">Data analysis with index on all fields is required.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-317"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-317"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-317"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-317"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-318">Полуструктурированные и неструктурированные данные</span><span class="sxs-lookup"><span data-stu-id="e0634-318">Semi-structured or unstructured</span></span></li>
-            <li><span data-ttu-id="e0634-319">текст</span><span class="sxs-lookup"><span data-stu-id="e0634-319">Text</span></span></li>
-            <li><span data-ttu-id="e0634-320">Текст со ссылкой на структурированные данные</span><span class="sxs-lookup"><span data-stu-id="e0634-320">Text with reference to structured data</span></span></li>
+            <li><span data-ttu-id="8af57-318">Полуструктурированные и неструктурированные данные</span><span class="sxs-lookup"><span data-stu-id="8af57-318">Semi-structured or unstructured</span></span></li>
+            <li><span data-ttu-id="8af57-319">текст</span><span class="sxs-lookup"><span data-stu-id="8af57-319">Text</span></span></li>
+            <li><span data-ttu-id="8af57-320">Текст со ссылкой на структурированные данные</span><span class="sxs-lookup"><span data-stu-id="8af57-320">Text with reference to structured data</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-321"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-321"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-321"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-321"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-322">Каталоги продуктов</span><span class="sxs-lookup"><span data-stu-id="e0634-322">Product catalogs</span></span></li>
-            <li><span data-ttu-id="e0634-323">Поиск на сайте</span><span class="sxs-lookup"><span data-stu-id="e0634-323">Site search</span></span></li>
-            <li><span data-ttu-id="e0634-324">Ведение журналов</span><span class="sxs-lookup"><span data-stu-id="e0634-324">Logging</span></span></li>
-            <li><span data-ttu-id="e0634-325">Аналитика</span><span class="sxs-lookup"><span data-stu-id="e0634-325">Analytics</span></span></li>
-            <li><span data-ttu-id="e0634-326">Сайты покупок</span><span class="sxs-lookup"><span data-stu-id="e0634-326">Shopping sites</span></span></li>
+            <li><span data-ttu-id="8af57-322">Каталоги продуктов</span><span class="sxs-lookup"><span data-stu-id="8af57-322">Product catalogs</span></span></li>
+            <li><span data-ttu-id="8af57-323">Поиск на сайте</span><span class="sxs-lookup"><span data-stu-id="8af57-323">Site search</span></span></li>
+            <li><span data-ttu-id="8af57-324">Ведение журналов</span><span class="sxs-lookup"><span data-stu-id="8af57-324">Logging</span></span></li>
+            <li><span data-ttu-id="8af57-325">Analytics</span><span class="sxs-lookup"><span data-stu-id="8af57-325">Analytics</span></span></li>
+            <li><span data-ttu-id="8af57-326">Сайты покупок</span><span class="sxs-lookup"><span data-stu-id="8af57-326">Shopping sites</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="data-warehouse"></a><span data-ttu-id="e0634-327">Хранилище данных</span><span class="sxs-lookup"><span data-stu-id="e0634-327">Data warehouse</span></span>
+## <a name="data-warehouse"></a><span data-ttu-id="8af57-327">Хранилище данных</span><span class="sxs-lookup"><span data-stu-id="8af57-327">Data warehouse</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-328"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-328"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-328"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-328"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-329">Аналитика данных</span><span class="sxs-lookup"><span data-stu-id="e0634-329">Data analytics</span></span></li>
-            <li><span data-ttu-id="e0634-330">Корпоративная бизнес-аналитика</span><span class="sxs-lookup"><span data-stu-id="e0634-330">Enterprise BI</span></span>   </li>
+            <li><span data-ttu-id="8af57-329">Аналитика данных</span><span class="sxs-lookup"><span data-stu-id="8af57-329">Data analytics</span></span></li>
+            <li><span data-ttu-id="8af57-330">Корпоративная бизнес-аналитика</span><span class="sxs-lookup"><span data-stu-id="8af57-330">Enterprise BI</span></span>   </li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-331"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-331"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-331"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-331"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-332">Исторические данные из нескольких источников.</span><span class="sxs-lookup"><span data-stu-id="e0634-332">Historical data from multiple sources.</span></span></li>
-            <li><span data-ttu-id="e0634-333">Обычно денормализовано в схеме типа &quot;звезда&quot; или &quot;снежинка&quot;, состоящей из таблиц фактов и измерений.</span><span class="sxs-lookup"><span data-stu-id="e0634-333">Usually denormalized in a &quot;star&quot; or &quot;snowflake&quot; schema, consisting of fact and dimension tables.</span></span></li>
-            <li><span data-ttu-id="e0634-334">Как правило, новые данные загружаются по расписанию.</span><span class="sxs-lookup"><span data-stu-id="e0634-334">Usually loaded with new data on a scheduled basis.</span></span></li>
-            <li><span data-ttu-id="e0634-335">Таблицы измерений часто включают в себя несколько исторических версий сущности, называемых <em>медленно изменяющимися измерениями</em>.</span><span class="sxs-lookup"><span data-stu-id="e0634-335">Dimension tables often include multiple historic versions of an entity, referred to as a <em>slowly changing dimension</em>.</span></span></li>
+            <li><span data-ttu-id="8af57-332">Исторические данные из нескольких источников.</span><span class="sxs-lookup"><span data-stu-id="8af57-332">Historical data from multiple sources.</span></span></li>
+            <li><span data-ttu-id="8af57-333">Обычно денормализовано в схеме типа &quot;звезда&quot; или &quot;снежинка&quot;, состоящей из таблиц фактов и измерений.</span><span class="sxs-lookup"><span data-stu-id="8af57-333">Usually denormalized in a &quot;star&quot; or &quot;snowflake&quot; schema, consisting of fact and dimension tables.</span></span></li>
+            <li><span data-ttu-id="8af57-334">Как правило, новые данные загружаются по расписанию.</span><span class="sxs-lookup"><span data-stu-id="8af57-334">Usually loaded with new data on a scheduled basis.</span></span></li>
+            <li><span data-ttu-id="8af57-335">Таблицы измерений часто включают в себя несколько исторических версий сущности, называемых <em>медленно изменяющимися измерениями</em>.</span><span class="sxs-lookup"><span data-stu-id="8af57-335">Dimension tables often include multiple historic versions of an entity, referred to as a <em>slowly changing dimension</em>.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-336"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-336"><strong>Examples</strong></span></span></td>
-    <td><span data-ttu-id="e0634-337">Корпоративное хранилище данных, предоставляющее данные для аналитических моделей, отчетов и панелей мониторинга.</span><span class="sxs-lookup"><span data-stu-id="e0634-337">An enterprise data warehouse that provides data for analytical models, reports, and dashboards.</span></span>
+<tr><td><span data-ttu-id="8af57-336"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-336"><strong>Examples</strong></span></span></td>
+    <td><span data-ttu-id="8af57-337">Корпоративное хранилище данных, предоставляющее данные для аналитических моделей, отчетов и панелей мониторинга.</span><span class="sxs-lookup"><span data-stu-id="8af57-337">An enterprise data warehouse that provides data for analytical models, reports, and dashboards.</span></span>
     </td>
 </tr>
 </table>
 
 
-## <a name="time-series-databases"></a><span data-ttu-id="e0634-338">Базы данных временных рядов</span><span class="sxs-lookup"><span data-stu-id="e0634-338">Time series databases</span></span>
+## <a name="time-series-databases"></a><span data-ttu-id="8af57-338">Базы данных временных рядов</span><span class="sxs-lookup"><span data-stu-id="8af57-338">Time series databases</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-339"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-339"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-339"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-339"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-340">Большая часть операций (95–99 %) — это операции записи.</span><span class="sxs-lookup"><span data-stu-id="e0634-340">An overwhelmingly proportion of operations (95-99%) are writes.</span></span></li>
-            <li><span data-ttu-id="e0634-341">Записи обычно добавляются последовательно по времени.</span><span class="sxs-lookup"><span data-stu-id="e0634-341">Records are generally appended sequentially in time order.</span></span></li>
-            <li><span data-ttu-id="e0634-342">Обновления происходят редко.</span><span class="sxs-lookup"><span data-stu-id="e0634-342">Updates are rare.</span></span></li>
-            <li><span data-ttu-id="e0634-343">Удаление выполняется в пакетном режиме. Удаляются смежные блоки или записи.</span><span class="sxs-lookup"><span data-stu-id="e0634-343">Deletes occur in bulk, and are made to contiguous blocks or records.</span></span></li>
-            <li><span data-ttu-id="e0634-344">Размер запросов на чтение может превышать доступный объем памяти.</span><span class="sxs-lookup"><span data-stu-id="e0634-344">Read requests can be larger than available memory.</span></span></li>
-            <li><span data-ttu-id="e0634-345">Довольно часто несколько операций чтения выполняются одновременно.</span><span class="sxs-lookup"><span data-stu-id="e0634-345">It&#39;s common for multiple reads to occur simultaneously.</span></span></li>
-            <li><span data-ttu-id="e0634-346">Данные считываются последовательно в порядке возрастания или убывания по времени.</span><span class="sxs-lookup"><span data-stu-id="e0634-346">Data is read sequentially in either ascending or descending time order.</span></span></li>
+            <li><span data-ttu-id="8af57-340">Большая часть операций (95–99 %) — это операции записи.</span><span class="sxs-lookup"><span data-stu-id="8af57-340">An overwhelming proportion of operations (95-99%) are writes.</span></span></li>
+            <li><span data-ttu-id="8af57-341">Записи обычно добавляются последовательно по времени.</span><span class="sxs-lookup"><span data-stu-id="8af57-341">Records are generally appended sequentially in time order.</span></span></li>
+            <li><span data-ttu-id="8af57-342">Обновления происходят редко.</span><span class="sxs-lookup"><span data-stu-id="8af57-342">Updates are rare.</span></span></li>
+            <li><span data-ttu-id="8af57-343">Удаление выполняется в пакетном режиме. Удаляются смежные блоки или записи.</span><span class="sxs-lookup"><span data-stu-id="8af57-343">Deletes occur in bulk, and are made to contiguous blocks or records.</span></span></li>
+            <li><span data-ttu-id="8af57-344">Размер запросов на чтение может превышать доступный объем памяти.</span><span class="sxs-lookup"><span data-stu-id="8af57-344">Read requests can be larger than available memory.</span></span></li>
+            <li><span data-ttu-id="8af57-345">Довольно часто несколько операций чтения выполняются одновременно.</span><span class="sxs-lookup"><span data-stu-id="8af57-345">It&#39;s common for multiple reads to occur simultaneously.</span></span></li>
+            <li><span data-ttu-id="8af57-346">Данные считываются последовательно в порядке возрастания или убывания по времени.</span><span class="sxs-lookup"><span data-stu-id="8af57-346">Data is read sequentially in either ascending or descending time order.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-347"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-347"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-347"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-347"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-348">Метка времени используется в качестве первичного ключа и механизма сортировки.</span><span class="sxs-lookup"><span data-stu-id="e0634-348">A time stamp that is used as the primary key and sorting mechanism.</span></span></li>
-            <li><span data-ttu-id="e0634-349">Измерения из записи или описания записи.</span><span class="sxs-lookup"><span data-stu-id="e0634-349">Measurements from the entry or descriptions of what the entry represents.</span></span></li>
-            <li><span data-ttu-id="e0634-350">Теги, определяющие дополнительные сведения о типе, источнике и другие данные о записи.</span><span class="sxs-lookup"><span data-stu-id="e0634-350">Tags that define additional information about the type, origin, and other information about the entry.</span></span></li>
+            <li><span data-ttu-id="8af57-348">Метка времени используется в качестве первичного ключа и механизма сортировки.</span><span class="sxs-lookup"><span data-stu-id="8af57-348">A time stamp that is used as the primary key and sorting mechanism.</span></span></li>
+            <li><span data-ttu-id="8af57-349">Измерения из записи или описания записи.</span><span class="sxs-lookup"><span data-stu-id="8af57-349">Measurements from the entry or descriptions of what the entry represents.</span></span></li>
+            <li><span data-ttu-id="8af57-350">Теги, определяющие дополнительные сведения о типе, источнике и другие данные о записи.</span><span class="sxs-lookup"><span data-stu-id="8af57-350">Tags that define additional information about the type, origin, and other information about the entry.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-351"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-351"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-351"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-351"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-352">Мониторинг и телеметрия событий.</span><span class="sxs-lookup"><span data-stu-id="e0634-352">Monitoring and event telemetry.</span></span></li>
-            <li><span data-ttu-id="e0634-353">Данные датчиков или другие данные Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="e0634-353">Sensor or other IoT data.</span></span></li>
+            <li><span data-ttu-id="8af57-352">Мониторинг и телеметрия событий.</span><span class="sxs-lookup"><span data-stu-id="8af57-352">Monitoring and event telemetry.</span></span></li>
+            <li><span data-ttu-id="8af57-353">Данные датчиков или другие данные Интернета вещей.</span><span class="sxs-lookup"><span data-stu-id="8af57-353">Sensor or other IoT data.</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="object-storage"></a><span data-ttu-id="e0634-354">Хранилище объектов</span><span class="sxs-lookup"><span data-stu-id="e0634-354">Object storage</span></span>
+## <a name="object-storage"></a><span data-ttu-id="8af57-354">Хранилище объектов</span><span class="sxs-lookup"><span data-stu-id="8af57-354">Object storage</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-355"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-355"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-355"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-355"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-356">Определяется ключом.</span><span class="sxs-lookup"><span data-stu-id="e0634-356">Identified by key.</span></span></li>
-            <li><span data-ttu-id="e0634-357">Объекты могут быть общедоступными или частными.</span><span class="sxs-lookup"><span data-stu-id="e0634-357">Objects may be publicly or privately accessible.</span></span></li>
-            <li><span data-ttu-id="e0634-358">Содержимое обычно является ресурсом, например электронная таблица, изображение или видеофайл.</span><span class="sxs-lookup"><span data-stu-id="e0634-358">Content is typically an asset such as a spreadsheet, image, or video file.</span></span></li>
-            <li><span data-ttu-id="e0634-359">Содержимое должно быть устойчивыми (постоянным) и внешним для любого уровня приложения или виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="e0634-359">Content must be durable (persistent), and external to any application tier or virtual machine.</span></span></li>
+            <li><span data-ttu-id="8af57-356">Определяется ключом.</span><span class="sxs-lookup"><span data-stu-id="8af57-356">Identified by key.</span></span></li>
+            <li><span data-ttu-id="8af57-357">Объекты могут быть общедоступными или частными.</span><span class="sxs-lookup"><span data-stu-id="8af57-357">Objects may be publicly or privately accessible.</span></span></li>
+            <li><span data-ttu-id="8af57-358">Содержимое обычно является ресурсом, например электронная таблица, изображение или видеофайл.</span><span class="sxs-lookup"><span data-stu-id="8af57-358">Content is typically an asset such as a spreadsheet, image, or video file.</span></span></li>
+            <li><span data-ttu-id="8af57-359">Содержимое должно быть устойчивыми (постоянным) и внешним для любого уровня приложения или виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="8af57-359">Content must be durable (persistent), and external to any application tier or virtual machine.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-360"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-360"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-360"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-360"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-361">Данные большого размера.</span><span class="sxs-lookup"><span data-stu-id="e0634-361">Data size is large.</span></span></li>
-            <li><span data-ttu-id="e0634-362">Данные большого двоичного объекта.</span><span class="sxs-lookup"><span data-stu-id="e0634-362">Blob data.</span></span></li>
-            <li><span data-ttu-id="e0634-363">Значение является непрозрачным.</span><span class="sxs-lookup"><span data-stu-id="e0634-363">Value is opaque.</span></span></li>
+            <li><span data-ttu-id="8af57-361">Данные большого размера.</span><span class="sxs-lookup"><span data-stu-id="8af57-361">Data size is large.</span></span></li>
+            <li><span data-ttu-id="8af57-362">Данные большого двоичного объекта.</span><span class="sxs-lookup"><span data-stu-id="8af57-362">Blob data.</span></span></li>
+            <li><span data-ttu-id="8af57-363">Значение является непрозрачным.</span><span class="sxs-lookup"><span data-stu-id="8af57-363">Value is opaque.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-364"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-364"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-364"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-364"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-365">Изображения, видео, офисные документы, PDF-файлы</span><span class="sxs-lookup"><span data-stu-id="e0634-365">Images, videos, office documents, PDFs</span></span></li>
-            <li><span data-ttu-id="e0634-366">CSS, сценарии, CSV</span><span class="sxs-lookup"><span data-stu-id="e0634-366">CSS, Scripts, CSV</span></span></li>
-            <li><span data-ttu-id="e0634-367">Статический HTML, JSON</span><span class="sxs-lookup"><span data-stu-id="e0634-367">Static HTML, JSON</span></span></li>
-            <li><span data-ttu-id="e0634-368">Файлы журнала и аудита</span><span class="sxs-lookup"><span data-stu-id="e0634-368">Log and audit files</span></span></li>
-            <li><span data-ttu-id="e0634-369">Резервные копии базы данных</span><span class="sxs-lookup"><span data-stu-id="e0634-369">Database backups</span></span></li>
+            <li><span data-ttu-id="8af57-365">Изображения, видео, офисные документы, PDF-файлы</span><span class="sxs-lookup"><span data-stu-id="8af57-365">Images, videos, office documents, PDFs</span></span></li>
+            <li><span data-ttu-id="8af57-366">CSS, сценарии, CSV</span><span class="sxs-lookup"><span data-stu-id="8af57-366">CSS, Scripts, CSV</span></span></li>
+            <li><span data-ttu-id="8af57-367">Статический HTML, JSON</span><span class="sxs-lookup"><span data-stu-id="8af57-367">Static HTML, JSON</span></span></li>
+            <li><span data-ttu-id="8af57-368">Файлы журнала и аудита</span><span class="sxs-lookup"><span data-stu-id="8af57-368">Log and audit files</span></span></li>
+            <li><span data-ttu-id="8af57-369">Резервные копии базы данных</span><span class="sxs-lookup"><span data-stu-id="8af57-369">Database backups</span></span></li>
         </ul>
     </td>
 </tr>
 </table>
 
-## <a name="shared-files"></a><span data-ttu-id="e0634-370">Общие файлы</span><span class="sxs-lookup"><span data-stu-id="e0634-370">Shared files</span></span>
+## <a name="shared-files"></a><span data-ttu-id="8af57-370">Общие файлы</span><span class="sxs-lookup"><span data-stu-id="8af57-370">Shared files</span></span>
 
 <table>
-<tr><td><span data-ttu-id="e0634-371"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-371"><strong>Workload</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-371"><strong>Рабочая нагрузка</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-371"><strong>Workload</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-372">Миграция из имеющихся приложений, взаимодействующих с файловой системой.</span><span class="sxs-lookup"><span data-stu-id="e0634-372">Migration from existing apps that interact with the file system.</span></span></li>
-            <li><span data-ttu-id="e0634-373">Требуется интерфейс SMB.</span><span class="sxs-lookup"><span data-stu-id="e0634-373">Requires SMB interface.</span></span></li>
+            <li><span data-ttu-id="8af57-372">Миграция из имеющихся приложений, взаимодействующих с файловой системой.</span><span class="sxs-lookup"><span data-stu-id="8af57-372">Migration from existing apps that interact with the file system.</span></span></li>
+            <li><span data-ttu-id="8af57-373">Требуется интерфейс SMB.</span><span class="sxs-lookup"><span data-stu-id="8af57-373">Requires SMB interface.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-374"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-374"><strong>Data type</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-374"><strong>Тип данных</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-374"><strong>Data type</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-375">Файлы в наборе папок иерархической структуры.</span><span class="sxs-lookup"><span data-stu-id="e0634-375">Files in a hierarchical set of folders.</span></span></li>
-            <li><span data-ttu-id="e0634-376">Доступны в стандартных библиотеках ввода-вывода.</span><span class="sxs-lookup"><span data-stu-id="e0634-376">Accessible with standard I/O libraries.</span></span></li>
+            <li><span data-ttu-id="8af57-375">Файлы в наборе папок иерархической структуры.</span><span class="sxs-lookup"><span data-stu-id="8af57-375">Files in a hierarchical set of folders.</span></span></li>
+            <li><span data-ttu-id="8af57-376">Доступны в стандартных библиотеках ввода-вывода.</span><span class="sxs-lookup"><span data-stu-id="8af57-376">Accessible with standard I/O libraries.</span></span></li>
         </ul>
     </td>
 </tr>
-<tr><td><span data-ttu-id="e0634-377"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="e0634-377"><strong>Examples</strong></span></span></td>
+<tr><td><span data-ttu-id="8af57-377"><strong>Примеры</strong></span><span class="sxs-lookup"><span data-stu-id="8af57-377"><strong>Examples</strong></span></span></td>
     <td>
         <ul>
-            <li><span data-ttu-id="e0634-378">Устаревшие файлы</span><span class="sxs-lookup"><span data-stu-id="e0634-378">Legacy files</span></span></li>
-            <li><span data-ttu-id="e0634-379">Общее содержимое доступно в нескольких виртуальных машинах или экземплярах приложения</span><span class="sxs-lookup"><span data-stu-id="e0634-379">Shared content accessible among a number of VMs or app instances</span></span></li>
+            <li><span data-ttu-id="8af57-378">Устаревшие файлы</span><span class="sxs-lookup"><span data-stu-id="8af57-378">Legacy files</span></span></li>
+            <li><span data-ttu-id="8af57-379">Общее содержимое доступно в нескольких виртуальных машинах или экземплярах приложения</span><span class="sxs-lookup"><span data-stu-id="8af57-379">Shared content accessible among a number of VMs or app instances</span></span></li>
         </ul>
     </td>
 </tr>
