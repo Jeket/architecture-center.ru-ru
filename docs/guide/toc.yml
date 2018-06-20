@@ -60,4 +60,5 @@
     - name: Основные аспекты качества программного обеспечения
       href: pillars.md
     - name: Шаблоны проектирования
-      href: ../patterns/index.md?toc=/azure/architecture/guide/toc.json
+      href: ../patterns/index.md
+      maintainContext: true

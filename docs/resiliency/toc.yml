@@ -5,9 +5,11 @@
     - name: Проектирование устойчивых приложений
       href: index.md
     - name: Контрольный список для обеспечения устойчивости (общий)
-      href: ../checklist/resiliency.md?toc=/azure/architecture/resiliency/toc.json
+      href: ../checklist/resiliency.md
+      maintainContext: true
     - name: Контрольный список для обеспечения устойчивости (службы Azure)
-      href: ../checklist/resiliency-per-service.md?toc=/azure/architecture/resiliency/toc.json
+      href: ../checklist/resiliency-per-service.md
+      maintainContext: true
     - name: Анализ режима сбоя
       href: failure-mode-analysis.md
     - name: Дополнительные рекомендации
