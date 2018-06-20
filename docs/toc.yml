@@ -5,6 +5,8 @@
   items:
     - name: Базовый этап внедрения
       href: cloud-adoption-guide/adoption-intro/overview.md
+    - name: Промежуточный этап внедрения
+      href: cloud-adoption-guide/intermediate-stage/overview.md
 - name: Руководство по архитектуре приложений
   href: guide/index.md
   items:
@@ -19,7 +21,8 @@
     - name: Основные аспекты качества программного обеспечения
       href: guide/pillars.md
     - name: Шаблоны проектирования
-      href: patterns/index.md?toc=/azure/architecture/guide/toc.json
+      href: patterns/index.md
+      maintainContext: true
 - name: Руководство по архитектуре данных
   href: data-guide/index.md
 - name: Эталонные образцы архитектуры
@@ -120,7 +123,8 @@
     - name: Проектирование устойчивых приложений
       href: resiliency/index.md
     - name: Контрольный список для обеспечения устойчивости
-      href: checklist/resiliency.md?toc=/azure/architecture/resiliency/toc.json
+      href: checklist/resiliency.md
+      maintainContext: true
     - name: Анализ режима сбоя
       href: resiliency/failure-mode-analysis.md
 - name: Руководства по сценариям
