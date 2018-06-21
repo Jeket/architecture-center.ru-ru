@@ -2,12 +2,12 @@
 title: Разработка с учетом бизнес-потребностей
 description: Каждое решение в процессе разработки должно определяться бизнес-требованиями.
 author: MikeWasson
-layout: LandingPage
-ms.openlocfilehash: 110a441ae74334d212a717da2cb038d60b24bb1f
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 768f2298860d91774d93c1917cf95000bb2b873d
+ms.sourcegitcommit: 26b04f138a860979aea5d253ba7fecffc654841e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36206636"
 ---
 # <a name="build-for-the-needs-of-the-business"></a>Разработка с учетом бизнес-потребностей
 
