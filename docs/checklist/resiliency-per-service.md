@@ -9,6 +9,7 @@ ms.sourcegitcommit: 2123c25b1a0b5501ff1887f98030787191cf6994
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/08/2018
+ms.locfileid: "29783513"
 ---
 # <a name="resiliency-checklist-for-specific-azure-services"></a><span data-ttu-id="bee67-103">Контрольный список для обеспечения устойчивости конкретных служб Azure</span><span class="sxs-lookup"><span data-stu-id="bee67-103">Resiliency checklist for specific Azure services</span></span>
 

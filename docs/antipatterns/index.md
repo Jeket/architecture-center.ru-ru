@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24538718"
 ---
 # <a name="performance-antipatterns-for-cloud-applications"></a><span data-ttu-id="15a22-103">Антишаблоны производительности для облачных приложений</span><span class="sxs-lookup"><span data-stu-id="15a22-103">Performance antipatterns for cloud applications</span></span>
 

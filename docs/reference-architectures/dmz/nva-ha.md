@@ -11,6 +11,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30847753"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances"></a><span data-ttu-id="89770-103">Развертывание высокодоступных виртуальных сетевых модулей</span><span class="sxs-lookup"><span data-stu-id="89770-103">Deploy highly available network virtual appliances</span></span>
 

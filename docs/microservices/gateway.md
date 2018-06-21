@@ -8,6 +8,7 @@ ms.sourcegitcommit: a8453c4bc7c870fa1a12bb3c02e3b310db87530c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/29/2017
+ms.locfileid: "27549184"
 ---
 # <a name="designing-microservices-api-gateways"></a><span data-ttu-id="da206-103">Проектирование микрослужб: шлюзы API</span><span class="sxs-lookup"><span data-stu-id="da206-103">Designing microservices: API gateways</span></span>
 

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 4ec010846b9b5545c843a32e08293f906e512302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34299944"
 ---
 # <a name="azure-enterprise-scaffold---prescriptive-subscription-governance"></a><span data-ttu-id="7b5cd-103">Корпоративный каркас Azure: рекомендуемая система управления подписками</span><span class="sxs-lookup"><span data-stu-id="7b5cd-103">Azure enterprise scaffold - prescriptive subscription governance</span></span>
 <span data-ttu-id="7b5cd-104">Предприятия все чаще внедряют общедоступное облако ввиду его гибкости и динамичности.</span><span class="sxs-lookup"><span data-stu-id="7b5cd-104">Enterprises are increasingly adopting the public cloud for its agility and flexibility.</span></span> <span data-ttu-id="7b5cd-105">Они используют преимущества облака для создания дохода или оптимизации ресурсов для бизнеса.</span><span class="sxs-lookup"><span data-stu-id="7b5cd-105">They are utilizing the cloud's strengths to generate revenue or optimize resources for the business.</span></span> <span data-ttu-id="7b5cd-106">Microsoft Azure предоставляет множество служб, из которых как из строительных блоков предприятия могут конструировать решения для широкого спектра рабочих нагрузок и приложений.</span><span class="sxs-lookup"><span data-stu-id="7b5cd-106">Microsoft Azure provides a multitude of services that enterprises can assemble like building blocks to address a wide array of workloads and applications.</span></span> 

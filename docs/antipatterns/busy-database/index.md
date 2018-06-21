@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24538798"
 ---
 # <a name="busy-database-antipattern"></a><span data-ttu-id="45fb2-103">Антишаблон занятости базы данных</span><span class="sxs-lookup"><span data-stu-id="45fb2-103">Busy Database antipattern</span></span>
 

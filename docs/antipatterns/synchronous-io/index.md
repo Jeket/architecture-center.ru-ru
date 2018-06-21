@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24538558"
 ---
 # <a name="synchronous-io-antipattern"></a><span data-ttu-id="47a0b-103">Антишаблон синхронных операций ввода-вывода</span><span class="sxs-lookup"><span data-stu-id="47a0b-103">Synchronous I/O antipattern</span></span>
 

@@ -10,6 +10,7 @@ ms.sourcegitcommit: d08f6ee27e1e8a623aeee32d298e616bc9bb87ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810505"
 ---
 # <a name="failure-mode-analysis"></a><span data-ttu-id="8f5e0-103">Анализ режима сбоя</span><span class="sxs-lookup"><span data-stu-id="8f5e0-103">Failure mode analysis</span></span>
 [!INCLUDE [header](../_includes/header.md)]

@@ -7,6 +7,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541662"
 ---
 # <a name="choose-a-solution-for-integrating-on-premises-active-directory-with-azure"></a><span data-ttu-id="9c741-103">Выбор решения для интеграции локальной среды Active Directory с Azure</span><span class="sxs-lookup"><span data-stu-id="9c741-103">Choose a solution for integrating on-premises Active Directory with Azure</span></span>
 

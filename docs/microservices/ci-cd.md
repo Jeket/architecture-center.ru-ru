@@ -8,6 +8,7 @@ ms.sourcegitcommit: 786bafefc731245414c3c1510fc21027afe303dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "26653068"
 ---
 # <a name="designing-microservices-continuous-integration"></a><span data-ttu-id="42eab-103">Разработка микрослужб: непрерывная интеграция</span><span class="sxs-lookup"><span data-stu-id="42eab-103">Designing microservices: Continuous integration</span></span>
 

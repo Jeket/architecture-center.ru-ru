@@ -10,6 +10,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30848586"
 ---
 # <a name="messaging-patterns"></a><span data-ttu-id="1ef19-105">Модели обмена сообщениями</span><span class="sxs-lookup"><span data-stu-id="1ef19-105">Messaging patterns</span></span>
 

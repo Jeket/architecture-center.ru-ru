@@ -10,6 +10,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30847283"
 ---
 # <a name="availability-patterns"></a><span data-ttu-id="5a3de-107">Шаблоны доступности</span><span class="sxs-lookup"><span data-stu-id="5a3de-107">Availability patterns</span></span>
 

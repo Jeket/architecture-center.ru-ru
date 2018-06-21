@@ -8,6 +8,7 @@ ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30298861"
 ---
 # <a name="big-data-architectures"></a><span data-ttu-id="8ef2c-102">Варианты архитектуры для обработки больших данных</span><span class="sxs-lookup"><span data-stu-id="8ef2c-102">Big data architectures</span></span>
 

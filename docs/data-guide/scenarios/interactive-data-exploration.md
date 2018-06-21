@@ -8,6 +8,7 @@ ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30297963"
 ---
 # <a name="interactive-data-exploration"></a><span data-ttu-id="0cb36-102">Интерактивное исследование данных</span><span class="sxs-lookup"><span data-stu-id="0cb36-102">Interactive data exploration</span></span>
 

@@ -11,6 +11,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541406"
 ---
 # <a name="tenant-sign-up-and-onboarding"></a><span data-ttu-id="c384b-103">Регистрация и адаптации клиента</span><span class="sxs-lookup"><span data-stu-id="c384b-103">Tenant sign-up and onboarding</span></span>
 

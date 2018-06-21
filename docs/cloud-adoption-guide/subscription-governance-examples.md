@@ -19,6 +19,7 @@ ms.sourcegitcommit: 4ec010846b9b5545c843a32e08293f906e512302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34299940"
 ---
 # <a name="examples-of-implementing-azure-enterprise-scaffold"></a><span data-ttu-id="d57c3-103">Примеры реализации корпоративного каркаса Azure</span><span class="sxs-lookup"><span data-stu-id="d57c3-103">Examples of implementing Azure enterprise scaffold</span></span>
 <span data-ttu-id="d57c3-104">В этой статье приведены примеры того, как предприятие может реализовать рекомендации по созданию [корпоративного каркаса Azure](subscription-governance.md).</span><span class="sxs-lookup"><span data-stu-id="d57c3-104">This article provides examples of how an enterprise can implement the recommendations for an [Azure enterprise scaffold](subscription-governance.md).</span></span> <span data-ttu-id="d57c3-105">В нем на примере вымышленной компании Contoso приводятся рекомендации для распространенных сценариев.</span><span class="sxs-lookup"><span data-stu-id="d57c3-105">It uses a fictional company named Contoso to illustrate best practices for common scenarios.</span></span>

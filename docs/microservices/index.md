@@ -8,6 +8,7 @@ ms.sourcegitcommit: 744ad1381e01bbda6a1a7eff4b25e1a337385553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/08/2018
+ms.locfileid: "27701108"
 ---
 # <a name="designing-building-and-operating-microservices-on-azure"></a><span data-ttu-id="af1fa-103">Проектирование, создание и использование микрослужб в Azure</span><span class="sxs-lookup"><span data-stu-id="af1fa-103">Designing, building, and operating microservices on Azure</span></span>
 

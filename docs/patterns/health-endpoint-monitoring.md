@@ -14,6 +14,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30847855"
 ---
 # <a name="health-endpoint-monitoring-pattern"></a><span data-ttu-id="200d7-104">Шаблон мониторинга конечных точек работоспособности</span><span class="sxs-lookup"><span data-stu-id="200d7-104">Health Endpoint Monitoring pattern</span></span>
 

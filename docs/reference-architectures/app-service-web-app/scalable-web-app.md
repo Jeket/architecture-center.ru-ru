@@ -12,6 +12,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30846514"
 ---
 # <a name="improve-scalability-in-a-web-application"></a><span data-ttu-id="c7e67-103">Повышение масштабируемости в веб-приложении</span><span class="sxs-lookup"><span data-stu-id="c7e67-103">Improve scalability in a web application</span></span>
 

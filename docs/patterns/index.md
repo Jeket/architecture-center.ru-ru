@@ -7,6 +7,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30847261"
 ---
 # <a name="cloud-design-patterns"></a><span data-ttu-id="e1413-104">Конструктивные шаблоны облачных решений</span><span class="sxs-lookup"><span data-stu-id="e1413-104">Cloud Design Patterns</span></span>
 

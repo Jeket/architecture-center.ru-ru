@@ -8,6 +8,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30846609"
 ---
 # <a name="extraneous-fetching-antipattern"></a><span data-ttu-id="4f5e3-103">Антишаблон лишней выборки</span><span class="sxs-lookup"><span data-stu-id="4f5e3-103">Extraneous Fetching antipattern</span></span>
 

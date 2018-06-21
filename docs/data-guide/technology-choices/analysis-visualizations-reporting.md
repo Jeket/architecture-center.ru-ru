@@ -8,6 +8,7 @@ ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/14/2018
+ms.locfileid: "29288916"
 ---
 # <a name="choosing-a-data-analytics-technology-in-azure"></a><span data-ttu-id="e270b-102">Выбор технологии для анализа данных в Azure</span><span class="sxs-lookup"><span data-stu-id="e270b-102">Choosing a data analytics technology in Azure</span></span>
 

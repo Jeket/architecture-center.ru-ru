@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2018
+ms.locfileid: "29478261"
 ---
 # <a name="retry-pattern"></a><span data-ttu-id="8e096-104">Шаблон повторов</span><span class="sxs-lookup"><span data-stu-id="8e096-104">Retry pattern</span></span>
 

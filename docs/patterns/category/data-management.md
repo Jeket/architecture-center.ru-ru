@@ -10,6 +10,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30847096"
 ---
 # <a name="data-management-patterns"></a><span data-ttu-id="dc842-106">Шаблоны управления данными</span><span class="sxs-lookup"><span data-stu-id="dc842-106">Data Management patterns</span></span>
 

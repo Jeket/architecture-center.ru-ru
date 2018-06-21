@@ -13,6 +13,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541262"
 ---
 # <a name="throttling-pattern"></a><span data-ttu-id="fbbf4-104">Шаблон регулирования</span><span class="sxs-lookup"><span data-stu-id="fbbf4-104">Throttling pattern</span></span>
 

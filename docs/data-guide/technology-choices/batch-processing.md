@@ -8,6 +8,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30848671"
 ---
 # <a name="choosing-a-batch-processing-technology-in-azure"></a><span data-ttu-id="bab7c-102">Выбор технологии пакетной обработки в Azure</span><span class="sxs-lookup"><span data-stu-id="bab7c-102">Choosing a batch processing technology in Azure</span></span>
 

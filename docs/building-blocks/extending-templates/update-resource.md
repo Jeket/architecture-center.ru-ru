@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24538478"
 ---
 # <a name="update-a-resource-in-an-azure-resource-manager-template"></a><span data-ttu-id="baade-103">Обновление ресурсов в шаблоне Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="baade-103">Update a resource in an Azure Resource Manager template</span></span>
 

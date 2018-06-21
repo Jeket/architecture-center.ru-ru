@@ -13,6 +13,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24543150"
 ---
 # <a name="priority-queue-pattern"></a><span data-ttu-id="86534-104">Шаблон очереди с приоритетом</span><span class="sxs-lookup"><span data-stu-id="86534-104">Priority Queue pattern</span></span>
 

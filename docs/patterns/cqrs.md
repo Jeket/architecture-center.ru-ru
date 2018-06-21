@@ -14,6 +14,7 @@ ms.sourcegitcommit: d08f6ee27e1e8a623aeee32d298e616bc9bb87ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33811055"
 ---
 # <a name="command-and-query-responsibility-segregation-cqrs-pattern"></a><span data-ttu-id="15235-104">Шаблон CQRS</span><span class="sxs-lookup"><span data-stu-id="15235-104">Command and Query Responsibility Segregation (CQRS) pattern</span></span>
 

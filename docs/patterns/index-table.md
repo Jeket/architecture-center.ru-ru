@@ -13,6 +13,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541790"
 ---
 # <a name="index-table-pattern"></a><span data-ttu-id="e81d5-104">Шаблон таблицы индексов</span><span class="sxs-lookup"><span data-stu-id="e81d5-104">Index Table pattern</span></span>
 

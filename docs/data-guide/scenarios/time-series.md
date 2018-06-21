@@ -8,6 +8,7 @@ ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30298113"
 ---
 # <a name="time-series-solutions"></a><span data-ttu-id="9ca98-102">Решения для временных рядов</span><span class="sxs-lookup"><span data-stu-id="9ca98-102">Time series solutions</span></span>
 

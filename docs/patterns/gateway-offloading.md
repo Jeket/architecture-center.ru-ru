@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24540014"
 ---
 # <a name="gateway-offloading-pattern"></a><span data-ttu-id="2c9fb-103">Схема разгрузки шлюза</span><span class="sxs-lookup"><span data-stu-id="2c9fb-103">Gateway Offloading pattern</span></span>
 

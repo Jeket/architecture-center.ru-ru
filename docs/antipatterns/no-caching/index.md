@@ -8,6 +8,7 @@ ms.sourcegitcommit: c93f1b210b3deff17cc969fb66133bc6399cfd10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/05/2018
+ms.locfileid: "27595991"
 ---
 # <a name="no-caching-antipattern"></a><span data-ttu-id="fb130-103">Антишаблон без кэширования</span><span class="sxs-lookup"><span data-stu-id="fb130-103">No Caching antipattern</span></span>
 

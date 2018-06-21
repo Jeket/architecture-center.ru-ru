@@ -7,6 +7,7 @@ ms.sourcegitcommit: 29fbcb1eec44802d2c01b6d3bcf7d7bd0bae65fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/27/2018
+ms.locfileid: "29563461"
 ---
 # <a name="guidance-azure-ad-tenant-design"></a><span data-ttu-id="3fff4-103">Руководство. Разработка клиента Azure AD</span><span class="sxs-lookup"><span data-stu-id="3fff4-103">Guidance: Azure AD tenant design</span></span>
 

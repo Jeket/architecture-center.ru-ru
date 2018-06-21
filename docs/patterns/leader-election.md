@@ -13,6 +13,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30846657"
 ---
 # <a name="leader-election-pattern"></a><span data-ttu-id="b98e4-104">Шаблон выбора лидера</span><span class="sxs-lookup"><span data-stu-id="b98e4-104">Leader Election pattern</span></span>
 
