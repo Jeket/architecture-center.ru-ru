@@ -8,6 +8,7 @@ ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/30/2018
+ms.locfileid: "30270025"
 ---
 # <a name="backends-for-frontends-pattern"></a>Схема отдельных серверных частей для каждого интерфейса
 

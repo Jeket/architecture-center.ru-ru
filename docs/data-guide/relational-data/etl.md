@@ -8,6 +8,7 @@ ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30298642"
 ---
 # <a name="extract-transform-and-load-etl"></a>Извлечение, преобразование и загрузка (ETL)
 

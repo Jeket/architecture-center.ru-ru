@@ -8,6 +8,7 @@ ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2018
+ms.locfileid: "30298844"
 ---
 # <a name="azure-virtual-datacenter-and-the-enterprise-control-plane"></a>Виртуальный центр обработки данных Azure и плоскость управления предприятием
 

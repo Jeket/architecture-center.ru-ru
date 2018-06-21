@@ -19,6 +19,7 @@ ms.sourcegitcommit: 4ec010846b9b5545c843a32e08293f906e512302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34299940"
 ---
 # <a name="examples-of-implementing-azure-enterprise-scaffold"></a>Примеры реализации корпоративного каркаса Azure
 В этой статье приведены примеры того, как предприятие может реализовать рекомендации по созданию [корпоративного каркаса Azure](subscription-governance.md). В нем на примере вымышленной компании Contoso приводятся рекомендации для распространенных сценариев.

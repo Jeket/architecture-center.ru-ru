@@ -9,6 +9,7 @@ ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/30/2018
+ms.locfileid: "30270294"
 ---
 # <a name="run-a-web-application-in-multiple-regions"></a>Выполнение веб-приложения в нескольких регионах
 [!INCLUDE [header](../../_includes/header.md)]

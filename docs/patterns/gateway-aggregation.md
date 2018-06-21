@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541278"
 ---
 # <a name="gateway-aggregation-pattern"></a>Схема агрегирования на шлюзе
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/30/2018
+ms.locfileid: "30270128"
 ---
 # <a name="run-a-high-availability-sharepoint-server-2016-farm-in-azure"></a>Запуск фермы SharePoint Server 2016 высокого уровня доступности в Azure
 

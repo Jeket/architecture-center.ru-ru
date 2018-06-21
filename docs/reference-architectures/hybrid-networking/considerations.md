@@ -8,6 +8,7 @@ ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2017
+ms.locfileid: "24541054"
 ---
 # <a name="choose-a-solution-for-connecting-an-on-premises-network-to-azure"></a>Выбор решения для подключения локальной сети к Azure
 

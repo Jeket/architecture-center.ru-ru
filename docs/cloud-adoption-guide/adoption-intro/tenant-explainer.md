@@ -7,6 +7,7 @@ ms.sourcegitcommit: 2e8b06e9c07875d65b91d5431bfd4bc465a7a242
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29062042"
 ---
 # <a name="explainer-what-is-an-azure-active-directory-tenant"></a>Пояснения. Знакомство с клиентом Azure Active Directory
 

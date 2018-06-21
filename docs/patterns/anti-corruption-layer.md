@@ -8,6 +8,7 @@ ms.sourcegitcommit: f665226cec96ec818ca06ac6c2d83edb23c9f29c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31012374"
 ---
 # <a name="anti-corruption-layer-pattern"></a>Шаблон уровня защиты от повреждения
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30849660"
 ---
 # <a name="dmz-between-azure-and-your-on-premises-datacenter"></a>Промежуточная подсеть между Azure и локальным центром обработки данных
 
