@@ -5,11 +5,12 @@ author: telmosampaio
 ms.date: 04/09/2018
 pnp.series.title: Implement a hub-spoke network topology in Azure
 pnp.series.prev: expressroute
-ms.openlocfilehash: 3b19526a9ed77c1605325a9eec101ffbee7c8401
-ms.sourcegitcommit: 3846a0ab2b2b2552202a3c9c21af0097a145ffc6
+ms.openlocfilehash: 4ebb0d4df3e1907662537516cae1f077e68e47b4
+ms.sourcegitcommit: f7418f8bdabc8f5ec33ae3551e3fbb466782caa5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209582"
 ---
 # <a name="implement-a-hub-spoke-network-topology-in-azure"></a>Реализация звездообразной топологии сети в Azure
 
@@ -272,7 +273,7 @@ TcpTestSucceeded : True
 
 2. Нажмите `Connect`, чтобы открыть сеанс удаленного рабочего стола для виртуальной машины. Используйте пароль, указанный в файле параметров `onprem.json`.
 
-3. Откройте консоль PowerShell в виртуальной машине и используйте командлет `Test-NetConnection`, чтобы убедиться, что вы можете подключиться к виртуальной машине Jumpbox в виртуальной сети концентратора.
+3. Откройте консоль PowerShell в виртуальной машине и используйте командлет `Test-NetConnection`, чтобы проверить возможность подключения к виртуальным машинам Jumpbox в виртуальных сетях периферийных зон.
 
    ```powershell
    Test-NetConnection 10.1.0.68 -CommonTCPPort RDP
