@@ -2,16 +2,13 @@
 title: N-уровневое приложение с SQL Server
 description: В этой статье описывается, как реализовать многоуровневую архитектуру в Azure для обеспечения доступности, безопасности, масштабируемости и управляемости.
 author: MikeWasson
-ms.date: 05/03/2018
-pnp.series.title: Windows VM workloads
-pnp.series.next: multi-region-application
-pnp.series.prev: multi-vm
-ms.openlocfilehash: 0f170f2fbcbbfeace53db199cb5d3949415b5546
-ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
+ms.date: 06/23/2018
+ms.openlocfilehash: 050ea9b3104a2dc9af4cdaad3b4540cd75434e9d
+ms.sourcegitcommit: 767c8570d7ab85551c2686c095b39a56d813664b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2018
-ms.locfileid: "33673596"
+ms.lasthandoff: 06/24/2018
+ms.locfileid: "36746678"
 ---
 # <a name="n-tier-application-with-sql-server"></a>N-уровневое приложение с SQL Server
 
@@ -41,11 +38,13 @@ ms.locfileid: "33673596"
 
 * **Общедоступный IP-адрес.** Для приема интернет-трафика общедоступной подсистеме балансировки нагрузки требуется общедоступный IP-адрес.
 
-* **Jumpbox.** Он также называется [узлом-бастионом]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик с удаленного рабочего стола (RDP).
+* **Jumpbox.** Он также называется [Узел-бастион]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик с удаленного рабочего стола (RDP).
 
-* **Группа доступности AlwaysOn SQL Server.** Обеспечивает высокий уровень доступности на уровне данных, включив репликацию и отработку отказа.
+* **Группа доступности AlwaysOn SQL Server.** Обеспечивает высокий уровень доступности на уровне данных, включив репликацию и отработку отказа. Для отработки отказа используется технология отказоустойчивого кластера Windows Server (WSFC).
 
-* **Серверы доменных служб Active Directory (AD DS).** Группы доступности AlwaysOn SQL Server присоединяются к домену для включения технологии отказоустойчивого кластера Windows Server (WSFC) и отработки отказа. 
+* **Серверы доменных служб Active Directory (AD DS).** Объекты-компьютеры для отказоустойчивого кластера и связанные с ним кластерные роли создаются в доменных службах Active Directory (AD DS).
+
+* **Облачный ресурс-свидетель.** На отказоустойчивом кластере должны работать больше половины узлов. Это называется кворумом. Если в кластере только два узла, разделение сети может привести к тому, что каждый из узлов будет считаться главным. В этом случае требуется *ресурс-свидетель*, чтобы разорвать связи и создать кворум. Свидетель — это ресурс, например общий диск, который может использоваться в качестве средства разбиения связей для установления кворума. Облачный ресурс-свидетель — тип ресурса-свидетеля, в котором используется хранилище BLOB-объектов Azure. Дополнительные сведения о концепции кворума см. в статье, посвященной [кворуму кластера и кворуму пула](/windows-server/storage/storage-spaces/understand-quorum). Дополнительные сведения об облачном ресурсе-свидетеле см. в статье, посвященной [развертыванию облачного ресурса-свидетеля для отказоустойчивого кластера](/windows-server/failover-clustering/deploy-cloud-witness). 
 
 * **Azure DNS**. [Azure DNS][azure-dns] — это служба размещения для доменов DNS, которая предоставляет разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 
@@ -157,13 +156,13 @@ Jumpbox имеет минимальные требования к произво
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Пример развертывания для этой архитектуры можно найти на портале [GitHub][github-folder]. 
+Пример развертывания для этой архитектуры можно найти на портале [GitHub][github-folder]. Обратите внимание, что все развертывание, включая выполнение скриптов для настройки AD DS, развертывание отказоустойчивого кластера Windows Server и группы доступности SQL Server, может занять до двух часов.
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
 1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
 
-2. Убедитесь, что Azure CLI 2.0 установлен на компьютере. Чтобы установить CLI, следуйте инструкциям в статье об [установке Azure CLI 2.0][azure-cli-2].
+2. Установите [Azure CLI 2.0][azure-cli-2].
 
 3. Установите пакет npm [стандартных блоков Azure][azbb].
 
@@ -171,32 +170,80 @@ Jumpbox имеет минимальные требования к произво
    npm install -g @mspnp/azure-building-blocks
    ```
 
-4. В командной строке, строке bash или строке PowerShell войдите в свою учетную запись Azure с помощью одной из приведенных ниже команд и следуйте инструкциям.
+4. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure с помощью следующей команды.
 
    ```bash
    az login
    ```
 
-### <a name="deploy-the-solution-using-azbb"></a>Развертывание решения с помощью azbb
+### <a name="deploy-the-solution"></a>Развертывание решения 
 
-Чтобы развернуть виртуальные машины Windows для эталонной архитектуры n-уровневого приложения, сделайте следующее:
+1. Выполните следующую команду, чтобы создать группу ресурсов.
 
-1. Перейдите в папку `virtual-machines\n-tier-windows` репозитория, клонированного на шаге 1 (см. список необходимых компонентов).
+    ```bash
+    az group create --location <location> --name <resource-group-name>
+    ```
 
-2. Файл параметров присваивает стандартные имя пользователя и пароль для администратора каждой виртуальной машине в развертывании. Перед развертыванием эталонной архитектуры эти значения нужно изменить. Откройте файл `n-tier-windows.json` и замените все поля **adminUsername** и **adminPassword** новыми значениями.
-  
-   > [!NOTE]
-   > Есть несколько сценариев, которые выполняются в ходе развертывания в объектах **VirtualMachineExtension** и параметрах **extension** для некоторых объектов **VirtualMachine**. Для работы некоторых из этих скриптов требуются учетные данные администратора, которые вы только что изменили. Рекомендуется просмотреть скрипты, чтобы проверить, указаны ли там правильные учетные данные. Развертывание может завершиться ошибкой, если будут указаны неправильные учетные данные.
-   > 
-   > 
+2. Выполните следующую команду, чтобы создать учетную запись хранения для облачного ресурса-свидетеля.
 
-Сохраните файл.
+    ```bash
+    az storage account create --location <location> \
+      --name <storage-account-name> \
+      --resource-group <resource-group-name> \
+      --sku Standard_LRS
+    ```
 
-3. Разверните эталонную архитектуру, используя средство командной строки **azbb**, как показано ниже.
+3. Перейдите в папку `virtual-machines\n-tier-windows` в репозитории эталонных архитектур на сайте GitHub.
 
-   ```bash
-   azbb -s <your subscription_id> -g <your resource_group_name> -l <azure region> -p n-tier-windows.json --deploy
-   ```
+4. Откройте файл `n-tier-windows.json` . 
+
+5. С помощью поиска найдите все вхождения "witnessStorageBlobEndPoint" и замените текст заполнителя именем учетной записи хранения, созданным на шаге 2.
+
+    ```json
+    "witnessStorageBlobEndPoint": "https://[replace-with-storageaccountname].blob.core.windows.net",
+    ```
+
+6. Выполните следующую команду, чтобы вывести список ключей учетной записи хранения.
+
+    ```bash
+    az storage account keys list \
+      --account-name <storage-account-name> \
+      --resource-group <resource-group-name>
+    ```
+
+    Полученный результат должен выглядеть примерно так: Скопируйте значение `key1`.
+
+    ```json
+    [
+    {
+        "keyName": "key1",
+        "permissions": "Full",
+        "value": "..."
+    },
+    {
+        "keyName": "key2",
+        "permissions": "Full",
+        "value": "..."
+    }
+    ]
+    ```
+
+7. В файле `n-tier-windows.json` найдите все вхождения "witnessStorageAccountKey" и вставьте ключ учетной записи.
+
+    ```json
+    "witnessStorageAccountKey": "[replace-with-storagekey]"
+    ```
+
+8. В файле `n-tier-windows.json` найдите все вхождения `testPassw0rd!23`, `test$!Passw0rd111` и `AweS0me@SQLServicePW`. Замените их своими собственными паролями и сохраните файл.
+
+    > [!NOTE]
+    > Если вы измените имя администратора, необходимо также обновить блоки `extensions` в файле JSON. 
+
+9. Выполните следующую команду, чтобы развернуть архитектуру.
+
+    ```bash
+    azbb -s <your subscription_id> -g <resource_group_name> -l <location> -p n-tier-windows.json --deploy
+    ```
 
 Дополнительные сведения о развертывании этого примера эталонной архитектуры с использованием стандартных блоков Azure см. в [нашем репозитории GitHub][git].
 
@@ -212,7 +259,7 @@ Jumpbox имеет минимальные требования к произво
 [azure-cli-2]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
 [azure-dns]: /azure/dns/dns-overview
 [azure-key-vault]: https://azure.microsoft.com/services/key-vault
-[узлом-бастионом]: https://en.wikipedia.org/wiki/Bastion_host
+[Узел-бастион]: https://en.wikipedia.org/wiki/Bastion_host
 [CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
 [chef]: https://www.chef.io/solutions/azure/
 [git]: https://github.com/mspnp/template-building-blocks
@@ -225,7 +272,7 @@ Jumpbox имеет минимальные требования к произво
 [operations-management-suite]: https://www.microsoft.com/server-cloud/operations-management-suite/overview.aspx
 [plan-network]: /azure/virtual-network/virtual-network-vnet-plan-design-arm
 [private-ip-space]: https://en.wikipedia.org/wiki/Private_network#Private_IPv4_address_spaces
-[общедоступный IP-адрес]: /azure/virtual-network/virtual-network-ip-addresses-overview-arm
+[Общедоступный IP-адрес]: /azure/virtual-network/virtual-network-ip-addresses-overview-arm
 [puppet]: https://puppetlabs.com/blog/managing-azure-virtual-machines-puppet
 [ref-arch-repo]: https://github.com/mspnp/reference-architectures
 [sql-alwayson]: https://msdn.microsoft.com/library/hh510230.aspx
