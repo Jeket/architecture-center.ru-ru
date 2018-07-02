@@ -16,6 +16,8 @@
       items:
         - name: Корпоративная бизнес-аналитика с использованием хранилища данных SQL
           href: data/enterprise-bi-sqldw.md
+        - name: Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных
+          href: data/enterprise-bi-adf.md
     - name: Гибридные сети
       href: hybrid-networking/index.md
       items:
