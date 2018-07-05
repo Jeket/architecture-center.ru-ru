@@ -3,12 +3,12 @@ title: Запуск виртуальной машины Linux в Azure
 description: Сведения о выполнении одной виртуальной машины Linux в Azure с учетом требований к масштабируемости, устойчивости, управляемости и безопасности.
 author: telmosampaio
 ms.date: 04/03/2018
-ms.openlocfilehash: f29b7225c2e0edbb1569c9e3a55d112d12041af8
-ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
+ms.openlocfilehash: 3d0492d05280e8c296cdfc4157aa0387a70337bf
+ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2018
-ms.locfileid: "33673586"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37142324"
 ---
 # <a name="run-a-linux-vm-on-azure"></a>Запуск виртуальной машины Linux в Azure
 
@@ -144,17 +144,7 @@ sudo mount /dev/sdc1 /data1
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
-
-2. Убедитесь, что Azure CLI 2.0 установлен на компьютере. См. инструкции по [установке Azure CLI 2.0][azure-cli-2].
-
-3. Установите пакет npm [стандартных блоков Azure][azbb].
-
-4. В командной строке операционной системы, Bash или PowerShell введите следующую команду, чтобы войти в учетную запись Azure.
-
-  ```bash
-  az login
-  ```
+[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
 5. Создайте пару ключей SSH. Дополнительные сведения см. в статье [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 

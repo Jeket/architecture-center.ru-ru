@@ -3,12 +3,12 @@ title: Запуск виртуальной машины Windows в Azure
 description: Сведения о выполнении одной виртуальной машины Windows в Azure с учетом требований к масштабируемости, устойчивости, управляемости и безопасности.
 author: telmosampaio
 ms.date: 04/03/2018
-ms.openlocfilehash: 748bcfcf599c7fa0e82691632d14e0f78fd78582
-ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
+ms.openlocfilehash: d790c9a6693dca751e0ba05f1fd3c23756cf53bb
+ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2018
-ms.locfileid: "33673606"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37142222"
 ---
 # <a name="run-a-windows-vm-on-azure"></a>Запуск виртуальной машины Windows в Azure
 
@@ -127,17 +127,7 @@ az vm list-sizes --location <location>
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
-
-2. Убедитесь, что Azure CLI 2.0 установлен на компьютере. См. инструкции по [установке Azure CLI 2.0][azure-cli-2].
-
-3. Установите пакет npm [стандартных блоков Azure][azbb].
-
-4. В командной строке операционной системы, Bash или PowerShell введите следующую команду, чтобы войти в учетную запись Azure.
-
-  ```bash
-  az login
-  ```
+[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
 ### <a name="deploy-the-solution-using-azbb"></a>Развертывание решения с помощью azbb
 

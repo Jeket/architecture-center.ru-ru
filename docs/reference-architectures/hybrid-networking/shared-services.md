@@ -5,12 +5,12 @@ author: telmosampaio
 ms.date: 06/19/2018
 pnp.series.title: Implement a hub-spoke network topology with shared services in Azure
 pnp.series.prev: hub-spoke
-ms.openlocfilehash: 5e5029dd7de78c6953229364f9e8ae2789c2b348
-ms.sourcegitcommit: f7418f8bdabc8f5ec33ae3551e3fbb466782caa5
+ms.openlocfilehash: 555d08e5d3792f8699875c6d6aa8a1a42eadd477
+ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209565"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37142358"
 ---
 # <a name="implement-a-hub-spoke-network-topology-with-shared-services-in-azure"></a>Реализация звездообразной топологии сети с помощью общих служб в Azure
 
@@ -106,17 +106,7 @@ ms.locfileid: "36209565"
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
-
-2. Установите [Azure CLI 2.0][azure-cli-2].
-
-3. Установите пакет npm [стандартных блоков Azure][azbb].
-
-4. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure с помощью следующей команды.
-
-   ```bash
-   az login
-   ```
+[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
 ### <a name="deploy-the-simulated-on-premises-datacenter-using-azbb"></a>Развертывание имитации локального центра обработки данных с помощью azbb
 

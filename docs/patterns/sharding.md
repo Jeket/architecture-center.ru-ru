@@ -1,19 +1,19 @@
 ---
 title: Сегментирование
 description: Вы можете разделить хранилище данных на несколько горизонтальных секций, которые называются сегментами.
-keywords: конструктивный шаблон
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - data-management
 - performance-scalability
-ms.openlocfilehash: 328483e24c75137f07576104d50dc59d426b8ac4
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: a4e35a19851f4742b5c154197c22bb1fe13de108
+ms.sourcegitcommit: e9d9e214529edd0dc78df5bda29615b8fafd0e56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24543022"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37091110"
 ---
 # <a name="sharding-pattern"></a>Шаблон сегментирования
 
@@ -221,5 +221,4 @@ Trace.TraceInformation("Fanout query complete - Record Count: {0}",
 - [Materialized View Pattern](materialized-view.md) (Шаблон материализованного представления). Поддержать производительность некоторых запросов помогут материализованные представления, которые выполняют объединение и анализ данных. Это особенно полезно, если сводные данные основываются на информации, распределенной между несколькими сегментами. Здесь описано, как создать и заполнить такие представления.
 - [Shard Lessons](http://www.addsimplicity.com/adding_simplicity_an_engi/2008/08/shard-lessons.html) (Уроки о сегментах) в блоге Adding Simplicity.
 - [Database Sharding](http://dbshards.com/database-sharding/) (Сегментирование баз данных) на сайте CodeFutures.
-- [Scalability Strategies Primer: Database Sharding](http://blog.maxindelicato.com/2008/12/scalability-strategies-primer-database-sharding.html) (Основные сведения о стратегиях масштабируемости. Сегментирование баз данных) в блоге Макса Инделикато (Max Indelicato).
 - [Building Scalable Databases: Pros and Cons of Various Database Sharding Schemes](http://www.25hoursaday.com/weblog/2009/01/16/BuildingScalableDatabasesProsAndConsOfVariousDatabaseShardingSchemes.aspx) (Создание масштабируемых баз данных. Преимущества и недостатки разных схем сегментирования базы данных) в блоге Дэйра Обасанджо (Dare Obasanjo).

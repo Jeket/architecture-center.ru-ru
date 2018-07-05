@@ -5,12 +5,12 @@ author: telmosampaio
 ms.date: 04/09/2018
 pnp.series.title: Implement a hub-spoke network topology in Azure
 pnp.series.prev: expressroute
-ms.openlocfilehash: 4ebb0d4df3e1907662537516cae1f077e68e47b4
-ms.sourcegitcommit: f7418f8bdabc8f5ec33ae3551e3fbb466782caa5
+ms.openlocfilehash: 925e0f47cf6b9aa1ad48ffae2c9561a2393bf601
+ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209582"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37142256"
 ---
 # <a name="implement-a-hub-spoke-network-topology-in-azure"></a>Реализация звездообразной топологии сети в Azure
 
@@ -125,17 +125,7 @@ ms.locfileid: "36209582"
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
-
-2. Установите [Azure CLI 2.0][azure-cli-2].
-
-3. Установите пакет npm [стандартных блоков Azure][azbb].
-
-4. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure с помощью приведенной ниже команды.
-
-   ```bash
-   az login
-   ```
+[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
 ### <a name="deploy-the-simulated-on-premises-datacenter"></a>Развертывание имитации локального центра обработки данных
 

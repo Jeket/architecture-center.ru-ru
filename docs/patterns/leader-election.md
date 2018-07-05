@@ -8,12 +8,12 @@ pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - design-implementation
 - resiliency
-ms.openlocfilehash: 3e7d47f70f660f2507f0619e1c41bf9a32a25be4
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 8c8efa0846550557bb53ea81f85ac0e303a77b19
+ms.sourcegitcommit: f19314f18cd794ebe380fa722ca92066b8735b56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30846657"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37348275"
 ---
 # <a name="leader-election-pattern"></a>Шаблон выбора лидера
 
@@ -200,6 +200,5 @@ private static async Task MyLeaderCoordinatorTask(CancellationToken token)
 - [Task-based Asynchronous Pattern ](https://msdn.microsoft.com/library/hh873175.aspx) (Асинхронная модель на основе задач).
 - Пример, демонстрирующий [алгоритм Bully](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/BullyExample.html).
 - Пример, демонстрирующий [алгоритм Ring](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/RingElectExample.html).
-- Статья [Apache Zookeeper on Microsoft Azure](https://msopentech.com/opentech-projects/apache-zookeeper-on-windows-azure-2/) (Zookeeper Apache в Microsoft Azure) на веб-сайте Microsoft Open Technologies.
 - [Apache Curator](http://curator.apache.org/) — клиентская библиотека для Apache ZooKeeper.
 - Статья [Lease Blob](https://msdn.microsoft.com/library/azure/ee691972.aspx) (Аренда большого двоичного объекта) на сайте MSDN.

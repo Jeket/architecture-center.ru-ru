@@ -3,12 +3,12 @@ title: N-уровневое приложение с Apache Cassandra
 description: Как запустить виртуальные машины Linux в n-уровневой архитектуре в Microsoft Azure.
 author: MikeWasson
 ms.date: 05/03/2018
-ms.openlocfilehash: 46e9a821a33dd3ea3ae9129ab5ad69172bfcd667
-ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
+ms.openlocfilehash: 7ee14088a2fae3cfc5c1119daf717236c75ecc6a
+ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2018
-ms.locfileid: "33673616"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37142239"
 ---
 # <a name="n-tier-application-with-apache-cassandra"></a>N-уровневое приложение с Apache Cassandra
 
@@ -38,7 +38,7 @@ ms.locfileid: "33673616"
 
 * **Общедоступный IP-адрес.** Для приема интернет-трафика общедоступной подсистеме балансировки нагрузки требуется общедоступный IP-адрес.
 
-* **Jumpbox.** Он также называется [узлом-бастионом]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик SSH.
+* **Jumpbox.** Он также называется [Узел-бастион]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик SSH.
 
 * **База данных Apache Cassandra.** Обеспечивает высокий уровень доступности на уровне данных, включив репликацию и отработку отказа.
 
@@ -144,21 +144,7 @@ Jumpbox имеет минимальные требования к произво
 
 ### <a name="prerequisites"></a>предварительным требованиям
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами][ref-arch-repo] в репозитории GitHub либо создайте для него вилку.
-
-2. Убедитесь, что Azure CLI 2.0 установлен на компьютере. Чтобы установить CLI, следуйте инструкциям в статье об [установке Azure CLI 2.0][azure-cli-2].
-
-3. Установите пакет npm [стандартных блоков Azure][azbb].
-
-   ```bash
-   npm install -g @mspnp/azure-building-blocks
-   ```
-
-4. В командной строке, строке bash или строке PowerShell войдите в свою учетную запись Azure с помощью одной из приведенных ниже команд и следуйте инструкциям.
-
-   ```bash
-   az login
-   ```
+[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
 ### <a name="deploy-the-solution-using-azbb"></a>Развертывание решения с помощью azbb
 
@@ -187,7 +173,7 @@ Jumpbox имеет минимальные требования к произво
 [azure-dns]: /azure/dns/dns-overview
 [azure-key-vault]: https://azure.microsoft.com/services/key-vault
 
-[узлом-бастионом]: https://en.wikipedia.org/wiki/Bastion_host
+[Узел-бастион]: https://en.wikipedia.org/wiki/Bastion_host
 [cassandra-in-azure]: https://academy.datastax.com/resources/deployment-guide-azure
 [cassandra-consistency]: http://docs.datastax.com/en/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html
 [cassandra-replication]: http://www.planetcassandra.org/data-replication-in-nosql-databases-explained/
@@ -207,7 +193,7 @@ Jumpbox имеет минимальные требования к произво
 [operations-management-suite]: https://www.microsoft.com/server-cloud/operations-management-suite/overview.aspx
 [plan-network]: /azure/virtual-network/virtual-network-vnet-plan-design-arm
 [private-ip-space]: https://en.wikipedia.org/wiki/Private_network#Private_IPv4_address_spaces
-[общедоступный IP-адрес]: /azure/virtual-network/virtual-network-ip-addresses-overview-arm
+[Общедоступный IP-адрес]: /azure/virtual-network/virtual-network-ip-addresses-overview-arm
 [puppet]: https://puppetlabs.com/blog/managing-azure-virtual-machines-puppet
 [ref-arch-repo]: https://github.com/mspnp/reference-architectures
 [vm-sla]: https://azure.microsoft.com/support/legal/sla/virtual-machines
