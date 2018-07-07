@@ -127,6 +127,8 @@
       maintainContext: true
     - name: Анализ режима сбоя
       href: resiliency/failure-mode-analysis.md
+- name: Примеры сценариев
+  href: example-scenario/index.md
 - name: Руководства по сценариям
   items:
     - name: Azure для специалистов AWS
