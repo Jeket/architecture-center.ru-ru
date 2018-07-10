@@ -38,7 +38,7 @@ ms.locfileid: "37142239"
 
 * **Общедоступный IP-адрес.** Для приема интернет-трафика общедоступной подсистеме балансировки нагрузки требуется общедоступный IP-адрес.
 
-* **Jumpbox.** Он также называется [Узел-бастион]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик SSH.
+* **Jumpbox.** Он также называется [узлом-бастионом]. Безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам. В jumpbox есть группа безопасности сети, обеспечивающая удаленный трафик только из общедоступных IP-адресов из списка надежных отправителей. NSG должна пропускать трафик SSH.
 
 * **База данных Apache Cassandra.** Обеспечивает высокий уровень доступности на уровне данных, включив репликацию и отработку отказа.
 
@@ -173,7 +173,7 @@ Jumpbox имеет минимальные требования к произво
 [azure-dns]: /azure/dns/dns-overview
 [azure-key-vault]: https://azure.microsoft.com/services/key-vault
 
-[Узел-бастион]: https://en.wikipedia.org/wiki/Bastion_host
+[узлом-бастионом]: https://en.wikipedia.org/wiki/Bastion_host
 [cassandra-in-azure]: https://academy.datastax.com/resources/deployment-guide-azure
 [cassandra-consistency]: http://docs.datastax.com/en/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html
 [cassandra-replication]: http://www.planetcassandra.org/data-replication-in-nosql-databases-explained/
