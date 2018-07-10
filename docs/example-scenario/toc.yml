@@ -1,0 +1,19 @@
+- name: Центр архитектуры Azure
+  href: /azure/architecture
+- name: Пример сценария
+  href: index.md
+  items:
+    - name: AI
+      items:
+        - name: Обработка изображений
+          href: ai/intelligent-apps-image-processing.md
+    - name: Приложения
+      items:
+        - name: Чат-бот службы бронирования номеров
+          href: apps/commerce-chatbot.md
+        - name: Использование DevOps со Cлужбой Azure Kubernetes
+          href: apps/devops-with-aks.md
+    - name: Данные и аналитика
+      items:
+        - name: Выявление мошенничества в реальном времени
+          href: data/fraud-detection.md
