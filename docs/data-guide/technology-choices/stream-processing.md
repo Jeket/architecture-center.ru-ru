@@ -3,12 +3,12 @@ title: Выбор технологии потоковой обработки
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 29e4cd3d5ea6e10f036bfe226152290512dafa65
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: fd93418c62b584e79f229e9f42703d148aeb0eca
+ms.sourcegitcommit: e9d9e214529edd0dc78df5bda29615b8fafd0e56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30848654"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37091069"
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 
@@ -53,8 +53,8 @@ ms.locfileid: "30848654"
 
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
-| Входные данные | [Входные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-inputs)  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
-| Приемники |  [Выходные данные Stream Analytics](/azure/stream-analytics/stream-analytics-define-outputs) | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
+| Входные данные | Концентраторы событий Azure, Центр Интернета вещей, хранилище больших двоичных объектов Azure  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
+| Приемники |  Хранилище Azure Data Lake, База данных SQL Azure, большие двоичные объекты службы хранилища, концентраторы событий, Power BI, Хранилище таблиц, очереди и разделы служебной шины, Cosmos DB, Функции Azure  | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
 
 ### <a name="processing-capabilities"></a>Возможности обработки
 
