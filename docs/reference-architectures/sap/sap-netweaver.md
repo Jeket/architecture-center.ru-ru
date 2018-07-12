@@ -3,21 +3,23 @@ title: Развертывание SAP NetWeaver (Windows) для баз стор
 description: Проверенные методики по запуску SAP S/4HANA в высокодоступной среде Linux в Azure.
 author: lbrader
 ms.date: 05/11/2018
-ms.openlocfilehash: 0efe3e78d9e1809fdab52044b75e432742786b79
-ms.sourcegitcommit: bb348bd3a8a4e27ef61e8eee74b54b07b65dbf98
+ms.openlocfilehash: 90334e4872bdd15d59aa16286a031d07f3d1bb2f
+ms.sourcegitcommit: 86d86d71e392550fd65c4f76320d7ecf0b72e1f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "34423093"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864544"
 ---
 # <a name="deploy-sap-netweaver-windows-for-anydb-on-azure-virtual-machines"></a>Развертывание SAP NetWeaver (Windows) для баз сторонних поставщиков на виртуальных машинах Azure
 
 В этой эталонной архитектуре показан набор методик по запуску SAP NetWeaver в высокодоступной среде Windows в Azure. База данных сторонних поставщиков, или так называемая база данных AnyDB, — это термин SAP, который применяется к любой поддерживаемой СУБД, кроме SAP HANA. Эта архитектура развертывается с конкретными размерами виртуальных машин, которые можно изменить в соответствии с потребностями вашей организации.
 
-![](./images/sap-s4hana.png)
- 
+![](./images/sap-netweaver.png)
+
+*Скачайте [файл Visio][visio-download] этой архитектуры.*
+
 > [!NOTE] 
-> Для развертывания продуктов SAP с этой эталонной архитектурой требуется соответствующее лицензирование продуктов SAP и другие технологии сторонних производителей.
+> Для развертывания этой эталонной архитектуры требуется соответствующее лицензирование продуктов SAP и другие технологии сторонних производителей.
 
 ## <a name="architecture"></a>Архитектура
 Архитектура состоит из следующих компонентов инфраструктуры и основных программных компонентов.
@@ -174,3 +176,4 @@ SAP имеет свой собственный механизм управлен
 - [Сообщество SAP](https://www.sap.com/community.html)
 - [Stack Overflow](https://stackoverflow.com/tags/sap/)
 
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/sap-reference-architectures.vsdx

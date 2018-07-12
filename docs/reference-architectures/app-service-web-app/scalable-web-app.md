@@ -8,11 +8,11 @@ pnp.series.next: multi-region-web-app
 ms.date: 11/23/2016
 cardTitle: Improve scalability
 ms.openlocfilehash: 6459acebfa25491332e2118b9e8fe51d5fc79ff3
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.sourcegitcommit: 5d99b195388b7cabba383c49a81390ac48f86e8a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30846514"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37958812"
 ---
 # <a name="improve-scalability-in-a-web-application"></a>Повышение масштабируемости в веб-приложении
 
@@ -75,7 +75,7 @@ ms.locfileid: "30846514"
 
 Более подробные инструкции см. в статье [Content Delivery Network][cdn-guidance] (Сеть доставки содержимого).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Служба хранилища
 Современные приложения часто обрабатывают большие объемы данных. Чтобы изменить масштаб для облака, важно выбрать правильный тип хранилища. Вот несколько базовых рекомендаций. 
 
 | Что нужно сохранить | Пример | Рекомендуемое хранилище |
@@ -101,7 +101,7 @@ ms.locfileid: "30846514"
 - повышение пропускной способности транзакций;
 - быстрое выполнение запросов к подмножеству данных.
 
-### <a name="azure-search"></a>поиск Azure;
+### <a name="azure-search"></a>Поиск Azure
 Служба "Поиск Azure" устраняет затраты на сложный поиск данных из первичного хранилища данных и может масштабироваться для обработки нагрузки. Дополнительные сведения см. в статье [Масштабирование уровней ресурсов для рабочих нагрузок запросов и индексирования в Поиске Azure][azure-search-scaling].
 
 ## <a name="security-considerations"></a>Вопросы безопасности

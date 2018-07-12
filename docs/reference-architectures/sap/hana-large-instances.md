@@ -3,18 +3,20 @@ title: Запуск SAP HANA на крупных экземплярах Azure
 description: Методики по запуску SAP HANA в среде с высоким уровнем доступности на крупных экземплярах Azure.
 author: lbrader
 ms.date: 05/16/2018
-ms.openlocfilehash: 7605fa8a0012aaef3f7323c6f88614b640152e3b
-ms.sourcegitcommit: bb348bd3a8a4e27ef61e8eee74b54b07b65dbf98
+ms.openlocfilehash: 746161ac51335af5c48a559830d6e0345dcfb7b1
+ms.sourcegitcommit: 86d86d71e392550fd65c4f76320d7ecf0b72e1f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "34423090"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864527"
 ---
 # <a name="run-sap-hana-on-azure-large-instances"></a>Запуск SAP HANA на крупных экземплярах Azure
 
 В этой эталонной архитектуре показан набор проверенных методик по запуску SAP HANA в Azure (крупные экземпляры) с высокой доступностью и аварийным восстановлением. Предложение "Крупные экземпляры SAP HANA" развертывается на физических серверах в регионах Azure. 
 
 ![0][0]
+
+*Скачайте [файл Visio][visio-download] этой архитектуры.*
 
 > [!NOTE]
 > Для развертывания этой эталонной архитектуры требуется соответствующее лицензирование продуктов SAP и другие технологии сторонних производителей.
@@ -201,3 +203,5 @@ ExpressRoute для крупных экземпляров HANA по умолча
 [type]: /azure/virtual-machines/workloads/sap/hana-installation
 [vnet]: /azure/virtual-network/virtual-networks-overview
 [0]: ./images/sap-hana-large-instances.png "Архитектура SAP HANA в крупных экземплярах Azure"
+
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/sap-reference-architectures.vsdx

@@ -3,25 +3,26 @@ title: SAP S/4HANA для виртуальных машин Linux в Azure
 description: Проверенные методики по запуску SAP S/4HANA в высокодоступной среде Linux в Azure.
 author: lbrader
 ms.date: 05/11/2018
-ms.openlocfilehash: d24ef6f9e4eae460d0d0dcfff35568c812d09951
-ms.sourcegitcommit: bb348bd3a8a4e27ef61e8eee74b54b07b65dbf98
+ms.openlocfilehash: 9635de73ec431e0ac678e4008e0c4835796d47ad
+ms.sourcegitcommit: 86d86d71e392550fd65c4f76320d7ecf0b72e1f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "34423097"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864510"
 ---
 # <a name="sap-s4hana-for-linux-virtual-machines-on-azure"></a>SAP S/4HANA для виртуальных машин Linux в Azure
 
 Эта эталонная архитектура демонстрирует набор проверенных методик для запуска S/4HANA в среде высокой доступности, которая поддерживает аварийное восстановление в Azure. Эта архитектура развертывается с конкретными размерами виртуальных машин, которые можно изменить в соответствии с потребностями вашей организации. 
 
-
 ![](./images/sap-s4hana.png)
+
+*Скачайте [файл Visio][visio-download] этой архитектуры.*
+
+> [!NOTE] 
+> Для развертывания этой эталонной архитектуры требуется соответствующее лицензирование продуктов SAP и другие технологии сторонних производителей.
 
 ## <a name="architecture"></a>Архитектура
  
-> [!NOTE] 
-> Для развертывания продуктов SAP с этой эталонной архитектурой требуется соответствующее лицензирование продуктов SAP и другие технологии сторонних производителей.
-
 Эта эталонная архитектура описывает корпоративные системы производственного уровня. Эта конфигурация может быть сведена к одной виртуальной машине в соответствии с вашими бизнес-требованиями. Ниже приведены обязательные компоненты.
 
 **Виртуальная сеть**. Служба [виртуальной сети Azure](/azure/virtual-network/virtual-networks-overview) обеспечивает безопасное подключение ресурсов Azure друг к другу. В этой архитектуре виртуальная сеть подключается к локальной среде через шлюз, развернутый в концентраторе в рамках [звездообразной топологии](../hybrid-networking/hub-spoke.md). Периферией выступает виртуальная сеть, используемая для приложений SAP.
@@ -197,3 +198,5 @@ SAP имеет свой собственный механизм управлен
 - [Поддержка сообщества Azure](https://azure.microsoft.com/support/community/)
 - [Сообщество SAP](https://www.sap.com/community.html)
 - [Stack Overflow](https://stackoverflow.com/tags/sap/)
+
+[visio-download]: https://archcenter.blob.core.windows.net/cdn/sap-reference-architectures.vsdx

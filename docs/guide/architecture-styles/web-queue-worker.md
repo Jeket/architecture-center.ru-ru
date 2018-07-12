@@ -3,11 +3,11 @@ title: Стиль архитектуры "Интерфейс — очередь 
 description: Описание преимуществ и сложностей архитектуры "Интерфейс — очередь — рабочая роль" в Azure, а также рекомендации по ее разработке
 author: MikeWasson
 ms.openlocfilehash: 545472e71ffcd43717ad24af0dc9218a221ca910
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.sourcegitcommit: 5d99b195388b7cabba383c49a81390ac48f86e8a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24539806"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37958795"
 ---
 # <a name="web-queue-worker-architecture-style"></a>Стиль архитектуры "Интерфейс — очередь — рабочая роль"
 
