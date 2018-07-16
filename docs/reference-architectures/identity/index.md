@@ -1,106 +1,130 @@
 ---
-title: Управление удостоверениями
-description: Описание и сравнение различных методов для управления удостоверениями в гибридных системах, охватывающих разные уровни границы (от локальных до облачных) в Azure.
-layout: LandingPage
-ms.openlocfilehash: de98ee30306f5e712759ab7140bd430cb6d4cd75
-ms.sourcegitcommit: 3d9ee03e2dda23753661a80c7106d1789f5223bb
+title: Выберите решение для интеграции локальной среды Active Directory с Azure.
+description: Здесь сравниваются эталонные архитектуры для интеграции локальной среды Active Directory с Azure.
+ms.date: 07/02/2018
+ms.openlocfilehash: 7e89998c59bccf4d37cebca5ddd4ea7ecba58cd5
+ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
-ms.locfileid: "29478244"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38987535"
 ---
-<!-- This file is generated! -->
-<!-- See the templates in ./build/reference-architectures  -->
-<!-- See data in index.json -->
+# <a name="choose-a-solution-for-integrating-on-premises-active-directory-with-azure"></a>Выбор решения для интеграции локальной среды Active Directory с Azure
 
-# <a name="identity-management"></a>Управление удостоверениями
+В данной статье сравниваются варианты интеграции локальной среды Active Directory (AD) с сетью Azure. Для каждого варианта доступна подробная эталонная архитектура.
 
-В этих эталонных архитектурах демонстрируются варианты интеграции локальной среды Active Directory (AD) с сетью Azure. <br/>[Какой вариант следует использовать?](./considerations.md)
+Во многих организациях доменные службы Active Directory (AD DS) используются для проверки подлинности удостоверений, связанных с пользователями, компьютерами, приложениями или другими ресурсами, включенными в периметр безопасности. Как правило, службы каталогов и удостоверений размещаются в локальной среде, но если приложение размещено частично локально и частично в Azure, при отправке запросов на аутентификацию от Azure в локальную среду может возникнуть задержка. Внедрение службы каталогов и удостоверений в Azure может сократить ее.
 
-<section class="series">
-    <ul class="panelContent">
-    <!-- Integrate with Azure Active Directory -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./azure-ad.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/azure-ad.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Интеграция с Azure Active Directory.</h3>
-                        <p>Интеграция локальных доменов и лесов Active Directory с Azure AD.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Extend AD DS to Azure -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./adds-extend-domain.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/adds-extend-domain.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Расширение AD DS в Azure</h3>
-                        <p>Расширение среды Active Directory в Azure с помощью доменных служб Active Directory.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Create an AD DS forest in Azure -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./adds-forest.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/adds-forest.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Создание леса AD DS в Azure</h3>
-                        <p>Создание отдельного домена AD в Azure, который является доверенным для доменов в локальном лесу.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Extend AD FS to Azure -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./adfs.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/adfs.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Расширение AD FS в Azure</h3>
-                        <p>Использование служб федерации Active Directory для федеративной проверки подлинности и авторизации в Azure.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    </ul>
-</section>
+В Azure предусмотрено два решения для внедрения служб каталогов и удостоверений: 
 
-<ul class="panelContent cardsI">
-</ul>
+* [Azure AD][azure-active-directory] для создания домена Active Directory в облаке c последующим его подключением к домену Active Directory в локальной среде. [Azure AD Connect][azure-ad-connect] для интеграции локальных каталогов с Azure AD.
+
+* Расширьте имеющуюся инфраструктуру локальной среды Active Directory в Azure, развернув виртуальную машину, на которой выполняются AD DS, как контроллер домена. Эта архитектура чаще используется при подключении к локальной и виртуальной сети Azure по VPN или ExpressRoute. Существует несколько вариантов этой архитектуры: 
+
+    - Создайте домен в Azure и присоедините его к своему локальному лесу AD.
+    - Создайте в локальном лесу отдельный лес в Azure, который является доверенным для доменов.
+    - Реплицируйте развернутые службы федерации Active Directory (AD FS) в Azure. 
+
+В следующих разделах более подробно описан каждый из этих вариантов.
+
+## <a name="integrate-your-on-premises-domains-with-azure-ad"></a>Интеграция локальных доменов с Azure AD
+
+Используйте Azure Active Directory (Azure AD) для создания домена в Azure и его привязки к локальному домену AD. 
+
+Каталог Azure AD не является расширением локального каталога. Скорее, это копия с теми же объектами и удостоверениями. Изменения, внесенные в эти элементы в локальной среде, копируются в Azure AD, но изменения, внесенные в Azure AD, не реплицируются обратно в локальный домен.
+
+Кроме того, можно использовать Azure AD, не используя локальный каталог. При этом Azure AD служит основным источником всех данных идентификации и не содержит данные, полученные при репликации из локального каталога.
+
+**Преимущества**
+
+* Отсутствие необходимости в поддержке инфраструктуры AD в облаке. Полная поддержка и управление Azure AD корпорацией Майкрософт.
+* Предоставление в Azure AD тех же сведений об идентификаторах, что и доступны локально.
+* Аутентификация выполняется в Azure. При этом внешним приложениям и пользователям не нужно использовать локальный домен.
+
+**Сложности**
+
+* Ограничение служб удостоверений пользователями и группами. Отсутствие возможности аутентификации учетных записей служб и компьютеров.
+* Необходимость настройки соединения с локальным доменом для синхронизации каталога Azure AD. 
+* Необходимость перезаписи приложения с помощью Azure AD для включения аутентификации.
+
+**Эталонная архитектура**
+
+- [Интеграция локальных доменов Active Directory с Azure Active Directory][aad]
+
+## <a name="ad-ds-in-azure-joined-to-an-on-premises-forest"></a>Присоединение AD DS в Azure к локальному лесу
+
+Разверните серверы доменных служб AD (AD DS) в Azure. Создайте домен в Azure и присоедините его к своему локальному лесу AD. 
+
+При использовании функций AD DS, которые сейчас не реализованы в Azure AD, мы рекомендуем использовать этот вариант. 
+
+**Преимущества**
+
+* Предоставление тех же сведений об идентификаторах, что и доступны локально.
+* Аутентификация учетных записей пользователя, службы и компьютеров в Azure.
+* Отсутствие необходимости в управлении отдельным лесом AD. Принадлежность домена в Azure к локальному лесу.
+* Применение групповой политики, определяемой локальными объектами групповой политики, к домену в Azure.
+
+**Сложности**
+
+* Необходимость в самостоятельном развертывании серверов и домена AD DS в облаке и управлении ими.
+* Задержка синхронизации между серверами домена в облаке и локальными серверами.
+
+**Эталонная архитектура**
+
+- [Расширение доменных служб Active Directory (AD DS) в Azure][ad-ds]
+
+## <a name="ad-ds-in-azure-with-a-separate-forest"></a>AD DS в Azure с отдельным лесом
+
+Создайте [лес][ad-forest-defn] Active Directory, отделенный от локального, при развертывании серверов доменных служб AD (AD DS) в Azure. Этот лес является доверенным для доменов в локальном лесу.
+
+Типичные способы применения этой архитектуры включают поддержку разделения по безопасности для облачных объектов и удостоверений, а также перенос отдельных доменов из локальной среды в облако.
+
+**Преимущества**
+
+* Реализация локальных удостоверений и отдельных удостоверений, предназначенных только для Azure.
+* Отсутствие необходимости в репликации из локального леса AD в Azure.
+
+**Сложности**
+
+* Необходимость дополнительных сетевых переходов для локальных серверов AD при аутентификации в Azure для локальных удостоверений.
+* Необходимость в развертывании собственных серверов и лесов AD DS в облаке, а также в настройке соответствующих отношений доверия между лесами.
+
+**Эталонная архитектура**
+
+- [Создание леса ресурсов доменных служб Active Directory (AD DS) в Azure][ad-ds-forest]
+
+## <a name="extend-ad-fs-to-azure"></a>Расширение AD FS в Azure
+
+Реплицируйте развернутые службы федерации Active Directory (AD FS) в Azure для выполнения федеративной аутентификации и авторизации для компонентов, работающих в Azure. 
+
+Типичные способы использования этой архитектуры:
+
+* Аутентификация и авторизация пользователей из партнерских организаций.
+* Предоставление пользователям возможности прохождения аутентификации в веб-браузерах за пределами брандмауэра организации.
+* Предоставление пользователям возможности подключения с помощью авторизованных внешних устройств, таких как мобильные устройства. 
+
+**Преимущества**
+
+* Использование приложений с поддержкой утверждений.
+* Настройка отношений доверия с внешними партнерами при аутентификации.
+* Совместимость со множеством протоколов аутентификации.
+
+**Сложности**
+
+* Необходимость в развертывании собственных прокси-серверов веб-приложения AD DS и AD FS в Azure.
+* Эту архитектуру сложно настроить.
+
+**Эталонная архитектура**
+
+- [Расширение служб федерации Active Directory (AD FS) в Azure][adfs]
+
+<!-- links -->
+
+[aad]: ./azure-ad.md
+[ad-ds]: ./adds-extend-domain.md
+[ad-ds-forest]: ./adds-forest.md
+[ad-forest-defn]: /windows/desktop/AD/forests
+[adfs]: ./adfs.md
+
+[azure-active-directory]: /azure/active-directory-domain-services/active-directory-ds-overview
+[azure-ad-connect]: /azure/active-directory/active-directory-aadconnect

@@ -1,126 +1,87 @@
 ---
-title: Подключение локальной сети к Azure
-description: Рекомендуемые архитектуры для обеспечения безопасных и надежных сетевых подключений между локальными сетями и Azure.
-layout: LandingPage
-ms.openlocfilehash: 372efb8ecf69245a5895c51e3da156a348bd665e
-ms.sourcegitcommit: 2123c25b1a0b5501ff1887f98030787191cf6994
+title: Выбор решения для подключения локальной сети к Azure
+description: Сравнение нескольких эталонных архитектур, позволяющих подключить локальную сеть к Azure.
+author: telmosampaio
+ms.date: 07/02/2018
+ms.openlocfilehash: 0cc07d3b7d45accf9f99ce32914b0ef065d62f32
+ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "29782333"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38987484"
 ---
-<!-- This file is generated! -->
-<!-- See the templates in ./build/reference-architectures  -->
-<!-- See data in index.json -->
-
 # <a name="connect-an-on-premises-network-to-azure"></a>Подключение локальной сети к Azure
 
-В этих эталонных архитектурах демонстрируются проверенные методы для создания надежного сетевого соединения между локальной сетью и Azure. [Какой вариант следует использовать?](./considerations.md)
+В этой статье сравниваются варианты подключения локальной сети к виртуальной сети Azure. Для каждого варианта доступна подробная эталонная архитектура.
 
-<section class="series">
-    <ul class="panelContent">
-    <!-- VPN -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./vpn.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/vpn.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Виртуальная частная сеть</h3>
-                        <p>Расширение локальной сети в Azure с помощью подключения VPN "сеть — сеть".</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- ExpressRoute -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./expressroute.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/expressroute.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ExpressRoute</h3>
-                        <p>Расширение локальной сети в Azure с помощью Microsoft Azure ExpressRoute.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- ExpressRoute with VPN failover -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./expressroute-vpn-failover.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/expressroute-vpn-failover.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ExpressRoute с отработкой отказа на VPN</h3>
-                        <p>Расширение локальной сети в Azure с помощью Azure ExpressRoute с VPN в качестве отказоустойчивого соединения.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Hub-spoke topology -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./hub-spoke.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/hub-spoke.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Звездообразная топология</h3>
-                        <p>Концентратор представляет собой центральную точку подключения к локальной сети. Периферийные зоны — это виртуальные сети, которые устанавливают пиринг с концентратором и могут использоваться для изоляции рабочих нагрузок.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Hub-spoke topology with shared services -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./shared-services.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/shared-services.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Звездообразная топология с общими службами</h3>
-                        <p>Развертывание звездообразной топологии, которая содержит общие службы, в том числе службы Active Directory и виртуальный сетевой модуль (NVA). Общие службы могут использоваться всеми периферийными зонами.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    </ul>
-</section>
+## <a name="vpn-connection"></a>VPN-подключение
 
-<ul class="panelContent cardsI">
-</ul>
+[VPN-шлюз](/azure/vpn-gateway/vpn-gateway-about-vpngateways) — это разновидность шлюза виртуальной сети, который передает зашифрованный трафик между виртуальной сетью Azure и локальным расположением. Зашифрованный трафик проходит через общедоступный Интернет.
+
+Эта архитектура подходит для гибридных приложений, в которых ожидается незначительный трафик между локальным оборудованием и облаком, а также для сценариев, в которых допустимо некоторое увеличение задержки в обмен на дополнительную гибкость и вычислительную мощность облачных систем.
+
+**Преимущества**
+
+- Простая настройка.
+
+**Сложности**
+
+- Требуется локальное VPN-устройство.
+- Несмотря на то что корпорация Майкрософт гарантирует уровень доступности 99,9 % для каждого VPN-шлюза, это [соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/vpn-gateway/) касается только самого VPN-шлюза, но не сетевого подключения к этому шлюзу.
+- В настоящее время VPN-подключения через VPN-шлюз Azure поддерживают пропускную способность не более 200 Мбит/с. Если вам может потребоваться более высокая пропускная способность, распределите виртуальную сеть Azure на несколько VPN-подключений.
+
+**Эталонная архитектура**
+
+- [Гибридная сеть с VPN-шлюзом](./vpn.md)
+
+## <a name="azure-expressroute-connection"></a>Подключение Azure ExpressRoute
+
+В подключениях [ExpressRoute](/azure/expressroute/) используются частные выделенные подключения через сети сторонних поставщиков услуг подключения. Такое частное подключение расширяет вашу локальную сеть в Azure. 
+
+Эта архитектура подходит для гибридных приложений, на которых выполняются крупномасштабные и критически важные рабочие нагрузки с высокими требованиями к масштабируемости. 
+
+**Преимущества**
+
+- Доступна очень высокая пропускная способность (до 10 Гбит/с в зависимости от поставщика услуг подключения).
+- Поддерживает динамическое масштабирование пропускной способности, чтобы снизить расходы в период низкого спроса. Эту функциональность поддерживают не все поставщики услуг подключения.
+- Может предоставить организации прямой доступ к национальным облакам, если это поддерживается поставщиком услуг подключения.
+- Соглашения об уровне обслуживания гарантируют доступность 99,9 % для всего подключения.
+
+**Сложности**
+
+- Может потребоваться сложная настройка. Для создания подключения ExpressRoute требуется взаимодействие со сторонним поставщиком услуг подключения. Этот поставщик отвечает за подготовку сетевого подключения.
+- В локальной сети требуются маршрутизаторы с высокой пропускной способностью.
+
+**Эталонная архитектура**
+
+- [Гибридная сеть с использованием ExpressRoute](./expressroute.md)
+
+## <a name="expressroute-with-vpn-failover"></a>ExpressRoute с отработкой отказа на VPN
+
+Этот вариант объединяет два предыдущих. Для обычной работы применяется ExpressRoute, а при возникновении проблем с ним происходит переключение на VPN.
+
+Такая архитектура подходит для гибридных приложений, которым одновременно требуется высокая пропускная способность ExpressRoute и высокий уровень доступности сетевого подключения. 
+
+**Преимущества**
+
+- Высокий уровень доступности. Подключение сохраняется даже при сбое канала ExpressRoute, хотя и со снижением пропускной способности сети.
+
+**Сложности**
+
+- Сложность в настройке. Необходимо настроить одновременно VPN-подключение и канал ExpressRoute.
+- Требуется резервное оборудование (устройства VPN) и резервное подключение к шлюзу VPN Azure, что приводит к дополнительным расходам.
+
+**Эталонная архитектура**
+
+- [Гибридная сеть с использованием отработки отказа в ExpressRoute с VPN](./expressroute-vpn-failover.md)
+
+
+## <a name="hub-spoke-network-topology"></a>Звездообразная топология сети
+
+Звездообразная топология сети — это способ изоляции рабочих нагрузок при совместном использовании служб, таких как службы идентификации и безопасности. Концентратор (центр топологии) — это виртуальная сеть в Azure, которая выступает в качестве центральной точки подключения к локальной сети. Периферийные зоны — это виртуальные сети, которые устанавливают пиринг с концентратором. Общие службы развертываются в концентраторе, а отдельные рабочие нагрузки — в периферийных зонах.
+
+
+**Эталонные архитектуры**
+
+- [Звездообразная топология](./hub-spoke.md)
+- [Звездообразная топология с общими службами](./shared-services.md)
