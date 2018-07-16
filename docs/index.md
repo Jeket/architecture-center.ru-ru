@@ -3,12 +3,12 @@ title: Центр архитектуры Azure
 description: Для создания решений с помощью Microsoft Azure используется центр архитектуры Azure, являющийся официальным центром, в котором содержатся руководства, проекты, шаблоны и рекомендации. Центр архитектуры Azure курирует команда разработчиков шаблонов и рекомендаций Майкрософт.
 layout: LandingPage
 ms.topic: landing-page
-ms.openlocfilehash: 0ac5dd79f765fe9b649cc2ca83c0213b4ba28544
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 544196faa7156c5636b03d3f402bc48dcc63975f
+ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30847736"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38987596"
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "30847736"
                         </div>
                         <div class="cardText">
                             <h3>Создание микрослужб в Azure</h3>
-                            <p>Эта серия руководств поможет вам приступить к разработке и созданию архитектуры микрослужб в Azure. Также доступен пример реализации.</p>
+                            <p>Это руководство по проектированию содержит пошаговые инструкции по разработке и созданию архитектуры микрослужб в Azure. Также доступен пример реализации.</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ ms.locfileid: "30847736"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>Советы и рекомендации для облачных приложений</h3>
+                            <h3>Рекомендации по работе с облаком</h3>
                             <p>Рекомендации для облачных приложений, охватывающие такие аспекты, как автоматическое масштабирование, кэширование, секционирование данных, структуру API и другое.</p>
                         </div>
                     </div>
@@ -246,46 +246,6 @@ ms.locfileid: "30847736"
             </div>
         </a>
     </li>
-    <!-- Sharepoint -->
-    <li>
-        <a href="/azure/architecture/reference-architectures/sharepoint">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="/azure/architecture/reference-architectures/sharepoint/images/sharepoint.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Запуск SharePoint Server 2016 в Azure</h3>
-                            <p>Развертывание и запуск ферми SharePoint Server 2016 с высоким уровнем доступности в Azure.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- SAP -->
-    <li>
-        <a href="/azure/architecture/reference-architectures/sap">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="/azure/architecture/reference-architectures/sap/images/sap.svg" width="100%" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Запуск SAP HANA в Azure</h3>
-                            <p>Развертывание и запуск SAP NetWeaver и SAP HANA в среде с высокой доступностью Azure.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
     <!-- Multitenant identity -->
     <li>
         <a href="/azure/architecture/multitenant-identity">
@@ -300,46 +260,6 @@ ms.locfileid: "30847736"
                         <div class="cardText">
                             <h3>Управление удостоверениями для мультитенантных приложений</h3>
                             <p>Рекомендации по мультитенантным приложениям при использовании Azure AD для управления удостоверениями.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- AzureCAT blog -->
-    <li>
-        <a href="https://blogs.msdn.microsoft.com/azurecat/">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/azurecat.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Команда консультирования клиентов Azure</h3>
-                            <p>Блог команды AzureCAT</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- SQL CAT blog -->
-    <li>
-        <a href="https://blogs.msdn.microsoft.com/sqlcat/">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/sqlcat.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Команда консультирования клиентов SQL Server</h3>
-                            <p>Блог команды SQLCAT</p>
                         </div>
                     </div>
                 </div>

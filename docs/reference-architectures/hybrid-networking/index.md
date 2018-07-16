@@ -1,126 +1,87 @@
 ---
-title: Подключение локальной сети к Azure
-description: Рекомендуемые архитектуры для обеспечения безопасных и надежных сетевых подключений между локальными сетями и Azure.
-layout: LandingPage
-ms.openlocfilehash: 372efb8ecf69245a5895c51e3da156a348bd665e
-ms.sourcegitcommit: 2123c25b1a0b5501ff1887f98030787191cf6994
+title: Выбор решения для подключения локальной сети к Azure
+description: Сравнение нескольких эталонных архитектур, позволяющих подключить локальную сеть к Azure.
+author: telmosampaio
+ms.date: 07/02/2018
+ms.openlocfilehash: 0cc07d3b7d45accf9f99ce32914b0ef065d62f32
+ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "29782333"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38987484"
 ---
-<!-- This file is generated! -->
-<!-- See the templates in ./build/reference-architectures  -->
-<!-- See data in index.json -->
+# <a name="connect-an-on-premises-network-to-azure"></a><span data-ttu-id="5b289-103">Подключение локальной сети к Azure</span><span class="sxs-lookup"><span data-stu-id="5b289-103">Connect an on-premises network to Azure</span></span>
 
-# <a name="connect-an-on-premises-network-to-azure"></a>Подключение локальной сети к Azure
+<span data-ttu-id="5b289-104">В этой статье сравниваются варианты подключения локальной сети к виртуальной сети Azure.</span><span class="sxs-lookup"><span data-stu-id="5b289-104">This article compares options for connecting an on-premises network to an Azure Virtual Network (VNet).</span></span> <span data-ttu-id="5b289-105">Для каждого варианта доступна подробная эталонная архитектура.</span><span class="sxs-lookup"><span data-stu-id="5b289-105">For each option, a more detailed reference architecture is available.</span></span>
 
-В этих эталонных архитектурах демонстрируются проверенные методы для создания надежного сетевого соединения между локальной сетью и Azure. [Какой вариант следует использовать?](./considerations.md)
+## <a name="vpn-connection"></a><span data-ttu-id="5b289-106">VPN-подключение</span><span class="sxs-lookup"><span data-stu-id="5b289-106">VPN connection</span></span>
 
-<section class="series">
-    <ul class="panelContent">
-    <!-- VPN -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./vpn.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/vpn.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Виртуальная частная сеть</h3>
-                        <p>Расширение локальной сети в Azure с помощью подключения VPN "сеть — сеть".</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- ExpressRoute -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./expressroute.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/expressroute.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ExpressRoute</h3>
-                        <p>Расширение локальной сети в Azure с помощью Microsoft Azure ExpressRoute.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- ExpressRoute with VPN failover -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./expressroute-vpn-failover.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/expressroute-vpn-failover.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ExpressRoute с отработкой отказа на VPN</h3>
-                        <p>Расширение локальной сети в Azure с помощью Azure ExpressRoute с VPN в качестве отказоустойчивого соединения.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Hub-spoke topology -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./hub-spoke.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/hub-spoke.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Звездообразная топология</h3>
-                        <p>Концентратор представляет собой центральную точку подключения к локальной сети. Периферийные зоны — это виртуальные сети, которые устанавливают пиринг с концентратором и могут использоваться для изоляции рабочих нагрузок.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Hub-spoke topology with shared services -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./shared-services.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./images/shared-services.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Звездообразная топология с общими службами</h3>
-                        <p>Развертывание звездообразной топологии, которая содержит общие службы, в том числе службы Active Directory и виртуальный сетевой модуль (NVA). Общие службы могут использоваться всеми периферийными зонами.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    </ul>
-</section>
+<span data-ttu-id="5b289-107">[VPN-шлюз](/azure/vpn-gateway/vpn-gateway-about-vpngateways) — это разновидность шлюза виртуальной сети, который передает зашифрованный трафик между виртуальной сетью Azure и локальным расположением.</span><span class="sxs-lookup"><span data-stu-id="5b289-107">A [VPN gateway](/azure/vpn-gateway/vpn-gateway-about-vpngateways) is a type of virtual network gateway that sends encrypted traffic between an Azure virtual network and an on-premises location.</span></span> <span data-ttu-id="5b289-108">Зашифрованный трафик проходит через общедоступный Интернет.</span><span class="sxs-lookup"><span data-stu-id="5b289-108">The encrypted traffic goes over the public Internet.</span></span>
 
-<ul class="panelContent cardsI">
-</ul>
+<span data-ttu-id="5b289-109">Эта архитектура подходит для гибридных приложений, в которых ожидается незначительный трафик между локальным оборудованием и облаком, а также для сценариев, в которых допустимо некоторое увеличение задержки в обмен на дополнительную гибкость и вычислительную мощность облачных систем.</span><span class="sxs-lookup"><span data-stu-id="5b289-109">This architecture is suitable for hybrid applications where the traffic between on-premises hardware and the cloud is likely to be light, or you are willing to trade slightly extended latency for the flexibility and processing power of the cloud.</span></span>
+
+<span data-ttu-id="5b289-110">**Преимущества**</span><span class="sxs-lookup"><span data-stu-id="5b289-110">**Benefits**</span></span>
+
+- <span data-ttu-id="5b289-111">Простая настройка.</span><span class="sxs-lookup"><span data-stu-id="5b289-111">Simple to configure.</span></span>
+
+<span data-ttu-id="5b289-112">**Сложности**</span><span class="sxs-lookup"><span data-stu-id="5b289-112">**Challenges**</span></span>
+
+- <span data-ttu-id="5b289-113">Требуется локальное VPN-устройство.</span><span class="sxs-lookup"><span data-stu-id="5b289-113">Requires an on-premises VPN device.</span></span>
+- <span data-ttu-id="5b289-114">Несмотря на то что корпорация Майкрософт гарантирует уровень доступности 99,9 % для каждого VPN-шлюза, это [соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/vpn-gateway/) касается только самого VPN-шлюза, но не сетевого подключения к этому шлюзу.</span><span class="sxs-lookup"><span data-stu-id="5b289-114">Although Microsoft guarantees 99.9% availability for each VPN Gateway, this [SLA](https://azure.microsoft.com/support/legal/sla/vpn-gateway/) only covers the VPN gateway, and not your network connection to the gateway.</span></span>
+- <span data-ttu-id="5b289-115">В настоящее время VPN-подключения через VPN-шлюз Azure поддерживают пропускную способность не более 200 Мбит/с.</span><span class="sxs-lookup"><span data-stu-id="5b289-115">A VPN connection over Azure VPN Gateway currently supports a maximum of 200 Mbps bandwidth.</span></span> <span data-ttu-id="5b289-116">Если вам может потребоваться более высокая пропускная способность, распределите виртуальную сеть Azure на несколько VPN-подключений.</span><span class="sxs-lookup"><span data-stu-id="5b289-116">You may need to partition your Azure virtual network across multiple VPN connections if you expect to exceed this throughput.</span></span>
+
+<span data-ttu-id="5b289-117">**Эталонная архитектура**</span><span class="sxs-lookup"><span data-stu-id="5b289-117">**Reference architecture**</span></span>
+
+- [<span data-ttu-id="5b289-118">Гибридная сеть с VPN-шлюзом</span><span class="sxs-lookup"><span data-stu-id="5b289-118">Hybrid network with VPN gateway</span></span>](./vpn.md)
+
+## <a name="azure-expressroute-connection"></a><span data-ttu-id="5b289-119">Подключение Azure ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="5b289-119">Azure ExpressRoute connection</span></span>
+
+<span data-ttu-id="5b289-120">В подключениях [ExpressRoute](/azure/expressroute/) используются частные выделенные подключения через сети сторонних поставщиков услуг подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-120">[ExpressRoute](/azure/expressroute/) connections use a private, dedicated connection through a third-party connectivity provider.</span></span> <span data-ttu-id="5b289-121">Такое частное подключение расширяет вашу локальную сеть в Azure.</span><span class="sxs-lookup"><span data-stu-id="5b289-121">The private connection extends your on-premises network into Azure.</span></span> 
+
+<span data-ttu-id="5b289-122">Эта архитектура подходит для гибридных приложений, на которых выполняются крупномасштабные и критически важные рабочие нагрузки с высокими требованиями к масштабируемости.</span><span class="sxs-lookup"><span data-stu-id="5b289-122">This architecture is suitable for hybrid applications running large-scale, mission-critical workloads that require a high degree of scalability.</span></span> 
+
+<span data-ttu-id="5b289-123">**Преимущества**</span><span class="sxs-lookup"><span data-stu-id="5b289-123">**Benefits**</span></span>
+
+- <span data-ttu-id="5b289-124">Доступна очень высокая пропускная способность (до 10 Гбит/с в зависимости от поставщика услуг подключения).</span><span class="sxs-lookup"><span data-stu-id="5b289-124">Much higher bandwidth available; up to 10 Gbps depending on the connectivity provider.</span></span>
+- <span data-ttu-id="5b289-125">Поддерживает динамическое масштабирование пропускной способности, чтобы снизить расходы в период низкого спроса.</span><span class="sxs-lookup"><span data-stu-id="5b289-125">Supports dynamic scaling of bandwidth to help reduce costs during periods of lower demand.</span></span> <span data-ttu-id="5b289-126">Эту функциональность поддерживают не все поставщики услуг подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-126">However, not all connectivity providers have this option.</span></span>
+- <span data-ttu-id="5b289-127">Может предоставить организации прямой доступ к национальным облакам, если это поддерживается поставщиком услуг подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-127">May allow your organization direct access to national clouds, depending on the connectivity provider.</span></span>
+- <span data-ttu-id="5b289-128">Соглашения об уровне обслуживания гарантируют доступность 99,9 % для всего подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-128">99.9% availability SLA across the entire connection.</span></span>
+
+<span data-ttu-id="5b289-129">**Сложности**</span><span class="sxs-lookup"><span data-stu-id="5b289-129">**Challenges**</span></span>
+
+- <span data-ttu-id="5b289-130">Может потребоваться сложная настройка.</span><span class="sxs-lookup"><span data-stu-id="5b289-130">Can be complex to set up.</span></span> <span data-ttu-id="5b289-131">Для создания подключения ExpressRoute требуется взаимодействие со сторонним поставщиком услуг подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-131">Creating an ExpressRoute connection requires working with a third-party connectivity provider.</span></span> <span data-ttu-id="5b289-132">Этот поставщик отвечает за подготовку сетевого подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-132">The provider is responsible for provisioning the network connection.</span></span>
+- <span data-ttu-id="5b289-133">В локальной сети требуются маршрутизаторы с высокой пропускной способностью.</span><span class="sxs-lookup"><span data-stu-id="5b289-133">Requires high-bandwidth routers on-premises.</span></span>
+
+<span data-ttu-id="5b289-134">**Эталонная архитектура**</span><span class="sxs-lookup"><span data-stu-id="5b289-134">**Reference architecture**</span></span>
+
+- [<span data-ttu-id="5b289-135">Гибридная сеть с использованием ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="5b289-135">Hybrid network with ExpressRoute</span></span>](./expressroute.md)
+
+## <a name="expressroute-with-vpn-failover"></a><span data-ttu-id="5b289-136">ExpressRoute с отработкой отказа на VPN</span><span class="sxs-lookup"><span data-stu-id="5b289-136">ExpressRoute with VPN failover</span></span>
+
+<span data-ttu-id="5b289-137">Этот вариант объединяет два предыдущих. Для обычной работы применяется ExpressRoute, а при возникновении проблем с ним происходит переключение на VPN.</span><span class="sxs-lookup"><span data-stu-id="5b289-137">This options combines the previous two, using ExpressRoute in normal conditions, but failing over to a VPN connection if there is a loss of connectivity in the ExpressRoute circuit.</span></span>
+
+<span data-ttu-id="5b289-138">Такая архитектура подходит для гибридных приложений, которым одновременно требуется высокая пропускная способность ExpressRoute и высокий уровень доступности сетевого подключения.</span><span class="sxs-lookup"><span data-stu-id="5b289-138">This architecture is suitable for hybrid applications that need the higher bandwidth of ExpressRoute, and also require highly available network connectivity.</span></span> 
+
+<span data-ttu-id="5b289-139">**Преимущества**</span><span class="sxs-lookup"><span data-stu-id="5b289-139">**Benefits**</span></span>
+
+- <span data-ttu-id="5b289-140">Высокий уровень доступности. Подключение сохраняется даже при сбое канала ExpressRoute, хотя и со снижением пропускной способности сети.</span><span class="sxs-lookup"><span data-stu-id="5b289-140">High availability if the ExpressRoute circuit fails, although the fallback connection is on a lower bandwidth network.</span></span>
+
+<span data-ttu-id="5b289-141">**Сложности**</span><span class="sxs-lookup"><span data-stu-id="5b289-141">**Challenges**</span></span>
+
+- <span data-ttu-id="5b289-142">Сложность в настройке.</span><span class="sxs-lookup"><span data-stu-id="5b289-142">Complex to configure.</span></span> <span data-ttu-id="5b289-143">Необходимо настроить одновременно VPN-подключение и канал ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="5b289-143">You need to set up both a VPN connection and an ExpressRoute circuit.</span></span>
+- <span data-ttu-id="5b289-144">Требуется резервное оборудование (устройства VPN) и резервное подключение к шлюзу VPN Azure, что приводит к дополнительным расходам.</span><span class="sxs-lookup"><span data-stu-id="5b289-144">Requires redundant hardware (VPN appliances), and a redundant Azure VPN Gateway connection for which you pay charges.</span></span>
+
+<span data-ttu-id="5b289-145">**Эталонная архитектура**</span><span class="sxs-lookup"><span data-stu-id="5b289-145">**Reference architecture**</span></span>
+
+- [<span data-ttu-id="5b289-146">Гибридная сеть с использованием отработки отказа в ExpressRoute с VPN</span><span class="sxs-lookup"><span data-stu-id="5b289-146">Hybrid network with ExpressRoute and VPN failover</span></span>](./expressroute-vpn-failover.md)
+
+
+## <a name="hub-spoke-network-topology"></a><span data-ttu-id="5b289-147">Звездообразная топология сети</span><span class="sxs-lookup"><span data-stu-id="5b289-147">Hub-spoke network topology</span></span>
+
+<span data-ttu-id="5b289-148">Звездообразная топология сети — это способ изоляции рабочих нагрузок при совместном использовании служб, таких как службы идентификации и безопасности.</span><span class="sxs-lookup"><span data-stu-id="5b289-148">A hub-spoke network topology is a way to isolate workloads while sharing services such as identity and security.</span></span> <span data-ttu-id="5b289-149">Концентратор (центр топологии) — это виртуальная сеть в Azure, которая выступает в качестве центральной точки подключения к локальной сети.</span><span class="sxs-lookup"><span data-stu-id="5b289-149">The hub is a virtual network (VNet) in Azure that acts as a central point of connectivity to your on-premises network.</span></span> <span data-ttu-id="5b289-150">Периферийные зоны — это виртуальные сети, которые устанавливают пиринг с концентратором.</span><span class="sxs-lookup"><span data-stu-id="5b289-150">The spokes are VNets that peer with the hub.</span></span> <span data-ttu-id="5b289-151">Общие службы развертываются в концентраторе, а отдельные рабочие нагрузки — в периферийных зонах.</span><span class="sxs-lookup"><span data-stu-id="5b289-151">Shared services are deployed in the hub, while individual workloads are deployed as spokes.</span></span>
+
+
+<span data-ttu-id="5b289-152">**Эталонные архитектуры**</span><span class="sxs-lookup"><span data-stu-id="5b289-152">**Reference architectures**</span></span>
+
+- [<span data-ttu-id="5b289-153">Звездообразная топология</span><span class="sxs-lookup"><span data-stu-id="5b289-153">Hub-spoke topology</span></span>](./hub-spoke.md)
+- [<span data-ttu-id="5b289-154">Звездообразная топология с общими службами</span><span class="sxs-lookup"><span data-stu-id="5b289-154">Hub-spoke with shared services</span></span>](./shared-services.md)

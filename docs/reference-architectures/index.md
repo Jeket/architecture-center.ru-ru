@@ -3,39 +3,141 @@ title: Эталонная архитектура Azure
 description: Эталонные архитектуры, проекты и рекомендуемые руководства по реализации для общих нагрузок в Azure.
 layout: LandingPage
 ms.topic: landing-page
-ms.openlocfilehash: 6c9be20e2b831f2e6c1ffd33aa89a56375a0511c
-ms.sourcegitcommit: bb348bd3a8a4e27ef61e8eee74b54b07b65dbf98
+ms.openlocfilehash: 374ca51d70e4999fbb1bacf47547040db6f0071f
+ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "34422904"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38987630"
 ---
-<!-- This file is generated! -->
-<!-- See the templates in ./build/reference-architectures  -->
-<!-- See data in index.json -->
-
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
 Эталонные архитектуры упорядочены по сценарию, а связанные архитектуры сгруппированы. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включено развертываемое решение.
 
-<section class="series">
-    <ul class="panelContent">
+Перейти к разделу: [Большие данные](#big-data-solutions) | [Веб-приложения](#web-applications) | [N-уровневые приложения](#n-tier-applications) | [Виртуальные сети](#virtual-networks) | [Active Directory](#extending-on-premises-active-directory-to-azure) | [Рабочие нагрузки виртуальных машин](#vm-workloads)
 
-<!-- N-tier -->
+## <a name="big-data-solutions"></a>Решения для больших объемов данных
+
+<ul  class="panelContent cardsF">
+<!-- SQL Data Warehouse -->
 <li style="display: flex; flex-direction: column;">
-    <a href="./n-tier/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <a href="./data/enterprise-bi-sqldw.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
             <div class="cardPadding" style="display: flex;">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="./n-tier/images/n-tier-sql-server.svg" />
+                            <img src="./data/images/data-guide.svg" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>n-уровневневое приложение</h3>
-                        <p>Развертывание n-уровневого приложения в Azure для Windows или Linux.</p>
-                        <p>Конфигурации для SQL Server и Apache Cassandra. Чтобы обеспечить высокий уровень доступности, разверните активную и пассивную конфигурации в двух регионах.</p>
+                        <h3>Корпоративная бизнес-аналитика с использованием хранилища данных SQL</h3>
+                        <p>Конвейер ELT (извлечения, загрузки и преобразования) для перемещения данных из локальной базы данных в хранилище данных SQL.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./data/enterprise-bi-adf.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./data/images/data-guide.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Автоматизированная корпоративная бизнес-аналитика с использованием Фабрики данных Azure</h3>
+                        <p>Автоматизация конвейера ELT для выполнения добавочной загрузки из локальной базы данных.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="web-applications"></a>Веб-приложения
+
+<ul  class="panelContent cardsF">
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/basic-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Базовое веб-приложение</h3>
+                        <p>Веб-приложение, использующее службу приложений Azure и Базу данных SQL Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/scalable-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Высокомасштабируемое веб-приложение</h3>
+                        <p>Повышение масштабируемости в веб-приложении с помощью проверенных методов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/scalable-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Высокодоступное веб-приложение</h3>
+                        <p>Запуск веб-приложения службы приложений в нескольких регионах для достижения высокого уровня доступности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="n-tier-applications"></a>N-уровневые приложения
+
+<ul  class="panelContent cardsF">
+<li style="display: flex; flex-direction: column;">
+    <a href="./n-tier/n-tier-sql-server.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./n-tier/images/Windows.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>N-уровневое приложение с SQL Server</h3>
+                        <p>Виртуальные машины, настроенные для n-уровневого приложения с использованием SQL Server в Windows.</p>
                     </div>
                 </div>
             </div>
@@ -43,92 +145,282 @@ ms.locfileid: "34422904"
     </a>
 </li>
 
-<!-- Hybrid network -->
+<!-- Multi-region Windows -->
 <li style="display: flex; flex-direction: column;">
-    <a href="./hybrid-networking/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <a href="./n-tier/multi-region-sql-server.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
             <div class="cardPadding" style="display: flex;">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="./hybrid-networking/images/vpn.svg" height="140px" />
+                            <img src="./n-tier/images/Windows.svg" height="140px" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Гибридная сеть</h3>
-                        <p>В этих статьях показаны варианты создания сетевого соединения между локальной сетью и Azure.</p>
-                        <p>Конфигурации включают VPN типа "сеть-сеть" или Azure ExpressRoute для частного выделенного подключения.</p>
+                        <h3>N-уровневое приложение с поддержкой нескольких регионов</h3>
+                        <p>Развертывание n-уровневого приложения в двух регионах для обеспечения высокого уровня доступности с помощью групп доступности AlwaysOn в SQL Server.</p>
                     </div>
                 </div>
             </div>
         </div>
     </a>
 </li>
-    <!-- Network DMZ -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./dmz/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./dmz/images/secure-vnet-dmz.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Сеть периметра</h3>
-                        <p>В этих статьях показано, как создать сеть периметра для защиты границы между виртуальной сетью Azure и локальной сетью или Интернетом.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- Identity management -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./identity/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./identity/images/adds-extend-domain.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Управление удостоверениями</h3>
-                        <p>В этих статьях представлены варианты интеграции локальной среды Active Directory (AD) с сетью Azure.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    <!-- App Service web application -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./app-service-web-app/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="./app-service-web-app/images/scalable-web-app.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Веб-приложение службы приложений</h3>
-                        <p>В этих статьях показаны лучшие методики для веб-приложений, использующих службу приложений Azure.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-    </ul>
-</section>
 
-<ul class="panelContent cardsI">
-    <!-- Jenkins build server -->
+<!-- N-tier Linux -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./n-tier/n-tier-cassandra.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./n-tier/images/LinuxPenguin.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>N-уровневое приложение с Cassandra</h3>
+                        <p>Виртуальные машины, настроенные для n-уровневого приложения с использованием Apache Cassandra в Linux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="virtual-networks"></a>Виртуальные сети
+
+<ul  class="panelContent cardsF">
+<li style="display: flex; flex-direction: column;">
+    <a href="./hybrid-networking/vpn.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/vpn.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Гибридная сеть с использованием виртуальной частной сети (VPN)</h3>
+                        <p>Подключение локальной сети к виртуальной сети Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- ExpressRoute -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./hybrid-networking/expressroute.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/expressroute.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Гибридная сеть с использованием ExpressRoute</h3>
+                        <p>Расширение локальной сети в Azure с помощью частного выделенного подключения.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- ExpressRoute + VPN -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./hybrid-networking/expressroute-vpn-failover.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/expressroute.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Гибридная сеть с использованием отработки отказа в ExpressRoute с VPN</h3>
+                        <p>Обеспечение высокого уровня доступности с использованием ExpressRoute с VPN в качестве подключения для отработки отказа.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Hub spoke -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./hybrid-networking/hub-spoke.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/gateway.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Звездообразная топология сети</h3>
+                        <p>Создание центральной точки подключения к локальной сети при изоляции рабочих нагрузок.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Shared services -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./hybrid-networking/hub-spoke.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/gateway.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Звездообразная топология с общими службами</h3>
+                        <p>Расширение звездообразной топологии путем включения общих служб, например Active Directory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Hybrid DMZ -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./dmz/secure-vnet-hybrid.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/vnet.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Сеть периметра между Azure и локальной средой</h3>
+                        <p>Создание защищенной гибридной сети c помощью виртуальных сетевых модулей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Internet DMZ -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./dmz/secure-vnet-dmz.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/vnet.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Сеть периметра между Azure и Интернетом</h3>
+                        <p>Создание безопасной сети, которая принимает трафик из Интернета, с помощью виртуальных сетевых модулей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="extending-on-premises-active-directory-to-azure"></a>Расширение локального каталога Active Directory в Azure
+
+<ul class="panelContent cardsF">
+<!-- Azure AD -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./identity/azure-ad.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/azure-active-directory.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Интеграция с Azure Active Directory.</h3>
+                        <p>Интеграция локальных доменов AD со службой Azure Active Directory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- AD DS -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./identity/adds-extend-domain.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/active-directory-vm.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Расширение локального домена Active Directory в Azure</h3>
+                        <p>Развертывание доменных служб Active Directory (AD DS) в Azure для расширения локального домена.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- AD DS Forest -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./identity/adds-forest.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/active-directory-vm.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Создание леса AD DS в Azure</h3>
+                        <p>Создание отдельного домена AD в Azure, который является доверенным для локального леса AD.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- AD FS -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./identity/adfs.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/active-directory-vm.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Расширение служб федерации Active Directory (AD FS) в Azure</h3>
+                        <p>Использование AD FS для федеративной проверки подлинности и авторизации компонентов, работающих в Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="vm-workloads"></a>Рабочие нагрузки виртуальных машин
+
+<ul  class="panelContent cardsF">
+<!-- Jenkins -->
 <li style="display: flex; flex-direction: column;">
     <a href="./jenkins/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
@@ -141,14 +433,14 @@ ms.locfileid: "34422904"
                     </div>
                     <div class="cardText">
                         <h3>Сервер сборки Jenkins</h3>
-                        <p>Развертывание и использование масштабируемого корпоративного сервера Jenkins в Azure.</p>
+                        <p>Масштабируемый корпоративный сервер Jenkins в Azure.</p>
                     </div>
                 </div>
             </div>
         </div>
     </a>
 </li>
-    <!-- SharePoint Server 2016 farm -->
+<!-- SharePoint -->
 <li style="display: flex; flex-direction: column;">
     <a href="./sharepoint/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
@@ -161,16 +453,16 @@ ms.locfileid: "34422904"
                     </div>
                     <div class="cardText">
                         <h3>Ферма SharePoint Server 2016</h3>
-                        <p>Развертывание и запуск высокодоступных ферм SharePoint Server 2016 с использованием групп доступности AlwaysOn для SQL Server в Azure.</p>
+                        <p>Высокодоступная ферма SharePoint Server 2016 с использованием групп доступности AlwaysOn для SQL Server в Azure.</p>
                     </div>
                 </div>
             </div>
         </div>
     </a>
 </li>
-    <!-- SAP NetWeaver and SAP HANA -->
+<!-- SAP -->
 <li style="display: flex; flex-direction: column;">
-    <a href="./sap/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <a href="./sap/sap-netweaver.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
             <div class="cardPadding" style="display: flex;">
                 <div class="card">
@@ -180,8 +472,46 @@ ms.locfileid: "34422904"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Запуск SAP в Azure</h3>
-                        <p>Развертывание и запуск SAP в среде с высоким уровнем доступности в Azure.</p>
+                        <h3>SAP NetWeaver</h3>
+                        <p>SAP NetWeaver в Windows, в высокодоступной среде, которая поддерживает аварийное восстановление.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./sap/sap-s4hana.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./sap/images/sap.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>SAP S/4 HANA</h3>
+                        <p>SAP S/4HANA в Linux, в высокодоступной среде, которая поддерживает аварийное восстановление.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./sap/hana-large-instances.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./sap/images/sap.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>SAP HANA на крупных экземплярах Azure</h3>
+                        <p>SAP HANA (крупные экземпляры) развертываются на физических серверах в регионах Azure.</p>
                     </div>
                 </div>
             </div>
@@ -189,3 +519,4 @@ ms.locfileid: "34422904"
     </a>
 </li>
 </ul>
+
