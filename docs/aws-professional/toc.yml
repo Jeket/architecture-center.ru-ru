@@ -1,8 +1,0 @@
-- name: Центр архитектуры Azure
-  href: /azure/architecture
-- name: Azure для специалистов AWS
-  items:
-    - name: Обзор
-      href: index.md
-    - name: Сравнение служб
-      href: services.md
