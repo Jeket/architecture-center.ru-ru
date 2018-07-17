@@ -332,18 +332,32 @@
       href: example-scenario/index.md
     - name: AI
       items:
-        - name: Обработка изображений
+        - name: Классификация изображений
           href: example-scenario/ai/intelligent-apps-image-processing.md
     - name: Приложения
       items:
         - name: Чат-бот службы бронирования номеров
           href: example-scenario/apps/commerce-chatbot.md
-        - name: Использование DevOps со Cлужбой Azure Kubernetes
+        - name: DevOps с Контейнерами
           href: example-scenario/apps/devops-with-aks.md
+        - name: DevOps с VSTS
+          href: example-scenario/apps/devops-dotnet-webapp.md
+        - name: SAP для разработки и тестирования
+          href: example-scenario/apps/sap-dev-test.md
+        - name: Внешний интерфейс для электронной коммерции
+          href: example-scenario/apps/ecommerce-scenario.md
     - name: Данные и аналитика
       items:
         - name: Выявление мошенничества в реальном времени
           href: example-scenario/data/fraud-detection.md
+        - name: Масштабируемая обработка заказов
+          href: example-scenario/data/ecommerce-order-processing.md
+    - name: Инфраструктура
+      items:
+        - name: Многоуровневое приложение Windows
+          href: example-scenario/infrastructure/regulated-multitier-app.md
+        - name: Рендеринг видео с помощью высокопроизводительных вычислений
+          href: example-scenario/infrastructure/video-rendering.md
 - name: Эталонные образцы архитектуры
   items:
     - name: Обзор
