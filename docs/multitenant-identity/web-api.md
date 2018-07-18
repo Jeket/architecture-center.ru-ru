@@ -6,12 +6,12 @@ ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: authorize
 pnp.series.next: token-cache
-ms.openlocfilehash: 65529280c5849e36ed7ff23de08a0b485034d0d8
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 2d02ff7be04c6ebec888039453fe1ac7e957b301
+ms.sourcegitcommit: f7fa67e3bdbc57d368edb67bac0e1fdec63695d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24541470"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843680"
 ---
 # <a name="secure-a-backend-web-api"></a>Защита серверного веб-API
 
@@ -68,7 +68,7 @@ GET /users/{userId}/surveys
 Независимо от подхода веб-приложение должно получить маркер доступа, представляющий учетные данные, необходимые для вызова веб-API.
 
 * В случае с удостоверением делегированного пользователя маркер должен поступать от поставщика удостоверений, который выдает маркер от имени пользователя.
-* Приложение может использовать в качестве учетных данных маркеры, получаемые от IDP, или разместить собственный сервер маркеров. Но вам не нужно писать сервер маркера с нуля, можно применить уже проверенные платформы, например [IdentityServer3]. Если аутентификация выполняется через Azure AD, настоятельно рекомендуем получать маркер доступа из Azure AD, даже если вы реализуете собственный поток учетных данных.
+* Приложение может использовать в качестве учетных данных маркеры, получаемые от IDP, или разместить собственный сервер маркеров. Но нет необходимости писать сервер маркеров с нуля, можно применить уже проверенные платформы, например [IdentityServer4]. Если аутентификация выполняется через Azure AD, настоятельно рекомендуем получать маркер доступа из Azure AD, даже если вы реализуете собственный поток учетных данных.
 
 В оставшейся части этой статьи предполагается, что приложение проходит проверку подлинности в Azure AD.
 
@@ -79,7 +79,7 @@ GET /users/{userId}/surveys
 
 1. Зарегистрируйте веб-API в Azure AD.
 
-2. Укажите идентификатор клиента для веб-приложения в свойстве `knownClientApplications` манифеста приложения веб-API. См. раздел об [обновлении манифестов приложения].
+2. Укажите идентификатор клиента для веб-приложения в свойстве `knownClientApplications` манифеста приложения веб-API. См. раздел об [Обновление манифестов приложения].
 
 3. Предоставьте веб-приложению разрешение вызывать веб-API. На портале управления Azure можно задать два типа разрешений: "Разрешения приложения" для удостоверения приложения (поток учетных данных клиента) или "Делегированные разрешения" для удостоверения делегированного пользователя.
    
@@ -115,7 +115,7 @@ public override async Task AuthorizationCodeReceived(AuthorizationCodeReceivedCo
 * `clientSecret`. Секрет клиента веб-приложения.
 * `redirectUri`. URI перенаправления, заданный для OpenID. Здесь поставщик удостоверений выполняет обратный вызов маркера.
 * `resourceID`. URI идентификатора приложения для веб-API, который был создан при регистрации веб-API в Azure AD.
-* `tokenCache`. Объект, который кэширует маркеры доступа. См. статью [о кэшировании маркеров].
+* `tokenCache`. Объект, который кэширует маркеры доступа. См. статью [Кэширование маркеров].
 
 Если `AcquireTokenByAuthorizationCodeAsync` завершается успешно, ADAL кэширует маркер. Чтобы получить маркер из кэша позднее, вызовите AcquireTokenSilentAsync:
 
@@ -185,7 +185,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Applicat
 ### <a name="issuer-validation"></a>Проверка издателя
 Издатель маркера проверяется в событии **JwtBearerEvents.TokenValidated**. Издатель отправляется в утверждении "iss".
 
-В приложении Surveys веб-API не обрабатывает [регистрацию клиента]. Таким образом, он только проверяет, находится ли издатель в базе данных приложения. Если издатель отсутствует, создается исключение, которое приводит к ошибке проверки подлинности.
+В приложении Surveys веб-API не обрабатывает [Регистрация клиента]. Таким образом, он только проверяет, находится ли издатель в базе данных приложения. Если издатель отсутствует, создается исключение, которое приводит к ошибке проверки подлинности.
 
 ```csharp
 public override async Task TokenValidated(TokenValidatedContext context)
@@ -271,10 +271,10 @@ public void ConfigureServices(IServiceCollection services)
 [JwtBearer]: https://www.nuget.org/packages/Microsoft.AspNet.Authentication.JwtBearer
 
 [Tailspin Surveys]: tailspin.md
-[IdentityServer3]: https://github.com/IdentityServer/IdentityServer3
-[обновлении манифестов приложения]: ./run-the-app.md#update-the-application-manifests
-[о кэшировании маркеров]: token-cache.md
-[регистрацию клиента]: signup.md
+[IdentityServer4]: https://github.com/IdentityServer/IdentityServer4
+[Обновление манифестов приложения]: ./run-the-app.md#update-the-application-manifests
+[Кэширование маркеров]: token-cache.md
+[Регистрация клиента]: signup.md
 [claims-transformation]: claims.md#claims-transformations
 [Authorization]: authorize.md
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance
