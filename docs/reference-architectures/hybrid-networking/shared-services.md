@@ -5,12 +5,12 @@ author: telmosampaio
 ms.date: 06/19/2018
 pnp.series.title: Implement a hub-spoke network topology with shared services in Azure
 pnp.series.prev: hub-spoke
-ms.openlocfilehash: 555d08e5d3792f8699875c6d6aa8a1a42eadd477
-ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
+ms.openlocfilehash: 283251d5b11f76985405410c5c237e5a64ee98fe
+ms.sourcegitcommit: 71cbef121c40ef36e2d6e3a088cb85c4260599b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37142358"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39060801"
 ---
 # <a name="implement-a-hub-spoke-network-topology-with-shared-services-in-azure"></a>Реализация звездообразной топологии сети с помощью общих служб в Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "37142358"
 
 Все рекомендации для [звездообразной][guidance-hub-spoke] эталонной архитектуры также можно применить к эталонной архитектуре общих служб. 
 
-Кроме того, следующие рекомендации применимы для большинства ситуаций с общими службами. Следуйте этим рекомендациям, если они не противоречат особым требованиям для вашего случая.
+Кроме того, следующие рекомендации применимы для большинства сценариев с общими службами. Следуйте этим рекомендациям, если они не противоречат особым требованиям для вашего случая.
 
 ### <a name="identity"></a>Удостоверение
 
@@ -104,7 +104,7 @@ ms.locfileid: "37142358"
 
 Файлы параметров шаблона ссылаются на эти имена, поэтому, если вы их изменяете, соответствующим образом обновите файлы параметров.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
