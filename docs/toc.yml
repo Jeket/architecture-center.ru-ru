@@ -458,75 +458,46 @@
       items:
         - name: Обзор
           href: cloud-adoption-guide/adoption-intro/overview.md
-        - name: Основные сведения о внутренних компонентах Azure
+        - name: Обзор внутренних компонентов Azure
           items:
-            - name: Пояснения. Принцип работы Azure
+            - name: Принцип работы Azure
               href: cloud-adoption-guide/adoption-intro/azure-explainer.md
-            - name: Пояснения. Знакомство с системой управления облачными ресурсами
+            - name: Общее представление о системе управления облачными ресурсами
               href: cloud-adoption-guide/adoption-intro/governance-explainer.md
-        - name: Основные сведения о цифровых удостоверениях в Azure
+        - name: Обзор системы управления доступом к ресурсам Azure
           items:
-            - name: Пояснения. Знакомство с клиентом Azure Active Directory
-              href: cloud-adoption-guide/adoption-intro/tenant-explainer.md
-            - name: Инструкции. Получение клиента Azure Active Directory
-              href: /azure/active-directory/develop/active-directory-howto-tenant
-              maintainContext: true
-            - name: Руководство. Разработка клиента Azure AD
-              href: cloud-adoption-guide/adoption-intro/tenant.md
-            - name: Инструкции. Добавление пользователя в клиент Azure AD
-              href: /azure/active-directory/add-users-azure-active-directory
-              maintainContext: true
-        - name: Основные сведения о подписках Azure
-          items:
-            - name: Пояснения. Знакомство с подпиской Azure
-              href: cloud-adoption-guide/adoption-intro/subscription-explainer.md
-            - name: Руководство. Разработка подписки Azure
-              href: cloud-adoption-guide/adoption-intro/subscription.md
-        - name: Основные сведения об управлении ресурсами в Azure
-          items:
-            - name: Пояснения. Знакомство с Azure Resource Manager
-              href: cloud-adoption-guide/adoption-intro/resource-manager-explainer.md
-            - name: Пояснения. Знакомство с группой ресурсов Azure
-              href: cloud-adoption-guide/adoption-intro/resource-group-explainer.md
-            - name: Пояснения. Основные сведения о доступе к ресурсам в Azure
-              href: /azure/active-directory/active-directory-understanding-resource-access
-              maintainContext: true
-            - name: Инструкции. Создание группы ресурсов с помощью портала
-              href: /azure/azure-resource-manager/resource-group-portal
-              maintainContext: true
-            - name: Руководство. Разработка группы ресурсов
-              href: cloud-adoption-guide/adoption-intro/resource-group.md
-            - name: Руководство. Соглашения об именовании для ресурсов Azure
-              href: /azure/architecture/best-practices/naming-conventions
-              maintainContext: true
+            - name: Основные сведения об управлении доступом к ресурсам в Azure
+              href: cloud-adoption-guide/adoption-intro/azure-resource-access.md
+            - name: Руководство по проектированию системы управления Azure
+              href: cloud-adoption-guide/adoption-intro/governance-how-to.md
         - name: Развертывание базовых архитектур в Azure
           items:
             - name: Архитектура PaaS (платформа как услуга)
               items:
-                - name: Инструкции. Развертывание базового веб-приложения в Azure
+                - name: Развертывание базового веб-приложения в Azure
                   href: /azure/app-service
                   maintainContext: true
-                - name: Руководство. Рекомендации по созданию веб-приложений в Azure
+                - name: Рекомендации по созданию веб-приложений в Azure
                   href: /azure/architecture/reference-architectures/app-service-web-app/basic-web-app
                   maintainContext: true
             - name: Инфраструктура как услуга (IaaS)
               items:
-                - name: Пояснения. Знакомство с виртуальной сетью Azure
+                - name: Общее представление о виртуальной сети Azure
                   href: /azure/virtual-network/virtual-networks-overview
                   maintainContext: true
-                - name: Инструкции. Развертывание виртуальной сети в Azure
+                - name: Развертывание виртуальной сети в Azure
                   href: /azure/virtual-network/virtual-networks-create-vnet-arm-pportal
                   maintainContext: true
-                - name: Инструкции. Развертывание одной рабочей нагрузки IaaS для виртуальной машины Windows в Azure
+                - name: Развертывание одной рабочей нагрузки IaaS для виртуальной машины Windows в Azure
                   href: /azure/virtual-machines/windows/quick-create-portal
                   maintainContext: true
-                - name: Руководство. Рекомендации по развертыванию виртуальной машины Windows в Azure
+                - name: Рекомендации по развертыванию виртуальной машины Windows в Azure
                   href: /azure/architecture/reference-architectures/virtual-machines-windows/single-vm
                   maintainContext: true
-                - name: Инструкции. Развертывание одной рабочей нагрузки IaaS для виртуальной машины Linux в Azure
+                - name: Развертывание одной рабочей нагрузки IaaS для виртуальной машины Linux в Azure
                   href: /azure/virtual-machines/linux/quick-create-portal
                   maintainContext: true
-                - name: Руководство. Рекомендации по развертыванию виртуальной машины Linux в Azure
+                - name: Рекомендации по развертыванию виртуальной машины Linux в Azure
                   href: /azure/architecture/reference-architectures/virtual-machines-linux/single-vm
                   maintainContext: true
     - name: Промежуточное внедрение Azure
