@@ -2,15 +2,15 @@
 title: Высокодоступное N-уровневое приложение с поддержкой нескольких регионов
 description: Узнайте, как развертывать виртуальные машины в нескольких регионах Azure для обеспечения высокого уровня доступности и устойчивости.
 author: MikeWasson
-ms.date: 05/03/2018
+ms.date: 07/19/2018
 pnp.series.title: Windows VM workloads
 pnp.series.prev: n-tier
-ms.openlocfilehash: 48943094e7847e39b9fdc4c3f71e27f2e6e41293
-ms.sourcegitcommit: a5e549c15a948f6fb5cec786dbddc8578af3be66
+ms.openlocfilehash: a8dafab9ce8312004e99f0f19d06d6b47b6b19d8
+ms.sourcegitcommit: c704d5d51c8f9bbab26465941ddcf267040a8459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2018
-ms.locfileid: "33673576"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39229258"
 ---
 # <a name="multi-region-n-tier-application-for-high-availability"></a>Высокодоступное N-уровневое приложение с поддержкой нескольких регионов
 
@@ -80,18 +80,18 @@ ms.locfileid: "33673576"
 
 Обратите внимание, что диспетчер трафика по умолчанию автоматически восстанавливает размещение. Чтобы избежать этого, вручную понизьте приоритет основного региона после отработки отказа. Например, предположим, что основной регион имеет приоритет 1, а дополнительные — приоритет 2. После отработки отказа задайте основному региону приоритет 3, чтобы избежать автоматического восстановления размещения. Когда будете готовы переключить приоритет обратно, измените приоритет до 1.
 
-Следующая команда [Azure CLI][install-azure-cli] обновляет приоритет:
+Следующая команда [Azure CLI][azure-cli] обновляет приоритет:
 
 ```bat
-azure network traffic-manager  endpoint set --resource-group <resource-group> --profile-name <profile>
-    --name <traffic-manager-name> --type AzureEndpoints --priority 3
+az network traffic-manager endpoint update --resource-group <resource-group> --profile-name <profile>
+    --name <endpoint-name> --type azureEndpoints --priority 3
 ```    
 
 Другой подход заключается во временном отключении конечной точки, пока не появится возможность восстановить размещение:
 
 ```bat
-azure network traffic-manager  endpoint set --resource-group <resource-group> --profile-name <profile>
-    --name <traffic-manager-name> --type AzureEndpoints --status Disabled
+az network traffic-manager endpoint update --resource-group <resource-group> --profile-name <profile>
+    --name <endpoint-name> --type azureEndpoints --endpoint-status Disabled
 ```
 
 В зависимости от причины отработки отказа может потребоваться повторное развертывание ресурсов в пределах региона. До восстановления размещения выполните тест готовности к работе. При этом проверяется следующее:
@@ -109,10 +109,10 @@ azure network traffic-manager  endpoint set --resource-group <resource-group> --
 * Поместите как минимум два контроллера домена в каждом регионе.
 * Предоставьте каждому контроллеру домена статический IP-адрес.
 * Создайте подключение "виртуальная сеть — виртуальная сеть", чтобы включить обмен данными между виртуальными сетями.
-* Для каждой виртуальной сети добавьте IP-адреса контроллеров доменов (из обоих регионов) в список DNS-серверов. Вы можете использовать следующую команду интерфейса командной строки. Дополнительные сведения см. в статье [Настройка (классической) виртуальной сети с помощью файла конфигурации сети][vnet-dns].
+* Для каждой виртуальной сети добавьте IP-адреса контроллеров доменов (из обоих регионов) в список DNS-серверов. Вы можете использовать следующую команду интерфейса командной строки. Дополнительные сведения см. в разделе [Изменение DNS-серверов][vnet-dns].
 
     ```bat
-    azure network vnet set --resource-group dc01-rg --name dc01-vnet --dns-servers "10.0.0.4,10.0.0.6,172.16.0.4,172.16.0.6"
+    az network vnet update --resource-group <resource-group> --name <vnet-name> --dns-servers "10.0.0.4,10.0.0.6,172.16.0.4,172.16.0.6"
     ```
 
 * Создайте [отказоустойчивый кластер Windows Server][wsfc] (WSFC), включающий экземпляры SQL Server в обоих регионах. 
@@ -171,7 +171,7 @@ azure network traffic-manager  endpoint set --resource-group <resource-group> --
 [azure-sla]: https://azure.microsoft.com/support/legal/sla/
 [azure-sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
 [health-endpoint-monitoring-pattern]: https://msdn.microsoft.com/library/dn589789.aspx
-[install-azure-cli]: /azure/xplat-cli-install
+[azure-cli]: /cli/azure/
 [regional-pairs]: /azure/best-practices-availability-paired-regions
 [resource groups]: /azure/azure-resource-manager/resource-group-overview
 [resource-group-links]: /azure/resource-group-link-resources
@@ -185,7 +185,7 @@ azure network traffic-manager  endpoint set --resource-group <resource-group> --
 [tm-sla]: https://azure.microsoft.com/support/legal/sla/traffic-manager/v1_0/
 [traffic-manager]: https://azure.microsoft.com/services/traffic-manager/
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/vm-reference-architectures.vsdx
-[vnet-dns]: /azure/virtual-network/virtual-networks-manage-dns-in-vnet
+[vnet-dns]: /azure/virtual-network/manage-virtual-network#change-dns-servers
 [vnet-to-vnet]: /azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps
 [vpn-gateway]: /azure/vpn-gateway/vpn-gateway-about-vpngateways
 [wsfc]: https://msdn.microsoft.com/library/hh270278.aspx

@@ -1,49 +1,74 @@
 ---
 title: Внедрение Azure. Базовый уровень
-description: Описание базовых понятий, которые организация должна знать для внедрения Azure
+description: Описание базовых понятий, которые организация должна знать для внедрения Azure.
 author: petertay
-ms.openlocfilehash: 3f522d1662849d651423d8022ad152c64692b823
-ms.sourcegitcommit: b3d74d8a89b2224fc796ce0e89cea447af43a0d4
+ms.openlocfilehash: b5a0a4a2c4ed1d06c97774b0eca643a89a5a2110
+ms.sourcegitcommit: c704d5d51c8f9bbab26465941ddcf267040a8459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35290481"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39229173"
 ---
-# <a name="adopting-azure-foundational"></a>Внедрение Azure. Базовый уровень
+# <a name="adopting-microsoft-azure-foundational"></a>Внедрение Microsoft Azure. Базовый уровень
 
-Внедрение Azure является первым этапом зрелости организации. К концу этого этапа сотрудники вашей организации смогут развернуть простые рабочие нагрузки в Azure.
+Иногда организациям, которые раньше не сталкивались с облачными технологиями, трудно решить с чего начать их внедрение. Основная цель базового этапа внедрения заключается в предоставлении отправной точки. К концу этого этапа сотрудники организации получат знания и умения, которые помогут им развернуть вычислительные ресурсы, необходимые в процессе выполнения простых рабочих нагрузок в Azure. 
 
-В списке ниже приводятся задачи для прохождения базового этапа внедрения. В списке задачи представлены в определенной последовательности, поэтому выполняйте их по порядку. Если до этого вы выполнили задачу, переходите к следующей задаче в списке. 
+> [!NOTE]
+> В этом руководстве не рассматривается разработка приложений. Дополнительные сведения об этом см. в [руководстве по архитектуре приложений Azure](/azure/architecture/guide/).
 
-1. Основные сведения о внутренних компонентах Azure.
-    - **Пояснения.** [Принцип работы Azure](azure-explainer.md)
-    - **Пояснения.** [Знакомство с системой управления облачными ресурсами](governance-explainer.md)
-2. Основные сведения о цифровых удостоверениях организации в Azure.
-    - **Пояснения.** [Знакомство с клиентом Azure Active Directory](tenant-explainer.md)
-    - **Инструкции.** [Получение клиента Azure Active Directory](/azure/active-directory/develop/active-directory-howto-tenant?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-    - **Руководство.** [Разработка клиента Azure AD](tenant.md)
-    - **Инструкции.** [Добавление новых пользователей в Azure Active Directory](/azure/active-directory/add-users-azure-active-directory?toc=/azure/architecture/cloud-adoption-guide/toc.json)    
-3. Общие сведения о подписках в Azure.
-    - **Пояснения.** [Знакомство с подпиской Azure](subscription-explainer.md)
-    - **Руководство.** [Разработка подписки Azure](subscription.md)
-4. Основные сведения об управлении ресурсами в Azure. 
-    - **Пояснения.** [Знакомство с Azure Resource Manager](resource-manager-explainer.md)
-    - **Пояснения.** [Знакомство с группой ресурсов Azure](resource-group-explainer.md)
-    - **Пояснения.** [Основные сведения о доступе к ресурсам в Azure](/azure/active-directory/active-directory-understanding-resource-access?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-    - **Инструкции.** [Создание группы ресурсов Azure с помощью портала Azure](/azure/azure-resource-manager/resource-group-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-    - **Руководство.** [Разработка группы ресурсов Azure](resource-group.md)
-    - **Руководство.** [Соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/naming-conventions?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-5. Развертывание базовой архитектуры Azure.
-    - Узнайте о различных типах вычислительных служб Azure, например инфраструктура как услуга (IaaS) и платформа как услуга (PaaS), в статье [Обзор вычислительных служб в Azure](/azure/architecture/guide/technology-choices/compute-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json).
-    - Когда вы ознакомитесь с различными типами вычислительных служб Azure, выберите веб-приложение (PaaS) или виртуальную машину (IaaS) в качестве первого ресурса в Azure.
-    - PaaS: общие сведения о платформе как услуге в Azure.
-        - **Инструкции.** [Развертывание базового веб-приложения в Azure](/azure/app-service/app-service-web-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-        - **Руководство.** Проверенные методики по развертыванию [основного веб-приложения](/azure/architecture/reference-architectures/app-service-web-app/basic-web-app?toc=/azure/architecture/cloud-adoption-guide/toc.json) в Azure
-    - IaaS: введение в виртуальную сеть.
-        - **Пояснения.** [Виртуальная сеть Azure](/azure/virtual-network/virtual-networks-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-        - **Инструкции.** [Развертывание виртуальной сети в Azure с помощью портала](/azure/virtual-network/virtual-networks-create-vnet-arm-pportal?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-    - IaaS. Развертывание рабочей нагрузки на одной виртуальной машине (Windows и Linux).
-        - **Инструкции.** [Развертывание виртуальной машины Windows в Azure с помощью портала](/azure/virtual-machines/windows/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-        - **Руководство.** [Проверенные методики по запуску виртуальных машин Windows в Azure](/azure/architecture/reference-architectures/virtual-machines-windows/single-vm?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-        - **Инструкции.** [Развертывание виртуальной машины Linux в Azure с помощью портала](/azure/virtual-machines/linux/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json)
-        - **Руководство.** [Проверенные методики по запуску виртуальных машин Linux в Azure](/azure/architecture/reference-architectures/virtual-machines-linux/single-vm?toc=/azure/architecture/cloud-adoption-guide/toc.json)
+Этот этап рассчитан на следующую аудиторию в вашей организации:
+
+- *Финансовый отдел.* Владелец финансовых обязательств в Azure, отвечающий за разработку политик и процедур для отслеживания расходов, связанных с потреблением ресурсов, в том числе выставление счетов и взимание средств за использование.
+- *Центральный ИТ-отдел.* Отвечает за управление облачными ресурсами организации, в том числе управление ресурсами и доступ, а также за работоспособность и мониторинг рабочей нагрузки.
+- *Владельцы рабочих нагрузок.* Все роли разработки, участвующие в развертывании рабочих нагрузок в Azure, в том числе разработчики, инженеры-испытатели и инженеры, ответственные за сборку.
+
+## <a name="section-1-azure-basics"></a>Раздел 1. Основные сведения об Azure
+
+Этот вводный раздел предназначен для сотрудников *отдела финансов* и *центрального ИТ-отдела*. В нем приведены основные сведения о [принципах работы Azure](azure-explainer.md), которые помогут перейти к изучению [понятия управления облаком](governance-explainer.md). Сведения в нем также могут помочь *владельцах рабочих нагрузок* в организации, так как здесь рассматривается принцип управления доступом к ресурсам.
+
+## <a name="section-2-governance-design-guide"></a>Раздел 2. Руководство по проектированию системы управления
+
+Чтобы понять принципы работы Azure и основы управления облаком, сначала необходимо узнать, как [управлять доступом к ресурсам](azure-resource-access.md) в Azure. В этой статье описаны службы Azure, с помощью которых можно создавать запросы на доступ к ресурсам, а также элементы управления, которые позволяют проверить эти запросы.
+
+Далее необходимо узнать, как [спроектировать модель системы управления](governance-how-to.md) для одной команды. В этой статье описано, как настроить службы управления доступом к ресурсам и элементы управления, о которых вы узнали ранее.
+
+## <a name="section-3-implementing-a-basic-resource-access-management-model"></a>Раздел 3. Реализация базовой модели управления доступом к ресурсам
+
+Последний шаг в подготовке к внедрению заключается в реализации разработанной ранее модели управления. 
+
+Чтобы начать, организации потребуется учетная запись Azure. Если организация имеет [Соглашение Microsoft Enterprise](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), которое не включает Azure, эту службу можно добавить, приняв на себя предварительные денежные обязательства. Дополнительные сведения см. на странице [Лицензирование Azure для корпоративных пользователей](https://azure.microsoft.com/pricing/enterprise-agreement/). 
+
+После создания учетной записи Azure необходимо указать сотрудника организации, который станет **ее владельцем**. После этого по умолчанию создается клиент Azure Active Directory (Azure AD). **Владелец учетной записи** Azure должен [создать учетную запись пользователя](/azure/active-directory/add-users-azure-active-directory) и предоставить ее сотруднику, который станет **владельцем рабочей нагрузки**. 
+
+Далее **владелец учетной записи** Azure должен [создать подписку](https://docs.microsoft.com/partner-center/create-a-new-subscription) и [связать с ней клиент Azure AD](/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+
+Наконец, создав подписку и связав с нею клиент Azure AD, вы можете [добавить в нее **владельца рабочей нагрузки** со встроенной ролью **владельца**](/azure/billing/billing-add-change-azure-subscription-administrator#add-an-rbac-owner-for-a-subscription-in-azure-portal).
+
+## <a name="section-4-deploy-a-basic-workload-architecture-to-azure"></a>Раздел 4. Развертывание базовой архитектуры рабочей нагрузки в Azure
+
+Этот раздел предназначен для *владельца рабочей нагрузки*. *Владельцы рабочих нагрузок* определяют требования к вычислительным ресурсам и ресурсам сети их рабочих нагрузок, выбирают ресурсы в соответствии с установленными требованиями и развертывают их в Azure. 
+
+На базовом этапе внедрения владелец рабочей нагрузки может выбрать базовое веб-приложение или виртуальную сеть и виртуальную машину. Дополнительные сведения об этих различных типах вычислительных служб в Azure см. в [этой статье](/azure/architecture/guide/technology-choices/compute-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json).
+
+Независимо от выбранной вычислительной службы в рамках развертывания каждой из них требуется **группа ресурсов**. **Владелец рабочей нагрузки** должен [создать группу ресурсов](/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy). В процессе развертывания **этот пользователь**  также указывает имя группы ресурсов. Это имя используется в приведенных ниже разделах.
+
+### <a name="basic-web-application-paas"></a>Базовое веб-приложение (PaaS)
+
+Если вы выбрали базовое веб-приложение, ознакомьтесь с одним из 5-минутных руководств из [документации по веб-приложениям](/azure/app-service?toc=/azure/architecture/cloud-adoption-guide/toc.json) и выполните приведенные в нем шаги. 
+
+> [!NOTE]
+> В некоторых их этих руководств по началу работы группа ресурсов развертывается по умолчанию. В этом случае **владельцу рабочей нагрузки** не нужно явно создавать группу ресурсов. В противном случае разверните веб-приложение в группу ресурсов, созданную с использованием шагом в одном из руководств по началу работы.
+
+После развертывания простой рабочей нагрузки ознакомьтесь с проверенными методиками по развертыванию [базового веб-приложения](/azure/architecture/reference-architectures/app-service-web-app/basic-web-app?toc=/azure/architecture/cloud-adoption-guide/toc.json) в Azure.
+
+### <a name="single-windows-or-linux-vm-iaas"></a>Одна виртуальная машина Windows или Linux (IaaS)
+
+Если используется простая рабочая нагрузка, которая выполняется на одной виртуальной машине, первым делом необходимо развернуть виртуальную сеть. Все ресурсы IaaS в Azure, например виртуальные машины, подсистемы балансировки нагрузки и шлюзы, нуждаются в виртуальной сети. Узнайте больше о [виртуальных сетях Azure](/azure/virtual-network/virtual-networks-overview?toc=/azure/architecture/cloud-adoption-guide/toc.json), а затем выполните действия по [развертыванию виртуальной сети в Azure с помощью портала](/azure/virtual-network/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json). Определяя параметры виртуальной сети на портале Azure, укажите имя созданной ранее группы ресурсов.
+
+Далее необходимо решить, какую виртуальную машину следует развернуть: Windows или Linux. Чтобы развернуть виртуальную машину Windows в Azure с помощью портала, следуйте указаниям из [этого руководства](/azure/virtual-machines/windows/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json). И опять же, определяя параметры виртуальной машины на портале Azure, укажите имя созданной ранее группы ресурсов.
+
+Развернув виртуальную машину, ознакомьтесь с [проверенными методиками по запуску виртуальной машины Windows в Azure](/azure/architecture/reference-architectures/virtual-machines-windows/single-vm?toc=/azure/architecture/cloud-adoption-guide/toc.json). Чтобы развернуть виртуальную машину Linux в Azure с помощью портала, следуйте указаниям из [этого руководства](/azure/virtual-machines/linux/quick-create-portal?toc=/azure/architecture/cloud-adoption-guide/toc.json). Кроте того, ознакомьтесь с [проверенными методиками по запуску виртуальных машин Linux в Azure](/azure/architecture/reference-architectures/virtual-machines-linux/single-vm?toc=/azure/architecture/cloud-adoption-guide/toc.json).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Следующий этап внедрения облака — [**промежуточный**](../intermediate-stage/overview.md). На этом этапе вы узнаете, как расширить локальную сеть, чтобы выполнять в ней несколько рабочих нагрузок, а также как спроектировать модель системы управления для нескольких команд.
