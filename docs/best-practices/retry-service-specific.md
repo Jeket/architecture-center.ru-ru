@@ -4,12 +4,12 @@ description: Конкретные рекомендации по настройк
 author: dragon119
 ms.date: 07/13/2016
 pnp.series.title: Best Practices
-ms.openlocfilehash: 39d342dc96e3d0d923ce159c392d9427359a4639
-ms.sourcegitcommit: f7fa67e3bdbc57d368edb67bac0e1fdec63695d2
+ms.openlocfilehash: 72dfb59c3357c5f14806a33ef5f6cdd3e7937915
+ms.sourcegitcommit: 8b5fc0d0d735793b87677610b747f54301dcb014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843632"
+ms.lasthandoff: 07/29/2018
+ms.locfileid: "39334170"
 ---
 # <a name="retry-guidance-for-specific-services"></a>Руководство по использованию механизма повторов для отдельных служб
 
@@ -23,7 +23,7 @@ ms.locfileid: "37843632"
 | --- | --- | --- | --- | --- |
 | **[Azure Active Directory](#azure-active-directory)** |Машинный код в библиотеке ADAL |Встроена в библиотеку ADAL |Внутренний |None |
 | **[Cosmos DB](#cosmos-db)** |Машинный код в службе |Ненастраиваемые |Глобальные |TraceSource |
-| **[Концентраторы событий](#azure-event-hubs)** |Машинный код в клиенте |Программный |Клиент |None |
+| **[Концентраторы событий](#event-hubs)** |Машинный код в клиенте |Программный |Клиент |None |
 | **[Кэш Redis](#azure-redis-cache)** |Машинный код в клиенте |Программный |Клиент |TextWriter |
 | **[Служба поиска](#azure-search)** |Машинный код в клиенте |Программный |Клиент |Трассировка событий Windows или пользовательская |
 | **[Служебная шина](#service-bus)** |Машинный код в клиенте |Программный |Диспетчер пространств имен, фабрика сообщений и клиент |Трассировка событий Windows |
@@ -109,7 +109,7 @@ options.MaxRetryWaitTimeInSeconds = 15;
 </configuration>
 ```
 
-## <a name="event-hubs"></a>Концентраторы событий
+## <a name="event-hubs"></a>концентраторы событий;
 
 Концентраторы событий Azure — это служба обработки данных телеметрии с высокой степенью масштабируемости. Она собирает, преобразовывает и хранит миллионы событий.
 
