@@ -2,12 +2,12 @@
 title: Руководство по проектированию системы управления Azure
 description: Руководство по настройке элементов системы управления, что позволит пользователям развертывать простые рабочие нагрузки.
 author: petertay
-ms.openlocfilehash: 78545400fc0b09262dce3d0e577442443468b2ed
-ms.sourcegitcommit: c704d5d51c8f9bbab26465941ddcf267040a8459
+ms.openlocfilehash: 88cd24a46a6bdaca4e0dd18706af1f7e3fe3bce2
+ms.sourcegitcommit: c4106b58ad08f490e170e461009a4693578294ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39229578"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43016040"
 ---
 # <a name="azure-governance-design-guide"></a>Руководство по проектированию системы управления Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "39229578"
 Прежде чем перейти к проектированию модели системы управления, важно понять, как лицензируется Azure. Это обусловлено тем, что административные учетные записи, связанные с лицензией Azure, имеют высший уровень доступа ко всем ресурсам Azure. Эти учетные записи формируют основу модели системы управления.  
 
 > [!NOTE]
-> Если организация имеет [Соглашение Microsoft Enterprise](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), которое не включает Azure, эту службу можно добавить, приняв на себя предварительные денежные обязательства. Дополнительные сведения см. на странице [Лицензирование Azure для корпоративных пользователей](https://azure.microsoft.com/pricing/enterprise-agreement/). 
+> Если организация имеет [Соглашение Microsoft Enterprise](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx), которое не включает Azure, эту службу можно добавить, приняв на себя предварительные денежные обязательства. Дополнительные сведения см. на странице [Лицензирование Azure для корпоративных пользователей](https://azure.microsoft.com/pricing/enterprise-agreement/). 
 
 При добавлении Azure в Соглашение Enterprise организация получает запрос на создание **учетной записи Azure**. Вместе с учетной записью Azure создается **ее владелец**, а также клиент Azure Active Directory (Azure AD) с учетной записью **глобального администратора**. Клиент Azure AD — это логическая структура, представляющая собой защищенный выделенный экземпляр Azure AD.
 
