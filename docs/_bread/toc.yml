@@ -1,46 +1,66 @@
+items:
 - name: Таблицы Azure
   tocHref: /azure/
   topicHref: /azure
   items:
-    - name: Архитектура
-      tocHref: /azure/architecture/
-      topicHref: /azure/architecture
+  - name: Архитектура
+    tocHref: /azure/architecture/
+    topicHref: /azure/architecture
+    items:
+    - name: Рекомендации
+      tocHref: /azure/architecture/best-practices
+      topicHref: /azure/architecture/best-practices
+    - name: Azure для специалистов AWS
+      tocHref: /azure/architecture/aws-professional
+      topicHref: /azure/architecture/aws-professional
+    - name: Проектирование для обеспечения устойчивости
+      tocHref: /azure/architecture/resiliency
+      topicHref: /azure/architecture/resiliency
+    - name: Контрольные списки проверки проекта
+      tocHref: /azure/architecture/checklist
+      topicHref: /azure/architecture/checklist
+    - name: Управление удостоверением в мультитенантных приложениях
+      tocHref: /azure/architecture/multitenant-identity
+    - name: Эталонные образцы архитектуры
+      tocHref: /azure/architecture/reference-architectures
+      topicHref: /azure/architecture/reference-architectures
+    - name: Конструктивные шаблоны облачных решений
+      tocHref: /azure/architecture/patterns
+      topicHref: /azure/architecture/patterns
+    - name: Ресурсы
+      tocHref: /azure/architecture/resources
+      topicHref: /azure/architecture/resources
+    - name: Внедрение облачных решений в организации
+      tocHref: /azure/architecture/cloud-adoption/
+      topicHref: /azure/architecture/cloud-adoption
       items:
-        - name: Рекомендации
-          tocHref: /azure/architecture/best-practices
-          topicHref: /azure/architecture/best-practices
-        - name: Azure для специалистов AWS
-          tocHref: /azure/architecture/aws-professional
-          topicHref: /azure/architecture/aws-professional
-        - name: Проектирование для обеспечения устойчивости
-          tocHref: /azure/architecture/resiliency
-          topicHref: /azure/architecture/resiliency
-        - name: Контрольные списки проверки проекта
-          tocHref: /azure/architecture/checklist
-          topicHref: /azure/architecture/checklist
-        - name: Управление удостоверением в мультитенантных приложениях
-          tocHref: /azure/architecture/multitenant-identity
-        - name: Эталонные образцы архитектуры
-          tocHref: /azure/architecture/reference-architectures
-          topicHref: /azure/architecture/reference-architectures
-        - name: Конструктивные шаблоны облачных решений
-          tocHref: /azure/architecture/patterns
-          topicHref: /azure/architecture/patterns
-        - name: Ресурсы
-          tocHref: /azure/architecture/resources
-          topicHref: /azure/architecture/resources
-        - name: Руководство по внедрению
-          tocHref: /azure/architecture/cloud-adoption-guide/
-          topicHref: /azure/architecture/cloud-adoption-guide
-        - name: Руководство
-          tocHref: /azure/architecture/guide
-          topicHref: /azure/architecture/guide
-        - name: Руководство по архитектуре данных
-          tocHref: /azure/architecture/data-guide
-          topicHref: /azure/architecture/data-guide
-        - name: Проектирование микрослужб
-          tocHref: /azure/architecture/microservices
-          topicHref: /azure/architecture/microservices
-        - name: Антишаблоны производительности
-          tocHref: /azure/architecture/antipatterns
-          topicHref: /azure/architecture/
+      - name: Приступая к работе
+        tocHref: /azure/architecture/cloud-adoption/getting-started/
+        topicHref: /azure/architecture/cloud-adoption/getting-started
+      - name: Система управления
+        tocHref: /azure/architecture/cloud-adoption/governance/
+        topicHref: /azure/architecture/cloud-adoption/governance
+      - name: Инфраструктура
+        tocHref: /azure/architecture/cloud-adoption/infrastructure/
+        topicHref: /azure/architecture/cloud-adoption/infrastructure
+      - name: Приложение
+        tocHref: /azure/architecture/cloud-adoption/appendix/
+        topicHref: /azure/architecture/cloud-adoption/appendix
+    - name: Руководство
+      tocHref: /azure/architecture/guide
+      topicHref: /azure/architecture/guide
+    - name: Руководство по архитектуре данных
+      tocHref: /azure/architecture/data-guide
+      topicHref: /azure/architecture/data-guide
+    - name: Проектирование микрослужб
+      tocHref: /azure/architecture/microservices
+      topicHref: /azure/architecture/microservices
+    - name: Антишаблоны производительности
+      tocHref: /azure/architecture/antipatterns
+      topicHref: /azure/architecture/
+ms.openlocfilehash: 0e7ecc196ce1dd42f54ef08fb9e9bea02f09583e
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43325412"

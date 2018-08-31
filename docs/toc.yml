@@ -1,516 +1,501 @@
+items:
 - name: Центр архитектуры Azure
   href: index.md
 - name: Основные сведения об облаке
   items:
-    - name: Руководство по архитектуре приложений
+  - name: Руководство по архитектуре приложений
+    items:
+    - name: Введение
+      href: guide/index.md
+    - name: Стили архитектуры
       items:
-        - name: Введение
-          href: guide/index.md
-        - name: Стили архитектуры
-          items:
-            - name: Обзор
-              href: guide/architecture-styles/index.md
-            - name: n-уровневневое приложение
-              href: guide/architecture-styles/n-tier.md
-            - name: Рабочая роль веб-очереди
-              href: guide/architecture-styles/web-queue-worker.md
-            - name: Микрослужбы
-              href: guide/architecture-styles/microservices.md
-            - name: CQRS
-              href: guide/architecture-styles/cqrs.md
-            - name: Управляемая событиями архитектура
-              href: guide/architecture-styles/event-driven.md
-            - name: Данные большого размера
-              href: guide/architecture-styles/big-data.md
-            - name: Большие вычисления
-              href: guide/architecture-styles/big-compute.md
-        - name: Выбор службы вычислений
-          items:
-            - name: Обзор
-              href: guide/technology-choices/compute-overview.md
-            - name: Дерево принятия решений
-              href: guide/technology-choices/compute-decision-tree.md
-            - name: Сравнение вычислений
-              href: guide/technology-choices/compute-comparison.md
-        - name: Выбор хранилища данных
-          items:
-            - name: Обзор
-              href: guide/technology-choices/data-store-overview.md
-            - name: Сравнение хранилищ данных
-              href: guide/technology-choices/data-store-comparison.md
-        - name: Принципы проектирования
-          items:
-            - name: Обзор
-              href: guide/design-principles/index.md
-            - name: Разработка для автоматического восстановления
-              href: guide/design-principles/self-healing.md
-            - name: Обеспечение избыточности всех компонентов
-              href: guide/design-principles/redundancy.md
-            - name: Минимизация координации
-              href: guide/design-principles/minimize-coordination.md
-            - name: Разработка для обеспечения горизонтального масштабирования
-              href: guide/design-principles/scale-out.md
-            - name: Секционирование для обхода ограничений
-              href: guide/design-principles/partition.md
-            - name: Внедрение необходимых средств для работы
-              href: guide/design-principles/design-for-operations.md
-            - name: Использование управляемых служб
-              href: guide/design-principles/managed-services.md
-            - name: Использование подходящего хранилища данных для задания
-              href: guide/design-principles/use-the-best-data-store.md
-            - name: Разработка с учетом будущих изменений
-              href: guide/design-principles/design-for-evolution.md
-            - name: Разработка с учетом бизнес-потребностей
-              href: guide/design-principles/build-for-business.md
-        - name: Основные аспекты качества программного обеспечения
-          href: guide/pillars.md
-        - name: Рекомендации по облачной архитектуре
-          items:
-            - name: Проектирование API
-              href: best-practices/api-design.md
-            - name: Реализация API
-              href: best-practices/api-implementation.md
-            - name: Автомасштабирование
-              href: best-practices/auto-scaling.md
-            - name: Фоновые задания
-              href: best-practices/background-jobs.md
-            - name: Caching
-              href: best-practices/caching.md
-            - name: Сеть доставки содержимого
-              href: best-practices/cdn.md
-            - name: Секционирование данных
-              href: best-practices/data-partitioning.md
-            - name: Мониторинг и диагностика.
-              href: best-practices/monitoring.md
-            - name: Соглашения об именовании.
-              href: best-practices/naming-conventions.md
-            - name: Обработка временных сбоев
-              href: best-practices/transient-faults.md
-            - name: Руководство по использованию механизма повторов для отдельных служб
-              href: best-practices/retry-service-specific.md
-    - name: Руководство по архитектуре данных
+      - name: Обзор
+        href: guide/architecture-styles/index.md
+      - name: n-уровневневое приложение
+        href: guide/architecture-styles/n-tier.md
+      - name: Рабочая роль веб-очереди
+        href: guide/architecture-styles/web-queue-worker.md
+      - name: Микрослужбы
+        href: guide/architecture-styles/microservices.md
+      - name: CQRS
+        href: guide/architecture-styles/cqrs.md
+      - name: Управляемая событиями архитектура
+        href: guide/architecture-styles/event-driven.md
+      - name: Данные большого размера
+        href: guide/architecture-styles/big-data.md
+      - name: Большие вычисления
+        href: guide/architecture-styles/big-compute.md
+    - name: Выбор службы вычислений
       items:
-        - name: Введение
-          href: data-guide/index.md
-        - name: Рабочие нагрузки традиционных реляционных СУБД
-          items:
-            - name: Обзор
-              href: data-guide/relational-data/index.md
-            - name: Оперативная обработка транзакций (OLTP)
-              href: data-guide/relational-data/online-transaction-processing.md
-            - name: Хранение данных
-              href: data-guide/relational-data/data-warehousing.md
-            - name: Оперативная аналитическая обработка (OLAP)
-              href: data-guide/relational-data/online-analytical-processing.md
-            - name: 'Извлечение, преобразование и загрузка (ETL)'
-              href: data-guide/relational-data/etl.md
-        - name: Варианты архитектуры для обработки больших данных
-          items:
-            - name: Обзор
-              href: data-guide/big-data/index.md
-            - name: Пакетная обработка
-              href: data-guide/big-data/batch-processing.md
-            - name: Обработка в режиме реального времени
-              href: data-guide/big-data/real-time-processing.md
-            - name: Машинное обучение с поддержкой масштабирования
-              href: data-guide/big-data/machine-learning-at-scale.md
-            - name: Нереляционные хранилища данных
-              href: data-guide/big-data/non-relational-data.md
-            - name: Сценарии
-              items:
-                - name: Расширенная аналитика
-                  href: data-guide/scenarios/advanced-analytics.md
-                - name: Data Lake
-                  href: data-guide/scenarios/data-lake.md
-                - name: Текстовый поиск со свободной формой записи
-                  href: data-guide/scenarios/search.md
-                - name: Интерактивное исследование данных
-                  href: data-guide/scenarios/interactive-data-exploration.md
-                - name: Обработка естественного языка
-                  href: data-guide/scenarios/natural-language-processing.md
-                - name: Решения для временных рядов
-                  href: data-guide/scenarios/time-series.md
-                - name: Работа с CSV- и JSON-файлами
-                  href: data-guide/scenarios/csv-and-json.md
-            - name: Выбор технологий
-              items:
-                - name: Хранилища аналитических данных
-                  href: data-guide/technology-choices/analytical-data-stores.md
-                - name: Аналитика и отчетность
-                  href: data-guide/technology-choices/analysis-visualizations-reporting.md
-                - name: Пакетная обработка
-                  href: data-guide/technology-choices/batch-processing.md
-                - name: Cognitive Services
-                  href: data-guide/technology-choices/cognitive-services.md
-                - name: Хранилище данных
-                  href: data-guide/technology-choices/data-storage.md
-                - name: Машинное обучение
-                  href: data-guide/technology-choices/data-science-and-machine-learning.md
-                - name: Обработка естественного языка
-                  href: data-guide/technology-choices/natural-language-processing.md
-                - name: Оркестрация конвейеров
-                  href: data-guide/technology-choices/pipeline-orchestration-data-movement.md
-                - name: Прием сообщений в реальном времени
-                  href: data-guide/technology-choices/real-time-ingestion.md
-                - name: Поиск в хранилищах данных
-                  href: data-guide/technology-choices/search-options.md
-                - name: Потоковая обработка
-                  href: data-guide/technology-choices/stream-processing.md
-        - name: Сквозные функции
-          items:
-            - name: Передача данных
-              href: data-guide/scenarios/data-transfer.md
-            - name: Расширение локальных решений для работы с данными в облако
-              href: data-guide/scenarios/hybrid-on-premises-and-cloud.md
-            - name: Защита решений для работы с данными
-              href: data-guide/scenarios/securing-data-solutions.md
-    - name: Конструктивные шаблоны облачных решений
+      - name: Обзор
+        href: guide/technology-choices/compute-overview.md
+      - name: Дерево принятия решений
+        href: guide/technology-choices/compute-decision-tree.md
+      - name: Сравнение вычислений
+        href: guide/technology-choices/compute-comparison.md
+    - name: Выбор хранилища данных
       items:
-        - name: Обзор
-          href: patterns/index.md
-        - name: Категории
-          items:
-            - name: Доступность
-              href: patterns/category/availability.md
-            - name: Управление данными
-              href: patterns/category/data-management.md
-            - name: Проектирование и реализация
-              href: patterns/category/design-implementation.md
-            - name: Обмен сообщениями
-              href: patterns/category/messaging.md
-            - name: Управление и мониторинг
-              href: patterns/category/management-monitoring.md
-            - name: Производительность и масштабирование
-              href: patterns/category/performance-scalability.md
-            - name: Устойчивость
-              href: patterns/category/resiliency.md
-            - name: Безопасность
-              href: patterns/category/security.md
-        - name: Посредник
-          href: patterns/ambassador.md
-        - name: Уровень защиты от повреждений
-          href: patterns/anti-corruption-layer.md
-        - name: Внутренние службы для внешних систем
-          href: patterns/backends-for-frontends.md
-        - name: Распределительный блок
-          href: patterns/bulkhead.md
-        - name: Кэш на стороне
-          href: patterns/cache-aside.md
-        - name: Прерыватель
-          href: patterns/circuit-breaker.md
-        - name: Разделение ответственности команды и запроса (CQRS)
-          href: patterns/cqrs.md
-        - name: Компенсирующие транзакции
-          href: patterns/compensating-transaction.md
-        - name: Конкурирующие потребители
-          href: patterns/competing-consumers.md
-        - name: Консолидация вычислительных ресурсов
-          href: patterns/compute-resource-consolidation.md
-        - name: Источник событий
-          href: patterns/event-sourcing.md
-        - name: Внешнее хранилище конфигурации
-          href: patterns/external-configuration-store.md
-        - name: Федеративная идентификация
-          href: patterns/federated-identity.md
-        - name: Привратник
-          href: patterns/gatekeeper.md
-        - name: Агрегация шлюза
-          href: patterns/gateway-aggregation.md
-        - name: Разгрузка шлюза
-          href: patterns/gateway-offloading.md
-        - name: Маршрутизация шлюза
-          href: patterns/gateway-routing.md
-        - name: Мониторинг конечных точек работоспособности
-          href: patterns/health-endpoint-monitoring.md
-        - name: Таблица индексов
-          href: patterns/index-table.md
-        - name: Выбор лидера
-          href: patterns/leader-election.md
-        - name: Материализованное представление
-          href: patterns/materialized-view.md
-        - name: Каналы и фильтры
-          href: patterns/pipes-and-filters.md
-        - name: Очередь с приоритетом
-          href: patterns/priority-queue.md
-        - name: Выравнивание нагрузки на основе очередей
-          href: patterns/queue-based-load-leveling.md
-        - name: Повторить попытку
-          href: patterns/retry.md
-        - name: '"Планировщик, агент, контролер"'
-          href: patterns/scheduler-agent-supervisor.md
-        - name: Сегментирование
-          href: patterns/sharding.md
-        - name: Изоляция
-          href: patterns/sidecar.md
-        - name: Размещение статического содержимого
-          href: patterns/static-content-hosting.md
-        - name: Подавливание
-          href: patterns/strangler.md
-        - name: Регулирование
-          href: patterns/throttling.md
-        - name: Ключ камердинера
-          href: patterns/valet-key.md
-    - name: Антишаблоны производительности
+      - name: Обзор
+        href: guide/technology-choices/data-store-overview.md
+      - name: Сравнение хранилищ данных
+        href: guide/technology-choices/data-store-comparison.md
+    - name: Принципы проектирования
       items:
-        - name: Обзор
-          href: antipatterns/index.md
-        - name: Занятость базы данных
-          href: antipatterns/busy-database/index.md
-        - name: Занятость внешнего интерфейса
-          href: antipatterns/busy-front-end/index.md
-        - name: Отправка множественных операций ввода-вывода
-          href: antipatterns/chatty-io/index.md
-        - name: Лишняя выборка
-          href: antipatterns/extraneous-fetching/index.md
-        - name: Неправильное создание экземпляров
-          href: antipatterns/improper-instantiation/index.md
-        - name: Монолитная сохраняемость
-          href: antipatterns/monolithic-persistence/index.md
-        - name: Без кэширования
-          href: antipatterns/no-caching/index.md
-        - name: Синхронный ввод-вывод
-          href: antipatterns/synchronous-io/index.md
-    - name: Создание микрослужб в Azure
+      - name: Обзор
+        href: guide/design-principles/index.md
+      - name: Разработка для автоматического восстановления
+        href: guide/design-principles/self-healing.md
+      - name: Обеспечение избыточности всех компонентов
+        href: guide/design-principles/redundancy.md
+      - name: Минимизация координации
+        href: guide/design-principles/minimize-coordination.md
+      - name: Разработка для обеспечения горизонтального масштабирования
+        href: guide/design-principles/scale-out.md
+      - name: Секционирование для обхода ограничений
+        href: guide/design-principles/partition.md
+      - name: Внедрение необходимых средств для работы
+        href: guide/design-principles/design-for-operations.md
+      - name: Использование управляемых служб
+        href: guide/design-principles/managed-services.md
+      - name: Использование подходящего хранилища данных для задания
+        href: guide/design-principles/use-the-best-data-store.md
+      - name: Разработка с учетом будущих изменений
+        href: guide/design-principles/design-for-evolution.md
+      - name: Разработка с учетом бизнес-потребностей
+        href: guide/design-principles/build-for-business.md
+    - name: Основные аспекты качества программного обеспечения
+      href: guide/pillars.md
+    - name: Рекомендации по облачной архитектуре
       items:
-        - name: Введение
-          href: microservices/index.md
-        - name: Анализ домена
-          href: microservices/domain-analysis.md
-        - name: Определение границ микрослужбы
-          href: microservices/microservice-boundaries.md
-        - name: Рекомендации по работе с данными
-          href: microservices/data-considerations.md
-        - name: Обмен данными между службами
-          href: microservices/interservice-communication.md
-        - name: Проектирование API
-          href: microservices/api-design.md
-        - name: Прием данных и рабочий процесс
-          href: microservices/ingestion-workflow.md
-        - name: Шлюзы API
-          href: microservices/gateway.md
-        - name: Ведение журналов и мониторинг
-          href: microservices/logging-monitoring.md
-        - name: CI/CD
-          href: microservices/ci-cd.md
-    - name: Управление удостоверениями в мультитенантных приложениях
+      - name: Проектирование API
+        href: best-practices/api-design.md
+      - name: Реализация API
+        href: best-practices/api-implementation.md
+      - name: Автомасштабирование
+        href: best-practices/auto-scaling.md
+      - name: Фоновые задания
+        href: best-practices/background-jobs.md
+      - name: Caching
+        href: best-practices/caching.md
+      - name: Сеть доставки содержимого
+        href: best-practices/cdn.md
+      - name: Секционирование данных
+        href: best-practices/data-partitioning.md
+      - name: Мониторинг и диагностика.
+        href: best-practices/monitoring.md
+      - name: Соглашения об именовании.
+        href: best-practices/naming-conventions.md
+      - name: Обработка временных сбоев
+        href: best-practices/transient-faults.md
+      - name: Руководство по использованию механизма повторов для отдельных служб
+        href: best-practices/retry-service-specific.md
+  - name: Руководство по архитектуре данных
+    items:
+    - name: Введение
+      href: data-guide/index.md
+    - name: Рабочие нагрузки традиционных реляционных СУБД
       items:
-        - name: Введение
-          href: multitenant-identity/index.md
-        - name: Сценарий Tailspin
-          href: multitenant-identity/tailspin.md
-        - name: Authentication
-          href: multitenant-identity/authenticate.md
-        - name: 'Удостоверения, основанные на утверждениях'
-          href: multitenant-identity/claims.md
-        - name: Регистрация клиента
-          href: multitenant-identity/signup.md
-        - name: Роли приложений
-          href: multitenant-identity/app-roles.md
-        - name: Авторизация
-          href: multitenant-identity/authorize.md
-        - name: Обеспечение безопасности веб-API
-          href: multitenant-identity/web-api.md
-        - name: Кэширование маркеров доступа
-          href: multitenant-identity/token-cache.md
-        - name: Утверждение клиента
-          href: multitenant-identity/client-assertion.md
-        - name: Защита секретов приложения
-          href: multitenant-identity/key-vault.md
-        - name: Федерация с клиентской службой AD FS
-          href: multitenant-identity/adfs.md
-        - name: Запуск приложения Surveys
-          href: multitenant-identity/run-the-app.md
-    - name: Миграция из облачных служб в Service Fabric
+      - name: Обзор
+        href: data-guide/relational-data/index.md
+      - name: Оперативная обработка транзакций (OLTP)
+        href: data-guide/relational-data/online-transaction-processing.md
+      - name: Хранение данных
+        href: data-guide/relational-data/data-warehousing.md
+      - name: Оперативная аналитическая обработка (OLAP)
+        href: data-guide/relational-data/online-analytical-processing.md
+      - name: Извлечение, преобразование и загрузка (ETL)
+        href: data-guide/relational-data/etl.md
+    - name: Варианты архитектуры для обработки больших данных
       items:
-        - name: Перенос приложения облачных служб в Service Fabric
-          href: service-fabric/migrate-from-cloud-services.md
-        - name: Рефакторинг приложения Service Fabric
-          href: service-fabric/refactor-migrated-app.md
+      - name: Обзор
+        href: data-guide/big-data/index.md
+      - name: Пакетная обработка
+        href: data-guide/big-data/batch-processing.md
+      - name: Обработка в режиме реального времени
+        href: data-guide/big-data/real-time-processing.md
+      - name: Машинное обучение с поддержкой масштабирования
+        href: data-guide/big-data/machine-learning-at-scale.md
+      - name: Нереляционные хранилища данных
+        href: data-guide/big-data/non-relational-data.md
+      - name: Сценарии
+        items:
+        - name: Расширенная аналитика
+          href: data-guide/scenarios/advanced-analytics.md
+        - name: Data Lake
+          href: data-guide/scenarios/data-lake.md
+        - name: Текстовый поиск со свободной формой записи
+          href: data-guide/scenarios/search.md
+        - name: Интерактивное исследование данных
+          href: data-guide/scenarios/interactive-data-exploration.md
+        - name: Обработка естественного языка
+          href: data-guide/scenarios/natural-language-processing.md
+        - name: Решения для временных рядов
+          href: data-guide/scenarios/time-series.md
+        - name: Работа с CSV- и JSON-файлами
+          href: data-guide/scenarios/csv-and-json.md
+      - name: Выбор технологий
+        items:
+        - name: Хранилища аналитических данных
+          href: data-guide/technology-choices/analytical-data-stores.md
+        - name: Аналитика и отчетность
+          href: data-guide/technology-choices/analysis-visualizations-reporting.md
+        - name: Пакетная обработка
+          href: data-guide/technology-choices/batch-processing.md
+        - name: Cognitive Services
+          href: data-guide/technology-choices/cognitive-services.md
+        - name: Хранилище данных
+          href: data-guide/technology-choices/data-storage.md
+        - name: Машинное обучение
+          href: data-guide/technology-choices/data-science-and-machine-learning.md
+        - name: Обработка естественного языка
+          href: data-guide/technology-choices/natural-language-processing.md
+        - name: Оркестрация конвейеров
+          href: data-guide/technology-choices/pipeline-orchestration-data-movement.md
+        - name: Прием сообщений в реальном времени
+          href: data-guide/technology-choices/real-time-ingestion.md
+        - name: Поиск в хранилищах данных
+          href: data-guide/technology-choices/search-options.md
+        - name: Потоковая обработка
+          href: data-guide/technology-choices/stream-processing.md
+    - name: Сквозные функции
+      items:
+      - name: Передача данных
+        href: data-guide/scenarios/data-transfer.md
+      - name: Расширение локальных решений для работы с данными в облако
+        href: data-guide/scenarios/hybrid-on-premises-and-cloud.md
+      - name: Защита решений для работы с данными
+        href: data-guide/scenarios/securing-data-solutions.md
+  - name: Конструктивные шаблоны облачных решений
+    items:
+    - name: Обзор
+      href: patterns/index.md
+    - name: Категории
+      items:
+      - name: Доступность
+        href: patterns/category/availability.md
+      - name: Управление данными
+        href: patterns/category/data-management.md
+      - name: Проектирование и реализация
+        href: patterns/category/design-implementation.md
+      - name: Обмен сообщениями
+        href: patterns/category/messaging.md
+      - name: Управление и мониторинг
+        href: patterns/category/management-monitoring.md
+      - name: Производительность и масштабирование
+        href: patterns/category/performance-scalability.md
+      - name: Устойчивость
+        href: patterns/category/resiliency.md
+      - name: Безопасность
+        href: patterns/category/security.md
+    - name: Посредник
+      href: patterns/ambassador.md
+    - name: Уровень защиты от повреждений
+      href: patterns/anti-corruption-layer.md
+    - name: Внутренние службы для внешних систем
+      href: patterns/backends-for-frontends.md
+    - name: Распределительный блок
+      href: patterns/bulkhead.md
+    - name: Кэш на стороне
+      href: patterns/cache-aside.md
+    - name: Прерыватель
+      href: patterns/circuit-breaker.md
+    - name: Разделение ответственности команды и запроса (CQRS)
+      href: patterns/cqrs.md
+    - name: Компенсирующие транзакции
+      href: patterns/compensating-transaction.md
+    - name: Конкурирующие потребители
+      href: patterns/competing-consumers.md
+    - name: Консолидация вычислительных ресурсов
+      href: patterns/compute-resource-consolidation.md
+    - name: Источник событий
+      href: patterns/event-sourcing.md
+    - name: Внешнее хранилище конфигурации
+      href: patterns/external-configuration-store.md
+    - name: Федеративная идентификация
+      href: patterns/federated-identity.md
+    - name: Привратник
+      href: patterns/gatekeeper.md
+    - name: Агрегация шлюза
+      href: patterns/gateway-aggregation.md
+    - name: Разгрузка шлюза
+      href: patterns/gateway-offloading.md
+    - name: Маршрутизация шлюза
+      href: patterns/gateway-routing.md
+    - name: Мониторинг конечных точек работоспособности
+      href: patterns/health-endpoint-monitoring.md
+    - name: Таблица индексов
+      href: patterns/index-table.md
+    - name: Выбор лидера
+      href: patterns/leader-election.md
+    - name: Материализованное представление
+      href: patterns/materialized-view.md
+    - name: Каналы и фильтры
+      href: patterns/pipes-and-filters.md
+    - name: Очередь с приоритетом
+      href: patterns/priority-queue.md
+    - name: Выравнивание нагрузки на основе очередей
+      href: patterns/queue-based-load-leveling.md
+    - name: Повторить попытку
+      href: patterns/retry.md
+    - name: "\"Планировщик, агент, контролер\""
+      href: patterns/scheduler-agent-supervisor.md
+    - name: Сегментирование
+      href: patterns/sharding.md
+    - name: Изоляция
+      href: patterns/sidecar.md
+    - name: Размещение статического содержимого
+      href: patterns/static-content-hosting.md
+    - name: Подавливание
+      href: patterns/strangler.md
+    - name: Регулирование
+      href: patterns/throttling.md
+    - name: Ключ камердинера
+      href: patterns/valet-key.md
+  - name: Антишаблоны производительности
+    items:
+    - name: Обзор
+      href: antipatterns/index.md
+    - name: Занятость базы данных
+      href: antipatterns/busy-database/index.md
+    - name: Занятость внешнего интерфейса
+      href: antipatterns/busy-front-end/index.md
+    - name: Отправка множественных операций ввода-вывода
+      href: antipatterns/chatty-io/index.md
+    - name: Лишняя выборка
+      href: antipatterns/extraneous-fetching/index.md
+    - name: Неправильное создание экземпляров
+      href: antipatterns/improper-instantiation/index.md
+    - name: Монолитная сохраняемость
+      href: antipatterns/monolithic-persistence/index.md
+    - name: Без кэширования
+      href: antipatterns/no-caching/index.md
+    - name: Синхронный ввод-вывод
+      href: antipatterns/synchronous-io/index.md
+  - name: Создание микрослужб в Azure
+    items:
+    - name: Введение
+      href: microservices/index.md
+    - name: Анализ домена
+      href: microservices/domain-analysis.md
+    - name: Определение границ микрослужбы
+      href: microservices/microservice-boundaries.md
+    - name: Рекомендации по работе с данными
+      href: microservices/data-considerations.md
+    - name: Обмен данными между службами
+      href: microservices/interservice-communication.md
+    - name: Проектирование API
+      href: microservices/api-design.md
+    - name: Прием данных и рабочий процесс
+      href: microservices/ingestion-workflow.md
+    - name: Шлюзы API
+      href: microservices/gateway.md
+    - name: Ведение журналов и мониторинг
+      href: microservices/logging-monitoring.md
+    - name: CI/CD
+      href: microservices/ci-cd.md
+  - name: Управление удостоверениями в мультитенантных приложениях
+    items:
+    - name: Введение
+      href: multitenant-identity/index.md
+    - name: Сценарий Tailspin
+      href: multitenant-identity/tailspin.md
+    - name: Authentication
+      href: multitenant-identity/authenticate.md
+    - name: Удостоверения, основанные на утверждениях
+      href: multitenant-identity/claims.md
+    - name: Регистрация клиента
+      href: multitenant-identity/signup.md
+    - name: Роли приложений
+      href: multitenant-identity/app-roles.md
+    - name: Авторизация
+      href: multitenant-identity/authorize.md
+    - name: Обеспечение безопасности веб-API
+      href: multitenant-identity/web-api.md
+    - name: Кэширование маркеров доступа
+      href: multitenant-identity/token-cache.md
+    - name: Утверждение клиента
+      href: multitenant-identity/client-assertion.md
+    - name: Защита секретов приложения
+      href: multitenant-identity/key-vault.md
+    - name: Федерация с клиентской службой AD FS
+      href: multitenant-identity/adfs.md
+    - name: Запуск приложения Surveys
+      href: multitenant-identity/run-the-app.md
+  - name: Миграция из облачных служб в Service Fabric
+    items:
+    - name: Перенос приложения облачных служб в Service Fabric
+      href: service-fabric/migrate-from-cloud-services.md
+    - name: Рефакторинг приложения Service Fabric
+      href: service-fabric/refactor-migrated-app.md
 - name: Примеры сценариев
   items:
-    - name: Обзор
-      href: example-scenario/index.md
-    - name: AI
-      items:
-        - name: Классификация изображений
-          href: example-scenario/ai/intelligent-apps-image-processing.md
-    - name: Приложения
-      items:
-        - name: Чат-бот службы бронирования номеров
-          href: example-scenario/apps/commerce-chatbot.md
-        - name: DevOps с Контейнерами
-          href: example-scenario/apps/devops-with-aks.md
-        - name: DevOps с VSTS
-          href: example-scenario/apps/devops-dotnet-webapp.md
-        - name: SAP для разработки и тестирования
-          href: example-scenario/apps/sap-dev-test.md
-        - name: Внешний интерфейс для электронной коммерции
-          href: example-scenario/apps/ecommerce-scenario.md
-    - name: Данные и аналитика
-      items:
-        - name: Выявление мошенничества в реальном времени
-          href: example-scenario/data/fraud-detection.md
-        - name: Масштабируемая обработка заказов
-          href: example-scenario/data/ecommerce-order-processing.md
-    - name: Инфраструктура
-      items:
-        - name: Многоуровневое приложение Windows
-          href: example-scenario/infrastructure/regulated-multitier-app.md
-        - name: Рендеринг видео с помощью высокопроизводительных вычислений
-          href: example-scenario/infrastructure/video-rendering.md
+  - name: Обзор
+    href: example-scenario/index.md
+  - name: AI
+    items:
+    - name: Классификация изображений
+      href: example-scenario/ai/intelligent-apps-image-processing.md
+  - name: Приложения
+    items:
+    - name: Чат-бот службы бронирования номеров
+      href: example-scenario/apps/commerce-chatbot.md
+    - name: DevOps с Контейнерами
+      href: example-scenario/apps/devops-with-aks.md
+    - name: DevOps с VSTS
+      href: example-scenario/apps/devops-dotnet-webapp.md
+    - name: SAP для разработки и тестирования
+      href: example-scenario/apps/sap-dev-test.md
+    - name: Внешний интерфейс для электронной коммерции
+      href: example-scenario/apps/ecommerce-scenario.md
+  - name: Данные и аналитика
+    items:
+    - name: Выявление мошенничества в реальном времени
+      href: example-scenario/data/fraud-detection.md
+    - name: Масштабируемая обработка заказов
+      href: example-scenario/data/ecommerce-order-processing.md
+  - name: Инфраструктура
+    items:
+    - name: Многоуровневое приложение Windows
+      href: example-scenario/infrastructure/regulated-multitier-app.md
+    - name: Рендеринг видео с помощью высокопроизводительных вычислений
+      href: example-scenario/infrastructure/video-rendering.md
 - name: Эталонные образцы архитектуры
   items:
+  - name: Обзор
+    href: reference-architectures/index.md
+  - name: Веб-приложение службы приложений
+    items:
+    - name: Базовое веб-приложение
+      href: reference-architectures/app-service-web-app/basic-web-app.md
+    - name: Улучшенная масштабируемость
+      href: reference-architectures/app-service-web-app/scalable-web-app.md
+    - name: Развертывание в нескольких регионах
+      href: reference-architectures/app-service-web-app/multi-region.md
+  - name: Данные большого размера
+    items:
+    - name: Корпоративная бизнес-аналитика с использованием хранилища данных SQL
+      href: reference-architectures/data/enterprise-bi-sqldw.md
+    - name: Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных
+      href: reference-architectures/data/enterprise-bi-adf.md
+    - name: Обработка потоков данных с помощью Azure Stream Analytics
+      href: reference-architectures/data/stream-processing-stream-analytics.md
+  - name: Гибридные сети
+    items:
     - name: Обзор
-      href: reference-architectures/index.md
-    - name: Веб-приложение службы приложений
-      items:
-        - name: Базовое веб-приложение
-          href: reference-architectures/app-service-web-app/basic-web-app.md
-        - name: Улучшенная масштабируемость
-          href: reference-architectures/app-service-web-app/scalable-web-app.md
-        - name: Развертывание в нескольких регионах
-          href: reference-architectures/app-service-web-app/multi-region.md
-    - name: Данные большого размера
-      items:
-        - name: Корпоративная бизнес-аналитика с использованием хранилища данных SQL
-          href: reference-architectures/data/enterprise-bi-sqldw.md
-        - name: Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных
-          href: reference-architectures/data/enterprise-bi-adf.md
-    - name: Гибридные сети
-      items:
-        - name: Обзор
-          href: reference-architectures/hybrid-networking/index.md
-        - name: Виртуальная частная сеть
-          href: reference-architectures/hybrid-networking/vpn.md
-        - name: ExpressRoute
-          href: reference-architectures/hybrid-networking/expressroute.md
-        - name: ExpressRoute с отработкой отказа на VPN
-          href: reference-architectures/hybrid-networking/expressroute-vpn-failover.md
-        - name: Звездообразная топология
-          href: reference-architectures/hybrid-networking/hub-spoke.md
-        - name: Звездообразная топология с общими службами
-          href: reference-architectures/hybrid-networking/shared-services.md
-    - name: Управление удостоверениями
-      items:
-        - name: Обзор
-          href: reference-architectures/identity/index.md
-        - name: Интеграция локальных AD с Azure AD
-          href: reference-architectures/identity/azure-ad.md
-        - name: Расширение AD DS в Azure
-          href: reference-architectures/identity/adds-extend-domain.md
-        - name: Создание леса AD DS в Azure
-          href: reference-architectures/identity/adds-forest.md
-        - name: Расширение AD FS в Azure
-          href: reference-architectures/identity/adfs.md
-    - name: n-уровневневое приложение
-      items:
-        - name: N-уровневое приложение с SQL Server
-          href: reference-architectures/n-tier/n-tier-sql-server.md
-        - name: N-уровневое приложение с поддержкой нескольких регионов
-          href: reference-architectures/n-tier/multi-region-sql-server.md
-        - name: N-уровневое приложение с Cassandra
-          href: reference-architectures/n-tier/n-tier-cassandra.md
-        - name: Развертывание виртуальной машины Linux
-          href: reference-architectures/n-tier/linux-vm.md
-        - name: Развертывание виртуальной машины Windows
-          href: reference-architectures/n-tier/windows-vm.md
-    - name: Сеть периметра
-      items:
-        - name: Сеть периметра между Azure и локальной средой
-          href: reference-architectures/dmz/secure-vnet-hybrid.md
-        - name: Сеть периметра между Azure и Интернетом
-          href: reference-architectures/dmz/secure-vnet-dmz.md
-        - name: Сетевые виртуальные модули высокой доступности
-          href: reference-architectures/dmz/nva-ha.md
-    - name: SAP
-      items:
-        - name: SAP NetWeaver для баз данных сторонних поставщиков (AnyDB)
-          href: reference-architectures/sap/sap-netweaver.md
-        - name: SAP S/4 HANA
-          href: reference-architectures/sap/sap-s4hana.md
-        - name: SAP HANA на крупных экземплярах Azure
-          href: reference-architectures/sap/hana-large-instances.md
-    - name: Сервер Jenkins
-      href: reference-architectures/jenkins/index.md
-    - name: SharePoint Server 2016
-      href: reference-architectures/sharepoint/index.md
+      href: reference-architectures/hybrid-networking/index.md
+    - name: Виртуальная частная сеть
+      href: reference-architectures/hybrid-networking/vpn.md
+    - name: ExpressRoute
+      href: reference-architectures/hybrid-networking/expressroute.md
+    - name: ExpressRoute с отработкой отказа на VPN
+      href: reference-architectures/hybrid-networking/expressroute-vpn-failover.md
+    - name: Звездообразная топология
+      href: reference-architectures/hybrid-networking/hub-spoke.md
+    - name: Звездообразная топология с общими службами
+      href: reference-architectures/hybrid-networking/shared-services.md
+  - name: Управление удостоверениями
+    items:
+    - name: Обзор
+      href: reference-architectures/identity/index.md
+    - name: Интеграция локальных AD с Azure AD
+      href: reference-architectures/identity/azure-ad.md
+    - name: Расширение AD DS в Azure
+      href: reference-architectures/identity/adds-extend-domain.md
+    - name: Создание леса AD DS в Azure
+      href: reference-architectures/identity/adds-forest.md
+    - name: Расширение AD FS в Azure
+      href: reference-architectures/identity/adfs.md
+  - name: n-уровневневое приложение
+    items:
+    - name: N-уровневое приложение с SQL Server
+      href: reference-architectures/n-tier/n-tier-sql-server.md
+    - name: N-уровневое приложение с поддержкой нескольких регионов
+      href: reference-architectures/n-tier/multi-region-sql-server.md
+    - name: N-уровневое приложение с Cassandra
+      href: reference-architectures/n-tier/n-tier-cassandra.md
+    - name: Развертывание виртуальной машины Linux
+      href: reference-architectures/n-tier/linux-vm.md
+    - name: Развертывание виртуальной машины Windows
+      href: reference-architectures/n-tier/windows-vm.md
+  - name: Сеть периметра
+    items:
+    - name: Сеть периметра между Azure и локальной средой
+      href: reference-architectures/dmz/secure-vnet-hybrid.md
+    - name: Сеть периметра между Azure и Интернетом
+      href: reference-architectures/dmz/secure-vnet-dmz.md
+    - name: Сетевые виртуальные модули высокой доступности
+      href: reference-architectures/dmz/nva-ha.md
+  - name: SAP
+    items:
+    - name: SAP NetWeaver для баз данных сторонних поставщиков (AnyDB)
+      href: reference-architectures/sap/sap-netweaver.md
+    - name: SAP S/4 HANA
+      href: reference-architectures/sap/sap-s4hana.md
+    - name: SAP HANA на крупных экземплярах Azure
+      href: reference-architectures/sap/hana-large-instances.md
+  - name: Сервер Jenkins
+    href: reference-architectures/jenkins/index.md
+  - name: SharePoint Server 2016
+    href: reference-architectures/sharepoint/index.md
 - name: Структура проверки проекта
   items:
-    - name: Проектирование для обеспечения устойчивости
-      href: resiliency/index.md
-    - name: Анализ режима сбоя
-      href: resiliency/failure-mode-analysis.md
-    - name: Контрольный список для обеспечения доступности
-      href: checklist/availability.md
-    - name: Контрольный список DevOps
-      href: checklist/dev-ops.md
-    - name: Контрольный список для обеспечения устойчивости (общий)
-      href: checklist/resiliency.md
-    - name: Контрольный список для обеспечения устойчивости (службы Azure)
-      href: checklist/resiliency-per-service.md
-    - name: Контрольный список для обеспечения масштабируемости
-      href: checklist/scalability.md
-- name: Руководство по внедрению облака
+  - name: Проектирование для обеспечения устойчивости
+    href: resiliency/index.md
+  - name: Анализ режима сбоя
+    href: resiliency/failure-mode-analysis.md
+  - name: Контрольный список для обеспечения доступности
+    href: checklist/availability.md
+  - name: Контрольный список DevOps
+    href: checklist/dev-ops.md
+  - name: Контрольный список для обеспечения устойчивости (общий)
+    href: checklist/resiliency.md
+  - name: Контрольный список для обеспечения устойчивости (службы Azure)
+    href: checklist/resiliency-per-service.md
+  - name: Контрольный список для обеспечения масштабируемости
+    href: checklist/scalability.md
+- name: Внедрение облачных решений в организации
   items:
-    - name: Введение
-      href: cloud-adoption-guide/index.md
-    - name: Базовое внедрение Azure
-      items:
-        - name: Обзор
-          href: cloud-adoption-guide/adoption-intro/overview.md
-        - name: Обзор внутренних компонентов Azure
-          items:
-            - name: Принцип работы Azure
-              href: cloud-adoption-guide/adoption-intro/azure-explainer.md
-            - name: Общее представление о системе управления облачными ресурсами
-              href: cloud-adoption-guide/adoption-intro/governance-explainer.md
-        - name: Обзор системы управления доступом к ресурсам Azure
-          items:
-            - name: Основные сведения об управлении доступом к ресурсам в Azure
-              href: cloud-adoption-guide/adoption-intro/azure-resource-access.md
-            - name: Руководство по проектированию системы управления Azure
-              href: cloud-adoption-guide/adoption-intro/governance-how-to.md
-        - name: Развертывание базовых архитектур в Azure
-          items:
-            - name: Архитектура PaaS (платформа как услуга)
-              items:
-                - name: Развертывание базового веб-приложения в Azure
-                  href: /azure/app-service
-                  maintainContext: true
-                - name: Рекомендации по созданию веб-приложений в Azure
-                  href: /azure/architecture/reference-architectures/app-service-web-app/basic-web-app
-                  maintainContext: true
-            - name: Инфраструктура как услуга (IaaS)
-              items:
-                - name: Общее представление о виртуальной сети Azure
-                  href: /azure/virtual-network/virtual-networks-overview
-                  maintainContext: true
-                - name: Развертывание виртуальной сети в Azure
-                  href: /azure/virtual-network/virtual-networks-create-vnet-arm-pportal
-                  maintainContext: true
-                - name: Развертывание одной рабочей нагрузки IaaS для виртуальной машины Windows в Azure
-                  href: /azure/virtual-machines/windows/quick-create-portal
-                  maintainContext: true
-                - name: Рекомендации по развертыванию виртуальной машины Windows в Azure
-                  href: /azure/architecture/reference-architectures/virtual-machines-windows/single-vm
-                  maintainContext: true
-                - name: Развертывание одной рабочей нагрузки IaaS для виртуальной машины Linux в Azure
-                  href: /azure/virtual-machines/linux/quick-create-portal
-                  maintainContext: true
-                - name: Рекомендации по развертыванию виртуальной машины Linux в Azure
-                  href: /azure/architecture/reference-architectures/virtual-machines-linux/single-vm
-                  maintainContext: true
-    - name: Промежуточное внедрение Azure
-      items:
-        - name: Обзор
-          href: cloud-adoption-guide/intermediate-stage/overview.md
-        - name: Руководство по проектированию системы управления
-          href: cloud-adoption-guide/intermediate-stage/governance-design-guide.md
+  - name: Введение
+    href: cloud-adoption/overview.md
+  - name: Приступая к работе
+    items:
+    - name: Обзор
+      href: cloud-adoption/getting-started/overview.md
+    - name: Принцип работы Azure
+      href: cloud-adoption/getting-started/what-is-azure.md
+    - name: Общее представление о системе управления облачными ресурсами
+      href: cloud-adoption/getting-started/what-is-governance.md
+    - name: Система управления доступом к ресурсам в Azure
+      href: cloud-adoption/getting-started/azure-resource-access.md
+  - name: Система управления
+    items:
+    - name: Обзор
+      href: cloud-adoption/governance/overview.md
+    - name: Разработка системы управления для одной команды
+      href: cloud-adoption/governance/governance-single-team.md
+    - name: Разработка системы управления для нескольких команд
+      href: cloud-adoption/governance/governance-multiple-teams.md
+  - name: Инфраструктура
+    items:
+    - name: Развертывание основной рабочей нагрузки
+      href: cloud-adoption/infrastructure/basic-workload.md
+  - name: Приложение
+    items:
+    - name: Шаблон Azure для предприятий
+      href: cloud-adoption/appendix/azure-scaffold.md
+    - name: Реализация шаблона Azure для предприятий
+      href: cloud-adoption/appendix/azure-scaffold-examples.md
 - name: Виртуальный центр обработки данных Azure
   href: vdc/index.md
 - name: Azure для специалистов AWS
   items:
-    - name: Обзор
-      href: aws-professional/index.md
-    - name: Сравнение служб
-      href: aws-professional/services.md
+  - name: Обзор
+    href: aws-professional/index.md
+  - name: Сравнение служб
+    href: aws-professional/services.md
+ms.openlocfilehash: f82d3e29047cfca1a6a0d3e2e213b074094cc363
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324846"

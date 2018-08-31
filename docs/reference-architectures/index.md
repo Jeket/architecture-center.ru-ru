@@ -3,12 +3,13 @@ title: Эталонная архитектура Azure
 description: Эталонные архитектуры, проекты и рекомендуемые руководства по реализации для общих нагрузок в Azure.
 layout: LandingPage
 ms.topic: landing-page
-ms.openlocfilehash: 374ca51d70e4999fbb1bacf47547040db6f0071f
-ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
+ms.date: 08/30/2018
+ms.openlocfilehash: e9b3a65c48c759f9fc07da9f2c4195fc2db4c782
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38987630"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43325577"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
@@ -52,6 +53,26 @@ ms.locfileid: "38987630"
                     <div class="cardText">
                         <h3>Автоматизированная корпоративная бизнес-аналитика с использованием Фабрики данных Azure</h3>
                         <p>Автоматизация конвейера ELT для выполнения добавочной загрузки из локальной базы данных.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Stream Analytics -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./data/stream-processing-stream-analytics.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./_images/azure-analysis-service.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Обработка потоков данных с помощью Azure Stream Analytics</h3>
+                        <p>Сквозной конвейер обработки потоков данных, который коррелирует записи из двух потоков данных для вычисления скользящего среднего.</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +123,7 @@ ms.locfileid: "38987630"
     </a>
 </li>
 <li style="display: flex; flex-direction: column;">
-    <a href="./app-service-web-app/scalable-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <a href="./app-service-web-app/multi-region.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
             <div class="cardPadding" style="display: flex;">
                 <div class="card">
@@ -188,7 +209,7 @@ ms.locfileid: "38987630"
 </li>
 </ul>
 
-## <a name="virtual-networks"></a>Виртуальные сети
+## <a name="virtual-networks"></a>виртуальные сети;
 
 <ul  class="panelContent cardsF">
 <li style="display: flex; flex-direction: column;">
