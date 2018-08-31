@@ -3,12 +3,12 @@ title: Виртуальный центр обработки данных Azure
 description: Ресурсы для виртуального центра обработки данных Azure
 keywords: Таблицы Azure
 layout: LandingPage
-ms.openlocfilehash: e37ac347247b2960b85832a20a2b57eec18f65a7
-ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
+ms.openlocfilehash: 9b82122358085c37f89fb258034a4c9a91ecb054
+ms.sourcegitcommit: 8ec48a0e2c080c9e2e0abbfdbc463622b28de2f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38987518"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "43324805"
 ---
 # <a name="azure-virtual-datacenter-and-the-enterprise-control-plane"></a>Виртуальный центр обработки данных Azure и плоскость управления предприятием
 
@@ -26,7 +26,7 @@ ms.locfileid: "38987518"
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="/azure/networking/networking-virtual-datacenter"><img src="./images/vdc-network.png" alt="Network Perspective" /></a></td>
     <td>
-        <h3><a href="/azure/networking/networking-virtual-datacenter">Виртуальный центр обработки данных Microsoft Azure с точки зрения сети</a></h3>
+        <h3><a href="networking-virtual-datacenter.md">Виртуальный центр обработки данных Microsoft Azure с точки зрения сети</a></h3>
         <p>Эта онлайн-статья содержит обзор сетевых шаблонов и схем, которые можно использовать для решения проблем безопасности, производительности и масштабирования архитектуры, с которыми сталкиваются многие клиенты, планируя массовое перемещение в облако.</p>
     </td>
 </tr>
