@@ -5,12 +5,12 @@ author: telmosampaio
 ms.date: 04/09/2018
 pnp.series.title: Implement a hub-spoke network topology in Azure
 pnp.series.prev: expressroute
-ms.openlocfilehash: 9105748f434e5d655b09b1fe0775417f33a912b0
-ms.sourcegitcommit: f7fa67e3bdbc57d368edb67bac0e1fdec63695d2
+ms.openlocfilehash: abe9d6a58f3deeab388c20471c5559d63ef2f245
+ms.sourcegitcommit: c4106b58ad08f490e170e461009a4693578294ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843598"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43016069"
 ---
 # <a name="implement-a-hub-spoke-network-topology-in-azure"></a>Реализация звездообразной топологии сети в Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "37843598"
 
 Файлы параметров шаблона ссылаются на эти имена, поэтому, если вы их изменяете, соответствующим образом обновите файлы параметров.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 

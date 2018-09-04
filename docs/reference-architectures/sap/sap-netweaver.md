@@ -3,12 +3,12 @@ title: Развертывание SAP NetWeaver (Windows) для баз стор
 description: Проверенные методики по запуску SAP S/4HANA в высокодоступной среде Linux в Azure.
 author: lbrader
 ms.date: 05/11/2018
-ms.openlocfilehash: 90334e4872bdd15d59aa16286a031d07f3d1bb2f
-ms.sourcegitcommit: 86d86d71e392550fd65c4f76320d7ecf0b72e1f6
+ms.openlocfilehash: f4a33e7a3f30bdd6d8bdd41599a5e3b47501b874
+ms.sourcegitcommit: c4106b58ad08f490e170e461009a4693578294ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37864544"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43016096"
 ---
 # <a name="deploy-sap-netweaver-windows-for-anydb-on-azure-virtual-machines"></a>Развертывание SAP NetWeaver (Windows) для баз сторонних поставщиков на виртуальных машинах Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "37864544"
 - **Jumpbox**. Он также называется узлом-бастионом. Это безопасная виртуальная машина в сети, которую администраторы используют для подключения к другим виртуальным машинам.
 - **Контроллеры домена Windows Server Active Directory**. Контроллеры домена используются для всех виртуальных машин и пользователей в домене.
 
-**Подсистемы балансировки нагрузки.** Для достижения высокого уровня доступности используются как встроенные подсистемы балансировки нагрузки SAP, так и [Azure Load Balancer](/azure/load-balancer/load-balancer-overview). Экземпляры Azure Load Balancer распределяют трафик на виртуальные машины в подсети уровня приложения.
+**Подсистемы балансировки нагрузки.** Экземпляры [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) распределяют трафик на виртуальные машины в подсети уровня приложений. На уровне данных высокий уровень доступности можно реализовать с помощью встроенной подсистемы балансировки нагрузки SAP, Azure Load Balancer или других механизмов в зависимости от СУБД. См. дополнительные сведения о [развертывании СУБД на виртуальных машинах Windows для SAP NetWeaver](/azure/virtual-machines/workloads/sap/dbms-guide). 
 
 **Группы доступности**. Виртуальные машины для веб-диспетчера SAP, сервера приложений SAP и ролей (A)SCS объединяются в отдельные [группы доступности](/azure/virtual-machines/windows/tutorial-availability-sets). На роль выделяется по меньшей мере две виртуальные машины. Таким образом виртуальные машины станут подходящими для [соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/virtual-machines) более высокого уровня.
 
