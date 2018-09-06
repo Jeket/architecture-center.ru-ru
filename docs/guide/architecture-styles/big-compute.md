@@ -2,12 +2,13 @@
 title: Стиль архитектуры для больших вычислений
 description: В этой статье описаны преимущества и сложности архитектуры больших вычислений в Azure, а также содержатся рекомендации по ее разработке
 author: MikeWasson
-ms.openlocfilehash: b16be4133143d7d73062eeb280b44779c390f387
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.date: 08/30/2018
+ms.openlocfilehash: aca2221faf1fbf47de2fd81c8909dfe8aef46bea
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24539790"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43326179"
 ---
 # <a name="big-compute-architecture-style"></a>Стиль архитектуры для больших вычислений
 

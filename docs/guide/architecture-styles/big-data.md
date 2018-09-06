@@ -2,12 +2,13 @@
 title: Стиль архитектуры для обработки больших данных
 description: В этой статье описаны преимущества и недостатки архитектур для обработки больших данных в Azure, а также рекомендации по работе с ними.
 author: MikeWasson
-ms.openlocfilehash: d76192cf2fc680497ece0123ef412971c025f9dc
-ms.sourcegitcommit: 8ec48a0e2c080c9e2e0abbfdbc463622b28de2f2
+ms.date: 08/30/2018
+ms.openlocfilehash: 073a1a88f1aaca7f09bd1f47ba79216b0727ca24
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "43016042"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43325377"
 ---
 # <a name="big-data-architecture-style"></a>Стиль архитектуры для обработки больших данных
 

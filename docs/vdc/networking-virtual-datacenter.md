@@ -7,12 +7,12 @@ tags: azure-resource-manager
 ms.service: virtual-network
 ms.date: 04/3/2018
 ms.author: jonor
-ms.openlocfilehash: 8df02bbb6d926f0ab5402fab4eb2b25fdc2057cd
-ms.sourcegitcommit: 8ec48a0e2c080c9e2e0abbfdbc463622b28de2f2
+ms.openlocfilehash: 34fab47cef6d5a9c0130f0864e9fdef33357ba25
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "40211619"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43325484"
 ---
 # <a name="azure-virtual-datacenter-a-network-perspective"></a>Виртуальный центр обработки данных Azure: обзор с точки зрения его использования в сетевой инфраструктуре
 
@@ -369,7 +369,7 @@ Log Analytics — это служба в Azure, которая помогает 
 [VPN]: /azure/vpn-gateway/vpn-gateway-about-vpngateways 
 [ExR]: /azure/expressroute/expressroute-introduction 
 [NVA]: /azure/architecture/reference-architectures/dmz/nva-ha
-[SubMgmt]: /azure/azure-resource-manager/resource-manager-subscription-governance 
+[SubMgmt]: /azure/azure-resource-manager/resource-manager-azure-scaffold 
 [RGMgmt]: /azure/azure-resource-manager/resource-group-overview
 [DMZ]: /azure/best-practices-network-security
 [ALB]: /azure/load-balancer/load-balancer-overview
