@@ -3,12 +3,12 @@ title: N-уровневое приложение с SQL Server
 description: В этой статье описывается, как реализовать многоуровневую архитектуру в Azure для обеспечения доступности, безопасности, масштабируемости и управляемости.
 author: MikeWasson
 ms.date: 07/19/2018
-ms.openlocfilehash: 42ba18e9ffef32c6990fbb888cc41e980fb4abea
-ms.sourcegitcommit: c704d5d51c8f9bbab26465941ddcf267040a8459
+ms.openlocfilehash: fc761e940a25c4667146db9598d944bac2c32496
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39229139"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43326062"
 ---
 # <a name="n-tier-application-with-sql-server"></a>N-уровневое приложение с SQL Server
 
@@ -181,7 +181,7 @@ Jumpbox имеет минимальные требования к произво
 
 3. Перейдите в папку `virtual-machines\n-tier-windows` в репозитории эталонных архитектур на сайте GitHub.
 
-4. Откройте файл `n-tier-windows.json`. 
+4. Откройте файл `n-tier-windows.json` . 
 
 5. С помощью поиска найдите все вхождения "witnessStorageBlobEndPoint" и замените текст заполнителя именем учетной записи хранения, созданным на шаге 2.
 
@@ -220,7 +220,7 @@ Jumpbox имеет минимальные требования к произво
     "witnessStorageAccountKey": "[replace-with-storagekey]"
     ```
 
-8. В файле `n-tier-windows.json` найдите все вхождения `testPassw0rd!23`, `test$!Passw0rd111` и `AweS0me@SQLServicePW`. Замените их своими собственными паролями и сохраните файл.
+8. В файле `n-tier-windows.json` найдите все экземпляры `[replace-with-password]` и замените их надежным паролем. Сохраните файл.
 
     > [!NOTE]
     > Если вы измените имя администратора, необходимо также обновить блоки `extensions` в файле JSON. 

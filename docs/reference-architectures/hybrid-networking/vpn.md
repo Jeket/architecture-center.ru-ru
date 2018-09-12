@@ -7,12 +7,12 @@ pnp.series.title: Connect an on-premises network to Azure
 pnp.series.next: expressroute
 pnp.series.prev: ./index
 cardTitle: VPN
-ms.openlocfilehash: dafcee6607d9cc7c56c332f9ed5d9568ff70f0e7
-ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
+ms.openlocfilehash: ef89cdd3e2a175f82929b613159a99557560cc7a
+ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30270699"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43325394"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-a-vpn-gateway"></a>Подключение локальной сети к Azure с помощью VPN-шлюза
 
@@ -37,7 +37,7 @@ ms.locfileid: "30270699"
   * **Шлюз виртуальной сети.** Ресурс, предоставляющий виртуальное VPN-устройство для виртуальной сети. Он отвечает за маршрутизацию трафика от локальной сети к виртуальной.
   * **Шлюз локальной сети.** Абстракция локального VPN-устройства. Сетевой трафик из облачного приложения к локальной сети направляется через этот шлюз.
   * **Подключение.** У соединения есть свойства, указывающие тип соединения (IPSec) и общий ключ с VPN-устройством в локальной среде для шифрования трафика.
-  * **Подсеть шлюза.** Шлюз виртуальной сети находится в собственной подсети с различными требованиями, описанными ниже в разделе рекомендаций.
+  * **Подсеть шлюза**. Шлюз виртуальной сети находится в собственной подсети с различными требованиями, описанными ниже в разделе рекомендаций.
 
 * **Облачное приложение.** Приложение, размещенное в Azure. Оно может содержать несколько уровней с несколькими подсетями, подключенными через подсистемы балансировки нагрузки Azure. Дополнительные сведения об инфраструктуре приложений см. в статьях [Запуск рабочих нагрузок на виртуальных машинах Windows][windows-vm-ra] и [Запуск рабочих нагрузок на виртуальной машине Linux][linux-vm-ra].
 
@@ -80,13 +80,7 @@ ms.locfileid: "30270699"
 > 
 > 
 
-Выберите SKU VPN-шлюза Azure, который больше всего соответствует требованиям к пропускной способности. VPN-шлюз Azure доступен в трех SKU, как показано в следующей таблице. 
-
-| SKU | Пропускная способность VPN | Макс. количество IPsec-туннелей |
-| --- | --- | --- |
-| базовая; |100 Мбит/с |10 |
-| Стандартная |100 Мбит/с |10 |
-| высокопроизводительная |200 Мбит/с |30 |
+Выберите SKU VPN-шлюза Azure, который больше всего соответствует требованиям к пропускной способности. См. дополнительные сведения о [номерах SKU шлюзов][azure-gateway-skus]
 
 > [!NOTE]
 > SKU "Базовый" несовместим с Azure ExpressRoute. [SKU можно изменить][changing-SKUs] после создания шлюза.
@@ -467,6 +461,7 @@ ms.locfileid: "30270699"
 [vpn-appliance]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices
 [azure-vpn-gateway]: https://azure.microsoft.com/services/vpn-gateway/
 [azure-gateway-charges]: https://azure.microsoft.com/pricing/details/vpn-gateway/
+[azure-gateway-skus]: /azure/vpn-gateway/vpn-gateway-about-vpngateways#gwsku
 [connect-to-an-Azure-vnet]: https://technet.microsoft.com/library/dn786406.aspx
 [vpn-gateway-multi-site]: /azure/vpn-gateway/vpn-gateway-multi-site
 [policy-based-routing]: https://en.wikipedia.org/wiki/Policy-based_routing
@@ -494,9 +489,4 @@ ms.locfileid: "30270699"
 <!--[solution-script]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/Deploy-ReferenceArchitecture.ps1-->
 <!--[solution-script-bash]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/deploy-reference-architecture.sh-->
 <!--[virtualNetworkGateway-parameters]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/parameters/virtualNetworkGateway.parameters.json-->
-[azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/
-[CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
-[0]: ./images/vpn.png "Гибридная сеть, объединяющая локальную среду и инфраструктуру Azure"
-[2]: ../_images/guidance-hybrid-network-vpn/audit-logs.png "Журналы аудита на портале Azure"
-[3]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-counters.png "Счетчики производительности для мониторинга трафика VPN"
-[4]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-graph.png "Пример графика производительности сети VPN"
+[azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/ [CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing [0]: ./images/vpn.png "Гибридная сеть, объединяющая локальную среду и инфраструктуру Azure" [2]: ../_images/guidance-hybrid-network-vpn/audit-logs.png "Журналы аудита на портале Azure" [3]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-counters.png "Счетчики производительности для мониторинга трафика VPN" [4]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-graph.png "Пример графика производительности сети VPN""

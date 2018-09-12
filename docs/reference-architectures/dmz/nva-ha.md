@@ -6,12 +6,12 @@ ms.date: 12/06/2016
 pnp.series.title: Network DMZ
 pnp.series.prev: secure-vnet-dmz
 cardTitle: Deploy highly available network virtual appliances
-ms.openlocfilehash: fe279eea3f9cb024d6c6c14943013b9b9a87bc9c
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 556ec1e78960d64cce3bf803fc46c9146ce2584d
+ms.sourcegitcommit: f4069cf68456b5c74acb1b890dc4e45e11f12b59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30847753"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43675837"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances"></a>Развертывание высокодоступных виртуальных сетевых модулей
 
@@ -92,6 +92,7 @@ ms.locfileid: "30847753"
 ## <a name="next-steps"></a>Дополнительная информация
 * Узнайте, как [внедрить сеть периметра между Azure и локальным центром данных][dmz-on-prem] с помощью NVA уровня 7.
 * Узнайте, как [внедрить сеть периметра между Azure и Интернетом][dmz-internet] с помощью NVA уровня 7.
+* [Устранение неполадок с сетевым виртуальным модулем в Azure](/azure/virtual-network/virtual-network-troubleshoot-nva)
 
 <!-- links -->
 [cloud-security]: /azure/best-practices-network-security
@@ -110,5 +111,5 @@ ms.locfileid: "30847753"
 [0]: ./images/nva-ha/single-nva.png "Архитектура одного NVA"
 [1]: ./images/nva-ha/l7-ingress.png "Входящий трафик уровня 7"
 [2]: ./images/nva-ha/l7-ingress-egress.png "Исходящий трафик уровня 7"
-[3]: ./images/nva-ha/active-passive.png "Кластер типа активный пассивный"
+[3]: ./images/nva-ha/active-passive.png "Кластер типа "активный — пассивный""
 [4]: ./images/nva-ha/l7-ingress-egress-ag.png

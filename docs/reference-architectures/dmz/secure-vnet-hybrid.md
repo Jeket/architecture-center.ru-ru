@@ -7,12 +7,12 @@ pnp.series.title: Network DMZ
 pnp.series.prev: ./index
 pnp.series.next: secure-vnet-dmz
 cardTitle: DMZ between Azure and on-premises
-ms.openlocfilehash: 45583473ef297b2c7a5b0c4baff52485286dd051
-ms.sourcegitcommit: 9b459f75254d97617e16eddd0d411d1f80b7fe90
+ms.openlocfilehash: e397a8691a1b7b37cc0129d914dc85d92c876139
+ms.sourcegitcommit: f4069cf68456b5c74acb1b890dc4e45e11f12b59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403170"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43675813"
 ---
 # <a name="dmz-between-azure-and-your-on-premises-datacenter"></a>Промежуточная подсеть между Azure и локальным центром обработки данных
 
@@ -163,7 +163,7 @@ UDR в подсети шлюза блокирует все запросы пол
 
 В репозитории [GitHub][github-folder] есть шаблон развертывания эталонной архитектуры, для которого реализованы эти рекомендации. 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
@@ -226,6 +226,7 @@ UDR в подсети шлюза блокирует все запросы пол
 * Дополнительные сведения об управлении безопасностью сети с помощью Azure см. в статье [Облачные службы Microsoft Cloud и сетевая безопасность][cloud-services-network-security].
 * Подробные сведения о защите ресурсов в Azure см. в статье [Приступая к работе с безопасностью Microsoft Azure][getting-started-with-azure-security]. 
 * Дополнительные рекомендации по обеспечению безопасности при подключении шлюзов Azure см. в статьях о реализации архитектуры гибридной сети при помощи [Azure и локальной VPN-сети][guidance-vpn-gateway-security] или [Azure ExpressRoute][guidance-expressroute-security].
+* [Устранение неполадок с сетевым виртуальным модулем в Azure](/azure/virtual-network/virtual-network-troubleshoot-nva)
   > 
 
 <!-- links -->
