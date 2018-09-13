@@ -2,12 +2,13 @@
 title: Внедрение облачных решений в организации. Проектирование системы управления отдельной командой в Azure
 description: Руководство по настройке элементов системы управления, что позволит пользователям развертывать простые рабочие нагрузки.
 author: petertaylor9999
-ms.openlocfilehash: 57ae4a972f79e683ec8266c30a6271df4bde1dd7
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.date: 09/10/2018
+ms.openlocfilehash: 13c7c4b41df14151d28b9c685f01019af3ec63f2
+ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43327506"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44389253"
 ---
 # <a name="enterprise-cloud-adoption-governance-design-for-a-simple-workload"></a>Внедрение облачных решений в организации. Проектирование системы управления отдельной командой в Azure
 
