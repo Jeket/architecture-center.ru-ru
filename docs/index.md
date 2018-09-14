@@ -3,12 +3,12 @@ title: Центр архитектуры Azure
 description: Для создания решений с помощью Microsoft Azure используется центр архитектуры Azure, являющийся официальным центром, в котором содержатся руководства, проекты, шаблоны и рекомендации. Центр архитектуры Azure курирует команда разработчиков шаблонов и рекомендаций Майкрософт.
 layout: LandingPage
 ms.topic: landing-page
-ms.openlocfilehash: 544196faa7156c5636b03d3f402bc48dcc63975f
-ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
+ms.openlocfilehash: ea3784a23c73c7f0eb103a0cb19e2c6b70ea9d7c
+ms.sourcegitcommit: 25bf02e89ab4609ae1b2eb4867767678a9480402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38987596"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45584652"
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -46,16 +46,16 @@ ms.locfileid: "38987596"
             </div>
         </a>
     </li>
-    <!-- Cloud design patterns -->
+    <!-- Cloud Adoption -->
     <li>
-        <a href="/azure/architecture/patterns/">
+        <a href="/azure/architecture/cloud-adoption/">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
-                        <img src="_images/cloud-design-patterns.svg" alt="" />
+                        <img src="_images/cloud-adoption.svg" alt="" />
                         <div class="cardText">
-                            <h3>Конструктивные шаблоны облачных решений</h3>
-                            <p>Конструктивные шаблоны для разработчиков и архитекторов решений. Каждый шаблон описывает проблему, шаблон, который устраняет проблему, а также пример решения на платформе Azure.</p>
+                            <h3>Внедрение облачных решений в организации</h3>
+                            <p>В этом руководстве описан процесс создания стратегии по внедрению облака в организации. Особое внимание уделяется готовности организации, системе управления и инфраструктуре.</p>
                         </div>
                     </div>
                 </div>
@@ -166,6 +166,26 @@ ms.locfileid: "38987596"
             </div>
         </a>
     </li>
+    <!-- design patterns -->
+    <li>
+        <a href="/azure/architecture/microservices">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/cloud-design-patterns.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Конструктивные шаблоны облачных решений</h3>
+                            <p>Конструктивные шаблоны для разработчиков и архитекторов решений. Каждый шаблон описывает проблему, шаблон, который устраняет проблему, а также пример решения на платформе Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
     <!-- Checklists -->
     <li>
         <a href="/azure/architecture/checklist/">
@@ -240,26 +260,6 @@ ms.locfileid: "38987596"
                         <div class="cardText">
                             <h3>Антишаблоны производительности</h3>
                             <p>Как обнаруживать и устранять некоторые общие причины проблем с производительностью и масштабируемостью в облачных приложениях.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <!-- Multitenant identity -->
-    <li>
-        <a href="/azure/architecture/multitenant-identity">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/multitenant-identity.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Управление удостоверениями для мультитенантных приложений</h3>
-                            <p>Рекомендации по мультитенантным приложениям при использовании Azure AD для управления удостоверениями.</p>
                         </div>
                     </div>
                 </div>
