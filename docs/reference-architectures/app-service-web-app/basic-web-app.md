@@ -4,12 +4,12 @@ description: Рекомендуемые архитектуры для базов
 author: MikeWasson
 ms.date: 12/12/2017
 cardTitle: Basic web application
-ms.openlocfilehash: bc8cf9b5c66fc451d097cbc992ecb9a249645dce
-ms.sourcegitcommit: 5d99b195388b7cabba383c49a81390ac48f86e8a
+ms.openlocfilehash: e4992564bc4e8a7b71fc7c5f0bf1662f5e13d5c1
+ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37958846"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44389406"
 ---
 # <a name="basic-web-application"></a>Базовое веб-приложение
 [!INCLUDE [header](../../_includes/header.md)]
@@ -152,7 +152,7 @@ ms.locfileid: "37958846"
 
 Используйте службу [New Relic][new-relic] или [Application Insights][app-insights], чтобы контролировать производительность и поведение загруженных приложений. Не забывайте об [ограничениях на скорость передачи данных][app-insights-data-rate] в Application Insights.
 
-Выполните нагрузочное тестирование с использованием специального средства, например [Visual Studio Team Services][vsts]. Общее описание анализа производительности в облачных приложениях вы найдете в [руководстве по анализу производительности для начинающих][perf-analysis].
+Выполните нагрузочное тестирование с использованием специального средства, например [Azure DevOps][azure-devops] или [Visual Studio Team Foundation Server][tfs]. Общее описание анализа производительности в облачных приложениях вы найдете в [руководстве по анализу производительности для начинающих][perf-analysis].
 
 Советы по устранению неполадок в приложениях.
 
@@ -224,6 +224,7 @@ New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <r
 [app-service-security]: /azure/app-service-web/web-sites-security
 [app-settings]: /azure/app-service-web/web-sites-configure
 [arm-template]: /azure/azure-resource-manager/resource-group-overview#resource-groups
+[azure-devops]: /azure/devops/
 [azure-dns]: /azure/dns/dns-overview
 [custom-domain-name]: /azure/app-service-web/web-sites-custom-domain-name
 [deploy]: /azure/app-service-web/web-sites-deploy
@@ -252,9 +253,9 @@ New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <r
 [sql-resource-limits]: /azure/sql-database/sql-database-resource-limits
 [ssl-cert]: /azure/app-service-web/web-sites-purchase-ssl-web-site
 [troubleshoot-blade]: https://azure.microsoft.com/updates/self-service-troubleshooting-for-app-service-web-apps-customers/
+[tfs]: /tfs/index
 [troubleshoot-web-app]: /azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/app-service-reference-architectures.vsdx
-[vsts]: https://www.visualstudio.com/features/vso-cloud-load-testing-vs.aspx
 [web-app-autoscale]: /azure/app-service-web/web-sites-scale
 [web-app-backup]: /azure/app-service-web/web-sites-backup
 [web-app-log-stream]: /azure/app-service-web/web-sites-enable-diagnostic-log#streamlogs
