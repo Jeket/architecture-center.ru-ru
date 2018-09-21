@@ -4,12 +4,12 @@ description: Соглашения об именовании для ресурс�
 author: telmosampaio
 ms.date: 05/18/2017
 pnp.series.title: Best Practices
-ms.openlocfilehash: 8aa0b46d9f43107cfa4ae4be3160900249365702
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.openlocfilehash: 625f672c80b0256e93932b72367768f37c1e72f4
+ms.sourcegitcommit: f1dcc388c8b4fc983549c36d7e6b009fa1f072ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43326326"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46329884"
 ---
 # <a name="naming-conventions"></a>Соглашения об именовании.
 
@@ -45,7 +45,7 @@ ms.locfileid: "43326326"
 | Contoso |IT |InternalApps |Производство |Contoso IT InternalApps Production |
 | Contoso |IT |InternalApps |Разработка |Contoso IT InternalApps Dev |
 
-См. дополнительные сведения о том, как следует организовать [рекомендуемую систему управление подписками][scaffold] на больших предприятиях.
+См. дополнительные сведения о том, как организовать [рекомендуемую систему управления подписками с помощью шаблона Azure для предприятий][scaffold] в крупных компаниях.
 
 ## <a name="use-affixes-to-avoid-ambiguity"></a>Использование аффиксов для устранения неоднозначности
 
@@ -195,4 +195,4 @@ Azure Resource Manager позволяет определять для сущно
 
 <!-- links -->
 
-[scaffold]: /azure/azure-resource-manager/resource-manager-azure-scaffold
+[scaffold]: /azure/architecture/cloud-adoption/appendix/azure-scaffold

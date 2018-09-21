@@ -3,12 +3,12 @@ title: Запуск виртуальной машины Linux в Azure
 description: Сведения о выполнении одной виртуальной машины Linux в Azure с учетом требований к масштабируемости, устойчивости, управляемости и безопасности.
 author: telmosampaio
 ms.date: 04/03/2018
-ms.openlocfilehash: 3d0492d05280e8c296cdfc4157aa0387a70337bf
-ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
+ms.openlocfilehash: b53db016a594bace880aaac4e16f0586fe3057b1
+ms.sourcegitcommit: 25bf02e89ab4609ae1b2eb4867767678a9480402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37142324"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45584737"
 ---
 # <a name="run-a-linux-vm-on-azure"></a>Запуск виртуальной машины Linux в Azure
 
@@ -133,6 +133,8 @@ sudo mount /dev/sdc1 /data1
 
 **Шифрование данных.** Если нужно шифровать диски ОС и диски данных, рекомендуем применить [шифрование дисков Azure][disk-encryption]. 
 
+**Защита от атак DDoS.** Рекомендуем включить [Защиту от атак DDoS ценовой категории "Стандартный"](/azure/virtual-network/ddos-protection-overview), которая предоставляет дополнительные средства устранения атак DDoS для ресурсов в виртуальной сети. На платформе Azure автоматически включается Защита от атак DDoS ценовой категории "Базовый". Но мы советуем активировать Защиту от атак DDoS ценовой категории "Стандартный", которая обеспечивает возможности по устранению рисков, специально настроенные для ресурсов виртуальной сети Azure.  
+
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
 Развертывание доступно в [репозитории GitHub][github-folder]. Он позволяет развернуть следующее:
@@ -142,7 +144,7 @@ sudo mount /dev/sdc1 /data1
   * Виртуальную машину, на которой выполняется последняя версия Ubuntu 16.04.3 LTS.
   * Пример расширения пользовательских скриптов, которые форматируют два диска данных и развертывают HTTP-сервер Apache в виртуальной машине Ubuntu.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 

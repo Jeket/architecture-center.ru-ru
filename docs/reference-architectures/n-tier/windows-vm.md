@@ -3,12 +3,12 @@ title: Запуск виртуальной машины Windows в Azure
 description: Сведения о выполнении одной виртуальной машины Windows в Azure с учетом требований к масштабируемости, устойчивости, управляемости и безопасности.
 author: telmosampaio
 ms.date: 04/03/2018
-ms.openlocfilehash: d790c9a6693dca751e0ba05f1fd3c23756cf53bb
-ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
+ms.openlocfilehash: a20359f90e7b20486defce3110b2db6f7e0027ba
+ms.sourcegitcommit: 25bf02e89ab4609ae1b2eb4867767678a9480402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37142222"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45584703"
 ---
 # <a name="run-a-windows-vm-on-azure"></a>Запуск виртуальной машины Windows в Azure
 
@@ -116,6 +116,8 @@ az vm list-sizes --location <location>
 
 **Шифрование данных.** Если нужно шифровать диски ОС и диски данных, рекомендуем применить [шифрование дисков Azure][disk-encryption]. 
 
+**Защита от атак DDoS.** Рекомендуем включить [Защиту от атак DDoS ценовой категории "Стандартный"](/azure/virtual-network/ddos-protection-overview), которая предоставляет дополнительные средства устранения атак DDoS для ресурсов в виртуальной сети. На платформе Azure автоматически включается Защита от атак DDoS ценовой категории "Базовый". Но мы советуем активировать Защиту от атак DDoS ценовой категории "Стандартный", которая обеспечивает возможности по устранению рисков, специально настроенные для ресурсов виртуальной сети Azure.  
+
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
 Пример развертывания для этой архитектуры можно найти на портале [GitHub][github-folder]. Он позволяет развернуть следующее:
@@ -125,7 +127,7 @@ az vm list-sizes --location <location>
   * Виртуальную машину, которая содержит последнюю версию Windows Server 2016 Datacenter Edition.
   * Пример расширения пользовательских скриптов, которое форматирует два диска данных, и скрипт PowerShell DSC, который развертывает службы IIS.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 

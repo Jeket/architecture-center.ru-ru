@@ -3,12 +3,12 @@ title: N-уровневое приложение с Apache Cassandra
 description: Как запустить виртуальные машины Linux в n-уровневой архитектуре в Microsoft Azure.
 author: MikeWasson
 ms.date: 05/03/2018
-ms.openlocfilehash: 7ee14088a2fae3cfc5c1119daf717236c75ecc6a
-ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
+ms.openlocfilehash: fa5faeda4ef1dcae46181c0a3be8f4e139dc27d0
+ms.sourcegitcommit: 25bf02e89ab4609ae1b2eb4867767678a9480402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37142239"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45584720"
 ---
 # <a name="n-tier-application-with-apache-cassandra"></a>N-уровневое приложение с Apache Cassandra
 
@@ -138,11 +138,13 @@ Jumpbox имеет минимальные требования к произво
 
 Выполните шифрование конфиденциальных неактивных данных и используйте [Azure Key Vault][azure-key-vault] для управления ключами шифрования базы данных. Key Vault может хранить ключи шифрования в аппаратных модулях безопасности. В Key Vault также рекомендуется хранить секреты приложения, например строки подключения к базе данных.
 
+Рекомендуем включить [Защиту от атак DDoS ценовой категории "Стандартный"](/azure/virtual-network/ddos-protection-overview), которая предоставляет дополнительные средства устранения атак DDoS для ресурсов в виртуальной сети. На платформе Azure автоматически включается Защита от атак DDoS ценовой категории "Базовый". Но мы советуем активировать Защиту от атак DDoS ценовой категории "Стандартный", которая обеспечивает возможности по устранению рисков, специально настроенные для ресурсов виртуальной сети Azure.  
+
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
 Пример развертывания для этой архитектуры можно найти на портале [GitHub][github-folder]. 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
