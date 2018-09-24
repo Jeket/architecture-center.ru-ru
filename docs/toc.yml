@@ -337,24 +337,50 @@ items:
       href: example-scenario/ai/intelligent-apps-image-processing.md
   - name: Приложения
     items:
+    - name: Автоматизированное проектирование SaaS
+      href: example-scenario/apps/hpc-saas.md
+    - name: Децентрализованное доверие между банками
+      href: example-scenario/apps/decentralized-trust.md
+    - name: Мониторинг веб-приложения
+      href: example-scenario/apps/app-monitoring.md
     - name: Чат-бот службы бронирования номеров
       href: example-scenario/apps/commerce-chatbot.md
-    - name: DevOps с Контейнерами
+    - name: DevOps с использованием контейнеров
       href: example-scenario/apps/devops-with-aks.md
-    - name: DevOps с VSTS
+    - name: DevOps с использованием Azure DevOps
       href: example-scenario/apps/devops-dotnet-webapp.md
     - name: SAP для разработки и тестирования
       href: example-scenario/apps/sap-dev-test.md
+    - name: SAP для производственной эксплуатации
+      href: example-scenario/apps/sap-production.md
     - name: Внешний интерфейс для электронной коммерции
       href: example-scenario/apps/ecommerce-scenario.md
+    - name: Управление API для электронной коммерции
+      href: example-scenario/apps/apim-api-scenario.md
+    - name: Поиск продуктов для решений электронной коммерции
+      href: example-scenario/apps/ecommerce-search.md
   - name: Данные и аналитика
     items:
+    - name: Решения Интернета вещей для строительства
+      href: example-scenario/data/big-data-with-iot.md
+    - name: Хранение и анализ данных
+      href: example-scenario/data/data-warehouse.md
+    - name: Использование данных Интернета вещей в автомобильной промышленности
+      href: example-scenario/data/realtime-analytics-vehicle-iot.md
     - name: Выявление мошенничества в реальном времени
       href: example-scenario/data/fraud-detection.md
     - name: Масштабируемая обработка заказов
       href: example-scenario/data/ecommerce-order-processing.md
   - name: Инфраструктура
     items:
+    - name: Вычислительная гидродинамика (CFD)
+      href: example-scenario/infrastructure/hpc-cfd.md
+    - name: Виртуальный рабочий стол Linux
+      href: example-scenario/infrastructure/linux-vdi-citrix.md
+    - name: Декомпозиция развертывания монолитных приложений
+      href: example-scenario/infrastructure/ServiceFabricMicroservices.md
+    - name: Веб-сайт WordPress с высоким уровнем масштабируемости
+      href: example-scenario/infrastructure/wordpress.md
     - name: Многоуровневое приложение Windows
       href: example-scenario/infrastructure/regulated-multitier-app.md
     - name: Рендеринг видео с помощью высокопроизводительных вычислений
@@ -479,6 +505,12 @@ items:
     items:
     - name: Развертывание основной рабочей нагрузки
       href: cloud-adoption/infrastructure/basic-workload.md
+  - name: Операции
+    items:
+    - name: Обзор
+      href: cloud-adoption/operations/overview.md
+    - name: Обеспечение проверки операционной пригодности
+      href: cloud-adoption/operations/operational-fitness-review.md
   - name: Приложение
     items:
     - name: Шаблон Azure для предприятий
@@ -493,9 +525,9 @@ items:
     href: aws-professional/index.md
   - name: Сравнение служб
     href: aws-professional/services.md
-ms.openlocfilehash: f82d3e29047cfca1a6a0d3e2e213b074094cc363
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.openlocfilehash: 804207bfa17a0ef1ef61d5f0729c8e5df6af2089
+ms.sourcegitcommit: b7e521ba317f4fcd3253c80ac0c0a355eaaa56c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43324846"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533955"
