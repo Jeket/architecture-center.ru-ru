@@ -65,30 +65,6 @@ items:
         href: guide/design-principles/build-for-business.md
     - name: Основные аспекты качества программного обеспечения
       href: guide/pillars.md
-    - name: Рекомендации по облачной архитектуре
-      items:
-      - name: Проектирование API
-        href: best-practices/api-design.md
-      - name: Реализация API
-        href: best-practices/api-implementation.md
-      - name: Автомасштабирование
-        href: best-practices/auto-scaling.md
-      - name: Фоновые задания
-        href: best-practices/background-jobs.md
-      - name: Caching
-        href: best-practices/caching.md
-      - name: Сеть доставки содержимого
-        href: best-practices/cdn.md
-      - name: Секционирование данных
-        href: best-practices/data-partitioning.md
-      - name: Мониторинг и диагностика.
-        href: best-practices/monitoring.md
-      - name: Соглашения об именовании.
-        href: best-practices/naming-conventions.md
-      - name: Обработка временных сбоев
-        href: best-practices/transient-faults.md
-      - name: Руководство по использованию механизма повторов для отдельных служб
-        href: best-practices/retry-service-specific.md
   - name: Руководство по архитектуре данных
     items:
     - name: Введение
@@ -251,6 +227,30 @@ items:
       href: patterns/throttling.md
     - name: Ключ камердинера
       href: patterns/valet-key.md
+  - name: Рекомендации по работе с облачными приложениями
+    items:
+    - name: Проектирование API
+      href: best-practices/api-design.md
+    - name: Реализация API
+      href: best-practices/api-implementation.md
+    - name: Автомасштабирование
+      href: best-practices/auto-scaling.md
+    - name: Фоновые задания
+      href: best-practices/background-jobs.md
+    - name: Caching
+      href: best-practices/caching.md
+    - name: Сеть доставки содержимого
+      href: best-practices/cdn.md
+    - name: Секционирование данных
+      href: best-practices/data-partitioning.md
+    - name: Мониторинг и диагностика.
+      href: best-practices/monitoring.md
+    - name: Соглашения об именовании.
+      href: best-practices/naming-conventions.md
+    - name: Обработка временных сбоев
+      href: best-practices/transient-faults.md
+    - name: Руководство по использованию механизма повторов для отдельных служб
+      href: best-practices/retry-service-specific.md
   - name: Антишаблоны производительности
     items:
     - name: Обзор
@@ -271,62 +271,12 @@ items:
       href: antipatterns/no-caching/index.md
     - name: Синхронный ввод-вывод
       href: antipatterns/synchronous-io/index.md
-  - name: Создание микрослужб в Azure
+  - name: Azure для специалистов AWS
     items:
-    - name: Введение
-      href: microservices/index.md
-    - name: Анализ домена
-      href: microservices/domain-analysis.md
-    - name: Определение границ микрослужбы
-      href: microservices/microservice-boundaries.md
-    - name: Рекомендации по работе с данными
-      href: microservices/data-considerations.md
-    - name: Обмен данными между службами
-      href: microservices/interservice-communication.md
-    - name: Проектирование API
-      href: microservices/api-design.md
-    - name: Прием данных и рабочий процесс
-      href: microservices/ingestion-workflow.md
-    - name: Шлюзы API
-      href: microservices/gateway.md
-    - name: Ведение журналов и мониторинг
-      href: microservices/logging-monitoring.md
-    - name: CI/CD
-      href: microservices/ci-cd.md
-  - name: Управление удостоверениями в мультитенантных приложениях
-    items:
-    - name: Введение
-      href: multitenant-identity/index.md
-    - name: Сценарий Tailspin
-      href: multitenant-identity/tailspin.md
-    - name: Authentication
-      href: multitenant-identity/authenticate.md
-    - name: Удостоверения, основанные на утверждениях
-      href: multitenant-identity/claims.md
-    - name: Регистрация клиента
-      href: multitenant-identity/signup.md
-    - name: Роли приложений
-      href: multitenant-identity/app-roles.md
-    - name: Авторизация
-      href: multitenant-identity/authorize.md
-    - name: Обеспечение безопасности веб-API
-      href: multitenant-identity/web-api.md
-    - name: Кэширование маркеров доступа
-      href: multitenant-identity/token-cache.md
-    - name: Утверждение клиента
-      href: multitenant-identity/client-assertion.md
-    - name: Защита секретов приложения
-      href: multitenant-identity/key-vault.md
-    - name: Федерация с клиентской службой AD FS
-      href: multitenant-identity/adfs.md
-    - name: Запуск приложения Surveys
-      href: multitenant-identity/run-the-app.md
-  - name: Миграция из облачных служб в Service Fabric
-    items:
-    - name: Перенос приложения облачных служб в Service Fabric
-      href: service-fabric/migrate-from-cloud-services.md
-    - name: Рефакторинг приложения Service Fabric
-      href: service-fabric/refactor-migrated-app.md
+    - name: Обзор
+      href: aws-professional/index.md
+    - name: Сравнение служб
+      href: aws-professional/services.md
 - name: Примеры сценариев
   items:
   - name: Обзор
@@ -389,14 +339,6 @@ items:
   items:
   - name: Обзор
     href: reference-architectures/index.md
-  - name: Веб-приложение службы приложений
-    items:
-    - name: Базовое веб-приложение
-      href: reference-architectures/app-service-web-app/basic-web-app.md
-    - name: Улучшенная масштабируемость
-      href: reference-architectures/app-service-web-app/scalable-web-app.md
-    - name: Развертывание в нескольких регионах
-      href: reference-architectures/app-service-web-app/multi-region.md
   - name: Данные большого размера
     items:
     - name: Корпоративная бизнес-аналитика с использованием хранилища данных SQL
@@ -431,7 +373,7 @@ items:
       href: reference-architectures/identity/adds-forest.md
     - name: Расширение AD FS в Azure
       href: reference-architectures/identity/adfs.md
-  - name: n-уровневневое приложение
+  - name: N-уровневые приложения
     items:
     - name: N-уровневое приложение с SQL Server
       href: reference-architectures/n-tier/n-tier-sql-server.md
@@ -459,10 +401,78 @@ items:
       href: reference-architectures/sap/sap-s4hana.md
     - name: SAP HANA на крупных экземплярах Azure
       href: reference-architectures/sap/hana-large-instances.md
-  - name: Сервер Jenkins
-    href: reference-architectures/jenkins/index.md
-  - name: SharePoint Server 2016
-    href: reference-architectures/sharepoint/index.md
+  - name: Рабочие нагрузки виртуальных машин
+    items:
+    - name: Сервер Jenkins
+      href: reference-architectures/jenkins/index.md
+    - name: SharePoint Server 2016
+      href: reference-architectures/sharepoint/index.md
+  - name: Веб-приложения
+    items:
+    - name: Базовое веб-приложение
+      href: reference-architectures/app-service-web-app/basic-web-app.md
+    - name: Улучшенная масштабируемость
+      href: reference-architectures/app-service-web-app/scalable-web-app.md
+    - name: Развертывание в нескольких регионах
+      href: reference-architectures/app-service-web-app/multi-region.md
+- name: Руководства по разработке
+  items:
+  - name: Создание микрослужб в Azure
+    items:
+    - name: Введение
+      href: microservices/index.md
+    - name: Анализ домена
+      href: microservices/domain-analysis.md
+    - name: Определение границ микрослужбы
+      href: microservices/microservice-boundaries.md
+    - name: Рекомендации по работе с данными
+      href: microservices/data-considerations.md
+    - name: Обмен данными между службами
+      href: microservices/interservice-communication.md
+    - name: Проектирование API
+      href: microservices/api-design.md
+    - name: Прием данных и рабочий процесс
+      href: microservices/ingestion-workflow.md
+    - name: Шлюзы API
+      href: microservices/gateway.md
+    - name: Ведение журналов и мониторинг
+      href: microservices/logging-monitoring.md
+    - name: CI/CD
+      href: microservices/ci-cd.md
+  - name: Управление удостоверениями в мультитенантных приложениях
+    items:
+    - name: Введение
+      href: multitenant-identity/index.md
+    - name: Сценарий Tailspin
+      href: multitenant-identity/tailspin.md
+    - name: Authentication
+      href: multitenant-identity/authenticate.md
+    - name: Удостоверения, основанные на утверждениях
+      href: multitenant-identity/claims.md
+    - name: Регистрация клиента
+      href: multitenant-identity/signup.md
+    - name: Роли приложений
+      href: multitenant-identity/app-roles.md
+    - name: Авторизация
+      href: multitenant-identity/authorize.md
+    - name: Обеспечение безопасности веб-API
+      href: multitenant-identity/web-api.md
+    - name: Кэширование маркеров доступа
+      href: multitenant-identity/token-cache.md
+    - name: Утверждение клиента
+      href: multitenant-identity/client-assertion.md
+    - name: Защита секретов приложения
+      href: multitenant-identity/key-vault.md
+    - name: Федерация с клиентской службой AD FS
+      href: multitenant-identity/adfs.md
+    - name: Запуск приложения Surveys
+      href: multitenant-identity/run-the-app.md
+  - name: Миграция из облачных служб в Service Fabric
+    items:
+    - name: Перенос приложения облачных служб в Service Fabric
+      href: service-fabric/migrate-from-cloud-services.md
+    - name: Рефакторинг приложения Service Fabric
+      href: service-fabric/refactor-migrated-app.md
 - name: Структура проверки проекта
   items:
   - name: Проектирование для обеспечения устойчивости
@@ -517,17 +527,9 @@ items:
       href: cloud-adoption/appendix/azure-scaffold.md
     - name: Реализация шаблона Azure для предприятий
       href: cloud-adoption/appendix/azure-scaffold-examples.md
-- name: Виртуальный центр обработки данных Azure
-  href: vdc/index.md
-- name: Azure для специалистов AWS
-  items:
-  - name: Обзор
-    href: aws-professional/index.md
-  - name: Сравнение служб
-    href: aws-professional/services.md
-ms.openlocfilehash: 804207bfa17a0ef1ef61d5f0729c8e5df6af2089
-ms.sourcegitcommit: b7e521ba317f4fcd3253c80ac0c0a355eaaa56c5
+ms.openlocfilehash: 87c781aabb78f339487dea41885a5e562be9df3e
+ms.sourcegitcommit: 36398937420b9a6a2c45759b90847a1819df4451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533955"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47175630"
