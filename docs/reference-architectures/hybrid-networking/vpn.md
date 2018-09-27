@@ -7,12 +7,12 @@ pnp.series.title: Connect an on-premises network to Azure
 pnp.series.next: expressroute
 pnp.series.prev: ./index
 cardTitle: VPN
-ms.openlocfilehash: ef89cdd3e2a175f82929b613159a99557560cc7a
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.openlocfilehash: d0966791642ee174d020c960c9fc6e72d8768539
+ms.sourcegitcommit: b38ba378c9d6110da2dfd50b4233fadd94604bb0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43325394"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47167444"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-a-vpn-gateway"></a>Подключение локальной сети к Azure с помощью VPN-шлюза
 
@@ -486,7 +486,10 @@ ms.locfileid: "43325394"
 [vpn-appliances]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/hybrid-network-architectures.vsdx
 [vpn-appliance-ipsec]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices#ipsec-parameters
-<!--[solution-script]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/Deploy-ReferenceArchitecture.ps1-->
-<!--[solution-script-bash]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/deploy-reference-architecture.sh-->
-<!--[virtualNetworkGateway-parameters]: https://github.com/mspnp/reference-architectures/tree/master/guidance-hybrid-network-vpn/parameters/virtualNetworkGateway.parameters.json-->
-[azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/ [CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing [0]: ./images/vpn.png "Гибридная сеть, объединяющая локальную среду и инфраструктуру Azure" [2]: ../_images/guidance-hybrid-network-vpn/audit-logs.png "Журналы аудита на портале Azure" [3]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-counters.png "Счетчики производительности для мониторинга трафика VPN" [4]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-graph.png "Пример графика производительности сети VPN""
+[virtualNetworkGateway-parameters]: https://github.com/mspnp/hybrid-networking/vpn/parameters/virtualNetworkGateway.parameters.json
+[azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/
+[CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+[0]: ./images/vpn.png "Гибридная сеть, объединяющая локальную среду и инфраструктуру Azure"
+[2]: ../_images/guidance-hybrid-network-vpn/audit-logs.png "Журналы аудита на портале Azure"
+[3]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-counters.png "Счетчики производительности для мониторинга трафика VPN"
+[4]: ../_images/guidance-hybrid-network-vpn/RRAS-perf-graph.png "Пример графика производительности сети VPN"
