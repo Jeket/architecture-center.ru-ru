@@ -3,12 +3,12 @@ title: Антишаблон синхронных операций ввода-в�
 description: Блокировка вызывающего потока до завершения операций ввода-вывода может привести к снижению производительности. Кроме того, она влияет на вертикальное масштабирование.
 author: dragon119
 ms.date: 06/05/2017
-ms.openlocfilehash: d5b3635565c6b71ef7716f54ee8cccc76093c3a3
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 961eacb82344ec7e71aaa96fb4cd8bc530721e96
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24538558"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429015"
 ---
 # <a name="synchronous-io-antipattern"></a>Антишаблон синхронных операций ввода-вывода
 
@@ -197,7 +197,7 @@ await LibraryIOOperationAsync();
 [sample-app]: https://github.com/mspnp/performance-optimization/tree/master/SynchronousIO
 
 
-[async-wrappers]: http://blogs.msdn.com/b/pfxteam/archive/2012/03/24/10287244.aspx
+[async-wrappers]: https://blogs.msdn.microsoft.com/pfxteam/2012/03/24/should-i-expose-asynchronous-wrappers-for-synchronous-methods/
 [performance-counters]: /azure/cloud-services/cloud-services-dotnet-diagnostics-performance-counters
 [web-sites-monitor]: /azure/app-service-web/web-sites-monitor
 

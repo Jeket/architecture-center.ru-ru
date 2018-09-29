@@ -5,12 +5,12 @@ keywords: AWS experts, Azure comparison, AWS comparison, difference between azur
 author: lbrader
 ms.date: 03/24/2017
 pnp.series.title: Azure for AWS Professionals
-ms.openlocfilehash: f90186ba36f035871ec918c65b05eebe44190ffa
-ms.sourcegitcommit: f1dcc388c8b4fc983549c36d7e6b009fa1f072ba
+ms.openlocfilehash: 04157b9a647779ae47ad0aff8132289a30544acf
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46329901"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429644"
 ---
 # <a name="azure-for-aws-professionals"></a>Azure для специалистов AWS
 
@@ -96,7 +96,7 @@ Azure предоставляет несколько способов управ�
 
 В каждом из этих интерфейсов группа ресурсов определяет, как создаются, развертываются или изменяются ресурсы Azure. Подобную роль играет стек при группировании ресурсов AWS во время развертывания CloudFormation.
 
-Синтаксис и структура этих интерфейсов отличаются от их аналогов в AWS, но они обеспечивают схожие возможности. Кроме того, многие средства управления сторонних производителей, которые используются в AWS, такие как [Terraform Hashicorp](https://www.terraform.io/docs/providers/azurerm/) и [Netflix Spinnaker](http://www.spinnaker.io/), также доступны в Azure.
+Синтаксис и структура этих интерфейсов отличаются от их аналогов в AWS, но они обеспечивают схожие возможности. Кроме того, многие средства управления сторонних производителей, которые используются в AWS, такие как [Terraform Hashicorp](https://www.terraform.io/docs/providers/azurerm/) и [Netflix Spinnaker](https://www.spinnaker.io/), также доступны в Azure.
 
 ### <a name="see-also"></a>См. также
 
@@ -225,7 +225,7 @@ Azure предоставляет несколько служб вычислен�
 
 -   [Создание первой функции Azure](https://azure.microsoft.com/documentation/articles/functions-create-first-azure-function/)
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 #### <a name="s3ebsefs-and-azure-storage"></a>S3, EBS, EFS и служба хранилища Azure
 
@@ -426,15 +426,11 @@ Device Farm в AWS предоставляет возможность тести�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
--   [Комплексное интерактивное представление платформы Azure](http://azureplatform.azurewebsites.net/).
-
 -   [Приступая к работе с Azure](https://azure.microsoft.com/get-started/)
 
 -   [Архитектуры решений Azure](https://azure.microsoft.com/solutions/architecture/).
 
 -   [Azure Reference Architectures](https://azure.microsoft.com/documentation/articles/guidance-architecture/) (Эталонная архитектура Azure).
-
--   [Бесплатный интернет-курс: Microsoft Azure для специалистов по AWS](http://aka.ms/azureforaws).
 
 
 <!-- links -->

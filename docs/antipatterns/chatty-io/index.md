@@ -3,12 +3,12 @@ title: Антишаблон отправки множественных опер
 description: Большое количество запросов ввода-вывода может привести к снижению производительности и скорости реагирования.
 author: dragon119
 ms.date: 06/05/2017
-ms.openlocfilehash: daa0c581d31c9389e2853f84075dc44d1e5ba78b
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.openlocfilehash: 17193198918cc742b2e3f30e77dfc5c3f2726ebf
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43325882"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428573"
 ---
 # <a name="chatty-io-antipattern"></a>Антишаблон отправки множественных операций ввода-вывода
 
@@ -217,7 +217,7 @@ await SaveCustomerListToFileAsync(customers);
 
 - При записи данных не блокируйте ресурсы дольше, чем это необходимо. Это снизит вероятность конфликтов во время долгих операций. Если операция записи охватывает несколько хранилищ данных, файлов или служб, используйте другой в конечном счете согласованный подход. Ознакомьтесь с [руководством по согласованности данных][data-consistency-guidance].
 
-- Если выполнить буферизацию данных в памяти до их записи, данные будут уязвимы в случае сбоя процесса. Если скорость передачи данных имеет скачки или является относительно разреженной, будет безопаснее выполнить буферизацию данных во внешней долгосрочной очереди, например в [Центрах событий](http://azure.microsoft.com/services/event-hubs/).
+- Если выполнить буферизацию данных в памяти до их записи, данные будут уязвимы в случае сбоя процесса. Если скорость передачи данных имеет скачки или является относительно разреженной, будет безопаснее выполнить буферизацию данных во внешней долгосрочной очереди, например в [Центрах событий](https://azure.microsoft.com/services/event-hubs/).
 
 - Рассмотрите возможность кэширования данных, извлекаемых из службы или базы данных. Это снизит объем операций ввода-вывода, позволяя избежать повторных запросов для одних и тех же данных. Дополнительные сведения см. в статье о [кэшировании][caching-guidance].
 
@@ -308,7 +308,7 @@ await SaveCustomerListToFileAsync(customers);
 [api-design]: ../../best-practices/api-design.md
 [caching-guidance]: ../../best-practices/caching.md
 [code-sample]:  https://github.com/mspnp/performance-optimization/tree/master/ChattyIO
-[data-consistency-guidance]: http://https://msdn.microsoft.com/library/dn589800.aspx
+[data-consistency-guidance]: https://msdn.microsoft.com/library/dn589800.aspx
 [ef]: /ef/
 [extraneous-fetching]: ../extraneous-fetching/index.md
 [new-relic]: https://newrelic.com/application-monitoring

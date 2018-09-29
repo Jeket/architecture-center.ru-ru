@@ -2,12 +2,12 @@
 title: Выберите решение для интеграции локальной среды Active Directory с Azure.
 description: Здесь сравниваются эталонные архитектуры для интеграции локальной среды Active Directory с Azure.
 ms.date: 07/02/2018
-ms.openlocfilehash: 7e89998c59bccf4d37cebca5ddd4ea7ecba58cd5
-ms.sourcegitcommit: 776b8c1efc662d42273a33de3b82ec69e3cd80c5
+ms.openlocfilehash: ee71d27c08274a873b165bad2dc84f9079e5b9d3
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38987535"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428692"
 ---
 # <a name="choose-a-solution-for-integrating-on-premises-active-directory-with-azure"></a>Выбор решения для интеграции локальной среды Active Directory с Azure
 
@@ -127,4 +127,4 @@ ms.locfileid: "38987535"
 [adfs]: ./adfs.md
 
 [azure-active-directory]: /azure/active-directory-domain-services/active-directory-ds-overview
-[azure-ad-connect]: /azure/active-directory/active-directory-aadconnect
+[azure-ad-connect]: /azure/active-directory/hybrid/whatis-hybrid-identity
