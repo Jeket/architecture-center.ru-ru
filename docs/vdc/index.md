@@ -3,12 +3,12 @@ title: Виртуальный центр обработки данных Azure
 description: Ресурсы для виртуального центра обработки данных Azure
 keywords: Таблицы Azure
 layout: LandingPage
-ms.openlocfilehash: 9b82122358085c37f89fb258034a4c9a91ecb054
-ms.sourcegitcommit: 8ec48a0e2c080c9e2e0abbfdbc463622b28de2f2
+ms.openlocfilehash: 5b5b6f58911e39ae1296722194b58c601b9baea8
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "43324805"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428097"
 ---
 # <a name="azure-virtual-datacenter-and-the-enterprise-control-plane"></a>Виртуальный центр обработки данных Azure и плоскость управления предприятием
 
@@ -17,9 +17,9 @@ ms.locfileid: "43324805"
 ## <a name="resources"></a>Ресурсы
 <table>
 <tr>
-    <td style="width: 64px; vertical-align: middle;"><a href="http://aka.ms/VDC/Concepts"><img src="../_images/virtual-datacenter.svg" alt="Virtual Datacenter eBook" /></a></td>
+    <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Concepts"><img src="../_images/virtual-datacenter.svg" alt="Virtual Datacenter eBook" /></a></td>
     <td>
-        <h3><a href="http://aka.ms/VDC/Concepts">Виртуальный центр обработки данных Azure: основные понятия</a></h3>
+        <h3><a href="https://aka.ms/VDC/Concepts">Виртуальный центр обработки данных Azure: основные понятия</a></h3>
         <p>В этой электронной книге показано, как развертывать рабочие нагрузки предприятия на облачной платформе Azure, соблюдая существующие сетевые политики и политики безопасности.</p>
     </td>
 </tr>
@@ -31,16 +31,16 @@ ms.locfileid: "43324805"
     </td>
 </tr>
 <tr>
-    <td style="width: 64px; vertical-align: middle;"><a href="http://aka.ms/VDC/Lift"><img src="./images/vdc-lift-and-shift.png" alt="Lift and Shift Guide" /></a></td>
+    <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Lift"><img src="./images/vdc-lift-and-shift.png" alt="Lift and Shift Guide" /></a></td>
     <td>
-        <h3><a href="http://aka.ms/VDC/Lift">Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift</a></h3>
+        <h3><a href="https://aka.ms/VDC/Lift">Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift</a></h3>
         <p>В этом техническом документе рассматривается процесс, с помощью которого ИТ-специалисты и руководители организаций могут определить и запланировать перенос приложений и серверов в Azure методом lift-and-shift. Он также позволит минимизировать затраты на дополнительную разработку и оптимизировать размещение в облаке.</p>
     </td>
 </tr>
 <tr>
-    <td style="width: 64px; vertical-align: middle;"><a href="http://aka.ms/VDC/Deck"><img src="./images/vdc-deck.png" alt="Presentation Deck" /></a></td>
+    <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Deck"><img src="./images/vdc-deck.png" alt="Presentation Deck" /></a></td>
     <td>
-        <h3><a href="http://aka.ms/VDC/Deck">Виртуальный центр обработки данных Azure: презентация</a></h3>
+        <h3><a href="https://aka.ms/VDC/Deck">Виртуальный центр обработки данных Azure: презентация</a></h3>
         <p>В этой презентации представлены рекомендации и средства для работы с виртуальным центром обработки данных Azure. Она содержит сведения о целях виртуального центра обработки данных, факторах привлечения клиентов, регионах Azure, элементах автоматизации виртуального центра обработки данных, а также промышленных и доверенных виртуальных центрах обработки данных Azure. В конце презентации предлагается план действий для ИТ-директоров. Также предоставляются сведения о поддержке и обучении.</p>
     </td>
 </tr>
@@ -57,4 +57,4 @@ ms.locfileid: "43324805"
 В модели виртуального центра обработки данных Azure можно применить политики изоляции, придать облаку сходство со знакомыми вам физическими центрами обработки данных и установить необходимые уровни безопасности и доверия. Это стало возможным благодаря четырем компонентам, известным ИТ-отделу любого предприятия: программно-определяемой сети, шифрованию, управлению удостоверениями, а также базовым стандартам и сертификатам соответствия платформы Azure. Эти четыре аспекта являются важнейшим условием того, что виртуальный центр обработки данных станет надежным дополнением к уже существующей инфраструктуре, в которую вложены средства.
 
 
-Дополнительные сведения см. в электронной книге об <a href="http://aka.ms/VDC/eBook">основных понятиях виртуального центра обработки данных Azure</a>.
+Дополнительные сведения см. в электронной книге об <a href="https://aka.ms/VDC/eBook">основных понятиях виртуального центра обработки данных Azure</a>.
