@@ -5,12 +5,12 @@ author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.next: tailspin
-ms.openlocfilehash: c363ac01e798b522fa95f39586e28fe3af5fae4a
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 9c2efe9aea9da53177478161b90406d0c2021550
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24541678"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429440"
 ---
 # <a name="manage-identity-in-multitenant-applications"></a>Управление удостоверением в мультитенантных приложениях
 
@@ -18,7 +18,7 @@ ms.locfileid: "24541678"
 
 [![GitHub](../_images/github.png) Пример кода][sample application]
 
-При создании мультитенантного приложения одной из первейших задач является управление удостоверениями пользователей, так как теперь каждый пользователь относится к клиенту. Например:
+При создании мультитенантного приложения одной из первейших задач является управление удостоверениями пользователей, так как теперь каждый пользователь относится к клиенту. Например: 
 
 * Пользователи входят с использованием учетных данных организации.
 * У пользователей должен быть доступ к их данным в организации, но не к данным, относящимся к другим клиентам.
@@ -93,7 +93,7 @@ ms.locfileid: "24541678"
 
 
 <!-- Links -->
-[ADConnect]: /azure/active-directory/active-directory-aadconnect
+[ADConnect]: /azure/active-directory/hybrid/whatis-hybrid-identity
 [AzureAD]: /azure/active-directory
 
 [Федерация со службой AD FS клиента]: adfs.md
