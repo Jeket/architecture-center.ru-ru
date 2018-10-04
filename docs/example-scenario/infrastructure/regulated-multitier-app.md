@@ -3,12 +3,12 @@ title: Безопасное веб-приложение Windows для отра�
 description: Проверенный сценарий для создания безопасного многоуровневого веб-приложения с использованием Windows Server в Azure, который использует масштабируемые наборы, Шлюз приложений и подсистемы балансировки нагрузки.
 author: iainfoulds
 ms.date: 07/11/2018
-ms.openlocfilehash: 3572f215d9134a6650d76e1b14458226334c6f42
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.openlocfilehash: 780b82791510b6ca06ef918b66d2547794dfcf87
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389292"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428760"
 ---
 # <a name="secure-windows-web-application-for-regulated-industries"></a>Безопасное веб-приложение Windows для отраслей с высокой степенью регулируемости
 
@@ -90,7 +90,7 @@ ms.locfileid: "44389292"
 
 Чтобы развернуть базовую инфраструктуру для этого сценария с помощью шаблона Azure Resource Manager, выполните следующие действия.
 
-1. Выберите **Развертывание в Azure**:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Fsolution-architectures%2Fmaster%2Finfrastructure%2Fregulated-multitier-app%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
+1. Выберите **Развертывание в Azure**:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Fsolution-architectures%2Fmaster%2Finfrastructure%2Fregulated-multitier-app%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 2. Подождите, пока откроется развертывание шаблона на портале Azure, а затем выполните следующие шаги.
    * Выберите **Создать** группу ресурсов, а затем укажите в текстовом поле имя, например *myWindowsscenario*.
    * В раскрывающемся списке **Расположение** выберите регион.
@@ -120,7 +120,7 @@ ms.locfileid: "44389292"
 [appgateway-docs]: /azure/application-gateway/overview
 [architecture]: ./media/regulated-multitier-app/architecture-regulated-multitier-app.png
 [autoscaling]: /azure/architecture/best-practices/auto-scaling
-[availability]: /architecture/checklist/availability
+[availability]: ../../checklist/availability.md
 [azureaz-docs]: /azure/availability-zones/az-overview
 [azurecosmosdb-docs]: /azure/cosmos-db/introduction
 [cloudwitness-docs]: /windows-server/failover-clustering/deploy-cloud-witness

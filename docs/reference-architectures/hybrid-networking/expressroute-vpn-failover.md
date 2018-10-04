@@ -6,12 +6,12 @@ ms.date: 11/28/2016
 pnp.series.title: Connect an on-premises network to Azure
 pnp.series.prev: expressroute
 cardTitle: Improving availability
-ms.openlocfilehash: 81298215c814cee805eff57fdc28f7c127148b5f
-ms.sourcegitcommit: c441fd165e6bebbbbbc19854ec6f3676be9c3b25
+ms.openlocfilehash: 31ed1dbf59c4fa2b7fa86b9ceb2fed7b36e75c8c
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30270444"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428828"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-expressroute-with-vpn-failover"></a>Подключение локальной сети к Azure с помощью ExpressRoute с отработкой отказа VPN
 
@@ -103,7 +103,7 @@ Remove-AzureRmVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <
 
 Чтобы развернуть решение, сделайте следующее.
 
-1. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fhybrid-networking%2Fexpressroute-vpn-failover%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
+1. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fhybrid-networking%2Fexpressroute-vpn-failover%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 2. Подождите, пока на портале Azure не откроется ссылка, а затем сделайте следующее:   
    * Имя **группы ресурсов** уже определено в файле параметров, поэтому выберите **Создать** и введите `ra-hybrid-vpn-er-rg` в текстовом поле.
    * В раскрывающемся списке **Расположение** выберите регион.
@@ -111,7 +111,7 @@ Remove-AzureRmVirtualNetworkGateway -Name <yourgatewayname> -ResourceGroupName <
    * Прочтите условия использования и установите флажок **Я принимаю указанные выше условия**.
    * Нажмите кнопку **Приобрести**.
 3. Дождитесь завершения развертывания.
-4. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fhybrid-networking%2Fexpressroute-vpn-failover%2Fazuredeploy-expressRouteCircuit.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
+4. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fhybrid-networking%2Fexpressroute-vpn-failover%2Fazuredeploy-expressRouteCircuit.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 5. Подождите, пока на портале Azure не откроется ссылка, а затем сделайте следующее:
    * В разделе **Группа ресурсов** выберите **Использовать имеющийся**, а затем в текстовом поле введите `ra-hybrid-vpn-er-rg`.
    * В раскрывающемся списке **Расположение** выберите регион.

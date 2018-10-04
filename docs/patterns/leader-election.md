@@ -8,12 +8,12 @@ pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - design-implementation
 - resiliency
-ms.openlocfilehash: 8c8efa0846550557bb53ea81f85ac0e303a77b19
-ms.sourcegitcommit: f19314f18cd794ebe380fa722ca92066b8735b56
+ms.openlocfilehash: 6cc4b19e889cc9fc692e388498cc16ea56b1c981
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37348275"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429202"
 ---
 # <a name="leader-election-pattern"></a>Шаблон выбора лидера
 
@@ -43,7 +43,7 @@ ms.locfileid: "37348275"
 Существует несколько стратегий выбора лидера среди набора задач в распределенной среде, а именно:
 - Выбор экземпляра задачи с самым низким рангом или наименьшим значением идентификатора процесса.
 - Состязание для получения общего распределенного мьютекса. Первый экземпляр задачи, который получит мьютекс, становится лидером. При этом системе необходимо убедиться, что если лидер завершает работу или отключается от остальной части системы, то мьютекс отменяется, чтобы другой экземпляр задачи мог стать лидером.
-- Реализация одного из распространенных алгоритмов выбора лидера, таких как [алгоритм Bully](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/BullyExample.html) или [алгоритм Ring](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/RingElectExample.html). Эти алгоритмы предполагают, что каждый кандидат при выборе имеет уникальный идентификатор, и что он может надежно взаимодействовать с другими кандидатами.
+- Реализация одного из распространенных алгоритмов выбора лидера, таких как [алгоритм Bully](https://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/BullyExample.html) или [алгоритм Ring](https://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/RingElectExample.html). Эти алгоритмы предполагают, что каждый кандидат при выборе имеет уникальный идентификатор, и что он может надежно взаимодействовать с другими кандидатами.
 
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 
@@ -198,7 +198,7 @@ private static async Task MyLeaderCoordinatorTask(CancellationToken token)
 - [Руководство по автоматическому масштабированию](https://msdn.microsoft.com/library/dn589774.aspx). Существует возможность запускать и останавливать экземпляры узлов задач, так как нагрузка на приложение варьируется. Автомасштабирование может быть полезным для поддержания пропускной способности и производительности во время максимальной нагрузки.
 - [Рекомендации по разделению вычислений](https://msdn.microsoft.com/library/dn589773.aspx). В этом руководстве описывается выделение задач для узлов в облачной службе, которое позволяет свести к минимуму эксплуатационные расходы при сохранении масштабируемости, производительности, доступности и безопасности службы.
 - [Task-based Asynchronous Pattern ](https://msdn.microsoft.com/library/hh873175.aspx) (Асинхронная модель на основе задач).
-- Пример, демонстрирующий [алгоритм Bully](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/BullyExample.html).
-- Пример, демонстрирующий [алгоритм Ring](http://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/RingElectExample.html).
-- [Apache Curator](http://curator.apache.org/) — клиентская библиотека для Apache ZooKeeper.
+- Пример, демонстрирующий [алгоритм Bully](https://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/BullyExample.html).
+- Пример, демонстрирующий [алгоритм Ring](https://www.cs.colostate.edu/~cs551/CourseNotes/Synchronization/RingElectExample.html).
+- [Apache Curator](https://curator.apache.org/) — клиентская библиотека для Apache ZooKeeper.
 - Статья [Lease Blob](https://msdn.microsoft.com/library/azure/ee691972.aspx) (Аренда большого двоичного объекта) на сайте MSDN.

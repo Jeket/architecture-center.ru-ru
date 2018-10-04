@@ -3,12 +3,12 @@ title: Проектирование API
 description: Проектирование API для микрослужб
 author: MikeWasson
 ms.date: 12/08/2017
-ms.openlocfilehash: d85407f3092ddb5f77aacfea8def2784c4741eb9
-ms.sourcegitcommit: 786bafefc731245414c3c1510fc21027afe303dc
+ms.openlocfilehash: e3524fca177d8c15b280d0f8a706539369c1773a
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "26653204"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429134"
 ---
 # <a name="designing-microservices-api-design"></a>Проектирование микрослужб: проектирование API
 
@@ -124,10 +124,10 @@ export class Location {
 | Концепция DDD | Эквивалент в REST | Пример | 
 |-------------|-----------------|---------|
 | Статистическое выражение | Ресурс | `{ "1":1234, "status":"pending"... }` | 
-| Удостоверение | URL-адрес | `http://delivery-service/deliveries/1` |
+| Удостоверение | URL-адрес | `https://delivery-service/deliveries/1` |
 | Дочерние сущности | Ссылки | `{ "href": "/deliveries/1/confirmation" }` |
-| Обновление объектов-значений | PUT или PATCH | `PUT http://delivery-service/deliveries/1/dropoff` |
-| Репозиторий | Коллекция | `http://delivery-service/deliveries?status=pending` |
+| Обновление объектов-значений | PUT или PATCH | `PUT https://delivery-service/deliveries/1/dropoff` |
+| Репозиторий | Коллекция | `https://delivery-service/deliveries?status=pending` |
 
 
 ## <a name="api-versioning"></a>Управление версиями API

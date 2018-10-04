@@ -8,12 +8,12 @@ pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - data-management
 - performance-scalability
-ms.openlocfilehash: a4e35a19851f4742b5c154197c22bb1fe13de108
-ms.sourcegitcommit: e9d9e214529edd0dc78df5bda29615b8fafd0e56
+ms.openlocfilehash: bc2b6aeb6966d14327a21849adbbfe635eae59df
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091110"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428862"
 ---
 # <a name="sharding-pattern"></a>Шаблон сегментирования
 
@@ -219,6 +219,3 @@ Trace.TraceInformation("Fanout query complete - Record Count: {0}",
 - [Data Partitioning Guidance](https://msdn.microsoft.com/library/dn589795.aspx) (Руководство по секционированию данных). Сегментирование хранилища данных может привести к некоторым сопутствующим проблемам. Здесь описаны проблемы, связанные с секционированием хранилища данных в облаке, которое позволяет повысить масштабируемость, сократить число конфликтов и оптимизировать производительность.
 - [Index Table pattern](index-table.md) (Шаблон таблицы индексов). Иногда даже правильно выбранный ключ сегмента не позволяет выполнить все потребности запросов. Этот шаблон позволяет приложению быстро получать данные из хранилища большого объема благодаря использованию ключа, не совпадающего c ключом сегмента.
 - [Materialized View Pattern](materialized-view.md) (Шаблон материализованного представления). Поддержать производительность некоторых запросов помогут материализованные представления, которые выполняют объединение и анализ данных. Это особенно полезно, если сводные данные основываются на информации, распределенной между несколькими сегментами. Здесь описано, как создать и заполнить такие представления.
-- [Shard Lessons](http://www.addsimplicity.com/adding_simplicity_an_engi/2008/08/shard-lessons.html) (Уроки о сегментах) в блоге Adding Simplicity.
-- [Database Sharding](http://dbshards.com/database-sharding/) (Сегментирование баз данных) на сайте CodeFutures.
-- [Building Scalable Databases: Pros and Cons of Various Database Sharding Schemes](http://www.25hoursaday.com/weblog/2009/01/16/BuildingScalableDatabasesProsAndConsOfVariousDatabaseShardingSchemes.aspx) (Создание масштабируемых баз данных. Преимущества и недостатки разных схем сегментирования базы данных) в блоге Дэйра Обасанджо (Dare Obasanjo).

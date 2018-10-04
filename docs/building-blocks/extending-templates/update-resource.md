@@ -3,12 +3,12 @@ title: Обновление ресурсов в шаблоне Azure Resource Ma
 description: Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для обновления ресурса.
 author: petertay
 ms.date: 06/09/2017
-ms.openlocfilehash: fc2565819c66ee7695224ef5793e7276e6e552e0
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: f235f0b4d54d65ccc2fa67876916e922d75f6d07
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24538478"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429047"
 ---
 # <a name="update-a-resource-in-an-azure-resource-manager-template"></a>Обновление ресурсов в шаблоне Azure Resource Manager
 
@@ -80,7 +80,7 @@ ms.locfileid: "24538478"
         "mode": "Incremental",
         "parameters": {},
         "template": {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
           "parameters": {},
           "variables": {},
@@ -143,6 +143,6 @@ ms.locfileid: "24538478"
 
 Исходная виртуальная сеть `firstVNet` была обновлена, а не создана повторно. Если бы `firstVNet` была создана повторно, то виртуальный сетевой интерфейс `nic1` не был бы связан с `firstVNet`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Эта же методика реализована в [проекте стандартных блоков шаблона](https://github.com/mspnp/template-building-blocks) и [эталонных архитектурах Azure](/azure/architecture/reference-architectures/). Вы можете создать на их основе собственную архитектуру или развернуть готовые примеры архитектуры.

@@ -3,12 +3,12 @@ title: Создание преобразователя и сборщика св�
 description: В статье описано, как создать преобразователь и сборщик свойств в шаблоне Azure Resource Manager
 author: petertay
 ms.date: 06/09/2017
-ms.openlocfilehash: 893779e652b845b3d936d11936dc767ef632fa43
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 2c2fd93c977b82bed05ebe0ae68233a700df0f4f
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24538670"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428590"
 ---
 # <a name="implement-a-property-transformer-and-collector-in-an-azure-resource-manager-template"></a>Создание преобразователя и сборщика свойств в шаблоне Azure Resource Manager
 
@@ -88,7 +88,7 @@ ms.locfileid: "24538670"
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "source": { "type": "object" },
@@ -180,7 +180,7 @@ ms.locfileid: "24538670"
         "mode": "Incremental",
         "parameters": { },
         "template": {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
           "parameters": { },
           "variables": { },
@@ -301,7 +301,7 @@ ms.locfileid: "24538670"
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Эта же методика реализована в [проекте стандартных блоков шаблона](https://github.com/mspnp/template-building-blocks) и [эталонных архитектурах Azure](/azure/architecture/reference-architectures/). Вы можете создать на их основе собственную архитектуру или развернуть готовые примеры архитектуры.
 

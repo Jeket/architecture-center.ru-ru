@@ -3,13 +3,13 @@ title: Сценарии и примеры использования систе�
 description: Содержит примеры реализации управления подписками Azure для распространенных сценариев.
 author: rdendtler
 ms.date: 01/03/2017
-ms.author: rodend;karlku;tomfitz
-ms.openlocfilehash: 2c10b9a61be0cd7dadff6bfb327d938cc498c935
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.author: rodend
+ms.openlocfilehash: 51be0e1cdbcb3258102c9e4a4790764cada98d1e
+ms.sourcegitcommit: 9eecff565392273d11b8702f1fcecb4d75e27a15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43327589"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48243671"
 ---
 # <a name="examples-of-implementing-azure-enterprise-scaffold"></a>Примеры реализации корпоративного каркаса Azure
 В этой статье приведены примеры того, как предприятие может реализовать рекомендации по созданию [корпоративного каркаса Azure](azure-scaffold.md). В нем на примере вымышленной компании Contoso приводятся рекомендации для распространенных сценариев.

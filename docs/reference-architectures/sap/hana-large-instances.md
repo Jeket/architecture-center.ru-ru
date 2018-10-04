@@ -3,12 +3,12 @@ title: Запуск SAP HANA на крупных экземплярах Azure
 description: Методики по запуску SAP HANA в среде с высоким уровнем доступности на крупных экземплярах Azure.
 author: lbrader
 ms.date: 05/16/2018
-ms.openlocfilehash: 746161ac51335af5c48a559830d6e0345dcfb7b1
-ms.sourcegitcommit: 86d86d71e392550fd65c4f76320d7ecf0b72e1f6
+ms.openlocfilehash: d9d619dd7fb17c7cf0a66ce73c1e067ec97a2401
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37864527"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429712"
 ---
 # <a name="run-sap-hana-on-azure-large-instances"></a>Запуск SAP HANA на крупных экземплярах Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "37864527"
 
 Корпорация Майкрософт помогает настроить крупный экземпляр, но вы должны выполнять проверку параметров конфигурации операционной системы. Обязательно просмотрите самые последние примечания SAP для вашего выпуска Linux.
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранилище
 Структура хранилища реализована в соответствии с рекомендацией TDI для SAP HANA. Крупные экземпляры HANA поставляются с конфигурацией определенного хранилища для стандартных спецификаций TDI. Однако вы можете приобрести дополнительное хранилище с шагом в 1 ТБ. 
 
 Для поддержки требований критически важных сред, включая быстрое восстановление, используется NFS, а не непосредственно подключенное хранилище. Сервер хранилища NFS для крупных экземпляров HANA размещен в мультитенантной среде, в которой клиенты разделены и защищены за счет изоляции вычислений, сетей и хранилищ.
@@ -129,8 +129,6 @@ ExpressRoute для крупных экземпляров HANA по умолча
 | Резервное копирование журналов         | Требуется для восстановления до точки во времени.                                                                   |                                                            |
 | Другие средства резервного копирования | Расположение избыточных резервных копий.                                                                             | Дополнительные затраты на лицензирование.                                |
 
-Дополнительные сведения см. на сайте SapHanaTutorial.com в статье [Comparison between HANA Backup Options][sap-hana-tutorial] (Сравнение вариантов резервного копирования HANA).
-
 ## <a name="manageability-considerations"></a>Вопросы управляемости
 Отслеживайте ресурсы крупных экземпляров HANA, такие как ЦП, память, пропускная способность сети и дисковое пространство, с помощью SAP HANA Studio, SAP HANA Cockpit, SAP Solution Manager и других собственных средств Linux. Крупные экземпляры HANA не поставляются со встроенными средствами мониторинга. Корпорация Майкрософт предоставляет ресурсы, помогающие [устранять неполадки и выполнять отслеживание][hli-troubleshoot] в соответствии с требованиями вашей организации, а группа поддержки Майкрософт поможет вам в устранении технических неполадок. 
 
@@ -183,7 +181,7 @@ ExpressRoute для крупных экземпляров HANA по умолча
 [running-SAP]: https://blogs.msdn.microsoft.com/saponsqlserver/2016/06/07/sap-on-sql-general-update-for-customers-partners-june-2016/
 [region]: https://azure.microsoft.com/global-infrastructure/services/
 [running-sap-blog]: https://blogs.msdn.microsoft.com/saponsqlserver/2017/05/04/sap-on-azure-general-update-for-customers-partners-april-2017/
-[quick-sizer]: http://service.sap.com/quicksizing
+[quick-sizer]: https://service.sap.com/quicksizing
 [sap-1793345]: https://launchpad.support.sap.com/#/notes/1793345
 [sap-1872170]: https://launchpad.support.sap.com/#/notes/1872170
 [sap-2121330]: https://launchpad.support.sap.com/#/notes/2121330
@@ -191,12 +189,11 @@ ExpressRoute для крупных экземпляров HANA по умолча
 [sap-1736976]: https://launchpad.support.sap.com/#/notes/1736976
 [sap-2296290]: https://launchpad.support.sap.com/#/notes/2296290
 [sap-community]: https://www.sap.com/community.html
-[sap-hana-tutorial]: http://saphanatutorial.com/comparison-between-hana-backup-options/
 [sap-security]: https://archive.sap.com/documents/docs/DOC-62943
 [scripts]: /azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery
 [sku]: /azure/expressroute/expressroute-about-virtual-network-gateways
 [sla]: https://azure.microsoft.com/support/legal/sla/virtual-machines
-[stack-overflow]: http://stackoverflow.com/tags/sap/info
+[stack-overflow]: https://stackoverflow.com/tags/sap/info
 [stonith]: /azure/virtual-machines/workloads/sap/ha-setup-with-stonith
 [subnet]: /azure/virtual-network/virtual-network-manage-subnet
 [swd]: https://help.sap.com/doc/saphelp_nw70ehp2/7.02.16/en-us/48/8fe37933114e6fe10000000a421937/frameset.htm

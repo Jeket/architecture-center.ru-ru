@@ -1,19 +1,19 @@
 ---
 title: Очередь с приоритетом
-description: Назначайте приоритет запросам, отправляемым в службу, чтобы получать и обрабатывать запросы с высоким приоритетом быстрее, чем запросы с низким приоритетом.
-keywords: конструктивный шаблон
+description: Запросы, отправляемые в службу, получают разные приоритеты. При этом запросы с высоким приоритетом принимаются и обрабатываются быстрее, чем запросы с низким приоритетом.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
 pnp.pattern.categories:
 - messaging
 - performance-scalability
-ms.openlocfilehash: ecfbb38304bb95587e9ca15523ad9594898d9b32
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 400bfbc03cf5640ff32a551636b01d60e6c0ec50
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24543150"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428505"
 ---
 # <a name="priority-queue-pattern"></a>Шаблон очереди с приоритетом
 
@@ -166,7 +166,7 @@ this.queueManager.SendBatchAsync(highMessages).Wait();
 
 При реализации этого шаблона следует принять во внимание следующие шаблоны и рекомендации.
 
-- Пример, демонстрирующий этот шаблон, можно найти на [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/priority-queue).
+- Пример, демонстрирующий этот шаблон, можно найти на сайте [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/priority-queue).
 
 - [Руководство по асинхронному обмену сообщениями](https://msdn.microsoft.com/library/dn589781.aspx). Службе потребителя, которая обрабатывает запрос, может потребоваться отправить ответ на экземпляр приложения, отправившего запрос. Позволяет получить сведения о стратегиях, которые можно использовать для обмена сообщениями (запрос — ответ).
 
@@ -176,5 +176,5 @@ this.queueManager.SendBatchAsync(highMessages).Wait();
 
 - [Autoscaling](https://msdn.microsoft.com/library/dn589774.aspx) (Автомасштабирование). В зависимости от длины очереди можно масштабировать размеры пула процессов пользователя, обрабатывающего очередь. Эта стратегия помогает повысить производительность, особенно для пулов, обрабатывающих сообщения с высоким приоритетом.
 
-- [Enterprise Integration Patterns with Service Bus (Part 2)](http://abhishekrlal.com/2013/01/11/enterprise-integration-patterns-with-service-bus-part-2/) (Шаблоны интеграции Enterprise со служебной шиной) в блоге Абхишека Лала (Abhishek Lal).
+- [Enterprise Integration Patterns with Service Bus (Part 2)](https://abhishekrlal.com/2013/01/11/enterprise-integration-patterns-with-service-bus-part-2/) (Шаблоны интеграции Enterprise со служебной шиной) в блоге Абхишека Лала (Abhishek Lal).
 

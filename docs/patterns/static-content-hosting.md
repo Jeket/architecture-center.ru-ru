@@ -1,7 +1,7 @@
 ---
 title: Размещение статического содержимого
-description: Развертывание статического содержимого в облачной службе хранения для прямой выдачи клиенту.
-keywords: конструктивный шаблон
+description: Разверните статическое содержимое в облачной службе хранения для предоставления непосредственно клиенту.
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
 pnp.series.title: Cloud Design Patterns
@@ -9,12 +9,12 @@ pnp.pattern.categories:
 - data-management
 - design-implementation
 - performance-scalability
-ms.openlocfilehash: deb15001bea2598d56a2793be78bbc3e7473bdf3
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 450d0c4c08098c1ba48e4c0dac3d058a46e3709b
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24541694"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428217"
 ---
 # <a name="static-content-hosting-pattern"></a>Шаблон размещения статического содержимого
 
@@ -74,7 +74,7 @@ ms.locfileid: "24541694"
 
 К статическому содержимому, расположенному в хранилище BLOB-объектов Azure, можно получить доступ непосредственно из браузера. Azure предоставляет интерфейс на основе HTTP для хранилища, который может быть открытым для клиентов. Например, содержимое в контейнере хранилища BLOB-объектов Azure предоставляется с использованием URL-адреса в следующем формате:
 
-`http://[ storage-account-name ].blob.core.windows.net/[ container-name ]/[ file-name ]`
+`https://[ storage-account-name ].blob.core.windows.net/[ container-name ]/[ file-name ]`
 
 
 При отправке содержимого необходимо создать один или несколько контейнеров BLOB-объектов, в которых будут храниться файлы и документы. Обратите внимание, что по умолчанию для нового контейнера задано разрешение "Закрытый". Это значение нужно заменить на "Открытый", чтобы клиенты могли получить доступ к содержимому. Если требуется защитить содержимое от анонимного доступа, можно реализовать [шаблон ключа камердинера](valet-key.md). В таком случае для скачивания ресурсов пользователи должны будут предоставить допустимый токен.
@@ -89,7 +89,7 @@ ms.locfileid: "24541694"
 В ссылках на страницах, которые доставляются клиенту, должны указываться полные URL-адреса ресурса и контейнера BLOB-объектов. Например, страница со ссылкой на изображение в открытом контейнере может содержать следующий код HTML.
 
 ```html
-<img src="http://mystorageaccount.blob.core.windows.net/myresources/image1.png"
+<img src="https://mystorageaccount.blob.core.windows.net/myresources/image1.png"
      alt="My image" />
 ```
 
@@ -169,5 +169,4 @@ public static class StaticContentUrlHtmlHelper
 
 - Пример, демонстрирующий этот шаблон, можно найти на сайте [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/static-content-hosting).
 - [Шаблон ключа камердинера](valet-key.md). Если целевые ресурсы не должны быть доступы для анонимных пользователей, нужно обеспечить безопасность на уровне хранилища, которое содержит статическое содержимое. В статье по ссылке объясняется, как использовать токен или ключ, который позволяет клиентам с ограниченным доступом получить прямой доступ к определенному ресурсу или службе, например к размещенной в облаке службе хранения.
-- Эффективный способ развертывания статического сайта в Azure описан в [блоге Infosys](http://www.infosysblogs.com/microsoft/2010/06/an_efficient_way_of_deploying.html).
 - [Основные понятия службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd179376.aspx).

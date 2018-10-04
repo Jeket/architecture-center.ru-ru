@@ -3,12 +3,12 @@ title: Выбор хранилища аналитических данных
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: cdc32c16e30aec5e1c0cb6959182215f99d56b56
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 3cf7dc533cc6ae3e6d7e2326852b585da8613e18
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30846888"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428879"
 ---
 # <a name="choosing-an-analytical-data-store-in-azure"></a>Выбор хранилища аналитических данных в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "30846888"
 - [HBase/Phoenix в HDInsight](/azure/hdinsight/hbase/apache-hbase-overview);
 - [Hive LLAP в HDInsight](/azure/hdinsight/interactive-query/apache-interactive-query-get-started);
 - [Azure Analysis Services](/azure/analysis-services/analysis-services-overview);
-- [База данных Azure Cosmos](/azure/cosmos-db/)
+- [Azure Cosmos DB](/azure/cosmos-db/)
 
 Эти варианты предоставляют разные модели баз данных, оптимизированные для разных типов задач.
 
@@ -53,12 +53,12 @@ ms.locfileid: "30846888"
 
 ### <a name="general-capabilities"></a>Общие возможности
 
-| | База данных SQL | Хранилище данных SQL. | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
+| | База данных SQL | Хранилище данных SQL | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
 | --- | --- | --- | --- | --- | --- | --- |
 | Является управляемой службой | Yes | Yes | Да <sup>1</sup> | Да <sup>1</sup> | Yes | Yes |
 | Модель базы данных-источника | Реляционная (табличный формат при использовании индексов columnstore) | Реляционные таблицы с хранением по столбцам | Хранилище широких столбцов | Hive (с выполнением в памяти) | Табличная (семантические модели MOLAP) | Хранилище документов, граф, хранилище пар "ключ-значение", хранилище широких столбцов |
-| Поддержка языка SQL | Yes | Yes | Да (с помощью драйвера [Phoenix](http://phoenix.apache.org/) JDBC) | Yes | Нет  | Yes |
-| Оптимизация для уровня быстрого обслуживания | Да <sup>2</sup> | Нет  | Yes | Yes | Нет  | Yes |
+| Поддержка языка SQL | Yes | Yes | Да (с помощью драйвера [Phoenix](https://phoenix.apache.org/) JDBC) | Yes | Нет  | Yes |
+| Оптимизация для уровня быстрого обслуживания | Да <sup>2</sup> | Нет  | Yes | Да | Нет  | Yes |
 
 [1] Настройка и масштабирование вручную.
 
@@ -66,16 +66,16 @@ ms.locfileid: "30846888"
  
 ### <a name="scalability-capabilities"></a>Масштабируемость
 
-|                                                  | База данных SQL | Хранилище данных SQL. | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
+|                                                  | База данных SQL | Хранилище данных SQL | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
 |--------------------------------------------------|--------------|--------------------|----------------------------|------------------------|-------------------------|-----------|
-| Избыточные региональные серверы для высокого уровня доступности |     Yes      |        Yes         |            Yes             |           Нет            |           Нет             |    Yes    |
-|             Поддержка масштабирования запросов             |      Нет       |        Yes         |            Yes             |          Yes           |           Yes           |    Yes    |
-|          Динамическая масштабируемость (увеличение масштаба)          |     Yes      |        Yes         |             Нет              |           Нет            |           Yes           |    Yes    |
-|        Выполняющееся в памяти кэширование данных        |     Yes      |        Yes         |             Нет              |          Yes           |           Yes           |    Нет      |
+| Избыточные региональные серверы для высокого уровня доступности |     Yes      |        Да         |            Да             |           Нет            |           Нет             |    Yes    |
+|             Поддержка масштабирования запросов             |      Нет       |        Yes         |            Да             |          Да           |           Да           |    Yes    |
+|          Динамическая масштабируемость (увеличение масштаба)          |     Yes      |        Да         |             Нет              |           Нет            |           Yes           |    Yes    |
+|        Выполняющееся в памяти кэширование данных        |     Yes      |        Да         |             Нет              |          Yes           |           Да           |    Нет      |
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
 
-| | База данных SQL | Хранилище данных SQL. | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
+| | База данных SQL | Хранилище данных SQL | HBase/Phoenix в HDInsight | Hive LLAP в HDInsight | Службы Azure Analysis Services | База данных Cosmos |
 | --- | --- | --- | --- | --- | --- | --- |
 | Authentication  | SQL / Azure Active Directory (Azure AD) | SQL / Azure AD | Локальные средства или Azure AD <sup>1</sup> | Локальные средства или Azure AD <sup>1</sup> | Azure AD | Пользователи базы данных или Azure AD с механизмом управления доступом (IAM) |
 | Шифрование неактивных данных | Да <sup>2</sup> | Да <sup>2</sup> | Да <sup>1</sup> | Да <sup>1</sup> | Yes | Yes |

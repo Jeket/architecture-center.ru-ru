@@ -6,12 +6,12 @@ ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: tailspin
 pnp.series.next: claims
-ms.openlocfilehash: e85817626675cec4d126921c19a31a0983ecd62d
-ms.sourcegitcommit: 8ab30776e0c4cdc16ca0dcc881960e3108ad3e94
+ms.openlocfilehash: 70f4a96369c207740400b9dfe72e1e964507f729
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
-ms.locfileid: "26359260"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47428131"
 ---
 # <a name="authenticate-using-azure-ad-and-openid-connect"></a>Аутентификация с помощью Azure AD и OpenID Connect
 
@@ -61,7 +61,7 @@ app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions {
 Обратите внимание, что некоторые параметры извлекаются из конфигурации времени выполнения. Ниже представлено описание параметров ПО промежуточного слоя.
 
 * **ClientId**. Идентификатор клиента приложения, который был получен при регистрации приложения в Azure AD.
-* **Authority**. Для мультитенантного приложения установите значение `https://login.microsoftonline.com/common/`. Это URL-адрес общей конечной точки Azure AD, которая позволяет выполнить вход пользователям любого клиента Azure AD. Дополнительные сведения об этой общей конечной точке см. в [этой записи блога](http://www.cloudidentity.com/blog/2014/08/26/the-common-endpoint-walks-like-a-tenant-talks-like-a-tenant-but-is-not-a-tenant/).
+* **Authority**. Для мультитенантного приложения установите значение `https://login.microsoftonline.com/common/`. Это URL-адрес общей конечной точки Azure AD, которая позволяет выполнить вход пользователям любого клиента Azure AD. Дополнительные сведения об этой общей конечной точке см. в [этой записи блога](https://www.cloudidentity.com/blog/2014/08/26/the-common-endpoint-walks-like-a-tenant-talks-like-a-tenant-but-is-not-a-tenant/).
 * В разделе **TokenValidationParameters** установите для параметра **ValidateIssuer** значение false. Это означает, что приложение будет отвечать за проверку значения издателя в маркере идентификатора. (ПО промежуточного слоя в любом случае будет проверять сам маркер.) Дополнительные сведения см. в разделе [о проверке издателя](claims.md#issuer-validation).
 * **PostLogoutRedirectUri**. Укажите URL-адрес для перенаправления пользователей после выхода. Он должен перенаправлять пользователей к странице, которая поддерживает анонимные запросы (обычно это страница приветствия).
 * **SignInScheme**. Задайте для этого параметра значение `CookieAuthenticationDefaults.AuthenticationScheme`. Этот параметр означает, что после проверки подлинности пользователя его утверждения локально сохраняются в файле cookie. Благодаря этому файлу cookie пользователь остается в системе во время сеанса браузера.

@@ -5,12 +5,12 @@ author: MikeWasson
 ms.date: 03/24/2017
 ms.custom: resiliency
 pnp.series.title: Design for Resiliency
-ms.openlocfilehash: 95068bf8b1f5b559255e27819aaddb454d3427bc
-ms.sourcegitcommit: d08f6ee27e1e8a623aeee32d298e616bc9bb87ff
+ms.openlocfilehash: 6598644828dffb68f01c2d0a2ce9fbdda932168a
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33810505"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429549"
 ---
 # <a name="failure-mode-analysis"></a>Анализ режима сбоя
 [!INCLUDE [header](../_includes/header.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "33810505"
 
 В качестве отправной точки для процесса FMA эта статья содержит каталог потенциальных режимов сбоя и способов их устранения. Каталог упорядочен по технологии или службе Azure, а также общей категории для проектирования уровня приложения. Каталог не является исчерпывающим, но охватывает множество основных служб Azure.
 
-## <a name="app-service"></a>Служба приложений Azure
+## <a name="app-service"></a>Служба приложений
 ### <a name="app-service-app-shuts-down"></a>Приложение службы приложений завершает работу.
 **Обнаружение.** Возможные причины:
 
@@ -109,7 +109,7 @@ ms.locfileid: "33810505"
 
 ## <a name="cassandra"></a>Cassandra
 ### <a name="reading-or-writing-to-a-node-fails"></a>Чтение или запись в узле завершается сбоем.
-**Обнаружение.** Перехватите исключение. Для клиентов .NET это, как правило, будет `System.Web.HttpException`. Другой клиент может иметь другие типы исключений.  Дополнительные сведения см. в записи блога [Cassandra error handling done right](http://www.datastax.com/dev/blog/cassandra-error-handling-done-right) (Правильная обработка ошибок Cassandra).
+**Обнаружение.** Перехватите исключение. Для клиентов .NET это, как правило, будет `System.Web.HttpException`. Другой клиент может иметь другие типы исключений.  Дополнительные сведения см. в записи блога [Cassandra error handling done right](https://www.datastax.com/dev/blog/cassandra-error-handling-done-right) (Правильная обработка ошибок Cassandra).
 
 **Восстановление**
 
@@ -201,7 +201,7 @@ ms.locfileid: "33810505"
 
 **Диагностика.** Воспользуйтесь данными журнала.
 
-## <a name="redis-cache"></a>Кэш Redis
+## <a name="redis-cache"></a>кэш Redis;
 ### <a name="reading-from-the-cache-fails"></a>Чтение из кэша завершается сбоем.
 **Обнаружение.** Перехватите `StackExchange.Redis.RedisConnectionException`.
 
@@ -332,7 +332,7 @@ ms.locfileid: "33810505"
 
 **Диагностика.** Журналы приложений
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Хранилище
 ### <a name="writing-data-to-azure-storage-fails"></a>Запись данных в службу хранилища Azure завершается сбоем.
 **Обнаружение.** Клиент получает ошибки при записи.
 
@@ -452,7 +452,7 @@ ms.locfileid: "33810505"
 [azure-alerts]: /azure/monitoring-and-diagnostics/insights-alerts-portal/
 [azure-log-analytics]: /azure/log-analytics/log-analytics-overview/
 [BrokeredMessage.TimeToLive]: https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx
-[cassandra-error-handling]: http://www.datastax.com/dev/blog/cassandra-error-handling-done-right
+[cassandra-error-handling]: https://www.datastax.com/dev/blog/cassandra-error-handling-done-right
 [circuit-breaker]: https://msdn.microsoft.com/library/dn589784.aspx
 [cosmosdb-multi-region]: /azure/cosmos-db/tutorial-global-distribution-sql-api
 [elasticsearch-azure]: ../elasticsearch/index.md
@@ -468,7 +468,7 @@ ms.locfileid: "33810505"
 [ra-web-apps-basic]: ../reference-architectures/app-service-web-app/basic-web-app.md
 [redis-monitor]: /azure/redis-cache/cache-how-to-monitor/
 [redis-retry]: ../best-practices/retry-service-specific.md#azure-redis-cache
-[resilience-by-design-pdf]: http://download.microsoft.com/download/D/8/C/D8C599A4-4E8A-49BF-80EE-FE35F49B914D/Resilience_by_Design_for_Cloud_Services_White_Paper.pdf
+[resilience-by-design-pdf]: https://download.microsoft.com/download/D/8/C/D8C599A4-4E8A-49BF-80EE-FE35F49B914D/Resilience_by_Design_for_Cloud_Services_White_Paper.pdf
 [RoleEntryPoint.OnStop]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
 [RoleEnvironment.Stopping]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx
 [rm-locks]: /azure/azure-resource-manager/resource-group-lock-resources/

@@ -9,12 +9,12 @@ pnp.pattern.categories:
 - data-management
 - design-implementation
 - performance-scalability
-ms.openlocfilehash: c2832aa806909c6f0aab8b6345ffb8162eb59903
-ms.sourcegitcommit: d08f6ee27e1e8a623aeee32d298e616bc9bb87ff
+ms.openlocfilehash: 9a2eecdff7494fb627ea5c4655e6edc789bd5bdf
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33811055"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429695"
 ---
 # <a name="command-and-query-responsibility-segregation-cqrs-pattern"></a>Шаблон CQRS
 
@@ -248,8 +248,6 @@ public interface IProductsDomain
 
 - [Шаблон материализованного представления](materialized-view.md). Модель чтения в реализации CQRS может содержать или самостоятельно создавать материализованные представления данных из модели записи.
 
-- Руководство по шаблонам и методикам для модели CQRS представлено [здесь](http://aka.ms/cqrs). В частности, статья [Introducing the Command Query Responsibility Segregation Pattern](https://msdn.microsoft.com/library/jj591573.aspx) (Знакомство с шаблоном разделения ответственности команды и запроса) описывает этот шаблон и его применимость, а статья [Epilogue: Lessons Learned](https://msdn.microsoft.com/library/jj591568.aspx) (Эпилог и обсуждение полученного опыта) поможет разобраться с некоторыми проблемами, которые возникают при использовании этого шаблона.
+- Руководство по шаблонам и методикам для модели CQRS представлено [здесь](https://aka.ms/cqrs). В частности, статья [Introducing the Command Query Responsibility Segregation Pattern](https://msdn.microsoft.com/library/jj591573.aspx) (Знакомство с шаблоном разделения ответственности команды и запроса) описывает этот шаблон и его применимость, а статья [Epilogue: Lessons Learned](https://msdn.microsoft.com/library/jj591568.aspx) (Эпилог и обсуждение полученного опыта) поможет разобраться с некоторыми проблемами, которые возникают при использовании этого шаблона.
 
-- В записи в блоге Мартина Фоулера (Martin Fowler) о [CQRS](http://martinfowler.com/bliki/CQRS.html) представлен обзор этого шаблона, а также ссылки на полезные ресурсы.
-
-- В [записях блога](http://codebetter.com/gregyoung/) Грега Янга (Greg Young) подробно рассмотрены разные аспекты использования шаблона CQRS.
+- В записи в блоге Мартина Фоулера (Martin Fowler) о [CQRS](https://martinfowler.com/bliki/CQRS.html) представлен обзор этого шаблона, а также ссылки на полезные ресурсы.
