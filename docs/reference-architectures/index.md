@@ -4,18 +4,43 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: bd04a866258fb2f6ff849a4f29492610d3545e1f
-ms.sourcegitcommit: 20953a7bed708713e4c972d390a2910505e80f08
+ms.openlocfilehash: c96fc08aca97beb886fa96807d6f9cc5c09d0555
+ms.sourcegitcommit: 9eecff565392273d11b8702f1fcecb4d75e27a15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040457"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48243637"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
 Эталонные архитектуры упорядочены по сценарию, а связанные архитектуры сгруппированы. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включено развертываемое решение.
 
-Перейти к разделу: [Большие данные](#big-data-solutions) | [Веб-приложения](#web-applications) | [N-уровневые приложения](#n-tier-applications) | [Виртуальные сети](#virtual-networks) | [Active Directory](#extending-on-premises-active-directory-to-azure) | [Рабочие нагрузки виртуальных машин](#vm-workloads)
+Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [N-уровневые приложения](#n-tier-applications) | [Виртуальные сети](#virtual-networks) | [Active Directory](#extending-on-premises-active-directory-to-azure) | [Рабочие нагрузки виртуальных машин](#vm-workloads) | [Веб-приложения](#web-applications)
+
+## <a name="ai-and-machine-learning"></a>ИИ и машинное обучение
+
+<ul  class="panelContent cardsF">
+<!-- SQL Data Warehouse -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/batch-scoring-deep-learning.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/batch-ai.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Пакетная оценка для моделей глубокого обучения</h3>
+                        <p>Автоматизируйте выполнение пакетных заданий, которые применяют алгоритм переноса стиля с помощью нейронных сетей к видео.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
 
 ## <a name="big-data-solutions"></a>Решения для больших объемов данных
 
@@ -73,68 +98,6 @@ ms.locfileid: "44040457"
                     <div class="cardText">
                         <h3>Обработка потоков данных с помощью Azure Stream Analytics</h3>
                         <p>Сквозной конвейер обработки потоков данных, который коррелирует записи из двух потоков данных для вычисления скользящего среднего.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-</ul>
-
-## <a name="web-applications"></a>Веб-приложения
-
-<ul  class="panelContent cardsF">
-<li style="display: flex; flex-direction: column;">
-    <a href="./app-service-web-app/basic-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../_images/icons/app-service.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Базовое веб-приложение</h3>
-                        <p>Веб-приложение, использующее службу приложений Azure и Базу данных SQL Azure.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-<li style="display: flex; flex-direction: column;">
-    <a href="./app-service-web-app/scalable-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../_images/icons/app-service.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Высокомасштабируемое веб-приложение</h3>
-                        <p>Повышение масштабируемости в веб-приложении с помощью проверенных методов.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
-<li style="display: flex; flex-direction: column;">
-    <a href="./app-service-web-app/multi-region.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../_images/icons/app-service.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Высокодоступное веб-приложение</h3>
-                        <p>Запуск веб-приложения службы приложений в нескольких регионах для достижения высокого уровня доступности.</p>
                     </div>
                 </div>
             </div>
@@ -541,3 +504,65 @@ ms.locfileid: "44040457"
 </li>
 </ul>
 
+
+## <a name="web-applications"></a>Веб-приложения
+
+<ul  class="panelContent cardsF">
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/basic-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Базовое веб-приложение</h3>
+                        <p>Веб-приложение, использующее службу приложений Azure и Базу данных SQL Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/scalable-web-app.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Высокомасштабируемое веб-приложение</h3>
+                        <p>Повышение масштабируемости в веб-приложении с помощью проверенных методов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/multi-region.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Высокодоступное веб-приложение</h3>
+                        <p>Запуск веб-приложения службы приложений в нескольких регионах для достижения высокого уровня доступности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
