@@ -6,12 +6,12 @@ ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: claims
 pnp.series.next: app-roles
-ms.openlocfilehash: dde577d5bab63fb436d52fb4548399d5bd8bb38f
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 512fd37080b99a7e6249db70f0d2bc673cf87978
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24541406"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429168"
 ---
 # <a name="tenant-sign-up-and-onboarding"></a>Регистрация и адаптации клиента
 
@@ -158,7 +158,7 @@ internal static bool IsSigningUp(this BaseControlContext context)
 
 В таблице Tenant IssuerValue является значением утверждения издателя для клиента. Для Azure AD это `https://sts.windows.net/<tentantID>` с уникальным значением для каждого клиента.
 
-При регистрации нового клиента приложение Surveys вносит запись клиента в базу данных. Это происходит внутри события `AuthenticationValidated` . (Не выполняйте это действие до события, так как маркер идентификатора пока не прошел проверку и значениям утверждения доверять нельзя.) См. статью [Проверка подлинности].
+При регистрации нового клиента приложение Surveys вносит запись клиента в базу данных. Это происходит внутри события `AuthenticationValidated` . (Не выполняйте это действие до события, так как маркер идентификатора пока не прошел проверку и значениям утверждения доверять нельзя.) См. статью [Аутентификация].
 
 Ниже приведен соответствующий код из приложения Surveys:
 
@@ -259,6 +259,6 @@ private async Task<Tenant> SignUpTenantAsync(BaseControlContext context, TenantM
 [app roles]: app-roles.md
 [Tailspin]: tailspin.md
 
-[state]: http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
-[Проверка подлинности]: authenticate.md
+[state]: https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
+[Аутентификация]: authenticate.md
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance

@@ -4,12 +4,12 @@ description: Руководство по способам разделения �
 author: dragon119
 ms.date: 07/13/2016
 pnp.series.title: Best Practices
-ms.openlocfilehash: d1d9c1b3cf07f724eb010fc260d86ceb84b789ca
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.openlocfilehash: 579f78004a662fe412cb8dcc25b9ad1db9782125
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "29059978"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429508"
 ---
 # <a name="data-partitioning"></a>Секционирование данных
 
@@ -551,37 +551,37 @@ Azure Service Fabric — это платформа микрослужб, кот�
 [Доступность и согласованность в Центрах событий]: /azure/event-hubs/event-hubs-availability-and-consistency
 [azure-limits]: /azure/azure-subscription-service-limits
 [Сеть доставки содержимого Azure]: /azure/cdn/cdn-overview
-[кэш Azure Redis]: http://azure.microsoft.com/services/cache/
+[кэш Azure Redis]: https://azure.microsoft.com/services/cache/
 [Azure Storage Scalability and Performance Targets]: /azure/storage/storage-scalability-targets
 [Azure Storage Table Design Guide]: /azure/storage/storage-table-design-guide
 [Создание решения Polyglot]: https://msdn.microsoft.com/library/dn313279.aspx
 [cosmos-db-ru]: /azure/cosmos-db/request-units
 [Доступ к данным для масштабируемых решений: с помощью SQL, NoSQL и Polyglot Persistence]: https://msdn.microsoft.com/library/dn271399.aspx
-[Руководство по согласованности данных]: http://aka.ms/Data-Consistency-Primer
+[Руководство по согласованности данных]: https://aka.ms/Data-Consistency-Primer
 [Data Partitioning Guidance]: https://msdn.microsoft.com/library/dn589795.aspx
-[Data Types]: http://redis.io/topics/data-types
+[Data Types]: https://redis.io/topics/data-types
 [cosmosdb-sql-api]: /azure/cosmos-db/sql-api-introduction
 [Общие сведения о возможностях эластичных баз данных]: /azure/sql-database/sql-database-elastic-scale-introduction
 [event-hubs]: /azure/event-hubs
 [Federations Migration Utility]: https://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1
 [Инструкции и рекомендации по использованию надежных коллекций в Azure Service Fabric]: /azure/service-fabric/service-fabric-reliable-services-reliable-collections-guidelines
-[Index Table Pattern]: http://aka.ms/Index-Table-Pattern
-[Materialized View Pattern]: http://aka.ms/Materialized-View-Pattern
+[Index Table Pattern]: ../patterns/index-table.md
+[Materialized View Pattern]: ../patterns/materialized-view.md
 [Многосегментное формирование запросов]: /azure/sql-database/sql-database-elastic-scale-multishard-querying
 [Общие сведения о Service Fabric]: /azure/service-fabric/service-fabric-overview
 [Секционирование служб Reliable Services в Service Fabric]: /azure/service-fabric/service-fabric-concepts-partitioning
-[Секционирование: распределение данных между несколькими экземплярами Redis]: http://redis.io/topics/partitioning
+[Секционирование: распределение данных между несколькими экземплярами Redis]: https://redis.io/topics/partitioning
 [Performing Entity Group Transactions]: https://msdn.microsoft.com/library/azure/dd894038.aspx
-[Учебник по кластерам Redis]: http://redis.io/topics/cluster-tutorial
-[Запуск Redis на виртуальной машине CentOS Linux в Azure]: http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx
+[Учебник по кластерам Redis]: https://redis.io/topics/cluster-tutorial
+[Запуск Redis на виртуальной машине CentOS Linux в Azure]: https://blogs.msdn.microsoft.com/tconte/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure/
 [Масштабирование с использованием инструмента разбиения и объединения эластичных баз данных]: /azure/sql-database/sql-database-elastic-scale-overview-split-and-merge
 [Использование Azure CDN]: /azure/cdn/cdn-create-new-endpoint
 [Квоты на служебную шину]: /azure/service-bus-messaging/service-bus-quotas
 [service-fabric-reliable-collections]: /azure/service-fabric/service-fabric-reliable-services-reliable-collections
 [Ограничения поиска Azure]:  /azure/search/search-limits-quotas-capacity
-[Sharding pattern]: http://aka.ms/Sharding-Pattern
+[Sharding pattern]: ../patterns/sharding.md
 [Поддерживаемые типы данных (служба поиска Azure)]:  https://msdn.microsoft.com/library/azure/dn798938.aspx
-[Транзакции]: http://redis.io/topics/transactions
+[Транзакции]: https://redis.io/topics/transactions
 [Что такое Центры событий?]: /azure/event-hubs/event-hubs-what-is-event-hubs
 [Что такое поиск Azure?]: /azure/search/search-what-is-azure-search
 [Что такое база данных SQL Azure]: /azure/sql-database/sql-database-technical-overview
