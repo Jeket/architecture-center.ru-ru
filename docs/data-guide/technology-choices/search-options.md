@@ -3,12 +3,12 @@ title: Выбор хранилища данных для поиска
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: ead07e307e96696faa5ddf48505eee378027523c
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.openlocfilehash: 9576bbba9609a04ccc7851d55dd28853ffc6b701
+ms.sourcegitcommit: f6be2825bf2d37dfe25cfab92b9e3973a6b51e16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30848620"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48858186"
 ---
 # <a name="choosing-a-search-data-store-in-azure"></a>Выбор хранилища данных для поиска в Azure
 
@@ -44,36 +44,36 @@ ms.locfileid: "30848620"
 
 ### <a name="general-capabilities"></a>Общие возможности
 
-| | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
+| | Поиск Azure | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
 | Является управляемой службой | Yes | Нет  | Yes | Yes |  
-| ИНТЕРФЕЙС REST API | Yes | Yes | Yes | Нет  |
+| REST API | Yes | Да | Да | Нет  |
 | Программируемость | .NET | Java | Java | T-SQL | 
 | Индексаторы документов для стандартных типов файлов (PDF, DOCX, TXT и т. д.) | Yes | Нет  | Yes | Нет  |
 
 ### <a name="manageability-capabilities"></a>Возможности управления
 
-| | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
+| | Поиск Azure | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- |
-| Обновляемая схема | Нет  | Yes | Yes | Yes |
-| Поддержка горизонтального масштабирования  | Yes | Yes | Yes | Нет  |
+| Обновляемая схема | Нет  | Yes | Да | Yes |
+| Поддержка горизонтального масштабирования  | Yes | Да | Да | Нет  |
 
 ### <a name="analytic-workload-capabilities"></a>Возможности для поддержки аналитических рабочих нагрузок
 
-| | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
+| | Поиск Azure | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
-| Поддержка других функций аналитики, помимо полнотекстового поиска | Нет  | Yes | Yes | Yes |
+| Поддержка других функций аналитики, помимо полнотекстового поиска | Нет  | Yes | Да | Yes |
 | Входит в стек для анализа журналов | Нет  | Да (ELK) |  Нет  | Нет  |
-| Поддержка семантического поиска | Да (только поиск похожих документов) | Yes | Yes | Yes | 
+| Поддержка семантического поиска | Да (только поиск похожих документов) | Yes | Да | Yes | 
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
 
-| | поиск Azure; | Elasticsearch | HDInsight с Solr | База данных SQL | 
+| | Поиск Azure | Elasticsearch | HDInsight с Solr | База данных SQL | 
 | --- | --- | --- | --- | --- | 
 | Безопасность на уровне строк | Частично (требуется запрос приложения для фильтрации по идентификатору группы) | Частично (требуется запрос приложения для фильтрации по идентификатору группы) | Yes | Yes | 
 | Прозрачное шифрование данных | Нет  | Нет  | Нет  | Yes |  
-| Ограничение доступа для определенных IP-адресов | Нет  | Yes | Yes | Yes |   
-| Ограничение доступа для разрешения доступа только к виртуальной сети | Нет  | Yes | Yes | Yes |  
+| Ограничение доступа для определенных IP-адресов | Нет  | Yes | Да | Yes |   
+| Ограничение доступа для разрешения доступа только к виртуальной сети | Нет  | Yes | Да | Yes |  
 | Аутентификация Active Directory (встроенная) | Нет  | Нет  | Нет  | Yes | 
 
 ## <a name="see-also"></a>См. также
