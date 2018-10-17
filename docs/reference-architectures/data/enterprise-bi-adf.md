@@ -3,12 +3,12 @@ title: Автоматизированная корпоративная бизн�
 description: Сведения о том, как автоматизировать рабочий процесс ELT в Azure с помощью Фабрики данных Azure
 author: MikeWasson
 ms.date: 07/01/2018
-ms.openlocfilehash: ffd75ba8c57a9afbc6abad61f21f738c644c9bc8
-ms.sourcegitcommit: 58d93e7ac9a6d44d5668a187a6827d7cd4f5a34d
+ms.openlocfilehash: f004c02da93335e74b07b9720236832ad7f744db
+ms.sourcegitcommit: 62945777e519d650159f0f963a2489b6bb6ce094
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37142287"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48876908"
 ---
 # <a name="automated-enterprise-bi-with-sql-data-warehouse-and-azure-data-factory"></a>Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure
 
@@ -209,7 +209,7 @@ SET [Integration].[Sale_Staging].[WWI Customer ID] =  CustomerHolder.[WWI Custom
 - `<data_warehouse_password>`. Пароль администратора Хранилища данных SQL.
 - `<resource_group_name>`. Имя группы ресурсов.
 - `<region>`. Регион Azure, в котором будут развертываться ресурсы.
-- `<storage_account_name>`. Имя учетной записи хранения, которое должно соответствовать [правилам именования](../../best-practices/naming-conventions.md#naming-rules-and-restrictions) для учетных записей хранения.
+- `<storage_account_name>`. имя учетной записи хранения; которое должно соответствовать [правилам именования](../../best-practices/naming-conventions.md#naming-rules-and-restrictions) для учетных записей хранения.
 - `<sql-db-password>`. Пароль для входа на сервер SQL Server.
 
 ### <a name="deploy-azure-data-factory"></a>Развертывание Фабрики данных Azure

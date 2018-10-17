@@ -1,22 +1,22 @@
 ---
 title: Внешний интерфейс для электронной коммерции в Azure
-description: Проверенные сценарии размещения сайта электронной коммерции в Azure
+description: Размещения сайта электронной коммерции в Azure.
 author: masonch
 ms.date: 7/13/18
-ms.openlocfilehash: 340f60628bf932489a9fbd11ac3ff1be723a685c
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: 6ca85665a5bf63bf71f5badc16406db5df2a34c2
+ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47428080"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48819097"
 ---
-# <a name="e-commerce-frontend-on-azure"></a>Внешний интерфейс для электронной коммерции в Azure
+# <a name="an-e-commerce-front-end-on-azure"></a>Внешний интерфейс для электронной коммерции в Azure
 
-В этом примере сценария описывается реализация интерфейса электронной коммерции с помощью средств платформы как услуги (PaaS) Azure. На многих веб-сайтах электронной коммерции известна проблема сезонности и изменчивости трафика с течением времени. Когда спрос на ваши товары или услуги резко возрастает (прогнозируемо или нет), важно использовать средства PaaS, позволяющие обслуживать большее количество клиентов и транзакций. Кроме того, этот сценарий пользуется преимуществами ценообразования на облачные услуги, так как оплачиваются только используемые ресурсы.
+В этом примере сценария описывается реализация внешнего интерфейса для электронной коммерции с помощью средств платформы как услуги (PaaS) Azure. На многих веб-сайтах электронной коммерции известна проблема сезонности и изменчивости трафика с течением времени. Когда спрос на ваши товары или услуги резко возрастает (прогнозируемо или нет), важно использовать средства PaaS, позволяющие обслуживать большее количество клиентов и транзакций. Кроме того, этот сценарий пользуется преимуществами ценообразования на облачные услуги, так как оплачиваются только используемые ресурсы.
 
 Этот документ поможет вам узнать о различных компонентах Azure PaaS и рекомендациях, которые используются для объединения компонентов и развертывания примера приложения электронной коммерции, *Releasecloud Concerts*, сетевой платформы по продаже билетов на концерты.
 
-## <a name="potential-use-cases"></a>Потенциальные варианты использования
+## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
 Рассмотрите этот сценарий для следующих вариантов использования:
 
@@ -25,7 +25,7 @@ ms.locfileid: "47428080"
 
 ## <a name="architecture"></a>Архитектура
 
-![Пример архитектуры сценария для приложения электронной коммерции][architecture-diagram]
+![Пример архитектуры сценария для приложения электронной коммерции][architecture]
 
 Этот сценарий охватывает покупку билетов с сайта электронной коммерции, данные передаются по сценарию следующим образом:
 
@@ -69,7 +69,7 @@ ms.locfileid: "47428080"
 
 Другие варианты для уровня данных:
 
-* [Cosmos DB][docs-cosmosdb]. Это глобально распределенная многомодельная база данных Майкрософт. Это платформа для запуска других моделей данных, таких как Mongo DB, Cassandra, Graph или простого хранения табличных данных.
+* [Cosmos DB](/azure/cosmos-db/introduction). Это глобально распределенная многомодельная база данных Майкрософт. Это платформа для запуска других моделей данных, таких как Mongo DB, Cassandra, Graph или простого хранения табличных данных.
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -120,11 +120,11 @@ ms.locfileid: "47428080"
 * [Эталонный пример электронного магазина в контейнерах][microservices-ecommerce]
 
 <!-- links -->
+[architecture]: ./media/architecture-ecommerce-scenario.png
 [small-pricing]: https://azure.com/e/90fbb6a661a04888a57322985f9b34ac
 [medium-pricing]: https://azure.com/e/38d5d387e3234537b6859660db1c9973
 [large-pricing]: https://azure.com/e/f07f99b6c3134803a14c9b43fcba3e2f
 [app-service-reference-architecture]: ../../reference-architectures/app-service-web-app/basic-web-app.md
-[architecture-diagram]: ./media/architecture-diagram-ecommerce-solution.png
 [availability]: /azure/architecture/checklist/availability
 [circuit-breaker]: /azure/architecture/patterns/circuit-breaker
 [design-patterns-availability]: /azure/architecture/patterns/category/availability
@@ -136,7 +136,6 @@ ms.locfileid: "47428080"
 [docs-cdn]: /azure/cdn/cdn-overview
 [docs-container-instances]: /azure/container-instances/
 [docs-kubernetes-service]: /azure/aks/
-[docs-cosmosdb]: /azure/cosmos-db/
 [docs-functions]: /azure/azure-functions/functions-overview
 [docs-redis-cache]: /azure/redis-cache/cache-overview
 [docs-search]: /azure/search/search-what-is-azure-search
@@ -154,6 +153,6 @@ ms.locfileid: "47428080"
 [resiliency-app-service]: /azure/architecture/checklist/resiliency-per-service#app-service
 [resiliency]: /azure/architecture/checklist/resiliency
 [scalability]: /azure/architecture/checklist/scalability
-[secure-development]: https://www.microsoft.com/en-us/SDL/process/design.aspx
+[secure-development]: https://www.microsoft.com/SDL/process/design.aspx
 [sql-geo-replication]: /azure/sql-database/sql-database-geo-replication-overview
 [storage-geo-redudancy]: /azure/storage/common/storage-redundancy-grs

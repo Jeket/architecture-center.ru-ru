@@ -1,14 +1,14 @@
 ---
 title: Выявление мошенничества в режиме реального времени в Azure
-description: Проверенный сценарий для обнаружения мошеннических действий в режиме реального времени с использованием Центров событий Azure и Stream Analytics.
+description: Обнаружения мошеннических действий в реальном времени с использованием Центров событий Azure и Stream Analytics.
 author: alexbuckgit
 ms.date: 07/05/2018
-ms.openlocfilehash: d80fab460938cceeb84f3ed2ecd97e9e149f8e2d
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.openlocfilehash: 4de988731aa1c5b0e4c0ba06fa5aed59e2bb7d81
+ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389134"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48818672"
 ---
 # <a name="real-time-fraud-detection-on-azure"></a>Выявление мошенничества в режиме реального времени в Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "44389134"
 
 Этот пример представляет часть более широкой архитектуры обработки данных и стратегии. Другие возможности этого аспекта общей архитектуры рассматриваются в этой статье далее.
 
-## <a name="related-use-cases"></a>Связанные варианты использования
+## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
 Рассмотрите этот сценарий для следующих вариантов использования:
 
@@ -30,7 +30,7 @@ ms.locfileid: "44389134"
 
 ## <a name="architecture"></a>Архитектура
 
-![Обзор архитектуры компонентов Azure для сценария выявления мошенничества в реальном времени.][architecture-diagram]
+![Обзор архитектуры компонентов Azure для сценария выявления мошенничества в реальном времени.][architecture]
 
 Этот сценарий охватывает серверные компоненты конвейера аналитики в режиме реального времени. Данные передаются в сценарии следующим образом:
 
@@ -43,7 +43,7 @@ ms.locfileid: "44389134"
 
 * [Центры событий Azure][docs-event-hubs] — это платформа потоковой передачи больших данных и служба приема событий в режиме реального времени, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. В этом сценарии Центры событий получают все метаданные телефонных звонков, чтобы проанализировать их на мошеннические действия.
 * [Azure Stream Analytics][docs-stream-analytics] — это модуль обработки событий, который проверяет большие потоки данных из устройств и других источников данных. Эта служба также поддерживает извлечение информации из потоков данных для определения шаблонов и связей. Эти шаблоны могут активировать другие нисходящие действия. В этом сценарии Stream Analytics преобразует входной поток из Центров событий, чтобы идентифицировать мошеннические вызовы.
-* [Хранилище BLOB-объектов][docs-blob-storage] используется в этом сценарии для хранения результатов задания Stream Analytics.
+* [Хранилище BLOB-объектов](/azure/storage/blobs/storage-blobs-introduction) используется в этом сценарии для хранения результатов задания Stream Analytics.
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -61,7 +61,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ### <a name="scalability"></a>Масштабируемость
 
-Компоненты этого сценария предназначены для гипермасштабного приема и массивно-параллельной аналитики в реальном времени. Центры событий Azure высоко масштабируемые и способны получать и обрабатывать миллионы событий в секунду с низкой задержкой.  Центры событий [автоматически масштабируют](/azure/event-hubs/event-hubs-auto-inflate) единицы пропускной способности в соответствии с потребностями. Azure Stream Analytics способен анализировать большой объем потока данных из множества источников. Увеличив количество [единиц потоковой передачи](/azure/stream-analytics/stream-analytics-streaming-unit-consumption), выделенных для выполнения задания потоковой передачи, можно увеличить масштаб Stream Analytics.
+Компоненты этого сценария предназначены для гипермасштабного приема и массивно-параллельной аналитики в реальном времени. Центры событий Azure высоко масштабируемые и способны получать и обрабатывать миллионы событий в секунду с низкой задержкой. Центры событий [автоматически масштабируют](/azure/event-hubs/event-hubs-auto-inflate) единицы пропускной способности в соответствии с потребностями. Azure Stream Analytics способен анализировать большой объем потока данных из множества источников. Увеличив количество [единиц потоковой передачи](/azure/stream-analytics/stream-analytics-streaming-unit-consumption), выделенных для выполнения задания потоковой передачи, можно увеличить масштаб Stream Analytics.
 
 Общие рекомендации по разработке масштабируемого сценария см. в [контрольном списке для обеспечения масштабируемости][scalability] в Центре архитектуры Azure.
 
@@ -91,7 +91,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="related-resources"></a>Связанные ресурсы
 
-Более сложные сценарии обнаружения мошенничества могут извлечь пользу от модели машинного обучения. Сведения о сценариях, созданных с помощью Machine Learning Server, см. в статье [Fraud Detection][r-server-fraud-detection] (Выявление мошенничества). О других шаблонах решений, использующих Machine Learning Server, см. в разделе [Solution templates for Machine Learning Server and Microsoft R Server 9.1/9.2][docs-r-server-sample-solutions] (Шаблоны решений для Machine Learning Server и Microsoft R Server 9.1/9.2). Пример решения с помощью Azure Data Lake Analytics см. в разделе [Using Azure Data Lake and R for Fraud Detection][technet-fraud-detection] (Использование Azure Data Lake и R для определения мошенничества).  
+Более сложные сценарии обнаружения мошенничества могут извлечь пользу от модели машинного обучения. Сведения о сценариях, созданных с помощью Machine Learning Server, см. в статье [Fraud Detection][r-server-fraud-detection] (Выявление мошенничества). О других шаблонах решений, использующих Machine Learning Server, см. в разделе [Solution templates for Machine Learning Server and Microsoft R Server 9.1/9.2][docs-r-server-sample-solutions] (Шаблоны решений для Machine Learning Server и Microsoft R Server 9.1/9.2). Пример решения с помощью Azure Data Lake Analytics см. в разделе [Using Azure Data Lake and R for Fraud Detection][technet-fraud-detection] (Использование Azure Data Lake и R для определения мошенничества).
 
 <!-- links -->
 [product-category]: https://azure.microsoft.com/product-categories/analytics/
@@ -99,11 +99,10 @@ Azure Monitor предоставляет унифицированный поль
 [small-pricing]: https://azure.com/e/74149ec312c049ccba79bfb3cfa67606
 [medium-pricing]: https://azure.com/e/4fc94f7376de484d8ae67a6958cae60a
 [large-pricing]: https://azure.com/e/7da8804396f9428a984578700003ba42
-[architecture-diagram]: ./media/architecture-diagram-fraud-detection.png
+[architecture]: ./media/architecture-fraud-detection.png
 [docs-event-hubs]: /azure/event-hubs/event-hubs-what-is-event-hubs
 [docs-event-hubs-security-model]: /azure/event-hubs/event-hubs-authentication-and-security-model-overview
 [docs-stream-analytics]: /azure/stream-analytics/stream-analytics-introduction
-[docs-blob-storage]: /azure/storage/blobs/storage-blobs-introduction
 [docs-r-server-sample-solutions]: /machine-learning-server/r/sample-solutions
 [r-server-fraud-detection]: https://microsoft.github.io/r-server-fraud-detection/
 [technet-fraud-detection]: https://blogs.technet.microsoft.com/machinelearning/2017/06/28/using-azure-data-lake-and-r-for-fraud-detection/

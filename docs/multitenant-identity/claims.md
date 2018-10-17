@@ -6,12 +6,12 @@ ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: authenticate
 pnp.series.next: signup
-ms.openlocfilehash: 61788d9759715b21ef1bdda59c5b54d923fd8f62
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.openlocfilehash: 46c43c9bfa4514f206b5e7eabd9223ad4c61628b
+ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24541918"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47429378"
 ---
 # <a name="work-with-claims-based-identities"></a>Работа с удостоверениями на основе утверждений
 
@@ -27,11 +27,11 @@ ms.locfileid: "24541918"
 3. Приложение нормализует или расширяет утверждения (необязательно).
 4. Приложение использует утверждения для принятия решений об авторизации.
 
-В OpenID Connect получаемый набор утверждений управляет [параметром области] запроса на аутентификацию. Однако Azure AD выдает ограниченный набор утверждений через OpenID Connect. Подробнее об этом см. в статье [Справочник по токенам в Azure AD]. Дополнительные сведения о пользователе можно получить в Graph API Azure AD.
+В OpenID Connect получаемый набор утверждений управляет [параметром области] запроса на аутентификацию. Однако Azure AD выдает ограниченный набор утверждений через OpenID Connect. Подробнее об этом см. в статье [Поддерживаемые маркеры и типы утверждений]. Дополнительные сведения о пользователе можно получить в Graph API Azure AD.
 
 Ниже приведены некоторые утверждения из AAD, которые могут иметь особое значение для приложения.
 
-| Тип утверждения в маркере идентификатора | Описание |
+| Тип утверждения в маркере идентификатора | ОПИСАНИЕ |
 | --- | --- |
 | aud |Для кого выдан маркер. Это будет идентификатор клиента приложения. Как правило, на это утверждение не следует обращать внимание, так как его автоматически проверяет ПО промежуточного слоя. Пример: `"91464657-d17a-4327-91f3-2ed99386406f"` |
 | groups |Список групп AAD, членом которых является пользователь. Пример: `["93e8f556-8661-4955-87b6-890bc043c30f", "fc781505-18ef-4a31-a7d5-7d931d7b857e"]` |
@@ -117,9 +117,9 @@ ms.locfileid: "24541918"
 
 <!-- Links -->
 
-[параметром области]: http://nat.sakimura.org/2012/01/26/scopes-and-claims-in-openid-connect/
-[Справочник по токенам в Azure AD]: /azure/active-directory/active-directory-token-and-claims/
-[Издатель]: http://openid.net/specs/openid-connect-core-1_0.html#IDToken
+[параметром области]: https://nat.sakimura.org/2012/01/26/scopes-and-claims-in-openid-connect/
+[Поддерживаемые маркеры и типы утверждений]: /azure/active-directory/active-directory-token-and-claims/
+[Издатель]: https://openid.net/specs/openid-connect-core-1_0.html#IDToken
 [События аутентификации]: authenticate.md#authentication-events
 [signup]: signup.md
 [Claims-Based Authorization]: /aspnet/core/security/authorization/claims
