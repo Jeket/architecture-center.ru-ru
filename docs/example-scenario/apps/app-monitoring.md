@@ -3,12 +3,12 @@ title: Мониторинг веб-приложений в Azure
 description: Мониторинг веб-приложения, размещенного в Службе приложений Azure.
 author: adamboeglin
 ms.date: 09/12/2018
-ms.openlocfilehash: b1beb5cf5e29ab1ceb760bf95eab85d819b69342
-ms.sourcegitcommit: 62945777e519d650159f0f963a2489b6bb6ce094
+ms.openlocfilehash: ea57ba50f4e9390d5527587752c3bebad01b6139
+ms.sourcegitcommit: 42797fffb82bbbf86f6deb1da52c61d456be631e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876857"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49313222"
 ---
 # <a name="web-application-monitoring-on-azure"></a>Мониторинг веб-приложений в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "48876857"
 
 - [Служба приложений Azure](/azure/app-service/) — это служба PaaS (платформа как услуга), используемая для создания и размещения приложений в управляемых виртуальных машинах. Вы сами управляете базовой вычислительной инфраструктурой, в которой работают приложения. Служба приложений выполняет мониторинг квот по использованию ресурсов и приложений метрики, журналов сведений о диагностике и оповещений, основанных на метриках. Более того, Application Insights можно использовать для создания [тестов доступности][availability-tests], с помощью которых можно проверять приложения из разных регионов.
 - [Application Insights][application-insights] — это расширяемая служба управления производительностью приложений (APM) для разработчиков, поддерживаемая на нескольких платформах. Она используется для отслеживания приложений, обнаружения таких отклонений в работе приложений, как низкая производительность и ошибки, а также для отправки телеметрии на портал Azure. Также Application Insights можно использовать для ведения журнала, распределенной трассировки и метрик пользовательского приложения.
-- [Azure Monitor][azure-monitor] предоставляет [метрики и журналы][metrics] инфраструктуры базового уровня для большинства служб в Azure. Пользователь может взаимодействовать с метриками несколькими способами, включая создание диаграмм метрик на портале Azure, доступ к метрикам через REST API или запрос метрик с помощью PowerShell или интерфейса командной строки. Также Azure Monitor предлагает использовать данные непосредственно в [Сбор журналов и метрик для служб Azure для использования в Log Analytics], в которых пользователь может запрашивать и комбинировать их с данными из других источников локально или в облаке.
+- [Azure Monitor][azure-monitor] предоставляет [метрики и журналы][metrics] инфраструктуры базового уровня для большинства служб в Azure. Пользователь может взаимодействовать с метриками несколькими способами, включая создание диаграмм метрик на портале Azure, доступ к метрикам через REST API или запрос метрик с помощью PowerShell или интерфейса командной строки. Также Azure Monitor предлагает использовать данные непосредственно в [Log Analytics и других службах], в которых пользователь может запрашивать и комбинировать их с данными из других источников локально или в облаке.
 - [Log Analytics][log-analytics] используется для сопоставления данных об использовании и производительности, собранных Application Insights, с данными о конфигурации и производительности ресурсов Azure, которые поддерживают работу приложения. Чтобы передать журналы аудита SQL Server в Log Analytics в этом сценарии используется [агент Azure Log Analytics][Azure Log Analytics agent]. В колонке Log Analytics на портале Azure можно записывать запросы и просматривать данные.
 
 ## <a name="considerations"></a>Рекомендации
@@ -99,7 +99,7 @@ Azure Monitor, Application Insights и Log Analytics используются д
 
 После развертывания можно просмотреть показатели эффективности [Live Metrics Stream][Live Metrics Stream]. Эти данные не сохраняются. Пользователь просматривает метрики в реальном времени. Однако телеметрию можно сохранить для последующего анализа. Плата за данные Live Stream не взимается.
 
-Плата за использование Log Analytics начисляется за каждый гигабайт данных, полученных службой. Каждый месяц первые 5 ГБ данных, получаемых службой Azure Log Analytics, предоставляются бесплатно. Также эти данные бесплатно сохраняются в течение первых 31 дней в рабочем пространстве Log Analytics.
+Плата за использование Log Analytics начисляется за каждый гигабайт данных, полученных службой. Каждый месяц первые 5 ГБ данных, получаемых службой Azure Log Analytics, предоставляются бесплатно. Также эти данные бесплатно сохраняются в течение первых 31 дней в рабочем пространстве Log Analytics. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -123,7 +123,7 @@ Azure Monitor, Application Insights и Log Analytics используются д
 [application-insights]: /azure/application-insights/app-insights-overview
 [azure-monitor]: /azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
 [metrics]: /azure/monitoring-and-diagnostics/monitoring-supported-metrics
-[Сбор журналов и метрик для служб Azure для использования в Log Analytics]: /azure/log-analytics/log-analytics-azure-storage
+[Log Analytics и других службах]: /azure/log-analytics/log-analytics-azure-storage
 [log-analytics]: /azure/log-analytics/log-analytics-overview
 [Azure Log Analytics agent]: https://blogs.msdn.microsoft.com/sqlsecurity/2017/12/28/azure-log-analytics-oms-agent-now-collects-sql-server-audit-logs/
 [application-insights-pricing]: https://azure.microsoft.com/pricing/details/application-insights/
