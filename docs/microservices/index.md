@@ -2,13 +2,13 @@
 title: Проектирование, создание и использование микрослужб в Azure с помощью Kubernetes
 description: Проектирование, создание и использование микрослужб в Azure
 author: MikeWasson
-ms.date: 12/08/2017
-ms.openlocfilehash: 857e91a8eeefec18b459f2e66fde9a4f8bbe7b21
-ms.sourcegitcommit: 744ad1381e01bbda6a1a7eff4b25e1a337385553
+ms.date: 10/23/2018
+ms.openlocfilehash: cac16c9212432c72aeaecac1a578828a00838431
+ms.sourcegitcommit: fdcacbfdc77370532a4dde776c5d9b82227dff2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "27701108"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49962778"
 ---
 # <a name="designing-building-and-operating-microservices-on-azure"></a>Проектирование, создание и использование микрослужб в Azure
 
@@ -85,7 +85,7 @@ ms.locfileid: "27701108"
 > [!NOTE]
 > Если вам нужна помощь в выборе между микрослужбами и другими архитектурами, ознакомьтесь с [руководством по архитектуре приложений Azure](../guide/index.md).
 
-В примере реализации используется Kubernetes со [службой контейнеров Azure](/azure/container-service/kubernetes/). Но большинство общих архитектурных решений и задач будут применимы к любому оркестратору контейнера, включая [Azure Service Fabric](/azure/service-fabric/). 
+В примере реализации используется Kubernetes со [Службой Azure Kubernetes](/azure/aks/) (AKS). Но большинство общих архитектурных решений и задач будут применимы к любому оркестратору контейнера, включая [Azure Service Fabric](/azure/service-fabric/). 
 
 > [!div class="nextstepaction"]
 > [Анализ предметной области](./domain-analysis.md)
