@@ -2,13 +2,13 @@
 title: Дерево принятия решений для вычислительных служб Azure
 description: Блок-схема для выбора службы вычислений
 author: MikeWasson
-ms.date: 06/13/2018
-ms.openlocfilehash: 689ec3f265e563273a75ad98268d03624a7b4536
-ms.sourcegitcommit: ce2fa8ac2d310f7078317cade12f1b89db1ffe06
+ms.date: 10/23/2018
+ms.openlocfilehash: 35002b4840b80bcc35b5baf36ec8e414ed8f20be
+ms.sourcegitcommit: 2ae794de13c45cf24ad60d4f4dbb193c25944eff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36338189"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50001904"
 ---
 # <a name="decision-tree-for-azure-compute-services"></a>Дерево принятия решений для вычислительных служб Azure
 
@@ -33,10 +33,6 @@ ms.locfileid: "36338189"
 ![](../images/compute-decision-tree.svg)
 
 ## <a name="definitions"></a>Определения
-
-- **Первичный** — проект разработки программного обеспечения, создаваемый с нуля. Он не включает существующий код. 
-
-- **Вторичный** — проект разработки программного обеспечения, созданный на основе существующего приложения. Он может включать устаревший код или платформы предыдущих версий.
 
 - **Lift-and-shift** — это стратегия по переноса рабочей нагрузки в облако без повторного проектирования приложения и внесения изменений в код. Также называется *повторным размещением*. См. дополнительные сведения о [Центре миграции Azure](https://azure.microsoft.com/migration/).
 

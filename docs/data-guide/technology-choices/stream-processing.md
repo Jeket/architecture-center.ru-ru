@@ -3,12 +3,12 @@ title: Выбор технологии потоковой обработки
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: fd93418c62b584e79f229e9f42703d148aeb0eca
-ms.sourcegitcommit: e9d9e214529edd0dc78df5bda29615b8fafd0e56
+ms.openlocfilehash: b78ebe253e927eece38930ba7f6186f485a956f7
+ms.sourcegitcommit: fdcacbfdc77370532a4dde776c5d9b82227dff2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091069"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49962925"
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 
@@ -53,20 +53,19 @@ ms.locfileid: "37091069"
 
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
-| Входные данные | Концентраторы событий Azure, Центр Интернета вещей, хранилище больших двоичных объектов Azure  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Store  | Концентраторы событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов |
-| Приемники |  Хранилище Azure Data Lake, База данных SQL Azure, большие двоичные объекты службы хранилища, концентраторы событий, Power BI, Хранилище таблиц, очереди и разделы служебной шины, Cosmos DB, Функции Azure  | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Концентраторы событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, концентраторы событий, веб-перехватчики, Cosmos DB, служба файлов | 
+| Входные данные | Центры событий Azure, Центр Интернета вещей, хранилище больших двоичных объектов Azure  | Центры событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Storage  | Центры событий, Центр Интернета вещей, Kafka, HDFS, BLOB-объекты хранилища, Azure Data Lake Storage  | Центры событий, Центр Интернета вещей, BLOB-объекты хранилища, Azure Data Lake Store  | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, Центры событий, веб-перехватчики, Cosmos DB, служба файлов |
+| Приемники |  Хранилище Azure Data Lake, База данных SQL Azure, большие двоичные объекты службы хранилища, Центры событий, Power BI, Хранилище таблиц, очереди и разделы служебной шины, Cosmos DB, Функции Azure  | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | HDFS, Kafka, BLOB-объекты хранилища, HDFS, Azure Data Lake Store, Cosmos DB | Центры событий, служебная шина, Kafka | [Поддерживаемые привязки](/azure/azure-functions/functions-triggers-bindings#supported-bindings) | Служебная шина, очереди хранилища, BLOB-объекты хранилища, Центры событий, веб-перехватчики, Cosmos DB, служба файлов | 
 
 ### <a name="processing-capabilities"></a>Возможности обработки
 
 | | Azure Stream Analytics | HDInsight с потоковой передачей Spark | Apache Spark в Azure Databricks | HDInsight со Storm | Функции Azure | Веб-задания службы приложений Azure |
 | --- | --- | --- | --- | --- | --- | --- | 
-| Встроенная поддержка обработки темпоральной информации или обработки методом окна | Yes | Yes | Yes | Yes | Нет  | Нет  |
+| Встроенная поддержка обработки темпоральной информации или обработки методом окна | Yes | Да | Да | Да | Нет  | Нет  |
 | Форматы входных данных | Avro, JSON или CSV, данные в кодировке UTF-8 | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода | Любой формат с использованием пользовательского кода |
 | Масштабируемость | [Секции запросов](/azure/stream-analytics/stream-analytics-parallelization) | Ограничивается размером кластера | Ограничивается конфигурацией масштабирования кластера Databricks | Ограничивается размером кластера | До 200 экземпляров приложений-функций, обрабатываемых одновременно | Ограничивается емкостью, предоставляемой согласно плану службы приложений | 
-| Поддержка обработки событий, наступивших с задержкой, и неупорядоченных событий | Yes | Yes | Yes | Yes | Нет  | Нет  |
+| Поддержка обработки событий, наступивших с задержкой, и неупорядоченных событий | Yes | Да | Да | Да | Нет  | Нет  |
 
 См. также:
 
 - [Выбор технологии приема сообщений в реальном времени в Azure](./real-time-ingestion.md)
-- [Выбор платформы потоковой аналитики: сравнение Apache Storm и Azure Stream Analytics](/azure/stream-analytics/stream-analytics-comparison-storm)
 - [Обработка в режиме реального времени](../big-data/real-time-processing.md)
