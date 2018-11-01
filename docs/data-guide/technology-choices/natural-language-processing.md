@@ -3,12 +3,12 @@ title: Выбор технологии обработки естественны
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: dacf7bf9cf3e9efed212f34da93c1470954965cf
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.openlocfilehash: bac0318a587a944c104360eb31223cc8755c1860
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
-ms.locfileid: "29288856"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251776"
 ---
 # <a name="choosing-a-natural-language-processing-technology-in-azure"></a>Выбор технологии обработки естественных языков в Azure
 
@@ -19,7 +19,8 @@ ms.locfileid: "29288856"
 В Azure функции NLP предоставляются в следующих службах:
 
 - [Azure HDInsight со Spark и Spark MLlib](/azure/hdinsight/spark/apache-spark-overview);
-- [Microsoft Cognitive Services](/azure/#pivot=products&panel=cognitive).
+- [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks)
+- [Microsoft Cognitive Services](/azure/cognitive-services/welcome).
 
 ## <a name="key-selection-criteria"></a>Основные критерии выбора
 
@@ -42,7 +43,7 @@ ms.locfileid: "29288856"
 | | Azure HDInsight | Microsoft Cognitive Services |
 | --- | --- | --- |
 | Предоставление предварительно обученных моделей как услуги | Нет  | Yes |
-| ИНТЕРФЕЙС REST API | Yes | Yes |
+| REST API | Yes | Yes |
 | Программируемость | Python, Scala, Java | C#, Java, Node.js, Python, PHP, Ruby |
 | Поддержка обработки больших наборов данных и больших документов | Yes | Нет  |
 
@@ -63,7 +64,7 @@ ms.locfileid: "29288856"
 
 | | Azure HDInsight | Microsoft Cognitive Services |
 | --- | --- | --- | 
-| Распознавание и извлечение сущностей и намерений | Нет  | Да (API службы Language Understanding Intelligent Service (LUIS)) |    
+| Распознавание и извлечение сущностей и намерений | Нет  | Да (API распознавания речи (LUIS)) |    
 | Определение темы | Да (Spark NLP) | Да (API анализа текста) |
 | Проверка орфографии | Да (Spark NLP) | Да (API Bing для проверки орфографии) |
 | Анализ мнений | Да (Spark NLP) | Да (API анализа текста) |
