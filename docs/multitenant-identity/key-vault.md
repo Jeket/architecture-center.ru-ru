@@ -5,109 +5,109 @@ author: MikeWasson
 ms:date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: client-assertion
-ms.openlocfilehash: b6d2e431da85f7c304747df2f804f1714596bfc6
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: a47b8835df1c970ac7c50af78aae73116d6a12b4
+ms.sourcegitcommit: d59e2631fb08665bc30f6b65bfc7e1b75935cbd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429185"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021956"
 ---
-# <a name="use-azure-key-vault-to-protect-application-secrets"></a><span data-ttu-id="24e6b-103">Использование Azure Key Vault для защиты секретов приложений</span><span class="sxs-lookup"><span data-stu-id="24e6b-103">Use Azure Key Vault to protect application secrets</span></span>
+# <a name="use-azure-key-vault-to-protect-application-secrets"></a><span data-ttu-id="f351b-103">Использование Azure Key Vault для защиты секретов приложений</span><span class="sxs-lookup"><span data-stu-id="f351b-103">Use Azure Key Vault to protect application secrets</span></span>
 
-<span data-ttu-id="24e6b-104">[![GitHub](../_images/github.png) Пример кода][sample application]</span><span class="sxs-lookup"><span data-stu-id="24e6b-104">[![GitHub](../_images/github.png) Sample code][sample application]</span></span>
+<span data-ttu-id="f351b-104">[![GitHub](../_images/github.png) Пример кода][sample application]</span><span class="sxs-lookup"><span data-stu-id="f351b-104">[![GitHub](../_images/github.png) Sample code][sample application]</span></span>
 
-<span data-ttu-id="24e6b-105">Довольно часто используются параметры приложения, которые являются конфиденциальными и должны быть защищены, например:</span><span class="sxs-lookup"><span data-stu-id="24e6b-105">It's common to have application settings that are sensitive and must be protected, such as:</span></span>
+<span data-ttu-id="f351b-105">Довольно часто используются параметры приложения, которые являются конфиденциальными и должны быть защищены, например:</span><span class="sxs-lookup"><span data-stu-id="f351b-105">It's common to have application settings that are sensitive and must be protected, such as:</span></span>
 
-* <span data-ttu-id="24e6b-106">строки подключения к базе данных;</span><span class="sxs-lookup"><span data-stu-id="24e6b-106">Database connection strings</span></span>
-* <span data-ttu-id="24e6b-107">Пароли</span><span class="sxs-lookup"><span data-stu-id="24e6b-107">Passwords</span></span>
-* <span data-ttu-id="24e6b-108">Криптографические ключи</span><span class="sxs-lookup"><span data-stu-id="24e6b-108">Cryptographic keys</span></span>
+* <span data-ttu-id="f351b-106">строки подключения к базе данных;</span><span class="sxs-lookup"><span data-stu-id="f351b-106">Database connection strings</span></span>
+* <span data-ttu-id="f351b-107">Пароли</span><span class="sxs-lookup"><span data-stu-id="f351b-107">Passwords</span></span>
+* <span data-ttu-id="f351b-108">Криптографические ключи</span><span class="sxs-lookup"><span data-stu-id="f351b-108">Cryptographic keys</span></span>
 
-<span data-ttu-id="24e6b-109">Из соображений безопасности не следует размещать эти секреты в системе управления версиями.</span><span class="sxs-lookup"><span data-stu-id="24e6b-109">As a security best practice, you should never store these secrets in source control.</span></span> <span data-ttu-id="24e6b-110">Вероятность утечки будет слишком высокой, даже если вы используете частный репозиторий исходного кода.</span><span class="sxs-lookup"><span data-stu-id="24e6b-110">It's too easy for them to leak &mdash; even if your source code repository is private.</span></span> <span data-ttu-id="24e6b-111">И вопрос не только в защите секретов от общего доступа.</span><span class="sxs-lookup"><span data-stu-id="24e6b-111">And it's not just about keeping secrets from the general public.</span></span> <span data-ttu-id="24e6b-112">В больших проектах может потребоваться ограничить доступ к производственным секретам, предоставив его только определенным разработчикам и операторам.</span><span class="sxs-lookup"><span data-stu-id="24e6b-112">On larger projects, you might want to restrict which developers and operators can access the production secrets.</span></span> <span data-ttu-id="24e6b-113">(Для сред тестирования и разработки используются разные параметры.)</span><span class="sxs-lookup"><span data-stu-id="24e6b-113">(Settings for test or development environments are different.)</span></span>
+<span data-ttu-id="f351b-109">Из соображений безопасности не следует размещать эти секреты в системе управления версиями.</span><span class="sxs-lookup"><span data-stu-id="f351b-109">As a security best practice, you should never store these secrets in source control.</span></span> <span data-ttu-id="f351b-110">Вероятность утечки будет слишком высокой, даже если вы используете частный репозиторий исходного кода.</span><span class="sxs-lookup"><span data-stu-id="f351b-110">It's too easy for them to leak &mdash; even if your source code repository is private.</span></span> <span data-ttu-id="f351b-111">И вопрос не только в защите секретов от общего доступа.</span><span class="sxs-lookup"><span data-stu-id="f351b-111">And it's not just about keeping secrets from the general public.</span></span> <span data-ttu-id="f351b-112">В больших проектах может потребоваться ограничить доступ к производственным секретам, предоставив его только определенным разработчикам и операторам.</span><span class="sxs-lookup"><span data-stu-id="f351b-112">On larger projects, you might want to restrict which developers and operators can access the production secrets.</span></span> <span data-ttu-id="f351b-113">(Для сред тестирования и разработки используются разные параметры.)</span><span class="sxs-lookup"><span data-stu-id="f351b-113">(Settings for test or development environments are different.)</span></span>
 
-<span data-ttu-id="24e6b-114">Более безопасный вариант — хранить эти секреты в [Azure Key Vault][KeyVault].</span><span class="sxs-lookup"><span data-stu-id="24e6b-114">A more secure option is to store these secrets in [Azure Key Vault][KeyVault].</span></span> <span data-ttu-id="24e6b-115">Хранилище ключей является облачной службой для управления криптографическими ключами и другими секретными данными.</span><span class="sxs-lookup"><span data-stu-id="24e6b-115">Key Vault is a cloud-hosted service for managing cryptographic keys and other secrets.</span></span> <span data-ttu-id="24e6b-116">В этой статье описано, как использовать Key Vault для хранения параметров конфигурации приложения.</span><span class="sxs-lookup"><span data-stu-id="24e6b-116">This article shows how to use Key Vault to store configuration settings for your app.</span></span>
+<span data-ttu-id="f351b-114">Более безопасный вариант — хранить эти секреты в [Azure Key Vault][KeyVault].</span><span class="sxs-lookup"><span data-stu-id="f351b-114">A more secure option is to store these secrets in [Azure Key Vault][KeyVault].</span></span> <span data-ttu-id="f351b-115">Хранилище ключей является облачной службой для управления криптографическими ключами и другими секретными данными.</span><span class="sxs-lookup"><span data-stu-id="f351b-115">Key Vault is a cloud-hosted service for managing cryptographic keys and other secrets.</span></span> <span data-ttu-id="f351b-116">В этой статье описано, как использовать Key Vault для хранения параметров конфигурации приложения.</span><span class="sxs-lookup"><span data-stu-id="f351b-116">This article shows how to use Key Vault to store configuration settings for your app.</span></span>
 
-<span data-ttu-id="24e6b-117">В приложении [Tailspin Surveys][Surveys] секретами являются следующие параметры:</span><span class="sxs-lookup"><span data-stu-id="24e6b-117">In the [Tailspin Surveys][Surveys] application, the following settings are secret:</span></span>
+<span data-ttu-id="f351b-117">В приложении [Tailspin Surveys][Surveys] секретами являются следующие параметры:</span><span class="sxs-lookup"><span data-stu-id="f351b-117">In the [Tailspin Surveys][Surveys] application, the following settings are secret:</span></span>
 
-* <span data-ttu-id="24e6b-118">строка подключения к базе данных;</span><span class="sxs-lookup"><span data-stu-id="24e6b-118">The database connection string.</span></span>
-* <span data-ttu-id="24e6b-119">строка подключения к Redis;</span><span class="sxs-lookup"><span data-stu-id="24e6b-119">The Redis connection string.</span></span>
-* <span data-ttu-id="24e6b-120">секрет клиента для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="24e6b-120">The client secret for the web application.</span></span>
+* <span data-ttu-id="f351b-118">строка подключения к базе данных;</span><span class="sxs-lookup"><span data-stu-id="f351b-118">The database connection string.</span></span>
+* <span data-ttu-id="f351b-119">строка подключения к Redis;</span><span class="sxs-lookup"><span data-stu-id="f351b-119">The Redis connection string.</span></span>
+* <span data-ttu-id="f351b-120">секрет клиента для веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="f351b-120">The client secret for the web application.</span></span>
 
-<span data-ttu-id="24e6b-121">Приложение Surveys загружает параметры конфигурации из следующих расположений:</span><span class="sxs-lookup"><span data-stu-id="24e6b-121">The Surveys application loads configuration settings from the following places:</span></span>
+<span data-ttu-id="f351b-121">Приложение Surveys загружает параметры конфигурации из следующих расположений:</span><span class="sxs-lookup"><span data-stu-id="f351b-121">The Surveys application loads configuration settings from the following places:</span></span>
 
-* <span data-ttu-id="24e6b-122">файл appsettings.json;</span><span class="sxs-lookup"><span data-stu-id="24e6b-122">The appsettings.json file</span></span>
-* <span data-ttu-id="24e6b-123">[хранилище секретов пользователя][user-secrets] (только в среде разработки; для тестирования);</span><span class="sxs-lookup"><span data-stu-id="24e6b-123">The [user secrets store][user-secrets] (development environment only; for testing)</span></span>
-* <span data-ttu-id="24e6b-124">среда размещения (параметры веб-приложений Azure);</span><span class="sxs-lookup"><span data-stu-id="24e6b-124">The hosting environment (app settings in Azure web apps)</span></span>
-* <span data-ttu-id="24e6b-125">Key Vault (если служба подключена).</span><span class="sxs-lookup"><span data-stu-id="24e6b-125">Key Vault (when enabled)</span></span>
+* <span data-ttu-id="f351b-122">файл appsettings.json;</span><span class="sxs-lookup"><span data-stu-id="f351b-122">The appsettings.json file</span></span>
+* <span data-ttu-id="f351b-123">[хранилище секретов пользователя][user-secrets] (только в среде разработки; для тестирования);</span><span class="sxs-lookup"><span data-stu-id="f351b-123">The [user secrets store][user-secrets] (development environment only; for testing)</span></span>
+* <span data-ttu-id="f351b-124">среда размещения (параметры веб-приложений Azure);</span><span class="sxs-lookup"><span data-stu-id="f351b-124">The hosting environment (app settings in Azure web apps)</span></span>
+* <span data-ttu-id="f351b-125">Key Vault (если служба подключена).</span><span class="sxs-lookup"><span data-stu-id="f351b-125">Key Vault (when enabled)</span></span>
 
-<span data-ttu-id="24e6b-126">В этом списке хранилища перечислены в порядке увеличения приоритета, то есть параметры из Key Vault используются всегда.</span><span class="sxs-lookup"><span data-stu-id="24e6b-126">Each of these overrides the previous one, so any settings stored in Key Vault take precedence.</span></span>
+<span data-ttu-id="f351b-126">В этом списке хранилища перечислены в порядке увеличения приоритета, то есть параметры из Key Vault используются всегда.</span><span class="sxs-lookup"><span data-stu-id="f351b-126">Each of these overrides the previous one, so any settings stored in Key Vault take precedence.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="24e6b-127">По умолчанию поставщик конфигурации хранилища ключей отключен.</span><span class="sxs-lookup"><span data-stu-id="24e6b-127">By default, the Key Vault configuration provider is disabled.</span></span> <span data-ttu-id="24e6b-128">Он не требуется для локального запуска приложения.</span><span class="sxs-lookup"><span data-stu-id="24e6b-128">It's not needed for running the application locally.</span></span> <span data-ttu-id="24e6b-129">Его можно будет активировать в рабочей среде.</span><span class="sxs-lookup"><span data-stu-id="24e6b-129">You would enable it in a production deployment.</span></span>
+> <span data-ttu-id="f351b-127">По умолчанию поставщик конфигурации хранилища ключей отключен.</span><span class="sxs-lookup"><span data-stu-id="f351b-127">By default, the Key Vault configuration provider is disabled.</span></span> <span data-ttu-id="f351b-128">Он не требуется для локального запуска приложения.</span><span class="sxs-lookup"><span data-stu-id="f351b-128">It's not needed for running the application locally.</span></span> <span data-ttu-id="f351b-129">Его можно будет активировать в рабочей среде.</span><span class="sxs-lookup"><span data-stu-id="f351b-129">You would enable it in a production deployment.</span></span>
 
-<span data-ttu-id="24e6b-130">При запуске приложение считывает параметры каждого зарегистрированного поставщика конфигураций и использует их для заполнения строго типизированного объекта параметров.</span><span class="sxs-lookup"><span data-stu-id="24e6b-130">At startup, the application reads settings from every registered configuration provider, and uses them to populate a strongly typed options object.</span></span> <span data-ttu-id="24e6b-131">Дополнительные сведения см. в статье об [использовании параметров и объектов конфигурации][options].</span><span class="sxs-lookup"><span data-stu-id="24e6b-131">For more information, see [Using Options and configuration objects][options].</span></span>
+<span data-ttu-id="f351b-130">При запуске приложение считывает параметры каждого зарегистрированного поставщика конфигураций и использует их для заполнения строго типизированного объекта параметров.</span><span class="sxs-lookup"><span data-stu-id="f351b-130">At startup, the application reads settings from every registered configuration provider, and uses them to populate a strongly typed options object.</span></span> <span data-ttu-id="f351b-131">Дополнительные сведения см. в статье об [использовании параметров и объектов конфигурации][options].</span><span class="sxs-lookup"><span data-stu-id="f351b-131">For more information, see [Using Options and configuration objects][options].</span></span>
 
-## <a name="setting-up-key-vault-in-the-surveys-app"></a><span data-ttu-id="24e6b-132">Настройка хранилища ключей в приложении Surveys</span><span class="sxs-lookup"><span data-stu-id="24e6b-132">Setting up Key Vault in the Surveys app</span></span>
-<span data-ttu-id="24e6b-133">Предварительные требования:</span><span class="sxs-lookup"><span data-stu-id="24e6b-133">Prerequisites:</span></span>
+## <a name="setting-up-key-vault-in-the-surveys-app"></a><span data-ttu-id="f351b-132">Настройка хранилища ключей в приложении Surveys</span><span class="sxs-lookup"><span data-stu-id="f351b-132">Setting up Key Vault in the Surveys app</span></span>
+<span data-ttu-id="f351b-133">Предварительные требования:</span><span class="sxs-lookup"><span data-stu-id="f351b-133">Prerequisites:</span></span>
 
-* <span data-ttu-id="24e6b-134">Установите [командлеты Azure Resource Manager][azure-rm-cmdlets].</span><span class="sxs-lookup"><span data-stu-id="24e6b-134">Install the [Azure Resource Manager Cmdlets][azure-rm-cmdlets].</span></span>
-* <span data-ttu-id="24e6b-135">Настройте приложение Surveys, как описано в статье [Run the Surveys application][readme] (Запуск приложения Surveys).</span><span class="sxs-lookup"><span data-stu-id="24e6b-135">Configure the Surveys application as described in [Run the Surveys application][readme].</span></span>
+* <span data-ttu-id="f351b-134">Установите [командлеты Azure Resource Manager][azure-rm-cmdlets].</span><span class="sxs-lookup"><span data-stu-id="f351b-134">Install the [Azure Resource Manager Cmdlets][azure-rm-cmdlets].</span></span>
+* <span data-ttu-id="f351b-135">Настройте приложение Surveys, как описано в статье [Run the Surveys application][readme] (Запуск приложения Surveys).</span><span class="sxs-lookup"><span data-stu-id="f351b-135">Configure the Surveys application as described in [Run the Surveys application][readme].</span></span>
 
-<span data-ttu-id="24e6b-136">Основные действия:</span><span class="sxs-lookup"><span data-stu-id="24e6b-136">High-level steps:</span></span>
+<span data-ttu-id="f351b-136">Основные действия:</span><span class="sxs-lookup"><span data-stu-id="f351b-136">High-level steps:</span></span>
 
-1. <span data-ttu-id="24e6b-137">Настройте в клиенте учетную запись пользователя с правами администратора.</span><span class="sxs-lookup"><span data-stu-id="24e6b-137">Set up an admin user in the tenant.</span></span>
-2. <span data-ttu-id="24e6b-138">Настройте сертификат клиента.</span><span class="sxs-lookup"><span data-stu-id="24e6b-138">Set up a client certificate.</span></span>
-3. <span data-ttu-id="24e6b-139">Создать хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-139">Create a key vault.</span></span>
-4. <span data-ttu-id="24e6b-140">Добавьте параметры конфигурации в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-140">Add configuration settings to your key vault.</span></span>
-5. <span data-ttu-id="24e6b-141">Раскомментируйте код, который активирует хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-141">Uncomment the code that enables key vault.</span></span>
-6. <span data-ttu-id="24e6b-142">Обновите секреты пользователя приложения.</span><span class="sxs-lookup"><span data-stu-id="24e6b-142">Update the application's user secrets.</span></span>
+1. <span data-ttu-id="f351b-137">Настройте в клиенте учетную запись пользователя с правами администратора.</span><span class="sxs-lookup"><span data-stu-id="f351b-137">Set up an admin user in the tenant.</span></span>
+2. <span data-ttu-id="f351b-138">Настройте сертификат клиента.</span><span class="sxs-lookup"><span data-stu-id="f351b-138">Set up a client certificate.</span></span>
+3. <span data-ttu-id="f351b-139">Создать хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-139">Create a key vault.</span></span>
+4. <span data-ttu-id="f351b-140">Добавьте параметры конфигурации в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-140">Add configuration settings to your key vault.</span></span>
+5. <span data-ttu-id="f351b-141">Раскомментируйте код, который активирует хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-141">Uncomment the code that enables key vault.</span></span>
+6. <span data-ttu-id="f351b-142">Обновите секреты пользователя приложения.</span><span class="sxs-lookup"><span data-stu-id="f351b-142">Update the application's user secrets.</span></span>
 
-### <a name="set-up-an-admin-user"></a><span data-ttu-id="24e6b-143">Настройка учетной записи пользователя с правами администратора</span><span class="sxs-lookup"><span data-stu-id="24e6b-143">Set up an admin user</span></span>
+### <a name="set-up-an-admin-user"></a><span data-ttu-id="f351b-143">Настройка учетной записи пользователя с правами администратора</span><span class="sxs-lookup"><span data-stu-id="f351b-143">Set up an admin user</span></span>
 > [!NOTE]
-> <span data-ttu-id="24e6b-144">Для создания хранилища ключей используется учетная запись, с помощью которой можно управлять подпиской Azure.</span><span class="sxs-lookup"><span data-stu-id="24e6b-144">To create a key vault, you must use an account which can manage your Azure subscription.</span></span> <span data-ttu-id="24e6b-145">Кроме того, любое приложение, которому вы предоставляете права на чтение данных из хранилища ключей, должно быть зарегистрировано в том же клиенте, что и эта учетная запись.</span><span class="sxs-lookup"><span data-stu-id="24e6b-145">Also, any application that you authorize to read from the key vault must be registered in the same tenant as that account.</span></span>
+> <span data-ttu-id="f351b-144">Для создания хранилища ключей используется учетная запись, с помощью которой можно управлять подпиской Azure.</span><span class="sxs-lookup"><span data-stu-id="f351b-144">To create a key vault, you must use an account which can manage your Azure subscription.</span></span> <span data-ttu-id="f351b-145">Кроме того, любое приложение, которому вы предоставляете права на чтение данных из хранилища ключей, должно быть зарегистрировано в том же клиенте, что и эта учетная запись.</span><span class="sxs-lookup"><span data-stu-id="f351b-145">Also, any application that you authorize to read from the key vault must be registered in the same tenant as that account.</span></span>
 > 
 > 
 
-<span data-ttu-id="24e6b-146">На этом этапе следует удостовериться, что вы имеете возможность создать хранилище ключей, находясь в системе в качестве пользователя, который выполнил вход из клиента с зарегистрированным приложением Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-146">In this step, you will make sure that you can create a key vault while signed in as a user from the tenant where the Surveys app is registered.</span></span>
+<span data-ttu-id="f351b-146">На этом этапе следует удостовериться, что вы имеете возможность создать хранилище ключей, находясь в системе в качестве пользователя, который выполнил вход из клиента с зарегистрированным приложением Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-146">In this step, you will make sure that you can create a key vault while signed in as a user from the tenant where the Surveys app is registered.</span></span>
 
-<span data-ttu-id="24e6b-147">Создайте учетную запись пользователя с правами администратора в клиенте Azure AD, в котором зарегистрировано приложение Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-147">Create an administrator user within the Azure AD tenant where the Surveys application is registered.</span></span>
+<span data-ttu-id="f351b-147">Создайте учетную запись пользователя с правами администратора в клиенте Azure AD, в котором зарегистрировано приложение Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-147">Create an administrator user within the Azure AD tenant where the Surveys application is registered.</span></span>
 
-1. <span data-ttu-id="24e6b-148">Войдите на [портал Azure][azure-portal].</span><span class="sxs-lookup"><span data-stu-id="24e6b-148">Log into the [Azure portal][azure-portal].</span></span>
-2. <span data-ttu-id="24e6b-149">Выберите клиент Azure AD, в котором зарегистрировано приложение.</span><span class="sxs-lookup"><span data-stu-id="24e6b-149">Select the Azure AD tenant where your application is registered.</span></span>
-3. <span data-ttu-id="24e6b-150">Последовательно щелкните **More service** (Дополнительные службы) > **БЕЗОПАСНОСТЬ И ИДЕНТИФИКАЦИЯ** > **Azure Active Directory** > **Пользователи и группы** > **All users** (Все пользователи).</span><span class="sxs-lookup"><span data-stu-id="24e6b-150">Click **More service** > **SECURITY + IDENTITY** > **Azure Active Directory** > **User and groups** > **All users**.</span></span>
-4. <span data-ttu-id="24e6b-151">Щелкните команду **Новый пользователь** в верхней части портала.</span><span class="sxs-lookup"><span data-stu-id="24e6b-151">At the top of the portal, click **New user**.</span></span>
-5. <span data-ttu-id="24e6b-152">Заполните все поля и назначьте пользователю роль **глобального администратора** для каталога.</span><span class="sxs-lookup"><span data-stu-id="24e6b-152">Fill in the fields and assign the user to the **Global administrator** directory role.</span></span>
-6. <span data-ttu-id="24e6b-153">Нажмите кнопку **Создать**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-153">Click **Create**.</span></span>
+1. <span data-ttu-id="f351b-148">Войдите на [портал Azure][azure-portal].</span><span class="sxs-lookup"><span data-stu-id="f351b-148">Log into the [Azure portal][azure-portal].</span></span>
+2. <span data-ttu-id="f351b-149">Выберите клиент Azure AD, в котором зарегистрировано приложение.</span><span class="sxs-lookup"><span data-stu-id="f351b-149">Select the Azure AD tenant where your application is registered.</span></span>
+3. <span data-ttu-id="f351b-150">Последовательно щелкните **More service** (Дополнительные службы) > **БЕЗОПАСНОСТЬ И ИДЕНТИФИКАЦИЯ** > **Azure Active Directory** > **Пользователи и группы** > **All users** (Все пользователи).</span><span class="sxs-lookup"><span data-stu-id="f351b-150">Click **More service** > **SECURITY + IDENTITY** > **Azure Active Directory** > **User and groups** > **All users**.</span></span>
+4. <span data-ttu-id="f351b-151">Щелкните команду **Новый пользователь** в верхней части портала.</span><span class="sxs-lookup"><span data-stu-id="f351b-151">At the top of the portal, click **New user**.</span></span>
+5. <span data-ttu-id="f351b-152">Заполните все поля и назначьте пользователю роль **глобального администратора** для каталога.</span><span class="sxs-lookup"><span data-stu-id="f351b-152">Fill in the fields and assign the user to the **Global administrator** directory role.</span></span>
+6. <span data-ttu-id="f351b-153">Нажмите кнопку **Создать**.</span><span class="sxs-lookup"><span data-stu-id="f351b-153">Click **Create**.</span></span>
 
 ![Пользователь "Глобальный администратор"](./images/running-the-app/global-admin-user.png)
 
-<span data-ttu-id="24e6b-155">Теперь назначьте этого пользователя владельцем подписки.</span><span class="sxs-lookup"><span data-stu-id="24e6b-155">Now assign this user as the subscription owner.</span></span>
+<span data-ttu-id="f351b-155">Теперь назначьте этого пользователя владельцем подписки.</span><span class="sxs-lookup"><span data-stu-id="f351b-155">Now assign this user as the subscription owner.</span></span>
 
-1. <span data-ttu-id="24e6b-156">В главном меню выберите **Подписки**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-156">On the Hub menu, select **Subscriptions**.</span></span>
+1. <span data-ttu-id="f351b-156">В главном меню выберите **Подписки**.</span><span class="sxs-lookup"><span data-stu-id="f351b-156">On the Hub menu, select **Subscriptions**.</span></span>
 
     ![](./images/running-the-app/subscriptions.png)
 
-2. <span data-ttu-id="24e6b-157">Выберите подписку, доступ к которой нужно предоставить этому администратору.</span><span class="sxs-lookup"><span data-stu-id="24e6b-157">Select the subscription that you want the administrator to access.</span></span>
-3. <span data-ttu-id="24e6b-158">В колонке подписки выберите **Управление доступом (IAM)**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-158">In the subscription blade, select **Access control (IAM)**.</span></span>
-4. <span data-ttu-id="24e6b-159">Щелкните **Добавить**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-159">Click **Add**.</span></span>
-4. <span data-ttu-id="24e6b-160">В разделе **Роль**выберите **Владелец**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-160">Under **Role**, select **Owner**.</span></span>
-5. <span data-ttu-id="24e6b-161">Укажите адрес электронной почты пользователя, для которого хотите добавить роль "Владелец".</span><span class="sxs-lookup"><span data-stu-id="24e6b-161">Type the email address of the user you want to add as owner.</span></span>
-6. <span data-ttu-id="24e6b-162">Выберите нужного пользователя и щелкните **Сохранить**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-162">Select the user and click **Save**.</span></span>
+2. <span data-ttu-id="f351b-157">Выберите подписку, доступ к которой нужно предоставить этому администратору.</span><span class="sxs-lookup"><span data-stu-id="f351b-157">Select the subscription that you want the administrator to access.</span></span>
+3. <span data-ttu-id="f351b-158">В колонке подписки выберите **Управление доступом (IAM)**.</span><span class="sxs-lookup"><span data-stu-id="f351b-158">In the subscription blade, select **Access control (IAM)**.</span></span>
+4. <span data-ttu-id="f351b-159">Щелкните **Добавить**.</span><span class="sxs-lookup"><span data-stu-id="f351b-159">Click **Add**.</span></span>
+4. <span data-ttu-id="f351b-160">В разделе **Роль**выберите **Владелец**.</span><span class="sxs-lookup"><span data-stu-id="f351b-160">Under **Role**, select **Owner**.</span></span>
+5. <span data-ttu-id="f351b-161">Укажите адрес электронной почты пользователя, для которого хотите добавить роль "Владелец".</span><span class="sxs-lookup"><span data-stu-id="f351b-161">Type the email address of the user you want to add as owner.</span></span>
+6. <span data-ttu-id="f351b-162">Выберите нужного пользователя и щелкните **Сохранить**.</span><span class="sxs-lookup"><span data-stu-id="f351b-162">Select the user and click **Save**.</span></span>
 
-### <a name="set-up-a-client-certificate"></a><span data-ttu-id="24e6b-163">Настройка сертификата клиента</span><span class="sxs-lookup"><span data-stu-id="24e6b-163">Set up a client certificate</span></span>
-1. <span data-ttu-id="24e6b-164">Запустите скрипт PowerShell [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] следующим образом:</span><span class="sxs-lookup"><span data-stu-id="24e6b-164">Run the PowerShell script [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] as follows:</span></span>
+### <a name="set-up-a-client-certificate"></a><span data-ttu-id="f351b-163">Настройка сертификата клиента</span><span class="sxs-lookup"><span data-stu-id="f351b-163">Set up a client certificate</span></span>
+1. <span data-ttu-id="f351b-164">Запустите скрипт PowerShell [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] следующим образом:</span><span class="sxs-lookup"><span data-stu-id="f351b-164">Run the PowerShell script [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] as follows:</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -Subject <<subject>>
     ```
-    <span data-ttu-id="24e6b-165">Для параметра `Subject` введите любое имя, например "surveysapp".</span><span class="sxs-lookup"><span data-stu-id="24e6b-165">For the `Subject` parameter, enter any name, such as "surveysapp".</span></span> <span data-ttu-id="24e6b-166">Сценарий создаст самозаверяющий сертификат и сохранит его в хранилище сертификатов "Текущий пользователь/Личные".</span><span class="sxs-lookup"><span data-stu-id="24e6b-166">The script generates a self-signed certificate and stores it in the "Current User/Personal" certificate store.</span></span> <span data-ttu-id="24e6b-167">Выходные данные этого сценария представлены фрагментом JSON.</span><span class="sxs-lookup"><span data-stu-id="24e6b-167">The output from the script is a JSON fragment.</span></span> <span data-ttu-id="24e6b-168">Скопируйте это значение.</span><span class="sxs-lookup"><span data-stu-id="24e6b-168">Copy this value.</span></span>
+    <span data-ttu-id="f351b-165">Для параметра `Subject` введите любое имя, например "surveysapp".</span><span class="sxs-lookup"><span data-stu-id="f351b-165">For the `Subject` parameter, enter any name, such as "surveysapp".</span></span> <span data-ttu-id="f351b-166">Сценарий создаст самозаверяющий сертификат и сохранит его в хранилище сертификатов "Текущий пользователь/Личные".</span><span class="sxs-lookup"><span data-stu-id="f351b-166">The script generates a self-signed certificate and stores it in the "Current User/Personal" certificate store.</span></span> <span data-ttu-id="f351b-167">Выходные данные этого сценария представлены фрагментом JSON.</span><span class="sxs-lookup"><span data-stu-id="f351b-167">The output from the script is a JSON fragment.</span></span> <span data-ttu-id="f351b-168">Скопируйте это значение.</span><span class="sxs-lookup"><span data-stu-id="f351b-168">Copy this value.</span></span>
 
-2. <span data-ttu-id="24e6b-169">На [портале Azure][azure-portal] перейдите к каталогу, где зарегистрировано приложение Surveys, выбрав свою учетную запись в правом верхнем углу портала.</span><span class="sxs-lookup"><span data-stu-id="24e6b-169">In the [Azure portal][azure-portal], switch to the directory where the Surveys application is registered, by selecting your account in the top right corner of the portal.</span></span>
+2. <span data-ttu-id="f351b-169">На [портале Azure][azure-portal] перейдите к каталогу, где зарегистрировано приложение Surveys, выбрав свою учетную запись в правом верхнем углу портала.</span><span class="sxs-lookup"><span data-stu-id="f351b-169">In the [Azure portal][azure-portal], switch to the directory where the Surveys application is registered, by selecting your account in the top right corner of the portal.</span></span>
 
-3. <span data-ttu-id="24e6b-170">Выберите **Azure Active Directory** > **Регистрация приложений** > Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-170">Select **Azure Active Directory** > **App Registrations** > Surveys</span></span>
+3. <span data-ttu-id="f351b-170">Выберите **Azure Active Directory** > **Регистрация приложений** > Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-170">Select **Azure Active Directory** > **App Registrations** > Surveys</span></span>
 
-4.  <span data-ttu-id="24e6b-171">Щелкните **Манифест** и выберите **Изменить**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-171">Click **Manifest** and then **Edit**.</span></span>
+4.  <span data-ttu-id="f351b-171">Щелкните **Манифест** и выберите **Изменить**.</span><span class="sxs-lookup"><span data-stu-id="f351b-171">Click **Manifest** and then **Edit**.</span></span>
 
-5.  <span data-ttu-id="24e6b-172">Вставьте выходные данные сценария в свойство `keyCredentials` .</span><span class="sxs-lookup"><span data-stu-id="24e6b-172">Paste the output from the script into the `keyCredentials` property.</span></span> <span data-ttu-id="24e6b-173">Это должно выглядеть следующим образом:</span><span class="sxs-lookup"><span data-stu-id="24e6b-173">It should look similar to the following:</span></span>
+5.  <span data-ttu-id="f351b-172">Вставьте выходные данные сценария в свойство `keyCredentials` .</span><span class="sxs-lookup"><span data-stu-id="f351b-172">Paste the output from the script into the `keyCredentials` property.</span></span> <span data-ttu-id="f351b-173">Это должно выглядеть следующим образом:</span><span class="sxs-lookup"><span data-stu-id="f351b-173">It should look similar to the following:</span></span>
         
     ```json
     "keyCredentials": [
@@ -121,84 +121,84 @@ ms.locfileid: "47429185"
     ],
     ```          
 
-6. <span data-ttu-id="24e6b-174">Выберите команду **Сохранить**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-174">Click **Save**.</span></span>  
+6. <span data-ttu-id="f351b-174">Выберите команду **Сохранить**.</span><span class="sxs-lookup"><span data-stu-id="f351b-174">Click **Save**.</span></span>  
 
-7. <span data-ttu-id="24e6b-175">Повторите шаги 3–6 и добавьте этот же фрагмент JSON в манифест приложения веб-API (Surveys.WebAPI).</span><span class="sxs-lookup"><span data-stu-id="24e6b-175">Repeat steps 3-6 to add the same JSON fragment to the application manifest of the web API (Surveys.WebAPI).</span></span>
+7. <span data-ttu-id="f351b-175">Повторите шаги 3–6 и добавьте этот же фрагмент JSON в манифест приложения веб-API (Surveys.WebAPI).</span><span class="sxs-lookup"><span data-stu-id="f351b-175">Repeat steps 3-6 to add the same JSON fragment to the application manifest of the web API (Surveys.WebAPI).</span></span>
 
-8. <span data-ttu-id="24e6b-176">Откройте окно PowerShell и выполните следующую команду, чтобы получить отпечаток сертификата:</span><span class="sxs-lookup"><span data-stu-id="24e6b-176">From the PowerShell window, run the following command to get the thumbprint of the certificate.</span></span>
+8. <span data-ttu-id="f351b-176">Откройте окно PowerShell и выполните следующую команду, чтобы получить отпечаток сертификата:</span><span class="sxs-lookup"><span data-stu-id="f351b-176">From the PowerShell window, run the following command to get the thumbprint of the certificate.</span></span>
    
     ```
     certutil -store -user my [subject]
     ```
     
-    <span data-ttu-id="24e6b-177">Для `[subject]` укажите значение, которое вы использовали для Subject в скрипте PowerShell.</span><span class="sxs-lookup"><span data-stu-id="24e6b-177">For `[subject]`, use the value that you specified for Subject in the PowerShell script.</span></span> <span data-ttu-id="24e6b-178">Отпечаток указан в разделе Cert Hash(sha1).</span><span class="sxs-lookup"><span data-stu-id="24e6b-178">The thumbprint is listed under "Cert Hash(sha1)".</span></span> <span data-ttu-id="24e6b-179">Скопируйте это значение.</span><span class="sxs-lookup"><span data-stu-id="24e6b-179">Copy this value.</span></span> <span data-ttu-id="24e6b-180">Отпечаток будет использоваться позднее.</span><span class="sxs-lookup"><span data-stu-id="24e6b-180">You will use the thumbprint later.</span></span>
+    <span data-ttu-id="f351b-177">Для `[subject]` укажите значение, которое вы использовали для Subject в скрипте PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f351b-177">For `[subject]`, use the value that you specified for Subject in the PowerShell script.</span></span> <span data-ttu-id="f351b-178">Отпечаток указан в разделе Cert Hash(sha1).</span><span class="sxs-lookup"><span data-stu-id="f351b-178">The thumbprint is listed under "Cert Hash(sha1)".</span></span> <span data-ttu-id="f351b-179">Скопируйте это значение.</span><span class="sxs-lookup"><span data-stu-id="f351b-179">Copy this value.</span></span> <span data-ttu-id="f351b-180">Отпечаток будет использоваться позднее.</span><span class="sxs-lookup"><span data-stu-id="f351b-180">You will use the thumbprint later.</span></span>
 
-### <a name="create-a-key-vault"></a><span data-ttu-id="24e6b-181">Создайте хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-181">Create a key vault</span></span>
-1. <span data-ttu-id="24e6b-182">Запустите скрипт PowerShell [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] следующим образом:</span><span class="sxs-lookup"><span data-stu-id="24e6b-182">Run the PowerShell script [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] as follows:</span></span>
+### <a name="create-a-key-vault"></a><span data-ttu-id="f351b-181">Создайте хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-181">Create a key vault</span></span>
+1. <span data-ttu-id="f351b-182">Запустите скрипт PowerShell [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] следующим образом:</span><span class="sxs-lookup"><span data-stu-id="f351b-182">Run the PowerShell script [/Scripts/Setup-KeyVault.ps1][Setup-KeyVault] as follows:</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -KeyVaultName <<key vault name>> -ResourceGroupName <<resource group name>> -Location <<location>>
     ```
    
-    <span data-ttu-id="24e6b-183">При появлении запроса на ввод учетных данных войдите в систему с учетной записью пользователя Azure AD, созданной ранее.</span><span class="sxs-lookup"><span data-stu-id="24e6b-183">When prompted for credentials, sign in as the Azure AD user that you created earlier.</span></span> <span data-ttu-id="24e6b-184">Сценарий создаст новую группу ресурсов с новым хранилищем ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-184">The script creates a new resource group, and a new key vault within that resource group.</span></span> 
+    <span data-ttu-id="f351b-183">При появлении запроса на ввод учетных данных войдите в систему с учетной записью пользователя Azure AD, созданной ранее.</span><span class="sxs-lookup"><span data-stu-id="f351b-183">When prompted for credentials, sign in as the Azure AD user that you created earlier.</span></span> <span data-ttu-id="f351b-184">Сценарий создаст новую группу ресурсов с новым хранилищем ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-184">The script creates a new resource group, and a new key vault within that resource group.</span></span> 
    
-2. <span data-ttu-id="24e6b-185">Повторно запустите SetupKeyVault.ps следующим образом:</span><span class="sxs-lookup"><span data-stu-id="24e6b-185">Run SetupKeyVault.ps again as follows:</span></span>
+2. <span data-ttu-id="f351b-185">Повторно запустите SetupKeyVault.ps следующим образом:</span><span class="sxs-lookup"><span data-stu-id="f351b-185">Run SetupKeyVault.ps again as follows:</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -KeyVaultName <<key vault name>> -ApplicationIds @("<<Surveys app id>>", "<<Surveys.WebAPI app ID>>")
     ```
    
-    <span data-ttu-id="24e6b-186">Установите следующие значения параметров:</span><span class="sxs-lookup"><span data-stu-id="24e6b-186">Set the following parameter values:</span></span>
+    <span data-ttu-id="f351b-186">Установите следующие значения параметров:</span><span class="sxs-lookup"><span data-stu-id="f351b-186">Set the following parameter values:</span></span>
    
-       * <span data-ttu-id="24e6b-187">key vault name — имя, присвоенное хранилищу ключей на предыдущем этапе;</span><span class="sxs-lookup"><span data-stu-id="24e6b-187">key vault name = The name that you gave the key vault in the previous step.</span></span>
-       * <span data-ttu-id="24e6b-188">Surveys app ID — идентификатор веб-приложения Surveys;</span><span class="sxs-lookup"><span data-stu-id="24e6b-188">Surveys app ID = The application ID for the Surveys web application.</span></span>
-       * <span data-ttu-id="24e6b-189">Surveys.WebApi app ID — идентификатор приложения Surveys.WebAPI.</span><span class="sxs-lookup"><span data-stu-id="24e6b-189">Surveys.WebApi app ID = The application ID for the Surveys.WebAPI application.</span></span>
+       * <span data-ttu-id="f351b-187">key vault name — имя, присвоенное хранилищу ключей на предыдущем этапе;</span><span class="sxs-lookup"><span data-stu-id="f351b-187">key vault name = The name that you gave the key vault in the previous step.</span></span>
+       * <span data-ttu-id="f351b-188">Surveys app ID — идентификатор веб-приложения Surveys;</span><span class="sxs-lookup"><span data-stu-id="f351b-188">Surveys app ID = The application ID for the Surveys web application.</span></span>
+       * <span data-ttu-id="f351b-189">Surveys.WebApi app ID — идентификатор приложения Surveys.WebAPI.</span><span class="sxs-lookup"><span data-stu-id="f351b-189">Surveys.WebApi app ID = The application ID for the Surveys.WebAPI application.</span></span>
          
-    <span data-ttu-id="24e6b-190">Пример:</span><span class="sxs-lookup"><span data-stu-id="24e6b-190">Example:</span></span>
+    <span data-ttu-id="f351b-190">Пример:</span><span class="sxs-lookup"><span data-stu-id="f351b-190">Example:</span></span>
      
     ```
      .\Setup-KeyVault.ps1 -KeyVaultName tailspinkv -ApplicationIds @("f84df9d1-91cc-4603-b662-302db51f1031", "8871a4c2-2a23-4650-8b46-0625ff3928a6")
     ```
     
-    <span data-ttu-id="24e6b-191">Этот скрипт разрешает веб-приложению и веб-API получать секреты из хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-191">This script authorizes the web app and web API to retrieve secrets from your key vault.</span></span> <span data-ttu-id="24e6b-192">Дополнительные сведения см. в статье [Приступая к работе с хранилищем ключей Azure](/azure/key-vault/key-vault-get-started/).</span><span class="sxs-lookup"><span data-stu-id="24e6b-192">See [Get started with Azure Key Vault](/azure/key-vault/key-vault-get-started/) for more information.</span></span>
+    <span data-ttu-id="f351b-191">Этот скрипт разрешает веб-приложению и веб-API получать секреты из хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-191">This script authorizes the web app and web API to retrieve secrets from your key vault.</span></span> <span data-ttu-id="f351b-192">Дополнительные сведения см. в статье [Приступая к работе с хранилищем ключей Azure](/azure/key-vault/key-vault-get-started/).</span><span class="sxs-lookup"><span data-stu-id="f351b-192">See [Get started with Azure Key Vault](/azure/key-vault/key-vault-get-started/) for more information.</span></span>
 
-### <a name="add-configuration-settings-to-your-key-vault"></a><span data-ttu-id="24e6b-193">Добавьте параметры конфигурации в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-193">Add configuration settings to your key vault</span></span>
-1. <span data-ttu-id="24e6b-194">Запустите SetupKeyVault.ps следующим образом:</span><span class="sxs-lookup"><span data-stu-id="24e6b-194">Run SetupKeyVault.ps as follows::</span></span>
+### <a name="add-configuration-settings-to-your-key-vault"></a><span data-ttu-id="f351b-193">Добавьте параметры конфигурации в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-193">Add configuration settings to your key vault</span></span>
+1. <span data-ttu-id="f351b-194">Запустите SetupKeyVault.ps следующим образом:</span><span class="sxs-lookup"><span data-stu-id="f351b-194">Run SetupKeyVault.ps as follows::</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -KeyVaultName <<key vault name> -KeyName Redis--Configuration -KeyValue "<<Redis DNS name>>.redis.cache.windows.net,password=<<Redis access key>>,ssl=true" 
     ```
-    <span data-ttu-id="24e6b-195">где:</span><span class="sxs-lookup"><span data-stu-id="24e6b-195">where</span></span>
+    <span data-ttu-id="f351b-195">где:</span><span class="sxs-lookup"><span data-stu-id="f351b-195">where</span></span>
    
-   * <span data-ttu-id="24e6b-196">key vault name — имя, присвоенное хранилищу ключей на предыдущем этапе;</span><span class="sxs-lookup"><span data-stu-id="24e6b-196">key vault name = The name that you gave the key vault in the previous step.</span></span>
-   * <span data-ttu-id="24e6b-197">Redis DNS name — DNS-имя экземпляра кэша Redis;</span><span class="sxs-lookup"><span data-stu-id="24e6b-197">Redis DNS name = The DNS name of your Redis cache instance.</span></span>
-   * <span data-ttu-id="24e6b-198">Redis access key — ключ доступа для экземпляра кэша Redis.</span><span class="sxs-lookup"><span data-stu-id="24e6b-198">Redis access key = The access key for your Redis cache instance.</span></span>
+   * <span data-ttu-id="f351b-196">key vault name — имя, присвоенное хранилищу ключей на предыдущем этапе;</span><span class="sxs-lookup"><span data-stu-id="f351b-196">key vault name = The name that you gave the key vault in the previous step.</span></span>
+   * <span data-ttu-id="f351b-197">Redis DNS name — DNS-имя экземпляра кэша Redis;</span><span class="sxs-lookup"><span data-stu-id="f351b-197">Redis DNS name = The DNS name of your Redis cache instance.</span></span>
+   * <span data-ttu-id="f351b-198">Redis access key — ключ доступа для экземпляра кэша Redis.</span><span class="sxs-lookup"><span data-stu-id="f351b-198">Redis access key = The access key for your Redis cache instance.</span></span>
      
-2. <span data-ttu-id="24e6b-199">На этом этапе рекомендуется проверить, успешно ли сохранены секреты в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-199">At this point, it's a good idea to test whether you successfully stored the secrets to key vault.</span></span> <span data-ttu-id="24e6b-200">Выполните следующую команду PowerShell:</span><span class="sxs-lookup"><span data-stu-id="24e6b-200">Run the following PowerShell command:</span></span>
+2. <span data-ttu-id="f351b-199">На этом этапе рекомендуется проверить, успешно ли сохранены секреты в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-199">At this point, it's a good idea to test whether you successfully stored the secrets to key vault.</span></span> <span data-ttu-id="f351b-200">Выполните следующую команду PowerShell:</span><span class="sxs-lookup"><span data-stu-id="f351b-200">Run the following PowerShell command:</span></span>
    
     ```
     Get-AzureKeyVaultSecret <<key vault name>> Redis--Configuration | Select-Object *
     ```
 
-3. <span data-ttu-id="24e6b-201">Повторно запустите SetupKeyVault.ps, чтобы добавить строку подключения к базе данных:</span><span class="sxs-lookup"><span data-stu-id="24e6b-201">Run SetupKeyVault.ps again to add the database connection string:</span></span>
+3. <span data-ttu-id="f351b-201">Повторно запустите SetupKeyVault.ps, чтобы добавить строку подключения к базе данных:</span><span class="sxs-lookup"><span data-stu-id="f351b-201">Run SetupKeyVault.ps again to add the database connection string:</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -KeyVaultName <<key vault name> -KeyName Data--SurveysConnectionString -KeyValue <<DB connection string>> -ConfigName "Data:SurveysConnectionString"
     ```
    
-    <span data-ttu-id="24e6b-202">где `<<DB connection string>>` — значение строки подключения к базе данных.</span><span class="sxs-lookup"><span data-stu-id="24e6b-202">where `<<DB connection string>>` is the value of the database connection string.</span></span>
+    <span data-ttu-id="f351b-202">где `<<DB connection string>>` — значение строки подключения к базе данных.</span><span class="sxs-lookup"><span data-stu-id="f351b-202">where `<<DB connection string>>` is the value of the database connection string.</span></span>
    
-    <span data-ttu-id="24e6b-203">Для тестирования с локальной базой данных скопируйте строку подключения из файла Tailspin.Surveys.Web/appsettings.json.</span><span class="sxs-lookup"><span data-stu-id="24e6b-203">For testing with the local database, copy the connection string from the Tailspin.Surveys.Web/appsettings.json file.</span></span> <span data-ttu-id="24e6b-204">При этом обязательно замените две обратные косые черты ("\\\\") одной обратной косой чертой.</span><span class="sxs-lookup"><span data-stu-id="24e6b-204">If you do that, make sure to change the double backslash ('\\\\') into a single backslash.</span></span> <span data-ttu-id="24e6b-205">Двойная обратная косая черта является escape-символом в JSON-файле.</span><span class="sxs-lookup"><span data-stu-id="24e6b-205">The double backslash is an escape character in the JSON file.</span></span>
+    <span data-ttu-id="f351b-203">Для тестирования с локальной базой данных скопируйте строку подключения из файла Tailspin.Surveys.Web/appsettings.json.</span><span class="sxs-lookup"><span data-stu-id="f351b-203">For testing with the local database, copy the connection string from the Tailspin.Surveys.Web/appsettings.json file.</span></span> <span data-ttu-id="f351b-204">При этом обязательно замените две обратные косые черты ("\\\\") одной обратной косой чертой.</span><span class="sxs-lookup"><span data-stu-id="f351b-204">If you do that, make sure to change the double backslash ('\\\\') into a single backslash.</span></span> <span data-ttu-id="f351b-205">Двойная обратная косая черта является escape-символом в JSON-файле.</span><span class="sxs-lookup"><span data-stu-id="f351b-205">The double backslash is an escape character in the JSON file.</span></span>
    
-    <span data-ttu-id="24e6b-206">Пример:</span><span class="sxs-lookup"><span data-stu-id="24e6b-206">Example:</span></span>
+    <span data-ttu-id="f351b-206">Пример:</span><span class="sxs-lookup"><span data-stu-id="f351b-206">Example:</span></span>
    
     ```
     .\Setup-KeyVault.ps1 -KeyVaultName mykeyvault -KeyName Data--SurveysConnectionString -KeyValue "Server=(localdb)\MSSQLLocalDB;Database=Tailspin.SurveysDB;Trusted_Connection=True;MultipleActiveResultSets=true" 
     ```
 
-### <a name="uncomment-the-code-that-enables-key-vault"></a><span data-ttu-id="24e6b-207">Раскомментирование кода, который активирует хранилище ключей</span><span class="sxs-lookup"><span data-stu-id="24e6b-207">Uncomment the code that enables Key Vault</span></span>
-1. <span data-ttu-id="24e6b-208">Откройте решение Tailspin.Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-208">Open the Tailspin.Surveys solution.</span></span>
-2. <span data-ttu-id="24e6b-209">В файле Tailspin.Surveys.Web/Startup.cs найдите следующий блок кода и раскомментируйте его:</span><span class="sxs-lookup"><span data-stu-id="24e6b-209">In Tailspin.Surveys.Web/Startup.cs, locate the following code block and uncomment it.</span></span>
+### <a name="uncomment-the-code-that-enables-key-vault"></a><span data-ttu-id="f351b-207">Раскомментирование кода, который активирует хранилище ключей</span><span class="sxs-lookup"><span data-stu-id="f351b-207">Uncomment the code that enables Key Vault</span></span>
+1. <span data-ttu-id="f351b-208">Откройте решение Tailspin.Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-208">Open the Tailspin.Surveys solution.</span></span>
+2. <span data-ttu-id="f351b-209">В файле Tailspin.Surveys.Web/Startup.cs найдите следующий блок кода и раскомментируйте его:</span><span class="sxs-lookup"><span data-stu-id="f351b-209">In Tailspin.Surveys.Web/Startup.cs, locate the following code block and uncomment it.</span></span>
    
     ```csharp
     //var config = builder.Build();
@@ -207,7 +207,7 @@ ms.locfileid: "47429185"
     //    config["AzureAd:ClientId"],
     //    config["AzureAd:ClientSecret"]);
     ```
-3. <span data-ttu-id="24e6b-210">В файле Tailspin.Surveys.Web/Startup.cs найдите блок кода, который регистрирует `ICredentialService`.</span><span class="sxs-lookup"><span data-stu-id="24e6b-210">In Tailspin.Surveys.Web/Startup.cs, locate the code that registers the `ICredentialService`.</span></span> <span data-ttu-id="24e6b-211">Раскомментируйте строку, в которой используется `CertificateCredentialService`, и закомментируйте строку, в которой используется `ClientCredentialService`:</span><span class="sxs-lookup"><span data-stu-id="24e6b-211">Uncomment the line that uses `CertificateCredentialService`, and comment out the line that uses `ClientCredentialService`:</span></span>
+3. <span data-ttu-id="f351b-210">В файле Tailspin.Surveys.Web/Startup.cs найдите блок кода, который регистрирует `ICredentialService`.</span><span class="sxs-lookup"><span data-stu-id="f351b-210">In Tailspin.Surveys.Web/Startup.cs, locate the code that registers the `ICredentialService`.</span></span> <span data-ttu-id="f351b-211">Раскомментируйте строку, в которой используется `CertificateCredentialService`, и закомментируйте строку, в которой используется `ClientCredentialService`:</span><span class="sxs-lookup"><span data-stu-id="f351b-211">Uncomment the line that uses `CertificateCredentialService`, and comment out the line that uses `ClientCredentialService`:</span></span>
    
     ```csharp
     // Uncomment this:
@@ -216,49 +216,49 @@ ms.locfileid: "47429185"
     //services.AddSingleton<ICredentialService, ClientCredentialService>();
     ```
    
-    <span data-ttu-id="24e6b-212">Благодаря этому изменению веб-приложение сможет использовать [утверждение клиента][client-assertion] для получения маркера доступа OAuth.</span><span class="sxs-lookup"><span data-stu-id="24e6b-212">This change enables the web app to use [Client assertion][client-assertion] to get OAuth access tokens.</span></span> <span data-ttu-id="24e6b-213">Утверждение клиента устраняет необходимость в секрете клиента OAuth.</span><span class="sxs-lookup"><span data-stu-id="24e6b-213">With client assertion, you don't need an OAuth client secret.</span></span> <span data-ttu-id="24e6b-214">Либо же секрет клиента можно сохранить в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-214">Alternatively, you could store the client secret in key vault.</span></span> <span data-ttu-id="24e6b-215">Однако и хранилище ключей, и утверждение клиента используют сертификат клиента, поэтому при активации хранилища ключей рекомендуется также включить утверждение клиента.</span><span class="sxs-lookup"><span data-stu-id="24e6b-215">However, key vault and client assertion both use a client certificate, so if you enable key vault, it's a good practice to enable client assertion as well.</span></span>
+    <span data-ttu-id="f351b-212">Благодаря этому изменению веб-приложение сможет использовать [утверждение клиента][client-assertion] для получения маркера доступа OAuth.</span><span class="sxs-lookup"><span data-stu-id="f351b-212">This change enables the web app to use [Client assertion][client-assertion] to get OAuth access tokens.</span></span> <span data-ttu-id="f351b-213">Утверждение клиента устраняет необходимость в секрете клиента OAuth.</span><span class="sxs-lookup"><span data-stu-id="f351b-213">With client assertion, you don't need an OAuth client secret.</span></span> <span data-ttu-id="f351b-214">Либо же секрет клиента можно сохранить в хранилище ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-214">Alternatively, you could store the client secret in key vault.</span></span> <span data-ttu-id="f351b-215">Однако и хранилище ключей, и утверждение клиента используют сертификат клиента, поэтому при активации хранилища ключей рекомендуется также включить утверждение клиента.</span><span class="sxs-lookup"><span data-stu-id="f351b-215">However, key vault and client assertion both use a client certificate, so if you enable key vault, it's a good practice to enable client assertion as well.</span></span>
 
-### <a name="update-the-user-secrets"></a><span data-ttu-id="24e6b-216">Обновление секретов пользователя</span><span class="sxs-lookup"><span data-stu-id="24e6b-216">Update the user secrets</span></span>
-<span data-ttu-id="24e6b-217">В обозревателе решений щелкните правой кнопкой мыши проект Tailspin.Surveys.Web и выберите пункт **Управление секретами пользователей**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-217">In Solution Explorer, right-click the Tailspin.Surveys.Web project and select **Manage User Secrets**.</span></span> <span data-ttu-id="24e6b-218">В файле secrets.json удалите существующий код JSON и вставьте следующий:</span><span class="sxs-lookup"><span data-stu-id="24e6b-218">In the secrets.json file, delete the existing JSON and paste in the following:</span></span>
+### <a name="update-the-user-secrets"></a><span data-ttu-id="f351b-216">Обновление секретов пользователя</span><span class="sxs-lookup"><span data-stu-id="f351b-216">Update the user secrets</span></span>
+<span data-ttu-id="f351b-217">В обозревателе решений щелкните правой кнопкой мыши проект Tailspin.Surveys.Web и выберите пункт **Управление секретами пользователей**.</span><span class="sxs-lookup"><span data-stu-id="f351b-217">In Solution Explorer, right-click the Tailspin.Surveys.Web project and select **Manage User Secrets**.</span></span> <span data-ttu-id="f351b-218">В файле secrets.json удалите существующий код JSON и вставьте следующий:</span><span class="sxs-lookup"><span data-stu-id="f351b-218">In the secrets.json file, delete the existing JSON and paste in the following:</span></span>
 
-    ```
-    {
-      "AzureAd": {
-        "ClientId": "[Surveys web app client ID]",
-        "ClientSecret": "[Surveys web app client secret]",
-        "PostLogoutRedirectUri": "https://localhost:44300/",
-        "WebApiResourceId": "[App ID URI of your Surveys.WebAPI application]",
-        "Asymmetric": {
-          "CertificateThumbprint": "[certificate thumbprint. Example: 105b2ff3bc842c53582661716db1b7cdc6b43ec9]",
-          "StoreName": "My",
-          "StoreLocation": "CurrentUser",
-          "ValidationRequired": "false"
-        }
-      },
-      "KeyVault": {
-        "Name": "[key vault name]"
-      }
+```json
+{
+  "AzureAd": {
+    "ClientId": "[Surveys web app client ID]",
+    "ClientSecret": "[Surveys web app client secret]",
+    "PostLogoutRedirectUri": "https://localhost:44300/",
+    "WebApiResourceId": "[App ID URI of your Surveys.WebAPI application]",
+    "Asymmetric": {
+      "CertificateThumbprint": "[certificate thumbprint. Example: 105b2ff3bc842c53582661716db1b7cdc6b43ec9]",
+      "StoreName": "My",
+      "StoreLocation": "CurrentUser",
+      "ValidationRequired": "false"
     }
-    ```
+  },
+  "KeyVault": {
+    "Name": "[key vault name]"
+  }
+}
+```
 
-<span data-ttu-id="24e6b-219">Замените записи в [квадратных скобках] надлежащими значениями.</span><span class="sxs-lookup"><span data-stu-id="24e6b-219">Replace the entries in [square brackets] with the correct values.</span></span>
+<span data-ttu-id="f351b-219">Замените записи в [квадратных скобках] надлежащими значениями.</span><span class="sxs-lookup"><span data-stu-id="f351b-219">Replace the entries in [square brackets] with the correct values.</span></span>
 
-* <span data-ttu-id="24e6b-220">`AzureAd:ClientId`: идентификатор клиента приложения Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-220">`AzureAd:ClientId`: The client ID of the Surveys app.</span></span>
-* <span data-ttu-id="24e6b-221">`AzureAd:ClientSecret`: ключ, созданный при регистрации приложения Surveys в Azure AD.</span><span class="sxs-lookup"><span data-stu-id="24e6b-221">`AzureAd:ClientSecret`: The key that you generated when you registered the Surveys application in Azure AD.</span></span>
-* <span data-ttu-id="24e6b-222">`AzureAd:WebApiResourceId`: код URI идентификатора приложения, указанный при создании приложения Surveys.WebAPI в Azure AD.</span><span class="sxs-lookup"><span data-stu-id="24e6b-222">`AzureAd:WebApiResourceId`: The App ID URI that you specified when you created the Surveys.WebAPI application in Azure AD.</span></span>
-* <span data-ttu-id="24e6b-223">`Asymmetric:CertificateThumbprint`: отпечаток сертификата, полученный ранее при создании сертификата клиента.</span><span class="sxs-lookup"><span data-stu-id="24e6b-223">`Asymmetric:CertificateThumbprint`: The certificate thumbprint that you got previously, when you created the client certificate.</span></span>
-* <span data-ttu-id="24e6b-224">`KeyVault:Name`: имя хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="24e6b-224">`KeyVault:Name`: The name of your key vault.</span></span>
+* <span data-ttu-id="f351b-220">`AzureAd:ClientId`: идентификатор клиента приложения Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-220">`AzureAd:ClientId`: The client ID of the Surveys app.</span></span>
+* <span data-ttu-id="f351b-221">`AzureAd:ClientSecret`: ключ, созданный при регистрации приложения Surveys в Azure AD.</span><span class="sxs-lookup"><span data-stu-id="f351b-221">`AzureAd:ClientSecret`: The key that you generated when you registered the Surveys application in Azure AD.</span></span>
+* <span data-ttu-id="f351b-222">`AzureAd:WebApiResourceId`: код URI идентификатора приложения, указанный при создании приложения Surveys.WebAPI в Azure AD.</span><span class="sxs-lookup"><span data-stu-id="f351b-222">`AzureAd:WebApiResourceId`: The App ID URI that you specified when you created the Surveys.WebAPI application in Azure AD.</span></span>
+* <span data-ttu-id="f351b-223">`Asymmetric:CertificateThumbprint`: отпечаток сертификата, полученный ранее при создании сертификата клиента.</span><span class="sxs-lookup"><span data-stu-id="f351b-223">`Asymmetric:CertificateThumbprint`: The certificate thumbprint that you got previously, when you created the client certificate.</span></span>
+* <span data-ttu-id="f351b-224">`KeyVault:Name`: имя хранилища ключей.</span><span class="sxs-lookup"><span data-stu-id="f351b-224">`KeyVault:Name`: The name of your key vault.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="24e6b-225">`Asymmetric:ValidationRequired` имеет значение False, так как созданный ранее сертификат не подписан корневым центром сертификации.</span><span class="sxs-lookup"><span data-stu-id="24e6b-225">`Asymmetric:ValidationRequired` is false because the certificate that you created previously was not signed by a root certificate authority (CA).</span></span> <span data-ttu-id="24e6b-226">В рабочей среде используйте сертификат, подписанный центром сертификации, и измените значение `ValidationRequired` на True.</span><span class="sxs-lookup"><span data-stu-id="24e6b-226">In production, use a certificate that is signed by a root CA and set `ValidationRequired` to true.</span></span>
+> <span data-ttu-id="f351b-225">`Asymmetric:ValidationRequired` имеет значение False, так как созданный ранее сертификат не подписан корневым центром сертификации.</span><span class="sxs-lookup"><span data-stu-id="f351b-225">`Asymmetric:ValidationRequired` is false because the certificate that you created previously was not signed by a root certificate authority (CA).</span></span> <span data-ttu-id="f351b-226">В рабочей среде используйте сертификат, подписанный центром сертификации, и измените значение `ValidationRequired` на True.</span><span class="sxs-lookup"><span data-stu-id="f351b-226">In production, use a certificate that is signed by a root CA and set `ValidationRequired` to true.</span></span>
 > 
 > 
 
-<span data-ttu-id="24e6b-227">Сохраните обновленный файл secrets.json.</span><span class="sxs-lookup"><span data-stu-id="24e6b-227">Save the updated secrets.json file.</span></span>
+<span data-ttu-id="f351b-227">Сохраните обновленный файл secrets.json.</span><span class="sxs-lookup"><span data-stu-id="f351b-227">Save the updated secrets.json file.</span></span>
 
-<span data-ttu-id="24e6b-228">Затем в обозревателе решений щелкните правой кнопкой мыши проект Tailspin.Surveys.WebApi и выберите пункт **Управление секретами пользователей**.</span><span class="sxs-lookup"><span data-stu-id="24e6b-228">Next, in Solution Explorer, right-click the Tailspin.Surveys.WebApi project and select **Manage User Secrets**.</span></span> <span data-ttu-id="24e6b-229">Удалите существующий код JSON и вставьте следующий:</span><span class="sxs-lookup"><span data-stu-id="24e6b-229">Delete the existing JSON and paste in the following:</span></span>
+<span data-ttu-id="f351b-228">Затем в обозревателе решений щелкните правой кнопкой мыши проект Tailspin.Surveys.WebApi и выберите пункт **Управление секретами пользователей**.</span><span class="sxs-lookup"><span data-stu-id="f351b-228">Next, in Solution Explorer, right-click the Tailspin.Surveys.WebApi project and select **Manage User Secrets**.</span></span> <span data-ttu-id="f351b-229">Удалите существующий код JSON и вставьте следующий:</span><span class="sxs-lookup"><span data-stu-id="f351b-229">Delete the existing JSON and paste in the following:</span></span>
 
-```
+```json
 {
   "AzureAd": {
     "ClientId": "[Surveys.WebAPI client ID]",
@@ -276,14 +276,14 @@ ms.locfileid: "47429185"
 }
 ```
 
-<span data-ttu-id="24e6b-230">Замените записи в [квадратных скобках] и сохраните файл secrets.json.</span><span class="sxs-lookup"><span data-stu-id="24e6b-230">Replace the entries in [square brackets] and save the secrets.json file.</span></span>
+<span data-ttu-id="f351b-230">Замените записи в [квадратных скобках] и сохраните файл secrets.json.</span><span class="sxs-lookup"><span data-stu-id="f351b-230">Replace the entries in [square brackets] and save the secrets.json file.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="24e6b-231">В веб-API обязательно должен использоваться идентификатор клиента для приложения Surveys.WebAPI, а не для приложения Surveys.</span><span class="sxs-lookup"><span data-stu-id="24e6b-231">For the web API, make sure to use the client ID for the Surveys.WebAPI application, not the Surveys application.</span></span>
+> <span data-ttu-id="f351b-231">В веб-API обязательно должен использоваться идентификатор клиента для приложения Surveys.WebAPI, а не для приложения Surveys.</span><span class="sxs-lookup"><span data-stu-id="f351b-231">For the web API, make sure to use the client ID for the Surveys.WebAPI application, not the Surveys application.</span></span>
 > 
 > 
 
-<span data-ttu-id="24e6b-232">[**Далее**][adfs]</span><span class="sxs-lookup"><span data-stu-id="24e6b-232">[**Next**][adfs]</span></span>
+<span data-ttu-id="f351b-232">[**Далее**][adfs]</span><span class="sxs-lookup"><span data-stu-id="f351b-232">[**Next**][adfs]</span></span>
 
 <!-- Links -->
 [adfs]: ./adfs.md
