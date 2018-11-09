@@ -2,13 +2,13 @@
 title: Обновление ресурсов в шаблоне Azure Resource Manager
 description: Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для обновления ресурса.
 author: petertay
-ms.date: 06/09/2017
-ms.openlocfilehash: f235f0b4d54d65ccc2fa67876916e922d75f6d07
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.date: 10/31/2018
+ms.openlocfilehash: dc97534e658c9728ac617b4e52031e2553600458
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429047"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251827"
 ---
 # <a name="update-a-resource-in-an-azure-resource-manager-template"></a>Обновление ресурсов в шаблоне Azure Resource Manager
 
@@ -122,16 +122,13 @@ ms.locfileid: "47429047"
 
 ## <a name="try-the-template"></a>Пробное использование шаблона
 
-Если вы хотите поэкспериментировать с этим шаблоном, выполните следующее.
+Пример шаблона доступен на [сайте GitHub][github]. Чтобы развернуть этот шаблон, выполните следующие команды [Azure CLI][cli]:
 
-1.  Перейдите на портал Azure, щелкните значок **+**, выполните поиск по типу ресурса **Развертывание шаблона** и выберите этот ресурс.
-2.  На странице **Развертывание шаблона** нажмите кнопку **Создать**. Откроется колонка **Настраиваемое развертывание**.
-3.  Щелкните значок **Изменить**.
-4.  Удалите пустой шаблон.
-5.  Скопируйте этот пример шаблона и вставьте его в область справа.
-6.  Нажмите кнопку **Сохранить**.
-7.  Вы вернетесь в область **Настраиваемое развертывание**, но на этот раз в ней будет несколько раскрывающихся списков. Выберите свою подписку, создайте новую или используйте существующую группу ресурсов и выберите расположение. Ознакомьтесь с условиями и нажмите кнопку **Принимаю**.
-8.  Нажмите кнопку **Приобрести**.
+```bash
+az group create --location <location> --name <resource-group-name>
+az group deployment create -g <resource-group-name> \
+    --template-uri https://raw.githubusercontent.com/mspnp/template-examples/master/example1-update/deploy.json
+```
 
 По завершении развертывания откройте группу ресурсов, которую вы указали на портале. Отобразится виртуальная сеть с именем `firstVNet` и сетевой адаптер с именем `nic1`. Щелкните `firstVNet`, а затем — `subnets`. Отобразится подсеть `firstSubnet`, созданная изначально, а также подсеть `secondSubnet`, добавленная в ресурсе `updateVNet`. 
 
@@ -145,4 +142,7 @@ ms.locfileid: "47429047"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Эта же методика реализована в [проекте стандартных блоков шаблона](https://github.com/mspnp/template-building-blocks) и [эталонных архитектурах Azure](/azure/architecture/reference-architectures/). Вы можете создать на их основе собственную архитектуру или развернуть готовые примеры архитектуры.
+* Узнайте, как развертывать ресурс только при определенных условиях, например при наличии или отсутствии значения конкретного параметра. См. сведения об [условном развертывании ресурсов в шаблоне Azure Resource Manager](./conditional-deploy.md).
+
+[cli]: /cli/azure/?view=azure-cli-latest
+[github]: https://github.com/mspnp/template-examples

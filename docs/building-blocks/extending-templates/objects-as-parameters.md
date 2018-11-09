@@ -2,13 +2,13 @@
 title: Использование объекта в качестве параметра в шаблоне Azure Resource Manager
 description: Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для использования объектов как параметров.
 author: petertay
-ms.date: 06/09/2017
-ms.openlocfilehash: dd53c55a26b2452c375d8d1e1a98886b15febaeb
-ms.sourcegitcommit: 62945777e519d650159f0f963a2489b6bb6ce094
+ms.date: 10/30/2018
+ms.openlocfilehash: c1955823b3474efa0abea1d9634add5f13d02eda
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876768"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251895"
 ---
 # <a name="use-an-object-as-a-parameter-in-an-azure-resource-manager-template"></a>Использование объекта в качестве параметра в шаблоне Azure Resource Manager
 
@@ -301,25 +301,21 @@ ms.locfileid: "48876768"
 
 ## <a name="try-the-template"></a>Пробное использование шаблона
 
-Если вы хотите поэкспериментировать с этим шаблоном, выполните следующее. 
+Пример шаблона доступен на [сайте GitHub][github]. Чтобы развернуть этот шаблон с помощью Azure CLI, выполните следующие команды [Azure CLI][cli]:
 
-1.  Перейдите на портал Azure, щелкните значок **+**, выполните поиск по типу ресурса **Развертывание шаблона** и выберите этот ресурс.
-2.  На странице **Развертывание шаблона** нажмите кнопку **Создать**. Откроется колонка **Настраиваемое развертывание**.
-3.  Нажмите кнопку **Изменить шаблон**.
-4.  Удалите пустой шаблон. 
-5.  Скопируйте этот пример шаблона и вставьте его в область справа.
-6.  Нажмите кнопку **Сохранить**.
-7.  Когда вы вернетесь в область **Настраиваемое развертывание**, нажмите кнопку **Изменить параметры**.
-8.  В колонке **Изменение параметров** удалите существующий шаблон.
-9.  Скопируйте и вставьте пример шаблона параметров, приведенный выше.
-10. Нажмите кнопку **Сохранить**, чтобы вернуться к колонке **Настраиваемое развертывание**.
-11. В колонке **Настраиваемое развертывание** выберите подписку, создайте новую группу ресурсов или выберите существующую, а также выберите расположение. Ознакомьтесь с условиями и установите флажок **Принимаю**.
-12. Нажмите кнопку **Приобрести**.
+```bash
+git clone https://github.com/mspnp/template-examples.git
+cd template-examples/example3-object-param
+az group create --location <location> --name <resource-group-name>
+az group deployment create -g <resource-group-name> \
+    --template-uri https://raw.githubusercontent.com/mspnp/template-examples/master/example3-object-param/deploy.json \
+    --parameters deploy.parameters.json
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* На основе этого подхода вы можете реализовать [преобразователь и сборщик для свойств объекта](./collector.md). Обобщенные методики преобразователя и сборщика можно использовать внутри шаблонов.
-* Эта же методика реализована в [проекте стандартных блоков шаблона](https://github.com/mspnp/template-building-blocks) и [эталонных архитектурах Azure](/azure/architecture/reference-architectures/). В предлагаемых шаблонах вы можете изучить, как мы применяем эту методику.
+- Узнайте, как создать шаблон, который перебирает массив объектов и преобразует его в схему JSON. См. сведения о [реализации преобразователя и сборщика свойств в шаблоне Azure Resource Manager](./collector.md).
+
 
 <!-- links -->
 [azure-resource-manager-authoring-templates]: /azure/azure-resource-manager/resource-group-authoring-templates
@@ -327,3 +323,5 @@ ms.locfileid: "48876768"
 [azure-resource-manager-create-multiple-instances]: /azure/azure-resource-manager/resource-group-create-multiple
 [azure-resource-manager-functions]: /azure/azure-resource-manager/resource-group-template-functions-resource
 [nsg]: /azure/virtual-network/virtual-networks-nsg
+[cli]: /cli/azure/?view=azure-cli-latest
+[github]: https://github.com/mspnp/template-examples

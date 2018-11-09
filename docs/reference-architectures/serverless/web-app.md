@@ -3,12 +3,12 @@ title: Бессерверное веб-приложение
 description: Эталонная архитектура, которая демонстрирует бессерверное веб-приложение и веб-API
 author: MikeWasson
 ms.date: 10/16/2018
-ms.openlocfilehash: c2b46a60a57381ac3fd3f77cffe53b2dab2dacd6
-ms.sourcegitcommit: 113a7248b9793c670b0f2d4278d30ad8616abe6c
+ms.openlocfilehash: d1af03811bda6267fd40ee17823ac8357829f988
+ms.sourcegitcommit: 949b9d3e5a9cdee1051e6be700ed169113e914ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349961"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50983402"
 ---
 # <a name="serverless-web-application"></a>Бессерверное веб-приложение 
 
@@ -148,20 +148,13 @@ API `GetStatus` в эталонной реализации использует 
 
 - Включите проверку подлинности Azure AD в приложении-функции. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в Службе приложений Azure][app-service-auth].
 
-- Добавьте политику в службу управления API, чтобы предварительно авторизовать запрос, проверив маркер доступа:
-
-    ```xml
-    <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
-        <openid-config url="https://login.microsoftonline.com/[Azure AD tenant ID]/.well-known/openid-configuration" />
-        <required-claims>
-            <claim name="aud">
-                <value>[Application ID]</value>
-            </claim>
-        </required-claims>
-    </validate-jwt>
-    ```
+- Добавьте [политику validate-jw][apim-validate-jwt] в службу управления API, чтобы предварительно авторизовать запрос, проверив маркер доступа.
 
 Дополнительные сведения см. в [файле сведений на сайте GitHub][readme].
+
+Рекомендуется создать отдельные регистрации приложений в Azure AD для клиентского приложения и API серверной части. Предоставьте клиентскому приложению разрешение вызывать веб-API. Этот подход позволяет определить несколько API и клиентов, а также управлять разрешениями для каждого из них. 
+
+В API используйте [области][scopes], чтобы приложение могло управлять разрешениями, которые оно запрашивает у пользователя. Например, API может использовать области `Read` и `Write`, а определенное клиентское приложение может запросить у пользователя авторизовать только разрешения `Read`.
 
 ### <a name="authorization"></a>Авторизация
 
@@ -275,11 +268,21 @@ public static Task<IActionResult> Run(
 
 ## <a name="devops-considerations"></a>Рекомендации для DevOps
 
+### <a name="deployment"></a>Развертывание
+
+Чтобы развернуть приложение-функцию, мы рекомендуем использовать [файлы пакетов][functions-run-from-package] (команда "Запуск из пакета"). В рамках этого подхода вы загружаете ZIP-файл в контейнер хранилища BLOB-объектов, а среда выполнения Функций подключает ZIP-файл как файловую систему только для чтения. Так как это атомарная операция, вероятность того, что в случае сбоя при развертывании приложение останется в несогласованном состоянии, является низкой. Это также позволяет ускорить холодный запуск, особенно для приложений Node.js, так как все файлы меняются одновременно.
+
 ### <a name="api-versioning"></a>Управление версиями API
 
-API — это контракт между службой и клиентами или объектами-получателями. Обеспечьте поддержку управления версиями в контракте API. Если вы разработали критически важное изменение API, выпустите новую версию. Разверните новую версию параллельно с исходной версией в отдельном приложении-функции. Это позволяет перенести существующих клиентов в новый API без нарушения клиентских приложений. В конце концов, вы сможете прекратить поддержку предыдущей версии. Дальнейшее обсуждение управления версиями API см. в разделе [Управление версиями веб-API RESTful][api-versioning].
+API — это контракт между службой и клиентами. В этой архитектуре контракт API определяется на уровне службы управления API. Служба управления API поддерживает две разные, но взаимодополняющие [концепции присвоения версий][apim-versioning]:
 
-Для обновлений, не нарушающих изменения API, разверните новую версию в промежуточном слоте в том же приложении-функции. Убедитесь, что развертывание выполнено успешно, а затем замените промежуточную версию рабочей.
+- *Версии* позволяют объектам-получателям выбрать версию API в зависимости от потребностей, например версию 1 или 2. 
+
+- *Редакции* позволяют администраторам API вносить в API обратно совместимые изменения и развертывать их вместе с журналом изменений, который содержит сведения об изменениях для объектов-получателей.
+
+Если вы вносите критические изменения в API, опубликуйте новую версию в службе управления API. Разверните новую версию параллельно с исходной версией в отдельном приложении-функции. Это позволяет перенести существующих клиентов в новый API без нарушения клиентских приложений. В конце концов, вы сможете прекратить поддержку предыдущей версии. Служба управления API поддерживает несколько [схем управления версиями][apim-versioning-schemes]: URL-путь, HTTP-заголовок или строка запроса. См. дополнительные сведения об [управлении версиями веб-API RESTful][api-versioning].
+
+Для обновлений, не нарушающих изменения API, разверните новую версию в промежуточном слоте в том же приложении-функции. Убедитесь, что развертывание выполнено успешно, а затем замените промежуточную версию рабочей. Опубликуйте версию в службе управления API.
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
@@ -292,6 +295,9 @@ API — это контракт между службой и клиентами 
 [apim-ip]: /azure/api-management/api-management-faq#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules
 [api-geo]: /azure/api-management/api-management-howto-deploy-multi-region
 [apim-scale]: /azure/api-management/api-management-howto-autoscale
+[apim-validate-jwt]: /azure/api-management/api-management-access-restriction-policies#ValidateJWT
+[apim-versioning]: /azure/api-management/api-management-get-started-publish-versions
+[apim-versioning-schemes]: /azure/api-management/api-management-get-started-publish-versions#choose-a-versioning-scheme
 [app-service-auth]: /azure/app-service/app-service-authentication-overview
 [app-service-ip-restrictions]: /azure/app-service/app-service-ip-restrictions
 [app-service-security]: /azure/app-service/app-service-security
@@ -310,9 +316,11 @@ API — это контракт между службой и клиентами 
 [functions-bindings]: /azure/azure-functions/functions-triggers-bindings
 [functions-cold-start]: https://blogs.msdn.microsoft.com/appserviceteam/2018/02/07/understanding-serverless-cold-start/
 [functions-https]: /azure/app-service/app-service-web-tutorial-custom-ssl#enforce-https
-[functions-proxy]: /azure-functions/functions-proxies
+[functions-proxy]: /azure/azure-functions/functions-proxies
+[functions-run-from-package]: /azure/azure-functions/run-functions-from-deployment-package
 [functions-scale]: /azure/azure-functions/functions-scale
 [functions-timeout]: /azure/azure-functions/functions-scale#consumption-plan
+[functions-zip-deploy]: /azure/azure-functions/deployment-zip-push
 [graph]: https://developer.microsoft.com/graph/docs/concepts/overview
 [key-vault-web-app]: /azure/key-vault/tutorial-web-application-keyvault
 [microservices-domain-analysis]: ../../microservices/domain-analysis.md
@@ -321,6 +329,7 @@ API — это контракт между службой и клиентами 
 [partition-key]: /azure/cosmos-db/partition-data
 [pipelines]: /azure/devops/pipelines/index
 [ru]: /azure/cosmos-db/request-units
+[scopes]: /azure/active-directory/develop/v2-permissions-and-consent
 [static-hosting]: /azure/storage/blobs/storage-blob-static-website
 [static-hosting-preview]: https://azure.microsoft.com/blog/azure-storage-static-web-hosting-public-preview/
 [storage-https]: /azure/storage/common/storage-require-secure-transfer

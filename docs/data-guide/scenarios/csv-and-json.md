@@ -3,12 +3,12 @@ title: Обработка CSV- и JSON-файлов
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 02e684d562cfe555f9e3596ad0a2f1a00d05c7a7
-ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
+ms.openlocfilehash: b9a0deae5499a4df4e43e15914490b89e0e3a50c
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30298612"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251810"
 ---
 # <a name="working-with-csv-and-json-files-for-data-solutions"></a>Работа с CSV- и JSON-файлами в контексте решений для работы с данными
 
@@ -44,6 +44,8 @@ CSV- и JSON-файлы облегчают обмен данными между 
 ## <a name="working-with-csv-and-json-data-in-azure"></a>Работа с CSV- и JSON-файлами в Azure
 
 Azure предлагает несколько решений для работы с CSV- и JSON-файлами, выбор которых зависит от ваших потребностей. Обычно эти файлы размещены либо в службе хранилища Azure, либо в Azure Data Lake Store. Большинство служб Azure, которые работают с этими и другими текстовыми файлами, интегрируются с любой службой хранения объектов. Однако в некоторых случаях вы можете напрямую импортировать данные в SQL Azure или в другое хранилище данных. SQL Server имеет встроенную поддержку для хранения документов JSON и работы с ними, что упрощает [импорт и обработку этих типов файлов](/sql/relational-databases/json/import-json-documents-into-sql-server). Для [импорта CSV-файлов](/sql/relational-databases/json/import-json-documents-into-sql-server) можно использовать такую служебную программу, как средство массового импорта SQL.
+
+Можно также запросить JSON-файлы непосредственно из хранилища BLOB-объектов Azure без их импорта в Azure SQL. Полный пример см. в руководстве по [использованию JSON-файлов в Azure SQL](https://medium.com/@mauridb/work-with-json-files-with-azure-sql-8946f066ddd4). Этот вариант недоступен для CSV-файлов.
 
 В зависимости от сценария вы можете выполнять [пакетную обработку](../big-data/batch-processing.md) данных или [обработку данных в режиме реального времени](../big-data/real-time-processing.md).
 

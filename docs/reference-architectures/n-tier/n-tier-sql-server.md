@@ -2,13 +2,13 @@
 title: N-уровневое приложение с SQL Server
 description: В этой статье описывается, как реализовать многоуровневую архитектуру в Azure для обеспечения доступности, безопасности, масштабируемости и управляемости.
 author: MikeWasson
-ms.date: 07/19/2018
-ms.openlocfilehash: d5f46570464916af892afcf492127402181a5df5
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.date: 09/13/2018
+ms.openlocfilehash: 6ddad853240b9a51ac904c06783a5c0b56dedec5
+ms.sourcegitcommit: dbbf914757b03cdee7a274204f9579fa63d7eed2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429151"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50916521"
 ---
 # <a name="n-tier-application-with-sql-server"></a>N-уровневое приложение с SQL Server
 

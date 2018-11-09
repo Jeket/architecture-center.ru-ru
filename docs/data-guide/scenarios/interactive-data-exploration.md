@@ -3,12 +3,12 @@ title: Интерактивное исследование данных
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 2e3d61fa5e1903c7fee6ebc84db3fa7c28d515cb
-ms.sourcegitcommit: ae8a1de6f4af7a89a66a8339879843d945201f85
+ms.openlocfilehash: be27df79d445cf9949318e4483ce0f95c26b6e09
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43325123"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251878"
 ---
 # <a name="interactive-data-exploration"></a>Интерактивное исследование данных
 
@@ -82,7 +82,7 @@ ms.locfileid: "43325123"
 ### <a name="analytics-and-reporting"></a>Аналитика и отчетность
 
 - **Jupyter**. Служба Jupyter Notebooks предоставляет браузерный интерфейс для выполнения кода на разных языках, например R, Python или Scala. Если вы используете R Server или Spark для пакетной обработки данных или Spark SQL для определения схемы таблиц для запросов, Jupyter станет хорошим инструментом для запроса этих данных. В Spark вы сможете применить стандартный API Spark для кадров данных или API Spark SQL, а также внедренные инструкции SQL для запроса данных и создания визуализаций.
-- **Drill**. Чтобы выполнить ad-hoc-анализ, можно использовать специальный обработчик SQL-запросов [Apache Drill](https://drill.apache.org/). Так как в этом случае схема не требуется, вы можете запрашивать данные из разных источников данных. При этом обработчик будет автоматически распознавать структуру данных.
+- **Drill**. Чтобы выполнить ad-hoc-анализ, можно использовать специальный обработчик SQL-запросов [Apache Drill](https://drill.apache.org/). Так как в этом случае схема не требуется, вы можете запрашивать данные из разных источников данных. При этом обработчик будет автоматически распознавать структуру данных.  Вы можете использовать Apache Drill со службой хранилища BLOB-объектов Azure, применив [подключаемый модуль службы хранилища BLOB-объектов Azure](https://drill.apache.org/docs/azure-blob-storage-plugin/). Это позволяет выполнять запросы к данным в хранилище BLOB-объектов без необходимости перемещать эти данные. 
 - **Клиенты Interactive Hive**. Если вы используете кластер Interactive Hive для запроса данных, вам доступны представления Hive на панели мониторинга для кластера Ambari, средство командной строки Beeline и любые средства на основе ODBC (с применением драйвера Hive ODBC), такие как Microsoft Excel и Power BI.
 
 Дополнительные сведения см. в статье [о технологиях аналитики данных и отчетности](../technology-choices/analysis-visualizations-reporting.md).

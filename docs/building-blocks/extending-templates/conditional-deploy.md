@@ -2,23 +2,23 @@
 title: Условное развертывание ресурсов в шаблоне Azure Resource Manager
 description: Расширение возможностей в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения какого-то параметра
 author: petertay
-ms.date: 06/09/2017
-ms.openlocfilehash: e911e7dc41b4f71ebfaf13a00f8cdbb5b4e2578b
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.date: 10/30/2018
+ms.openlocfilehash: 2c74e17a5f38f9225b696640a23b55b1285276bb
+ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24538398"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50251844"
 ---
 # <a name="conditionally-deploy-a-resource-in-an-azure-resource-manager-template"></a>Условное развертывание ресурсов в шаблоне Azure Resource Manager
 
 В некоторых ситуациях необходимо создать такой шаблон, который будет развертывать ресурс только при определенных условиях, например при наличии или отсутствии значения конкретного параметра. Например, вы можете создать шаблон для развертывания виртуальной сети, который содержит параметры, описывающие другие виртуальные сети для пиринга. Если параметры для пиринга не указаны, Resource Manager не должен развертывать ресурсы пиринга.
 
-Чтобы реализовать такой вариант, используйте в ресурсе [элемент `condition`][azure-resource-manager-condition], чтобы проверить длину массива параметров. Если эта длина равна нулю, возвращайте значение `false`, чтобы заблокировать развертывание, а при любой длине больше нуля — значение `true`, чтобы разрешить развертывание.
+Чтобы реализовать такой вариант, используйте в ресурсе [элемент условия][azure-resource-manager-condition], чтобы проверить длину массива параметров. Если эта длина равна нулю, возвращайте значение `false`, чтобы заблокировать развертывание, а при любой длине больше нуля — значение `true`, чтобы разрешить развертывание.
 
 ## <a name="example-template"></a>Пример шаблона
 
-Рассмотрим этот вариант на конкретном примере шаблона. В этом шаблоне [ элемент `condition`][azure-resource-manager-condition] управляет развертыванием ресурса `Microsoft.Network/virtualNetworks/virtualNetworkPeerings`. Этот ресурс создает пиринг между двумя виртуальными сетями Azure в одном регионе.
+Рассмотрим этот вариант на конкретном примере шаблона. В этом шаблоне [элемент условия][azure-resource-manager-condition] управляет развертыванием ресурса `Microsoft.Network/virtualNetworks/virtualNetworkPeerings`. Этот ресурс создает пиринг между двумя виртуальными сетями Azure в одном регионе.
 
 Рассмотрим подробно каждый раздел шаблона.
 
@@ -40,12 +40,15 @@ ms.locfileid: "24538398"
 ```json
 "virtualNetworkPeerings": [
     {
-        "remoteVirtualNetwork": {
-            "name": "my-other-virtual-network"
-        },
-        "allowForwardedTraffic": true,
-        "allowGatewayTransit": true,
-        "useRemoteGateways": false
+      "name": "firstVNet/peering1",
+      "properties": {
+          "remoteVirtualNetwork": {
+              "id": "[resourceId('Microsoft.Network/virtualNetworks','secondVNet')]"
+          },
+          "allowForwardedTraffic": true,
+          "allowGatewayTransit": true,
+          "useRemoteGateways": false
+      }
     }
 ]
 ```
@@ -60,7 +63,7 @@ ms.locfileid: "24538398"
       "name": "[concat('vnp-', copyIndex())]",
       "condition": "[greater(length(parameters('virtualNetworkPeerings')), 0)]",
       "dependsOn": [
-        "virtualNetworks"
+        "firstVNet", "secondVNet"
       ],
       "copy": {
           "name": "iterator",
@@ -113,17 +116,29 @@ ms.locfileid: "24538398"
   },
 ```
 
-Переменная `workaround` включает в себя два свойства с именами `true` и `false`. Свойство `true` указывает на массив параметров `virtualNetworkPeerings`. Свойство `false` содержит пустой объект со всеми именованными свойствами, которые ожидает получить Resource Manager. Обратите внимание, что `false` фактически является массивом, как и параметр `virtualNetworkPeerings` что позволяет успешно пройти проверку. 
+Переменная `workaround` включает в себя два свойства с именами `true` и `false`. Свойство `true` указывает на массив параметров `virtualNetworkPeerings`. Свойство `false` определяется как пустой объект со всеми именованными свойствами, которые требует служба Resource Manager. Обратите внимание, что `false` фактически является массивом, как и параметр `virtualNetworkPeerings`, что позволяет успешно пройти проверку. 
 
 Переменная `peerings` использует эту новую переменную `workaround`, чтобы проверить, что длина массива параметров `virtualNetworkPeerings` больше нуля. Если это так, `string` принимает значение `true`, а переменная `workaround` указывает на массив параметров `virtualNetworkPeerings`. В противном случае возвращается `false`, и переменная `workaround` содержит пустой объект в первом элементе массива.
 
 Итак, мы решили проблему с проверкой значений и можем просто указать развертывание ресурса `Microsoft.Network/virtualNetworks/virtualNetworkPeerings` во вложенном шаблоне, передавая ему параметры `name` и `properties` из массива параметров `virtualNetworkPeerings`. Этот механизм реализован в элементе `template`, который вложен в элемент `properties` нашего ресурса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="try-the-template"></a>Пробное использование шаблона
 
-* Эта же методика реализована в [проекте стандартных блоков шаблона](https://github.com/mspnp/template-building-blocks) и [эталонных архитектурах Azure](/azure/architecture/reference-architectures/). Вы можете создать на их основе собственную архитектуру или развернуть готовые примеры архитектуры.
+Пример шаблона доступен на [сайте GitHub][github]. Чтобы развернуть этот шаблон, выполните следующие команды [Azure CLI][cli]:
+
+```bash
+az group create --location <location> --name <resource-group-name>
+az group deployment create -g <resource-group-name> \
+    --template-uri https://raw.githubusercontent.com/mspnp/template-examples/master/example2-conditional/deploy.json
+```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* Используйте объекты вместо скалярных значений в качестве параметров шаблона. См. сведения об [использовании объекта в качестве параметра в шаблоне Azure Resource Manager](./objects-as-parameters.md).
 
 <!-- links -->
 [azure-resource-manager-condition]: /azure/azure-resource-manager/resource-group-authoring-templates#resources
 [azure-resource-manager-variable]: /azure/azure-resource-manager/resource-group-authoring-templates#variables
 [vnet-peering-resource-schema]: /azure/templates/microsoft.network/virtualnetworks/virtualnetworkpeerings
+[cli]: /cli/azure/?view=azure-cli-latest
+[github]: https://github.com/mspnp/template-examples
