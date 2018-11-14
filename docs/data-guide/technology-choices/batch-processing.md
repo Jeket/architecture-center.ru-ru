@@ -2,13 +2,13 @@
 title: Выбор технологии пакетной обработки
 description: ''
 author: zoinerTejada
-ms:date: 02/12/2018
-ms.openlocfilehash: 0117798af82f2caa6704dc86e88be57f09c381ea
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms:date: 11/03/2018
+ms.openlocfilehash: 2314a1413fa674f43bd7a4bcb868a5322ad99497
+ms.sourcegitcommit: 225251ee2dd669432a9c9abe3aa8cd84d9e020b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30848671"
+ms.lasthandoff: 11/04/2018
+ms.locfileid: "50982003"
 ---
 # <a name="choosing-a-batch-processing-technology-in-azure"></a>Выбор технологии пакетной обработки в Azure
 
@@ -16,15 +16,50 @@ ms.locfileid: "30848671"
 
 Основным требованием таких систем пакетной обработки является возможность масштабировать вычислительные ресурсы, чтобы обрабатывать большие объемы данных. В отличие от обработки в режиме реального времени, в пакетной обработке могут быть задержки (время между приемом данных и вычислением результата), измеряющиеся в минутах и даже часах.
 
-## <a name="what-are-your-options-when-choosing-a-batch-processing-technology"></a>Варианты при выборе технологии пакетной обработки
+## <a name="technology-choices-for-batch-processing"></a>Технологии пакетной обработки
 
-В Azure все следующие хранилища данных будут соответствовать основным требованиям для пакетной обработки:
+### <a name="azure-sql-data-warehouse"></a>Хранилище данных SQL Azure
 
-- [Аналитика озера данных Azure](/azure/data-lake-analytics/)
-- [Хранилище данных Azure SQL](/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is)
-- [HDInsight со Spark](/azure/hdinsight/spark/apache-spark-overview);
-- [HDInsight с Hive](/azure/hdinsight/hadoop/hdinsight-use-hive);
-- [HDInsight с Hive LLAP](/azure/hdinsight/interactive-query/apache-interactive-query-get-started).
+[Хранилище данных SQL](/azure/sql-data-warehouse/) — распределенная система, предназначенная для анализа больших объемов данных. Она поддерживает массовую параллельную обработку (MPP), что делает ее пригодной для запуска высокопроизводительной аналитики. Если имеется большой объем данных (более 1 ТБ) и используется рабочая нагрузка аналитики, которая выиграет от параллелизма, то рассмотрите возможности хранилища данных SQL.
+
+### <a name="azure-data-lake-analytics"></a>Аналитика озера данных Azure
+
+[Data Lake Analytics](/azure/data-lake-analytics/data-lake-analytics-overview) — это служба обработки заданий аналитики по запросу. Она оптимизирована для распределенной обработки очень больших наборов данных, хранящихся в Azure Data Lake Store. 
+
+- Языки: [U-SQL](/azure/data-lake-analytics/data-lake-analytics-u-sql-get-started) (включая Python, R, и расширения C#).
+-  Интегрируется с Azure Data Lake Store, хранилищем BLOB-объектов Azure, Базой данных SQL Azure и Хранилищем данных SQL Azure.
+- Модель ценообразования предполагает плату за каждое задание.
+
+### <a name="hdinsight"></a>HDInsight
+
+HDInsight является управляемой службой Hadoop. Она позволяет развертывать кластеры Hadoop в Azure и управлять ими. Для пакетной обработки можно использовать [Spark](/azure/hdinsight/spark/apache-spark-overview), [Hive](/azure/hdinsight/hadoop/hdinsight-use-hive), [Hive LLAP](/azure/hdinsight/interactive-query/apache-interactive-query-get-started), [MapReduce](/azure/hdinsight/hadoop/hdinsight-use-mapreduce).
+
+- Языки: R, Python, Java, Scala, SQL.
+- Проверка подлинности с помощью Kerberos и Active Directory, управление доступом на основе Apache Ranger.
+- Обеспечивает полный контроль над кластером Hadoop.
+
+### <a name="azure-databricks"></a>Azure Databricks 
+
+[Azure Databricks](/azure/azure-databricks/) — это высокопроизводительная платформа на основе Apache Spark. Представляет собой модель "Spark как услуга". Это самый простой способ использования Spark на платформе Azure.  
+
+- Языки: R, Python, Java, Scala, Spark SQL.
+- Быстрый запуск кластера, автоматическое завершение, автоматическое масштабирование.
+- Управляет кластером Spark.
+- Встроенная интеграция с хранилищем BLOB-объектов Azure, Azure Data Lake Storage (ADLS), Хранилищем данных SQL Azure (SQL DW) и другими службами. См. раздел [Data Sources](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html) (Источники данных).
+- Аутентификация пользователей с помощью Azure Active Directory.
+- [Записные книжки](https://docs.azuredatabricks.net/user-guide/notebooks/index.html) на основе веб-технологий для совместной работы и просмотра данных. 
+- Возможность использования [кластеров с поддержкой GPU](https://docs.azuredatabricks.net/user-guide/clusters/gpu.html).
+
+### <a name="azure-distributed-data-engineering-toolkit"></a>Набор средств для инжиниринга распределенных данных Azure 
+
+[Набор средств для инжиниринга распределенных данных Azure](https://github.com/azure/aztk) (AZTK) — это средство для подготовки Spark по запросу в кластерах Docker в Azure. 
+
+AZTK не относится к службам Azure. Это клиентское средство с интерфейсом командной строки и пакета SDK для Python, которое встроено в пакетную службу Azure. Эта технология обеспечивает наибольший контроль над инфраструктурой при развертывании кластера Spark.
+
+- Возможность использования собственного образа Docker.
+- Возможность использования низкоприоритетных виртуальных машин с 80-процентной скидкой.
+- Кластеры смешанного режима, использующие низкоприоритетные и выделенные виртуальные машины.
+- Встроенная поддержка хранилища BLOB-объектов Azure и подключения Azure Data Lake.
 
 ## <a name="key-selection-criteria"></a>Основные критерии выбора
 
@@ -34,7 +69,7 @@ ms.locfileid: "30848671"
 
 - Какой подход будет использоваться для создания логики пакетной обработки: декларативный или императивный?
 
-- Пакетная обработка будет выполняться периодически? Если да, рассмотрите варианты, позволяющие приостановить работу кластера, или с такой ценовой моделью, которая подходит для пакетных заданий.
+- Пакетная обработка будет выполняться периодически? Если да, рассмотрите варианты, позволяющие автоматически завершать работу кластера или предусматривающие оплату за каждое пакетное задание.
 
 - Нужно ли отправлять запросы к реляционным хранилищами данных во время пакетной обработки, например для поиска эталонных данных? Если да, рассмотрите варианты, позволяющие отправлять запросы к внешним реляционным хранилищам.
 
@@ -44,47 +79,30 @@ ms.locfileid: "30848671"
 
 ### <a name="general-capabilities"></a>Общие возможности
 
-| | Аналитика озера данных Azure | Хранилище данных SQL Azure | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
+| | Аналитика озера данных Azure | Хранилище данных SQL Azure | HDInsight | Azure Databricks |
 | --- | --- | --- | --- | --- | --- |
-| Является управляемой службой | Yes | Yes | Да <sup>1</sup> | Да <sup>1</sup> | Да <sup>1</sup> |
-| Поддержка приостановки вычислительных ресурсов | Нет  | Yes | Нет  | Нет  | Нет  |
-| Реляционное хранилище данных | Yes | Yes | Нет  | Нет  | Нет  |
-| Программируемость | U-SQL | T-SQL | Python, Scala, Java, R | HiveQL | HiveQL |
-| Парадигма программирования | Сочетание декларативного и принудительного подхода  | Декларативный подход | Сочетание декларативного и принудительного подхода | Декларативный подход | Декларативный подход | 
-| Модель ценообразования | За пакетное задание | За час работы кластера | За час работы кластера | За час работы кластера | За час работы кластера |  
+| Является управляемой службой | Yes | Yes | Да <sup>1</sup> | Yes | 
+| Реляционное хранилище данных | Yes | Да | Нет  | Нет  |
+| Модель ценообразования | За пакетное задание | За час работы кластера | За час работы кластера | Единица Databricks<sup>2</sup> + час работы кластера |
 
 [1] Настройка и масштабирование вручную.
 
-### <a name="integration-capabilities"></a>Возможности интеграции
+[2] Единица Databricks (DBU) — это единица продуктивности процесса в час.
 
-| | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
-| --- | --- | --- | --- | --- | --- |
-| Доступ из Azure Data Lake Store | Yes | Yes | Yes | Yes | Yes |
-| Отправка запросов из службы хранилища Azure | Yes | Yes | Yes | Yes | Yes |
-| Отправка запросов из внешних реляционных хранилищ | Yes | Нет  | Yes | Нет  | Нет  |
+### <a name="capabilities"></a>Возможности
 
-### <a name="scalability-capabilities"></a>Масштабируемость
-
-| | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP |
-| --- | --- | --- | --- | --- | --- |
-| Степень детализации при горизонтальном масштабировании  | По заданиям | По кластерам | По кластерам | По кластерам | По кластерам |
-| Быстрое масштабирование (менее 1 минуты) | Yes | Yes | Нет  | Нет  | Нет  |
-| Выполняющееся в памяти кэширование данных | Нет  | Yes | Yes | Нет  | Yes | 
-
-### <a name="security-capabilities"></a>Возможности системы безопасности
-
-| | Аналитика озера данных Azure | Хранилище данных SQL. | HDInsight со Spark | Apache Hive в HDInsight | Hive LLAP в HDInsight |
-| --- | --- | --- | --- | --- | --- |
-| Authentication  | Azure Active Directory (Azure AD) | SQL / Azure AD | Нет  | Локальные средства или Azure AD <sup>1</sup> | Локальные средства или Azure AD <sup>1</sup> |
-| Авторизация  | Yes | Yes| Нет  | Да <sup>1</sup> | Да <sup>1</sup> |
-| Аудит  | Yes | Yes | Нет  | Да <sup>1</sup> | Да <sup>1</sup> |
-| Шифрование неактивных данных | Yes| Да <sup>2</sup> | Yes | Yes | Yes |
-| Безопасность на уровне строк | Нет  | Yes | Нет  | Да <sup>1</sup> | Да <sup>1</sup> |
-| Поддержка брандмауэров | Yes | Yes | Yes | Да <sup>3</sup> | Да <sup>3</sup> |
-| Динамическое маскирование данных | Нет  | Нет  | Нет  | Да <sup>1</sup> | Да <sup>1</sup> |
+| | Аналитика озера данных Azure | Хранилище данных SQL | HDInsight со Spark | HDInsight с Hive | HDInsight с Hive LLAP | Azure Databricks |
+| --- | --- | --- | --- | --- | --- | --- |
+| Автомасштабирование | Нет  | Нет  | Нет  | Нет  | Нет  | Yes |
+| Степень детализации при горизонтальном масштабировании  | По заданиям | По кластерам | По кластерам | По кластерам | По кластерам | По кластерам |
+| Выполняющееся в памяти кэширование данных | Нет  | Yes | Да | Нет  | Yes | Yes |
+| Отправка запросов из внешних реляционных хранилищ | Yes | Нет  | Yes | Нет  | Нет  | Yes |
+| Authentication  | Azure AD | SQL / Azure AD | Нет  | Azure AD<sup>1</sup> | Azure AD<sup>1</sup> | Azure AD |
+| Аудит  | Yes | Да | Нет  | Да <sup>1</sup> | Да <sup>1</sup> | Yes |
+| Безопасность на уровне строк | Нет  | Нет  | Нет  | Да <sup>1</sup> | Да <sup>1</sup> | Нет  |
+| Поддержка брандмауэров | Yes | Да | Yes | Да <sup>2</sup> | Да <sup>2</sup> | Нет  |
+| Динамическое маскирование данных | Нет  | Нет  | Нет  | Да <sup>1</sup> | Да <sup>1</sup> | Нет  |
 
 [1] Требуется использовать [присоединенный к домену кластер HDInsight](/azure/hdinsight/domain-joined/apache-domain-joined-introduction).
 
-[2] Требуется использовать прозрачное шифрование данных (TDE) для шифрования и расшифровки неактивных данных.
-
-[3] Поддерживается при [использовании в виртуальной сети Azure](/azure/hdinsight/hdinsight-extend-hadoop-virtual-network).
+[2] Поддерживается при [использовании в виртуальной сети Azure](/azure/hdinsight/hdinsight-extend-hadoop-virtual-network).

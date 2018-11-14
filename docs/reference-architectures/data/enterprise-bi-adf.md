@@ -2,17 +2,19 @@
 title: Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure
 description: Сведения о том, как автоматизировать рабочий процесс ELT в Azure с помощью Фабрики данных Azure
 author: MikeWasson
-ms.date: 07/01/2018
-ms.openlocfilehash: f004c02da93335e74b07b9720236832ad7f744db
-ms.sourcegitcommit: 62945777e519d650159f0f963a2489b6bb6ce094
+ms.date: 11/06/2018
+ms.openlocfilehash: 39089d80047b584ac590d285097020212ab72911
+ms.sourcegitcommit: 02ecd259a6e780d529c853bc1db320f4fcf919da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48876908"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51263735"
 ---
 # <a name="automated-enterprise-bi-with-sql-data-warehouse-and-azure-data-factory"></a>Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure
 
-На примере этой эталонной архитектуры показано, как выполнять добавочную нагрузку в конвейере [ELT](../../data-guide/relational-data/etl.md#extract-load-and-transform-elt) (извлечение, загрузка и преобразование). Для автоматизации этого конвейера используется Фабрика данных Azure. Конвейер поэтапно перемещает последние данные OLTP из локальной базы данных SQL Server в Хранилище данных SQL. Данные о транзакциях преобразуются в табличную модель для анализа. [**Разверните это решение**.](#deploy-the-solution)
+На примере этой эталонной архитектуры показано, как выполнять добавочную нагрузку в конвейере [ELT](../../data-guide/relational-data/etl.md#extract-load-and-transform-elt) (извлечение, загрузка и преобразование). Для автоматизации этого конвейера используется Фабрика данных Azure. Конвейер поэтапно перемещает последние данные OLTP из локальной базы данных SQL Server в Хранилище данных SQL. Данные о транзакциях преобразуются в табличную модель для анализа. 
+
+Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][github].
 
 ![](./images/enterprise-bi-sqldw-adf.png)
 
@@ -29,7 +31,7 @@ ms.locfileid: "48876908"
 
 ### <a name="data-sources"></a>Источники данных
 
-**Локальный сервер SQL Server**. Исходные данные размещаются локально в базе данных SQL Server. Чтобы имитировать локальную среду, сценарии развертывания для этой архитектуры предоставляют виртуальную машину в Azure с установленным SQL Server. В качестве базы данных-источника используется [пример базы данных OLTP Wide World Importers][WWI].
+**Локальный сервер SQL Server**. Исходные данные размещаются локально в базе данных SQL Server. Чтобы имитировать локальную среду, сценарии развертывания для этой архитектуры предоставляют виртуальную машину в Azure с установленным SQL Server. В качестве базы данных-источника используется [пример базы данных OLTP Wide World Importers][wwi].
 
 **Внешние данные**. Распространенный сценарий для хранилищ данных — выполнение интеграции нескольких источников данных. Для этой эталонной архитектуры загружается набор внешних данных о численности населения города по годам, интегрируемый с данными из базы данных OLTP. Эта данные можно использовать для получения полезных сведений. Например, чтобы узнать, соответствуют ли показатели роста продаж в каждом регионе показателям роста населения или превышают их.
 
@@ -39,7 +41,7 @@ ms.locfileid: "48876908"
 
 **Хранилище данных Azure SQL.** [Хранилище данных SQL](/azure/sql-data-warehouse/) — распределенная система, предназначенная для анализа больших объемов данных. Она поддерживает массовую параллельную обработку (MPP), что делает ее пригодной для запуска высокопроизводительной аналитики. 
 
-**Фабрика данных Azure**. [Фабрика данных][ADF] — это управляемая служба, которая координирует и автоматизирует перемещение и преобразование данных. В этой архитектуре она координирует разные этапы процесса ELT.
+**Фабрика данных Azure**. [Фабрика данных][adf] — это управляемая служба, которая координирует и автоматизирует перемещение и преобразование данных. В этой архитектуре она координирует разные этапы процесса ELT.
 
 ### <a name="analysis-and-reporting"></a>Анализ и создание отчетов
 
@@ -55,7 +57,7 @@ ms.locfileid: "48876908"
 
 ## <a name="data-pipeline"></a>Конвейер данных
 
-Конвейер в [Фабрике данных Azure][ADF] — это логическая группа действий, используемых для координации задачи &mdash; в нашем примере с загрузкой и преобразованием данных в Хранилище данных SQL. 
+Конвейер в [Фабрике данных Azure][adf] — это логическая группа действий, используемых для координации задачи (в нашем примере это загрузка и преобразование данных в Хранилище данных SQL). 
 
 В этой эталонной архитектуре определяется основной конвейер, который запускает последовательность дочерних конвейеров. Каждый дочерний конвейер загружает данные в одну или несколько таблиц в хранилище данных.
 
@@ -186,7 +188,7 @@ SET [Integration].[Sale_Staging].[WWI Customer ID] =  CustomerHolder.[WWI Custom
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Пример развертывания для этой архитектуры можно найти на портале [GitHub][ref-arch-repo-folder]. Он позволяет развернуть следующее:
+Чтобы выполнить развертывание и запуск эталонной реализации, выполните действия, описанные в [файле сведений на GitHub][github]. Он позволяет развернуть следующее:
 
   * Виртуальную машину Windows для имитации локального сервера базы данных. Она включает SQL Server 2017 и связанные с ним инструменты, а также Power BI Desktop.
   * Учетная запись хранения Azure, которая обеспечивает хранилище больших двоичных объектов для хранения данных, экспортированных из базы данных SQL Server.
@@ -194,327 +196,8 @@ SET [Integration].[Sale_Staging].[WWI Customer ID] =  CustomerHolder.[WWI Custom
   * Экземпляр службы Azure Analysis Services.
   * Фабрику данных Azure и конвейер фабрики данных для задания ELT.
 
-### <a name="prerequisites"></a>Предварительные требования
-
-[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
-
-### <a name="variables"></a>Переменные
-
-В следующих шагах используются некоторые определяемые пользователем переменные. Вам нужно заменить их значения собственными значениями.
-
-- `<data_factory_name>`. Имя фабрики данных.
-- `<analysis_server_name>`. Имя сервера служб Analysis Services.
-- `<active_directory_upn>`. Имя участника-пользователя Azure Active Directory (UPN). Например, `user@contoso.com`.
-- `<data_warehouse_server_name>`. Имя сервера Хранилища данных SQL.
-- `<data_warehouse_password>`. Пароль администратора Хранилища данных SQL.
-- `<resource_group_name>`. Имя группы ресурсов.
-- `<region>`. Регион Azure, в котором будут развертываться ресурсы.
-- `<storage_account_name>`. имя учетной записи хранения; которое должно соответствовать [правилам именования](../../best-practices/naming-conventions.md#naming-rules-and-restrictions) для учетных записей хранения.
-- `<sql-db-password>`. Пароль для входа на сервер SQL Server.
-
-### <a name="deploy-azure-data-factory"></a>Развертывание Фабрики данных Azure
-
-1. Перейдите в папку `data\enterprise_bi_sqldw_advanced\azure\templates` в [репозитории GitHub][ref-arch-repo].
-
-2. Выполните следующую команду в Azure CLI, чтобы создать группу ресурсов.  
-
-    ```bash
-    az group create --name <resource_group_name> --location <region>  
-    ```
-
-    Укажите регион, в котором поддерживается Хранилище данных SQL Azure, Azure Analysis Services и Фабрика данных версии 2. Ознакомьтесь со статьей [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).
-
-3. Выполните следующую команду
-
-    ```
-    az group deployment create --resource-group <resource_group_name> \
-        --template-file adf-create-deploy.json \
-        --parameters factoryName=<data_factory_name> location=<location>
-    ```
-
-Затем на портале Azure получите ключ аутентификации для [среды выполнения интеграции](/azure/data-factory/concepts-integration-runtime) Фабрики данных Azure, как показано ниже:
-
-1. На [портале Azure](https://portal.azure.com/) перейдите к экземпляру Фабрики данных.
-
-2. В колонке "Фабрика данных" щелкните **Создание и мониторинг**. После этого в другом окне браузера откроется портал Фабрики данных Azure.
-
-    ![](./images/adf-blade.png)
-
-3. На портале Фабрики данных Azure щелкните значок карандаша ("Создать"). 
-
-4. Выберите **Подключения** и **Среды выполнения интеграции**.
-
-5. Рядом с **sourceIntegrationRuntime** щелкните значок карандаша ("Изменить").
-
-    > [!NOTE]
-    > На портале отобразится состояние "Недоступно". Это ожидаемое поведение, так как вы еще не развернули сервер в локальной среде.
-
-6. Найдите поле **Key1** и скопируйте значение ключа аутентификации.
-
-Этот ключ аутентификации понадобится вам на следующем шаге.
-
-### <a name="deploy-the-simulated-on-premises-server"></a>Развертывание имитации локального сервера
-
-На этом шаге вы развернете виртуальную машину в качестве имитируемого локального сервера, который включает SQL Server 2017 и связанные инструменты. Также вы загрузите [базу данных OLTP Wide World Importers][WWI] в SQL Server.
-
-1. Перейдите в папку `data\enterprise_bi_sqldw_advanced\onprem\templates` в репозитории.
-
-2. В файле `onprem.parameters.json` найдите `adminPassword`. Это пароль для входа в виртуальную машину SQL Server. Замените это значение другим паролем.
-
-3. В этом же файле найдите `SqlUserCredentials`. Это свойство определяет учетные данные SQL Server. Замените пароль другим значением.
-
-4. В том же файле вставьте в параметр `IntegrationRuntimeGatewayKey` ключ аутентификации для среды выполнения интеграции, как показано ниже:
-
-    ```json
-    "protectedSettings": {
-        "configurationArguments": {
-            "SqlUserCredentials": {
-                "userName": ".\\adminUser",
-                "password": "<sql-db-password>"
-            },
-            "IntegrationRuntimeGatewayKey": "<authentication key>"
-        }
-    ```
-
-5. Выполните следующую команду:
-
-    ```bash
-    azbb -s <subscription_id> -g <resource_group_name> -l <region> -p onprem.parameters.json --deploy
-    ```
-
-Выполнение этого шага может занять 20 или 30 минут. В ходе этого процесса выполняется скрипт [DSC](/powershell/dsc/overview), чтобы установить средства и восстановить базу данных. 
-
-### <a name="deploy-azure-resources"></a>Развертывание ресурсов Azure
-
-На этом этапе вы подготовите Хранилище данных SQL Azure, Azure Analysis Services и Фабрику данных.
-
-1. Перейдите в папку `data\enterprise_bi_sqldw_advanced\azure\templates` в [репозитории GitHub][ref-arch-repo].
-
-2. Выполните следующую команду CLI Azure. Замените значения параметров, отображаемые в угловых скобках.
-
-    ```bash
-    az group deployment create --resource-group <resource_group_name> \
-     --template-file azure-resources-deploy.json \
-     --parameters "dwServerName"="<data_warehouse_server_name>" \
-     "dwAdminLogin"="adminuser" "dwAdminPassword"="<data_warehouse_password>" \ 
-     "storageAccountName"="<storage_account_name>" \
-     "analysisServerName"="<analysis_server_name>" \
-     "analysisServerAdmin"="<user@contoso.com>"
-    ```
-
-    - Параметр `storageAccountName` должен следовать [правилам именования](../../best-practices/naming-conventions.md#naming-rules-and-restrictions) для учетных записей хранения. 
-    - Для параметра `analysisServerAdmin` используйте имя участника-пользователя Azure Active Directory (UPN).
-
-3. Чтобы получить ключ доступа для учетной записи хранения, выполните следующую команду Azure CLI. Этот ключ понадобится вам на следующем шаге.
-
-    ```bash
-    az storage account keys list -n <storage_account_name> -g <resource_group_name> --query [0].value
-    ```
-
-4. Выполните следующую команду CLI Azure. Замените значения параметров, отображаемые в угловых скобках. 
-
-    ```bash
-    az group deployment create --resource-group <resource_group_name> \
-    --template-file adf-pipeline-deploy.json \
-    --parameters "factoryName"="<data_factory_name>" \
-    "sinkDWConnectionString"="Server=tcp:<data_warehouse_server_name>.database.windows.net,1433;Initial Catalog=wwi;Persist Security Info=False;User ID=adminuser;Password=<data_warehouse_password>;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" \
-    "blobConnectionString"="DefaultEndpointsProtocol=https;AccountName=<storage_account_name>;AccountKey=<storage_account_key>;EndpointSuffix=core.windows.net" \
-    "sourceDBConnectionString"="Server=sql1;Database=WideWorldImporters;User Id=adminuser;Password=<sql-db-password>;Trusted_Connection=True;"
-    ```
-
-    В строках подключения есть вложенные строки, указанные в угловых скобках. Вам нужно заменить эти вложенные строки. Для `<storage_account_key>` укажите ключ, полученный на предыдущем шаге. Для `<sql-db-password>` задайте пароль учетной записи SQL Server, который вы указали в файле `onprem.parameters.json` ранее.
-
-### <a name="run-the-data-warehouse-scripts"></a>Выполнение скриптов хранилища данных
-
-1. На [портале Azure](https://portal.azure.com/) найдите локальную виртуальную машину с именем `sql-vm1`. Имя пользователя и пароль для виртуальной машины указаны в файле `onprem.parameters.json`.
-
-2. Нажмите кнопку **Подключиться** и используйте удаленный рабочий стол, чтобы подключиться к виртуальной машине.
-
-3. В сеансе удаленного рабочего стола откройте окно командной строки и перейдите к следующей папке на виртуальной машине:
-
-    ```
-    cd C:\SampleDataFiles\reference-architectures\data\enterprise_bi_sqldw_advanced\azure\sqldw_scripts
-    ```
-
-4. Выполните следующую команду:
-
-    ```
-    deploy_database.cmd -S <data_warehouse_server_name>.database.windows.net -d wwi -U adminuser -P <data_warehouse_password> -N -I
-    ```
-
-    Для `<data_warehouse_server_name>` и `<data_warehouse_password>` укажите имя сервера хранилища данных и пароль, которые вы задали ранее.
-
-Для проверки подключитесь к базе данных Хранилища данных SQL с помощью SQL Server Management Studio (SSMS). Вы должны увидеть схемы таблиц базы данных.
-
-### <a name="run-the-data-factory-pipeline"></a>Запуск конвейера Фабрики данных
-
-1. В том же сеансе удаленного рабочего стола откройте окно PowerShell.
-
-2. Выполните следующую команду PowerShell. Выберите **Да** при появлении запроса.
-
-    ```powershell
-    Install-Module -Name AzureRM -AllowClobber
-    ```
-
-3. Выполните следующую команду PowerShell. При появлении запроса введите свои учетные данные Azure.
-
-    ```powershell
-    Connect-AzureRmAccount 
-    ```
-
-4. Выполните приведенные ниже команды PowerShell. Замените значения в угловых скобках.
-
-    ```powershell
-    Set-AzureRmContext -SubscriptionId <subscription id>
-
-    Invoke-AzureRmDataFactoryV2Pipeline -DataFactory <data-factory-name> -PipelineName "MasterPipeline" -ResourceGroupName <resource_group_name>
-
-5. In the Azure Portal, navigate to the Data Factory instance that was created earlier.
-
-6. In the Data Factory blade, click **Author & Monitor**. This opens the Azure Data Factory portal in another browser window.
-
-    ![](./images/adf-blade.png)
-
-7. In the Azure Data Factory portal, click the **Monitor** icon. 
-
-8. Verify that the pipeline completes successfully. It can take a few minutes.
-
-    ![](./images/adf-pipeline-progress.png)
-
-
-## Build the Analysis Services model
-
-In this step, you will create a tabular model that imports data from the data warehouse. Then you will deploy the model to Azure Analysis Services.
-
-**Create a new tabular project**
-
-1. From your Remote Desktop session, launch SQL Server Data Tools 2015.
-
-2. Select **File** > **New** > **Project**.
-
-3. In the **New Project** dialog, under **Templates**, select  **Business Intelligence** > **Analysis Services** > **Analysis Services Tabular Project**. 
-
-4. Name the project and click **OK**.
-
-5. In the **Tabular model designer** dialog, select **Integrated workspace**  and set **Compatibility level** to `SQL Server 2017 / Azure Analysis Services (1400)`. 
-
-6. Click **OK**.
-
-
-**Import data**
-
-1. In the **Tabular Model Explorer** window, right-click the project and select **Import from Data Source**.
-
-2. Select **Azure SQL Data Warehouse** and click **Connect**.
-
-3. For **Server**, enter the fully qualified name of your Azure SQL Data Warehouse server. You can get this value from the Azure Portal. For **Database**, enter `wwi`. Click **OK**.
-
-4. In the next dialog, choose **Database** authentication and enter your Azure SQL Data Warehouse user name and password, and click **OK**.
-
-5. In the **Navigator** dialog, select the checkboxes for the **Fact.\*** and **Dimension.\*** tables.
-
-    ![](./images/analysis-services-import-2.png)
-
-6. Click **Load**. When processing is complete, click **Close**. You should now see a tabular view of the data.
-
-**Create measures**
-
-1. In the model designer, select the **Fact Sale** table.
-
-2. Click a cell in the the measure grid. By default, the measure grid is displayed below the table. 
-
-    ![](./images/tabular-model-measures.png)
-
-3. In the formula bar, enter the following and press ENTER:
-
-    ```
-    Total Sales:=SUM('Fact Sale'[Total Including Tax])
-    ```
-
-4. Repeat these steps to create the following measures:
-
-    ```
-    Number of Years:=(MAX('Fact CityPopulation'[YearNumber])-MIN('Fact CityPopulation'[YearNumber]))+1
-    
-    Beginning Population:=CALCULATE(SUM('Fact CityPopulation'[Population]),FILTER('Fact CityPopulation','Fact CityPopulation'[YearNumber]=MIN('Fact CityPopulation'[YearNumber])))
-    
-    Ending Population:=CALCULATE(SUM('Fact CityPopulation'[Population]),FILTER('Fact CityPopulation','Fact CityPopulation'[YearNumber]=MAX('Fact CityPopulation'[YearNumber])))
-    
-    CAGR:=IFERROR((([Ending Population]/[Beginning Population])^(1/[Number of Years]))-1,0)
-    ```
-
-    ![](./images/analysis-services-measures.png)
-
-For more information about creating measures in SQL Server Data Tools, see [Measures](/sql/analysis-services/tabular-models/measures-ssas-tabular).
-
-**Create relationships**
-
-1. In the **Tabular Model Explorer** window, right-click the project and select **Model View** > **Diagram View**.
-
-2. Drag the **[Fact Sale].[City Key]** field to the **[Dimension City].[City Key]** field to create a relationship.  
-
-3. Drag the **[Face CityPopulation].[City Key]** field to the **[Dimension City].[City Key]** field.  
-
-    ![](./images/analysis-services-relations-2.png)
-
-**Deploy the model**
-
-1. From the **File** menu, choose **Save All**.
-
-2. In **Solution Explorer**, right-click the project and select **Properties**. 
-
-3. Under **Server**, enter the URL of your Azure Analysis Services instance. You can get this value from the Azure Portal. In the portal, select the Analysis Services resource, click the Overview pane, and look for the **Server Name** property. It will be similar to `asazure://westus.asazure.windows.net/contoso`. Click **OK**.
-
-    ![](./images/analysis-services-properties.png)
-
-4. In **Solution Explorer**, right-click the project and select **Deploy**. Sign into Azure if prompted. When processing is complete, click **Close**.
-
-5. In the Azure portal, view the details for your Azure Analysis Services instance. Verify that your model appears in the list of models.
-
-    ![](./images/analysis-services-models.png)
-
-## Analyze the data in Power BI Desktop
-
-In this step, you will use Power BI to create a report from the data in Analysis Services.
-
-1. From your Remote Desktop session, launch Power BI Desktop.
-
-2. In the Welcome Scren, click **Get Data**.
-
-3. Select **Azure** > **Azure Analysis Services database**. Click **Connect**
-
-    ![](./images/power-bi-get-data.png)
-
-4. Enter the URL of your Analysis Services instance, then click **OK**. Sign into Azure if prompted.
-
-5. In the **Navigator** dialog, expand the tabular project, select the model, and click **OK**.
-
-2. In the **Visualizations** pane, select the **Table** icon. In the Report view, resize the visualization to make it larger.
-
-6. In the **Fields** pane, expand **Dimension City**.
-
-7. From **Dimension City**, drag **City** and **State Province** to the **Values** well.
-
-9. In the **Fields** pane, expand **Fact Sale**.
-
-10. From **Fact Sale**, drag **CAGR**, **Ending Population**,  and **Total Sales** to the **Value** well.
-
-11. Under **Visual Level Filters**, select **Ending Population**. Set the filter to "is greater than 100000" and click **Apply filter**.
-
-12. Under **Visual Level Filters**, select **Total Sales**. Set the filter to "is 0" and click **Apply filter**.
-
-![](./images/power-bi-report-2.png)
-
-The table now shows cities with population greater than 100,000 and zero sales. CAGR  stands for Compounded Annual Growth Rate and measures the rate of population growth per city. You could use this value to find cities with high growth rates, for example. However, note that the values for CAGR in the model aren't accurate, because they are derived from sample data.
-
-To learn more about Power BI Desktop, see [Getting started with Power BI Desktop](/power-bi/desktop-getting-started).
-
-
 [adf]: //azure/data-factory
-[azure-cli-2]: //azure/install-azure-cli
-[azbb-repo]: https://github.com/mspnp/template-building-blocks
-[azbb-wiki]: https://github.com/mspnp/template-building-blocks/wiki/Install-Azure-Building-Blocks
+[github]: https://github.com/mspnp/reference-architectures/tree/master/data/enterprise_bi_sqldw_advanced
 [MergeLocation]: https://github.com/mspnp/reference-architectures/blob/master/data/enterprise_bi_sqldw_advanced/azure/sqldw_scripts/city/%5BIntegration%5D.%5BMergeLocation%5D.sql
-[ref-arch-repo]: https://github.com/mspnp/reference-architectures
-[ref-arch-repo-folder]: https://github.com/mspnp/reference-architectures/tree/master/data/enterprise_bi_sqldw_advanced
 [wwi]: //sql/sample/world-wide-importers/wide-world-importers-oltp-database
+

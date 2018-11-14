@@ -6,12 +6,12 @@ ms.date: 05/02/2018
 pnp.series.title: Identity management
 pnp.series.prev: azure-ad
 pnp.series.next: adds-forest
-ms.openlocfilehash: 1e19d03998a18d997c2840f573e7bc79b24efbbc
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: a96f13f8c7f3e79c6e5d50f17e662176257fdab3
+ms.sourcegitcommit: 02ecd259a6e780d529c853bc1db320f4fcf919da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47427978"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51263718"
 ---
 # <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "47427978"
 
 Определите требования к [размеру виртуальной машины][vm-windows-sizes] на основе ожидаемого объема запросов на аутентификацию. В качестве отправной точки используйте спецификации компьютеров, на которых локально размещены AD DS, и сопоставьте их с размерами виртуальных машин Azure. После развертывания отслеживайте использование и регулируйте масштаб на основе фактической нагрузки на виртуальных машинах. Дополнительные сведения об изменении размера контроллеров домена AD DS см. в статье [Capacity Planning for Active Directory Domain Services][capacity-planning-for-adds] (Планирование ресурсов для доменных служб Active Directory).
 
-Создайте отдельный виртуальный диск данных для хранения базы данных, журналов и SYSVOL для Active Directory. Не храните эти элементы на одном диске с операционной системой. Обратите внимание, что диски данных, подключенные к виртуальной машине, используют кэширование со сквозной записью. Однако эта форма кэширования может нарушать требования доменных служб Active Directory. Поэтому для параметра *настройки кэша узла* на диске данных задайте значение *Нет*. Дополнительные сведения см. в разделе [Размещение базы данных Windows Server AD DS и SYSVOL][adds-data-disks].
+Создайте отдельный виртуальный диск данных для хранения базы данных, журналов и SYSVOL для Active Directory. Не храните эти элементы на одном диске с операционной системой. Обратите внимание, что диски данных, подключенные к виртуальной машине, используют кэширование со сквозной записью. Однако эта форма кэширования может нарушать требования доменных служб Active Directory. Поэтому для параметра *настройки кэша узла* на диске данных задайте значение *Нет*. См. [рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure][adds-data-disks].
 
 Разверните по крайней мере две виртуальные машины доменных служб Active Directory в качестве контроллеров домена и добавьте их в [группу доступности][availability-set].
 
@@ -169,7 +169,7 @@ ms.locfileid: "47427978"
 [implementing-a-secure-hybrid-network-architecture]: ../dmz/secure-vnet-hybrid.md
 [implementing-a-secure-hybrid-network-architecture-with-internet-access]: ../dmz/secure-vnet-dmz.md
 
-[adds-data-disks]: https://msdn.microsoft.com/library/azure/jj156090.aspx#BKMK_PlaceDB
+[adds-data-disks]: https://msdn.microsoft.com/en-us/library/mt674703.aspx
 [ad-ds-operations-masters]: https://technet.microsoft.com/library/cc779716(v=ws.10).aspx
 [ad-ds-ports]: https://technet.microsoft.com/library/dd772723(v=ws.11).aspx
 [availability-set]: /azure/virtual-machines/virtual-machines-windows-create-availability-set
