@@ -3,12 +3,12 @@ title: Использование конвейера CI/CD с помощью Azu
 description: Создание и выпуск приложения .NET в службе "Веб-приложения Azure" с помощью Azure DevOps.
 author: christianreddington
 ms.date: 07/11/18
-ms.openlocfilehash: 80890784d4c97aac418cef4e49f9075dbef10b8a
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 97f16b2d3d9c15bc6f5db6fad4c9d8097243ad3d
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818944"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610793"
 ---
 # <a name="cicd-pipeline-with-azure-devops"></a>Использование конвейера CI/CD с помощью Azure DevOps
 
@@ -109,7 +109,7 @@ ms.locfileid: "48818944"
 
 ### <a name="resiliency"></a>Устойчивость
 
-Ознакомьтесь с [распространенными конструктивными шаблонами для обеспечения устойчивости][design-patterns-resiliency] и реализуйте их, если это уместно.
+При необходимости рассмотрите возможность реализации [распространенных конструктивных шаблонов для обеспечения устойчивости][design-patterns-resiliency].
 
 [Рекомендации по работе со Службой приложений Azure][resiliency-app-service] см. в Центре архитектуры Azure.
 

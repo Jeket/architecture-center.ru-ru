@@ -3,12 +3,12 @@ title: Виртуальный собеседник Azure для резервир
 description: Создание чат-ботов для коммерческих приложений с помощью службы Azure Bot.
 author: iainfoulds
 ms.date: 07/05/2018
-ms.openlocfilehash: 826aa36da5f30a871abd90fd8ab2b202ffdf93f0
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: a922a75d621672fcac95296b1d99112d68c91107
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48819654"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610776"
 ---
 # <a name="conversational-chatbot-for-hotel-reservations-on-azure"></a>Виртуальный собеседник Azure для резервирования отелей
 
@@ -20,11 +20,11 @@ ms.locfileid: "48819654"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрите этот сценарий для следующих вариантов использования:
+Другие варианты использования:
 
-* Просмотрите в этом ресторане меню на вынос и сделайте заказ
-* Проверьте удобства отеля и забронируйте комнату
-* Найдите доступные фотографии и распечатайте их
+* просмотр в ресторане меню на вынос и оформление заказа;
+* проверка удобства отеля и бронирование комнаты;
+* поиск и печать доступных фотографий.
 
 ## <a name="architecture"></a>Архитектура
 
@@ -96,7 +96,7 @@ ms.locfileid: "48819654"
 
 ### <a name="deploy-infrastructure-components"></a>Развертывание компонентов инфраструктуры
 
-Чтобы развернуть компоненты инфраструктуры с помощью шаблона Azure Resource Manager, выполните следующие действия.
+Чтобы развернуть компоненты инфраструктуры с помощью шаблона Resource Manager, выполните следующие действия.
 
 1. Нажмите кнопку **Развертывание в Azure**.<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Fsolution-architectures%2Fmaster%2Fapps%2Fcommerce-chatbot.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 2. Подождите, пока откроется развертывание шаблона на портале Azure, а затем выполните следующие шаги.
@@ -149,7 +149,8 @@ az bot create \
 
 ## <a name="related-resources"></a>Связанные ресурсы
 
-Для набора руководств по использованию службы Azure Bot, см. [учебный узел][botservice-docs] документации.
+Для получения набора руководств по использованию службы Azure Bot, см. [этот раздел][botservice-docs] документации.
+
 
 <!-- links -->
 [aadb2c-docs]: /azure/active-directory-b2c/active-directory-b2c-overview

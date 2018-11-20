@@ -3,12 +3,12 @@ title: Отрисовка трехмерного видео на портале 
 description: Выполнение собственных рабочих нагрузок HPC в Azure с использованием пакетной службы Azure.
 author: adamboeglin
 ms.date: 07/13/2018
-ms.openlocfilehash: 1206fa7d931fca635118929d433abe232ec5ca9a
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 1ffdaa5467fec73a01b8caa18b71c2bc4e49abbe
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818635"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610691"
 ---
 # <a name="3d-video-rendering-on-azure"></a>Отрисовка трехмерного видео на портале Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "48818635"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрите этот сценарий для похожих вариантов использования:
+Другие варианты использования:
 
 * 3D-моделирование.
 * Отрисовка визуальных эффектов (VFX).

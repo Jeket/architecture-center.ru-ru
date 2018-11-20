@@ -3,12 +3,12 @@ title: Веб-сайты WordPress с высоким уровнем масшта
 description: Создание веб-сайта WordPress с высоким уровнем масштабируемости и защиты для событий мультимедиа.
 author: david-stanford
 ms.date: 09/18/2018
-ms.openlocfilehash: f7dd73524b2b63cd7d38e8e03bfd4b8edac251a9
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 6ff39d09fa301c8c68ce2a644cc489c0e87a22fa
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818485"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610613"
 ---
 # <a name="highly-scalable-and-secure-wordpress-website"></a>Веб-сайты WordPress с высоким уровнем масштабируемости и защиты
 
@@ -16,7 +16,7 @@ ms.locfileid: "48818485"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрите этот сценарий для следующих вариантов использования:
+Другие варианты использования:
 
 * События службы мультимедиа, из-за которых случились скачки трафика.
 * Блоги использующие WordPress в качестве системы управления содержимым.

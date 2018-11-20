@@ -3,16 +3,14 @@ title: Базовое веб-приложение
 description: Рекомендуемые архитектуры для базовых веб-приложений, работающих в Microsoft Azure.
 author: MikeWasson
 ms.date: 12/12/2017
-cardTitle: Basic web application
-ms.openlocfilehash: 570ee23341bb956a4430f1dc91f30b5194d4b4f0
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: 06c37d5d87befa553a9efbe14acea24db57ae8f8
+ms.sourcegitcommit: 877777094b554559dc9cb1f0d9214d6d38197439
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429059"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527734"
 ---
-# <a name="basic-web-application"></a>Базовое веб-приложение
-[!INCLUDE [header](../../_includes/header.md)]
+# <a name="basic-web-application-in-azure"></a>Базовое веб-приложение в Azure
 
 Эталонная архитектура демонстрирует набор проверенных методов для создания веб-приложения, в котором используются [служба приложений Azure][app-service] и служба [База данных SQL Azure][sql-db]. [**Разверните это решение**.](#deploy-the-solution)
 

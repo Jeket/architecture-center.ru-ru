@@ -3,12 +3,12 @@ title: Виртуальный рабочий стол Linux с использо�
 description: Создание среды VDI для настольных компьютеров Linux с помощью Citrix в Azure.
 author: miguelangelopereira
 ms.date: 09/12/2018
-ms.openlocfilehash: 374d59f7a528bd89870baa601a49a30ea00a08f1
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 383642b05926c5a09abf0b2f95fef10539d95aec
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48819148"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610657"
 ---
 # <a name="linux-virtual-desktops-with-citrix"></a>Виртуальный рабочий стол Linux с использованием Citrix
 
@@ -96,7 +96,7 @@ ms.locfileid: "48819148"
 
 ## <a name="pricing"></a>Цены
 
-- Лицензии Citrix XenDesktop не включены в оплату за услуги Azure.
+- Лицензии Citrix XenDesktop не включены в плату за услуги Azure.
 - Лицензия Citrix NetScaler включена в модель с оплатой по мере использования.
 - Использование зарезервированных экземпляров значительно уменьшит вычислительную стоимость решения.
 - Стоимость ExpressRoute не включено.

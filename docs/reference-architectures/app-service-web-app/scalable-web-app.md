@@ -2,19 +2,15 @@
 title: Масштабируемое веб-приложение
 description: Повышение масштабируемости в веб-приложении, работающем в Microsoft Azure.
 author: MikeWasson
-pnp.series.title: Azure App Service
-pnp.series.prev: basic-web-app
-pnp.series.next: multi-region-web-app
 ms.date: 10/25/2018
-cardTitle: Improve scalability
-ms.openlocfilehash: 208413a49fe4a3f9ca308fa1a939ba426e7fa636
-ms.sourcegitcommit: 065fa8ecb37c8be1827da861243ad6a33c75c99d
+ms.openlocfilehash: dd1fa30b6ac8d978ad0151c8753951d848d60664
+ms.sourcegitcommit: 877777094b554559dc9cb1f0d9214d6d38197439
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50136698"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527615"
 ---
-# <a name="improve-scalability-in-a-web-application"></a>Повышение масштабируемости в веб-приложении
+# <a name="improve-scalability-in-an-azure-web-application"></a>Повышение масштабируемости в веб-приложении Azure
 
 На схеме этой эталонной архитектуры представлены сведения о проверенных методах улучшения масштабируемости и производительности в службе приложений Azure.
 

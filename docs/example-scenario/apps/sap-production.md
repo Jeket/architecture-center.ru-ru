@@ -3,12 +3,12 @@ title: Выполнение рабочих нагрузок SAP в рабоче�
 description: Развертывание SAP в рабочей среде в Azure с использованием базы данных Oracle.
 author: DharmeshBhagat
 ms.date: 9/12/2018
-ms.openlocfilehash: 4c0e054a9024cd50581acd5b472a09d6e98d2bed
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 75942b4d9b18b7bbe7a162826bcf4fe9ece22dce
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818580"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610912"
 ---
 # <a name="running-sap-production-workloads-using-an-oracle-database-on-azure"></a>Выполнение рабочих нагрузок SAP в рабочей среде с помощью базы данных Oracle в Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "48818580"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрим этот пример для следующих сценариев.
+Другие варианты использования:
 
 * Критически важные рабочие нагрузки SAP.
 * Некритические рабочие нагрузки SAP.

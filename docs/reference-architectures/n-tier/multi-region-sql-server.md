@@ -3,16 +3,14 @@ title: Высокодоступное N-уровневое приложение 
 description: Узнайте, как развертывать виртуальные машины в нескольких регионах Azure для обеспечения высокого уровня доступности и устойчивости.
 author: MikeWasson
 ms.date: 07/19/2018
-pnp.series.title: Windows VM workloads
-pnp.series.prev: n-tier
-ms.openlocfilehash: 34dd47175e7fd0002cba577ad6c1034968ed4098
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 3b1c419182322b2fa0b555230465f41562e8e6c1
+ms.sourcegitcommit: 877777094b554559dc9cb1f0d9214d6d38197439
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48819131"
+ms.lasthandoff: 11/11/2018
+ms.locfileid: "51527632"
 ---
-# <a name="multi-region-n-tier-application-for-high-availability"></a>Высокодоступное N-уровневое приложение с поддержкой нескольких регионов
+# <a name="n-tier-application-in-multiple-azure-regions-for-high-availability"></a>Использование n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности
 
 Эта эталонная архитектура демонстрирует набор проверенных рекомендаций по работе с n-уровневыми приложениями в нескольких регионах Azure, благодаря которым можно достигнуть высокой доступности и получить надежную архитектуру аварийного восстановления. 
 

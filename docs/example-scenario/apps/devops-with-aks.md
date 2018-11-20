@@ -3,12 +3,12 @@ title: Конвейер CI/CD для рабочих нагрузок на осн
 description: Создание конвейера DevOps для веб-приложения Node.js, который использует Jenkins, Реестр контейнеров Azure, Службу Azure Kubernetes, Cosmos DB и Grafana.
 author: iainfoulds
 ms.date: 07/05/2018
-ms.openlocfilehash: 3212fae2c68eef3a5ed4963d28c0d97ac8f332e0
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: db8de674ee2789c5b41cebebee5745ecc8544122
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818741"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610844"
 ---
 # <a name="cicd-pipeline-for-container-based-workloads"></a>Конвейер CI/CD для рабочих нагрузок на основе контейнера
 
@@ -20,7 +20,7 @@ ms.locfileid: "48818741"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрите этот сценарий для следующих вариантов использования:
+Другие варианты использования:
 
 * Модернизация разработки приложений с помощью микрослужб на основе контейнерного подхода.
 * Ускорение разработки приложений и развертывание жизненных циклов.
