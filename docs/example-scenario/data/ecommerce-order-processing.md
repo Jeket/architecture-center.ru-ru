@@ -3,12 +3,12 @@ title: Масштабируемая обработка заказов в Azure
 description: Создание конвейера обработки заказа с высокой степенью масштабируемости с помощью Azure Cosmos DB.
 author: alexbuckgit
 ms.date: 07/10/2018
-ms.openlocfilehash: fe642ffde733914389c36c5be50f35d242a22edf
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: 1c3bb2cc33be74f5ff8ee0513de4c3f7df70aa37
+ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818519"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51610861"
 ---
 # <a name="scalable-order-processing-on-azure"></a>Масштабируемая обработка заказов в Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "48818519"
 
 ## <a name="relevant-use-cases"></a>Варианты соответствующего использования
 
-Рассмотрите этот сценарий для следующих вариантов использования:
+Другие варианты использования:
 
 * Серверные системы для точек продажи для электронной коммерции или розничной торговли.
 * Системы управления запасами.
