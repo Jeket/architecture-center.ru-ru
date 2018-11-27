@@ -4,18 +4,18 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: 43c780876e903f7d4f86d3877fb961b0dc0ba60b
-ms.sourcegitcommit: 877777094b554559dc9cb1f0d9214d6d38197439
+ms.openlocfilehash: e7bbd797ba4b8bfc193b146f080cedf299dd47b4
+ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527598"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52295520"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
 Эталонные архитектуры упорядочены по сценарию, а связанные архитектуры сгруппированы. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включено развертываемое решение.
 
-Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Бессерверная архитектура](##serverless-applications) | [Виртуальные сети](#virtual-networks)  |  [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Веб-приложения](#web-applications) | [Active Directory](#extend-on-premises-active-directory-to-azure)
+Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks)  |  [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Веб-приложения](#web-applications) | [Active Directory](#extend-on-premises-active-directory-to-azure)
 
 ## <a name="ai-and-machine-learning"></a>ИИ и машинное обучение
 
@@ -98,6 +98,26 @@ ms.locfileid: "51527598"
                     <div class="cardText">
                         <h3>Автоматизированная корпоративная бизнес-аналитика с использованием Фабрики данных Azure</h3>
                         <p>Автоматизация конвейера ELT для выполнения добавочной загрузки из локальной базы данных.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Databricks -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./data/stream-processing-databricks.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/databricks.png" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Обработка потоков данных с помощью Azure Databricks</h3>
+                        <p>Конвейер обработки потоков данных объединяет записи из двух потоков данных, дополняет результат и вычисляет скользящее среднее.</p>
                     </div>
                 </div>
             </div>
