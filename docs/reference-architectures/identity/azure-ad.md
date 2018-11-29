@@ -7,12 +7,12 @@ ms.date: 11/28/2016
 pnp.series.next: adds-extend-domain
 pnp.series.prev: ./index
 cardTitle: Integrate on-premises AD with Azure AD
-ms.openlocfilehash: 5bb0fb990418a28170a8baeffd22e480fb664fda
-ms.sourcegitcommit: b2a4eb132857afa70201e28d662f18458865a48e
+ms.openlocfilehash: c265870b9a664afbde561d324ae42fd3a2d9a87e
+ms.sourcegitcommit: 1287d635289b1c49e94f839b537b4944df85111d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48818961"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52332363"
 ---
 # <a name="integrate-on-premises-active-directory-domains-with-azure-active-directory"></a>Интеграция локальных доменов Active Directory с Azure Active Directory
 
@@ -218,7 +218,7 @@ Azure AD Connect устанавливает следующие средства 
 
 В репозитории GitHub доступен шаблон развертывания эталонной архитектуры, реализующей эти рекомендации. В этой эталонной архитектуре развертывается смоделированная локальная сеть в Azure, в которой можно выполнять проверки и экспериментировать. Эталонную архитектуру можно развернуть с помощью виртуальных машин Windows или Linux, следуя приведенным ниже инструкциям: 
 
-1. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fidentity%2Fazure-ad%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
+1. Нажмите кнопку ниже:<br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Fidentity-reference-architectures%2Fmaster%2Fazure-ad%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 2. Ссылка откроется на портале Azure, где нужно задать значения для следующих параметров. 
    * Имя **группы ресурсов** уже определено в файле параметров, поэтому выберите **Создать** и введите `ra-aad-onpremise-rg` в текстовом поле.
    * В раскрывающемся списке **Расположение** выберите регион.

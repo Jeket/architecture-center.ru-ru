@@ -7,12 +7,12 @@ pnp.series.title: Network DMZ
 pnp.series.next: nva-ha
 pnp.series.prev: secure-vnet-hybrid
 cardTitle: DMZ between Azure and the Internet
-ms.openlocfilehash: d12c76a08f028d54784de330c62311f294802cb9
-ms.sourcegitcommit: dbbf914757b03cdee7a274204f9579fa63d7eed2
+ms.openlocfilehash: 8d394d8cacd17b3af2b3de13ecb2c3181ef568ba
+ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50916337"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52295635"
 ---
 # <a name="dmz-between-azure-and-the-internet"></a>Сеть периметра между Azure и Интернетом
 
@@ -90,7 +90,7 @@ ms.locfileid: "50916337"
 
 ### <a name="deploy-resources"></a>Развертывание ресурсов
 
-1. Перейдите в папку `/dmz/secure-vnet-hybrid` в репозитории эталонных архитектур на сайте GitHub.
+1. Перейдите в папку `/dmz/secure-vnet-dmz` в репозитории эталонных архитектур на сайте GitHub.
 
 2. Выполните следующую команду:
 
