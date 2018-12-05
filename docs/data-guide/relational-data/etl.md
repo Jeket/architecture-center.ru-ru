@@ -3,12 +3,12 @@ title: Извлечение, преобразование и загрузка (E
 description: ''
 author: zoinerTejada
 ms:date: 02/12/2018
-ms.openlocfilehash: 1879b649fa3dfdf5c00f8ee30e53b83f7139fbf0
-ms.sourcegitcommit: 51f49026ec46af0860de55f6c082490e46792794
+ms.openlocfilehash: b10b0cb3cbc98ff9fadda6915b01b6f6564c4d00
+ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30298642"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52295554"
 ---
 # <a name="extract-transform-and-load-etl"></a>Извлечение, преобразование и загрузка (ETL)
 
@@ -79,3 +79,10 @@ ms.locfileid: "30298642"
 - [Хранилища данных оперативной аналитической обработки (OLAP)](./online-analytical-processing.md#olap-in-azure)
 - [Хранилища данных](./data-warehousing.md)
 - [Оркестрация конвейеров](../technology-choices/pipeline-orchestration-data-movement.md)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+На следующей схеме эталонной архитектуры представлены сквозные конвейеры ELT в Azure:
+
+- [Корпоративная бизнес-аналитика в Azure с использованием Хранилища данных SQL](../../reference-architectures/data/enterprise-bi-sqldw.md)
+- [Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure](../../reference-architectures/data/enterprise-bi-adf.md)

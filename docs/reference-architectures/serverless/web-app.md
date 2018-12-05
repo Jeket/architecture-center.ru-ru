@@ -3,16 +3,16 @@ title: Бессерверное веб-приложение
 description: Эталонная архитектура, которая демонстрирует бессерверное веб-приложение и веб-API
 author: MikeWasson
 ms.date: 10/16/2018
-ms.openlocfilehash: d1af03811bda6267fd40ee17823ac8357829f988
-ms.sourcegitcommit: 949b9d3e5a9cdee1051e6be700ed169113e914ae
+ms.openlocfilehash: 9263c8bec794e4b2bb9f397289b23307eb02f0c7
+ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983402"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52295690"
 ---
 # <a name="serverless-web-application"></a>Бессерверное веб-приложение 
 
-Эталонная архитектура, которая демонстрирует бессерверное веб-приложение. Приложение передает статическое содержимое из хранилища BLOB-объектов Azure, а также реализует программный интерфейс с помощью Функций Azure. API считывает данные из Cosmos DB и возвращает результаты в веб-приложение. Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][github].
+Эталонная архитектура, которая демонстрирует [бессерверное](https://azure.microsoft.com/solutions/serverless/) веб-приложение. Приложение передает статическое содержимое из хранилища BLOB-объектов Azure, а также реализует программный интерфейс с помощью Функций Azure. API считывает данные из Cosmos DB и возвращает результаты в веб-приложение. Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][github].
 
 ![](./_images/serverless-web-app.png)
  
