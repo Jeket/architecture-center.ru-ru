@@ -2,13 +2,13 @@
 title: Выбор технологии для оркестрации конвейеров данных
 description: ''
 author: zoinerTejada
-ms:date: 02/12/2018
-ms.openlocfilehash: 17aeb871bc815793295ed610795e5e83de72c637
-ms.sourcegitcommit: 90cf2de795e50571d597cfcb9b302e48933e7f18
+ms.date: 02/12/2018
+ms.openlocfilehash: 7d1fddf54216b756a5dc2c183a43449a2f45a122
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
-ms.locfileid: "29288806"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902388"
 ---
 # <a name="choosing-a-data-pipeline-orchestration-technology-in-azure"></a>Выбор технологии для оркестрации конвейеров данных в Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "29288806"
 Ниже перечислены службы и средства в Azure, которые соответствуют основным требованиям к оркестрации конвейеров, управлению потоками и перемещению данных:
 
 - [Фабрика данных Azure](/azure/data-factory/)
-- [Oozie в HDInsight](/azure/hdinsight/hdinsight-use-oozie-linux-mac);
+- [Oozie в HDInsight](/azure/hdinsight/hdinsight-use-oozie-linux-mac).
 - [SQL Server Integration Services (SSIS)](/sql/integration-services/sql-server-integration-services)
 
 Эти службы и средства можно использовать отдельно или в сочетании, что позволяет создавать гибридные решения. Например, среда Integration Runtime (IR) в службе "Фабрика данных Azure" версии 2 изначально позволяет запускать пакеты служб SSIS в управляемой вычислительной среде Azure. Некоторые функции этих служб совпадают, но есть несколько основных отличий.
@@ -54,16 +54,16 @@ ms.locfileid: "29288806"
 
 | | Фабрика данных Azure | SQL Server Integration Services (SSIS); | Oozie в HDInsight
 | --- | --- | --- | --- |
-| Копирование данных | Yes | Yes | Yes |
+| Копирование данных | Yes | Да | Yes |
 | Пользовательские преобразования | Yes | Yes | Да (задания MapReduce, Pig и Hive) |
 | Оценка с помощью службы "Машинное обучение Azure" | Yes | Да (с помощью скриптов) | Нет  |
 | Создание кластеров по запросу в HDInsight | Yes | Нет  | Нет  |
 | Пакетная служба Azure | Yes | Нет  | Нет  |
 | Pig, Hive, MapReduce | Yes | Нет  | Yes |
 | Spark | Yes | Нет  | Нет  |
-| Выполнение пакетов служб SSIS | Yes | Yes | Нет  |
-| Поток управления | Yes | Yes | Yes |
-| Доступ к локальным данным | Yes | Yes | Нет  |
+| Выполнение пакетов служб SSIS | Yes | Да | Нет  |
+| Поток управления | Yes | Да | Yes |
+| Доступ к локальным данным | Yes | Да | Нет  |
 
 ### <a name="scalability-capabilities"></a>Масштабируемость
 

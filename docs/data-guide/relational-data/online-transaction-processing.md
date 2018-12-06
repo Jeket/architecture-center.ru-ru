@@ -2,13 +2,13 @@
 title: Оперативная обработка транзакций (OLTP)
 description: ''
 author: zoinerTejada
-ms:date: 02/12/2018
-ms.openlocfilehash: 8650b919fc1a59240343015493a1fe41c8729a72
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.date: 02/12/2018
+ms.openlocfilehash: be24bc173359539785385de4a188e7536f6d2ffe
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30848705"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902771"
 ---
 # <a name="online-transaction-processing-oltp"></a>Оперативная обработка транзакций (OLTP)
 
@@ -109,7 +109,7 @@ ms.locfileid: "30848705"
 | | Базы данных SQL Azure | SQL Server на виртуальной машине Azure| База данных Azure для MySQL | База данных Azure для PostgreSQL|
 | --- | --- | --- | --- | --- | --- |
 | Максимальный размер экземпляра базы данных | [4 ТБ](/azure/sql-database/sql-database-resource-limits) | 256 ТБ | [1 ТБ](/azure/mysql/concepts-limits) | [1 ТБ](/azure/postgresql/concepts-limits) |
-| Поддержка пулов емкости  | Yes | Yes | Нет  | Нет  |
+| Поддержка пулов емкости  | Yes | Да | Нет  | Нет  |
 | Поддержка масштабирования кластеров  | Нет  | Yes | Нет  | Нет  |
 | Динамическая масштабируемость (увеличение масштаба)  | Yes | Нет  | Yes | Yes |
 
@@ -117,32 +117,32 @@ ms.locfileid: "30848705"
 
 | | Базы данных SQL Azure | SQL Server на виртуальной машине Azure| База данных Azure для MySQL | База данных Azure для PostgreSQL|
 | --- | --- | --- | --- | --- | --- | 
-| Временные таблицы | Yes | Yes | Нет  | Нет  |
-| Таблицы в памяти (оптимизированные для памяти) | Yes | Yes | Нет  | Нет  |
-| Поддержка columnstore | Yes | Yes | Нет  | Нет  |
-| Адаптивная обработка запросов | Yes | Yes | Нет  | Нет  |
+| Временные таблицы | Yes | Да | Нет  | Нет  |
+| Таблицы в памяти (оптимизированные для памяти) | Yes | Да | Нет  | Нет  |
+| Поддержка columnstore | Yes | Да | Нет  | Нет  |
+| Адаптивная обработка запросов | Yes | Да | Нет  | Нет  |
 
 ### <a name="availability-capabilities"></a>Возможности доступности
 
 | | Базы данных SQL Azure | SQL Server на виртуальной машине Azure| База данных Azure для MySQL | База данных Azure для PostgreSQL|
 | --- | --- | --- | --- | --- | --- | 
-| Вторичные реплики, доступные для чтения | Yes | Yes | Нет  | Нет  | 
-| Георепликация | Yes | Yes | Нет  | Нет  | 
+| Вторичные реплики, доступные для чтения | Yes | Да | Нет  | Нет  | 
+| Георепликация | Yes | Да | Нет  | Нет  | 
 | Автоматический переход на вторичный ресурс | Yes | Нет  | Нет  | Нет |
-| Восстановление до точки во времени | Yes | Yes | Yes | Yes |
+| Восстановление до точки во времени | Yes | Да | Да | Yes |
 
 ### <a name="security-capabilities"></a>Возможности системы безопасности
 
 |                                                                                                             | Базы данных SQL Azure | SQL Server на виртуальной машине Azure | База данных Azure для MySQL | База данных Azure для PostgreSQL |
 |-------------------------------------------------------------------------------------------------------------|--------------------|----------------------------------------|--------------------------|-------------------------------|
-|                                             Безопасность на уровне строк                                              |        Yes         |                  Yes                   |           Yes            |              Yes              |
-|                                                Маскирование данных                                                 |        Yes         |                  Yes                   |            Нет             |              Нет                |
-|                                         Прозрачное шифрование данных                                         |        Yes         |                  Yes                   |           Yes            |              Yes              |
-|                                  Ограничение доступа для определенных IP-адресов                                   |        Yes         |                  Yes                   |           Yes            |              Yes              |
-|                                  Ограничение доступа для разрешения доступа только к виртуальной сети                                  |        Yes         |                  Yes                   |            Нет             |              Нет                |
-|                                    Аутентификация Azure Active Directory                                    |        Yes         |                  Yes                   |            Нет             |              Нет                |
+|                                             Безопасность на уровне строк                                              |        Yes         |                  Да                   |           Да            |              Yes              |
+|                                                Маскирование данных                                                 |        Yes         |                  Да                   |            Нет             |              Нет                |
+|                                         Прозрачное шифрование данных                                         |        Yes         |                  Да                   |           Да            |              Yes              |
+|                                  Ограничение доступа для определенных IP-адресов                                   |        Yes         |                  Да                   |           Да            |              Yes              |
+|                                  Ограничение доступа для разрешения доступа только к виртуальной сети                                  |        Yes         |                  Да                   |            Нет             |              Нет                |
+|                                    Аутентификация Azure Active Directory                                    |        Yes         |                  Да                   |            Нет             |              Нет                |
 |                                       Аутентификация Active Directory                                       |         Нет          |                  Yes                   |            Нет             |              Нет                |
-|                                         Многофакторная Идентификация                                         |        Yes         |                  Yes                   |            Нет             |              Нет                |
-| Поддержка функции [Always Encrypted](/sql/relational-databases/security/encryption/always-encrypted-database-engine) |        Yes         |                  Yes                   |           Yes            |              Нет                |
-|                                                 Частный IP-адрес                                                  |         Нет          |                  Yes                   |           Yes            |              Нет                |
+|                                         Многофакторная Идентификация                                         |        Yes         |                  Да                   |            Нет             |              Нет                |
+| Поддержка функции [Always Encrypted](/sql/relational-databases/security/encryption/always-encrypted-database-engine) |        Yes         |                  Да                   |           Да            |              Нет                |
+|                                                 Частный IP-адрес                                                  |         Нет          |                  Yes                   |           Да            |              Нет                |
 

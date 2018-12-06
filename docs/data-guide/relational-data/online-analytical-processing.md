@@ -2,13 +2,13 @@
 title: Оперативная аналитическая обработка (OLAP)
 description: ''
 author: zoinerTejada
-ms:date: 02/12/2018
-ms.openlocfilehash: 92b71934f2081e95c3c9b0d4dc9edeb3885b12e8
-ms.sourcegitcommit: e67b751f230792bba917754d67789a20810dc76b
+ms.date: 02/12/2018
+ms.openlocfilehash: beed0d642e85096efc0b6fe492181b8dcd771d2d
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30846813"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902604"
 ---
 # <a name="online-analytical-processing-olap"></a>Оперативная аналитическая обработка (OLAP)
 
@@ -57,7 +57,7 @@ ms.locfileid: "30846813"
 | --- | --- |
 | Схема | Схема при записи (строгое соблюдение)|
 | Использование транзакций | Нет  |
-| Стратегия блокировки | None |
+| Стратегия блокировки | Нет |
 | Возможность обновления | Нет (обычно требуется повторное вычисление куба) |
 | Возможность добавления | Нет (обычно требуется повторное вычисление куба) |
 | Рабочая нагрузка | Большое число операций чтения, только для чтения |
@@ -129,10 +129,10 @@ ms.locfileid: "30846813"
 | --- | --- | --- | --- | --- |
 | Является управляемой службой | Yes | Нет  | Нет  | Yes |
 | Поддержка многомерных кубов | Нет  | Yes | Нет  | Нет  |
-| Поддержка табличных семантических моделей | Yes | Yes | Нет  | Нет  |
+| Поддержка табличных семантических моделей | Yes | Да | Нет  | Нет  |
 | Простая интеграция нескольких источников данных | Yes | Yes | Нет <sup>1</sup> | Нет <sup>1</sup> |
 | Поддержка аналитики в режиме реального времени | Нет  | Нет  | Yes | Yes |
-| Необходимость обработки данных для их копирования из источников | Yes | Yes | Нет  | Нет  |
+| Необходимость обработки данных для их копирования из источников | Yes | Да | Нет  | Нет  |
 | Интеграция с Azure AD | Yes | Нет  | Нет <sup>2</sup> | Yes |
 
 [1] Хотя SQL Server и Базу данных SQL Azure нельзя использовать для отправки запросов и интеграции нескольких внешних источников данных, можно создать конвейер для этих задач с помощью [SSIS](/sql/integration-services/sql-server-integration-services) или [фабрики данных Azure](/azure/data-factory/). Сервер SQL Server, размещенный на виртуальной машине Azure, предоставляет дополнительные варианты, например связанные серверы и [PolyBase](/sql/relational-databases/polybase/polybase-guide). Дополнительные сведения см. в статье [Choosing a data pipeline orchestration technology in Azure](../technology-choices/pipeline-orchestration-data-movement.md) (Выбор технологии оркестрации конвейера данных в Azure).
