@@ -2,13 +2,13 @@
 title: Выбор технологии передачи данных
 description: ''
 author: zoinerTejada
-ms:date: 02/12/2018
-ms.openlocfilehash: 53dcf8a69ad8ae100dbdbb230a9280efd419342a
-ms.sourcegitcommit: 85334ab0ccb072dac80de78aa82bcfa0f0044d3f
+ms.date: 02/12/2018
+ms.openlocfilehash: d5fbdc3a49ab16be2626b772ffd1af782963a2f0
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35252759"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902686"
 ---
 # <a name="transferring-data-to-and-from-azure"></a>Передача данных в Azure и обратно
 
@@ -94,13 +94,13 @@ ms.locfileid: "35252759"
 
 | | Distcp | Sqoop | Интерфейс командной строки Hadoop |
 | --- | --- | --- | --- |
-| Оптимизация для больших объемов данных | Yes | Yes |  Yes |
+| Оптимизация для больших объемов данных | Yes | Да |  Yes |
 | Копирование в реляционную базу данных |  Нет  | Yes | Нет  |
 | Копирование из реляционной базы данных |  Нет  | Yes | Нет  |
-| Копирование в хранилище BLOB-объектов |  Yes | Yes | Yes |
-| Копирование из хранилища BLOB-объектов | Yes |  Yes | Нет  |
-| Копирование в Data Lake Store | Yes | Yes | Yes |
-| Копирование из Data Lake Store | Yes | Yes | Нет  |
+| Копирование в хранилище BLOB-объектов |  Yes | Да | Yes |
+| Копирование из хранилища BLOB-объектов | Yes |  Да | Нет  |
+| Копирование в Data Lake Store | Yes | Да | Yes |
+| Копирование из Data Lake Store | Yes | Да | Нет  |
 
 **другие.**
 
@@ -110,10 +110,10 @@ ms.locfileid: "35252759"
 | Оптимизация для больших объемов данных | Нет  | Нет  | Нет  | Да <sup>1</sup> | Да <sup>2</sup> |
 | Копирование в реляционную базу данных | Нет  | Нет  | Нет  | Нет  | Yes | 
 | Копирование из реляционной базы данных | Нет  | Нет  | Нет  | Нет  | Yes | 
-| Копирование в хранилище BLOB-объектов | Yes | Yes | Yes | Нет  | Yes | 
-| Копирование из хранилища BLOB-объектов | Yes | Yes | Yes | Yes | Yes |
-| Копирование в Data Lake Store | Нет  | Нет  | Yes | Yes |  Yes | 
-| Копирование из Data Lake Store | Нет  | Нет  | Yes | Yes | Yes | 
+| Копирование в хранилище BLOB-объектов | Yes | Да | Да | Нет  | Yes | 
+| Копирование из хранилища BLOB-объектов | Yes | Да | Да | Да | Yes |
+| Копирование в Data Lake Store | Нет  | Нет  | Yes | Да |  Yes | 
+| Копирование из Data Lake Store | Нет  | Нет  | Yes | Да | Yes | 
 
 
 [1] AdlCopy оптимизировано для передачи больших объемов данных при использовании учетной записи Data Lake Analytics.
@@ -131,8 +131,8 @@ ms.locfileid: "35252759"
 | Копирование из хранилища BLOB-объектов | Yes | Нет  | Yes |
 | Копирование в Data Lake Store | Нет  | Нет  | Yes |
 | Копирование из Data Lake Store | Нет  | Нет  | Yes |
-| Отправка в хранилище BLOB-объектов | Yes | Yes | Yes |
-| Отправка в Data Lake Store | Yes | Yes | Yes |
+| Отправка в хранилище BLOB-объектов | Yes | Да | Yes |
+| Отправка в Data Lake Store | Yes | Да | Yes |
 | Оркестрация передачи данных. | Нет  | Нет  | Yes |
 | Пользовательские преобразования данных | Нет  | Нет  | Yes |
 | Модель ценообразования | Free | Free | Оплата за использование |

@@ -2,16 +2,16 @@
 title: Защита серверного веб-API в мультитенантном приложении
 description: Защита серверного веб-API
 author: MikeWasson
-ms:date: 07/21/2017
+ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: authorize
 pnp.series.next: token-cache
-ms.openlocfilehash: 2d02ff7be04c6ebec888039453fe1ac7e957b301
-ms.sourcegitcommit: f7fa67e3bdbc57d368edb67bac0e1fdec63695d2
+ms.openlocfilehash: e738eb94b5978efa4e7a4bebcc72daa7968ac904
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843680"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52901598"
 ---
 # <a name="secure-a-backend-web-api"></a>Защита серверного веб-API
 
@@ -79,7 +79,7 @@ GET /users/{userId}/surveys
 
 1. Зарегистрируйте веб-API в Azure AD.
 
-2. Укажите идентификатор клиента для веб-приложения в свойстве `knownClientApplications` манифеста приложения веб-API. См. раздел об [Обновление манифестов приложения].
+2. Укажите идентификатор клиента для веб-приложения в свойстве `knownClientApplications` манифеста приложения веб-API. См. раздел об [обновлении манифестов приложения].
 
 3. Предоставьте веб-приложению разрешение вызывать веб-API. На портале управления Azure можно задать два типа разрешений: "Разрешения приложения" для удостоверения приложения (поток учетных данных клиента) или "Делегированные разрешения" для удостоверения делегированного пользователя.
    
@@ -115,7 +115,7 @@ public override async Task AuthorizationCodeReceived(AuthorizationCodeReceivedCo
 * `clientSecret`. Секрет клиента веб-приложения.
 * `redirectUri`. URI перенаправления, заданный для OpenID. Здесь поставщик удостоверений выполняет обратный вызов маркера.
 * `resourceID`. URI идентификатора приложения для веб-API, который был создан при регистрации веб-API в Azure AD.
-* `tokenCache`. Объект, который кэширует маркеры доступа. См. статью [Кэширование маркеров].
+* `tokenCache`. Объект, который кэширует маркеры доступа. См. статью о [кэшировании маркеров].
 
 Если `AcquireTokenByAuthorizationCodeAsync` завершается успешно, ADAL кэширует маркер. Чтобы получить маркер из кэша позднее, вызовите AcquireTokenSilentAsync:
 
@@ -272,8 +272,8 @@ public void ConfigureServices(IServiceCollection services)
 
 [Tailspin Surveys]: tailspin.md
 [IdentityServer4]: https://github.com/IdentityServer/IdentityServer4
-[Обновление манифестов приложения]: ./run-the-app.md#update-the-application-manifests
-[Кэширование маркеров]: token-cache.md
+[обновлении манифестов приложения]: ./run-the-app.md#update-the-application-manifests
+[кэшировании маркеров]: token-cache.md
 [Регистрация клиента]: signup.md
 [claims-transformation]: claims.md#claims-transformations
 [Authorization]: authorize.md

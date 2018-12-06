@@ -2,16 +2,16 @@
 title: Регистрация и адаптация клиентов в мультитенантных приложениях
 description: Адаптация клиентов в мультитенантном приложении
 author: MikeWasson
-ms:date: 07/21/2017
+ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: claims
 pnp.series.next: app-roles
-ms.openlocfilehash: 512fd37080b99a7e6249db70f0d2bc673cf87978
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: 541a4dd9abb2168eef4a60a0ec99e1e7c06049b5
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429168"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902482"
 ---
 # <a name="tenant-sign-up-and-onboarding"></a>Регистрация и адаптации клиента
 
@@ -158,7 +158,7 @@ internal static bool IsSigningUp(this BaseControlContext context)
 
 В таблице Tenant IssuerValue является значением утверждения издателя для клиента. Для Azure AD это `https://sts.windows.net/<tentantID>` с уникальным значением для каждого клиента.
 
-При регистрации нового клиента приложение Surveys вносит запись клиента в базу данных. Это происходит внутри события `AuthenticationValidated` . (Не выполняйте это действие до события, так как маркер идентификатора пока не прошел проверку и значениям утверждения доверять нельзя.) См. статью [Аутентификация].
+При регистрации нового клиента приложение Surveys вносит запись клиента в базу данных. Это происходит внутри события `AuthenticationValidated` . (Не выполняйте это действие до события, так как маркер идентификатора пока не прошел проверку и значениям утверждения доверять нельзя.) См. статью [Проверка подлинности].
 
 Ниже приведен соответствующий код из приложения Surveys:
 
@@ -260,5 +260,5 @@ private async Task<Tenant> SignUpTenantAsync(BaseControlContext context, TenantM
 [Tailspin]: tailspin.md
 
 [state]: https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
-[Аутентификация]: authenticate.md
+[Проверка подлинности]: authenticate.md
 [sample application]: https://github.com/mspnp/multitenant-saas-guidance
