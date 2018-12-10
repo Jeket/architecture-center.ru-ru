@@ -1,16 +1,17 @@
 ---
-title: Выбор решения для подключения локальной сети к Azure
+title: Подключение локальной сети к Azure
+titleSuffix: Azure Reference Architectures
 description: Сравнение нескольких эталонных архитектур, позволяющих подключить локальную сеть к Azure.
 author: telmosampaio
 ms.date: 07/02/2018
-ms.openlocfilehash: a9e2a212d65530e714635bbfae3a57766e77c3a6
-ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
+ms.openlocfilehash: de509b6d95805f4fc871f6dbd76a87d2c0bec6f1
+ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52295498"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53119920"
 ---
-# <a name="connect-an-on-premises-network-to-azure"></a>Подключение локальной сети к Azure
+# <a name="choose-a-solution-for-connecting-an-on-premises-network-to-azure"></a>Выбор решения для подключения локальной сети к Azure
 
 В этой статье сравниваются варианты подключения локальной сети к виртуальной сети Azure. Для каждого варианта доступна подробная эталонная архитектура.
 
@@ -75,11 +76,9 @@ ms.locfileid: "52295498"
 
 - [Гибридная сеть с использованием отработки отказа в ExpressRoute с VPN](./expressroute-vpn-failover.md)
 
-
 ## <a name="hub-spoke-network-topology"></a>Звездообразная топология сети
 
 Звездообразная топология сети — это способ изоляции рабочих нагрузок при совместном использовании служб, таких как службы идентификации и безопасности. Концентратор (центр топологии) — это виртуальная сеть в Azure, которая выступает в качестве центральной точки подключения к локальной сети. Периферийные зоны — это виртуальные сети, которые устанавливают пиринг с концентратором. Общие службы развертываются в концентраторе, а отдельные рабочие нагрузки — в периферийных зонах.
-
 
 **Эталонные архитектуры**
 
