@@ -2,13 +2,13 @@
 title: Обработка потоков данных с помощью Azure Databricks
 description: Создание сквозного конвейера обработки потоков данных в Azure с помощью Azure Databricks
 author: petertaylor9999
-ms.date: 11/01/2018
-ms.openlocfilehash: a7e9df57572c9b3a3b0e4f418f148449aa40b04c
-ms.sourcegitcommit: 19a517a2fb70768b3edb9a7c3c37197baa61d9b5
+ms.date: 11/30/2018
+ms.openlocfilehash: 0640e900c212d2b75cc9cdd5bec3a4f7c050490d
+ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52295745"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52902839"
 ---
 # <a name="stream-processing-with-azure-databricks"></a>Обработка потоков данных с помощью Azure Databricks
 
@@ -269,7 +269,7 @@ spark.streams.addListener(new StreamingMetricsListener())
 
 ### <a name="latency-and-throughput-for-streaming-queries"></a>Задержка и пропускная способность для запросов потоковой передачи 
 
-```
+```shell
 taxijob_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
 | project  mdc_inputRowsPerSecond_d, mdc_durationms_triggerExecution_d  
@@ -277,7 +277,7 @@ taxijob_CL
 ``` 
 ### <a name="exceptions-logged-during-stream-query-execution"></a>Исключения, зарегистрированные при выполнении запроса потоковой передачи
 
-```
+```shell
 taxijob_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
 | where Level contains "Error" 
@@ -285,7 +285,7 @@ taxijob_CL
 
 ### <a name="accumulation-of-malformed-fare-and-ride-data"></a>Сбор данных неправильного формата о поездках и тарифах
 
-```
+```shell
 SparkMetric_CL 
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
 | render timechart 
@@ -298,7 +298,8 @@ SparkMetric_CL
 ```
 
 ### <a name="job-execution-to-trace-resiliency"></a>Данные о выполнении задания для трассировки устойчивости
-```
+
+```shell
 SparkMetric_CL 
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
 | render timechart 
@@ -307,11 +308,11 @@ SparkMetric_CL
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Пример развертывания для этой архитектуры можно найти на портале [GitHub](https://github.com/mspnp/reference-architectures/tree/master/data). 
+Пример развертывания для этой архитектуры можно найти на портале [GitHub](https://github.com/mspnp/azure-databricks-streaming-analytics). 
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-1. Клонируйте или скачайте ZIP-файл [с эталонными архитектурами](https://github.com/mspnp/reference-architectures) в репозитории GitHub либо создайте для него вилку.
+1. Клонируйте или загрузите репозиторий GitHub [Stream processing with Azure Databricks](https://github.com/mspnp/azure-databricks-streaming-analytics) (Обработка потоков данных с помощью Azure Databricks) либо создайте его вилку.
 
 2. Установите [Docker](https://www.docker.com/), чтобы запустить генератор данных.
 
@@ -320,7 +321,7 @@ SparkMetric_CL
 4. Установите [интерфейс командной строки Databricks](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html).
 
 5. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure, как показано ниже:
-    ```
+    ```shell
     az login
     ```
 6. Установите интегрированную среду разработки Java со следующими ресурсами:
@@ -330,7 +331,7 @@ SparkMetric_CL
 
 ### <a name="download-the-new-york-city-taxi-and-neighborhood-data-files"></a>Скачивание файлов с данными о поездках на такси в Нью-Йорке и сведениями об округах
 
-1. Создайте подкаталог `DataFile` каталога `data/streaming_azuredatabricks` в локальной файловой системе.
+1. Создайте каталог с именем `DataFile` в корневом каталоге клонированного репозитория Github в своей локальной файловой системе.
 
 2. Откройте браузер и перейдите по ссылке https://uofi.app.box.com/v/NYCtaxidata/folder/2332219935.
 
@@ -341,17 +342,15 @@ SparkMetric_CL
     > [!NOTE]
     > Этот ZIP-файл содержит другие ZIP-файлы. Не извлекайте дочерние ZIP-файлы.
 
-    Структура каталогов должна выглядеть так:
+    Структура каталога должна выглядеть так:
 
-    ```
-    /data
-        /streaming_azuredatabricks
-            /DataFile
-                /FOIL2013
-                    trip_data_1.zip
-                    trip_data_2.zip
-                    trip_data_3.zip
-                    ...
+    ```shell
+    /DataFile
+        /FOIL2013
+            trip_data_1.zip
+            trip_data_2.zip
+            trip_data_3.zip
+            ...
     ```
 
 5. Откройте браузер и перейдите по ссылке https://www.zillow.com/howto/api/neighborhood-boundaries.htm. 
@@ -368,10 +367,10 @@ SparkMetric_CL
     az login
     ```
 
-2. Перейдите в папку `data/streaming_azuredatabricks` в репозитории GitHub.
+2. Перейдите к папке с именем `azure` в репозитории GitHub.
 
     ```bash
-    cd data/streaming_azuredatabricks
+    cd azure
     ```
 
 3. Выполните следующие команды, чтобы развернуть ресурсы Azure:
@@ -390,7 +389,7 @@ SparkMetric_CL
 
     # Deploy resources
     az group deployment create --resource-group $resourceGroup \
-        --template-file ./azure/deployresources.json --parameters \
+        --template-file deployresources.json --parameters \
         eventHubNamespace=$eventHubNamespace \
         databricksWorkspaceName=$databricksWorkspaceName \
         cosmosDatabaseAccount=$cosmosDatabaseAccount \
@@ -439,7 +438,7 @@ SparkMetric_CL
 4. В разделе **ввода команды CQL для создания таблицы** введите `neighborhoodstats` в текстовое поле рядом с `newyorktaxi`.
 
 5. В текстовое поле ниже введите следующее:
-```
+```shell
 (neighborhood text, window_end timestamp, number_of_rides bigint,total_fare_amount double, primary key(neighborhood, window_end))
 ```
 6. В текстовое поле **Пропускная способность (1000–1 000 000 единиц запросов в секунду)** введите значение `4000`.
@@ -451,17 +450,17 @@ SparkMetric_CL
 Сначала введите секреты для концентратора событий.
 
 1. С помощью **интерфейса командной строки Azure Databricks**, установленном на шаге 2 в разделе с предварительными требованиями, создайте область секретов Azure Databricks:
-    ```
+    ```shell
     databricks secrets create-scope --scope "azure-databricks-job"
     ```
 2. Добавьте секрет для концентратора событий с данными о поездках на такси:
-    ```
+    ```shell
     databricks secrets put --scope "azure-databricks-job" --key "taxi-ride"
     ```
     После завершения эта команда открывает редактор vi. Введите значение **taxi-ride-eh** из раздела выходных данных **eventHubs**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Сохраните файл и закройте редактор vi.
 
 3. Добавьте секрет для концентратора событий с данными о тарифах на такси:
-    ```
+    ```shell
     databricks secrets put --scope "azure-databricks-job" --key "taxi-fare"
     ```
     После завершения эта команда открывает редактор vi. Введите значение **taxi-fare-eh** из раздела выходных данных **eventHubs**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Сохраните файл и закройте редактор vi.
@@ -471,13 +470,13 @@ SparkMetric_CL
 1. Откройте портал Azure и перейдите к группе ресурсов, указанной на шаге 3 в разделе о **развертывании ресурсов Azure**. Щелкните "Учетная запись Azure Cosmos DB".
 
 2. С помощью **интерфейса командной строки Azure Databricks** добавьте секрет для имени пользователя Cosmos DB:
-    ```
+    ```shell
     databricks secrets put --scope azure-databricks-job --key "cassandra-username"
     ```
 После завершения эта команда открывает редактор vi. Введите значение **username** из раздела выходных данных **CosmosDB**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Сохраните файл и закройте редактор vi.
 
 3. Затем добавьте секрет для пароля Cosmos DB:
-    ```
+    ```shell
     databricks secrets put --scope azure-databricks-job --key "cassandra-password"
     ```
 
@@ -493,7 +492,7 @@ SparkMetric_CL
     dbfs mkdirs dbfs:/azure-databricks-jobs
     ```
 
-2. Перейдите к файлу data/streaming_azuredatabricks/DataFile и введите следующее:
+2. Перейдите к каталогу `DataFile` и введите следующее:
     ```bash
     dbfs cp ZillowNeighborhoods-NY.zip dbfs:/azure-databricks-jobs
     ```
@@ -502,37 +501,37 @@ SparkMetric_CL
 
 Для выполнения инструкций из этого раздела вам потребуется идентификатор и первичный ключ рабочей области Log Analytics. Идентификатор рабочей области указан в качестве значения для **workspaceId** в разделе выходных данных **logAnalytics**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Первичный ключ — это значение для **secret** в разделе выходных данных. 
 
-1. Чтобы настроить ведение журнала с использованием log4j, откройте файл по этому пути: data\streaming_azuredatabricks\azure\AzureDataBricksJob\src\main\resources\com\microsoft\pnp\azuredatabricksjob\log4j.properties. Измените следующие два значения:
-    ```
+1. Чтобы настроить ведение журнала log4j, откройте `\azure\AzureDataBricksJob\src\main\resources\com\microsoft\pnp\azuredatabricksjob\log4j.properties`. Измените следующие два значения:
+    ```shell
     log4j.appender.A1.workspaceId=<Log Analytics workspace ID>
     log4j.appender.A1.secret=<Log Analytics primary key>
     ```
 
-2. Чтобы настроить пользовательскую систему ведения журналов, откройте файл по этому пути: data\streaming_azuredatabricks\azure\azure-databricks-monitoring\scripts\metrics.properties. Измените следующие два значения:
-    ``` 
+2. Чтобы настроить пользовательскую систему ведения журналов, откройте `\azure\azure-databricks-monitoring\scripts\metrics.properties`. Измените следующие два значения:
+    ```shell
     *.sink.loganalytics.workspaceId=<Log Analytics workspace ID>
     *.sink.loganalytics.secret=<Log Analytics primary key>
     ```
 
 ### <a name="build-the-jar-files-for-the-databricks-job-and-databricks-monitoring"></a>Создание JAR-файлов для задания и мониторинга Databricks
 
-1. Используйте любую среду Java IDE для импорта файла проекта Maven с именем **pom.xml**, расположенным в корневом каталоге **данных/streaming_azuredatabricks**. 
+1. Используйте интегрированную среду разработки Java для импорта файла проекта Maven с именем **pom.xml**, расположенного в корневом каталоге. 
 
 2. Выполните чистую сборку. Результатом этой сборки будет файл **azure-databricks-job-1.0-SNAPSHOT.jar** и **azure-databricks-monitoring-0.9.jar**. 
 
 ### <a name="configure-custom-logging-for-the-databricks-job"></a>Настройка пользовательской системы ведения журналов для задания Databricks
 
 1. Скопируйте файл **azure-databricks-monitoring-0.9.jar** в файловую систему Databricks. Для этого введите следующую команду в **интерфейсе командной строки Databricks**:
-    ```
+    ```shell
     databricks fs cp --overwrite azure-databricks-monitoring-0.9.jar dbfs:/azure-databricks-job/azure-databricks-monitoring-0.9.jar
     ```
 
-2. Скопируйте файл с пользовательскими свойствами ведения журнала по этому пути: data\streaming_azuredatabricks\azure\azure-databricks-monitoring\scripts\metrics.properties. Вставьте его в файловую систему Databricks, введя следующую команду:
-    ```
+2. Скопируйте свойства пользовательской системы ведения журналов из `\azure\azure-databricks-monitoring\scripts\metrics.properties` в файловую систему Databricks. Для этого введите следующую команду:
+    ```shell
     databricks fs cp --overwrite metrics.properties dbfs:/azure-databricks-job/metrics.properties
     ```
 
-3. Если вы до этого не определились с именем для кластера Databricks, выберите его сейчас. Вам потребуется указать его в приведенном ниже пути к кластеру в файловой системе Databricks. Скопируйте скрипт инициализации из файла по этому пути: data\streaming_azuredatabricks\azure\azure-databricks-monitoring\scripts\metrics.properties. Вставьте его в файловой системе Databricks, введя следующую команду:
+3. Если вы до этого не определились с именем для кластера Databricks, выберите его сейчас. Вам потребуется указать его в приведенном ниже пути к кластеру в файловой системе Databricks. Скопируйте скрипт инициализации из `\azure\azure-databricks-monitoring\scripts\spark.metrics` в файловую систему Databricks. Для этого введите следующую команду:
     ```
     databricks fs cp --overwrite spark-metrics.sh dbfs:/databricks/init/<cluster-name>/spark-metrics.sh
     ```
@@ -576,7 +575,7 @@ SparkMetric_CL
 5. Укажите **com.microsoft.pnp.TaxiCabReader** в поле **Main Class** (Класс Main).
 
 6. В поле аргументов введите следующий код:
-    ```
+    ```shell
     -n jar:file:/dbfs/azure-databricks-jobs/ZillowNeighborhoods-NY.zip!/ZillowNeighborhoods-NY.shp --taxi-ride-consumer-group taxi-ride-eh-cg --taxi-fare-consumer-group taxi-fare-eh-cg --window-interval "1 minute" --cassandra-host <Cosmos DB Cassandra host name from above> 
     ``` 
 
@@ -629,11 +628,11 @@ SparkMetric_CL
 
 ### <a name="run-the-data-generator"></a>Запуск генератора данных
 
-1. Перейдите в каталог `data/streaming_azuredatabricks/onprem` в репозитории GitHub.
+1. Перейдите к каталогу с именем `onprem` в репозитории GitHub.
 
 2. Обновите значения в файле **main.env** следующим образом:
 
-    ```
+    ```shell
     RIDE_EVENT_HUB=[Connection string for the taxi-ride event hub]
     FARE_EVENT_HUB=[Connection string for the taxi-fare event hub]
     RIDE_DATA_FILE_PATH=/DataFile/FOIL2013
@@ -648,7 +647,7 @@ SparkMetric_CL
     docker build --no-cache -t dataloader .
     ```
 
-4. Вернитесь к родительскому каталогу `data/stream_azuredatabricks`.
+4. Вернитесь к родительскому каталогу.
 
     ```bash
     cd ..
