@@ -4,21 +4,22 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: 5b117ce308fcc47cae68bb83166ada71b75f6ce7
-ms.sourcegitcommit: 7d21aec9d9de0004ac777c1d1e364f53aac2350d
+ms.openlocfilehash: efac05ff95431f9551c6fb76939dbb91cfa01d1d
+ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "53120775"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53307023"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
 Эталонные архитектуры упорядочены по сценарию, а связанные архитектуры сгруппированы. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включено развертываемое решение.
 
-Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks)  |  [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Веб-приложения](#web-applications) | [Active Directory](#extend-on-premises-active-directory-to-azure)
+Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks) | [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Веб-приложения](#web-applications) | [Active Directory](#extend-on-premises-active-directory-to-azure)
 
 ## <a name="ai-and-machine-learning"></a>ИИ и машинное обучение
 
+<!-- markdownlint-disable MD033 -->
 <ul  class="panelContent cardsF">
 <!-- Batch scoring for deep learning models -->
 <li style="display: flex; flex-direction: column;">
@@ -54,6 +55,26 @@ ms.locfileid: "53120775"
                     <div class="cardText">
                         <h3>Оценка моделей Python в режиме реального времени</h3>
                         <p>Развертывание моделей Python в качестве веб-служб для прогнозирования в режиме реального времени с использованием обычных моделей Python или моделей глубокого обучения.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Batch scoring for R models -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/realtime-scoring-r.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/logo-r.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Оценка в реальном времени с помощью моделей машинного обучения на языке R</h3>
+                        <p>Реализуйте службу для прогнозирования в реальном времени на языке R с помощью Microsoft Machine Learning Server под управлением Службы Azure Kubernetes (AKS).</p>
                     </div>
                 </div>
             </div>
