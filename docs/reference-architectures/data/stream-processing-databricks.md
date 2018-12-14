@@ -1,22 +1,24 @@
 ---
 title: Обработка потоков данных с помощью Azure Databricks
-description: Создание сквозного конвейера обработки потоков данных в Azure с помощью Azure Databricks
+titleSuffix: Azure Reference Architectures
+description: Создание сквозного конвейера обработки потоков данных в Azure с помощью Azure Databricks.
 author: petertaylor9999
 ms.date: 11/30/2018
-ms.openlocfilehash: 0640e900c212d2b75cc9cdd5bec3a4f7c050490d
-ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
+ms.custom: seodec18
+ms.openlocfilehash: 822a3c448dcc2bdd4ae77ef2a2b7a9ffad633440
+ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52902839"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53120328"
 ---
-# <a name="stream-processing-with-azure-databricks"></a>Обработка потоков данных с помощью Azure Databricks
+# <a name="create-a-stream-processing-pipeline-with-azure-databricks"></a>Создание конвейера обработки потоков данных с помощью Azure Databricks
 
-На схеме эталонной архитектуры представлен сквозной конвейер [обработки потоков данных](/azure/architecture/data-guide/big-data/real-time-processing). Конвейер такого типа состоит из четырех этапов: прием, обработка, сохранение, анализ и создание отчета. В этой эталонной архитектуре конвейер принимает данные из двух источников, объединяет связанные записи из каждого потока, дополняет результат и вычисляет среднее значение в реальном времени. Результаты сохраняются для дальнейшего анализа. [**Разверните это решение**.](#deploy-the-solution)
+На схеме эталонной архитектуры представлен сквозной конвейер [обработки потоков данных](/azure/architecture/data-guide/big-data/real-time-processing). Конвейер такого типа состоит из четырех этапов: прием, обработка, сохранение, анализ и создание отчета. В этой эталонной архитектуре конвейер принимает данные из двух источников, объединяет связанные записи из каждого потока, дополняет результат и вычисляет среднее значение в реальном времени. Результаты сохраняются для дальнейшего анализа. [**Разверните это решение**](#deploy-the-solution).
 
-![](./images/stream-processing-databricks.png)
+![Эталонная архитектура для потоковой обработки с помощью Azure Databricks](./images/stream-processing-databricks.png)
 
-**Сценарий**. Компания, предоставляющая услуги такси, собирает данные о каждой поездке в такси. В этом сценарии предполагается, что данные отправляются с двух отдельных устройств. В такси установлен счетчик, который отправляет данные о каждой поездке, включая сведения о продолжительности, расстоянии, а также местах посадки и высадки. Отдельное устройство принимает платежи от клиентов и отправляет данные о тарифах. Чтобы определить тенденции роста пассажиропотока, компании нужно для каждого округа вычислить среднюю сумму чаевых на милю в реальном времени.
+**Сценарий.** Компания, предоставляющая услуги такси, собирает данные о каждой поездке. В этом сценарии предполагается, что данные отправляются с двух отдельных устройств. В такси установлен счетчик, который отправляет данные о каждой поездке, включая сведения о продолжительности, расстоянии, а также местах посадки и высадки. Отдельное устройство принимает платежи от клиентов и отправляет данные о тарифах. Чтобы определить тенденции роста пассажиропотока, компании нужно для каждого округа вычислить среднюю сумму чаевых на милю в реальном времени.
 
 ## <a name="architecture"></a>Архитектура
 
@@ -34,15 +36,15 @@ ms.locfileid: "52902839"
 
 ## <a name="data-ingestion"></a>Прием данных
 
-Для имитации источника данных в этой эталонной архитектуре используется набор данных<sup>[[1]](#note1)</sup> [New York City Taxi Data](https://uofi.app.box.com/v/NYCtaxidata/folder/2332218797) (Данные о поездках в такси в Нью-Йорке). Этот набор содержит данные о поездках в такси в Нью-Йорке за 4 года (2010&ndash;2013). В нем представлены два типа записей: данные о поездках и тарифах. Данные о поездках включают сведения о продолжительности поездки, расстоянии, а также местах посадки и высадки. Данные о тарифах включают сведения о тарифе, налоге и сумме чаевых. В обоих типах записей есть стандартные поля: номер медальона, лицензия на право вождения и код организации. Вместе эти три поля позволяют уникально идентифицировать такси и водителя. Данные хранятся в формате CSV. 
+Для имитации источника данных в этой эталонной архитектуре используется набор данных<sup>[[1]](#note1)</sup> [New York City Taxi Data](https://uofi.app.box.com/v/NYCtaxidata/folder/2332218797) (Данные о поездках в такси в Нью-Йорке). Этот набор содержит данные о поездках в такси в Нью-Йорке за 4 года (2010&ndash;2013). Он содержит два типа записей: данные о поездке и данные о тарифе. Данные о поездках включают сведения о продолжительности поездки, расстоянии, а также местах посадки и высадки. Данные о тарифах включают сведения о тарифе, налоге и сумме чаевых. В обоих типах записей есть стандартные поля: номер медальона, лицензия на право вождения и код организации. Вместе эти три поля позволяют уникально идентифицировать такси и водителя. Данные хранятся в формате CSV.
 
-Генератор данных — это приложение .NET Core, которое считывает записи и отправляет их в Центры событий Azure. Генератор отправляет данные о поездке в формате JSON, а данные о тарифах — в формате CSV. 
+Генератор данных — это приложение .NET Core, которое считывает записи и отправляет их в Центры событий Azure. Генератор отправляет данные о поездке в формате JSON, а данные о тарифах — в формате CSV.
 
-Для сегментации данных Центры событий используют [секции](/azure/event-hubs/event-hubs-features#partitions). Они позволяют объекту-получателю считывать данные каждой секции параллельно. При отправке данных в Центры событий можно явно указать ключ секции. В противном случае записи назначаются секциям методом циклического перебора. 
+Для сегментации данных Центры событий используют [секции](/azure/event-hubs/event-hubs-features#partitions). Они позволяют объекту-получателю считывать данные каждой секции параллельно. При отправке данных в Центры событий можно явно указать ключ секции. В противном случае записи назначаются секциям методом циклического перебора.
 
 В этом примере данные о поездках и тарифах должны в итоге иметь одинаковый идентификатор секции для определенного такси. Это позволит Databricks применить определенную степень параллелизма при корреляции двух потоков. Запись в секции *n* с данными о поездке будет соответствовать записи в секции *n* с данными о тарифах.
 
-![](./images/stream-processing-databricks-eh.png)
+![Схема потоковой обработки с помощью Azure Databricks и Центров событий Azure](./images/stream-processing-databricks-eh.png)
 
 В генераторе данных общая модель данных для обоих типов записей имеет свойство `PartitionKey`, в котором объединены `Medallion`, `HackLicense` и `VendorId`.
 
@@ -84,13 +86,13 @@ using (var client = pool.GetObject())
 
 ### <a name="event-hubs"></a>Центры событий;
 
-Пропускная способность Центров событий вычисляется в [единицах пропускной способности](/azure/event-hubs/event-hubs-features#throughput-units). Вы можете автоматически масштабировать концентратор событий, включив [автоматическое расширение](/azure/event-hubs/event-hubs-auto-inflate). Это позволит автоматически масштабировать единицы пропускной способности в зависимости от трафика вплоть до заданного максимума. 
+Пропускная способность Центров событий вычисляется в [единицах пропускной способности](/azure/event-hubs/event-hubs-features#throughput-units). Вы можете автоматически масштабировать концентратор событий, включив [автоматическое расширение](/azure/event-hubs/event-hubs-auto-inflate). Это позволит автоматически масштабировать единицы пропускной способности в зависимости от трафика вплоть до заданного максимума.
 
 ## <a name="stream-processing"></a>Потоковая обработка
 
 В Azure Databricks обработка данных осуществляется с помощью задания. Задание назначается определенному кластеру и выполняется в нем. Задание может представлять собой пользовательский код на Java или [записную книжку](https://docs.databricks.com/user-guide/notebooks/index.html) Spark.
 
-В этой эталонной архитектуре задание представляет собой архив Java с классами, написанными на Java и Scala. Указывая архив Java для задания Databricks, нужно выбрать класс для выполнения в кластере Databricks. В этом примере метод **main** класса **com.microsoft.pnp.TaxiCabReader** содержит логику обработки данных. 
+В этой эталонной архитектуре задание представляет собой архив Java с классами, написанными на Java и Scala. Указывая архив Java для задания Databricks, нужно выбрать класс для выполнения в кластере Databricks. В этом примере метод **main** класса **com.microsoft.pnp.TaxiCabReader** содержит логику обработки данных.
 
 ### <a name="reading-the-stream-from-the-two-event-hub-instances"></a>Считывание потоков данных из двух экземпляров концентратора событий
 
@@ -116,9 +118,9 @@ val rideEventHubOptions = EventHubsConf(rideEventHubConnectionString)
 
 ### <a name="enriching-the-data-with-the-neighborhood-information"></a>Дополнение данных сведениями об округе
 
-Данные о поездке включают координаты широты и долготы и сведения о местах посадки и высадки. Хотя эти координаты и полезны, их неудобно использовать для анализа. Таким образом, эти данные дополняются сведениями об округе, считанными из [файла фигуры](https://en.wikipedia.org/wiki/Shapefile). 
+Данные о поездке включают координаты широты и долготы и сведения о местах посадки и высадки. Хотя эти координаты и полезны, их неудобно использовать для анализа. Таким образом, эти данные дополняются сведениями об округе, считанными из [файла фигуры](https://en.wikipedia.org/wiki/Shapefile).
 
-Файл фигуры имеет двоичный формат, что усложняет анализ. Но в библиотеке [GeoTools](http://geotools.org/) представлены средства для работы с геопространственными данными в формате файла фигуры. Эта библиотека используется в классе **com.microsoft.pnp.GeoFinder**, чтобы определить название округа на основе координат мест посадки и высадки. 
+Файл фигуры имеет двоичный формат, что усложняет анализ. Но в библиотеке [GeoTools](http://geotools.org/) представлены средства для работы с геопространственными данными в формате файла фигуры. Эта библиотека используется в классе **com.microsoft.pnp.GeoFinder**, чтобы определить название округа на основе координат мест посадки и высадки.
 
 ```scala
 val neighborhoodFinder = (lon: Double, lat: Double) => {
@@ -223,7 +225,6 @@ databricks secrets put --scope "azure-databricks-job" --key "taxi-ride"
 
 В коде для получения доступа к секретам используются [соответствующие служебные программы](https://docs.databricks.com/user-guide/dev-tools/dbutils.html#secrets-utilities) Azure Databricks.
 
-
 ## <a name="monitoring-considerations"></a>Рекомендации по мониторингу
 
 Платформа Azure Databricks создана на основе Apache Spark и тоже использует [log4j](https://logging.apache.org/log4j/2.x/) в качестве стандартной библиотеки для ведения журналов. Кроме использования стандартных возможностей ведения журнала, предоставляемых Apache Spark, в этой эталонной архитектуре предусматривается отправка журналов и метрик в [Azure Log Analytics](/azure/log-analytics/).
@@ -267,48 +268,49 @@ spark.streams.addListener(new StreamingMetricsListener())
 
 В среде выполнения Apache Spark методы в StreamingMetricsListener вызываются при каждом событии структурированной потоковой передачи. При этом также отправляются сообщения и метрики журнала в рабочую область Azure Log Analytics. Для мониторинга приложения вы можете использовать следующие запросы в своей рабочей области:
 
-### <a name="latency-and-throughput-for-streaming-queries"></a>Задержка и пропускная способность для запросов потоковой передачи 
+### <a name="latency-and-throughput-for-streaming-queries"></a>Задержка и пропускная способность для запросов потоковой передачи
 
 ```shell
 taxijob_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
-| project  mdc_inputRowsPerSecond_d, mdc_durationms_triggerExecution_d  
+| project  mdc_inputRowsPerSecond_d, mdc_durationms_triggerExecution_d
 | render timechart
-``` 
+```
+
 ### <a name="exceptions-logged-during-stream-query-execution"></a>Исключения, зарегистрированные при выполнении запроса потоковой передачи
 
 ```shell
 taxijob_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
-| where Level contains "Error" 
+| where Level contains "Error"
 ```
 
 ### <a name="accumulation-of-malformed-fare-and-ride-data"></a>Сбор данных неправильного формата о поездках и тарифах
 
 ```shell
-SparkMetric_CL 
+SparkMetric_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
-| render timechart 
+| render timechart
 | where name_s contains "metrics.malformedrides"
 
-SparkMetric_CL 
+SparkMetric_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
-| render timechart 
-| where name_s contains "metrics.malformedfares" 
+| render timechart
+| where name_s contains "metrics.malformedfares"
 ```
 
 ### <a name="job-execution-to-trace-resiliency"></a>Данные о выполнении задания для трассировки устойчивости
 
 ```shell
-SparkMetric_CL 
+SparkMetric_CL
 | where TimeGenerated > startofday(datetime(<date>)) and TimeGenerated < endofday(datetime(<date>))
-| render timechart 
-| where name_s contains "driver.DAGScheduler.job.allJobs" 
+| render timechart
+| where name_s contains "driver.DAGScheduler.job.allJobs"
 ```
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Пример развертывания для этой архитектуры можно найти на портале [GitHub](https://github.com/mspnp/azure-databricks-streaming-analytics). 
+Пример развертывания для этой архитектуры можно найти на портале [GitHub](https://github.com/mspnp/azure-databricks-streaming-analytics).
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -353,7 +355,7 @@ SparkMetric_CL
             ...
     ```
 
-5. Откройте браузер и перейдите по ссылке https://www.zillow.com/howto/api/neighborhood-boundaries.htm. 
+5. Откройте браузер и перейдите по ссылке https://www.zillow.com/howto/api/neighborhood-boundaries.htm.
 
 6. Щелкните **New York Neighborhood Boundaries** (Границы округов штата Нью-Йорк), чтобы скачать файл.
 
@@ -399,7 +401,7 @@ SparkMetric_CL
 
 4. По завершении развертывания выходные данные выводятся в консоль. Найдите в выходных данных следующий код JSON:
 
-```JSON
+```json
 "outputs": {
         "cosmosDb": {
           "type": "Object",
@@ -425,6 +427,7 @@ SparkMetric_CL
         }
 },
 ```
+
 Эти значения являются секретами, которые вы добавите к секретам Databricks в следующих разделах. Для этого сохраните их в надежном расположении.
 
 ### <a name="add-a-cassandra-table-to-the-cosmos-db-account"></a>Добавление таблицы Cassandra в учетную запись Cosmos DB
@@ -433,14 +436,14 @@ SparkMetric_CL
 
 2. В колонке **Обзор** щелкните **Добавить таблицу**.
 
-3. Когда откроется колонка **Добавление таблицы** введите `newyorktaxi` в текстовое поле **Имя пространства ключей**. 
+3. Когда откроется колонка **Добавление таблицы** введите `newyorktaxi` в текстовое поле **Имя пространства ключей**.
 
 4. В разделе **ввода команды CQL для создания таблицы** введите `neighborhoodstats` в текстовое поле рядом с `newyorktaxi`.
 
-5. В текстовое поле ниже введите следующее:
-```shell
-(neighborhood text, window_end timestamp, number_of_rides bigint,total_fare_amount double, primary key(neighborhood, window_end))
-```
+5. В текстовом поле ниже введите следующее:
+    ```shell
+    (neighborhood text, window_end timestamp, number_of_rides bigint,total_fare_amount double, primary key(neighborhood, window_end))
+    ```
 6. В текстовое поле **Пропускная способность (1000–1 000 000 единиц запросов в секунду)** введите значение `4000`.
 
 7. Последовательно выберите **ОК**.
@@ -499,7 +502,7 @@ SparkMetric_CL
 
 ### <a name="add-the-azure-log-analytics-workspace-id-and-primary-key-to-configuration-files"></a>Добавление идентификатора и первичного ключа рабочей области Azure Log Analytics в файлы конфигурации
 
-Для выполнения инструкций из этого раздела вам потребуется идентификатор и первичный ключ рабочей области Log Analytics. Идентификатор рабочей области указан в качестве значения для **workspaceId** в разделе выходных данных **logAnalytics**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Первичный ключ — это значение для **secret** в разделе выходных данных. 
+Для выполнения инструкций из этого раздела вам потребуется идентификатор и первичный ключ рабочей области Log Analytics. Идентификатор рабочей области указан в качестве значения для **workspaceId** в разделе выходных данных **logAnalytics**, приведенном на шаге 4 в разделе о *развертывании ресурсов Azure*. Первичный ключ — это значение для **secret** в разделе выходных данных.
 
 1. Чтобы настроить ведение журнала log4j, откройте `\azure\AzureDataBricksJob\src\main\resources\com\microsoft\pnp\azuredatabricksjob\log4j.properties`. Измените следующие два значения:
     ```shell
@@ -515,9 +518,9 @@ SparkMetric_CL
 
 ### <a name="build-the-jar-files-for-the-databricks-job-and-databricks-monitoring"></a>Создание JAR-файлов для задания и мониторинга Databricks
 
-1. Используйте интегрированную среду разработки Java для импорта файла проекта Maven с именем **pom.xml**, расположенного в корневом каталоге. 
+1. Используйте интегрированную среду разработки Java для импорта файла проекта Maven с именем **pom.xml**, расположенного в корневом каталоге.
 
-2. Выполните чистую сборку. Результатом этой сборки будет файл **azure-databricks-job-1.0-SNAPSHOT.jar** и **azure-databricks-monitoring-0.9.jar**. 
+2. Выполните чистую сборку. Результатом этой сборки будет файл **azure-databricks-job-1.0-SNAPSHOT.jar** и **azure-databricks-monitoring-0.9.jar**.
 
 ### <a name="configure-custom-logging-for-the-databricks-job"></a>Настройка пользовательской системы ведения журналов для задания Databricks
 
@@ -532,13 +535,13 @@ SparkMetric_CL
     ```
 
 3. Если вы до этого не определились с именем для кластера Databricks, выберите его сейчас. Вам потребуется указать его в приведенном ниже пути к кластеру в файловой системе Databricks. Скопируйте скрипт инициализации из `\azure\azure-databricks-monitoring\scripts\spark.metrics` в файловую систему Databricks. Для этого введите следующую команду:
-    ```
+    ```shell
     databricks fs cp --overwrite spark-metrics.sh dbfs:/databricks/init/<cluster-name>/spark-metrics.sh
     ```
 
 ### <a name="create-a-databricks-cluster"></a>Создание кластера Databricks
 
-1. В рабочей области Databricks щелкните Clusters (Кластеры) и выберите Create cluster (Создать кластер). Введите имя кластера, созданного на шаге 3 в предыдущем разделе о **настройке пользовательской системы ведения журналов для задания Databricks**. 
+1. В рабочей области Databricks щелкните Clusters (Кластеры) и выберите Create cluster (Создать кластер). Введите имя кластера, созданного на шаге 3 в предыдущем разделе о **настройке пользовательской системы ведения журналов для задания Databricks**.
 
 2. Выберите **стандартный** режим кластера.
 
@@ -552,9 +555,9 @@ SparkMetric_CL
 
 7. Для параметра **Min Workers** (Минимальное количество рабочих узлов) задайте значение **2**.
 
-8. Снимите флажок **Enable autoscaling** (Включить автомасштабирование). 
+8. Снимите флажок **Enable autoscaling** (Включить автомасштабирование).
 
-9. В диалоговом окне **Auto Termination** (Автоматическое завершение работы) щелкните **Init Scripts** (Скрипты инициализации). 
+9. В диалоговом окне **Auto Termination** (Автоматическое завершение работы) щелкните **Init Scripts** (Скрипты инициализации).
 
 10. Введите **dbfs:/databricks/init/<cluster-name>/spark-metrics.sh** и вместо <cluster-name> укажите имя кластера, созданного на шаге 1.
 
@@ -576,50 +579,51 @@ SparkMetric_CL
 
 6. В поле аргументов введите следующий код:
     ```shell
-    -n jar:file:/dbfs/azure-databricks-jobs/ZillowNeighborhoods-NY.zip!/ZillowNeighborhoods-NY.shp --taxi-ride-consumer-group taxi-ride-eh-cg --taxi-fare-consumer-group taxi-fare-eh-cg --window-interval "1 minute" --cassandra-host <Cosmos DB Cassandra host name from above> 
-    ``` 
+    -n jar:file:/dbfs/azure-databricks-jobs/ZillowNeighborhoods-NY.zip!/ZillowNeighborhoods-NY.shp --taxi-ride-consumer-group taxi-ride-eh-cg --taxi-fare-consumer-group taxi-fare-eh-cg --window-interval "1 minute" --cassandra-host <Cosmos DB Cassandra host name from above>
+    ```
 
 7. Установите зависимые библиотеки, выполнив следующие действия:
-    
+
     1. В пользовательском интерфейсе Databricks нажмите кнопку **Home** (Главная).
-    
+
     2. В раскрывающемся списке **Users** (Пользователи) щелкните имя учетной записи пользователя, чтобы открыть настройки ее рабочей области.
-    
+
     3. Щелкните стрелку раскрывающегося списка рядом с именем вашей учетной записи, выберите **Create** (Создать) и **Library** (Библиотека), чтобы открыть диалоговое окно **New Library** (Новая библиотека).
-    
+
     4. В раскрывающемся элементе управления **Source** (Источник) выберите **Maven Coordinate** (Координаты Maven).
-    
-    5. В разделе **Install Maven Artifacts** (Установка артефактов Maven) введите `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.5` в текстовое поле **Coordinate** (Координаты). 
-    
+
+    5. В разделе **Install Maven Artifacts** (Установка артефактов Maven) введите `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.5` в текстовое поле **Coordinate** (Координаты).
+
     6. Щелкните **Create Library** (Создать библиотеку), чтобы открыть окно **артефактов**.
-    
+
     7. В разделе **Status on running clusters** (Состояние работающих кластеров) установите флажок **Attach automatically to all clusters** (Автоматически подключать ко всем кластерам).
-    
+
     8. Повторите шаги 1–7 для координат Maven `com.microsoft.azure.cosmosdb:azure-cosmos-cassandra-spark-helper:1.0.0`.
-    
+
     9. Повторите шаги 1–6 для координат Maven `org.geotools:gt-shapefile:19.2`.
-    
+
     10. Щелкните **Advanced Options** (Дополнительные параметры).
-    
-    11. Введите `http://download.osgeo.org/webdav/geotools/` в текстовое поле для **репозитория**. 
-    
+
+    11. Введите `http://download.osgeo.org/webdav/geotools/` в текстовое поле для **репозитория**.
+
     12. Щелкните **Create Library** (Создать библиотеку), чтобы открыть окно **артефактов**. 
-    
+
     13. В разделе **Status on running clusters** (Состояние работающих кластеров) установите флажок **Attach automatically to all clusters** (Автоматически подключать ко всем кластерам).
 
 8. Добавьте зависимые библиотеки, добавленные на шаге 7, в задание, которое вы создали в конце шага 6:
+
     1. В рабочей области Azure Databricks выберите **Jobs** (Задания).
 
-    2. Щелкните имя задания, созданного на шаге 2 в разделе о **создании задания Databricks**. 
-    
-    3. В разделе **зависимых библиотек** щелкните **Add** (Добавить), чтобы открыть диалоговое окно **Add Dependent Library** (Добавление зависимой библиотеки). 
-    
+    2. Щелкните имя задания, созданного на шаге 2 в разделе о **создании задания Databricks**.
+
+    3. В разделе **зависимых библиотек** щелкните **Add** (Добавить), чтобы открыть диалоговое окно **Add Dependent Library** (Добавление зависимой библиотеки).
+
     4. В разделе **Library From** (Источник библиотеки) выберите **Workspace** (Рабочая область).
-    
-    5. Щелкните **Users** (Пользователи), выберите свое имя пользователя и щелкните `azure-eventhubs-spark_2.11:2.3.5`. 
-    
+
+    5. Щелкните **Users** (Пользователи), выберите свое имя пользователя и щелкните `azure-eventhubs-spark_2.11:2.3.5`.
+
     6. Последовательно выберите **ОК**.
-    
+
     7. Повторите шаги 1–6 для `spark-cassandra-connector_2.11:2.3.1` и `gt-shapefile:19.2`.
 
 9. Рядом с полем **Cluster:** (Кластер) щелкните **Edit** (Изменить). Откроется диалоговое окно **настройки кластера**. В раскрывающемся списке **Cluster Type** (Тип кластера) выберите **Existing Cluster** (Существующий кластер). В раскрывающемся списке **Select Cluster** (Выбрать кластер) выберите кластер, созданный при работе с разделом **Создание кластера Databricks**. Щелкните **Confirm** (Подтвердить).
@@ -672,4 +676,4 @@ Created 30000 records for TaxiFare
 
 Чтобы проверить, правильно ли выполняется задание Databricks, откройте портал Azure и перейдите к базе данных Cosmos DB. Откройте колонку **Обозреватель данных** и просмотрите данные в таблице **taxi records**. 
 
-[1] <span id="note1">Брайан Донован (Brian Donovan); Дэн Уорк (Dan Work), 2016 г.: New York City Taxi Trip Data (2010–2013) (Данные о поездках в такси в Нью-Йорке). Иллинойсский университет в Урбане-Шампейне. https://doi.org/10.13012/J8PN93H8
+[1] <span id="note1">Donovan, Brian; Work, Dan (2016): New York City Taxi Trip Data (2010-2013) (Брайан Донован, Дэн Уорк, 2016. Данные о поездках в такси по Нью-Йорку за 2010–2013 гг.). Иллинойсский университет в Урбане-Шампейне. https://doi.org/10.13012/J8PN93H8
