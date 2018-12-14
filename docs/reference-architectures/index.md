@@ -4,12 +4,12 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: efac05ff95431f9551c6fb76939dbb91cfa01d1d
-ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
+ms.openlocfilehash: 6a86256c504737b5f747a690d27fdf178ac8b4fe
+ms.sourcegitcommit: 8d951fd7e9534054b160be48a1881ae0857561ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53307023"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329387"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
@@ -683,6 +683,25 @@ ms.locfileid: "53307023"
                     <div class="cardText">
                         <h3>Высокодоступное веб-приложение</h3>
                         <p>Запуск веб-приложения службы приложений в нескольких регионах для достижения высокого уровня доступности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./app-service-web-app/app-monitoring.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/app-service.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Мониторинг веб-приложений в Azure</h3>
+                        <p>Мониторинг веб-приложения, размещенного в Службе приложений Azure.</p>
                     </div>
                 </div>
             </div>
