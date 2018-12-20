@@ -3,12 +3,13 @@ title: Прием и обработка данных Интернета веще
 description: Использование Интернета вещей для получения и обработки данных об автомобилях в реальном времени.
 author: msdpalam
 ms.date: 09/12/2018
-ms.openlocfilehash: 6562e3277e6b6eb38993132284ad43542ef4c0d3
-ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
+ms.custom: fasttrack
+ms.openlocfilehash: 8c123403f21ce96549fe075675ec2275b79493a3
+ms.sourcegitcommit: a0e8d11543751d681953717f6e78173e597ae207
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51610742"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53004873"
 ---
 # <a name="ingestion-and-processing-of-real-time-automotive-iot-data"></a>Прием и обработка данных Интернета вещей в реальном времени в автомобильной промышленности
 
@@ -64,7 +65,7 @@ ms.locfileid: "51610742"
 Технологии, используемые в данной архитектуре, были выбраны в зависимости от масштаба, необходимого для обработки событий, служб Соглашения об уровне обслуживания, управления затратами и простоты управления компонентами.
 * Управляемый [HDInsight Kafka](/azure/hdinsight/kafka/apache-kafka-introduction) поставляется с 99,9 % Соглашения об уровне обслуживания, интегрированного в Управляемые диски Azure
 * Оптимизация [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks) была выполнена с нуля. Это позволяет повысить производительность и эффективность затрат в облаке. Среда выполнения Databricks добавляет несколько ключевых возможностей для рабочих нагрузок Apache Spark, которые могут повысить производительность и снизить затраты от 10 до 100 раз при работе на Azure, в том числе:
-* Azure Databricks тесно интегрируется с базами данных и хранилищами Azure: [Хранилище данных SQL Azure](/azure/sql-data-warehouse), [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db), [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage) и [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs).
+* Azure Databricks тесно интегрируется с такими базами данных и хранилищами Azure: [Хранилище данных SQL Azure](/azure/sql-data-warehouse), [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db), [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage) и [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs).
     * Использование автомасштабирования и автоматического завершения для кластеров Spark позволяет сократить затраты.
     * Оптимизация производительности, включая кэширование, индексирование и расширенную оптимизацию запросов, которая может повысить производительность от 10 до 100 раз по сравнению с традиционными развертываниями Apache Spark в облачных или локальных средах.
     * Интеграция с Azure Active Directory позволяет выполнить комплексные решения на основе Azure с помощью Azure Databricks.

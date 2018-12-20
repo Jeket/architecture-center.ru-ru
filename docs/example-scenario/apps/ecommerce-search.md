@@ -3,12 +3,13 @@ title: Интеллектуальная поисковая система для
 description: Предоставление первоклассных возможностей поиска в приложении электронной коммерции.
 author: jelledruyts
 ms.date: 09/14/2018
-ms.openlocfilehash: a57477c26665b4560671550f6fdd81c2d9505e71
-ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
+ms.custom: fasttrack
+ms.openlocfilehash: 5eabdb94b9345e73b21526681e0dbd6ae859d7be
+ms.sourcegitcommit: a0e8d11543751d681953717f6e78173e597ae207
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51610674"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53004889"
 ---
 # <a name="intelligent-product-search-engine-for-e-commerce"></a>Интеллектуальная поисковая система для товаров, предназначенная для решений электронной коммерции
 
@@ -98,9 +99,9 @@ ms.locfileid: "51610674"
 
 Здесь предоставлено три примера профиля затрат в зависимости от объема трафика, который планируется принимать.
 
-* [Малый][small-pricing]. В этом профиле используется одно веб-приложение для размещения веб-сайта `Standard S1`, свободный уровень службы Azure Bot, одна единица службы "Поиск Azure" `Basic` и База данных SQL `Standard S2`.
-* [Средний][medium-pricing]. Здесь увеличивается веб-приложение до двух экземпляров уровня `Standard S3`, обновляя службу поиска до уровня `Standard S1` и используя Базу данных SQL `Standard S6`.
-* [Большой][large-pricing]. В самом большом профиле используется четыре экземпляра веб-приложения `Premium P2V2`, обновление службы Azure Bot до уровня `Standard S1` (с 1.000.000 сообщениями в каналах "премиум"), две единицы службы "Поиск Azure" `Standard S3` и База данных SQL `Premium P6`.
+* [Малый][small-pricing]. В этом профиле используется одно веб-приложение `Standard S1` для размещения веб-сайта, служба Azure Bot уровня "Бесплатный", одна единица службы "Поиск Azure" `Basic` и База данных SQL `Standard S2`.
+* [Средний][medium-pricing]. Здесь веб-приложение увеличивается до двух экземпляров уровня `Standard S3`, уровень Службы поиска повышается до `Standard S1` и используется База данных SQL `Standard S6`.
+* [Большой][large-pricing]. В самом большом профиле используется четыре экземпляра веб-приложения `Premium P2V2`, служба Azure Bot с обновлением до уровня `Standard S1` (с 1 000 000 сообщениями в каналах уровня "Премиум"), две единицы службы "Поиск Azure" `Standard S3` и База данных SQL `Premium P6`.
 
 ## <a name="related-resources"></a>Связанные ресурсы
 

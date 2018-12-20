@@ -1,46 +1,45 @@
 ---
 title: Расширение доменных служб Active Directory в Azure
+titleSuffix: Azure Reference Architectures
 description: Расширьте локальный домен Active Directory в Azure
 author: telmosampaio
 ms.date: 05/02/2018
-pnp.series.title: Identity management
-pnp.series.prev: azure-ad
-pnp.series.next: adds-forest
-ms.openlocfilehash: ff3ef7565b692ad63b7ff779497df0f85d3bca3a
-ms.sourcegitcommit: 1287d635289b1c49e94f839b537b4944df85111d
+ms.custom: seodec18
+ms.openlocfilehash: 69ce95fcf74579f6446cf99dad9ed53ced31fde7
+ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52332312"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53120413"
 ---
 # <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
 
-На схеме эталонной архитектуры представлены способы расширения среды Active Directory в Azure для предоставления распределенных служб аутентификации с помощью доменных служб Active Directory (AD DS). [**Разверните это решение**.](#deploy-the-solution)
+На схеме эталонной архитектуры представлены способы расширения среды Active Directory в Azure для предоставления распределенных служб аутентификации с помощью доменных служб Active Directory (AD DS). [**Разверните это решение**](#deploy-the-solution).
 
-[![0]][0] 
+![Защищенная гибридная сетевая архитектура с Active Directory](./images/adds-extend-domain.png)
 
 *Скачайте [файл Visio][visio-download] этой архитектуры.*
 
-С помощью доменных служб Active Directory вы можете выполнить аутентификацию пользователя, компьютера, приложения или других идентификаторов, которые включены в домен безопасности. Они могут быть размещены локально. Если же приложение размещено частично локально и частично в Azure, эффективней выполнить репликацию этой функциональности в Azure. Это позволяет сократить задержки, вызванные отправкой запросов на аутентификацию и локальную авторизацию из облака обратно в доменные службы Active Directory, запущенные в локальной среде. 
+С помощью доменных служб Active Directory вы можете выполнить аутентификацию пользователя, компьютера, приложения или других идентификаторов, которые включены в домен безопасности. Они могут быть размещены локально. Если же приложение размещено частично локально и частично в Azure, эффективней выполнить репликацию этой функциональности в Azure. Это позволяет сократить задержки, вызванные отправкой запросов на аутентификацию и локальную авторизацию из облака обратно в доменные службы Active Directory, запущенные в локальной среде.
 
 Эта архитектура чаще всего используется при подключении к локальной и виртуальной сети Azure по VPN или ExpressRoute. Она также поддерживает двунаправленную репликацию. Это означает, что изменения могут быть выполнены локально или в облаке и оба источника будут согласованы. Типичные способы применения этой архитектуры включают гибридные приложения, в которых функции распределяются между локальными приложениями и Azure, а также приложения и службы, которые выполняют аутентификацию с помощью Active Directory.
 
-Дополнительные рекомендации см. в статье [Выбор решения для интеграции локальной среды Active Directory с Azure][considerations]. 
+Дополнительные рекомендации см. в статье [Выбор решения для интеграции локальной среды Active Directory с Azure][considerations].
 
-## <a name="architecture"></a>Архитектура 
+## <a name="architecture"></a>Архитектура
 
 Эта архитектура расширяет архитектуру, описанную в статье [DMZ between Azure and the Internet][implementing-a-secure-hybrid-network-architecture-with-internet-access] (Сеть периметра между Azure и Интернетом). Она содержит следующие компоненты.
 
-* **Локальная сеть.** Локальная сеть включает локальные серверы Active Directory, которые могут выполнять аутентификацию и авторизацию для компонентов, установленных локально.
-* **Серверы Active Directory**. Они являются контроллерами домена, которые реализуют службы каталогов (AD DS), работающие в облаке в качестве виртуальных машин. Эти серверы могут выполнить аутентификацию компонентов, работающих в виртуальной сети Azure.
-* **Подсеть Active Directory**. Серверы доменных служб Active Directory находятся в отдельной подсети. Правила группы безопасности сети (NSG) защищают серверы доменных служб Active Directory и предоставляют брандмауэр для трафика из неизвестных источников.
-* **Синхронизация шлюза Azure и Active Directory**. Шлюз Azure обеспечивает соединение между локальной и виртуальной сетями Azure. Это может быть [VPN-подключение][azure-vpn-gateway] или [Azure ExpressRoute][azure-expressroute]. Все запросы на синхронизацию между серверами Active Directory локально и в облаке передаются через шлюз. Определенные пользователем маршруты отвечают за маршрутизацию локального трафика, передаваемого в Azure. Трафик от серверов Active Directory не проходит через виртуальный модуль сети (NVAs), используемый в этом сценарии.
+- **Локальная сеть.** Локальная сеть включает локальные серверы Active Directory, которые могут выполнять аутентификацию и авторизацию для компонентов, установленных локально.
+- **Серверы Active Directory**. Они являются контроллерами домена, которые реализуют службы каталогов (AD DS), работающие в облаке в качестве виртуальных машин. Эти серверы могут выполнить аутентификацию компонентов, работающих в виртуальной сети Azure.
+- **Подсеть Active Directory**. Серверы доменных служб Active Directory находятся в отдельной подсети. Правила группы безопасности сети (NSG) защищают серверы доменных служб Active Directory и предоставляют брандмауэр для трафика из неизвестных источников.
+- **Синхронизация шлюза Azure и Active Directory**. Шлюз Azure обеспечивает соединение между локальной и виртуальной сетями Azure. Это может быть [VPN-подключение][azure-vpn-gateway] или [Azure ExpressRoute][azure-expressroute]. Все запросы на синхронизацию между серверами Active Directory локально и в облаке передаются через шлюз. Определенные пользователем маршруты отвечают за маршрутизацию локального трафика, передаваемого в Azure. Трафик от серверов Active Directory не проходит через виртуальный модуль сети (NVAs), используемый в этом сценарии.
 
-Дополнительные сведения см. в статье [DMZ between Azure and your on-premises datacenter][implementing-a-secure-hybrid-network-architecture] (Сеть периметра между Azure и локальным центром обработки данных). 
+Дополнительные сведения см. в статье [DMZ between Azure and your on-premises datacenter][implementing-a-secure-hybrid-network-architecture] (Сеть периметра между Azure и локальным центром обработки данных).
 
 ## <a name="recommendations"></a>Рекомендации
 
-Следующие рекомендации применимы для большинства ситуаций. Следуйте этим рекомендациям, если они не противоречат особым требованиям для вашего случая. 
+Следующие рекомендации применимы для большинства ситуаций. Следуйте этим рекомендациям, если они не противоречат особым требованиям для вашего случая.
 
 ### <a name="vm-recommendations"></a>Рекомендации по виртуальным машинам
 
@@ -56,10 +55,9 @@ ms.locfileid: "52332312"
 
 > [!NOTE]
 > Не настраивайте сетевой интерфейс виртуальной машины для доменных служб Active Directory с общедоступными IP-адресами. Дополнительные сведения см. в разделе [Вопросы безопасности][security-considerations] этой статьи.
-> 
-> 
+>
 
-Чтобы разрешить входящий трафик из локальной среды, для подсети NSG Active Directory необходимы правила. Подробные сведения о портах, используемых доменными службами Active Directory, см. в статье [Active Directory and Active Directory Domain Services Port Requirements][ad-ds-ports] (Требования доменных служб Active Directory и порта доменных служб Active Directory). Кроме того, убедитесь, что таблицы UDR не направляют трафик доменных служб Active Directory через виртуальные сетевые устройства, используемые в этой архитектуре. 
+Чтобы разрешить входящий трафик из локальной среды, для подсети NSG Active Directory необходимы правила. Подробные сведения о портах, используемых доменными службами Active Directory, см. в статье [Active Directory and Active Directory Domain Services Port Requirements][ad-ds-ports] (Требования доменных служб Active Directory и порта доменных служб Active Directory). Кроме того, убедитесь, что таблицы UDR не направляют трафик доменных служб Active Directory через виртуальные сетевые устройства, используемые в этой архитектуре.
 
 ### <a name="active-directory-site"></a>Веб-сайт Active Directory
 
@@ -75,7 +73,7 @@ ms.locfileid: "52332312"
 
 ### <a name="monitoring"></a>Мониторинг
 
-Отследите ресурсы контроллера домена виртуальных машин, а также службы AD DS и создайте план для быстрого устранения неполадок. Дополнительные сведения см. в документе [Monitoring Active Directory][monitoring_ad] (Мониторинг Active Directory). Вы также можете установить инструменты (например, [Microsoft Systems Center][microsoft_systems_center]) на сервере мониторинга (см. диаграмму архитектуры) для выполнения этих задач.  
+Отследите ресурсы контроллера домена виртуальных машин, а также службы AD DS и создайте план для быстрого устранения неполадок. Дополнительные сведения см. в документе [Monitoring Active Directory][monitoring_ad] (Мониторинг Active Directory). Вы также можете установить инструменты (например, [Microsoft Systems Center][microsoft_systems_center]) на сервере мониторинга (см. диаграмму архитектуры) для выполнения этих задач.
 
 ## <a name="scalability-considerations"></a>Вопросы масштабируемости
 
@@ -121,11 +119,11 @@ ms.locfileid: "52332312"
 
 ### <a name="deploy-the-azure-vnet"></a>Развертывание виртуальной сети Azure
 
-1. Откройте файл `azure.json` .  Найдите экземпляры `adminPassword` и `Password` и добавьте значения для паролей. 
+1. Откройте файл `azure.json` .  Найдите экземпляры `adminPassword` и `Password` и добавьте значения для паролей.
 
-2. В том же файле найдите экземпляры `sharedKey` и введите общие ключи для VPN-подключения. 
+2. В том же файле найдите экземпляры `sharedKey` и введите общие ключи для VPN-подключения.
 
-    ```bash
+    ```json
     "sharedKey": "",
     ```
 
@@ -149,16 +147,16 @@ ms.locfileid: "52332312"
 
 4. Вовремя сеанса удаленного рабочего стола откройте еще один сеанс удаленного рабочего стола к виртуальной машине `adds-vm1` с IP-адресом 10.0.4.4. Имя пользователя — `contoso\testuser`, а пароль — тот, который указан в файле параметров `azure.json`.
 
-5. Во время сеанса подключения к удаленному рабочему столу для `adds-vm1` перейдите к **диспетчеру сервера** и выберите команду **Добавить другие серверы для управления**. 
+5. Во время сеанса подключения к удаленному рабочему столу для `adds-vm1` перейдите к **диспетчеру сервера** и выберите команду **Добавить другие серверы для управления**.
 
 6. На вкладке **Active Directory** нажмите **Найти сейчас**. Вы должны увидеть список AD, доменных служб Active Directory и виртуальных машин с веб-подключением.
 
-   ![](./images/add-servers-dialog.png)
+   ![Снимок экрана c диалоговым окном "Добавление серверов"](./images/add-servers-dialog.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Изучите рекомендации по [созданию леса ресурсов доменных служб Active Directory][adds-resource-forest] в Azure.
-* Изучите рекомендации по [созданию инфраструктуры службы федерации Active Directory (AD FS)][adfs] в Azure.
+- Изучите рекомендации по [созданию леса ресурсов доменных служб Active Directory][adds-resource-forest] в Azure.
+- Изучите рекомендации по [созданию инфраструктуры службы федерации Active Directory (AD FS)][adfs] в Azure.
 
 <!-- links -->
 
@@ -178,7 +176,7 @@ ms.locfileid: "52332312"
 [capacity-planning-for-adds]: https://social.technet.microsoft.com/wiki/contents/articles/14355.capacity-planning-for-active-directory-domain-services.aspx
 [considerations]: ./considerations.md
 [GitHub]: https://github.com/mspnp/identity-reference-architectures/tree/master/adds-extend-domain
-[microsoft_systems_center]: https://www.microsoft.com/server-cloud/products/system-center-2016/
+[microsoft_systems_center]: https://www.microsoft.com/download/details.aspx?id=50013
 [monitoring_ad]: https://msdn.microsoft.com/library/bb727046.aspx
 [security-considerations]: #security-considerations
 [set-a-static-ip-address]: /azure/virtual-network/virtual-networks-static-private-ip-arm-pportal
@@ -186,4 +184,4 @@ ms.locfileid: "52332312"
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/identity-architectures.vsdx
 [vm-windows-sizes]: /azure/virtual-machines/virtual-machines-windows-sizes
 
-[0]: ./images/adds-extend-domain.png "Безопасная гибридная сетевая архитектура с Active Directory"
+[0]: ./images/adds-extend-domain.png "Защищенная гибридная сетевая архитектура с Active Directory"

@@ -3,12 +3,13 @@ title: Виртуальный рабочий стол Linux с использо�
 description: Создание среды VDI для настольных компьютеров Linux с помощью Citrix в Azure.
 author: miguelangelopereira
 ms.date: 09/12/2018
-ms.openlocfilehash: 383642b05926c5a09abf0b2f95fef10539d95aec
-ms.sourcegitcommit: 0a31fad9b68d54e2858314ca5fe6cba6c6b95ae4
+ms.custom: fasttrack
+ms.openlocfilehash: d48163638da05fa075814d3a255ca783610741f8
+ms.sourcegitcommit: a0e8d11543751d681953717f6e78173e597ae207
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51610657"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53004781"
 ---
 # <a name="linux-virtual-desktops-with-citrix"></a>Виртуальный рабочий стол Linux с использованием Citrix
 
@@ -44,12 +45,12 @@ ms.locfileid: "51610657"
 
 В рамках данного сценария используются следующие номера SKU:
 
-- Citrix ADC (NetScaler): 2 x D4sv3 с [NetScaler 12.0 VPX Standard Edition 200 MBPS PAYG image](https://azuremarketplace.microsoft.com/pt-br/marketplace/apps/citrix.netscalervpx-120?tab=PlansAndPrice)
-- Сервер лицензирования Citrix: 1 x D2s v3
-- Citrix VDA: 4 x D8s v3
-- Онлайн-магазин Citrix: 2 x D2s v3
-- Контроллер доставки Citrix: 2 x D2s v3
-- Контроллеры домена: 2 x D2sv3
+- Citrix ADC (NetScaler): 2 x D4sv3 с образом [NetScaler 12.0 VPX Standard Edition 200 MBPS PAYG](https://azuremarketplace.microsoft.com/pt-br/marketplace/apps/citrix.netscalervpx-120?tab=PlansAndPrice)
+- Сервер лицензирования Citrix: 1 x D2sv3
+- Citrix VDA: 4 x D8sv3
+- Citrix StoreFront: 2 x D2sv3
+- Контроллер доставки Citrix: 2 x D2sv3
+- Контроллеры доменов: 2 x D2sv3
 - Файловые серверы Azure: 2 x D2sv3
 
 > [!NOTE]

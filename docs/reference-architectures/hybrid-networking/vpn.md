@@ -4,12 +4,12 @@ titleSuffix: Azure Reference Architectures
 description: Реализуйте архитектуру защищенной сети типа "сеть — сеть", которая охватывает виртуальную сеть Azure и локальную сеть, подключенные с помощью VPN.
 author: RohitSharma-pnp
 ms.date: 10/22/2018
-ms.openlocfilehash: a1bb2e250cb261e1a56abfb58b099fd078c068e5
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 5d3c8eeeb04398c29a25e90956888d9f79572e4f
+ms.sourcegitcommit: 8d951fd7e9534054b160be48a1881ae0857561ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120447"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53329404"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-a-vpn-gateway"></a>Подключение локальной сети к Azure с помощью VPN-шлюза
 
@@ -149,273 +149,6 @@ ms.locfileid: "53120447"
 > Принудительное туннелирование может повлиять на возможность подключения к службам Azure (например, к службе хранилища) и к службе Windows License Manager.
 >
 
-## <a name="troubleshooting"></a>Устранение неполадок
-
-Общие сведения об устранении неполадок, связанных с VPN, см. [здесь][troubleshooting-vpn-errors].
-
-Следующие рекомендации помогут определить, правильно ли работает ваше локальное VPN-устройство.
-
-- **Проверьте все файлы журнала, созданные VPN-устройством, на наличие ошибок или сбоев.**
-
-    Так вы сможете определить, правильно ли функционирует VPN-устройство. Расположение этих сведений будет различаться в зависимости от устройства. Например, при использовании RRAS на базе Windows Server 2012 для отображения сведений об ошибке события для службы RRAS можно использовать следующую команду PowerShell:
-
-    ```PowerShell
-    Get-EventLog -LogName System -EntryType Error -Source RemoteAccess | Format-List -Property *
-    ```
-
-    В свойстве *Message* каждой записи содержится описание ошибки. Несколько распространенных примеров:
-
-        - Inability to connect, possibly due to an incorrect IP address specified for the Azure VPN gateway in the RRAS VPN network interface configuration.
-
-        ```console
-        EventID            : 20111
-        MachineName        : on-prem-vm
-        Data               : {41, 3, 0, 0}
-        Index              : 14231
-        Category           : (0)
-        CategoryNumber     : 0
-        EntryType          : Error
-        Message            : RoutingDomainID- {00000000-0000-0000-0000-000000000000}: A demand dial connection to the remote
-                             interface AzureGateway on port VPN2-4 was successfully initiated but failed to complete
-                             successfully because of the  following error: The network connection between your computer and
-                             the VPN server could not be established because the remote server is not responding. This could
-                             be because one of the network devices (for example, firewalls, NAT, routers, and so on) between your computer
-                             and the remote server is not configured to allow VPN connections. Please contact your
-                             Administrator or your service provider to determine which device may be causing the problem.
-        Source             : RemoteAccess
-        ReplacementStrings : {{00000000-0000-0000-0000-000000000000}, AzureGateway, VPN2-4, The network connection between
-                             your computer and the VPN server could not be established because the remote server is not
-                             responding. This could be because one of the network devices (for example, firewalls, NAT, routers, and so on)
-                             between your computer and the remote server is not configured to allow VPN connections. Please
-                             contact your Administrator or your service provider to determine which device may be causing the
-                             problem.}
-        InstanceId         : 20111
-        TimeGenerated      : 3/18/2016 1:26:02 PM
-        TimeWritten        : 3/18/2016 1:26:02 PM
-        UserName           :
-        Site               :
-        Container          :
-        ```
-
-        - The wrong shared key being specified in the RRAS VPN network interface configuration.
-
-        ```console
-        EventID            : 20111
-        MachineName        : on-prem-vm
-        Data               : {233, 53, 0, 0}
-        Index              : 14245
-        Category           : (0)
-        CategoryNumber     : 0
-        EntryType          : Error
-        Message            : RoutingDomainID- {00000000-0000-0000-0000-000000000000}: A demand dial connection to the remote
-                             interface AzureGateway on port VPN2-4 was successfully initiated but failed to complete
-                             successfully because of the  following error: Internet key exchange (IKE) authentication credentials are unacceptable.
-
-        Source             : RemoteAccess
-        ReplacementStrings : {{00000000-0000-0000-0000-000000000000}, AzureGateway, VPN2-4, IKE authentication credentials are
-                             unacceptable.
-                             }
-        InstanceId         : 20111
-        TimeGenerated      : 3/18/2016 1:34:22 PM
-        TimeWritten        : 3/18/2016 1:34:22 PM
-        UserName           :
-        Site               :
-        Container          :
-        ```
-
-    Вы также можете получить сведения из журнала событий о попытках установить подключение через службу RRAS с помощью следующей команды PowerShell:
-
-    ```powershell
-    Get-EventLog -LogName Application -Source RasClient | Format-List -Property *
-    ```
-
-    В случае сбоя подключения этот журнал будет содержать ошибки, которые выглядят следующим образом:
-
-    ```console
-    EventID            : 20227
-    MachineName        : on-prem-vm
-    Data               : {}
-    Index              : 4203
-    Category           : (0)
-    CategoryNumber     : 0
-    EntryType          : Error
-    Message            : CoId={B4000371-A67F-452F-AA4C-3125AA9CFC78}: The user SYSTEM dialed a connection named
-                         AzureGateway that has failed. The error code returned on failure is 809.
-    Source             : RasClient
-    ReplacementStrings : {{B4000371-A67F-452F-AA4C-3125AA9CFC78}, SYSTEM, AzureGateway, 809}
-    InstanceId         : 20227
-    TimeGenerated      : 3/18/2016 1:29:21 PM
-    TimeWritten        : 3/18/2016 1:29:21 PM
-    UserName           :
-    Site               :
-    Container          :
-    ```
-
-- **Проверьте подключение и маршрутизацию через VPN-шлюз.**
-
-    VPN-устройство может неправильно осуществлять маршрутизацию трафика через VPN-шлюз Azure. Используйте [PsPing][psping] для проверки подключения и маршрутизации через VPN-шлюз. Например, чтобы проверить соединение с локального компьютера на веб-сервер, расположенный в виртуальной сети, выполните следующую команду (заменив `<<web-server-address>>` адресом веб-сервера):
-
-    ```console
-    PsPing -t <<web-server-address>>:80
-    ```
-
-    Если локальный компьютер может осуществлять маршрутизацию трафика на веб-сервер, отобразится результат, аналогичный приведенному ниже:
-
-    ```console
-    D:\PSTools>psping -t 10.20.0.5:80
-
-    PsPing v2.01 - PsPing - ping, latency, bandwidth measurement utility
-    Copyright (C) 2012-2014 Mark Russinovich
-    Sysinternals - www.sysinternals.com
-
-    TCP connect to 10.20.0.5:80:
-    Infinite iterations (warmup 1) connecting test:
-    Connecting to 10.20.0.5:80 (warmup): 6.21ms
-    Connecting to 10.20.0.5:80: 3.79ms
-    Connecting to 10.20.0.5:80: 3.44ms
-    Connecting to 10.20.0.5:80: 4.81ms
-
-      Sent = 3, Received = 3, Lost = 0 (0% loss),
-      Minimum = 3.44ms, Maximum = 4.81ms, Average = 4.01ms
-    ```
-
-    Если локальный компьютер не может связаться с указанным адресом назначения, появятся такие сообщения:
-
-    ```console
-    D:\PSTools>psping -t 10.20.1.6:80
-
-    PsPing v2.01 - PsPing - ping, latency, bandwidth measurement utility
-    Copyright (C) 2012-2014 Mark Russinovich
-    Sysinternals - www.sysinternals.com
-
-    TCP connect to 10.20.1.6:80:
-    Infinite iterations (warmup 1) connecting test:
-    Connecting to 10.20.1.6:80 (warmup): This operation returned because the timeout period expired.
-    Connecting to 10.20.1.6:80: This operation returned because the timeout period expired.
-    Connecting to 10.20.1.6:80: This operation returned because the timeout period expired.
-    Connecting to 10.20.1.6:80: This operation returned because the timeout period expired.
-    Connecting to 10.20.1.6:80:
-      Sent = 3, Received = 0, Lost = 3 (100% loss),
-      Minimum = 0.00ms, Maximum = 0.00ms, Average = 0.00ms
-    ```
-
-- **Убедитесь, что локальный брандмауэр разрешает передачу VPN-трафика и что открыты соответствующие порты.**
-
-- **Убедитесь, что локальное VPN-устройство использует метод шифрования, [совместимый с VPN-шлюзом Azure][vpn-appliance]**. Для маршрутизации на основе политик VPN-шлюз Azure поддерживает алгоритмы шифрования AES256, AES128 и 3DES. Шлюзы на основе маршрута поддерживают AES256 и 3DES.
-
-Для определения проблемы с VPN-шлюзом Azure полезны следующие рекомендации:
-
-- **Изучите [журналы диагностики VPN-шлюза Azure][gateway-diagnostic-logs] на наличие потенциальных проблем.**
-
-- **Убедитесь, что VPN-шлюз Azure и локальное VPN-устройство настроены с использованием одного и того же общего ключа проверки подлинности.**
-
-    Вы можете просмотреть общий ключ, сохраненный VPN-шлюзом Azure, используя следующую команду Azure CLI:
-
-    ```azurecli
-    azure network vpn-connection shared-key show <<resource-group>> <<vpn-connection-name>>
-    ```
-
-    Для просмотра общего ключа, настроенного для этого устройства, используйте команду, подходящую для вашего локального VPN-устройства.
-
-    Убедитесь, что подсеть *GatewaySubnet*, в которой размещен VPN-шлюз Azure, не связана с NSG.
-
-    Сведения о подсети можно просмотреть, используя следующую команду Azure CLI:
-
-    ```azurecli
-    azure network vnet subnet show -g <<resource-group>> -e <<vnet-name>> -n GatewaySubnet
-    ```
-
-    Убедитесь, что нет поля данных с именем *Идентификатор группы безопасности сети*. В следующем примере показаны результаты для экземпляра подсети *GatewaySubnet* с назначенной NSG (*VPN-Gateway-Group*). Если для этой NSG определены какие-либо правила, шлюз может неправильно работать.
-
-    ```console
-    C:\>azure network vnet subnet show -g profx-prod-rg -e profx-vnet -n GatewaySubnet
-        info:    Executing command network vnet subnet show
-        + Looking up virtual network "profx-vnet"
-        + Looking up the subnet "GatewaySubnet"
-        data:    Id                              : /subscriptions/########-####-####-####-############/resourceGroups/profx-prod-rg/providers/Microsoft.Network/virtualNetworks/profx-vnet/subnets/GatewaySubnet
-        data:    Name                            : GatewaySubnet
-        data:    Provisioning state              : Succeeded
-        data:    Address prefix                  : 10.20.3.0/27
-        data:    Network Security Group id       : /subscriptions/########-####-####-####-############/resourceGroups/profx-prod-rg/providers/Microsoft.Network/networkSecurityGroups/VPN-Gateway-Group
-        info:    network vnet subnet show command OK
-    ```
-
-- **Убедитесь, что виртуальные машины в виртуальной сети Azure настроены для разрешения передачи трафика, поступающего из виртуальной сети.**
-
-    Проверьте все правила NSG, связанные с подсетями, содержащими эти виртуальные машины. Все правила NSG можно просмотреть, используя следующую команду Azure CLI:
-
-    ```azurecli
-    azure network nsg show -g <<resource-group>> -n <<nsg-name>>
-    ```
-
-- **Убедитесь, что подключен VPN-шлюз Azure.**
-
-    Чтобы проверить текущее состояние VPN-подключения Azure, можно использовать следующую команду Azure PowerShell. Параметр `<<connection-name>>` представляет собой имя VPN-подключения Azure, которое связывает шлюз виртуальной сети с локальным.
-
-    ```powershell
-    Get-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name>> - ResourceGroupName <<resource-group>>
-    ```
-
-    В следующем фрагменте кода показаны результаты для подключенного (первый пример) и отключенного шлюза (второй пример):
-
-    ```powershell
-    PS C:\> Get-AzureRmVirtualNetworkGatewayConnection -Name profx-gateway-connection -ResourceGroupName profx-prod-rg
-
-    AuthorizationKey           :
-    VirtualNetworkGateway1     : Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
-    VirtualNetworkGateway2     :
-    LocalNetworkGateway2       : Microsoft.Azure.Commands.Network.Models.PSLocalNetworkGateway
-    Peer                       :
-    ConnectionType             : IPsec
-    RoutingWeight              : 0
-    SharedKey                  : ####################################
-    ConnectionStatus           : Connected
-    EgressBytesTransferred     : 55254803
-    IngressBytesTransferred    : 32227221
-    ProvisioningState          : Succeeded
-    ...
-    ```
-
-    ```powershell
-    PS C:\> Get-AzureRmVirtualNetworkGatewayConnection -Name profx-gateway-connection2 -ResourceGroupName profx-prod-rg
-
-    AuthorizationKey           :
-    VirtualNetworkGateway1     : Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
-    VirtualNetworkGateway2     :
-    LocalNetworkGateway2       : Microsoft.Azure.Commands.Network.Models.PSLocalNetworkGateway
-    Peer                       :
-    ConnectionType             : IPsec
-    RoutingWeight              : 0
-    SharedKey                  : ####################################
-    ConnectionStatus           : NotConnected
-    EgressBytesTransferred     : 0
-    IngressBytesTransferred    : 0
-    ProvisioningState          : Succeeded
-    ...
-    ```
-
-Следующие рекомендации помогут определить, имеются ли проблемы с конфигурацией виртуальной машины узла, использованием пропускной способности сети или производительностью приложения:
-
-- **Проверьте правильность настройки брандмауэра в гостевой ОС на виртуальных машинах Azure в подсети, чтобы разрешить передачу трафика из локальных диапазонов IP-адресов.**
-
-- **Убедитесь, что объем трафика не приближается к лимиту пропускной способности VPN-шлюза Azure.**
-
-    Это можно проверить по локальному запущенному VPN-устройству. Например, при использовании RRAS на базе Windows Server 2012 можно использовать системный монитор для отслеживания объема данных, полученных и переданных по VPN-подключению. С помощью объекта *Всего RAS* выберите счетчики *Получено байт/сек* и *Передано байт/сек*:
-
-    ![Счетчики производительности для мониторинга трафика VPN](../_images/guidance-hybrid-network-vpn/RRAS-perf-counters.png)
-
-    Следует сравнить результаты с пропускной способностью VPN-шлюза (от 100 Мбит/с для SKU "Базовый" или "Стандартный" до 1,25 Гбит/с для SKU VpnGw3):
-
-    ![Пример графика производительности сети VPN](../_images/guidance-hybrid-network-vpn/RRAS-perf-graph.png)
-
-- **Убедитесь, что вы развернули правильное количество виртуальных машин нужного размера в соответствии с загруженностью приложения.**
-
-    Определите, работает ли какая-либо из виртуальных машин в виртуальной сети Azure медленно. Если это так, то они могут быть перегружены, возможно, их слишком мало для такой загрузки или подсистемы балансировки нагрузки настроены неправильно. Чтобы определить это, [соберите и проанализируйте диагностические сведения][azure-vm-diagnostics]. Вы можете проверить результаты, используя портал Azure. Кроме того, вы можете воспользоваться различными сторонними средствами, чтобы получить подробное представление о производительности.
-
-- **Убедитесь, что приложение эффективно использует облачные ресурсы.**
-
-    Выполните инструментирование кода приложений, выполняемых на каждой виртуальной машине, чтобы определить, используют ли приложения ресурсы максимально эффективно. Используйте такое средство, как [Application Insights][application-insights].
-
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
 **Предварительные требования**. Вам необходима настроенная локальная инфраструктура с подходящим сетевым устройством.
@@ -435,20 +168,15 @@ ms.locfileid: "53120447"
 
 <!-- markdownlint-enable MD033 -->
 
+См. инструкции по [устранению неполадок при гибридном VPN-подключении](./troubleshoot-vpn.md).
+
 <!-- links -->
 
 [adds-extend-domain]: ../identity/adds-extend-domain.md
-[expressroute]: ../hybrid-networking/expressroute.md
 [windows-vm-ra]: ../virtual-machines-windows/index.md
 [linux-vm-ra]: ../virtual-machines-linux/index.md
 
-[naming conventions]: /azure/guidance/guidance-naming-conventions
-
-[resource-manager-overview]: /azure/azure-resource-manager/resource-group-overview
-[arm-templates]: /azure/resource-group-authoring-templates
 [azure-cli]: /azure/virtual-machines-command-line-tools
-[azure-portal]: /azure/azure-portal/resource-group-portal
-[azure-powershell]: /azure/powershell-azure-resource-manager
 [azure-virtual-network]: /azure/virtual-network/virtual-networks-overview
 [vpn-appliance]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices
 [azure-vpn-gateway]: https://azure.microsoft.com/services/vpn-gateway/
@@ -458,26 +186,15 @@ ms.locfileid: "53120447"
 [vpn-gateway-multi-site]: /azure/vpn-gateway/vpn-gateway-multi-site
 [policy-based-routing]: https://en.wikipedia.org/wiki/Policy-based_routing
 [route-based-routing]: https://en.wikipedia.org/wiki/Static_routing
-[network-security-group]: /azure/virtual-network/virtual-networks-nsg
-[sla-for-vpn-gateway]: https://azure.microsoft.com/support/legal/sla/vpn-gateway/v1_2/
+[sla-for-vpn-gateway]: https://azure.microsoft.com/support/legal/sla/vpn-gateway/
 [additional-firewall-rules]: https://technet.microsoft.com/library/dn786406.aspx#firewall
 [nagios]: https://www.nagios.org/
-[azure-vpn-gateway-diagnostics]: https://blogs.technet.microsoft.com/keithmayer/2014/12/18/diagnose-azure-virtual-network-vpn-connectivity-issues-with-powershell/
-[ping]: https://technet.microsoft.com/library/ff961503.aspx
-[tracert]: https://technet.microsoft.com/library/ff961507.aspx
-[psping]: https://technet.microsoft.com/sysinternals/jj729731.aspx
-[nmap]: https://nmap.org
 [changing-SKUs]: https://azure.microsoft.com/blog/azure-virtual-network-gateway-improvements/
 [gateway-diagnostic-logs]: https://blogs.technet.microsoft.com/keithmayer/2016/10/12/step-by-step-capturing-azure-resource-manager-arm-vnet-gateway-diagnostic-logs/
-[troubleshooting-vpn-errors]: https://blogs.technet.microsoft.com/rrasblog/2009/08/12/troubleshooting-common-vpn-related-errors/
 [rras-logging]: https://www.petri.com/enable-diagnostic-logging-in-windows-server-2012-r2-routing-and-remote-access
-[create-on-prem-network]: https://technet.microsoft.com/library/dn786406.aspx#routing
-[azure-vm-diagnostics]: https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/
-[application-insights]: /azure/application-insights/app-insights-overview-usage
 [forced-tunneling]: https://azure.microsoft.com/documentation/articles/vpn-gateway-about-forced-tunneling/
 [vpn-appliances]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/hybrid-network-architectures.vsdx
 [vpn-appliance-ipsec]: /azure/vpn-gateway/vpn-gateway-about-vpn-devices#ipsec-parameters
-[virtualNetworkGateway-parameters]: https://github.com/mspnp/hybrid-networking/vpn/parameters/virtualNetworkGateway.parameters.json
 [azure-cli]: https://azure.microsoft.com/documentation/articles/xplat-cli-install/
 [CIDR]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing

@@ -3,12 +3,13 @@ title: Гибридное извлечение, преобразование и 
 description: Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SQL Server Integration Services (SSIS) и Фабрики данных Azure
 author: alhieng
 ms.date: 9/20/2018
-ms.openlocfilehash: c4c0cfd63ef1d6c620eb36e16622ad9ffb7b5d80
-ms.sourcegitcommit: 16bc6a91b6b9565ca3bcc72d6eb27c2c4ae935e4
+ms.custom: tsp-team
+ms.openlocfilehash: cc6c2bfe85dc0d1eb8ad29e044611f1e435810c3
+ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52579480"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53306795"
 ---
 # <a name="hybrid-etl-with-existing-on-premises-ssis-and-azure-data-factory"></a>Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SSIS и Фабрики данных Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "52579480"
 * загрузка журналов маршрутизаторов сети в базу данных для анализа;
 * подготовка данных о сотрудниках для аналитических отчетов;
 * загрузка данных о товарах и продажах в базу данных хранилища данных для прогнозирования продаж;
-* автоматизация загрузки, а также организация хранилищ операционных данных или баз данных хранилищ данных для финансовой и бухгалтерской отчетности.
+* автоматизация загрузки хранилищ операционных данных или баз данных хранилищ данных для финансовой и бухгалтерской отчетности.
 
 ## <a name="architecture"></a>Архитектура
 
