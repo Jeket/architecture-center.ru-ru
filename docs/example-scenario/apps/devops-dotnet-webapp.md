@@ -1,21 +1,22 @@
 ---
 title: Разработка конвейера CI/CD с использованием Azure DevOps
+titleSuffix: Azure Example Scenarios
 description: Создание и выпуск приложения .NET в службе "Веб-приложения Azure" с помощью Azure DevOps.
 author: christianreddington
 ms.date: 12/06/2018
 ms.custom:
 - fasttrack
 - seodec18
-ms.openlocfilehash: 23945493115522d099b6b26922f567653da0367e
-ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
+ms.openlocfilehash: ae2dddd7567c6b69f936b3b9c9339313389e3bf6
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53307288"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53643804"
 ---
 # <a name="design-a-cicd-pipeline-using-azure-devops"></a>Разработка конвейера CI/CD с использованием Azure DevOps
 
-В этом сценарии предоставляется руководство по архитектуре и разработке для создания конвейера непрерывной интеграции (CI) и непрерывного развертывания (CD).  В этом примере конвейер CI/CD развертывает двухуровневое веб-приложение .NET в Службе приложений Azure.
+В этом сценарии предоставляется руководство по архитектуре и разработке для создания конвейера непрерывной интеграции (CI) и непрерывного развертывания (CD). В этом примере конвейер CI/CD развертывает двухуровневое веб-приложение .NET в Службе приложений Azure.
 
 Переход на современные процессы CI/CD предоставляет множество преимуществ для создания, развертывания, тестирования и мониторинга приложения. С помощью Azure DevOps вместе с такими службами, как Служба приложений, организации могут уделить больше внимания разработке приложений, а не управлению поддержкой инфраструктуры.
 
@@ -84,7 +85,7 @@ ms.locfileid: "53307288"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-free-account], прежде чем начинать работу.
+- Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 - Вам нужно зарегистрироваться в организации Azure DevOps. Дополнительные сведения см. в [кратком руководстве по созданию собственной организации][vsts-account-create].
 
@@ -119,7 +120,6 @@ Azure DevOps оплачивается в расчете на каждого по
 [ansible]: /azure/ansible/
 [application-insights]: /azure/application-insights/app-insights-overview
 [app-service-reference-architecture]: ../../reference-architectures/app-service-web-app/basic-web-app.md
-[azure-free-account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
 [arm-templates]: /azure/azure-resource-manager/resource-group-overview#template-deployment
 [architecture]: ./media/architecture-devops-dotnet-webapp.svg
 [chef]: /azure/chef/
