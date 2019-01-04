@@ -4,12 +4,12 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: 6a86256c504737b5f747a690d27fdf178ac8b4fe
-ms.sourcegitcommit: 8d951fd7e9534054b160be48a1881ae0857561ef
+ms.openlocfilehash: 05f93aedc49cc71a35d8c0303af0342ed0ba47f7
+ms.sourcegitcommit: 032f402482762f4e674aeebbc122ad18dfba11eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53329387"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396425"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
@@ -21,6 +21,26 @@ ms.locfileid: "53329387"
 
 <!-- markdownlint-disable MD033 -->
 <ul  class="panelContent cardsF">
+<!-- Batch scoring of Python models -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/batch-scoring-python.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/python-powered-h.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Пакетная оценка моделей Python</h3>
+                        <p>Пакетная оценка нескольких моделей Python одновременно по расписанию с помощью Azure Batch AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
 <!-- Batch scoring for deep learning models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/batch-scoring-deep-learning.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
@@ -41,7 +61,7 @@ ms.locfileid: "53329387"
         </div>
     </a>
 </li>
-<!-- Batch scoring for deep learning models -->
+<!-- Real-time scoring of Python models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/realtime-scoring-python.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
@@ -61,7 +81,7 @@ ms.locfileid: "53329387"
         </div>
     </a>
 </li>
-<!-- Batch scoring for R models -->
+<!-- Real-time scoring of R models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/realtime-scoring-r.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
         <div class="cardSize" style="flex: 1 0 auto; display: flex;">
@@ -75,6 +95,26 @@ ms.locfileid: "53329387"
                     <div class="cardText">
                         <h3>Оценка в реальном времени с помощью моделей машинного обучения на языке R</h3>
                         <p>Реализуйте службу для прогнозирования в реальном времени на языке R с помощью Microsoft Machine Learning Server под управлением Службы Azure Kubernetes (AKS).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Real-time Recommendation API -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/real-time-recommendation.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/machine-learning.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>API рекомендаций в реальном времени</h3>
+                        <p>Обучение модели рекомендаций с помощью Azure Databricks и ее развертывание в качестве API с помощью службы "Машинное обучение Azure".</p>
                     </div>
                 </div>
             </div>
