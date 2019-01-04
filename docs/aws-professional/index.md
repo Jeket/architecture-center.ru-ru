@@ -5,12 +5,12 @@ keywords: AWS experts, Azure comparison, AWS comparison, difference between azur
 author: lbrader
 ms.date: 09/19/2018
 pnp.series.title: Azure for AWS Professionals
-ms.openlocfilehash: 0735d24b223a5e5cab6030774280c038c28f35e6
-ms.sourcegitcommit: dbbf914757b03cdee7a274204f9579fa63d7eed2
+ms.openlocfilehash: e6077349a285df56d234f3cc2a14dc0d0d33da55
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50916691"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54011673"
 ---
 # <a name="azure-for-aws-professionals"></a>Azure для специалистов AWS
 
@@ -63,7 +63,7 @@ ms.locfileid: "50916691"
 
 Термин "ресурс" в Azure определяется так же, как и в AWS. То есть это любой вычислительной экземпляр, объект хранилища, сетевое устройство или другая сущность, которую можно создать или настроить на платформе.
 
-Ресурсы Azure развертываются и управляются с помощью одной из двух моделей: [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) или более ранней [классической модели развертывания](/azure/azure-resource-manager/resource-manager-deployment-model) Azure.
+Ресурсы Azure развертываются и администрируются с помощью одной из двух моделей: [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) или более ранней [классической модели развертывания](/azure/azure-resource-manager/resource-manager-deployment-model).
 Все новые ресурсы создаются с помощью модели Resource Manager.
 
 ### <a name="resource-groups"></a>Группы ресурсов
@@ -174,7 +174,7 @@ Azure предоставляет несколько способов управ�
 
 -   [Размеры виртуальных машин в Azure (Linux)](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/).
 
-В отличие от посекундной тарификации AWS, использование виртуальных машин Azure по требованию оценивается в минутах.
+Как и в случае с посекундной тарификацией AWS, использование виртуальных машин Azure по требованию оценивается в секундах.
 
 #### <a name="ebs-and-azure-storage-for-vm-disks"></a>EBS и служба хранилища Azure для дисков виртуальных машин
 
@@ -217,11 +217,11 @@ Azure предоставляет несколько служб вычислен�
 
 -   [Создание виртуальной машины Linux в Azure с помощью портала](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-quick-create-portal/)
 
--   [Эталонная архитектура Azure: запуск виртуальной машины Linux в Azure](https://azure.microsoft.com/documentation/articles/guidance-compute-single-vm-linux/).
+-   [Эталонная архитектура Azure. Запуск виртуальной машины Linux в Azure](https://azure.microsoft.com/documentation/articles/guidance-compute-single-vm-linux/)
 
 -   [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](https://azure.microsoft.com/documentation/articles/app-service-web-nodejs-get-started/)
 
--   [Эталонная архитектура Azure: базовое веб-приложение](https://azure.microsoft.com/documentation/articles/guidance-web-apps-basic/).
+-   [Эталонная архитектура Azure. Базовое веб-приложение](https://azure.microsoft.com/documentation/articles/guidance-web-apps-basic/)
 
 -   [Создание первой функции Azure](https://azure.microsoft.com/documentation/articles/functions-create-first-azure-function/)
 
@@ -258,7 +258,7 @@ Azure предоставляет несколько служб вычислен�
 
 -   [Руководство по безопасности службы хранилища Azure](https://azure.microsoft.com/documentation/articles/storage-security-guide/)
 
--   [Шаблоны и рекомендации для сети доставки содержимого (CDN)](https://azure.microsoft.com/documentation/articles/best-practices-cdn/).
+-   [Шаблоны и рекомендации. Руководство по сети доставки содержимого (CDN)](https://azure.microsoft.com/documentation/articles/best-practices-cdn/)
 
 ### <a name="networking"></a>Сеть
 
@@ -310,7 +310,7 @@ Azure предоставляет несколько служб реляцион�
 
 -   [Настройка георепликации для службы "База данных SQL" с помощью портала Azure](https://azure.microsoft.com/documentation/articles/sql-database-geo-replication-portal/).
 
--   [Знакомство с Cosmos DB: база данных NoSQL JSON](/azure/cosmos-db/sql-api-introduction).
+-   [Знакомство с Cosmos DB. База данных NoSQL JSON](/azure/cosmos-db/sql-api-introduction)
 
 -   [Использование табличного хранилища Azure из Node.js](https://azure.microsoft.com/documentation/articles/storage-nodejs-how-to-use-table-storage/)
 
