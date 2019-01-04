@@ -4,18 +4,20 @@ description: Эталонные архитектуры, проекты и рек
 layout: LandingPage
 ms.topic: landing-page
 ms.date: 08/30/2018
-ms.openlocfilehash: 05f93aedc49cc71a35d8c0303af0342ed0ba47f7
-ms.sourcegitcommit: 032f402482762f4e674aeebbc122ad18dfba11eb
+ms.openlocfilehash: 173698aee0a67578beaa806a59e1c7b0265cdd61
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53396425"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54011809"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
 Эталонные архитектуры упорядочены по сценарию, а связанные архитектуры сгруппированы. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включено развертываемое решение.
 
 Перейти к разделу: [ИИ](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks) | [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Веб-приложения](#web-applications) | [Active Directory](#extend-on-premises-active-directory-to-azure)
+
+<!-- markdownlint-disable MD033 -->
 
 ## <a name="ai-and-machine-learning"></a>ИИ и машинное обучение
 
@@ -750,3 +752,4 @@ ms.locfileid: "53396425"
 </li>
 </ul>
 
+<!-- markdownlint-disable MD033 -->
