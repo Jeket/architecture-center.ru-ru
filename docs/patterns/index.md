@@ -1,14 +1,17 @@
 ---
 title: Конструктивные шаблоны облачных решений
+titleSuffix: Azure Architecture Center
 description: Конструктивные шаблоны облачный решений для создания надежных, масштабируемых, безопасных приложений в облаке
 keywords: Таблицы Azure
+author: dragon119
 ms.date: 12/10/2018
-ms.openlocfilehash: 6965f4ba19bb465c4afc0e0c355b32bde8944823
-ms.sourcegitcommit: fb22348f917a76e30a6c090fcd4a18decba0b398
+ms.custom: seodec18
+ms.openlocfilehash: 003bef866b0cd873122cfb8d4730b95ba49d3d7f
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2018
-ms.locfileid: "53450859"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54011299"
 ---
 # <a name="cloud-design-patterns"></a>Конструктивные шаблоны облачных решений
 
@@ -18,6 +21,7 @@ ms.locfileid: "53450859"
 
 ## <a name="challenges-in-cloud-development"></a>Проблемы, возникающие при разработке облачных приложений
 
+<!-- markdownlint-disable MD033 -->
 <table>
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="./category/availability.md"><img src="_images/category/availability.svg" alt="Availability" /></a></td>
@@ -76,6 +80,7 @@ ms.locfileid: "53450859"
     </td>
 </tr>
 </table>
+<!-- markdownlint-disable MD033 -->
 
 ## <a name="catalog-of-patterns"></a>Каталог шаблонов
 
@@ -114,4 +119,3 @@ ms.locfileid: "53450859"
 |                      [Подавление](./strangler.md)                      |                                            Пошаговая миграция устаревшей системы с постепенной заменой определенных компонентов новыми приложениями и службами.                                            |
 |                     [Регулирование](./throttling.md)                     |                                                 Контролируйте потребление ресурсов, используемых экземпляром приложения, отдельным клиентом или всей службой.                                                 |
 |                      [Ключ камердинера](./valet-key.md)                      |                                                        Использование токена или ключа, который предоставляет клиентам ограниченный прямой доступ к определенному ресурсу или службе.                                                        |
-
