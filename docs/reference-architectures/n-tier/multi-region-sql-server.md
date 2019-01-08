@@ -5,12 +5,12 @@ description: Разверните приложение на виртуальны
 author: MikeWasson
 ms.date: 07/19/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5036d8c74dbf92d9547ab866b15b1576df48e3eb
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 84da8aaef7e552beff1f06befbaa2e50a3ac3d8b
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120005"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53643716"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-regions-for-high-availability"></a>Запуск n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности
 
@@ -159,6 +159,13 @@ az network traffic-manager endpoint update --resource-group <resource-group> --p
 - завершение работы службы DNS на контроллерах домена.
 
 Измерьте время восстановления и убедитесь, что оно соответствует вашим бизнес-требованиям. Следует также протестировать комбинации режимов отказа.
+
+## <a name="related-resources"></a>Связанные ресурсы
+
+Вы можете просмотреть следующий [пример сценария Azure](/azure/architecture/example-scenario), в котором описываются конкретные решения, использующие некоторые из этих технологий:
+
+- [Создание многоуровневых веб-приложений для обеспечения высокой доступности и аварийного восстановления в Azure](/azure/architecture/example-scenario/infrastructure/multi-tier-app-disaster-recovery)
+- [Создание безопасных веб-приложений с помощью виртуальных машин Windows в Azure](/azure/architecture/example-scenario/infrastructure/regulated-multitier-app)
 
 <!-- links -->
 

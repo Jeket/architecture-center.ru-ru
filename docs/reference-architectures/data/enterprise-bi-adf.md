@@ -5,18 +5,18 @@ description: Автоматизируйте рабочий процесс изв
 author: MikeWasson
 ms.date: 11/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: d87583802496f8be85e44c896ae7d6a26306cffc
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 8263da7675beb61add371c945aab72b203c2349c
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120345"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53644014"
 ---
 # <a name="automated-enterprise-bi-with-sql-data-warehouse-and-azure-data-factory"></a>Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure
 
 На примере этой эталонной архитектуры показано, как выполнять добавочную нагрузку в конвейере [извлечения, загрузки и преобразования (ELT)](../../data-guide/relational-data/etl.md#extract-load-and-transform-elt). Для автоматизации этого конвейера используется Фабрика данных Azure. Конвейер поэтапно перемещает последние данные OLTP из локальной базы данных SQL Server в Хранилище данных SQL. Данные о транзакциях преобразуются в табличную модель для анализа.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2Gnz2]
+> [!VIDEO <https://www.microsoft.com/videoplayer/embed/RE2Gnz2>]
 
 Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][github].
 
@@ -201,7 +201,16 @@ SET [Integration].[Sale_Staging].[WWI Customer ID] =  CustomerHolder.[WWI Custom
 - Экземпляр службы Azure Analysis Services.
 - Фабрику данных Azure и конвейер фабрики данных для задания ELT.
 
+## <a name="related-resources"></a>Связанные ресурсы
+
+Вы можете просмотреть следующий [пример сценария Azure](/azure/architecture/example-scenario), в котором описываются конкретные решения, использующие некоторые из этих технологий:
+
+- [Решения по хранению и анализу данных для продаж и маркетинга](/azure/architecture/example-scenario/data/data-warehouse)
+- [Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SSIS и Фабрики данных Azure](/azure/architecture/example-scenario/data/hybrid-etl-with-adf)
+
+<!-- links -->
+
 [adf]: /azure/data-factory
-[github]: https://github.com/mspnp/reference-architectures/tree/master/data/enterprise_bi_sqldw_advanced
+[github]: https://github.com/mspnp/azure-data-factory-sqldw-elt-pipeline
 [MergeLocation]: https://github.com/mspnp/reference-architectures/blob/master/data/enterprise_bi_sqldw_advanced/azure/sqldw_scripts/city/%5BIntegration%5D.%5BMergeLocation%5D.sql
 [wwi]: /sql/sample/world-wide-importers/wide-world-importers-oltp-database

@@ -5,12 +5,12 @@ description: Методики по запуску SAP HANA в среде с вы
 author: lbrader
 ms.date: 05/16/2018
 ms.custom: seodec18
-ms.openlocfilehash: c21a5ac83d8d8ee9a9b9d7edad07288c85544994
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: ef3c57f292024af0abbeb4ead62ab4b3aeb57a90
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120164"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53644093"
 ---
 # <a name="run-sap-hana-on-azure-large-instances"></a>Запуск SAP HANA на крупных экземплярах Azure
 
@@ -168,6 +168,15 @@ ExpressRoute для крупных экземпляров HANA по умолча
 - [Поддержка сообщества Azure][azure-forum]
 - [Сообщество SAP][sap-community]
 - [Stack Overflow для SAP][stack-overflow]
+
+## <a name="related-resources"></a>Связанные ресурсы
+
+Вы можете просмотреть следующий [пример сценария Azure](/azure/architecture/example-scenario), в котором описываются конкретные решения, использующие некоторые из этих технологий:
+
+- [Выполнение рабочих нагрузок SAP в рабочей среде с помощью базы данных Oracle в Azure](/azure/architecture/example-scenario/apps/sap-production)
+- [Среды разработки и тестирования для рабочих нагрузок SAP в Azure](/azure/architecture/example-scenario/apps/sap-dev-test)
+
+<!-- links -->
 
 [azure-forum]: https://azure.microsoft.com/support/forums/
 [azure-large-instances]: /azure/virtual-machines/workloads/sap/hana-overview-architecture

@@ -5,12 +5,12 @@ description: Проверенные методики по запуску SAP S/4
 author: lbrader
 ms.date: 08/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4014d5736527a2f29692720d199b4a1aa8f76020
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: ace5348ccb32299b2f4167b3d384ba72972ca9ad
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120192"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53644025"
 ---
 # <a name="deploy-sap-netweaver-windows-for-anydb-on-azure-virtual-machines"></a>Развертывание SAP NetWeaver (Windows) для баз сторонних поставщиков на виртуальных машинах Azure
 
@@ -179,5 +179,14 @@ SAP имеет свой собственный механизм управлен
 - [Поддержка сообщества Azure](https://azure.microsoft.com/support/community/)
 - [Сообщество SAP](https://www.sap.com/community.html)
 - [Stack Overflow](https://stackoverflow.com/tags/sap/)
+
+## <a name="related-resources"></a>Связанные ресурсы
+
+Вы можете просмотреть следующий [пример сценария Azure](/azure/architecture/example-scenario), в котором описываются конкретные решения, использующие некоторые из этих технологий:
+
+- [Выполнение рабочих нагрузок SAP в рабочей среде с помощью базы данных Oracle в Azure](/azure/architecture/example-scenario/apps/sap-production)
+- [Среды разработки и тестирования для рабочих нагрузок SAP в Azure](/azure/architecture/example-scenario/apps/sap-dev-test)
+
+<!-- links -->
 
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/sap-reference-architectures.vsdx

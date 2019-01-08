@@ -9,12 +9,12 @@ pnp.pattern.categories:
 - data-management
 - design-implementation
 - performance-scalability
-ms.openlocfilehash: 9a2eecdff7494fb627ea5c4655e6edc789bd5bdf
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
+ms.openlocfilehash: de9530f7dd55c0ce5460cd3b58ab9f216c9b5c8c
+ms.sourcegitcommit: fb22348f917a76e30a6c090fcd4a18decba0b398
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47429695"
+ms.lasthandoff: 12/16/2018
+ms.locfileid: "53450876"
 ---
 # <a name="command-and-query-responsibility-segregation-cqrs-pattern"></a>Шаблон CQRS
 
@@ -39,8 +39,6 @@ ms.locfileid: "47429695"
 - Так же он может привести к конфликту блокировки, если несколько субъектов одновременно работают с одним набором данных в хранилище для совместной работы. Кроме того, могут возникать конфликты обновления, если выполняются одновременные обновления с оптимистической блокировкой. Эти риски постоянно увеличиваются с ростом сложности системы и нагрузки на нее. Кроме того, традиционный подход может негативно влиять на производительность из-за высокой нагрузки на уровень доступа к данным в хранилище данных и высокой сложности запросов для получения данных.
 
 - Управление безопасностью и разрешениями — сложные процедуры, так как каждая сущность может выполнять операции чтения и записи, а следовательно есть риск предоставить данные в неправильном контексте.
-
-> Чтобы лучше понять ограничения, связанные с архитектурой CRUD, ознакомьтесь с [этой](https://blogs.msdn.microsoft.com/maarten_mullender/2004/07/23/crud-only-when-you-can-afford-it-revisited/) записью блога.
 
 ## <a name="solution"></a>Решение
 
@@ -248,6 +246,6 @@ public interface IProductsDomain
 
 - [Шаблон материализованного представления](materialized-view.md). Модель чтения в реализации CQRS может содержать или самостоятельно создавать материализованные представления данных из модели записи.
 
-- Руководство по шаблонам и методикам для модели CQRS представлено [здесь](https://aka.ms/cqrs). В частности, статья [Introducing the Command Query Responsibility Segregation Pattern](https://msdn.microsoft.com/library/jj591573.aspx) (Знакомство с шаблоном разделения ответственности команды и запроса) описывает этот шаблон и его применимость, а статья [Epilogue: Lessons Learned](https://msdn.microsoft.com/library/jj591568.aspx) (Эпилог и обсуждение полученного опыта) поможет разобраться с некоторыми проблемами, которые возникают при использовании этого шаблона.
+- Руководство по шаблонам и методикам для модели CQRS представлено [здесь](https://aka.ms/cqrs). В частности [Introducing the Command Query Responsibility Segregation Pattern](https://msdn.microsoft.com/library/jj591573.aspx) (Знакомство с шаблоном разделения ответственности команды и запроса) описывает этот шаблон и когда он полезен, а [Epilogue: Lessons Learned](https://msdn.microsoft.com/library/jj591568.aspx) (Эпилог и обсуждение полученного опыта) поможет вам понять некоторые проблемы, возникающие при использовании этого шаблона.
 
 - В записи в блоге Мартина Фоулера (Martin Fowler) о [CQRS](https://martinfowler.com/bliki/CQRS.html) представлен обзор этого шаблона, а также ссылки на полезные ресурсы.

@@ -5,12 +5,12 @@ description: Создание сквозного конвейера обрабо
 author: MikeWasson
 ms.date: 11/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 44eaf51f2180be250defbeb0d141ab24f7f17d4b
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 130f297d3cfdeb1900ada79f1e9c65ec542dc2b7
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53119937"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53643753"
 ---
 # <a name="create-a-stream-processing-pipeline-with-azure-stream-analytics"></a>Создание конвейера обработки потоков данных с помощью Azure Stream Analytics
 
@@ -221,4 +221,14 @@ Stream Analytics предоставляет несколько [функций �
 
 Чтобы выполнить развертывание и запуск эталонной реализации, выполните действия, описанные в [файле сведений на GitHub][github].
 
-[github]: https://github.com/mspnp/reference-architectures/tree/master/data/streaming_asa
+## <a name="related-resources"></a>Связанные ресурсы
+
+Вы можете просмотреть следующий [пример сценария Azure](/azure/architecture/example-scenario), в котором описываются конкретные решения, использующие некоторые из этих технологий:
+
+- [Решения Интернета вещей и аналитики данных для строительной отрасли](/azure/architecture/example-scenario/data/big-data-with-iot)
+- [Выявление мошенничества в реальном времени](/azure/architecture/example-scenario/data/fraud-detection)
+
+<!-- links -->
+
+[github]: https://github.com/mspnp/azure-stream-analytics-data-pipeline
+

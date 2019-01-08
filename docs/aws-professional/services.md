@@ -4,12 +4,12 @@ description: Узнайте о различиях между облачными 
 keywords: cloud services comparison, cloud services compared, multicloud, compare azure aws, compare azure and aws, compare aws and azure, IT capabilities
 author: lbrader
 ms.date: 11/09/2018
-ms.openlocfilehash: ddfbf637ba820a9785e6698c8655dda4d971aaa0
-ms.sourcegitcommit: cc234a522b7fc35af3bcacdc044c2e2b529e54ed
+ms.openlocfilehash: 30b852d964d2c1c39b5343c09680bb4efaa5476f
+ms.sourcegitcommit: fb22348f917a76e30a6c090fcd4a18decba0b398
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51347633"
+ms.lasthandoff: 12/16/2018
+ms.locfileid: "53450927"
 ---
 # <a name="aws-to-azure-services-comparison"></a>Сравнение служб Azure и AWS
 
@@ -175,7 +175,7 @@ Microsoft Azure и Amazon Web Services (AWS) — это самые популя�
 |     <strong>&nbsp;</strong>      |                            Cognito                             |                                                                   [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/)                                                                    |                                                                          Глобальная высокодоступная служба управления удостоверениями для клиентских приложений, которая обеспечивает масштабируемость до сотен миллионов удостоверений.                                                                           |
 |     <strong>&nbsp;</strong>      |                     AWS Directory Service                      |                                                                 [Windows Server Active Directory](https://azure.microsoft.com/services/active-directory-ds/)                                                                  |                                                                                                                Службы, которые обеспечивают поддержку Microsoft Active Directory в облаке.                                                                                                                |
 |            Соответствие нормативным требованиям            |                          AWS Artifact                          |                                                                   [Service Trust Platform](https://www.microsoft.com/en-us/TrustCenter/STP/default.aspx)                                                                    |                                                                                              Предоставляет доступ к отчетам аудита, руководствам по обеспечению соответствия и документам о защите данных между облачными службами.                                                                                              |
-|             Безопасность             |                           AWS Shield                           |                                                      [Служба "Защита от атак DDoS Azure"](/azure/security/azure-ddos-best-practices)                                                       |                                                                                                  Предоставляет облачные службы для защиты от распределенных атак отказа службы (DDoS).                                                                                                   |
+|             Безопасность             |                           AWS Shield                           |                                                      [Защита от атак DDoS Azure. Рекомендации и эталонные образцы архитектуры](/azure/security/azure-ddos-best-practices)                                                       |                                                                                                  Предоставляет облачные службы для защиты от распределенных атак отказа службы (DDoS).                                                                                                   |
 
 ## <a name="developer-tools"></a>Инструменты для разработчиков
 

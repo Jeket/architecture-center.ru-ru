@@ -8,12 +8,12 @@ description: >-
 author: telmosampaio
 ms.date: 05/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: e8ad2efd24286f23698bb8e294b15d88232c1166
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 3e3c3c8ff12bab85a96d4eb879f81195d22e79f8
+ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120379"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53643787"
 ---
 # <a name="create-an-active-directory-domain-services-ad-ds-resource-forest-in-azure"></a>Создание леса ресурсов доменных служб Active Directory (AD DS) в Azure
 
@@ -93,7 +93,21 @@ Active Directory автоматически масштабируется для 
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
+1. Клонируйте или скачайте ZIP-файл в [репозитории GitHub](https://github.com/mspnp/identity-reference-architectures) либо создайте для него вилку.
+
+2. Установите [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+3. Установите пакет npm [стандартных блоков Azure](https://github.com/mspnp/template-building-blocks/wiki/Install-Azure-Building-Blocks).
+
+   ```bash
+   npm install -g @mspnp/azure-building-blocks
+   ```
+
+4. Из командной строки, строки bash или строки PowerShell войдите в свою учетную запись Azure, как показано ниже:
+
+   ```bash
+   az login
+   ```
 
 ### <a name="deploy-the-simulated-on-premises-datacenter"></a>Развертывание имитации локального центра обработки данных
 
