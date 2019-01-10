@@ -2,14 +2,14 @@
 title: Оценка в реальном времени с помощью моделей машинного обучения на языке R
 description: Реализуйте службу для прогнозирования в реальном времени на языке R с помощью Machine Learning Server под управлением Службы Azure Kubernetes (AKS).
 author: njray
-ms.date: 12/12/18
+ms.date: 12/12/2018
 ms.custom: azcat-ai
-ms.openlocfilehash: a6069704c48fbc1f1a1e4b5df428011d6b5b883d
-ms.sourcegitcommit: 62d2211badd1d6950e8cb819d70c9a4ab1ee01d9
+ms.openlocfilehash: 6f3447d1dcab801ccdaf4cf88611725cc00eb68d
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53318998"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54112283"
 ---
 # <a name="real-time-scoring-of-r-machine-learning-models"></a>Оценка в реальном времени с помощью моделей машинного обучения на языке R
 
@@ -51,7 +51,7 @@ ms.locfileid: "53318998"
 
 Чтобы задание ввода модели в эксплуатацию правильно работало с Machine Learning Server на контейнерах, необходимо установить сертификат JSON Web Token (JWT). Это развертывание использует сертификат, предоставленный корпорацией Майкрософт. Для рабочей среды предоставьте собственный сертификат.
 
-Для трафика между Реестром контейнеров и AKS рассмотрите возможность включения [управления доступом на основе ролей][rbac] (RBAC), чтобы предоставить только необходимые привилегии доступа. 
+Для трафика между Реестром контейнеров и AKS рассмотрите возможность включения [управления доступом на основе ролей][rbac] (RBAC), чтобы предоставить только необходимые привилегии доступа.
 
 ### <a name="separate-storage"></a>Отдельное хранилище
 

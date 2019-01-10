@@ -1,19 +1,17 @@
 ---
-title: Ключ камердинера
+title: Шаблон ключа камердинера
+titleSuffix: Cloud Design Patterns
 description: Использование токена или ключа, который предоставляет клиентам ограниченный доступ к определенному ресурсу или службе.
 keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
-pnp.series.title: Cloud Design Patterns
-pnp.pattern.categories:
-- data-management
-- security
-ms.openlocfilehash: 99d3fbe05e34d61edc0d339f34665e557b250b05
-ms.sourcegitcommit: fb22348f917a76e30a6c090fcd4a18decba0b398
+ms.custom: seodec18
+ms.openlocfilehash: 09173717d499d524d4d5dad2c1202c1bf361b1e5
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2018
-ms.locfileid: "53450893"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54009871"
 ---
 # <a name="valet-key-pattern"></a>Шаблон ключа камердинера
 
@@ -105,7 +103,7 @@ Azure поддерживает подписанный URL-адрес в служ
 
 Подписанные URL-адреса Azure также поддерживают хранимые сервером политики доступа, которые могут быть связаны с определенным ресурсом, таким как таблица или большой двоичный объект. Эта функция обеспечивает дополнительный контроль и гибкость по сравнению с создаваемыми приложением маркерами подписанного URL-адреса и должна по возможности использоваться. Параметры, определенные в хранимой на сервере политике, можно изменить и отразить в токене без необходимости выпускать новый токен, но параметры, определенные в токене, нельзя изменить без выдачи нового токена. Этот подход также позволяет отменить допустимый маркер подписанного URL-адреса до истечения срока его действия.
 
-> Дополнительные сведения см. в записи блога MSDN [Introducing Table SAS (Shared Access Signature), Queue SAS and update to Blob SAS](https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas/) (Знакомство с SAS таблиц, SAS очередей и изменениями SAS больших двоичных объектов) и статье [Использование подписанных URL-адресов (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+> Дополнительные сведения см. в записи блога MSDN [Introducing Table SAS (Shared Access Signature), Queue SAS and update to Blob SAS](https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas/) (Знакомство с SAS таблиц, SAS очередей и изменениями SAS больших двоичных объектов) и статье [Использование подписанных URL-адресов (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
 
 В следующем коде показано, как создать маркер подписанного URL-адреса, действительного в течение пяти минут. Метод `GetSharedAccessReferenceForUpload` возвращает маркер подписанного URL-адреса, который можно использовать для отправки файла в хранилище BLOB-объектов Azure.
 
@@ -162,9 +160,10 @@ public class ValuesController : ApiController
 ## <a name="next-steps"></a>Дополнительная информация
 
 При реализации этого шаблона следует принять во внимание следующие шаблоны и рекомендации.
+
 - Пример, демонстрирующий этот шаблон, можно найти на сайте [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/valet-key).
-- [Шаблон привратника](gatekeeper.md). Этот шаблон можно использовать в сочетании с шаблоном ключа камердинера для защиты приложений и служб с помощью выделенного экземпляра узла, который выполняет роль брокера между клиентами и приложением или службой. Привратник проверяет и очищает запросы, а также передает запросы и данные между клиентом и приложением. Обеспечивает дополнительный уровень защиты и уменьшает степень влияния атаки на систему.
-- [Шаблон размещения статического содержимого](static-content-hosting.md). Здесь описано, как развертывать статические ресурсы в облачной службе хранения, которая может доставлять эти ресурсы непосредственно клиенту, чтобы уменьшить потребность в дорогостоящих экземплярах вычислений. Если ресурсы не предназначены для публичного доступа, шаблон ключа камердинера можно использовать для их защиты.
+- [Шаблон привратника](./gatekeeper.md). Этот шаблон можно использовать в сочетании с шаблоном ключа камердинера для защиты приложений и служб с помощью выделенного экземпляра узла, который выполняет роль брокера между клиентами и приложением или службой. Привратник проверяет и очищает запросы, а также передает запросы и данные между клиентом и приложением. Обеспечивает дополнительный уровень защиты и уменьшает степень влияния атаки на систему.
+- [Шаблон размещения статического содержимого](./static-content-hosting.md). Здесь описано, как развертывать статические ресурсы в облачной службе хранения, которая может доставлять эти ресурсы непосредственно клиенту, чтобы уменьшить потребность в дорогостоящих экземплярах вычислений. Если ресурсы не предназначены для публичного доступа, шаблон ключа камердинера можно использовать для их защиты.
 - [Introducing Table SAS (Shared Access Signature), Queue SAS and update to Blob SAS](https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas/) (Знакомство с SAS таблиц, SAS очередей и изменениями SAS больших двоичных объектов).
-- [Использование подписанных URL-адресов (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
-- [Проверка подлинности подписи при общем доступе с помощью служебной шины](https://azure.microsoft.com/documentation/articles/service-bus-shared-access-signature-authentication/)
+- [Использование подписанных URL-адресов (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+- [Проверка подлинности подписи при общем доступе с помощью служебной шины](/azure/service-bus-messaging/service-bus-sas)

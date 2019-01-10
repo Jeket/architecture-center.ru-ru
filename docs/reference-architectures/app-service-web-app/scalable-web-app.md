@@ -5,12 +5,12 @@ description: Улучшение масштабируемости в веб-пр�
 author: MikeWasson
 ms.date: 10/25/2018
 ms.custom: seodec18
-ms.openlocfilehash: ab38864e7135777f205b39d0a86897559fc061b9
-ms.sourcegitcommit: e7f8676bbffe500fc4d6deb603b7c0b7ba1884a6
+ms.openlocfilehash: aa4579b45c5ecf090a896e252f2d2e460f282c0e
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53179303"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54110975"
 ---
 # <a name="improve-scalability-in-an-azure-web-application"></a>Повышение масштабируемости в веб-приложении Azure
 
@@ -81,7 +81,7 @@ ms.locfileid: "53179303"
 | Нереляционные данные с гибкой схемой, требующей базового запроса |Каталог продукции |База данных документов (например, Azure Cosmos DB, MongoDB или Apache CouchDB) |
 | Реляционные данные, требующие более широкой поддержки запросов, строгой схемы и/или строгой согласованности |Список продуктов |Базы данных SQL Azure |
 
- См. статью [Choose the right data store][datastore] (Выбор правильного хранилища данных).
+См. статью [Choose the right data store][datastore] (Выбор правильного хранилища данных).
 
 ## <a name="scalability-considerations"></a>Вопросы масштабируемости
 
@@ -132,7 +132,7 @@ ms.locfileid: "53179303"
 [azure-cdn]: https://azure.microsoft.com/services/cdn/
 [azure-dns]: /azure/dns/dns-overview
 [azure-redis]: https://azure.microsoft.com/services/cache/
-[azure-search]: https://azure.microsoft.com/documentation/services/search/
+[azure-search]: /azure/search
 [azure-search-scaling]: /azure/search/search-capacity-planning
 [basic-web-app]: basic-web-app.md
 [basic-web-app-scalability]: basic-web-app.md#scalability-considerations
@@ -149,7 +149,7 @@ ms.locfileid: "53179303"
 [queue-storage]: /azure/storage/storage-dotnet-how-to-use-queues
 [queues-compared]: /azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
 [resource-group]: /azure/azure-resource-manager/resource-group-overview#resource-groups
-[sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
+[sql-db]: /azure/sql-database/
 [sql-elastic]: /azure/sql-database/sql-database-elastic-scale-introduction
 [sql-encryption]: https://msdn.microsoft.com/library/dn948096.aspx
 [tm]: https://azure.microsoft.com/services/traffic-manager/

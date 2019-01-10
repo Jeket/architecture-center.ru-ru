@@ -5,12 +5,12 @@ description: Реализация звездообразной топологи�
 author: telmosampaio
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 37ae02d8ef02f64329d5e5215e5a32df9f0f9491
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 2ed76e467fd3f65664afa35b6247c83c3f6ce078
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120464"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54112232"
 ---
 # <a name="implement-a-hub-spoke-network-topology-with-shared-services-in-azure"></a>Реализация звездообразной топологии сети с помощью общих служб в Azure
 
@@ -265,4 +265,3 @@ Test-NetConnection 10.2.0.68 -CommonTCPPort RDP
 
 [visio-download]: https://archcenter.blob.core.windows.net/cdn/hybrid-network-hub-spoke.vsdx
 [ref-arch-repo]: https://github.com/mspnp/reference-architectures
-[ARM-Templates]: https://azure.microsoft.com/documentation/articles/resource-group-authoring-templates/

@@ -3,18 +3,22 @@ title: Выбор технологии обработки естественны
 description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
-ms.openlocfilehash: b1cb019164285d16b6e9d34eae220801785adab9
-ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
+ms.openlocfilehash: 699e01bc9905d02fc8ec1113039087189f6e8caf
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52902314"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114119"
 ---
 # <a name="choosing-a-natural-language-processing-technology-in-azure"></a>Выбор технологии обработки естественных языков в Azure
 
 Обработка свободного текста выполняется для документов, содержащих абзацы, как правило, чтобы обеспечить поиск, а также другие задачи обработки естественного языка (NLP), например анализа тональности, распознавания тем, распознавания языка, извлечения ключевых фраз и классификация документов. Эта статья посвящена выбору технологий, которые служат для поддержки задач NLP.
 
+<!-- markdownlint-disable MD026 -->
+
 ## <a name="what-are-your-options-when-choosing-an-nlp-service"></a>Варианты выбора служб NLP
+
+<!-- markdownlint-enable MD026 -->
 
 В Azure функции NLP предоставляются в следующих службах:
 
@@ -36,7 +40,7 @@ ms.locfileid: "52902314"
 
 ## <a name="capability-matrix"></a>Матрица возможностей
 
-В следующих таблицах перечислены основные различия в возможностях.  
+В следующих таблицах перечислены основные различия в возможностях.
 
 ### <a name="general-capabilities"></a>Общие возможности
 
@@ -50,7 +54,7 @@ ms.locfileid: "52902314"
 ### <a name="low-level-natural-language-processing-capabilities"></a>Низкоуровневые возможности обработки естественного языка
 
 | | Azure HDInsight | Microsoft Cognitive Services |  
-| --- | --- | --- | 
+| --- | --- | --- |
 | Создатель маркеров | Да (Spark NLP) | Да (API лингвистического анализа) |
 | Парадигматический модуль | Да (Spark NLP) | Нет  |
 | Лемматический модуль | Да (Spark NLP) | Нет  |
@@ -63,8 +67,8 @@ ms.locfileid: "52902314"
 ### <a name="high-level-natural-language-processing-capabilities"></a>Высокоуровневые возможности обработки естественного языка
 
 | | Azure HDInsight | Microsoft Cognitive Services |
-| --- | --- | --- | 
-| Распознавание и извлечение сущностей и намерений | Нет  | Да (API распознавания речи (LUIS)) |    
+| --- | --- | --- |
+| Распознавание и извлечение сущностей и намерений | Нет  | Да (API распознавания речи (LUIS)) |
 | Определение темы | Да (Spark NLP) | Да (API анализа текста) |
 | Проверка орфографии | Да (Spark NLP) | Да (API Bing для проверки орфографии) |
 | Анализ мнений | Да (Spark NLP) | Да (API анализа текста) |

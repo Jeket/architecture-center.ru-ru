@@ -2,14 +2,14 @@
 title: Пакетная оценка моделей Python в Azure
 description: Создайте масштабируемое решение для параллельной пакетной оценки моделей по расписанию, используя Azure Batch AI.
 author: njray
-ms.date: 12/13/18
+ms.date: 12/13/2018
 ms.custom: azcat-ai
-ms.openlocfilehash: 93fc0c81663931c0a8b0f54b41934287056e6953
-ms.sourcegitcommit: fb22348f917a76e30a6c090fcd4a18decba0b398
+ms.openlocfilehash: 4c43a3dadab11cb8dcf163cf63618795299283ad
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2018
-ms.locfileid: "53450837"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54111057"
 ---
 # <a name="batch-scoring-of-python-models-on-azure"></a>Пакетная оценка моделей Python в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "53450837"
 
 ### <a name="parallelizing-across-vms-vs-cores"></a>Распараллеливание между виртуальными машинами и ядрами
 
-При выполнении процессов оценки многих моделей в пакетном режиме задания должны быть распараллелены между виртуальными машинами. Возможны два подхода: 
+При выполнении процессов оценки многих моделей в пакетном режиме задания должны быть распараллелены между виртуальными машинами. Возможны два подхода:
 
 * Создайте большой кластер, используя недорогие виртуальные машины.
 

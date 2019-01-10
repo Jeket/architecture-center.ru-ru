@@ -5,18 +5,18 @@ description: Автоматизируйте рабочий процесс изв
 author: MikeWasson
 ms.date: 11/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8263da7675beb61add371c945aab72b203c2349c
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.openlocfilehash: 579ef0361ec44d0eb82b9076490eed5a6d88df35
+ms.sourcegitcommit: cd3de23543f739a95a1daf38886561f67add9d64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53644014"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54183598"
 ---
 # <a name="automated-enterprise-bi-with-sql-data-warehouse-and-azure-data-factory"></a>Автоматизированная корпоративная бизнес-аналитика с использованием Хранилища данных SQL и Фабрики данных Azure
 
 На примере этой эталонной архитектуры показано, как выполнять добавочную нагрузку в конвейере [извлечения, загрузки и преобразования (ELT)](../../data-guide/relational-data/etl.md#extract-load-and-transform-elt). Для автоматизации этого конвейера используется Фабрика данных Azure. Конвейер поэтапно перемещает последние данные OLTP из локальной базы данных SQL Server в Хранилище данных SQL. Данные о транзакциях преобразуются в табличную модель для анализа.
 
-> [!VIDEO <https://www.microsoft.com/videoplayer/embed/RE2Gnz2>]
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2Gnz2]
 
 Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][github].
 

@@ -6,18 +6,19 @@ ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: adfs
 pnp.series.next: key-vault
-ms.openlocfilehash: 58eed82c982fe1c6cba0f04b237d92d117a26fd4
-ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
+ms.openlocfilehash: b5951153fff109b648e7e4f74daac0f414240fe4
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52902278"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113150"
 ---
 # <a name="use-client-assertion-to-get-access-tokens-from-azure-ad"></a>Получение маркеров доступа из Azure AD с помощью утверждений клиентов
 
 [![GitHub](../_images/github.png) Пример кода][sample application]
 
 ## <a name="background"></a>Фоновый
+
 При использовании потока кода авторизации или гибридного потока в OpenID Connect клиент обменивается кодом авторизации для маркера доступа. На этом этапе клиент должен пройти проверку подлинности на сервере.
 
 ![Секрет клиента](./images/client-secret.png)
@@ -26,7 +27,7 @@ ms.locfileid: "52902278"
 
 Ниже приведен пример запроса клиента на маркер доступа от поставщика удостоверений. Обратите внимание на параметр `client_secret` .
 
-```
+```http
 POST https://login.microsoftonline.com/b9bd2162xxx/oauth2/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
@@ -45,7 +46,7 @@ resource=https://tailspin.onmicrosoft.com/surveys.webapi
 
 Ниже приведен запрос на маркер с помощью утверждения клиента.
 
-```
+```http
 POST https://login.microsoftonline.com/b9bd2162xxx/oauth2/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
@@ -61,8 +62,6 @@ resource=https://tailspin.onmicrosoft.com/surveys.webapi
 
 > [!NOTE]
 > Сертификаты X.509 не являются единственной формой утверждения клиента. Но мы сосредоточимся на этом, так как сертификаты X.509 поддерживаются службой Azure AD.
-> 
-> 
 
 Во время выполнения веб-приложение считывает сертификат из хранилища сертификатов. Сертификат должен быть установлен на одном компьютере с веб-приложением.
 
@@ -100,7 +99,8 @@ public class CertificateCredentialService : ICredentialService
 
 [**Далее**][key vault]
 
-<!-- Links -->
+<!-- links -->
+
 [configure-web-app]: /azure/app-service-web/web-sites-configure/
 [azure-management-portal]: https://portal.azure.com
 [утверждение клиента]: https://tools.ietf.org/html/rfc7521

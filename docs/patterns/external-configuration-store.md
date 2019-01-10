@@ -1,19 +1,17 @@
 ---
-title: Внешнее хранилище конфигураций
+title: Шаблон внешнего хранилища конфигураций
+titleSuffix: Cloud Design Patterns
 description: Переместите сведения о конфигурации из пакета развертывания приложения в централизованное расположение.
-keywords: конструктивный шаблон
+keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
-pnp.series.title: Cloud Design Patterns
-pnp.pattern.categories:
-- design-implementation
-- management-monitoring
-ms.openlocfilehash: 733ca979903d1526d3a1a6b281a8903893e19fda
-ms.sourcegitcommit: b0482d49aab0526be386837702e7724c61232c60
+ms.custom: seodec18
+ms.openlocfilehash: 7e37e5bc052a9d8e8747a3a4ac3d79a311185ea4
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
-ms.locfileid: "24542286"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54011316"
 ---
 # <a name="external-configuration-store-pattern"></a>Шаблон внешнего хранилища конфигураций
 
@@ -41,7 +39,6 @@ ms.locfileid: "24542286"
 
 ![Общие сведения о шаблоне внешнего хранилища конфигураций с необязательным локальным кэшем](./_images/external-configuration-store-overview.png)
 
-
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 
 При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты.
@@ -66,7 +63,7 @@ ms.locfileid: "24542286"
 
 ## <a name="when-to-use-this-pattern"></a>Когда следует использовать этот шаблон
 
-Этот шаблон полезен для следующих сценариев:
+Этот шаблон можно использовать для следующих целей:
 
 - если параметры конфигурации являются общими для нескольких приложений и экземпляров приложения, или если для нескольких приложений и экземпляров приложений применяется стандартная конфигурация;
 
@@ -101,7 +98,7 @@ public interface ISettingsStore
 
 Обратите внимание, что для быстрого получения доступа все параметры также кэшируются в объекте `Dictionary` в классе `ExternalConfigurationManager`. Метод `GetSetting`, используемый для получения параметров конфигурации, считывает данные из кэша. Если параметр не найден в кэше, он извлекается из объекта `BlobSettingsStore`.
 
-Метод `GetSettings` вызывает метод `CheckForConfigurationChanges`, чтобы узнать, изменились ли сведения о конфигурации в хранилище BLOB-объектов. Это делается путем проверки и сравнения номера версии с текущим номером версии, хранимым в объекте `ExternalConfigurationManager`. Если имеется одно или несколько изменений, возникает событие `Changed` и обновляются параметры конфигурации, кэшированные в объекте `Dictionary`. Это приложение шаблона [Кэш на стороне](cache-aside.md).
+Метод `GetSettings` вызывает метод `CheckForConfigurationChanges`, чтобы узнать, изменились ли сведения о конфигурации в хранилище BLOB-объектов. Это делается путем проверки и сравнения номера версии с текущим номером версии, хранимым в объекте `ExternalConfigurationManager`. Если имеется одно или несколько изменений, возникает событие `Changed` и обновляются параметры конфигурации, кэшированные в объекте `Dictionary`. Это приложение шаблона [Кэш на стороне](./cache-aside.md).
 
 В следующем примере кода показано, как реализуются событие `Changed`, метод `GetSettings` и `CheckForConfigurationChanges`.
 
@@ -130,7 +127,7 @@ public class ExternalConfigurationManager : IDisposable
   public string GetAppSetting(string key)
   {
     ...
-    // Try to get the value from the settings cache. 
+    // Try to get the value from the settings cache.
     // If there's a cache miss, get the setting from the settings store and refresh the settings cache.
 
     string value;
@@ -348,4 +345,4 @@ public override bool OnStart()
 
 ## <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 
-- Пример, демонстрирующий этот шаблон, можно найти на [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/external-configuration-store).
+- Пример, демонстрирующий этот шаблон, можно найти на сайте [GitHub](https://github.com/mspnp/cloud-design-patterns/tree/master/external-configuration-store).

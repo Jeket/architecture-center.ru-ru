@@ -1,19 +1,17 @@
 ---
-title: Кэш на стороне
-description: Загрузка данных по запросу из хранилища данных в кэш.
+title: Шаблон "Кэш на стороне"
+titleSuffix: Cloud Design Patterns
+description: Загрузите данные по запросу из хранилища данных в кэш.
 keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 11/01/2018
-pnp.series.title: Cloud Design Patterns
-pnp.pattern.categories:
-- data-management
-- performance-scalability
-ms.openlocfilehash: 4c93ed02ff28e79cedc26f83364592baba96821d
-ms.sourcegitcommit: dbbf914757b03cdee7a274204f9579fa63d7eed2
+ms.custom: seodec18
+ms.openlocfilehash: 96dee3ca766414a3a17ea161f13c9fcd15001b4d
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50916389"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114170"
 ---
 # <a name="cache-aside-pattern"></a>Шаблон "Кэш на стороне"
 
@@ -35,14 +33,13 @@ ms.locfileid: "50916389"
 
 ![Использование шаблона "кэш на стороне" для хранения данных в кэше](./_images/cache-aside-diagram.png)
 
-
 Если приложение обновляет сведения, оно может следовать стратегии сквозной записи путем внесения изменений в хранилище данных и объявления соответствующего элемента в кеше недопустимым.
 
 Если далее требуется элемент, который использует стратегию "кэш на стороне", это приведет к извлечению обновленных данных из хранилища данных и добавления их обратно в кэш.
 
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 
-При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты. 
+При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты.
 
 **Время существования кэшированных данных**. Многие кэши реализуют политику срока действия, которая объявляет данные недействительными и удаляет их из кэша, если они недоступны в течение определенного времени. Чтобы стратегия "кэш на стороне" была эффективной, убедитесь, что политика срока действия соответствует шаблону доступа к приложениям, использующим данные. Не устанавливайте слишком короткий срок, так как это может привести к тому, что приложения будут получать данные из хранилища данных и добавлять их в кэш постоянно. Однако не устанавливайте и слишком длительный срок,чтобы кэшированные данные не устарели. Помните, что кэширование является наиболее эффективным для относительно статических или часто читаемых данных.
 
@@ -68,9 +65,9 @@ ms.locfileid: "50916389"
 
 ## <a name="example"></a>Пример
 
-В Microsoft Azure можно использовать кэш Redis для Azure, чтобы создавать распределенный кэш, который может использоваться несколькими экземплярами приложения одновременно. 
+В Microsoft Azure можно использовать кэш Redis для Azure, чтобы создавать распределенный кэш, который может использоваться несколькими экземплярами приложения одновременно.
 
-В следующих примерах кода используется клиент [StackExchange.Redis] — клиентская библиотека Redis, написанная для .NET. Чтобы подключиться к экземпляру кэша Redis для Azure, вызовите статический метод `ConnectionMultiplexer.Connect` и передайте строку подключения. Этот метод возвращает `ConnectionMultiplexer`, представляющий подключение. Один из способов совместного использования экземпляра `ConnectionMultiplexer` в приложении предполагает наличие статического свойства, которое возвращает подключенный экземпляр (как в приведенном ниже примере). Этот подход помогает потокобезопасно инициализировать только отдельный подключенный экземпляр.
+В следующих примерах кода используется клиент [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) — клиентская библиотека Redis, написанная для .NET. Чтобы подключиться к экземпляру кэша Redis для Azure, вызовите статический метод `ConnectionMultiplexer.Connect` и передайте строку подключения. Этот метод возвращает `ConnectionMultiplexer`, представляющий подключение. Один из способов совместного использования экземпляра `ConnectionMultiplexer` в приложении предполагает наличие статического свойства, которое возвращает подключенный экземпляр (как в приведенном ниже примере). Этот подход помогает потокобезопасно инициализировать только отдельный подключенный экземпляр.
 
 ```csharp
 private static ConnectionMultiplexer Connection;
@@ -89,7 +86,6 @@ public static ConnectionMultiplexer Connection => lazyConnection.Value;
 
 Объект определяется с помощью целочисленного идентификатора в качестве ключа. Метод `GetMyEntityAsync` пытается извлечь из кэша элемент с этим ключом. Если найден соответствующий элемент, он возвращается. Если в кэше нет соответствия, метод `GetMyEntityAsync` извлекает объект из хранилища данных, добавляет его в кэш, а затем возвращает его. Код, который фактически считывает данные из хранилища данных, не отображается, так как он зависит от хранилища данных. Обратите внимание, что для кэшированного элемента установлен срок действия, чтобы он не стал устаревшим, если обновлен в другом месте.
 
-
 ```csharp
 // Set five minute expiration as a default
 private const double DefaultExpirationTimeInMinutes = 5.0;
@@ -99,23 +95,23 @@ public async Task<MyEntity> GetMyEntityAsync(int id)
   // Define a unique key for this method and its parameters.
   var key = $"MyEntity:{id}";
   var cache = Connection.GetDatabase();
-  
+
   // Try to get the entity from the cache.
   var json = await cache.StringGetAsync(key).ConfigureAwait(false);
-  var value = string.IsNullOrWhiteSpace(json) 
-                ? default(MyEntity) 
+  var value = string.IsNullOrWhiteSpace(json)
+                ? default(MyEntity)
                 : JsonConvert.DeserializeObject<MyEntity>(json);
-  
+
   if (value == null) // Cache miss
   {
     // If there's a cache miss, get the entity from the original store and cache it.
-    // Code has been omitted because it's data store dependent.  
+    // Code has been omitted because it is data store dependent.
     value = ...;
 
     // Avoid caching a null value.
     if (value != null)
     {
-      // Put the item in the cache with a custom expiration time that 
+      // Put the item in the cache with a custom expiration time that
       // depends on how critical it is to have stale data.
       await cache.StringSetAsync(key, JsonConvert.SerializeObject(value)).ConfigureAwait(false);
       await cache.KeyExpireAsync(key, TimeSpan.FromMinutes(DefaultExpirationTimeInMinutes)).ConfigureAwait(false);
@@ -126,7 +122,7 @@ public async Task<MyEntity> GetMyEntityAsync(int id)
 }
 ```
 
->  В этих примерах для получения доступа к хранилищу и сведений из кэша используется Кэш Redis. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](https://docs.microsoft.com/azure/redis-cache/cache-web-app-howto)
+> В этих примерах для получения доступа к хранилищу и сведений из кэша используется Кэш Redis. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](https://docs.microsoft.com/azure/redis-cache/cache-web-app-howto)
 
 В методе `UpdateEntityAsync`, показанном ниже, демонстрируется, как сделать объект недействительным в кэше при изменении значения приложением. Этот код обновляет хранилище исходных данных, а затем удаляет кэшированный элемент из кэша.
 
@@ -134,7 +130,7 @@ public async Task<MyEntity> GetMyEntityAsync(int id)
 public async Task UpdateEntityAsync(MyEntity entity)
 {
     // Update the object in the original data store.
-    await this.store.UpdateEntityAsync(entity).ConfigureAwait(false); 
+    await this.store.UpdateEntityAsync(entity).ConfigureAwait(false);
 
     // Invalidate the current cache object.
     var cache = Connection.GetDatabase();
@@ -147,14 +143,10 @@ public async Task UpdateEntityAsync(MyEntity entity)
 > [!NOTE]
 > Порядок шагов важен. Обновите хранилище данных, *прежде чем* удалять элемент из кэша. Если сначала удалить кэшированный элемент, есть небольшой промежуток времени, когда клиент может извлечь элемент до обновления хранилища данных. Это приведет к созданию промахов кэша (так как элемент был удален из кэша), вызывая более раннюю версию элемента, извлекаемого из хранилища данных и добавленного обратно в кэш. Это приведет к появлению устаревших данных кэша.
 
-
-## <a name="related-guidance"></a>Связанное руководство 
+## <a name="related-guidance"></a>Связанное руководство
 
 К реализации этого шаблона могут относиться следующие сведения:
 
 - [Caching](https://docs.microsoft.com/azure/architecture/best-practices/caching) (Кэширование). Здесь предоставлены дополнительные сведения о том, как можно кэшировать данные в облачном решении, а также показаны проблемы, которые следует учитывать при реализации кэширования.
 
 - [Data Consistency Primer](https://msdn.microsoft.com/library/dn589800.aspx) (Руководство по обеспечению согласованности данных). Облачные приложения обычно используют данные, которые распределены по хранилищам данных. Управление и поддержание согласованности данных в этой среде — это важнейший аспект системы, в частности проблемы параллелизма и доступности, которые могут возникнуть. В этом руководстве описаны проблемы согласованности в распределенных данных и способы реализации окончательной согласованности в приложении для обеспечения доступности данных.
-
-
-[StackExchange.Redis]: https://github.com/StackExchange/StackExchange.Redis
