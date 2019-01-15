@@ -5,12 +5,12 @@ description: Контрольный список с рекомендациями
 author: petertaylor9999
 ms.date: 11/26/2018
 ms.custom: resiliency, checklist
-ms.openlocfilehash: 1201e2045c6a5f7be9c8286cd192559a8d66d169
-ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
+ms.openlocfilehash: 1a3c7b899be1c61cc53eb9caee30f5153edeb5ae
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53307458"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113609"
 ---
 # <a name="resiliency-checklist"></a>Контрольный список для обеспечения отказоустойчивости
 
@@ -80,7 +80,7 @@ ms.locfileid: "53307458"
 **Рассмотрите возможность использования геоизбыточной учетной записи хранения.** Данные, хранящиеся в учетной записи хранения Azure, всегда реплицируются локально. Однако существует несколько стратегий репликации, которые можно выбрать при подготовке учетной записи хранения. Выберите [геоизбыточное хранилище с доступом на чтение (RA-GRS)](/azure/storage/storage-redundancy/#read-access-geo-redundant-storage) для защиты данных приложения в тех редких случаях, когда весь регион становится недоступным.
 
 > [!NOTE]
-> Для виртуальных машин не следует полагаться на репликацию RA-GRS для восстановления дисков виртуальных машин (файлы VHD). Вместо этого используйте [Azure Backup][azure-backup].
+> Для виртуальных машин не следует полагаться на репликацию RA-GRS для восстановления дисков виртуальных машин (файлы VHD). Вместо этого используйте [Azure Backup](/azure/backup).
 
 ## <a name="security"></a>Безопасность
 
@@ -169,7 +169,6 @@ ms.locfileid: "53307458"
 [app-service-autoscale]: /azure/monitoring-and-diagnostics/insights-how-to-scale/
 [asynchronous-c-sharp]: /dotnet/articles/csharp/async
 [availability-sets]:/azure/virtual-machines/virtual-machines-windows-manage-availability/
-[azure-backup]: https://azure.microsoft.com/documentation/services/backup/
 [circuit-breaker]: ../patterns/circuit-breaker.md
 [cloud-service-autoscale]: /azure/cloud-services/cloud-services-how-to-scale/
 [fma]: ../resiliency/failure-mode-analysis.md

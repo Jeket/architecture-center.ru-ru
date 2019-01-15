@@ -5,12 +5,12 @@ description: Рекомендуемая архитектура для высок
 author: MikeWasson
 ms.date: 10/25/2018
 ms.custom: seodec18
-ms.openlocfilehash: 61ee7220dbc37140ff1598de78f89aaef8a3e922
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 04ba786ea16aa3245a8f0b7fcafeacc60ac447c2
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53119852"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113337"
 ---
 # <a name="run-a-web-application-in-multiple-azure-regions-for-high-availability"></a>Запуск веб-приложения в нескольких регионах Azure для обеспечения высокой доступности
 
@@ -65,7 +65,7 @@ ms.locfileid: "53119852"
 
 Рекомендуется создать конечную точку проверки работоспособности, которая сообщает о работоспособности приложения, и использовать ее для проверки работоспособности. Конечная точка должна проверять критические зависимости, такие как приложения службы приложений, очередь хранения и базу данных SQL. В противном случае при проверке может быть сообщено о работоспособной конечной точке, тогда как критические части приложения фактически не будут работать.
 
-С другой стороны, не используйте проверку работоспособности для проверки низкоприоритетных служб. Например, если служба электронной почты отключается, приложение может переключиться на другого поставщика или отправить сообщение электронной почты позже. Это недостаточно высокий приоритет для выполнения отработки отказа в приложении. Дополнительную информацию см. в статье [Health Endpoint Monitoring pattern][health-endpoint-monitoring-pattern] (Шаблон мониторинга конечной точки работоспособности).
+С другой стороны, не используйте проверку работоспособности для проверки низкоприоритетных служб. Например, если служба электронной почты отключается, приложение может переключиться на другого поставщика или отправить сообщение электронной почты позже. Это недостаточно высокий приоритет для выполнения отработки отказа в приложении. См. дополнительные сведения о [шаблоне мониторинга конечных точек работоспособности][health-endpoint-monitoring-pattern].
 
 ### <a name="sql-database"></a>База данных SQL
 
@@ -147,7 +147,7 @@ az network traffic-manager endpoint update --resource-group <resource-group> --p
 
 <!-- links -->
 
-[azure-sql-db]: https://azure.microsoft.com/documentation/services/sql-database/
+[azure-sql-db]: /azure/sql-database/
 [azure-dns]: /azure/dns/dns-overview
 [cosmosdb-geo]: /azure/cosmos-db/distribute-data-globally
 [guidance-web-apps-scalability]: ./scalable-web-app.md

@@ -1,14 +1,14 @@
 ---
 title: Обновление ресурсов в шаблоне Azure Resource Manager
-description: Описывается, как расширить функциональные возможности шаблонов Azure Resource Manager для обновления ресурса.
+description: В статье описано, как расширить возможности шаблонов Azure Resource Manager для обновления ресурса.
 author: petertay
 ms.date: 10/31/2018
-ms.openlocfilehash: dc97534e658c9728ac617b4e52031e2553600458
-ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
+ms.openlocfilehash: 927826283163b2ae45575035168d6238de98dc00
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50251827"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113422"
 ---
 # <a name="update-a-resource-in-an-azure-resource-manager-template"></a>Обновление ресурсов в шаблоне Azure Resource Manager
 
@@ -20,7 +20,7 @@ ms.locfileid: "50251827"
 
 ## <a name="example-template"></a>Пример шаблона
 
-Рассмотрим этот вариант на конкретном примере шаблона. При помощи этого шаблона развертывается виртуальная сеть с именем `firstVNet`, которая содержит одну подсеть с именем `firstSubnet`. Затем развертывается виртуальный сетевой интерфейс (NIC) с именем `nic1`, который связывается с подсетью. В ресурс развертывания с именем `updateVNet` помещается вложенный шаблон, при помощи которого в ресурс `firstVNet` добавляется вторая подсеть с именем `secondSubnet`. 
+Рассмотрим этот вариант на конкретном примере шаблона. Этот шаблон развертывает виртуальную сеть с именем `firstVNet`, которая содержит одну подсеть с именем `firstSubnet`. Затем развертывается виртуальный сетевой интерфейс (NIC) с именем `nic1`, который связывается с подсетью. В ресурс развертывания с именем `updateVNet` помещается вложенный шаблон, при помощи которого в ресурс `firstVNet` добавляется вторая подсеть с именем `secondSubnet`.
 
 ```json
 {
@@ -37,7 +37,7 @@ ms.locfileid: "50251827"
           "addressSpace":{"addressPrefixes": [
               "10.0.0.0/22"
           ]},
-          "subnets":[              
+          "subnets":[
               {
                   "name":"firstSubnet",
                   "properties":{
@@ -130,11 +130,11 @@ az group deployment create -g <resource-group-name> \
     --template-uri https://raw.githubusercontent.com/mspnp/template-examples/master/example1-update/deploy.json
 ```
 
-По завершении развертывания откройте группу ресурсов, которую вы указали на портале. Отобразится виртуальная сеть с именем `firstVNet` и сетевой адаптер с именем `nic1`. Щелкните `firstVNet`, а затем — `subnets`. Отобразится подсеть `firstSubnet`, созданная изначально, а также подсеть `secondSubnet`, добавленная в ресурсе `updateVNet`. 
+По завершении развертывания откройте группу ресурсов, которую вы указали на портале. Отобразится виртуальная сеть с именем `firstVNet` и сетевой адаптер с именем `nic1`. Щелкните `firstVNet`, а затем — `subnets`. Отобразится подсеть `firstSubnet`, созданная изначально, а также подсеть `secondSubnet`, добавленная в ресурсе `updateVNet`.
 
 ![Исходная подсеть и обновленная подсеть](../_images/firstVNet-subnets.png)
 
-Затем вернитесь в группу ресурсов и щелкните `nic1`, а затем — `IP configurations`. В разделе `IP configurations` для `subnet` задано значение `firstSubnet (10.0.0.0/24)`. 
+Затем вернитесь в группу ресурсов и щелкните `nic1`, а затем — `IP configurations`. В разделе `IP configurations` для `subnet` задано значение `firstSubnet (10.0.0.0/24)`.
 
 ![Конфигурации IP виртуального сетевого интерфейса nic1](../_images/nic1-ipconfigurations.png)
 

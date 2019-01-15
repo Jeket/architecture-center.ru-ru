@@ -1,16 +1,16 @@
 ---
 title: Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SSIS и Фабрики данных Azure
 titleSuffix: Azure Example Scenarios
-description: Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SQL Server Integration Services (SSIS) и Фабрики данных Azure
+description: Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SQL Server Integration Services (SSIS) и Фабрики данных Azure.
 author: alhieng
-ms.date: 9/20/2018
+ms.date: 09/20/2018
 ms.custom: tsp-team
-ms.openlocfilehash: 387b0aa1927a8d316aad76100f577da13833eae6
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.openlocfilehash: a2ca3817ed172e6d2332a92f68970ea2a5ad8f6c
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53643518"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54110396"
 ---
 # <a name="hybrid-etl-with-existing-on-premises-ssis-and-azure-data-factory"></a>Гибридное извлечение, преобразование и загрузка данных с помощью существующих локальных служб SSIS и Фабрики данных Azure
 

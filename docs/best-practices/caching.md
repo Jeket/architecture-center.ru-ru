@@ -5,12 +5,12 @@ description: Руководство по кэшированию данных д�
 author: dragon119
 ms.date: 05/24/2017
 ms.custom: seodec18
-ms.openlocfilehash: b7f720b9e08b0316f9967a19e1b93069aa04e55f
-ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
+ms.openlocfilehash: da676ba3037f5c232ea97b9cb41488c7c2202476
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53307475"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113116"
 ---
 # <a name="caching"></a>Caching
 
@@ -476,9 +476,9 @@ var customer1 = cache.Wait(task1);
 var customer2 = cache.Wait(task2);
 ```
 
-Дополнительные сведения о создании клиентских приложений, в которых используется кэш Redis для Azure, см. в [документации по кэшу Redis для Azure](https://azure.microsoft.com/documentation/services/cache/). Дополнительные сведения вы найдете на сайте [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md).
+Дополнительные сведения о создании клиентских приложений, в которых используется кэш Redis для Azure, см. в [документации по кэшу Redis для Azure](/azure/azure-cache-for-redis/). Дополнительные сведения вы найдете на сайте [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md).
 
-На странице [Конвейеры и мультиплексоры](https://stackexchange.github.io/StackExchange.Redis/PipelinesMultiplexers) на том же веб-сайте содержатся дополнительные сведения об асинхронных операциях и конвейеризации с Redis при использовании библиотеки StackExchange. 
+На странице [Конвейеры и мультиплексоры](https://stackexchange.github.io/StackExchange.Redis/PipelinesMultiplexers) на том же веб-сайте содержатся дополнительные сведения об асинхронных операциях и конвейеризации с Redis при использовании библиотеки StackExchange.
 
 ## <a name="using-redis-caching"></a>Варианты использования кэша Redis
 
@@ -898,7 +898,7 @@ ISubscriber subscriber = redisHostConnection.GetSubscriber();
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Документация по Кэшу Redis для Azure](https://azure.microsoft.com/documentation/services/cache/) 
+- [Документация по Кэшу Redis для Azure](/azure/azure-cache-for-redis/)
 - [Azure Cache for Redis FAQ](/azure/redis-cache/cache-faq) (Кэш Redis для Azure. Вопросы и ответы)
 - [Асинхронная модель на основе задач](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Документация по Redis](https://redis.io/documentation)

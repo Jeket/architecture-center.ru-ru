@@ -1,17 +1,17 @@
 ---
 title: Регистрация и адаптация клиентов в мультитенантных приложениях
-description: Адаптация клиентов в мультитенантном приложении
+description: Подключение клиентов в мультитенантном приложении.
 author: MikeWasson
 ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: claims
 pnp.series.next: app-roles
-ms.openlocfilehash: 541a4dd9abb2168eef4a60a0ec99e1e7c06049b5
-ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
+ms.openlocfilehash: d112cb65e3cd8bae7b273a974bf8e5d2b04aff8a
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52902482"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54112725"
 ---
 # <a name="tenant-sign-up-and-onboarding"></a>Регистрация и адаптации клиента
 
@@ -25,6 +25,7 @@ ms.locfileid: "52902482"
 * Выполнение однократной настройки каждого клиента, необходимой приложению.
 
 ## <a name="admin-consent-and-azure-ad-permissions"></a>Согласие администратора и разрешения Azure AD
+
 Чтобы проверять подлинность в Azure AD, приложению требуется доступ к каталогу пользователя. Как минимум, приложению требуется разрешение на чтение профиля пользователя. При первом входе пользователя в Azure AD будет отображена страница согласия со списком запрашиваемых разрешений. Нажав кнопку **Принять**, пользователь предоставляет разрешение приложению.
 
 По умолчанию согласие предоставляется на уровне пользователя. Страницу согласия видит каждый пользователь, выполняющий вход. Однако Azure AD также поддерживает *согласие администратора*, позволяющее администраторам AD давать согласие на использование приложения в рамках всей организации.
@@ -39,9 +40,10 @@ ms.locfileid: "52902482"
 
 ![Ошибка согласия](./images/consent-error.png)
 
-Если приложению позднее потребуются дополнительные разрешения, клиенту будет нужно повторно зарегистрироваться и согласиться с обновленными разрешениями.  
+Если приложению позднее потребуются дополнительные разрешения, клиенту будет нужно повторно зарегистрироваться и согласиться с обновленными разрешениями.
 
 ## <a name="implementing-tenant-sign-up"></a>Реализация регистрации клиента
+
 Мы определили несколько требований для регистрации в приложении [Tailspin Surveys][Tailspin]:
 
 * Клиент должен пройти регистрацию до того, как пользователи смогут выполнять вход.
@@ -58,7 +60,7 @@ ms.locfileid: "52902482"
 
 Эти кнопки позволяют вызывать действия в классе `AccountController`.
 
-Действие `SignIn` возвращает **ChallegeResult**, в результате чего ПО промежуточного слоя OpenID Connect выполняет перенаправление в конечную точку проверки подлинности. Это заданный по умолчанию способ запуска проверки подлинности в ASP.NET Core.  
+Действие `SignIn` возвращает **ChallegeResult**, в результате чего ПО промежуточного слоя OpenID Connect выполняет перенаправление в конечную точку проверки подлинности. Это заданный по умолчанию способ запуска проверки подлинности в ASP.NET Core.
 
 ```csharp
 [AllowAnonymous]
@@ -92,7 +94,7 @@ public IActionResult SignUp()
 
 Как и `SignIn`, действие `SignUp` также возвращает `ChallengeResult`. Но на этот раз мы добавляем в `AuthenticationProperties` in the `ChallengeResult`фрагмент сведений о состоянии:
 
-* signup: логический флаг, указывающий, что пользователь начал процесс регистрации.
+* signup: логический флаг, указывающий на то, что пользователь начал процесс регистрации.
 
 Сведения о состоянии в `AuthenticationProperties` добавляются в параметр [state] OpenID Connect для круговых обходов во время потока проверки подлинности.
 
@@ -101,11 +103,16 @@ public IActionResult SignUp()
 После того как пользователь пройдет проверку подлинности в Azure AD и будет перенаправлен обратно в приложение, в билете проверки подлинности будет указано состояние. Мы используем этот факт, чтобы гарантировать, что значение "signup" сохраняется во всем потоке проверки подлинности.
 
 ## <a name="adding-the-admin-consent-prompt"></a>Добавление запроса на согласие администратора
+
 В Azure AD поток согласия администратора запускается путем добавления параметра "prompt" в строку запроса в запросе на проверку подлинности.
+
+<!-- markdownlint-disable MD040 -->
 
 ```
 /authorize?prompt=admin_consent&...
 ```
+
+<!-- markdownlint-enable MD040 -->
 
 Приложение Surveys добавляет запрос во время события `RedirectToAuthenticationEndpoint` . Это событие вызывается сразу перед тем, как ПО промежуточного слоя выполнит перенаправление в конечную точку проверки подлинности.
 
@@ -122,7 +129,7 @@ public override Task RedirectToAuthenticationEndpoint(RedirectContext context)
 }
 ```
 
-При задании` ProtocolMessage.Prompt` ПО промежуточного слоя добавляет параметр "prompt" в запрос на проверку подлинности.
+При настройке `ProtocolMessage.Prompt` ПО промежуточного слоя добавляет параметр prompt в запрос аутентификации.
 
 Обратите внимание, что запрос необходим только во время регистрации. Он не требуется для обычного входа. Чтобы различить их, проверим наличие значения `signup` в состоянии проверки подлинности. Для проверки этого условия используется следующий метод расширения:
 
@@ -143,7 +150,8 @@ internal static bool IsSigningUp(this BaseControlContext context)
     bool isSigningUp;
     if (!bool.TryParse(signupValue, out isSigningUp))
     {
-        // The value for signup is not a valid boolean, throw                
+        // The value for signup is not a valid boolean, throw
+
         throw new InvalidOperationException($"'{signupValue}' is an invalid boolean value");
     }
 
@@ -152,6 +160,7 @@ internal static bool IsSigningUp(this BaseControlContext context)
 ```
 
 ## <a name="registering-a-tenant"></a>Регистрация клиента
+
 Приложение Surveys хранит сведения о каждом клиенте и пользователе в базе данных приложения.
 
 ![Таблица клиентов](./images/tenant-table.png)
@@ -255,7 +264,8 @@ private async Task<Tenant> SignUpTenantAsync(BaseControlContext context, TenantM
 
 [**Далее**][app roles]
 
-<!-- Links -->
+<!-- links -->
+
 [app roles]: app-roles.md
 [Tailspin]: tailspin.md
 

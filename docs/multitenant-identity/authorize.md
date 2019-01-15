@@ -1,17 +1,17 @@
 ---
 title: Авторизация в мультитенантных приложениях
-description: Выполнение авторизации в мультитенантном приложении
+description: Выполнение авторизации в мультитенантном приложении.
 author: MikeWasson
 ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: app-roles
 pnp.series.next: web-api
-ms.openlocfilehash: 8ff2317eb85197ed93e048b6a2d836405436cc17
-ms.sourcegitcommit: 4ba3304eebaa8c493c3e5307bdd9d723cd90b655
+ms.openlocfilehash: 6e406a7e80b77dea161db194a82ccae043bdc777
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53307169"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54110345"
 ---
 # <a name="role-based-and-resource-based-authorization"></a>Авторизация на основе ролей и ресурсов
 
@@ -25,6 +25,7 @@ ms.locfileid: "53307169"
 В стандартном приложении используется сочетание обоих вариантов. Например, чтобы удалить ресурс, пользователь должен быть владельцем ресурса *или* администратором.
 
 ## <a name="role-based-authorization"></a>Авторизация на основе ролей
+
 Приложение [Tailspin Surveys][Tailspin] определяет следующие роли.
 
 * Администратор. Может выполнять все операции CRUD в любом опросе, принадлежащем этому клиенту.
@@ -38,6 +39,7 @@ ms.locfileid: "53307169"
 Код авторизации не зависит от способа управления ролями, поэтому он не будет иметь существенных отличий. В ASP.NET Core есть абстракция, которая называется [политики авторизации][policies]. С помощью этой функции пользователь определяет политики авторизации в коде, а затем применяет их к действиям контроллера. Политика не связана с контроллером.
 
 ### <a name="create-policies"></a>Создайте политики.
+
 Чтобы определить политику, сначала следует создать класс, реализующий `IAuthorizationRequirement`. Проще всего извлечь его из `AuthorizationHandler`. В методе `Handle` проверьте соответствующие утверждения.
 
 Ниже приведен пример из приложения Tailspin Surveys.
@@ -47,7 +49,7 @@ public class SurveyCreatorRequirement : AuthorizationHandler<SurveyCreatorRequir
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, SurveyCreatorRequirement requirement)
     {
-        if (context.User.HasClaim(ClaimTypes.Role, Roles.SurveyAdmin) || 
+        if (context.User.HasClaim(ClaimTypes.Role, Roles.SurveyAdmin) ||
             context.User.HasClaim(ClaimTypes.Role, Roles.SurveyCreator))
         {
             context.Succeed(requirement);
@@ -68,7 +70,7 @@ services.AddAuthorization(options =>
         policy =>
         {
             policy.AddRequirements(new SurveyCreatorRequirement());
-            policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement 
+            policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement
             // By adding the CookieAuthenticationDefaults.AuthenticationScheme, if an authenticated
             // user is not in the appropriate role, they will be redirected to a "forbidden" page.
             policy.AddAuthenticationSchemes(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -87,6 +89,7 @@ services.AddAuthorization(options =>
 Этот код создает схему аутентификации. Эта схема указывает ПО промежуточного слоя, которое ASP.NET будет выполнять в случае неудачной авторизации. В этом примере указано ПО промежуточного слоя для аутентификации по файлам cookie, поскольку оно может перенаправлять пользователей на страницу "Запрещено". Расположение страницы "Запрещено" задается в параметре `AccessDeniedPath` для ПО промежуточного слоя. Сведения об этом вы найдете в разделе о [настройке ПО промежуточного слоя для аутентификации].
 
 ### <a name="authorize-controller-actions"></a>Авторизация действий контроллера
+
 И, наконец, чтобы авторизовать действие в контроллере MVC, можно задать политику в атрибуте `Authorize` , как показано ниже.
 
 ```csharp
@@ -112,6 +115,7 @@ public IActionResult Create()
 * Политики позволяют принимать более сложные решения по авторизации (например, возраст 21 год и старше), которые не могут быть выражены простым членством в роли.
 
 ## <a name="resource-based-authorization"></a>Авторизация на основе ресурсов
+
 *Авторизация на основе ресурсов* выполняется каждый раз, когда авторизация зависит от конкретного ресурса, затрагиваемого операцией. В приложении Tailspin Surveys для каждого опроса существует владелец и ни одного или несколько участников.
 
 * Владелец может читать, обновлять, удалять, публиковать опрос и отменять его публикацию.
@@ -165,7 +169,7 @@ if (await _authorizationService.AuthorizeAsync(User, survey, Operations.Read) ==
 * Создание
 * чтение
 * Блокировка изменений
-* Delete
+* Delete (Удалить)
 * Опубликовать
 * Отменить публикацию
 
@@ -247,7 +251,8 @@ static readonly Dictionary<OperationAuthorizationRequirement, Func<List<UserPerm
 
 [**Далее**][web-api]
 
-<!-- Links -->
+<!-- links -->
+
 [Tailspin]: tailspin.md
 
 [ролях приложения]: app-roles.md

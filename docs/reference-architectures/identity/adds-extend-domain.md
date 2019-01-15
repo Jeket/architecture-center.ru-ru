@@ -1,16 +1,16 @@
 ---
 title: Расширение доменных служб Active Directory в Azure
 titleSuffix: Azure Reference Architectures
-description: Расширьте локальный домен Active Directory в Azure
+description: Как расширить локальный домен Active Directory в Azure.
 author: telmosampaio
 ms.date: 05/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: 166cd994f65fd812e38e50da1d74b9a99870ed5d
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.openlocfilehash: 78297e1e9c1cb097356f99933190647a50a6e651
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53644144"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54111960"
 ---
 # <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
 

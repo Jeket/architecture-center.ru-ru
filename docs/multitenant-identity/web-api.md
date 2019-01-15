@@ -1,17 +1,17 @@
 ---
 title: Защита серверного веб-API в мультитенантном приложении
-description: Защита серверного веб-API
+description: Как защитить веб-API серверной части.
 author: MikeWasson
 ms.date: 07/21/2017
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: authorize
 pnp.series.next: token-cache
-ms.openlocfilehash: e738eb94b5978efa4e7a4bebcc72daa7968ac904
-ms.sourcegitcommit: e7e0e0282fa93f0063da3b57128ade395a9c1ef9
+ms.openlocfilehash: 517bdbb6e1a1063db9337b63905e2ff5f4bdd4d4
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52901598"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54114034"
 ---
 # <a name="secure-a-backend-web-api"></a>Защита серверного веб-API
 
@@ -19,13 +19,13 @@ ms.locfileid: "52901598"
 
 Приложение [Tailspin Surveys] использует серверный веб-API для управления операциями CRUD в опросах. Например, когда пользователь щелкает "Мои опросы", веб-приложение отправляет HTTP-запрос в веб-API.
 
-```
+```http
 GET /users/{userId}/surveys
 ```
 
 Веб-API возвращает объект JSON.
 
-```
+```http
 {
   "Published":[],
   "Own":[
@@ -40,8 +40,6 @@ GET /users/{userId}/surveys
 
 > [!NOTE]
 > Это сценарий взаимодействия между серверами. Приложение не осуществляет AJAX-вызовы API из клиента браузера.
-> 
-> 
 
 Доступны два основных подхода:
 
@@ -50,7 +48,7 @@ GET /users/{userId}/surveys
 
 Приложение Tailspin реализует удостоверение делегированного пользователя. Их основные различия приведены ниже.
 
-**Удостоверение делегированного пользователя**
+**Удостоверение делегированного пользователя**.
 
 * Токен носителя, отправляемый в веб-API, содержит удостоверение пользователя.
 * Веб-API принимает решения об авторизации на основе удостоверения пользователя.
@@ -58,7 +56,7 @@ GET /users/{userId}/surveys
 * Как правило, веб-приложение все еще принимает некоторые решения относительно авторизации, затрагивающие пользовательский интерфейс (например отображение или скрытие элементов пользовательского интерфейса).
 * Веб-API может использоваться ненадежными клиентами, такими как приложение JavaScript или классическое клиентское приложение.
 
-**Удостоверение приложения**
+**Удостоверение приложения**.
 
 * Веб-API не получает сведения о пользователе.
 * Веб-API не выполняет авторизацию на основе удостоверения пользователя. Все решения об авторизации принимает веб-приложение.  
@@ -75,6 +73,7 @@ GET /users/{userId}/surveys
 ![Получение маркера доступа](./images/access-token.png)
 
 ## <a name="register-the-web-api-in-azure-ad"></a>Регистрация веб-API в Azure AD
+
 Чтобы получить токен носителя для веб-API из Azure AD, необходимо выполнять ряд настроек в Azure AD.
 
 1. Зарегистрируйте веб-API в Azure AD.
@@ -82,16 +81,17 @@ GET /users/{userId}/surveys
 2. Укажите идентификатор клиента для веб-приложения в свойстве `knownClientApplications` манифеста приложения веб-API. См. раздел об [обновлении манифестов приложения].
 
 3. Предоставьте веб-приложению разрешение вызывать веб-API. На портале управления Azure можно задать два типа разрешений: "Разрешения приложения" для удостоверения приложения (поток учетных данных клиента) или "Делегированные разрешения" для удостоверения делегированного пользователя.
-   
+
    ![Делегированные разрешения](./images/delegated-permissions.png)
 
 ## <a name="getting-an-access-token"></a>Получение маркера доступа
+
 Перед вызовом веб-API веб-приложение получает маркер доступа из Azure AD. В приложении .NET используйте [Библиотеку аутентификации Azure AD (ADAL) для .NET][ADAL].
 
 В потоке кода авторизации OAuth 2 приложение обменивается кодом авторизации для маркера доступа. Для получения маркера доступа приведенный ниже код использует ADAL. Этот код вызывается во время события `AuthorizationCodeReceived` .
 
 ```csharp
-// The OpenID Connect middleware sends this event when it gets the authorization code.   
+// The OpenID Connect middleware sends this event when it gets the authorization code.
 public override async Task AuthorizationCodeReceived(AuthorizationCodeReceivedContext context)
 {
     string authorizationCode = context.ProtocolMessage.Code;
@@ -127,9 +127,10 @@ var result = await authContext.AcquireTokenSilentAsync(resourceID, credential, n
 где `userId` обозначает идентификатор объекта пользователя, который указан в утверждении`http://schemas.microsoft.com/identity/claims/objectidentifier`.
 
 ## <a name="using-the-access-token-to-call-the-web-api"></a>Использование маркера доступа для вызова веб-API
+
 Получив маркер, отправьте его в веб-API в заголовке авторизации HTTP-запроса.
 
-```
+```http
 Authorization: Bearer xxxxxxxxxx
 ```
 
@@ -155,6 +156,7 @@ public static async Task<HttpResponseMessage> SendRequestWithBearerTokenAsync(th
 ```
 
 ## <a name="authenticating-in-the-web-api"></a>Проверка подлинности в веб-API
+
 Веб-API должен проверить подлинность токена носителя. В ASP.NET Core вы можете использовать пакет [Microsoft.AspNet.Authentication.JwtBearer][JwtBearer]. Этот пакет содержит ПО промежуточного слоя, который позволяет приложению получать токены носителя OpenID Connect.
 
 Зарегистрируйте ПО промежуточного слоя в классе `Startup` веб-API.
@@ -172,7 +174,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Applicat
         },
         Events= new SurveysJwtBearerEvents(loggerFactory.CreateLogger<SurveysJwtBearerEvents>())
     });
-    
+
     // ...
 }
 ```
@@ -183,6 +185,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Applicat
 * Класс **Events** наследуется от **JwtBearerEvents**.
 
 ### <a name="issuer-validation"></a>Проверка издателя
+
 Издатель маркера проверяется в событии **JwtBearerEvents.TokenValidated**. Издатель отправляется в утверждении "iss".
 
 В приложении Surveys веб-API не обрабатывает [Регистрация клиента]. Таким образом, он только проверяет, находится ли издатель в базе данных приложения. Если издатель отсутствует, создается исключение, которое приводит к ошибке проверки подлинности.
@@ -221,7 +224,8 @@ public override async Task TokenValidated(TokenValidatedContext context)
 Как показано в этом примере, вы можете изменять утверждения с помощью события **TokenValidated**. Как вы помните, эти утверждения поступают из Azure AD. Если веб-приложение изменяет полученные утверждения, эти изменения не влияют на маркер носителя, который передается в веб-API. Дополнительные сведения см. в разделе о [преобразовании утверждений][claims-transformation].
 
 ## <a name="authorization"></a>Авторизация
-Общие сведения об авторизации см. в статье об [авторизации на основе ролей и ресурсов][Authorization]. 
+
+Общие сведения об авторизации см. в статье об [авторизации на основе ролей и ресурсов][Authorization].
 
 ПО промежуточного слоя JwtBearer обрабатывает ответы на запросы авторизации. Например, вы можете разрешить действие контроллера только для прошедших аутентификацию пользователей, изменив атрибут **[Authorize]** и указав схему проверки подлинности **JwtBearerDefaults.AuthenticationScheme**:
 
@@ -248,18 +252,18 @@ public void ConfigureServices(IServiceCollection services)
             policy =>
             {
                 policy.AddRequirements(new SurveyCreatorRequirement());
-                policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement 
+                policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement
                 policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
             });
         options.AddPolicy(PolicyNames.RequireSurveyAdmin,
             policy =>
             {
                 policy.AddRequirements(new SurveyAdminRequirement());
-                policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement 
+                policy.RequireAuthenticatedUser(); // Adds DenyAnonymousAuthorizationRequirement
                 policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
             });
     });
-    
+
     // ...
 }
 ```

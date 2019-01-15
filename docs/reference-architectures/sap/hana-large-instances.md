@@ -5,12 +5,12 @@ description: Методики по запуску SAP HANA в среде с вы
 author: lbrader
 ms.date: 05/16/2018
 ms.custom: seodec18
-ms.openlocfilehash: ef3c57f292024af0abbeb4ead62ab4b3aeb57a90
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.openlocfilehash: 47953037827923ea0e4f492dfc29ce815072a20e
+ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53644093"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54011367"
 ---
 # <a name="run-sap-hana-on-azure-large-instances"></a>Запуск SAP HANA на крупных экземплярах Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "53644093"
 
 - **Хранилище сетевой файловой системы (NFS)**. Сервер [NFS][nfs] поддерживает сетевую общую папку, которая обеспечивает сохраняемость данных для крупного экземпляра HANA.
 
-- **ExpressRoute**. [ExpressRoute][expressroute] — рекомендуемая сетевая служба Azure для создания частных подключений между локальной сетью и виртуальными сетями Azure, которые не осуществляются через общедоступный Интернет. Виртуальные машины Azure подключаются к крупным экземплярам HANA с помощью другого подключения ExpressRoute. Подключение ExpressRoute между виртуальной сетью Azure и крупными экземплярами HANA настраивается как часть предложения Майкрософт.
+- **ExpressRoute**. [ExpressRoute][expressroute] — рекомендуемая сетевая служба Azure для создания частных подключений между локальной сетью и виртуальными сетями Azure, которые не устанавливаются через Интернет. Виртуальные машины Azure подключаются к крупным экземплярам HANA с помощью другого подключения ExpressRoute. Подключение ExpressRoute между виртуальной сетью Azure и крупными экземплярами HANA настраивается как часть предложения Майкрософт.
 
 - **Шлюз.** Через шлюз ExpressRoute виртуальная сеть Azure, используемая для уровня приложений SAP, подключается к сети крупного экземпляра HANA. Воспользуйтесь номером SKU ["Высокопроизводительный" или "Очень высокая производительность"][sku].
 

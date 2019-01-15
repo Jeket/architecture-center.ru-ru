@@ -5,16 +5,12 @@ description: Реализация архитектуры защищенной г
 author: telmosampaio
 ms.date: 10/22/2018
 ms.custom: seodec18
-pnp.series.title: Network DMZ
-pnp.series.prev: ./index
-pnp.series.next: secure-vnet-dmz
-cardTitle: DMZ between Azure and on-premises
-ms.openlocfilehash: c57f741aa0e68783f457f94ea6fd84e1d552f059
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 9a74401d3496807ce2dfc113476e001d19e657e5
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120430"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54112300"
 ---
 # <a name="implement-a-dmz-between-azure-and-your-on-premises-datacenter"></a>Реализация сети периметра между Azure и локальным центром обработки данных
 
@@ -34,7 +30,7 @@ ms.locfileid: "53120430"
 
 Архитектура состоит из следующих компонентов:
 
-- **Локальная сеть.** Частная локальная сеть, реализованная внутри организации.
+- **Локальная сеть.** Частная локальная сеть, реализованная в пределах организации.
 - **Виртуальная сеть Azure.** В виртуальной сети размещаются приложение и другие ресурсы, работающие в Azure.
 - **Шлюз.** Шлюз позволяет установить подключение между маршрутизаторами в локальной и виртуальной сетях.
 - **Виртуальный сетевой модуль (NVA).** NVA — это общий термин, который означает виртуальную машину, выполняющую такие задачи, как разрешение или запрет доступа в качестве брандмауэра, оптимизация операций глобальной сети (WAN) (в том числе сжатие сети), настраиваемая маршрутизация или другие сетевые функции.
@@ -222,7 +218,7 @@ UDR в подсети шлюза блокирует все запросы пол
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Узнайте, как реализовать [промежуточную сеть между Azure и Интернетом](secure-vnet-dmz.md).
+- Узнайте, как реализовать [промежуточную сеть между Azure и Интернетом](./secure-vnet-dmz.md).
 - Узнайте, как реализовать [архитектуру высокодоступной гибридной сети][ra-vpn-failover].
 - Дополнительные сведения об управлении безопасностью сети с помощью Azure см. в статье [Облачные службы Microsoft Cloud и сетевая безопасность][cloud-services-network-security].
 - Подробные сведения о защите ресурсов в Azure см. в статье [Приступая к работе с безопасностью Microsoft Azure][getting-started-with-azure-security].
@@ -235,7 +231,7 @@ UDR в подсети шлюза блокирует все запросы пол
 [azurect]: https://github.com/Azure/NetworkMonitoring/tree/master/AzureCT
 [azure-forced-tunneling]: https://azure.microsoft.com/en-gb/documentation/articles/vpn-gateway-forced-tunneling-rm/
 [azure-marketplace-nva]: https://azuremarketplace.microsoft.com/marketplace/apps/category/networking
-[cloud-services-network-security]: https://azure.microsoft.com/documentation/articles/best-practices-network-security/
+[cloud-services-network-security]: /azure/best-practices-network-security
 [getting-started-with-azure-security]: /azure/security/azure-security-getting-started
 [github-folder]: https://github.com/mspnp/reference-architectures/tree/master/dmz/secure-vnet-hybrid
 [guidance-expressroute]: ../hybrid-networking/expressroute.md

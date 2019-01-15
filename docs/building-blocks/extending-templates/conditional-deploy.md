@@ -1,14 +1,14 @@
 ---
 title: Условное развертывание ресурсов в шаблоне Azure Resource Manager
-description: Расширение возможностей в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения какого-то параметра
+description: В статье описано, как расширить возможности в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения определенного параметра.
 author: petertay
 ms.date: 10/30/2018
-ms.openlocfilehash: 2c74e17a5f38f9225b696640a23b55b1285276bb
-ms.sourcegitcommit: e9eb2b895037da0633ef3ccebdea2fcce047620f
+ms.openlocfilehash: 0e02fbbd130bd6be2fc10173c8466b028d5d61da
+ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50251844"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54113473"
 ---
 # <a name="conditionally-deploy-a-resource-in-an-azure-resource-manager-template"></a>Условное развертывание ресурсов в шаблоне Azure Resource Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "50251844"
 
 Рассмотрим подробно каждый раздел шаблона.
 
-Элемент `parameters` определяет один параметр с именем `virtualNetworkPeerings`. 
+Элемент `parameters` определяет один параметр с именем `virtualNetworkPeerings`.
 
 ```json
 {
@@ -35,6 +35,7 @@ ms.locfileid: "50251844"
     }
   },
 ```
+
 Параметр `virtualNetworkPeerings` является массивом (`array`) со следующей схемой данных.
 
 ```json
@@ -95,9 +96,10 @@ ms.locfileid: "50251844"
     }
 ]
 ```
+
 В этой части нашего примера есть несколько элементов. Во-первых, фактически развертываемый ресурс определен во встроенном шаблоне типа `Microsoft.Resources/deployments`, в котором содержится дополнительный шаблон для развертывания `Microsoft.Network/virtualNetworks/virtualNetworkPeerings`.
 
-Чтобы имя (`name`) встроенного шаблона было уникальным, мы вычисляем его значение путем объединения текущего значения `copyIndex()` с префиксом `vnp-`. 
+Чтобы имя (`name`) встроенного шаблона было уникальным, мы вычисляем его значение путем объединения текущего значения `copyIndex()` с префиксом `vnp-`.
 
 Элемент `condition` указывает, что этот ресурс обрабатывается в том случае, когда функция `greater()` возвращает значение `true`. Здесь мы проверяем, что параметр `virtualNetworkPeerings` для массива имеет значение больше нуля (`greater()`). Если это верно, возвращается значение `true` и наше условие (`condition`) считается выполненным. В противном случае возвращается `false`.
 
@@ -116,7 +118,7 @@ ms.locfileid: "50251844"
   },
 ```
 
-Переменная `workaround` включает в себя два свойства с именами `true` и `false`. Свойство `true` указывает на массив параметров `virtualNetworkPeerings`. Свойство `false` определяется как пустой объект со всеми именованными свойствами, которые требует служба Resource Manager. Обратите внимание, что `false` фактически является массивом, как и параметр `virtualNetworkPeerings`, что позволяет успешно пройти проверку. 
+Переменная `workaround` включает в себя два свойства с именами `true` и `false`. Свойство `true` указывает на массив параметров `virtualNetworkPeerings`. Свойство `false` определяется как пустой объект со всеми именованными свойствами, которые требует служба Resource Manager. Обратите внимание, что `false` фактически является массивом, как и параметр `virtualNetworkPeerings`, что позволяет успешно пройти проверку.
 
 Переменная `peerings` использует эту новую переменную `workaround`, чтобы проверить, что длина массива параметров `virtualNetworkPeerings` больше нуля. Если это так, `string` принимает значение `true`, а переменная `workaround` указывает на массив параметров `virtualNetworkPeerings`. В противном случае возвращается `false`, и переменная `workaround` содержит пустой объект в первом элементе массива.
 
@@ -137,7 +139,7 @@ az group deployment create -g <resource-group-name> \
 * Используйте объекты вместо скалярных значений в качестве параметров шаблона. См. сведения об [использовании объекта в качестве параметра в шаблоне Azure Resource Manager](./objects-as-parameters.md).
 
 <!-- links -->
-[azure-resource-manager-condition]: /azure/azure-resource-manager/resource-group-authoring-templates#resources
+[azure-resource-manager-condition]: /azure/azure-resource-manager/resource-manager-templates-resources#condition
 [azure-resource-manager-variable]: /azure/azure-resource-manager/resource-group-authoring-templates#variables
 [vnet-peering-resource-schema]: /azure/templates/microsoft.network/virtualnetworks/virtualnetworkpeerings
 [cli]: /cli/azure/?view=azure-cli-latest
