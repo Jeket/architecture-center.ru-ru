@@ -3,13 +3,11 @@ title: Виртуальный центр обработки данных Azure
 description: Ресурсы для виртуального центра обработки данных Azure
 keywords: Таблицы Azure
 layout: LandingPage
-ms.openlocfilehash: 5b5b6f58911e39ae1296722194b58c601b9baea8
-ms.sourcegitcommit: 94d50043db63416c4d00cebe927a0c88f78c3219
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47428097"
+ms.topic: landing-page
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
 ---
+
 # <a name="azure-virtual-datacenter-and-the-enterprise-control-plane"></a>Виртуальный центр обработки данных Azure и плоскость управления предприятием
 
 Виртуальный центр обработки данных Azure помогает максимально эффективно использовать возможности облачной платформы Azure без ущерба для имеющихся политик безопасности и работы сети. Развертывая корпоративные рабочие нагрузки в облаке, ИТ-организации и подразделения компании должны сбалансировать возможности управления с гибкостью разработки. С помощью моделей виртуального центра обработки данных Azure можно достигнуть этого баланса с упором на управление.
@@ -19,28 +17,28 @@ ms.locfileid: "47428097"
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Concepts"><img src="../_images/virtual-datacenter.svg" alt="Virtual Datacenter eBook" /></a></td>
     <td>
-        <h3><a href="https://aka.ms/VDC/Concepts">Виртуальный центр обработки данных Azure: основные понятия</a></h3>
+        <h3><a href="https://aka.ms/VDC/Concepts">Виртуальный центр обработки данных Azure. Основные понятия</a></h3>
         <p>В этой электронной книге показано, как развертывать рабочие нагрузки предприятия на облачной платформе Azure, соблюдая существующие сетевые политики и политики безопасности.</p>
     </td>
 </tr>
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="/azure/networking/networking-virtual-datacenter"><img src="./images/vdc-network.png" alt="Network Perspective" /></a></td>
     <td>
-        <h3><a href="networking-virtual-datacenter.md">Виртуальный центр обработки данных Microsoft Azure с точки зрения сети</a></h3>
+        <h3><a href="networking-virtual-datacenter.md">Виртуальный центр обработки данных Azure. Общие сведения о сетевой инфраструктуре</a></h3>
         <p>Эта онлайн-статья содержит обзор сетевых шаблонов и схем, которые можно использовать для решения проблем безопасности, производительности и масштабирования архитектуры, с которыми сталкиваются многие клиенты, планируя массовое перемещение в облако.</p>
     </td>
 </tr>
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Lift"><img src="./images/vdc-lift-and-shift.png" alt="Lift and Shift Guide" /></a></td>
     <td>
-        <h3><a href="https://aka.ms/VDC/Lift">Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift</a></h3>
+        <h3><a href="https://aka.ms/VDC/Lift">Виртуальный центр обработки данных Azure. Руководство по миграции методом lift-and-shift</a></h3>
         <p>В этом техническом документе рассматривается процесс, с помощью которого ИТ-специалисты и руководители организаций могут определить и запланировать перенос приложений и серверов в Azure методом lift-and-shift. Он также позволит минимизировать затраты на дополнительную разработку и оптимизировать размещение в облаке.</p>
     </td>
 </tr>
 <tr>
     <td style="width: 64px; vertical-align: middle;"><a href="https://aka.ms/VDC/Deck"><img src="./images/vdc-deck.png" alt="Presentation Deck" /></a></td>
     <td>
-        <h3><a href="https://aka.ms/VDC/Deck">Виртуальный центр обработки данных Azure: презентация</a></h3>
+        <h3><a href="https://aka.ms/VDC/Deck">Виртуальный центр обработки данных Azure. Презентация</a></h3>
         <p>В этой презентации представлены рекомендации и средства для работы с виртуальным центром обработки данных Azure. Она содержит сведения о целях виртуального центра обработки данных, факторах привлечения клиентов, регионах Azure, элементах автоматизации виртуального центра обработки данных, а также промышленных и доверенных виртуальных центрах обработки данных Azure. В конце презентации предлагается план действий для ИТ-директоров. Также предоставляются сведения о поддержке и обучении.</p>
     </td>
 </tr>
