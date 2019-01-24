@@ -4,13 +4,16 @@ titleSuffix: Azure Application Architecture Guide
 description: В этой статье описаны преимущества и проблемы, связанные с использованием архитектур CQRS, а также рекомендации по работе с ними.
 author: MikeWasson
 ms.date: 08/30/2018
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: reference-architecture
 ms.custom: seojan19
-ms.openlocfilehash: eab765d4eece919d2ca946a3f7152bde24bfd6c5
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.openlocfilehash: 35f37afa60f943f410f1fbd46c789c0b2c66e36e
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54114051"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54481445"
 ---
 # <a name="cqrs-architecture-style"></a>Стиль архитектуры CQRS
 

@@ -4,13 +4,16 @@ titleSuffix: Azure Reference Architectures
 description: Реализуйте архитектуру высокодоступной защищенной сети типа "сеть — сеть", которая охватывает виртуальную сеть Azure и локальную сеть, подключенные с помощью ExpressRoute с отработкой отказа VPN-шлюза.
 author: telmosampaio
 ms.date: 10/22/2017
-ms.custom: seodec18
-ms.openlocfilehash: d32e4dfa81cf74a4ca74746120c15f1ddc066c3e
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.custom: seodec18, networking
+ms.openlocfilehash: fba07823d49aa43fdb67652f99a26bd7df3a57c3
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54011112"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54488296"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-expressroute-with-vpn-failover"></a>Подключение локальной сети к Azure с помощью ExpressRoute с отработкой отказа VPN
 

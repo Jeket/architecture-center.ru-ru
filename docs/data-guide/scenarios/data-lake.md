@@ -1,3 +1,18 @@
+---
+title: Data Lake
+description: ''
+author: zoinerTejada
+ms.date: 02/12/2018
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
+ms.openlocfilehash: d433867886ce0afc219fcc9f35eb7f8b3ce6bee1
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54484709"
+---
 # <a name="data-lakes"></a>Data Lake
 
 Data Lake — это репозиторий для хранения, который может вмещать большой объем данных в собственном необработанном формате. Хранилища Data Lake оптимизированы для масштабирования до нескольких терабайт и даже петабайт данных. Данные обычно поступают из нескольких разнородных источников и могут быть структурированными, частично структурированными и неструктурированными. Идея, лежащая в основе Data Lake, — хранение всех данных в исходном состоянии без каких-либо преобразований. Такой подход отличает Data Lake от традиционного [хранилища данных](../relational-data/data-warehousing.md), в котором данные преобразуются и обрабатываются во время приема.

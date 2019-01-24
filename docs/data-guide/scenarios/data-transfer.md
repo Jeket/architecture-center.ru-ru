@@ -3,12 +3,15 @@ title: Выбор технологии передачи данных
 description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
-ms.openlocfilehash: 1cb763ade2aa263d07a59cc6bfc29d59bec7af19
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
+ms.openlocfilehash: c58d06813e3a500c6bb1b6c7889e65f401be6c33
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54113048"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54484539"
 ---
 # <a name="transferring-data-to-and-from-azure"></a>Передача данных в Azure и обратно
 
@@ -134,7 +137,7 @@ ms.locfileid: "54113048"
 | --- | --- | --- | --- |
 | Оптимизация для больших объемов данных | Нет  | Нет  | Yes |
 | Копирование в реляционную базу данных | Нет  | Нет  | Yes |
-| Копирование в реляционную базу данных | Нет  | Нет  | Yes |
+| Копирование из реляционной базы данных | Нет  | Нет  | Yes |
 | Копирование в хранилище BLOB-объектов | Yes | Нет  | Yes |
 | Копирование из хранилища BLOB-объектов | Yes | Нет  | Yes |
 | Копирование в Data Lake Store | Нет  | Нет  | Yes |

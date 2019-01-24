@@ -1,16 +1,19 @@
 ---
-title: 'Внедрение облачных решений в организации: начало работы'
+title: Внедрение облачных решений в организации. Приступая к работе
 description: Обзор первого этапа цифровой трансформации в организации с помощью облачных решений Azure
 author: petertaylor9999
 ms.date: 09/10/2018
-ms.openlocfilehash: b51e834a56f4d9818ca9475f959c3f888bae20bc
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: 027757c76008da092e0d7ab65b072259a04b3cad
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389310"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54488092"
 ---
-# <a name="enterprise-cloud-adoption-getting-started"></a>Внедрение облачных решений в организации: начало работы 
+# <a name="enterprise-cloud-adoption-getting-started"></a>Внедрение облачных решений в организации. Приступая к работе 
 
 **Цифровая трансформация** и переход на облачные вычисления подразумевают замену локальной инфраструктуры облачной платформой. Такой переход связан с изменениями в бизнес-модели организации, например с сокращением капитальных расходов на закупку ПО и оборудования для центров обработки данных и наращиванием операционных затрат на облачные ресурсы. 
 

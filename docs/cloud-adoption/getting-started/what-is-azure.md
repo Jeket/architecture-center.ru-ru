@@ -1,16 +1,19 @@
 ---
-title: Внедрение облачных решений в организации. Общие сведения о работе Azure
+title: Внедрение облачных решений в организации. Принцип работы Azure
 description: Описание внутренней работы Azure
 author: petertaylor9999
 ms.date: 09/10/2018
-ms.openlocfilehash: 1d9ff8003e97bcfe88121e8231473236f8cfb527
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: 510fc1040812d61b8d736b25c434511ea981b9e5
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389066"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54481836"
 ---
-# <a name="enterprise-cloud-adoption-how-does-azure-work"></a>Внедрение облачных решений в организации. Общие сведения о работе Azure
+# <a name="enterprise-cloud-adoption-how-does-azure-work"></a>Внедрение облачных решений в организации. Принцип работы Azure
 
 Azure — это общедоступная облачная платформа Майкрософт. Azure предоставляет большое количество служб, в том числе платформу как услугу (PaaS), инфраструктуру как услугу (IaaS), базу данных как услугу (DBaaS) и многое другое. Но что такое Azure и как работает эта платформа?
 

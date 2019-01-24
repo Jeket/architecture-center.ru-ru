@@ -5,13 +5,16 @@ description: Защита приложений и служб с помощью �
 keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
+ms.topic: design-pattern
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: a45ace8ea05e4a7dd1d8a48653e94a5fe5bfb0f6
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.openlocfilehash: 99d3f1f3e4ea1f189fbdfc4cb9d9b3d18e8551a2
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54009701"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54487956"
 ---
 # <a name="gatekeeper-pattern"></a>Шаблон привратника
 
