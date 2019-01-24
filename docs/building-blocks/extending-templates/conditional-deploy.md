@@ -3,12 +3,15 @@ title: Условное развертывание ресурсов в шабл�
 description: В статье описано, как расширить возможности в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения определенного параметра.
 author: petertay
 ms.date: 10/30/2018
-ms.openlocfilehash: 0e02fbbd130bd6be2fc10173c8466b028d5d61da
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: article
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.openlocfilehash: f3d22c6437cdabcd93a781ecf7c99db5a570d7cf
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54113473"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54480595"
 ---
 # <a name="conditionally-deploy-a-resource-in-an-azure-resource-manager-template"></a>Условное развертывание ресурсов в шаблоне Azure Resource Manager
 

@@ -5,13 +5,16 @@ description: Запросы, отправляемые в службу, полу�
 keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
+ms.topic: design-pattern
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: ddd9cc9ec85c6ed23fabaaa58424736ba1aa9421
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.openlocfilehash: b3cde9c59e7b4cd023369366ae69977b153eb805
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54011129"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54481594"
 ---
 # <a name="priority-queue-pattern"></a>Шаблон очереди с приоритетом
 

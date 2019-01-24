@@ -3,12 +3,15 @@ title: Выбор технологии потоковой обработки
 description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
-ms.openlocfilehash: 51129bd09974151ef66a1d660ee3cfa8f79eeb0c
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
+ms.openlocfilehash: 342e44d960682c72901a7482caaf328514eb73d8
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54111518"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486137"
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 

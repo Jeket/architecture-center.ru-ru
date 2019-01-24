@@ -5,13 +5,16 @@ description: Механизм обработки ожидаемых времен
 keywords: Конструктивный шаблон
 author: dragon119
 ms.date: 06/23/2017
+ms.topic: design-pattern
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 44a9c7e188bcf76a5f6904879c2121d50397da6c
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.openlocfilehash: 28e840d31a0df063edce82ef52f11064da3b17fb
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54011517"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54483383"
 ---
 # <a name="retry-pattern"></a>Шаблон повторов
 

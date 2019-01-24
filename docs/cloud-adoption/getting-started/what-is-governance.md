@@ -3,12 +3,15 @@ title: Внедрение облачных решений в организац�
 description: Описание концепции управления доступом к ресурсам в Azure.
 author: petertaylor9999
 ms.date: 09/10/2018
-ms.openlocfilehash: fb01b2e2823c16e32f8ded696de0b6faf1d2e610
-ms.sourcegitcommit: e7f8676bbffe500fc4d6deb603b7c0b7ba1884a6
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: e23319f013344df22e116337fbbf41fd3e9b5f3e
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53179286"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486316"
 ---
 # <a name="enterprise-cloud-adoption-what-is-cloud-resource-governance"></a>Внедрение облачных решений в организации. Общее представление о системе управления облачными ресурсами
 

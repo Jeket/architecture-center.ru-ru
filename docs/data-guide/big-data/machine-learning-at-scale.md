@@ -3,12 +3,15 @@ title: Машинное обучение с поддержкой масштаб�
 description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
-ms.openlocfilehash: 962e03f78015904aba4a97e9a39a662857f149ad
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
+ms.openlocfilehash: 30af134c0dc33b12d86057dd6ac5034c5f108f05
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54113539"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54488466"
 ---
 # <a name="machine-learning-at-scale"></a>Машинное обучение с поддержкой масштабирования
 

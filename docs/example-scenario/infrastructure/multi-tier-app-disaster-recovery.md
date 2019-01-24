@@ -4,13 +4,16 @@ titleSuffix: Azure Example Scenarios
 description: Создание многоуровневых веб-приложений для обеспечения высокой доступности и аварийного восстановления в Azure с использованием виртуальных машин Azure, групп доступности, зон доступности, диспетчера трафика Azure и Azure Site Recovery.
 author: sujayt
 ms.date: 11/16/2018
+ms.topic: example-scenario
+ms.service: architecture-center
+ms.subservice: example-scenario
 ms.custom: product-team
-ms.openlocfilehash: d2b466cc691c02ea3c5fb6ff72d91865d33c3378
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.openlocfilehash: 377c1663b8cd81f7788a1f2ce82b562a9695f3b0
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54114102"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54483995"
 ---
 # <a name="multitier-web-application-built-for-high-availability-and-disaster-recovery-on-azure"></a>Создание многоуровневых веб-приложений для обеспечения высокой доступности и аварийного восстановления в Azure
 

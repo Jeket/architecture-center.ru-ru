@@ -3,12 +3,16 @@ title: Восстановление данных после повреждени
 description: В этой статье объясняется, как восстанавливать данные после повреждения или случайного удаления, создавать надежные, высокодоступные и отказоустойчивые приложения и правильно планировать аварийное восстановление.
 author: MikeWasson
 ms.date: 11/11/2018
-ms.openlocfilehash: 40379f32c6af47002e897c28392816fa1578502a
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: article
+ms.service: architecture-center
+ms.subservice: cloud-design-principles
+ms.custom: resiliency
+ms.openlocfilehash: e28f26683c6d7dba196d4351ef3942830c9e7fc2
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54111263"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486324"
 ---
 # <a name="recover-from-data-corruption-or-accidental-deletion"></a>Восстановление данных после повреждения или случайного удаления
 

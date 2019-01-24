@@ -3,12 +3,15 @@ title: Обработка в режиме реального времени
 description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
-ms.openlocfilehash: 75b52ae9bf7419b451084bb1a1eaf0984258433c
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: cloud-fundamentals
+ms.openlocfilehash: fa181700a250b3f957e038f8b5965ad02efd8979
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54113915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486477"
 ---
 # <a name="real-time-processing"></a>Обработка в режиме реального времени
 

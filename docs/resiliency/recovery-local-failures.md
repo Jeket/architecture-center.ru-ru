@@ -3,12 +3,16 @@ title: Техническое руководство. Восстановлени
 description: Эта статья поможет вам понять и освоить процедуру создания надежных, высокодоступных, отказоустойчивых приложений, а также спланировать аварийное восстановление в случае локальных сбоев в Azure.
 author: adamglick
 ms.date: 08/18/2016
-ms.openlocfilehash: c5e26eefb8d5a8d424534081ddd5d1ea0454c17e
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: article
+ms.service: architecture-center
+ms.subservice: cloud-design-principles
+ms.custom: resiliency
+ms.openlocfilehash: a567b138580999c7b7a6ae8dedb244f4e37970e7
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54112861"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486052"
 ---
 [!INCLUDE [header](../_includes/header.md)]
 

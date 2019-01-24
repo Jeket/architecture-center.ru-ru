@@ -4,12 +4,15 @@ titleSuffix: Azure Example Scenarios
 description: Обнаружения мошеннических действий в реальном времени с использованием Центров событий Azure и Stream Analytics.
 author: alexbuckgit
 ms.date: 07/05/2018
-ms.openlocfilehash: 9e4d8c5d24acc414ab38722d2df59102395250fb
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.topic: example-scenario
+ms.service: architecture-center
+ms.subservice: example-scenario
+ms.openlocfilehash: 392d23ed813a9605392b03de5cb8a7c7638bc4fc
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53643411"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54487236"
 ---
 # <a name="real-time-fraud-detection-on-azure"></a>Выявление мошенничества в режиме реального времени в Azure
 

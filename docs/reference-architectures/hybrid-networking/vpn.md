@@ -4,12 +4,16 @@ titleSuffix: Azure Reference Architectures
 description: Реализуйте архитектуру защищенной сети типа "сеть — сеть", которая охватывает виртуальную сеть Azure и локальную сеть, подключенные с помощью VPN.
 author: RohitSharma-pnp
 ms.date: 10/22/2018
-ms.openlocfilehash: 63e919041e4a8c7c9f90a49de05effc48cb743d8
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.custom: networking
+ms.openlocfilehash: 515cd3f5d23957e0e153c9d25198b3cb98b92a5d
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54110917"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54487982"
 ---
 # <a name="connect-an-on-premises-network-to-azure-using-a-vpn-gateway"></a>Подключение локальной сети к Azure с помощью VPN-шлюза
 
