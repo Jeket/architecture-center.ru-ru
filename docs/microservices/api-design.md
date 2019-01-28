@@ -3,12 +3,16 @@ title: Проектирование API
 description: Проектирование API для микрослужб
 author: MikeWasson
 ms.date: 10/23/2018
-ms.openlocfilehash: 80e8e081384a7806880878ae95fbdbc2bb6cc440
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.custom: microservices
+ms.openlocfilehash: 01f774773b2d2a653e52c9ee961f12c5b9fc833a
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54111048"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54485984"
 ---
 # <a name="designing-microservices-api-design"></a>Проектирование микрослужб. Проектирование API
 
@@ -95,7 +99,7 @@ export class Location {
 
 Другим примером является шаблон репозитория, который гарантирует, что другие части приложения не будут выполнять прямые операции чтения или записи в отношении хранилища данных:
 
-Схема репозитория службы доставки дронами[](./images/repository.png)
+![Схема репозитория службы доставки дронами](./images/repository.png)
 
 Однако в архитектуре микрослужб службы не используют одинаковые базы кода и хранилища данных. Вместо этого они обмениваются данными через API. Рассмотрим случай, когда служба "Планировщик" запрашивает информацию о дроне из службы дронов. У службы дронов есть внутренняя модель дрона, выраженная через код. Однако планировщик этого не видит. Он возвращает *представление* сущности дрона, возможно объекта JSON, в ответе HTTP.
 

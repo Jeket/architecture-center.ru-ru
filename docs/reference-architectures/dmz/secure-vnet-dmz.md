@@ -4,17 +4,23 @@ titleSuffix: Azure Reference Architectures
 description: Способы реализации защищенной гибридной сетевой архитектуры с доступом к Интернету в Azure.
 author: telmosampaio
 ms.date: 10/22/2018
-ms.custom: seodec18
-ms.openlocfilehash: 10c8a23ab09da0555de6a51bc082deceb8c462ff
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.custom: seodec18, networking
+ms.openlocfilehash: 80125626d0c79888445bc7828577846bcce9fc67
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54011537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54488228"
 ---
 # <a name="implement-a-dmz-between-azure-and-the-internet"></a>Реализация сети периметра между Azure и Интернетом
 
 Эта эталонная архитектура представляет собой безопасную гибридную сеть, которая расширяет локальную сеть в Azure, а также принимает интернет-трафик. [**Разверните это решение**](#deploy-the-solution).
+
+> [!NOTE]
+> Этот сценарий также может выполняться с помощью [Брандмауэра Azure](/azure/firewall/) — облачной службы безопасности сети.
 
 ![Архитектура защищенной гибридной сети](./images/dmz-public.png)
 

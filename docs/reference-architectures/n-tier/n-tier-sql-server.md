@@ -4,16 +4,19 @@ titleSuffix: Azure Reference Architectures
 description: Сведения о том, как реализовать многоуровневую архитектуру в Azure для обеспечения доступности, безопасности, масштабируемости и управляемости.
 author: MikeWasson
 ms.date: 11/12/2018
-ms.openlocfilehash: e7dbd8dd2b8e5aff8f18ff9b87fce0b76a850bce
-ms.sourcegitcommit: 680c9cef945dff6fee5e66b38e24f07804510fa9
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.openlocfilehash: cf12d27ccaebb9845ada4d4a437e9889ea3325f2
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54011384"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54485406"
 ---
 # <a name="windows-n-tier-application-on-azure-with-sql-server"></a>Использование n-уровневого приложения с SQL Server в Azure
 
-На примере этой эталонной архитектуры показано, как развернуть виртуальные машины и виртуальную сеть, настроенные для n-уровневого приложения с помощью SQL Server на платформе Windows для уровня данных. [**Разверните это решение**](#deploy-the-solution).
+На примере этой эталонной архитектуры показано, как развернуть виртуальные машины и виртуальную сеть, настроенные для [N-уровневого](../../guide/architecture-styles/n-tier.md) приложения с помощью SQL Server на платформе Windows для уровня данных. [**Разверните это решение**](#deploy-the-solution).
 
 ![N-уровневая архитектура с использованием Microsoft Azure](./images/n-tier-sql-server.png)
 
@@ -233,6 +236,10 @@ Jumpbox имеет минимальные требования к произво
     ```
 
 Дополнительные сведения о развертывании этого примера эталонной архитектуры с использованием стандартных блоков Azure см. в [нашем репозитории GitHub][git].
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Модуль Microsoft Learn. Обзор N-уровневой архитектуры](/learn/modules/n-tier-architecture/)
 
 <!-- links -->
 [dmz]: ../dmz/secure-vnet-dmz.md

@@ -4,17 +4,23 @@ titleSuffix: Azure Reference Architectures
 description: Реализация архитектуры защищенной гибридной сети в Azure.
 author: telmosampaio
 ms.date: 10/22/2018
-ms.custom: seodec18
-ms.openlocfilehash: 9a74401d3496807ce2dfc113476e001d19e657e5
-ms.sourcegitcommit: 1f4cdb08fe73b1956e164ad692f792f9f635b409
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
+ms.custom: seodec18, networking
+ms.openlocfilehash: 82327cca08e614bfe5226c9ca1a414388878a7c2
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54112300"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54482516"
 ---
 # <a name="implement-a-dmz-between-azure-and-your-on-premises-datacenter"></a>Реализация сети периметра между Azure и локальным центром обработки данных
 
 Эта эталонная архитектура представляет собой защищенную гибридную сеть, которая расширяет локальную сеть в Azure. В архитектуре реализована промежуточная подсеть (также называется *сетью периметра*) между локальной сетью и виртуальной сетью Azure. Промежуточная подсеть содержит виртуальные сетевые модули (NVA), в которых реализованы функции безопасности, например брандмауэры и проверка пакетов. Весь исходящий трафик из виртуальной сети принудительно туннелируется в Интернет через локальную сеть, чтобы можно было выполнить его аудит. [**Разверните это решение**](#deploy-the-solution).
+
+> [!NOTE]
+> Этот сценарий также может выполняться с помощью [Брандмауэра Azure](/azure/firewall/) — облачной службы безопасности сети.
 
 ![Архитектура защищенной гибридной сети](./images/dmz-private.png)
 

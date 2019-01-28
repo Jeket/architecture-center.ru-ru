@@ -4,17 +4,20 @@ titleSuffix: Azure Reference Architectures
 description: Запуск виртуальных машин Linux в n-уровневой архитектуре с помощью Apache Cassandra в Microsoft Azure.
 author: MikeWasson
 ms.date: 11/12/2018
+ms.topic: reference-architecture
+ms.service: architecture-center
+ms.subservice: reference-architecture
 ms.custom: seodec18
-ms.openlocfilehash: bbd1029fe17b5d88d54246127c5d8983a573b012
-ms.sourcegitcommit: 88a68c7e9b6b772172b7faa4b9fd9c061a9f7e9d
+ms.openlocfilehash: 6c9a2b4fe513c959e537f705beb1c024b54c7b50
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53120175"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54485454"
 ---
 # <a name="linux-n-tier-application-in-azure-with-apache-cassandra"></a>Использование n-уровневого приложения Linux с Apache Cassandra в Azure
 
-На примере этой эталонной архитектуры показано, как развернуть виртуальные машины и виртуальную сеть, настроенные для n-уровневого приложения с помощью Apache Cassandra на платформе Linux для уровня данных. [**Разверните это решение**](#deploy-the-solution).
+На примере этой эталонной архитектуры показано, как развернуть виртуальные машины и виртуальную сеть, настроенные для [N-уровневого](../../guide/architecture-styles/n-tier.md) приложения с помощью Apache Cassandra на платформе Linux для уровня данных. [**Разверните это решение**](#deploy-the-solution).
 
 ![N-уровневая архитектура с использованием Microsoft Azure](./images/n-tier-cassandra.png)
 
@@ -164,6 +167,10 @@ Jumpbox имеет минимальные требования к произво
    ```
 
 Дополнительные сведения о развертывании этого примера эталонной архитектуры с использованием стандартных блоков Azure см. в [нашем репозитории GitHub][git].
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Модуль Microsoft Learn. Обзор N-уровневой архитектуры](/learn/modules/n-tier-architecture/)
 
 <!-- links -->
 

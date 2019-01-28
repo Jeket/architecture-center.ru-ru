@@ -1,16 +1,19 @@
 ---
-title: Внедрение облачных решений в организации. Проектирование системы управления отдельной командой в Azure
+title: Внедрение облачных решений в организации. Разработка системы управления для небольшой рабочей нагрузки
 description: Руководство по настройке элементов системы управления, что позволит пользователям развертывать простые рабочие нагрузки.
 author: petertaylor9999
 ms.date: 09/10/2018
-ms.openlocfilehash: 13c7c4b41df14151d28b9c685f01019af3ec63f2
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: f87584b4182e5eca143f6429220c822b4be2ed70
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389253"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54481734"
 ---
-# <a name="enterprise-cloud-adoption-governance-design-for-a-simple-workload"></a>Внедрение облачных решений в организации. Проектирование системы управления отдельной командой в Azure
+# <a name="enterprise-cloud-adoption-governance-design-for-a-simple-workload"></a>Внедрение облачных решений в организации. Разработка системы управления для небольшой рабочей нагрузки
 
 Цель этого руководства — помочь вам ознакомиться с разработкой модели системы управления ресурсами в Azure для отдельной команды и отдельной рабочей нагрузки.  Мы рассмотрим набор гипотетических требований к управлению, а затем рассмотрим несколько примеров реализации, которые отвечают этим требованиям. 
 

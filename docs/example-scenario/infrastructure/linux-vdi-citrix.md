@@ -4,13 +4,16 @@ titleSuffix: Azure Example Scenarios
 description: Создание среды VDI для настольных компьютеров Linux с помощью Citrix в Azure.
 author: miguelangelopereira
 ms.date: 09/12/2018
-ms.custom: fasttrack
-ms.openlocfilehash: af1cf01cb8b118e829c3870b636018aa5181b180
-ms.sourcegitcommit: bb7fcffbb41e2c26a26f8781df32825eb60df70c
+ms.topic: example-scenario
+ms.service: architecture-center
+ms.subservice: example-scenario
+ms.custom: fasttrack, Linux
+ms.openlocfilehash: a6fe0b7e53c83c7b932c39f910257a1e7d24834f
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53643923"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54481237"
 ---
 # <a name="linux-virtual-desktops-with-citrix"></a>Виртуальный рабочий стол Linux с использованием Citrix
 
@@ -90,7 +93,7 @@ ms.locfileid: "53643923"
 - Этот пример предназначен для высокой доступности для всех ролей, отличных от сервера лицензирования. Поскольку среда продолжает функционировать в течение 30-дневного периода отсрочки, если сервер лицензирования находится в автономном режиме, то на этом сервере не требуется дополнительная избыточность.
 - Все серверы, предоставляющие аналогичные роли, должны развертываться в [группах доступности](/azure/virtual-machines/windows/manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 - Этот пример сценария не включает возможности аварийного восстановления. [Служба Azure Site Recovery](/azure/site-recovery/site-recovery-overview) может быть хорошей надстройкой для этой разработки.
-- Рекомендуем развертывать экземпляры виртуальных машин в этом сценарии в [Зонах доступности](/azure/availability-zones/az-overview). Каждая зона доступности состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Каждый включенный регион имеет как минимум три зоны доступности. Такое распределение экземпляров виртуальной машины в разных зонах обеспечивает высокую степень доступности для уровней приложений. Дополнительные сведения см. в статье [Что такое зоны доступности в Azure?][azureaz-docs]. Вы также можете [развернуть VPN-шлюзы и шлюзы ExpressRoute в Зонах доступности Azure](/azure/vpn-gateway/about-zone-redundant-vnet-gateways).
+- Рекомендуем развертывать экземпляры виртуальных машин в этом сценарии в [Зонах доступности](/azure/availability-zones/az-overview). Каждая зона доступности состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Каждый включенный регион имеет как минимум три зоны доступности. Такое распределение экземпляров виртуальной машины в разных зонах обеспечивает высокую степень доступности для уровней приложений. См. дополнительные сведения о том, [что такое Зоны доступности](/azure/availability-zones/az-overview). Вы также можете [развернуть VPN-шлюзы и шлюзы ExpressRoute в Зонах доступности Azure](/azure/vpn-gateway/about-zone-redundant-vnet-gateways).
 - Для решения по управлению развертыванием продукта необходимо реализовать решение, например [резервное копирование](/azure/backup/backup-introduction-to-azure-backup), [мониторинг](/azure/monitoring-and-diagnostics/monitoring-overview) и [управление обновлениями](/azure/automation/automation-update-management).
 - Этот пример должен работать примерно для 250 многопоточных пользователей (около 50–60 на сервер VDA) со смешанным использованием. Но это будет сильно зависеть от типа используемых приложений. Для использования в производстве необходимо выполнить строгое нагрузочное тестирование.
 

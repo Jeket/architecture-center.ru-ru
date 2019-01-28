@@ -3,14 +3,17 @@ title: Внедрение облачных решений в организац�
 description: Общие сведения о системе управления внедрением облачных решений Azure в организации
 author: petertaylor9999
 ms.date: 09/10/2018
-ms.openlocfilehash: 08994ca5de1da2eadd7ad3cd558845cfe47f64ff
-ms.sourcegitcommit: c49aeef818d7dfe271bc4128b230cfc676f05230
+ms.topic: guide
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: a59414ff21c2e0b9b498f86ba6f49ddd44209c5a
+ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44389049"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54486375"
 ---
-# <a name="enterprise-cloud-adoption-governance-overview"></a>Внедрение облачных решений в организации. Общие сведения о системе управления
+# <a name="enterprise-cloud-adoption-governance-overview"></a>Внедрение облачных решений в организации. Обзор системы управления
 
 Этот раздел сведений о внедрении облачных решений Azure в организации посвящен *системе управления*. Если для вас концепция системы управления в Azure является новой, см. общие сведения о [системе управления облачными ресурсами](../getting-started/what-is-governance.md) и [управлении доступом к ресурсом в Azure](../getting-started/azure-resource-access.md) в [этом разделе](../getting-started/overview.md).
 
