@@ -6,12 +6,12 @@ ms.topic: reference-architecture
 ms.date: 08/30/2018
 ms.service: architecture-center
 ms.subservice: reference-architecture
-ms.openlocfilehash: b30744565ff3107a0bffa3b481d6f142be9dc0fb
-ms.sourcegitcommit: 3b15d65e7c35a19506e562c444343f8467b6a073
+ms.openlocfilehash: bdeaccd651b50f55975de446459d896706146fec
+ms.sourcegitcommit: ed736a0a1b080f6acf4877c8b906cd9b56e12bdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54908619"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55085792"
 ---
 # <a name="azure-reference-architectures"></a>Эталонная архитектура Azure
 
@@ -268,6 +268,31 @@ ms.locfileid: "54908619"
                     <div class="cardText">
                         <h3>Эталонная архитектура Интернета вещей Azure</h3>
                         <p>Рекомендуемая архитектура для приложений Интернета вещей в Azure с использованием компонентов PaaS (платформа как услуга).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+
+## <a name="microservices"></a>Микрослужбы
+
+<ul class="panelContent cardsF">
+<!-- IoT reference architecture -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./microservices/aks.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/aks.svg" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Микрослужбы в Службе Azure Kubernetes (AKS)</h3>
+                        <p>Рекомендуемая архитектура для развертывания архитектуры микрослужб в AKS.</p>
                     </div>
                 </div>
             </div>
