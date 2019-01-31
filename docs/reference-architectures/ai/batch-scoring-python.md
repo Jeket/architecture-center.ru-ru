@@ -7,12 +7,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai, AI
-ms.openlocfilehash: a291821860a8e503ba4c6173ac6d8fd449d6ebf3
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 1ca6cf385ddd3be56e247a3439e737c114a88dcb
+ms.sourcegitcommit: 40f3561cc94f721eca50d33f2d75dc974cb6f92b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54485372"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55147286"
 ---
 # <a name="batch-scoring-of-python-models-on-azure"></a>Пакетная оценка моделей Python в Azure
 
@@ -33,6 +33,9 @@ ms.locfileid: "54485372"
 [Azure Stream Analytics][stream-analytics]. Подсистема обработки событий. Задание Stream Analytics считывает потоки данных из концентратора событий и обрабатывает их.
 
 [Azure Batch AI][batch-ai]. Эта подсистема распределенных вычислений используется для обучения и тестирования машинного обучения и моделей ИИ, свернутых в Azure. Azure Batch AI по запросу создает виртуальные машины с возможностью автоматического масштабирования, где каждый узел в кластере Batch AI выполняет оценку задания для определенного датчика. Оценка  [скрипта][python-script] Python выполняется в контейнерах Docker, созданных на каждом узле кластера, в котором считываются данные соответствующих датчиков, создаются прогнозирования, а их результаты сохраняются в хранилище BLOB-объектов.
+
+> [!NOTE]
+> В марте 2019 г. служба Batch AI будет выведена из эксплуатации, и с этого момента все возможности масштабируемого обучения и оценки будут доступны только в [Службе машинного обучения Azure][amls]. В ближайшее время в эту эталонную архитектуру будут внесены обновления в связи с переходом на решение "Машинное обучение". Для обучения, развертывания и оценки моделей машинного обучения в нем предоставляется управляемый целевой объект вычислений, который называется [Вычислительная среда Машинного обучения Azure][aml-compute].
 
 [Хранилище BLOB-объектов Azure][storage]. Контейнеры BLOB-объектов используются для хранения предварительно обученных моделей, данных и результатов прогнозирования. Модели загружаются в хранилище BLOB-объектов в записную книжку [создать\_ресурсы.ipynb][create-resources]. Эти модели [одноклассового SVM][one-class-svm] обучаются на данных, которые представляют собой значения различных датчиков для различных устройств. Это решение предполагает, что значения данных агрегируются за фиксированный интервал времени.
 
@@ -94,6 +97,8 @@ Batch AI регистрирует все StdOut или Stderr в учетную 
 
 [acr]: /azure/container-registry/container-registry-intro
 [ai]: /azure/application-insights/app-insights-overview
+[aml-compute]: /azure/machine-learning/service/how-to-set-up-training-targets#amlcompute
+[amls]: /azure/machine-learning/service/overview-what-is-azure-ml
 [automatic-scaling]: /azure/batch/batch-automatic-scaling
 [azure-files]: /azure/storage/files/storage-files-introduction
 [batch-ai]: /azure/batch-ai/

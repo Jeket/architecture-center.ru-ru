@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: 26a83b3f75b2e7e9ec4a8a99ab8b4d8f1b1ef4d7
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 27975b42179e87f4520186778610159943a93090
+ms.sourcegitcommit: 40f3561cc94f721eca50d33f2d75dc974cb6f92b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54488568"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55147252"
 ---
 # <a name="batch-scoring-on-azure-for-deep-learning-models"></a>Пакетная оценка для моделей глубокого обучения в Azure
 
@@ -45,6 +45,9 @@ ms.locfileid: "54488568"
 ### <a name="compute"></a>Службы вычислений
 
 **[Azure Batch AI][batch-ai]** используется для запуска алгоритма нейронной передачи стиля. Batch AI поддерживает рабочие нагрузки глубокого обучения, предоставляя контейнеризованные среды, которые предварительно настроены для платформы глубокого обучения на виртуальных машинах с поддержкой GPU. Вычислительный кластер можно также подключить к хранилищу BLOB-объектов с помощью Batch AI.
+
+> [!NOTE]
+> В марте 2019 г. служба Batch AI будет выведена из эксплуатации, и с этого момента все возможности масштабируемого обучения и оценки будут доступны только в [Службе машинного обучения Azure][amls]. В ближайшее время в эту эталонную архитектуру будут внесены обновления в связи с переходом на решение "Машинное обучение". Для обучения, развертывания и оценки моделей машинного обучения в нем предоставляется управляемый целевой объект вычислений, который называется [Вычислительная среда Машинного обучения Azure][aml-compute].
 
 ### <a name="storage"></a>Хранилище
 
@@ -149,6 +152,8 @@ Batch AI автоматически выводит все stdout и stderr в у
 
 <!-- links -->
 
+[aml-compute]: /azure/machine-learning/service/how-to-set-up-training-targets#amlcompute
+[amls]: /azure/machine-learning/service/overview-what-is-azure-ml
 [azcopy]: /azure/storage/common/storage-use-azcopy-linux
 [batch-ai]: /azure/batch-ai/
 [blobfuse]: https://github.com/Azure/azure-storage-fuse
