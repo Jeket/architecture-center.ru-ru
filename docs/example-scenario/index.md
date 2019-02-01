@@ -7,8 +7,13 @@ layout: LandingPage
 ms.topic: landing-page
 ms.service: architecture-center
 ms.subservice: example-scenario
+ms.openlocfilehash: fc9b23866f1e52dcbc428026091605a42ead20a6
+ms.sourcegitcommit: 14226018a058e199523106199be9c07f6a3f8592
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482898"
 ---
-
 # <a name="azure-example-scenarios"></a>Примеры сценариев Azure
 
 В примерах сценариев демонстрируется, как решать конкретных бизнес-задачи или технические вопросы с помощью Azure. Каждый сценарий основан на реальном примере клиента и содержит простые инструкции, которые помогут ускорить реализацию ваших собственных решений.
@@ -24,9 +29,9 @@ ms.subservice: example-scenario
                 <div class="card">
                     <div class="cardText">
                         <h3>Новые сценарии</h3>
-                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/multi-tier-app-disaster-recovery" data-linktype="absolute-path">Многоуровневое веб-приложение с поддержкой высокого уровня доступности и аварийного восстановления</a>
-                        <a class="barLink" href="/azure/architecture/example-scenario/data/hybrid-etl-with-adf" data-linktype="absolute-path">Гибридное извлечение, преобразование и загрузка с использованием локальных служб SSIS и Фабрики данных</a>
-                        <a class="barLink" href="/azure/architecture/example-scenario/apps/decentralized-trust" data-linktype="absolute-path">Децентрализованное доверие между банками в Azure</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/image-modeling" data-linktype="absolute-path">Ускорение моделирования на основе цифровых изображений</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/ai/movie-recommendations" data-linktype="absolute-path">Рекомендации фильмов в Azure</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/multi-tier-app-disaster-recovery" data-linktype="absolute-path">Многоуровневое веб-приложение с высоким уровнем доступности и аварийным восстановлением</a>
                     </div>
                 </div>
             </div>
@@ -38,9 +43,9 @@ ms.subservice: example-scenario
                 <div class="card">
                     <div class="cardText">
                         <h3>Лучшие сценарии</h3>
-                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/regulated-multitier-app" data-linktype="absolute-path">Безопасное веб-приложение Windows для отраслей с высокой степенью регулируемости</a>
-                        <a class="barLink" href="/azure/architecture/example-scenario/apps/devops-dotnet-webapp" data-linktype="absolute-path">Использование конвейера CI/CD с помощью Azure DevOps</a>
-                        <a class="barLink" href="/azure/architecture/example-scenario/data/fraud-detection" data-linktype="absolute-path">Выявление мошенничества в режиме реального времени в Azure</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/regulated-multitier-app" data-linktype="absolute-path">Создание безопасных веб-приложений с помощью виртуальных машин Windows</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/data/data-warehouse" data-linktype="absolute-path">Решения по хранению и анализу данных для продаж и маркетинга</a>
+                        <a class="barLink" href="/azure/architecture/example-scenario/infrastructure/wordpress" data-linktype="absolute-path">Веб-сайты WordPress с высоким уровнем масштабируемости и защиты</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +56,7 @@ ms.subservice: example-scenario
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRy0ZnoKOXdVBqaBz653YPElUNjlNMEpPMDNSSU1aWEIxMFNFNlY2T0E3NC4u" data-linktype="external">
+                        <a href="https://azure-architecture.uservoice.com/forums/918625-architecture-guidance" data-linktype="external">
                             <div class="cardSize cardsF">
                                 <div class="cardPadding">
                                     <div class="card">
