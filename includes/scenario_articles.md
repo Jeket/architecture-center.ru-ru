@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: dfc4af0a5be29b32d90cc4a05715fd3e2f71427b
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54488670"
----
 
 ## <a name="ai-scenarios"></a>Сценарии использования ИИ
 
@@ -383,6 +375,25 @@ ms.locfileid: "54488670"
                     <div class="cardText">
                         <h3>Моделирование сценариев CFD</h3>
                         <p>Моделирование сценариев CFD в Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./infrastructure/image-modeling.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="./infrastructure/media/architecture-image-modeling.png" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Ускорение моделирования на основе цифровых изображений в Azure</h3>
+                        <p>Ускорение моделирования на основе цифровых изображений в Azure с помощью Avere и Agisoft PhotoScan</p>
                     </div>
                 </div>
             </div>
