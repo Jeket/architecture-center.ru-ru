@@ -3,14 +3,17 @@ title: Рекомендации фильмов в Azure
 description: Использование машинного обучения для автоматизированного предоставления рекомендаций по фильмам, товарам и т. п. путем обучения модели в Azure с помощью машинного обучения и виртуальных машин для обработки и анализа данных (DSVM) Azure.
 author: njray
 ms.date: 1/9/2019
-ms.custom: azcat-ai
+ms.custom: azcat-ai, AI
 social_image_url: /azure/architecture/example-scenario/ai/media/architecture-movie-recommender.png
-ms.openlocfilehash: 9e68f38cb61d7a3255b76a662c58907704914052
-ms.sourcegitcommit: 3b15d65e7c35a19506e562c444343f8467b6a073
+ms.topic: example-scenario
+ms.service: architecture-center
+ms.subservice: example-scenario
+ms.openlocfilehash: 9387ab7989695df29df53d7aa4a437010cdd9fdf
+ms.sourcegitcommit: 14226018a058e199523106199be9c07f6a3f8592
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54908262"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55483000"
 ---
 # <a name="movie-recommendations-on-azure"></a>Рекомендации фильмов в Azure
 
