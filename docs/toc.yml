@@ -537,7 +537,7 @@ items:
     href: checklist/resiliency-per-service.md
   - name: Контрольный список для обеспечения масштабируемости
     href: checklist/scalability.md
-- name: Внедрение облачных решений в организации
+- name: Cloud Adoption Framework
   items:
   - name: Введение
     href: cloud-adoption/overview.md
@@ -549,14 +549,16 @@ items:
       href: cloud-adoption/getting-started/what-is-azure.md
     - name: Общее представление о системе управления облачными ресурсами
       href: cloud-adoption/getting-started/what-is-governance.md
-    - name: Система управления доступом к ресурсам в Azure
+    - name: Управление доступом к ресурсам в Azure
       href: cloud-adoption/getting-started/azure-resource-access.md
   - name: Коммерческое обоснование
     items:
     - name: Создание бизнес-модели миграции в облако
       href: cloud-adoption/business-strategy/cloud-migration-business-case.md
-    - name: Общие сведения о финансовых моделях
+    - name: Создание финансовой модели для перехода на облачные технологии
       href: cloud-adoption/business-strategy/financial-models.md
+    - name: Примеры финансовых результатов
+      href: cloud-adoption/business-strategy/business-outcomes/fiscal-outcomes.md
   - name: Цифровые активы
     items:
     - name: Пять принципов рационализации
@@ -569,27 +571,211 @@ items:
       href: cloud-adoption/digital-estate/inventory.md
     - name: Рациональное использование цифровых активов
       href: cloud-adoption/digital-estate/rationalize.md
-    - name: Прогнозирование затрат на облако
+    - name: Сопоставление моделей затрат для прогнозирования стоимости
       href: cloud-adoption/digital-estate/calculate.md
   - name: Система управления
     items:
     - name: Обзор
       href: cloud-adoption/governance/overview.md
-    - name: Разработка системы управления для одной команды
-      href: cloud-adoption/governance/governance-single-team.md
-    - name: Разработка системы управления для нескольких команд
-      href: cloud-adoption/governance/governance-multiple-teams.md
+    - name: Стратегии действенного управления
+      items:
+      - name: Обзор стратегий
+        href: cloud-adoption/governance/journeys/overview.md
+      - name: Стратегия для малых и средних предприятий
+        items:
+        - name: Рекомендации
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/overview.md
+        - name: Описание
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/narrative.md
+        - name: Начальная корпоративная политика
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/initial-corporate-policy.md
+        - name: Описание лучших методик
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/best-practice-explained.md
+        - name: Эволюция основных способов защиты
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/security-baseline-evolution.md
+        - name: Эволюция согласованности ресурсов
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/resource-consistency-evolution.md
+        - name: Эволюция управления затратами
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/cost-management-evolution.md
+        - name: Эволюция использования нескольких облаков
+          href: cloud-adoption/governance/journeys/small-to-medium-enterprise/multi-cloud-evolution.md
+      - name: Стратегия для крупных предприятий
+        items:
+        - name: Рекомендации
+          href: cloud-adoption/governance/journeys/large-enterprise/overview.md
+        - name: Описание
+          href: cloud-adoption/governance/journeys/large-enterprise/narrative.md
+        - name: Начальная корпоративная политика
+          href: cloud-adoption/governance/journeys/large-enterprise/initial-corporate-policy.md
+        - name: Описание лучших методик
+          href: cloud-adoption/governance/journeys/large-enterprise/best-practice-explained.md
+        - name: Эволюция основных способов идентификации
+          href: cloud-adoption/governance/journeys/large-enterprise/identity-baseline-evolution.md
+        - name: Эволюция основных способов защиты
+          href: cloud-adoption/governance/journeys/large-enterprise/security-baseline-evolution.md
+        - name: Эволюция согласованности ресурсов
+          href: cloud-adoption/governance/journeys/large-enterprise/resource-consistency-evolution.md
+        - name: Эволюция управления затратами
+          href: cloud-adoption/governance/journeys/large-enterprise/cost-management-evolution.md
+        - name: Эволюция использования нескольких облаков
+          href: cloud-adoption/governance/journeys/large-enterprise/multi-cloud-evolution.md
+        - name: Использование нескольких уровней управления
+          href: cloud-adoption/governance/journeys/large-enterprise/multiple-layers-of-governance.md
+    - name: Теория управления
+      items:
+      - name: Реализация стратегии управления облаком
+        href: cloud-adoption/governance/corporate-policy.md
+      - name: Пять аспектов управления облаком
+        href: cloud-adoption/governance/governance-disciplines.md
+      - name: Эволюция корпоративной политики и требований соответствия
+        items:
+        - name: Подготовка корпоративной ИТ-политики к использованию в облаке
+          href: cloud-adoption/governance/policy-compliance/overview.md
+        - name: Описание бизнес-рисков
+          href: cloud-adoption/governance/policy-compliance/understanding-business-risk.md
+        - name: Оценка допустимости риска
+          href: cloud-adoption/governance/policy-compliance/risk-tolerance.md
+        - name: Определение правил корпоративных политик
+          href: cloud-adoption/governance/policy-compliance/define-policy.md
+        - name: Руководства по разработке согласованной архитектуры
+          href: cloud-adoption/governance/policy-compliance/align-governance-journeys.md
+        - name: Разработка процессов, обеспечивающих соблюдение политик
+          href: cloud-adoption/governance/policy-compliance/processes.md
+        - name: Обеспечение соответствия нормативным требованиям
+          href: cloud-adoption/governance/policy-compliance/what-is-regulatory-compliance.md
+        - name: Соответствие облачной политике
+          href: cloud-adoption/governance/policy-compliance/what-is-a-cloud-policy-review.md
+        - name: Подготовка руководителей по ИТ-безопасности к работе с облаком
+          href: cloud-adoption/governance/policy-compliance/how-can-a-ciso-prepare-for-the-cloud.md
+        - name: Классификация данных
+          href: cloud-adoption/governance/policy-compliance/what-is-data-classification.md
+      - name: Реализация пяти аспектов управления облаком
+        items:
+        - name: Управление затратами
+          items:
+          - name: Общие сведения об управлении затратами
+            href: cloud-adoption/governance/cost-management/overview.md
+          - name: Скачивание шаблона
+            href: cloud-adoption/governance/cost-management/template.md
+          - name: Описание бизнес-рисков
+            href: cloud-adoption/governance/cost-management/business-risks.md
+          - name: Индикаторы и метрики допустимости риска
+            href: cloud-adoption/governance/cost-management/metrics-tolerance.md
+          - name: Примеры правил политики
+            href: cloud-adoption/governance/cost-management/policy-statements.md
+          - name: Процессы обеспечения соответствия политикам
+            href: cloud-adoption/governance/cost-management/compliance-processes.md
+          - name: Оптимизация аспектов
+            href: cloud-adoption/governance/cost-management/discipline-improvement.md
+          - name: Цепочка инструментов, используемых в контексте Azure
+            href: cloud-adoption/governance/cost-management/toolchain.md
+        - name: Основные способы защиты
+          items:
+          - name: Общие сведения об основных способах защиты
+            href: cloud-adoption/governance/security-baseline/overview.md
+          - name: Скачивание шаблона
+            href: cloud-adoption/governance/security-baseline/template.md
+          - name: Описание бизнес-рисков
+            href: cloud-adoption/governance/security-baseline/business-risks.md
+          - name: Индикаторы и метрики допустимости риска
+            href: cloud-adoption/governance/security-baseline/metrics-tolerance.md
+          - name: Примеры правил политики
+            href: cloud-adoption/governance/security-baseline/policy-statements.md
+          - name: Процессы обеспечения соответствия политикам
+            href: cloud-adoption/governance/security-baseline/compliance-processes.md
+          - name: Оптимизация аспектов
+            href: cloud-adoption/governance/security-baseline/discipline-improvement.md
+          - name: Основные способы защиты в облаке
+            href: cloud-adoption/governance/security-baseline/cloud-native-policy.md
+          - name: Дополнительное руководство по защите в Azure
+            href: cloud-adoption/governance/security-baseline/azure-security-guidance.md
+          - name: Цепочка инструментов, используемых в контексте Azure
+            href: cloud-adoption/governance/security-baseline/toolchain.md
+        - name: Основные способы идентификации
+          items:
+          - name: Общие сведения об основных способах идентификации
+            href: cloud-adoption/governance/identity-baseline/overview.md
+          - name: Скачивание шаблона
+            href: cloud-adoption/governance/identity-baseline/template.md
+          - name: Описание бизнес-рисков
+            href: cloud-adoption/governance/identity-baseline/business-risks.md
+          - name: Индикаторы и метрики допустимости риска
+            href: cloud-adoption/governance/identity-baseline/metrics-tolerance.md
+          - name: Примеры правил политики
+            href: cloud-adoption/governance/identity-baseline/policy-statements.md
+          - name: Процессы обеспечения соответствия политикам
+            href: cloud-adoption/governance/identity-baseline/compliance-processes.md
+          - name: Оптимизация аспектов
+            href: cloud-adoption/governance/identity-baseline/discipline-improvement.md
+          - name: Цепочка инструментов, используемых в контексте Azure
+            href: cloud-adoption/governance/identity-baseline/toolchain.md
+        - name: Согласованность ресурсов
+          items:
+          - name: Общие сведения о согласованности ресурсов
+            href: cloud-adoption/governance/resource-consistency/overview.md
+          - name: Скачивание шаблона
+            href: cloud-adoption/governance/resource-consistency/template.md
+          - name: Описание бизнес-рисков
+            href: cloud-adoption/governance/resource-consistency/business-risks.md
+          - name: Индикаторы и метрики допустимости риска
+            href: cloud-adoption/governance/resource-consistency/metrics-tolerance.md
+          - name: Примеры правил политики
+            href: cloud-adoption/governance/resource-consistency/policy-statements.md
+          - name: Процессы обеспечения соответствия политикам
+            href: cloud-adoption/governance/resource-consistency/compliance-processes.md
+          - name: Оптимизация аспектов
+            href: cloud-adoption/governance/resource-consistency/discipline-improvement.md
+          - name: Управление доступом к ресурсам
+            href: cloud-adoption/governance/resource-consistency/azure-resource-access.md
+          - name: Разработка системы управления для небольшой рабочей нагрузки
+            href: cloud-adoption/governance/resource-consistency/governance-simple-workload.md
+          - name: Разработка системы управления для нескольких команд
+            href: cloud-adoption/governance/resource-consistency/governance-multiple-teams.md
+          - name: Цепочка инструментов, используемых в контексте Azure
+            href: cloud-adoption/governance/resource-consistency/toolchain.md
+        - name: Ускорение развертывания
+          items:
+          - name: Общие сведения об ускорении развертывания
+            href: cloud-adoption/governance/deployment-acceleration/overview.md
+          - name: Скачивание шаблона
+            href: cloud-adoption/governance/deployment-acceleration/template.md
+          - name: Описание бизнес-рисков
+            href: cloud-adoption/governance/deployment-acceleration/business-risks.md
+          - name: Индикаторы и метрики допустимости риска
+            href: cloud-adoption/governance/deployment-acceleration/metrics-tolerance.md
+          - name: Примеры правил политики
+            href: cloud-adoption/governance/deployment-acceleration/policy-statements.md
+          - name: Процессы обеспечения соответствия политикам
+            href: cloud-adoption/governance/deployment-acceleration/compliance-processes.md
+          - name: Оптимизация аспектов
+            href: cloud-adoption/governance/deployment-acceleration/discipline-improvement.md
+          - name: Цепочка инструментов, используемых в контексте Azure
+            href: cloud-adoption/governance/deployment-acceleration/toolchain.md
   - name: Инфраструктура
     items:
-    - name: Развертывание основной рабочей нагрузки
-      href: cloud-adoption/infrastructure/basic-workload.md
+    - name: Виртуальные машины
+      items:
+      - name: Развертывание основной рабочей нагрузки
+        href: cloud-adoption/infrastructure/virtual-machines/basic-workload.md
+    - name: Перенос решений для мейнфреймов
+      items:
+      - name: Обзор
+        href: cloud-adoption/infrastructure/mainframe-migration/overview.md
+      - name: Мифы и факты
+        href: cloud-adoption/infrastructure/mainframe-migration/myths-and-facts.md
+      - name: Стратегии миграции
+        href: cloud-adoption/infrastructure/mainframe-migration/migration-strategies.md
+      - name: Стратегии переноса приложений
+        href: cloud-adoption/infrastructure/mainframe-migration/application-strategies.md
+    - name: Создание согласованности гибридного облака
+      href: cloud-adoption/infrastructure/misc/hybrid-consistency.md
   - name: Операции
     items:
     - name: Обзор
       href: cloud-adoption/operations/overview.md
     - name: Обеспечение проверки операционной пригодности
       href: cloud-adoption/operations/operational-fitness-review.md
-  - name: Приложение
+  - name: Ссылки
     items:
     - name: Виртуальный центр обработки данных (ВЦОД)
       href: vdc/index.md
@@ -597,9 +783,41 @@ items:
       href: cloud-adoption/appendix/azure-scaffold.md
     - name: Реализация шаблона Azure для предприятий
       href: cloud-adoption/appendix/azure-scaffold-examples.md
-ms.openlocfilehash: 82543ba5afed9d4bb32f0779b332d1425d089cfe
-ms.sourcegitcommit: 14226018a058e199523106199be9c07f6a3f8592
+    - name: Руководства по принятию решений
+      items:
+      - name: Обзор
+        href: cloud-adoption/decision-guides/overview.md
+      - name: Подписки
+        href: cloud-adoption/decision-guides/subscriptions/overview.md
+      - name: Удостоверение
+        href: cloud-adoption/decision-guides/identity/overview.md
+      - name: Принудительное применение политики
+        href: cloud-adoption/decision-guides/policy-enforcement/overview.md
+      - name: Согласованность ресурсов
+        href: cloud-adoption/decision-guides/resource-consistency/overview.md
+      - name: Добавление тегов к ресурсам
+        href: cloud-adoption/decision-guides/resource-tagging/overview.md
+      - name: Шифрование
+        href: cloud-adoption/decision-guides/encryption/overview.md
+      - name: Программно-конфигурируемые сети
+        items:
+        - name: Обзор
+          href: cloud-adoption/decision-guides/software-defined-network/overview.md
+        - name: Только PaaS
+          href: cloud-adoption/decision-guides/software-defined-network/paas-only.md
+        - name: Полностью облачные решения
+          href: cloud-adoption/decision-guides/software-defined-network/cloud-native.md
+        - name: Сеть периметра в облаке
+          href: cloud-adoption/decision-guides/software-defined-network/cloud-dmz.md
+        - name: Гибридная среда
+          href: cloud-adoption/decision-guides/software-defined-network/hybrid.md
+        - name: Звездообразная модель
+          href: cloud-adoption/decision-guides/software-defined-network/hub-spoke.md
+      - name: Журналы и отчеты
+        href: cloud-adoption/decision-guides/log-and-report/overview.md
+ms.openlocfilehash: 608761d954c2a26968a970c99f506ee03b40867d
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55483051"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55898465"
