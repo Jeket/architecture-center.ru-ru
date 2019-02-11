@@ -5,12 +5,12 @@ layout: LandingPage
 ms.topic: landing-page
 ms.date: 09/28/2018
 google-site-verification: b-xRLveOzJ9oSOh37wgRTRB2lMOoFY8HiHf9_0DIawE
-ms.openlocfilehash: f690d95c78becbf16f02f913983533513d2f7c01
-ms.sourcegitcommit: 14226018a058e199523106199be9c07f6a3f8592
+ms.openlocfilehash: 3c48ba77b7f97c6047f5d1441a22f2bd79ee0a3e
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55483085"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55898295"
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -58,8 +58,8 @@ ms.locfileid: "55483085"
                     <div class="card">
                         <img src="_images/cloud-adoption.svg" alt="" />
                         <div class="cardText">
-                            <h3>Внедрение облачных решений в организации</h3>
-                            <p>В этом руководстве описан процесс создания стратегии по внедрению облака в организации. Особое внимание уделяется готовности организации, системе управления и инфраструктуре.</p>
+                            <h3>Microsoft Cloud Adoption Framework для Azure</h3>
+                            <p>Создание стратегии внедрения облака на уровне организации с описанием политик, системы управления и инфраструктуры.</p>
                         </div>
                     </div>
                 </div>
