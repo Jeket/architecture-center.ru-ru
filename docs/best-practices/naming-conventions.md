@@ -8,12 +8,12 @@ ms.topic: best-practice
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: a5fbe72e81a169fd4b29e07e037bb7f8928e0c45
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 9f14b47a9659ad0b7451d106168f4d7b5a6ab0c7
+ms.sourcegitcommit: eee3a35dd5a5a2f0dc117fa1c30f16d6db213ba2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54482402"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55782087"
 ---
 # <a name="naming-conventions-for-azure-resources"></a>Соглашения об именовании для ресурсов Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "54482402"
 | --- | --- | --- | --- | --- | --- | --- |
 |Группа ресурсов |Подписка |1–90 |Без учета регистра |Буквы, цифры, символ подчеркивания, круглые скобки, точка (кроме точки в конце) и символы Юникода, которые соответствуют регулярному выражению, задокументированы [здесь](/rest/api/resources/resourcegroups/createorupdate). |`<service short name>-<environment>-rg` |`profx-prod-rg` |
 |Группа доступности |Группа ресурсов |От 1 до 80 |Без учета регистра |Буквы, цифры, символ подчеркивания и дефис |`<service-short-name>-<context>-as` |`profx-sql-as` |
-|Тег |Связанная сущность |512 (имя), 256 (значение) |Без учета регистра |Буквенно-цифровой |`"key" : "value"` |`"department" : "Central IT"` |
+|Тег |Связанная сущность |512 (имя), 256 (значение) |Без учета регистра |Буквы, цифры и специальные символы за исключением `<`, `>`, `%`, `&`, `\`, `?`, `/`. См. сведения об [ограничениях](/azure/azure-resource-manager/resource-group-using-tags). |`"key" : "value"` |`"department" : "Central IT"` |
 
 ### <a name="compute"></a>Службы вычислений
 

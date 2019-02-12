@@ -7,18 +7,20 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: f622041824d65978346bf39abb3de30732bad193
-ms.sourcegitcommit: 3b15d65e7c35a19506e562c444343f8467b6a073
+ms.openlocfilehash: 0f5de0eca6fbd35cca1a0e8443f363df09ffc6aa
+ms.sourcegitcommit: 287344b6c220bdbd8076aed7a281eb02253e15be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54908638"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712156"
 ---
 # <a name="enterprise-grade-conversational-bot"></a>Чат-бот корпоративного уровня
 
 Эта эталонная архитектура описывает процесс создания чат-бота корпоративного уровня с помощью [Azure Bot Framework][bot-framework]. Все боты отличаются друг от друга, но при работе с ними важно знать ряд распространенных шаблонов, рабочих процессов и технологий. Это особенно важно для ботов, которые обслуживают корпоративные рабочие нагрузки, ведь помимо основных функций существует много рекомендаций по проектированию. В этой статье рассматриваются наиболее важные аспекты разработки и некоторые средства, которые позволяют создать надежные, безопасные и активно обучающиеся боты.
 
 [![Схема архитектуры][0]][0]
+
+Лучшие примеры служебных с открытым кодом, используемые в этой архитектуре, доступны на [GitHub][git-repo-base]. 
 
 ## <a name="architecture"></a>Архитектура
 
@@ -103,7 +105,7 @@ ms.locfileid: "54908638"
 
 Подготовив спецификацию и начальный набор данных, пора приступить к реализации бота. Давайте рассмотрим основную логику бота. Так называют код, который обрабатывает диалог с пользователем и содержит логику маршрутизации, устранения неоднозначностей и ведения журнала. Для начала ознакомьтесь с платформой [Bot Framework][bot-framework], например изучите следующее:
 
-- Основные понятия и термины этой платформы, особенно [беседы], [Шаги] и [действия].
+- Основные понятия и термины этой платформы, особенно [беседы], репликовые [шаги] и [действия].
 - Возможности [службы соединителя бота](/azure/bot-service/rest-api/bot-framework-rest-connector-quickstart), которая обрабатывает сетевое взаимодействие между ботом и каналами.
 - Механизмы поддержания [состояния](/azure/bot-service/bot-builder-concept-state) беседы, для которых применяется хранилище в памяти или (предпочтительно) хранилище BLOB-объектов Azure или Azure Cosmos DB.
 - [ПО промежуточного слоя](/azure/bot-service/bot-builder-basics#middleware) и его применение для подключения бота к внешним службам, таким как Cognitive Services.
@@ -116,8 +118,8 @@ ms.locfileid: "54908638"
 
 Чтобы приступить к работе, создайте бот с подключением к Интернету с помощью [службы Azure Bot](/azure/bot-service/bot-service-quickstart), выбрав любой из доступных шаблонов для C# и Node.js. Когда бот станет более сложным, его лучше сначала создавать локально, а затем разворачивать в Интернете. Выберите интегрированную среду разработки, например Visual Studio или Visual Studio Code, и язык программирования. Пакеты SDK доступны для следующих языков:
 
-- [C#](https://github.com/microsoft/botbuilder-dotnet);
-- [JavaScript](https://github.com/microsoft/botbuilder-js);
+- [C#](https://github.com/microsoft/botbuilder-dotnet)
+- [JavaScript](https://github.com/microsoft/botbuilder-js)
 - [Java](https://github.com/microsoft/botbuilder-java) (предварительная версия);
 - [Python](https://github.com/microsoft/botbuilder-python) (предварительная версия).
 
@@ -139,23 +141,20 @@ ms.locfileid: "54908638"
 
 ## <a name="quality-assurance-and-enhancement"></a>Контроль качества и улучшения
 
-**Ведение журналов.** Сохраняйте журналы всех бесед пользователей с ботом, а также базовые метрики производительности и любые ошибки. Эти журналы будут бесценным ресурсом для отладки проблем, анализа взаимодействия с пользователем и улучшения системы. Для разных типов журналов лучше выбрать разные типы хранилищ. Например, служба Application Insights удобна для веб-журналов, Cosmos DB — для бесед, а служба хранилища Azure — для полезных данных большого объема. Дополнительные сведения см. в статье [Запись данных напрямую в хранилище][transcript-storage].
+**Ведение журналов.** Сохраняйте журналы всех бесед пользователей с ботом, а также базовые метрики производительности и любые ошибки. Эти журналы будут бесценным ресурсом для отладки проблем, анализа взаимодействия с пользователем и улучшения системы. Для разных типов журналов лучше выбрать разные типы хранилищ. Например, служба Application Insights удобна для веб-журналов, Cosmos DB — для бесед, а служба хранилища Azure — для полезных данных большого объема. См. дополнительные сведения о [записи данных напрямую в службу хранилища Azure][transcript-storage].
 
 **Отзывы и предложения**. Также важно понимать, насколько пользователи довольны своим взаимодействием с ботом. Сохраняя отзывы пользователей, вы сможете на основе этих данных выбрать аспекты взаимодействий для возможных улучшений и (или) повторно обучить модели ИИ для повышения производительности. Используйте обратную связь для обучения используемых моделей, например LUIS.
 
 **Тестирование**. Тестирование бота включает модульные тесты, интеграционные тесты, тесты регрессии и функциональные тесты. Для тестирования мы рекомендуем сохранять реальные HTTP-ответы от внешних служб, таких как Поиск Azure или QnA Maker, чтобы воспроизводить их для тестов и избавиться от создания реальных сетевых вызовов к внешним службам.
 
-Чтобы быстро начать разработку по этим направлениям, ознакомьтесь с репозиторием [Botbuilder Utils for JavaScript](https://github.com/Microsoft/botbuilder-utils-js) (средства для разработки ботов на JavaScript). Этот репозиторий содержит пример служебного кода для ботов, созданных с помощью [Microsoft Bot Framework версии 4][bot-framework] и работающих на Node.js. Он содержит следующие пакеты.
-
-- [Средство записи HTTP-тестов](https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-http-test-recorder). Запись HTTP-трафика из внешних служб. Он имеет встроенную поддержку LUIS, Поиска Azure и QnA Maker, но существуют и расширения для любой другой службы.
-
-- [Хранилище расшифровок Cosmos DB](https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-cosmosdb). Демонстрация хранения расшифровки бесед бота в Cosmos DB и запросов по этим данным.
-
-- [Хранилище расшифровок Application Insights](https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-app-insights). Демонстрация хранения расшифровки бесед бота в Application Insights и запросов по этим данным.
-
-- [ПО промежуточного слоя для сбора отзывов](https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-feedback). Пример ПО промежуточного слоя, на основе которого можно создать механизм запроса и получения отзывов.
-
-> [!NOTE]
+>[!NOTE]
+> Чтобы быстро начать разработку по этим направлениям, ознакомьтесь с репозиторием [Botbuilder Utils for JavaScript][git-repo-base]. Этот репозиторий содержит пример служебного кода для ботов, созданных с помощью [Microsoft Bot Framework версии 4][bot-framework] и работающих на Node.js. Он содержит следующие пакеты.
+>
+> - [Хранилище журнала Cosmos DB][cosmosdb-logger]. Способ хранения журналов бота в Cosmos DB и запросы к этим данным.
+> - [Хранилище журналов Application Insights][appinsights-logger]. Способ хранения журналов бота в Application Insights и запросы к этим данным.
+> - [ПО промежуточного слоя для сбора отзывов][feedback-util]. Пример ПО промежуточного слоя, которое предоставляет механизм создания запросов и получения ответов.
+> - [Средство записи HTTP-тестов][testing util]. Запись HTTP-трафика из внешних служб в журнал. Он имеет встроенную поддержку LUIS, Поиска Azure и QnA Maker, но существуют и расширения для любой другой службы. Это поможет вам автоматизировать тестирование ботов.
+>
 > Эти пакеты предоставляются в формате примеров кода для служебных программ и не предполагают никаких гарантий, обновлений или поддержки.
 
 ## <a name="availability-considerations"></a>Вопросы доступности
@@ -200,6 +199,12 @@ ms.locfileid: "54908638"
 [devops]: https://azure.microsoft.com/solutions/devops/
 [functions]: /azure/azure-functions/
 [functions-triggers]: /azure/azure-functions/functions-triggers-bindings
+[git-repo-appinsights-logger]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-app-insights
+[git-repo-base]: https://github.com/Microsoft/botbuilder-utils-js
+[git-repo-cosmosdb-logger]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-cosmosdb
+[git-repo-feedback-util]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-feedback
+[git-repo-testing-util]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-http-test-recorder
+[testing-util]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-http-test-recorder
 [key-vault]: /azure/key-vault/
 [lda]: https://wikipedia.org/wiki/Latent_Dirichlet_allocation/
 [logic-apps]: /azure/logic-apps/logic-apps-overview
@@ -210,7 +215,13 @@ ms.locfileid: "54908638"
 [slots]: /azure/app-service/deploy-staging-slots/
 [synonyms]: /azure/search/search-synonyms
 [transcript-storage]: /azure/bot-service/bot-builder-howto-v4-storage
-[Шаги]: /azure/bot-service/bot-builder-basics#defining-a-turn
+[шаги]: /azure/bot-service/bot-builder-basics#defining-a-turn
 [vscode]: https://azure.microsoft.com/products/visual-studio-code/
 [webapp]: /azure/app-service/overview
 [webchat]: /azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0/
+
+[cosmosdb-logger]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-cosmosdb
+[appinsights-logger]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-transcript-app-insights
+[feedback-util]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-feedback
+[testing util]: https://github.com/Microsoft/botbuilder-utils-js/tree/master/packages/botbuilder-http-test-recorder
+
