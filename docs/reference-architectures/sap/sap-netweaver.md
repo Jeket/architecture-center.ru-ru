@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18, SAP, Windows
-ms.openlocfilehash: 1167a65786c3df946ebaed3e52e4ed4033f50fd5
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: e866727a40551b60e74fc26878a15a5a48e69cf6
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486409"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55897632"
 ---
 # <a name="deploy-sap-netweaver-windows-for-anydb-on-azure-virtual-machines"></a>Развертывание SAP NetWeaver (Windows) для баз сторонних поставщиков на виртуальных машинах Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "54486409"
 
 Эта архитектура подразделяет адресное пространство виртуальной сети на подсети. В основном она фокусируется на подсети уровня приложения. Каждая подсеть может быть связана с NSG, которая определяет политики доступа для подсети. Разместите серверы приложений в отдельной подсети, чтобы упростить их защиту за счет управления политиками безопасности подсети, а не отдельными серверами.
 
-Если NSG связана с подсетью, она применяется ко всем серверам в подсети. Дополнительные сведения об использовании NSG для точного управления серверами в подсети см. в [этой статье](https://azure.microsoft.com/en-us/blog/multiple-vm-nics-and-network-virtual-appliances-in-azure/).
+Если NSG связана с подсетью, она применяется ко всем серверам в подсети. Дополнительные сведения об использовании NSG для точного управления серверами в подсети см. в [этой статье](https://azure.microsoft.com/blog/multiple-vm-nics-and-network-virtual-appliances-in-azure).
 
 ### <a name="load-balancers"></a>Балансировщики нагрузки
 

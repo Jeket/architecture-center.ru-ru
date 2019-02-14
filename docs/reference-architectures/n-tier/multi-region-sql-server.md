@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18
-ms.openlocfilehash: 384634acb8690c64f75eabbfebc5f1de414f6da2
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 9fce082a0e762e25981929f6fa8685033017f3eb
+ms.sourcegitcommit: f4ed242dff8b204cfd8ebebb7778f356a19f5923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54484624"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56224187"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-regions-for-high-availability"></a>Запуск n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности
 
@@ -119,7 +119,7 @@ az network traffic-manager endpoint update --resource-group <resource-group> --p
     ```
 
 - Создайте [отказоустойчивый кластер Windows Server][wsfc] (WSFC), включающий экземпляры SQL Server в обоих регионах.
-- Создайте группу доступности Always On SQL Server, в которую включены экземпляры SQL Server в основном и дополнительном регионах. Дополнительные сведения о шагах см. в статье [Extending AlwaysOn Availability Group to Remote Azure Datacenter (PowerShell)](https://blogs.msdn.microsoft.com/sqlcat/2014/09/22/extending-alwayson-availability-group-to-remote-azure-datacenter-powershell/) (Расширение групп доступности Always On на удаленный центр обработки данных Azure (PowerShell)).
+- Создайте группу доступности Always On SQL Server, в которую включены экземпляры SQL Server в основном и дополнительном регионах. Дополнительные сведения о шагах см. в статье [Extending AlwaysOn Availability Group to Remote Azure Datacenter (PowerShell)](https://techcommunity.microsoft.com/t5/DataCAT/Extending-AlwaysOn-Availability-Group-to-Remote-Azure-Datacenter/ba-p/305217) (Расширение групп доступности Always On на удаленный центр обработки данных Azure (PowerShell)).
 
   - Поместите первичную реплику в основной регион.
   - Поместите одну или несколько вторичных реплик в основной регион. Настройте для них использование синхронного фиксирования с автоматическим переходом на другой ресурс.

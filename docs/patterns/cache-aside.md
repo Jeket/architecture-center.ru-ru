@@ -9,12 +9,12 @@ ms.topic: design-pattern
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: bb2aa5a7ae6d7a33eac33dce4588380ec82a0df7
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: c4b423b2031699210d5917f12a4c14df0f4a694c
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54488177"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55898278"
 ---
 # <a name="cache-aside-pattern"></a>Шаблон "Кэш на стороне"
 
@@ -125,7 +125,7 @@ public async Task<MyEntity> GetMyEntityAsync(int id)
 }
 ```
 
-> В этих примерах для получения доступа к хранилищу и сведений из кэша используется Кэш Redis. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](https://docs.microsoft.com/azure/redis-cache/cache-web-app-howto)
+> В этих примерах для получения доступа к хранилищу и сведений из кэша используется Кэш Redis. Дополнительные сведения см. в статьях [Как использовать кэш Redis для Azure](/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache) и [Как создать веб-приложение с использованием кэша Redis](/azure/redis-cache/cache-web-app-howto)
 
 В методе `UpdateEntityAsync`, показанном ниже, демонстрируется, как сделать объект недействительным в кэше при изменении значения приложением. Этот код обновляет хранилище исходных данных, а затем удаляет кэшированный элемент из кэша.
 
@@ -150,6 +150,6 @@ public async Task UpdateEntityAsync(MyEntity entity)
 
 К реализации этого шаблона могут относиться следующие сведения:
 
-- [Caching](https://docs.microsoft.com/azure/architecture/best-practices/caching) (Кэширование). Здесь предоставлены дополнительные сведения о том, как можно кэшировать данные в облачном решении, а также показаны проблемы, которые следует учитывать при реализации кэширования.
+- [Caching](/azure/architecture/best-practices/caching) (Кэширование). Здесь предоставлены дополнительные сведения о том, как можно кэшировать данные в облачном решении, а также показаны проблемы, которые следует учитывать при реализации кэширования.
 
 - [Data Consistency Primer](https://msdn.microsoft.com/library/dn589800.aspx) (Руководство по обеспечению согласованности данных). Облачные приложения обычно используют данные, которые распределены по хранилищам данных. Управление и поддержание согласованности данных в этой среде — это важнейший аспект системы, в частности проблемы параллелизма и доступности, которые могут возникнуть. В этом руководстве описаны проблемы согласованности в распределенных данных и способы реализации окончательной согласованности в приложении для обеспечения доступности данных.
