@@ -397,7 +397,7 @@ Log Analytics — это служба в Azure, которая помогает 
 [0]: ./images/networking-redundant-equipment.png "Примеры совмещения компонентов" 
 [1]: ./images/networking-vdc-high-level.png "Подробный пример звездообразной топологии в VDC"
 [2]: ./images/networking-hub-spokes-cluster.png "Кластер со звездообразной топологией"
-[3]: ./images/networking-spoke-to-spoke.png "Подключение типа "луч — луч" в звездообразной топологии"
+[3]: ./images/networking-spoke-to-spoke.png "Подключение типа луч — луч в звездообразной топологии"
 [4]: ./images/networking-vdc-block-level-diagram.png "Схема VDC на уровне блоков"
 [5]: ./images/networking-users-groups-subsciptions.png "Пользователи, группы, подписки и проекты"
 [6]: ./images/networking-infrastructure-high-level.png "Общая схема инфраструктуры"
