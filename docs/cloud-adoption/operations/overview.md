@@ -1,21 +1,21 @@
 ---
-title: Внедрение облачных решений в организации. Описание операций
-description: Обзор эксплуатации при внедрении облачных решений Azure в организации
+title: CAF. Описание операций
+description: Обзор эксплуатации для Microsoft Cloud Adoption Framework для Azure
 author: petertaylor9999
 ms.date: 09/20/2018
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
-ms.openlocfilehash: e1b401c59ec91797029440824e88d4c4bfd83315
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 2667eb54dcea7621f32f6f328c1817be55119a1f
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54484465"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55897139"
 ---
-# <a name="enterprise-cloud-adoption-operations-overview"></a>Внедрение облачных решений в организации. Описание операций
+# <a name="caf-operations-overview"></a>CAF. Описание операций
 
-Этот раздел сведений о внедрении облачных решений Azure в организации посвящен **эксплуатации**. 
+В этом разделе CAF представлены сведения об **операциях**.
 
 Когда на вашем предприятии начнется процесс **цифрового преобразования**, большая часть работы, выполняемой командами разработки и реализации, будет связана с переносом существующих рабочих нагрузок из локальной среды в Azure, разработкой и тестированием новых облачных приложений в Azure, а также внедрением новых инновационных служб Azure в существующие локальные рабочие нагрузки. Но это только первый шаг к цифровому преобразованию. Когда эти рабочие нагрузки будут доступны и запущены в Azure, следующим этапом станет их **эксплуатация** в облаке.
 

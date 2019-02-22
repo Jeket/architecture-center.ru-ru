@@ -1,20 +1,21 @@
 ---
-title: Подходы к планированию цифровых активов
-titleSuffix: Enterprise Cloud Adoption
+title: CAF. Подходы к планированию цифровых активов
+titleSuffix: Microsoft Cloud Adoption Framework for Azure
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.custom: governance
 description: Описание подходов к планированию цифровых активов
 author: BrianBlanchard
 ms.date: 12/10/2018
 ms.topic: guide
-ms.service: architecture-center
-ms.subservice: enterprise-cloud-adoption
-ms.openlocfilehash: 59c9e208254eaa0e8beb365718ef59d0694094f3
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: 8b6c680cf477ea188cbd263ecc04389d6daaed89
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54482227"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55898023"
 ---
-# <a name="enterprise-cloud-adoption-approaches-to-digital-estate-planning"></a>Внедрение облачных решений в организации. Подходы к планированию цифровых активов
+# <a name="approaches-to-digital-estate-planning"></a>Подходы к планированию цифровых активов
 
 Может быть несколько вариантов планирования цифровых активов, в зависимости от желаемых результатов и размера существующих ресурсов. Существует также ряд вариантов, касающихся подхода. Очень важно обозначить ожидания от подхода еще на ранних циклах планирования. Расплывчатые ожидания часто приводят к задержкам, связанным с дополнительным сбором данных инвентаризации. В этой статье описываются три подхода к анализу.
 
@@ -36,7 +37,7 @@ ms.locfileid: "54482227"
 
 ## <a name="incremental-approach"></a>Инкрементный подход
 
-Как и большая часть рекомендаций по внедрению облачных решений в организации, инкрементный подход также настоятельно вам рекомендуется. В случае планирования цифровых активов он соответствует многоэтапному процессу:
+Как и в большей части дисциплин CAF, мы настоятельно рекомендуем применять инкрементный подход. В случае планирования цифровых активов он соответствует многоэтапному процессу:
 
 - Первоначальный анализ затрат. Если требуется финансовая проверка, начните с подхода на основе активов (описан выше), чтобы получить первоначальное вычисление стоимости всех цифровых активов без рационализации. Это установит наихудший вариант сценария.
 

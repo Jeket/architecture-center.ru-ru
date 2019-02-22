@@ -1,20 +1,21 @@
 ---
-title: Пять принципов рационализации
-titleSuffix: Enterprise Cloud Adoption
-description: Описание вариантов, доступных при рационализации цифровых активов
+title: CAF. Пять принципов рационализации
+titleSuffix: Microsoft Cloud Adoption Framework for Azure
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.custom: governance
+description: Просмотрите параметры, доступные для рационализации цифровых активов.
 author: BrianBlanchard
 ms.date: 12/10/2018
 ms.topic: guide
-ms.service: architecture-center
-ms.subservice: enterprise-cloud-adoption
-ms.openlocfilehash: 06058967e6ffcd9e3554a46c67144f72fb19078f
-ms.sourcegitcommit: 3b15d65e7c35a19506e562c444343f8467b6a073
+ms.openlocfilehash: ee196487e6f59b1e1b3c63bab9496cbbf805affd
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54908585"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55897479"
 ---
-# <a name="enterprise-cloud-adoption-the-5-rs-of-rationalization"></a>Внедрение облачных решений в организации. Пять принципов рационализации
+# <a name="the-5-rs-of-rationalization"></a>Пять принципов рационализации
 
 Рационализация облака — это процесс оценки активов, который определяет наилучший подход к миграции или модернизации каждого ресурса в облаке. Дополнительные сведения о процессе рационализации см. в статье с описанием [цифровых активов](overview.md).
 
