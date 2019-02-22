@@ -1,0 +1,45 @@
+---
+title: CAF. Программно-конфигурируемые сети в сети периметра в облаке
+titleSuffix: Microsoft Cloud Adoption Framework for Azure
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.custom: governance
+ms.date: 02/11/2019
+description: Эта сетевая архитектура обеспечивает ограниченный доступ между локальной и облачной сетями
+author: rotycenh
+ms.openlocfilehash: a192541dcfb0f3d713f4139a2ab0541d0c7202db
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55902327"
+---
+# <a name="software-defined-networks-cloud-dmz"></a><span data-ttu-id="098c0-103">Программно-определяемые сети. Сеть периметра в облаке</span><span class="sxs-lookup"><span data-stu-id="098c0-103">Software Defined Networks: Cloud DMZ</span></span>
+
+<span data-ttu-id="098c0-104">Сетевая архитектура сети периметра в облаке обеспечивает ограниченный доступ между локальными и облачными сетями, используя виртуальную частную сеть (VPN) для подключения сетей.</span><span class="sxs-lookup"><span data-stu-id="098c0-104">The Cloud DMZ network architecture allows limited access between your on-premises and cloud-based networks, using a virtual private network (VPN) to connect the networks.</span></span> <span data-ttu-id="098c0-105">Сеть периметра развернута в облаке для защиты доступа к локальной сети из облачных ресурсов.</span><span class="sxs-lookup"><span data-stu-id="098c0-105">A DMZ is deployed in the cloud to secure access to the on-premises network from cloud-based resources.</span></span>
+
+![Архитектура защищенной гибридной сети](../../../reference-architectures/dmz/images/dmz-private.png)
+
+<span data-ttu-id="098c0-107">Эта архитектура предназначена для поддержки сценариев, в которых ваша организация хочет начать интеграцию облачных рабочих нагрузок с локальными, но может не иметь полностью сформированных политик безопасности в облаке или которая хочет получить безопасное выделенное подключение к глобальной сети между двумя средами.</span><span class="sxs-lookup"><span data-stu-id="098c0-107">This architecture is designed to support scenarios where your organization wants to start integrating cloud-based workloads with on-premises workloads but may not have fully matured cloud security policies or acquired a secure dedicated WAN connection between the two environments.</span></span> <span data-ttu-id="098c0-108">В результате облачные сети должны рассматриваться как сети периметра для обеспечения безопасности локальных служб.</span><span class="sxs-lookup"><span data-stu-id="098c0-108">As a result, cloud networks should be treated like a demilitarized zone to ensure on-premises services are secure.</span></span>
+
+<span data-ttu-id="098c0-109">Сеть периметра развертывает виртуальные сетевые модули (NVA), чтобы реализовать функции безопасности, такие как брандмауэры и проверка пакетов.</span><span class="sxs-lookup"><span data-stu-id="098c0-109">The DMZ deploys network virtual appliances (NVAs) to implement security functionality such as firewalls and packet inspection.</span></span> <span data-ttu-id="098c0-110">Трафик, проходящий между локальными и облачными приложениями или службами, должен проходить через сеть периметра, где его можно контролировать.</span><span class="sxs-lookup"><span data-stu-id="098c0-110">Traffic passing between on-premises and cloud-based applications or services must pass through the DMZ where it can be audited.</span></span> <span data-ttu-id="098c0-111">VPN-подключения и правила, определяющие, какой трафик может проходить через сеть периметра, строго контролируются командами ИТ-безопасности.</span><span class="sxs-lookup"><span data-stu-id="098c0-111">VPN connections and the rules determining what traffic is allowed through the DMZ network are strictly controlled by IT security teams.</span></span>
+
+## <a name="cloud-dmz-assumptions"></a><span data-ttu-id="098c0-112">Предположения о сети периметра в облаке</span><span class="sxs-lookup"><span data-stu-id="098c0-112">Cloud DMZ assumptions</span></span>
+
+<span data-ttu-id="098c0-113">Развертывание сети периметра в облаке предполагает следующее.</span><span class="sxs-lookup"><span data-stu-id="098c0-113">Deploying a Cloud DMZ assumes the following:</span></span>
+
+- <span data-ttu-id="098c0-114">Группы безопасности не полностью согласовали локальные и облачные требования и политики безопасности.</span><span class="sxs-lookup"><span data-stu-id="098c0-114">Your security teams have not fully aligned on-premises and cloud-based security requirements and policies.</span></span>
+- <span data-ttu-id="098c0-115">Облачные рабочие нагрузки требуют ограниченного доступа к службам, размещенным в локальных или сторонних сетях, или пользователям или приложениям в локальной среде требуется ограниченный доступ к ресурсам, размещенным в облаке.</span><span class="sxs-lookup"><span data-stu-id="098c0-115">Your cloud-based workloads require limited access to services hosted on your on-premises or third-party networks, or your users or applications in your on-premises environment need limited access to cloud-hosted resources.</span></span>
+- <span data-ttu-id="098c0-116">Корпоративная политика, нормативные требования или проблемы технической совместимости не предотвращают реализацию VPN-подключения между локальными сетями и поставщиком облачных служб.</span><span class="sxs-lookup"><span data-stu-id="098c0-116">Implementing a VPN connection between your on-premises networks and cloud provider is not prevented by corporate policy, regulatory requirements, or technical compatibility issues.</span></span>
+- <span data-ttu-id="098c0-117">Рабочие нагрузки не требуют нескольких подписок для обхода ограничений на ресурсы подписки или они включают несколько подписок, но не требуют централизованного управления подключениями или общими службами, используемыми ресурсами, которые распределены по нескольким подпискам.</span><span class="sxs-lookup"><span data-stu-id="098c0-117">Your workloads either do not require multiple subscriptions to bypass subscription resource limits, or they involve multiple subscriptions but don't require central management of connectivity or shared services used by resources spread across multiple subscriptions.</span></span>
+
+<span data-ttu-id="098c0-118">При рассмотрении реализации архитектуры виртуальной сети периметра в облаке команде по внедрению облака следует учитывать следующее.</span><span class="sxs-lookup"><span data-stu-id="098c0-118">Your Cloud Adoption team should consider the following issues when looking at implementing a Cloud DMZ virtual networking architecture:</span></span>
+
+- <span data-ttu-id="098c0-119">Подключение локальных сетей к облачным усложняет требования безопасности.</span><span class="sxs-lookup"><span data-stu-id="098c0-119">Connecting on-premises networks with cloud networks increases the complexity of your security requirements.</span></span> <span data-ttu-id="098c0-120">Несмотря на то, что подключение между облачными сетями и локальной средой защищено, все равно необходимо обеспечить защиту облачных ресурсов.</span><span class="sxs-lookup"><span data-stu-id="098c0-120">Even though the connection between cloud networks and the on-premises environment are secured, you still need to ensure cloud resources are secured.</span></span>
+- <span data-ttu-id="098c0-121">Архитектура сети периметра в облаке обычно используется в качестве первого шага, в то время как подключение дополнительно защищено, а политика безопасности согласована между локальными и облачными сетями, что позволяет более широко внедрять полномасштабную архитектуру гибридных сетей.</span><span class="sxs-lookup"><span data-stu-id="098c0-121">The Cloud DMZ architecture is commonly used as a stepping stone while connectivity is further secured and security policy aligned between on-premises and cloud networks, allowing a broader adoption of a full-scale hybrid networking architecture.</span></span>
+
+## <a name="learn-more"></a><span data-ttu-id="098c0-122">Подробнее</span><span class="sxs-lookup"><span data-stu-id="098c0-122">Learn more</span></span>
+
+<span data-ttu-id="098c0-123">Дополнительные сведения о реализации сети периметра в облаке на платформе Azure см. в следующих статьях.</span><span class="sxs-lookup"><span data-stu-id="098c0-123">See the following for more information about the implementing a Cloud DMZ in the Azure platform.</span></span>
+
+- <span data-ttu-id="098c0-124">[Реализация сети периметра между Azure и локальным центром обработки данных](../../../reference-architectures/dmz/secure-vnet-hybrid.md).</span><span class="sxs-lookup"><span data-stu-id="098c0-124">[Implement a DMZ between Azure and your on-premises datacenter](../../../reference-architectures/dmz/secure-vnet-hybrid.md).</span></span> <span data-ttu-id="098c0-125">В этой статье описывается, как реализовать архитектуру защищенной гибридной сети в Azure.</span><span class="sxs-lookup"><span data-stu-id="098c0-125">This article discusses how to implement a secure hybrid network architecture in Azure.</span></span>
