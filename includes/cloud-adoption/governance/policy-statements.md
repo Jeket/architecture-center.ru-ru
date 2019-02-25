@@ -1,0 +1,39 @@
+<!-- TEMPLATE FILE - DO NOT ADD METADATA -->
+
+## <a name="policy-statements"></a><span data-ttu-id="51e11-101">Правила политики</span><span class="sxs-lookup"><span data-stu-id="51e11-101">Policy statements</span></span>
+
+<span data-ttu-id="51e11-102">Следующие правила политики устанавливают требования, необходимые для устранения определенных рисков.</span><span class="sxs-lookup"><span data-stu-id="51e11-102">The following policy statements establish the requirements needed to mitigate the defined risks.</span></span> <span data-ttu-id="51e11-103">Эти политики определяют функциональные требования для MVP системы управления.</span><span class="sxs-lookup"><span data-stu-id="51e11-103">These policies define the functional requirements for the governance MVP.</span></span> <span data-ttu-id="51e11-104">Каждое из них будет представлено в реализации MVP системы управления.</span><span class="sxs-lookup"><span data-stu-id="51e11-104">Each will be represented in the implementation of the governance MVP.</span></span>
+
+<span data-ttu-id="51e11-105">Ускорение развертывания.</span><span class="sxs-lookup"><span data-stu-id="51e11-105">Deployment Acceleration:</span></span>
+
+- <span data-ttu-id="51e11-106">Все ресурсы необходимо сгруппировать и назначить им теги в соответствии с определенными стратегиями группирования и добавления тегов.</span><span class="sxs-lookup"><span data-stu-id="51e11-106">All assets must be grouped and tagged according to defined grouping and tagging strategies.</span></span>
+- <span data-ttu-id="51e11-107">Все ресурсы должны использовать утвержденную модель развертывания.</span><span class="sxs-lookup"><span data-stu-id="51e11-107">All assets must use an approved deployment model.</span></span>
+- <span data-ttu-id="51e11-108">Когда для поставщика облачных служб установлена основа управления, любые средства развертывания должны быть совместимы со средствами, определенными командой управления.</span><span class="sxs-lookup"><span data-stu-id="51e11-108">Once a governance foundation has been established for a cloud provider, any deployment tooling must be compatible with the tools defined by the governance team.</span></span>
+
+<span data-ttu-id="51e11-109">Основные способы идентификации.</span><span class="sxs-lookup"><span data-stu-id="51e11-109">Identity Baseline:</span></span>
+
+- <span data-ttu-id="51e11-110">Все ресурсы, развернутые в облаке, должны контролироваться с помощью удостоверений и ролей, утвержденных текущей политикой управления.</span><span class="sxs-lookup"><span data-stu-id="51e11-110">All assets deployed to the cloud should be controlled using identities and roles approved by current governance policies.</span></span>
+- <span data-ttu-id="51e11-111">Все группы, которые имеют повышенные привилегии, в локальной инфраструктуре Active Directory должны быть сопоставлены с утвержденной ролью RBAC.</span><span class="sxs-lookup"><span data-stu-id="51e11-111">All groups in the on-premises Active Directory infrastructure that have elevated privileges should be mapped to an approved RBAC role.</span></span>
+
+<span data-ttu-id="51e11-112">Основные способы защиты.</span><span class="sxs-lookup"><span data-stu-id="51e11-112">Security Baseline:</span></span>
+
+- <span data-ttu-id="51e11-113">Все ресурсы, развернутые в облаке, должны иметь утвержденную классификацию данных.</span><span class="sxs-lookup"><span data-stu-id="51e11-113">Any asset deployed to the cloud must have an approved data classification.</span></span>
+- <span data-ttu-id="51e11-114">Все ресурсы с защищенным уровнем данных не должны развертываться в облако, пока надлежащие требования в отношении безопасности и управления не будут утверждены и реализованы.</span><span class="sxs-lookup"><span data-stu-id="51e11-114">No assets identified with a protected level of data may be deployed to the cloud, until sufficient requirements for security and governance can be approved and implemented.</span></span>
+- <span data-ttu-id="51e11-115">Пока минимальные требования к безопасности сети не будут проверены и пока не будет осуществляться управление ими, облачные среды будут восприниматься как сеть периметра и должны соответствовать таким же требованиям к сети, что и другие центры обработки данных или внутренние сети.</span><span class="sxs-lookup"><span data-stu-id="51e11-115">Until minimum network security requirements can be validated and governed, cloud environments are seen as a demilitarized zone and should meet similar connection requirements to other data centers or internal networks.</span></span>
+
+<span data-ttu-id="51e11-116">Управление затратами.</span><span class="sxs-lookup"><span data-stu-id="51e11-116">Cost Management:</span></span>
+
+- <span data-ttu-id="51e11-117">С целью отслеживания все ресурсы должны быть назначены владельцу приложения в рамках одной из основных бизнес-функций.</span><span class="sxs-lookup"><span data-stu-id="51e11-117">For tracking purposes, all assets must be assigned to an application owner within one of the core business functions.</span></span>
+- <span data-ttu-id="51e11-118">Дополнительные требования к защите будут установлены с финансовой командой, когда возникнет вопрос о затратах.</span><span class="sxs-lookup"><span data-stu-id="51e11-118">When cost concerns arise, additional governance requirements will be established with the Finance team.</span></span>
+
+<span data-ttu-id="51e11-119">Согласованность ресурсов.</span><span class="sxs-lookup"><span data-stu-id="51e11-119">Resource Consistency:</span></span>
+
+- <span data-ttu-id="51e11-120">Требования в отношении производительности, SLA или BCDR не должны регулироваться, так как на этом этапе критически важные рабочие нагрузки не развертываются.</span><span class="sxs-lookup"><span data-stu-id="51e11-120">Because no mission-critical workloads are deployed at this stage, there are no SLA, performance, or BCDR requirements to be governed.</span></span>
+- <span data-ttu-id="51e11-121">Когда критически важные рабочие нагрузки развертываются, будут установлены дополнительные требования управления с ИТ-операциями.</span><span class="sxs-lookup"><span data-stu-id="51e11-121">When mission-critical workloads are deployed, additional governance requirements will be established with IT operations.</span></span>
+
+## <a name="processes"></a><span data-ttu-id="51e11-122">Процессы</span><span class="sxs-lookup"><span data-stu-id="51e11-122">Processes</span></span>
+
+<span data-ttu-id="51e11-123">Бюджет не выделяется для текущего мониторинга и применения этих политик системы управления.</span><span class="sxs-lookup"><span data-stu-id="51e11-123">No budget has been allocated for ongoing monitoring and enforcement of these governance policies.</span></span> <span data-ttu-id="51e11-124">Из-за этого у команд управления облаком есть специальные способы мониторинга соблюдения правил политики.</span><span class="sxs-lookup"><span data-stu-id="51e11-124">Because of that, the Cloud Governance team has some ad hoc ways to monitor adherence to policy statements.</span></span>
+
+- <span data-ttu-id="51e11-125">**Образование**. Специалисты системы управления облаком выделяют время на обучение специалистов внедрения облака действенному управлению для поддержки этих политик.</span><span class="sxs-lookup"><span data-stu-id="51e11-125">**Education**: The Cloud Governance team is investing time to educate the cloud adoption teams on the governance journeys that support these policies.</span></span>
+- <span data-ttu-id="51e11-126">Рассмотрение **развертывания**. Прежде чем развертывать ресурс, специалисты системы управления облаком рассмотрят путь развития системы управления вместе со специалистами внедрения облака.</span><span class="sxs-lookup"><span data-stu-id="51e11-126">**Deployment** reviews: Before deploying any asset, the Cloud Governance team will review the governance journey with the cloud adoption teams.</span></span>

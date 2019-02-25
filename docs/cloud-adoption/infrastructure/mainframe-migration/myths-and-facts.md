@@ -1,0 +1,44 @@
+---
+title: Миграция с мейнфреймов. Мифы и факты
+description: Перенос приложений из среды мейнфреймов в проверенную, высокодоступную и масштабируемую инфраструктуру Azure с поддержкой систем, которые сейчас работают на мейнфреймах.
+author: njray
+ms.date: 12/27/2018
+ms.openlocfilehash: bcad01ec044d2d802b055e328a9496aae7b33311
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55901476"
+---
+# <a name="mainframe-myths-and-facts"></a><span data-ttu-id="d07b9-103">Мифы и факты о мейнфрейме</span><span class="sxs-lookup"><span data-stu-id="d07b9-103">Mainframe myths and facts</span></span>
+
+<span data-ttu-id="d07b9-104">Мейнфреймы занимают видное место в истории вычислительной техники и остаются жизнеспособными для высокоспециализированных рабочих нагрузок.</span><span class="sxs-lookup"><span data-stu-id="d07b9-104">Mainframes figure prominently in the history of computing and remain viable for highly specific workloads.</span></span> <span data-ttu-id="d07b9-105">Большинство согласятся с тем, что мэйнфреймы являются проверенной платформой с давно установленными операционными процедурами, которые делают их среды надежными и гибкими.</span><span class="sxs-lookup"><span data-stu-id="d07b9-105">Most agree that mainframes are a proven platform with long-established operating procedures that make them reliable, robust environments.</span></span> <span data-ttu-id="d07b9-106">Программное обеспечение запускается на основе использования, измеренного в миллионах инструкций в секунду (MIPS), а подробные отчеты об использовании доступны для возврата платежей.</span><span class="sxs-lookup"><span data-stu-id="d07b9-106">Software runs based on usage, measured in million instructions per second (MIPS), and extensive usage reports are available for charge backs.</span></span>
+
+<span data-ttu-id="d07b9-107">Надежность, доступность и вычислительная мощность мэйнфреймов приняли неслыханные масштабы.</span><span class="sxs-lookup"><span data-stu-id="d07b9-107">The reliability, availability, and processing power of mainframes have taken on almost mythical proportions.</span></span> <span data-ttu-id="d07b9-108">Чтобы оценить рабочие нагрузки мэйнфреймов, наиболее подходящие для Azure, сначала нужно отличить мифы от реальности.</span><span class="sxs-lookup"><span data-stu-id="d07b9-108">To evaluate the mainframe workloads that are most suitable for Azure, you first want to distinguish the myths from the reality.</span></span>
+
+## <a name="myth-mainframes-never-go-down-and-have-a-minimum-of-five-9s-of-availability"></a><span data-ttu-id="d07b9-109">Миф. Мэйнфреймы никогда не выходят из строя и имеют минимум 99,999 % процентов доступности</span><span class="sxs-lookup"><span data-stu-id="d07b9-109">Myth: Mainframes never go down and have a minimum of five 9s of availability</span></span>
+
+<span data-ttu-id="d07b9-110">Оборудование и операционные системы мэйнфреймов считаются надежными и стабильными.</span><span class="sxs-lookup"><span data-stu-id="d07b9-110">Mainframe hardware and operating systems are viewed as reliable and stable.</span></span> <span data-ttu-id="d07b9-111">Но реальность такова, что время простоя должно быть запланировано для обслуживания и перезагрузок (называемых начальной загрузкой программы или IPLs).</span><span class="sxs-lookup"><span data-stu-id="d07b9-111">But the reality is that downtime must be scheduled for maintenance and reboots (referred to as initial program loads or IPLs).</span></span> <span data-ttu-id="d07b9-112">При рассмотрении этих задач решение для мэйнфреймов часто имеет доступность, близкую к 99 % или 99,9 %, что эквивалентно высокопроизводительному серверу на базе Intel.</span><span class="sxs-lookup"><span data-stu-id="d07b9-112">When these tasks are considered, a mainframe solution often has closer to two or three 9s of availability, which is equivalent to that of high-end, Intel-based servers.</span></span>
+
+<span data-ttu-id="d07b9-113">Мэйнфреймы также остаются такими же уязвимыми к повреждениям, как и любые другие серверы, поэтому им требуются системы бесперебойного питания (СБП) для устранения этих типов сбоев.</span><span class="sxs-lookup"><span data-stu-id="d07b9-113">Mainframes also remain as vulnerable to disasters as any other servers do, and require uninterruptible power supply (UPS) systems to handle these types of failures.</span></span>
+
+## <a name="myth-mainframes-have-limitless-scalability"></a><span data-ttu-id="d07b9-114">Миф. Мэйнфреймы имеют неограниченную масштабируемость</span><span class="sxs-lookup"><span data-stu-id="d07b9-114">Myth: Mainframes have limitless scalability</span></span>
+
+<span data-ttu-id="d07b9-115">Масштабируемость мэйнфрейма зависит от емкости системного программного обеспечения, например системы управления информацией о клиентах (CICS), и от емкости новых экземпляров механизмов и хранилищ мэйнфреймов.</span><span class="sxs-lookup"><span data-stu-id="d07b9-115">A mainframe’s scalability depends on the capacity of its system software, such as the customer information control system (CICS), and the capacity of new instances of mainframe engines and storage.</span></span> <span data-ttu-id="d07b9-116">Некоторые крупные компании, использующие мэйнфреймы, настроили свои CICS для производительности, а иначе бы они превысили возможности самых больших доступных мэйнфреймов.</span><span class="sxs-lookup"><span data-stu-id="d07b9-116">Some large companies that use mainframes have customized their CICS for performance, and have otherwise outgrown the capability of the largest available mainframes.</span></span>
+
+## <a name="myth-intel-based-servers-are-not-as-powerful-as-mainframes"></a><span data-ttu-id="d07b9-117">Миф. Серверы на базе Intel не так мощны, как мэйнфреймы</span><span class="sxs-lookup"><span data-stu-id="d07b9-117">Myth: Intel-based servers are not as powerful as mainframes</span></span>
+
+<span data-ttu-id="d07b9-118">Новые высокопроизводительные системы на базе процессоров Intel обладают такой же вычислительной мощностью, что и мэйнфреймы.</span><span class="sxs-lookup"><span data-stu-id="d07b9-118">The new core-dense, Intel-based systems have as much compute capacity as mainframes.</span></span>
+
+## <a name="myth-the-cloud-cannot-accommodate-mission-critical-applications-for-large-companies-such-as-financial-institutions"></a><span data-ttu-id="d07b9-119">Миф. Облако не может вместить критически важные приложения для крупных компаний, например финансовых учреждений</span><span class="sxs-lookup"><span data-stu-id="d07b9-119">Myth: The cloud cannot accommodate mission-critical applications for large companies, such as financial institutions</span></span>
+
+<span data-ttu-id="d07b9-120">Однако могут быть отдельные случаи, когда облачные решения терпят неудачу, обычно это происходит из-за того, что алгоритмы приложений невозможно распределить.</span><span class="sxs-lookup"><span data-stu-id="d07b9-120">Although there may be some isolated instances where cloud solutions fall short, it is usually becuase the application algorithms cannot be distributed.</span></span> <span data-ttu-id="d07b9-121">Эти несколько примеров являются исключениями, а не правилом.</span><span class="sxs-lookup"><span data-stu-id="d07b9-121">These few examples are the exceptions, not the rule.</span></span>
+
+## <a name="summary"></a><span data-ttu-id="d07b9-122">Сводка</span><span class="sxs-lookup"><span data-stu-id="d07b9-122">Summary</span></span>
+
+<span data-ttu-id="d07b9-123">Для сравнения Azure предлагает альтернативную платформу, которая способна предоставлять аналогичные функциональные возможности и функции мэйнфреймов при гораздо более низкой стоимости.</span><span class="sxs-lookup"><span data-stu-id="d07b9-123">By comparison, Azure offers  an alternative platform that is capable of delivering equivalent mainframe functionality and features, and at a much lower cost.</span></span> <span data-ttu-id="d07b9-124">Кроме того, совокупная стоимость владения (TCO) модели облачных вычислений, основанная на использовании подписки, намного дешевле, чем у мэйнфреймов.</span><span class="sxs-lookup"><span data-stu-id="d07b9-124">In addition, the total cost of ownership (TCO) of the cloud’s subscription-based, usage-driven cost model is far less expensive than mainframe computers.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="d07b9-125">Дополнительная информация</span><span class="sxs-lookup"><span data-stu-id="d07b9-125">Next steps</span></span>
+
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="d07b9-126">Переход с мейнфреймов в Azure</span><span class="sxs-lookup"><span data-stu-id="d07b9-126">Make the Switch from Mainframes to Azure</span></span>](migration-strategies.md)
