@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18
-ms.openlocfilehash: 26d9eee8783b5185fbb7f039e6abda40dec6d4d2
-ms.sourcegitcommit: 287344b6c220bdbd8076aed7a281eb02253e15be
+ms.openlocfilehash: af56a010e90fb176b13c1110ad4000dcababe009
+ms.sourcegitcommit: f4ed242dff8b204cfd8ebebb7778f356a19f5923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712139"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56224153"
 ---
 # <a name="create-a-stream-processing-pipeline-with-azure-stream-analytics"></a>Создание конвейера обработки потоков данных с помощью Azure Stream Analytics
 
@@ -47,7 +47,7 @@ ms.locfileid: "55712139"
 
 Для имитации источника данных в этой эталонной архитектуре используется набор данных<sup>[[1]](#note1)</sup> [New York City Taxi Data](https://uofi.app.box.com/v/NYCtaxidata/folder/2332218797) (Данные о поездках в такси в Нью-Йорке). Этот набор содержит данные о поездках в такси в Нью-Йорке за 4 года (2010&ndash;2013). Он содержит два типа записей: данные о поездке и данные о тарифе. Данные о поездках включают сведения о продолжительности поездки, расстоянии, а также местах посадки и высадки. Данные о тарифах включают сведения о тарифе, налоге и сумме чаевых. В обоих типах записей есть стандартные поля: номер медальона, лицензия на право вождения и код организации. Вместе эти три поля позволяют уникально идентифицировать такси и водителя. Данные хранятся в формате CSV.
 
-[1] <span id="note1">Donovan, Brian; Work, Dan (2016): New York City Taxi Trip Data (2010-2013) (Брайан Донован, Дэн Уорк, 2016. Данные о поездках в такси по Нью-Йорку за 2010–2013 гг.). Иллинойсский университет в Урбане-Шампейне. https://doi.org/10.13012/J8PN93H8
+<span id="note1">[1]</span> Donovan, Brian; Work, Dan (2016): New York City Taxi Trip Data (2010-2013) (Брайан Донован, Дэн Уорк, 2016. Данные о поездках в такси по Нью-Йорку за 2010–2013 гг.). Иллинойсский университет в Урбане-Шампейне. https://doi.org/10.13012/J8PN93H8
 
 <!-- markdownlint-enable MD033 -->
 

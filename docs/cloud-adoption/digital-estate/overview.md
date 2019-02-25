@@ -1,20 +1,22 @@
 ---
-title: Что такое цифровые активы
-titleSuffix: Enterprise Cloud Adoption
-description: Описание концепции цифровых активов
+title: CAF. Что такое цифровые активы
+titleSuffix: Microsoft Cloud Adoption Framework for Azure
+description: Что такое цифровые активы
 author: BrianBlanchard
 ms.date: 12/10/2018
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
-ms.openlocfilehash: ce21a2d72fcb630f5f197dbd6b87b16ef8f41435
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.openlocfilehash: d23bdbdd98226e8b9cdb9bbb5fefa5a918a498d8
+ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54481547"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55898431"
 ---
-# <a name="enterprise-cloud-adoption-what-is-a-digital-estate"></a>Внедрение облачных решений в организации. Что такое цифровые активы
+<!-- markdownlint-disable MD026 -->
+
+# <a name="caf-what-is-a-digital-estate"></a>CAF. Что такое цифровые активы
 
 У каждой современной компании есть своя форма цифровых активов. Так же как и физические активы, цифровые активы — это абстрактные ссылки на количество материальных активов, находящихся в собственности. Цифровыми активами являются виртуальные машины, серверы, приложения, данные и так далее. По сути цифровые активы — это коллекция ИТ-активов, которые обеспечивают выполнение бизнес-процессов и вспомогательных операций.
 
@@ -53,4 +55,4 @@ ms.locfileid: "54481547"
 Перед началом планирования цифровых активов необходимо определить оптимальный подход.
 
 > [!div class="nextstepaction"]
-> [Определение подхода для анализа](approach.md)
+> [Подходы к планированию цифровых активов](approach.md)
