@@ -7,13 +7,8 @@ ms.topic: landing-page
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.date: 08/30/2018
-ms.openlocfilehash: 6895ffc9c73dac29c27e7d8df68550c94f68b10a
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54480663"
 ---
+
 # <a name="architecture-styles"></a>Стили архитектуры
 
 *Стиль архитектуры* — это семейство архитектур, обладающих общими характеристики. Например, [n-уровневый стиль][n-tier] — это распространенный стиль архитектуры. В последнее время [архитектуры микрослужб][microservices] находятся в приоритете. Для стилей архитектуры не требуется использовать определенные технологии, но некоторые технологии хорошо подходят для некоторых архитектур. Например, контейнеры естественным образом подходят для микрослужб.

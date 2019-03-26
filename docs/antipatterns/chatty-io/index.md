@@ -8,13 +8,8 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: b21ef5f772eb4e2572833ab15085651ac3766a5e
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54480612"
 ---
+
 # <a name="chatty-io-antipattern"></a>Антишаблон отправки множественных операций ввода-вывода
 
 Большое число запросов ввода-вывода может оказать существенное влияние на производительность и скорость реагирования.

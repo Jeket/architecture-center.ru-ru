@@ -6,13 +6,8 @@ ms.date: 06/09/2017
 ms.topic: article
 ms.service: architecture-center
 ms.subservice: reference-architecture
-ms.openlocfilehash: 108d82066d9867682c246c4de802849e2e561cbc
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486443"
 ---
+
 # <a name="extend-azure-resource-manager-template-functionality"></a>Расширение функциональности шаблонов Azure Resource Manager
 
 В 2016 году команда разработчиков шаблонов и рекомендаций Майкрософт создала набор [стандартных блоков шаблонов](https://github.com/mspnp/template-building-blocks/wiki) Azure Resource Manager для упрощения развертывания ресурсов. Каждый стандартный блок состоит из набора готовых шаблонов, которые развертывают наборы ресурсов, заданные отдельными файлами параметров.

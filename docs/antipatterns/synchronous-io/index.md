@@ -1,20 +1,15 @@
 ---
 title: Антишаблон синхронных операций ввода-вывода
 titleSuffix: Performance antipatterns for cloud apps
-description: Блокировка вызывающего потока до завершения операций ввода-вывода может привести к снижению производительности. Кроме того, она влияет на вертикальное масштабирование.
+description: 'Блокировка вызывающего потока до завершения операций ввода-вывода может привести к снижению производительности. Кроме того, она влияет на вертикальное масштабирование.'
 author: dragon119
 ms.date: 06/05/2017
 ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 1b53806b2939a7c44a8b48c9146d5e86c84d9e2e
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486171"
 ---
+
 # <a name="synchronous-io-antipattern"></a>Антишаблон синхронных операций ввода-вывода
 
 Блокировка вызывающего потока до завершения операций ввода-вывода может привести к снижению производительности. Кроме того, она влияет на вертикальное масштабирование.
