@@ -1,7 +1,7 @@
 items:
 - name: Центр архитектуры Azure
   href: index.md
-- name: Основные сведения об облаке
+- name: Общие сведения об облаке
   items:
   - name: Руководство по архитектуре приложений
     items:
@@ -65,82 +65,6 @@ items:
         href: guide/design-principles/build-for-business.md
     - name: Основные аспекты качества программного обеспечения
       href: guide/pillars.md
-  - name: Руководство по архитектуре данных
-    items:
-    - name: Введение
-      href: data-guide/index.md
-    - name: Рабочие нагрузки традиционных реляционных СУБД
-      items:
-      - name: Обзор
-        href: data-guide/relational-data/index.md
-      - name: Оперативная обработка транзакций (OLTP)
-        href: data-guide/relational-data/online-transaction-processing.md
-      - name: Хранение данных
-        href: data-guide/relational-data/data-warehousing.md
-      - name: Оперативная аналитическая обработка (OLAP)
-        href: data-guide/relational-data/online-analytical-processing.md
-      - name: Извлечение, преобразование и загрузка (ETL)
-        href: data-guide/relational-data/etl.md
-    - name: Варианты архитектуры для обработки больших данных
-      items:
-      - name: Обзор
-        href: data-guide/big-data/index.md
-      - name: Пакетная обработка
-        href: data-guide/big-data/batch-processing.md
-      - name: Обработка в режиме реального времени
-        href: data-guide/big-data/real-time-processing.md
-      - name: Машинное обучение с поддержкой масштабирования
-        href: data-guide/big-data/machine-learning-at-scale.md
-      - name: Нереляционные хранилища данных
-        href: data-guide/big-data/non-relational-data.md
-      - name: Сценарии
-        items:
-        - name: Расширенная аналитика
-          href: data-guide/scenarios/advanced-analytics.md
-        - name: Data Lake
-          href: data-guide/scenarios/data-lake.md
-        - name: Текстовый поиск со свободной формой записи
-          href: data-guide/scenarios/search.md
-        - name: Интерактивное исследование данных
-          href: data-guide/scenarios/interactive-data-exploration.md
-        - name: Обработка естественного языка
-          href: data-guide/scenarios/natural-language-processing.md
-        - name: Решения для временных рядов
-          href: data-guide/scenarios/time-series.md
-        - name: Работа с CSV- и JSON-файлами
-          href: data-guide/scenarios/csv-and-json.md
-      - name: Выбор технологий
-        items:
-        - name: Хранилища аналитических данных
-          href: data-guide/technology-choices/analytical-data-stores.md
-        - name: Аналитика и отчетность
-          href: data-guide/technology-choices/analysis-visualizations-reporting.md
-        - name: Пакетная обработка
-          href: data-guide/technology-choices/batch-processing.md
-        - name: Cognitive Services
-          href: data-guide/technology-choices/cognitive-services.md
-        - name: Хранилище данных
-          href: data-guide/technology-choices/data-storage.md
-        - name: Машинное обучение
-          href: data-guide/technology-choices/data-science-and-machine-learning.md
-        - name: Обработка естественного языка
-          href: data-guide/technology-choices/natural-language-processing.md
-        - name: Оркестрация конвейеров
-          href: data-guide/technology-choices/pipeline-orchestration-data-movement.md
-        - name: Прием сообщений в реальном времени
-          href: data-guide/technology-choices/real-time-ingestion.md
-        - name: Поиск в хранилищах данных
-          href: data-guide/technology-choices/search-options.md
-        - name: Потоковая обработка
-          href: data-guide/technology-choices/stream-processing.md
-    - name: Сквозные функции
-      items:
-      - name: Передача данных
-        href: data-guide/scenarios/data-transfer.md
-      - name: Расширение локальных решений для работы с данными в облако
-        href: data-guide/scenarios/hybrid-on-premises-and-cloud.md
-      - name: Защита решений для работы с данными
-        href: data-guide/scenarios/securing-data-solutions.md
   - name: Конструктивные шаблоны облачных решений
     items:
     - name: Обзор
@@ -173,8 +97,10 @@ items:
       href: patterns/bulkhead.md
     - name: Кэш на стороне
       href: patterns/cache-aside.md
-    - name: Прерыватель
+    - name: Автоматическое выключение
       href: patterns/circuit-breaker.md
+    - name: Проверка утверждений
+      href: patterns/claim-check.md
     - name: Разделение ответственности команды и запроса (CQRS)
       href: patterns/cqrs.md
     - name: Компенсирующие транзакции
@@ -345,7 +271,7 @@ items:
       href: example-scenario/infrastructure/video-rendering.md
     - name: Моделирование на основе изображений
       href: example-scenario/infrastructure/image-modeling.md
-- name: Эталонные образцы архитектуры
+- name: Эталонные архитектуры
   items:
   - name: Обзор
     href: reference-architectures/index.md
@@ -353,6 +279,8 @@ items:
     items:
     - name: Распределенное обучение моделей глубокого обучения
       href: reference-architectures/ai/training-deep-learning.md
+    - name: Обучение моделей Python Scikit-learn
+      href: reference-architectures/ai/training-python-models.md
     - name: Пакетная оценка с использованием моделей глубокого обучения
       href: reference-architectures/ai/batch-scoring-deep-learning.md
     - name: Пакетная оценка моделей Python
@@ -417,6 +345,8 @@ items:
     items:
     - name: Служба Azure Kubernetes (AKS)
       href: reference-architectures/microservices/aks.md
+    - name: Azure Service Fabric
+      href: reference-architectures/microservices/service-fabric.md
   - name: Сеть периметра
     items:
     - name: Сеть периметра между Azure и локальной средой
@@ -465,30 +395,132 @@ items:
       href: reference-architectures/app-service-web-app/multi-region.md
     - name: Мониторинг веб-приложения
       href: reference-architectures/app-service-web-app/app-monitoring.md
-- name: Руководства по разработке
+- name: Создание микрослужб в Azure
   items:
-  - name: Создание микрослужб в Azure
+  - name: Обзор
+    href: microservices/index.md
+  - name: Введение в микрослужбы
+    href: microservices/introduction.md
+  - name: Моделирование микрослужб
+    items:
+    - name: Анализ домена
+      href: microservices/model/domain-analysis.md
+    - name: Тактическое предметно-ориентированное проектирование
+      href: microservices/model/tactical-ddd.md
+    - name: Определение границ микрослужб
+      href: microservices/model/microservice-boundaries.md
+  - name: Проектирование архитектуры микрослужб
     items:
     - name: Введение
-      href: microservices/index.md
-    - name: Анализ домена
-      href: microservices/domain-analysis.md
-    - name: Определение границ микрослужбы
-      href: microservices/microservice-boundaries.md
-    - name: Рекомендации по работе с данными
-      href: microservices/data-considerations.md
+      href: microservices/design/index.md
+    - name: Выбор вычислительного ресурса
+      href: microservices/design/compute-options.md
     - name: Обмен данными между службами
-      href: microservices/interservice-communication.md
+      href: microservices/design/interservice-communication.md
     - name: Проектирование API
-      href: microservices/api-design.md
-    - name: Прием данных и рабочий процесс
-      href: microservices/ingestion-workflow.md
+      href: microservices/design/api-design.md
     - name: Шлюзы API
-      href: microservices/gateway.md
+      href: microservices/design/gateway.md
+    - name: Рекомендации по работе с данными
+      href: microservices/design/data-considerations.md
+    - name: Конструктивные шаблоны для микрослужб
+      href: microservices/design/patterns.md
+  - name: Использование микрослужб в рабочей среде
+    items:
     - name: Ведение журналов и мониторинг
       href: microservices/logging-monitoring.md
     - name: CI/CD
       href: microservices/ci-cd.md
+- name: Руководства по проектированию
+  items:
+  - name: Руководство по архитектуре данных
+    items:
+    - name: Введение
+      href: data-guide/index.md
+    - name: Рабочие нагрузки традиционных реляционных СУБД
+      items:
+      - name: Обзор
+        href: data-guide/relational-data/index.md
+      - name: Оперативная обработка транзакций (OLTP)
+        href: data-guide/relational-data/online-transaction-processing.md
+      - name: Хранение данных
+        href: data-guide/relational-data/data-warehousing.md
+      - name: Оперативная аналитическая обработка (OLAP)
+        href: data-guide/relational-data/online-analytical-processing.md
+      - name: Извлечение, преобразование и загрузка (ETL)
+        href: data-guide/relational-data/etl.md
+    - name: Варианты архитектуры для обработки больших данных
+      items:
+      - name: Обзор
+        href: data-guide/big-data/index.md
+      - name: Пакетная обработка
+        href: data-guide/big-data/batch-processing.md
+      - name: Обработка в режиме реального времени
+        href: data-guide/big-data/real-time-processing.md
+      - name: Машинное обучение с поддержкой масштабирования
+        href: data-guide/big-data/machine-learning-at-scale.md
+      - name: Нереляционные хранилища данных
+        href: data-guide/big-data/non-relational-data.md
+      - name: Сценарии
+        items:
+        - name: Расширенная аналитика
+          href: data-guide/scenarios/advanced-analytics.md
+        - name: Data Lake
+          href: data-guide/scenarios/data-lake.md
+        - name: Текстовый поиск со свободной формой записи
+          href: data-guide/scenarios/search.md
+        - name: Интерактивное исследование данных
+          href: data-guide/scenarios/interactive-data-exploration.md
+        - name: Обработка естественного языка
+          href: data-guide/scenarios/natural-language-processing.md
+        - name: Решения для временных рядов
+          href: data-guide/scenarios/time-series.md
+        - name: Работа с CSV- и JSON-файлами
+          href: data-guide/scenarios/csv-and-json.md
+      - name: Выбор технологий
+        items:
+        - name: Хранилища аналитических данных
+          href: data-guide/technology-choices/analytical-data-stores.md
+        - name: Аналитика и отчетность
+          href: data-guide/technology-choices/analysis-visualizations-reporting.md
+        - name: Пакетная обработка
+          href: data-guide/technology-choices/batch-processing.md
+        - name: Cognitive Services
+          href: data-guide/technology-choices/cognitive-services.md
+        - name: Хранилище данных
+          href: data-guide/technology-choices/data-storage.md
+        - name: Машинное обучение
+          href: data-guide/technology-choices/data-science-and-machine-learning.md
+        - name: Обработка естественного языка
+          href: data-guide/technology-choices/natural-language-processing.md
+        - name: Оркестрация конвейеров
+          href: data-guide/technology-choices/pipeline-orchestration-data-movement.md
+        - name: Прием сообщений в реальном времени
+          href: data-guide/technology-choices/real-time-ingestion.md
+        - name: Поиск в хранилищах данных
+          href: data-guide/technology-choices/search-options.md
+        - name: Потоковая обработка
+          href: data-guide/technology-choices/stream-processing.md
+    - name: Сквозные функции
+      items:
+      - name: Передача данных
+        href: data-guide/scenarios/data-transfer.md
+      - name: Расширение локальных решений для работы с данными в облако
+        href: data-guide/scenarios/hybrid-on-premises-and-cloud.md
+      - name: Защита решений для работы с данными
+        href: data-guide/scenarios/securing-data-solutions.md
+  - name: Расширение шаблонов Azure Resource Manager
+    items:
+    - name: Введение
+      href: building-blocks/extending-templates/index.md
+    - name: Обновление ресурса
+      href: building-blocks/extending-templates/update-resource.md
+    - name: Условное развертывание ресурса
+      href: building-blocks/extending-templates/conditional-deploy.md
+    - name: Использование объекта в качестве параметра
+      href: building-blocks/extending-templates/objects-as-parameters.md
+    - name: Преобразователь и сборщик свойств
+      href: building-blocks/extending-templates/collector.md
   - name: Управление удостоверениями в мультитенантных приложениях
     items:
     - name: Введение
@@ -759,7 +791,7 @@ items:
       items:
       - name: Развертывание основной рабочей нагрузки
         href: cloud-adoption/infrastructure/virtual-machines/basic-workload.md
-    - name: Перенос решений для мейнфреймов
+    - name: Миграция мейнфреймов
       items:
       - name: Обзор
         href: cloud-adoption/infrastructure/mainframe-migration/overview.md
@@ -817,9 +849,9 @@ items:
           href: cloud-adoption/decision-guides/software-defined-network/hub-spoke.md
       - name: Журналы и отчеты
         href: cloud-adoption/decision-guides/log-and-report/overview.md
-ms.openlocfilehash: 2ba7e4b0b9eb049c0492557a0543778d2fbb2518
-ms.sourcegitcommit: a68f248402c598f9d25bc1dc62f27a6a934ff001
+ms.openlocfilehash: 179f4bc613b29f4090e5713c9abebdf1af8d54a7
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903254"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346184"

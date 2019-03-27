@@ -3,13 +3,7 @@ title: Эталонная архитектура Azure
 description: Эталонные архитектуры и руководства по реализации для общих нагрузок в Azure.
 layout: LandingPage
 ms.topic: landing-page
-ms.date: 02/07/2019
-ms.openlocfilehash: 44111f5f10997c7aba38414b518245c5791d1cd0
-ms.sourcegitcommit: a68f248402c598f9d25bc1dc62f27a6a934ff001
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903237"
+ms.date: 03/07/2019
 ---
 <!-- This file is generated! -->
 <!-- See the templates in ./build/reference-architectures  -->
@@ -19,7 +13,7 @@ ms.locfileid: "55903237"
 
 Наши эталонные архитектуры упорядочены по сценариям. Каждая архитектура содержит предлагаемые методики, а также рекомендации по масштабируемости, доступности, управляемости и безопасности. В большинство из них также включены развертываемое решение или эталонная реализация.
 
-Выберите следующее: [AI](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Интернет вещей](#internet-of-things) | [Микрослужбы](#microservices) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks) | [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Active Directory](#extend-on-premises-active-directory-to-azure) | [Веб-приложения](#web-applications).
+Перейти к разделу: [AI](#ai-and-machine-learning) | [Большие данные](#big-data-solutions) | [Интернет вещей](#internet-of-things) | [Микрослужбы](#microservices) | [Бессерверная архитектура](#serverless-applications) | [Виртуальные сети](#virtual-networks) | [Рабочие нагрузки виртуальных машин](#vm-workloads) | [SAP](#sap) | [Active Directory](#extend-on-premises-active-directory-to-azure) | [Веб-приложения](#web-applications).
 
 <!-- markdownlint-disable MD033 -->
 
@@ -40,6 +34,26 @@ ms.locfileid: "55903237"
                     <div class="cardText">
                         <h3>Распределенное обучение моделей глубокого обучения</h3>
                         <p>Выполняйте распределенное обучение моделей глубокого обучения в кластерах виртуальных машин с поддержкой GPU.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Training of Python scikit-learn models -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/training-python-models.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/python-powered-h.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Обучение моделей Python Scikit-learn</h3>
+                        <p>Рекомендации по настройке гиперпараметров модели Python Scikit-learn.</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +93,7 @@ ms.locfileid: "55903237"
                     </div>
                     <div class="cardText">
                         <h3>Пакетная оценка моделей Python</h3>
-                        <p>Пакетная оценка нескольких моделей Python одновременно по расписанию с помощью Azure Batch AI.</p>
+                        <p>Одновременная пакетная оценка нескольких моделей Python по расписанию с помощью Машинного обучения Azure.</p>
                     </div>
                 </div>
             </div>
@@ -314,7 +328,27 @@ ms.locfileid: "55903237"
                     </div>
                     <div class="cardText">
                         <h3>Микрослужбы в Службе Azure Kubernetes (AKS)</h3>
-                        <p>Рекомендуемая архитектура для развертывания архитектуры микрослужб в AKS.</p>
+                        <p>Рекомендуемая архитектура для развертывания микрослужб в AKS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Microservices architecture on Azure Service Fabric -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./microservices/service-fabric.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/sf.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Архитектура микрослужб в Azure Service Fabric</h3>
+                        <p>Рекомендуемая архитектура для микрослужб в Service Fabric.</p>
                     </div>
                 </div>
             </div>

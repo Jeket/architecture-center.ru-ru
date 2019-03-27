@@ -1,0 +1,139 @@
+items:
+- name: Высокопроизводительные вычисления (HPC) в Azure
+  href: /azure/architecture/topics/high-performance-computing
+- name: Чем отличается HPC в облаке?
+  items:
+  - name: Стиль архитектуры для больших вычислений
+    href: /azure/architecture/guide/architecture-styles/big-compute?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Рекомендации по автомасштабированию
+    href: /azure/architecture/best-practices/auto-scaling?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: Инфраструктура
+  items:
+  - name: Примеры архитектуры HPC
+    items:
+    - name: Службы автоматизированного проектирования в Azure
+      href: /azure/architecture/example-scenario/apps/hpc-saas?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Моделирование сценариев вычислительной гидродинамики (CFD) в Azure.
+      href: /azure/architecture/example-scenario/infrastructure/hpc-cfd?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Отрисовка трехмерного видео на портале Azure
+      href: /azure/architecture/example-scenario/infrastructure/video-rendering?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Службы вычислений
+    items:
+    - name: Виртуальные машины на основе ЦП
+      items:
+      - name: Виртуальные машины Linux
+        href: /azure/virtual-machines/linux/sizes-hpc?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+      - name: Виртуальные машины Windows
+        href: /azure/virtual-machines/windows/sizes-hpc?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+      - name: Квоты виртуальных ЦП виртуальной машины
+        href: /azure/virtual-machines/linux/quotas?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Виртуальные машины с поддержкой GPU
+      items:
+      - name: Виртуальные машины Linux
+        href: /azure/virtual-machines/linux/sizes-gpu?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+      - name: Виртуальные машины Windows
+        href: /azure/virtual-machines/windows/sizes-gpu?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Хранилище
+    items:
+    - name: Виртуальные машины, оптимизированные для операций в хранилище
+      href: /azure/virtual-machines/windows/sizes-storage?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Хранилище BLOB-объектов, таблиц и очередей
+      href: /azure/storage/storage-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Хранилище файлов SMB Azure
+      href: /azure/storage/files/storage-files-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Сеть
+    items:
+    - name: Экземпляры с поддержкой RDMA
+      href: /azure/virtual-machines/windows/sizes-hpc?context=/azure/architecture/topics/high-performance-computing/context/hpc-context#rdma-capable-instances
+    - name: Виртуальная сеть
+      href: /azure/virtual-network/virtual-networks-overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: ExpressRoute
+      href: /azure/expressroute/expressroute-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: управления
+  items:
+  - name: Модель "Сделай сам"
+    items:
+    - name: Наборы для масштабирования виртуальных машин
+      href: /azure/virtual-machine-scale-sets/overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Переход в гибридную и облачную среды
+    items:
+    - name: Решения для подключения локальной сети к Azure
+      href: /azure/architecture/reference-architectures/hybrid-networking/?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Подключение локальной сети к Azure с помощью VPN-шлюза
+      href: /azure/architecture/reference-architectures/hybrid-networking/vpn?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Подключение локальной сети к Azure с помощью ExpressRoute
+      href: /azure/architecture/reference-architectures/hybrid-networking/expressroute?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Подключение локальной сети к Azure с помощью ExpressRoute с отработкой отказа VPN
+      href: /azure/architecture/reference-architectures/hybrid-networking/expressroute-vpn-failover?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Решения Marketplace
+    items:
+    - name: Виртуальные машины для обработки и анализа данных для Windows и Linux
+      href: /azure/machine-learning/data-science-virtual-machine/overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Пакетная служба Azure
+    items:
+    - name: Пакетная служба Azure
+      href: /azure/batch/batch-technical-overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Разработка с помощью пакетной службы
+      href: /azure/batch/quick-run-dotnet?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Использование низкоприоритетных виртуальных машин в пакетной службе
+      href: /azure/batch/batch-low-pri-vms?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Azure CycleCloud
+    items:
+    - name: Azure CycleCloud
+      href: /azure/cyclecloud/?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Диспетчеры рабочих нагрузок
+    items:
+    - name: Пакет HPC для Windows
+      href: /azure/virtual-machines/windows/hpcpack-cluster-options?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Пакет HPC для Linux
+      href: /azure/virtual-machines/linux/hpcpack-cluster-options?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+    - name: Контейнеры
+      items:
+      - name: Служба Azure Kubernetes (AKS)
+        href: /azure/aks/intro-kubernetes?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+      - name: Реестр контейнеров
+        href: /azure/container-registry/container-registry-intro?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: управления затратами;
+  items:
+  - name: Виртуальные машины с низким приоритетом
+    href: /azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-low-priority?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: Безопасность
+  items:
+  - name: Документация по системе безопасности Azure
+    href: /azure/security/azure-security?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Реализация звездообразной топологии сети в Azure
+    href: /azure/architecture/reference-architectures/hybrid-networking/hub-spoke?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Реализация звездообразной топологии сети с помощью общих служб в Azure
+    href: /azure/architecture/reference-architectures/hybrid-networking/shared-services?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: Приложения HPC
+  items:
+  - name: Проектирование приложений
+    items:
+    - name: MATLAB Distributed Computing Server
+      href: /azure/virtual-machines/windows/matlab-mdcs-cluster?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Графика и отрисовка
+    items:
+    - name: Autodesk Maya, 3ds Max и Arnold
+      href: /azure/batch/batch-rendering-service?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+  - name: Искусственный интеллект и глубокое обучение
+    items:
+    - name: Microsoft Cognitive Toolkit
+      href: /cognitive-toolkit/cntk-on-azure
+  - name: Поставщики MPI
+    items:
+    - name: Microsoft MPI
+      href: /message-passing-interface/microsoft-mpi
+- name: Удаленная визуализация
+  items:
+  - name: Виртуальный рабочий стол Linux с использованием Citrix
+    href: /azure/architecture/example-scenario/infrastructure/linux-vdi-citrix?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+- name: Тесты производительности
+  items:
+  - name: Тесты вычислительных ресурсов
+    href: /azure/virtual-machines/windows/compute-benchmark-scores?context=/azure/architecture/topics/high-performance-computing/context/hpc-context
+ms.openlocfilehash: 6934509e2019f342134327621606a0957dd38bb1
+ms.sourcegitcommit: 548374a0133f3caed3934fda6a380c76e6eaecea
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419994"
