@@ -10,11 +10,11 @@ ms.subservice: example-scenario
 ms.custom: fasttrack, SAP, Windows, Linux
 social_image_url: /azure/architecture/example-scenario/apps/media/architecture-sap-production.png
 ms.openlocfilehash: a80d414f53cca474af587fce7c67d734eb223841
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55897173"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58249599"
 ---
 # <a name="running-sap-production-workloads-using-an-oracle-database-on-azure"></a>Выполнение рабочих нагрузок SAP в рабочей среде с помощью базы данных Oracle в Azure
 

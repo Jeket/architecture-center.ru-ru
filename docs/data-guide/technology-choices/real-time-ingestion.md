@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: 9f787a0de5db97f5c0a5651b510e49762fbc44b9
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54483011"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58244885"
 ---
 # <a name="choosing-a-real-time-message-ingestion-technology-in-azure"></a>Выбор технологии приема сообщений в реальном времени в Azure
 

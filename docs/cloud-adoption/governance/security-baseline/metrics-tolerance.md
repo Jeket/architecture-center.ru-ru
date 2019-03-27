@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Метрики, индикаторы и допустимость риска в базовой системе безопасности
 author: BrianBlanchard
 ms.openlocfilehash: 30deafca59b2e09c78432ad3b59d328fb27a1e2c
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902403"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58241555"
 ---
 # <a name="security-baseline-metrics-indicators-and-risk-tolerance"></a>Метрики, индикаторы и допустимость риска в базовой системе безопасности
 

@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Описание концепции основных способов защиты в отношении системы управления облаком
 author: BrianBlanchard
 ms.openlocfilehash: 93622fee899824fffe604d7b3f588f5ed179b371
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901597"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58241695"
 ---
 # <a name="security-baseline-template"></a>Шаблон основных способов защиты
 

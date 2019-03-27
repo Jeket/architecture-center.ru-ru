@@ -1,0 +1,86 @@
+items:
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/
+    topicHref: /azure/architecture/topics/high-performance-computing
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/architecture/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/virtual-machines
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/storage
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/virtual-network
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/virtual-machine-scale-sets
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/machine-learning/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/cyclecloud/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/aks/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/container-registry/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /azure/security/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /cognitive-toolkit/
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure
+  items:
+  - name: Высокопроизводительные вычисления (HPC) в Azure
+    tocHref: /message-passing-interface/
+ms.openlocfilehash: 0ff57fcdec1dcc803c73a8ec2e5490b030977fea
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346422"

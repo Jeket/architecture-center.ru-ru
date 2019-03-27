@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: c6cc628977b438578f2d88d1928afcd75ddddbcd
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54481819"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58244955"
 ---
 # <a name="online-transaction-processing-oltp"></a>Оперативная обработка транзакций (OLTP)
 

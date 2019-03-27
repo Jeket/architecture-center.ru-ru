@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Описание модели "Только PaaS" для функции работы в облачной сети
 author: rotycenh
 ms.openlocfilehash: 2f3f82d781ddb6544721e82e7b7d795222a2f8ff
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902355"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58241205"
 ---
 # <a name="software-defined-networks-paas-only"></a>Программно-определяемые сети. "Только PaaS"
 

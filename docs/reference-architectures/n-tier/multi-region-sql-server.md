@@ -9,11 +9,11 @@ ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18
 ms.openlocfilehash: 9fce082a0e762e25981929f6fa8685033017f3eb
-ms.sourcegitcommit: f4ed242dff8b204cfd8ebebb7778f356a19f5923
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224187"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58245475"
 ---
 # <a name="run-an-n-tier-application-in-multiple-azure-regions-for-high-availability"></a>Запуск n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности
 

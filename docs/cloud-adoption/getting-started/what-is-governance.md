@@ -1,14 +1,17 @@
 ---
 title: CAF. Общее представление о системе управления облачными ресурсами
+titleSuffix: Microsoft Cloud Adoption Framework for Azure
+ms.service: architecture-center
+ms.subservice: enterprise-cloud-adoption
+ms.date: 02/11/2019
 description: Объяснение системы управления облачными ресурсами в Azure
 author: petertaylor9999
-ms.date: 2/11/2019
-ms.openlocfilehash: ec8b0b04ac8a4782c215359cf907c3c092ae2f4d
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.openlocfilehash: 5d022e83a1c97a5e5af8208ec00339575bb88be1
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55897955"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58242125"
 ---
 <!-- markdownlint-disable MD026 -->
 
@@ -20,7 +23,11 @@ ms.locfileid: "55897955"
 
 Решением этой проблемы является **управление** доступом к ресурсам. Управление ссылается на текущий процесс управления, мониторинга и аудита используемых ресурсов Azure для достижения целей и требований организации.
 
+<!-- markdownlint-disable MD034 -->
+
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2ii94]
+
+<!-- markdownlint-enable MD034 -->
 
 У каждой организации имеются свои цели и требования, что делает универсальный подход практически невозможным. Исходя из этого, в Azure реализовано два основных средства управления: **механизм управления доступом на основе ресурсов (RBAC)** и **политика ресурсов**. Основываясь на этих средствах, каждая организация разрабатывает свою модель управления.
 

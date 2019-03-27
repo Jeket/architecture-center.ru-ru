@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: c0362ff3bc6c115399892d0f066650aaa96af2dd
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486562"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58244055"
 ---
 # <a name="choosing-a-search-data-store-in-azure"></a>Выбор хранилища данных для поиска в Azure
 

@@ -9,11 +9,11 @@ ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18
 ms.openlocfilehash: 95f634284fe821386704174894a85a4dbca815f7
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54485083"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58248669"
 ---
 # <a name="run-a-basic-web-application-in-azure"></a>Запуск базового веб-приложения в Azure
 

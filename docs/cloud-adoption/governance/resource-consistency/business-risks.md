@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Мотивации и бизнес-риски согласованности ресурсов
 author: alexbuckgit
 ms.openlocfilehash: 19e0d761e4afa3473099bde2edc960c8b9eadb79
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902324"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58242465"
 ---
 # <a name="resource-consistency-motivations-and-business-risks"></a>Мотивации и бизнес-риски согласованности ресурсов
 
@@ -43,9 +43,9 @@ ms.locfileid: "55902324"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью [шаблона управления облаком](./template.md) документируйте бизнес-риски, которые могут быть вызваны текущим планом внедрения облачных технологий.
+С помощью [шаблона управления облаком](./template.md) документируйте бизнес-риски, которые могут возникнуть по текущему плану внедрения облака.
 
 Как только реальный бизнес-риск обнаружен, необходимо задокументировать допустимость бизнес-риска, индикаторы и основные метрики для мониторинга этой допустимости.
 
 > [!div class="nextstepaction"]
-> [Описание метрик, индикаторов и допустимости риска](./metrics-tolerance.md)
+> [Общие сведения о метриках, индикаторах и допустимости риска](./metrics-tolerance.md)

@@ -1,18 +1,18 @@
 ---
-title: CAF. Программно-конфигурируемые сети в собственных решениях в облаке
+title: CAF. Программно-конфигурируемые сети для полностью облачных решений
 titleSuffix: Microsoft Cloud Adoption Framework for Azure
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
 ms.custom: governance
 ms.date: 02/11/2019
-description: Обсуждение сетевых служб в собственных решениях в облаке
+description: Обсуждение сетевых служб для полностью облачных решений
 author: rotycenh
 ms.openlocfilehash: c6200491bc9ba35a9f00e0003e51716b58628980
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901243"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58242155"
 ---
 # <a name="software-defined-networks-cloud-native"></a>Программно-конфигурируемые сети. Собственные решения в облаке
 

@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: 53f8b233b0e0c1ff83a72a04b2707caa528d6f6b
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486460"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58248519"
 ---
 # <a name="choosing-a-batch-processing-technology-in-azure"></a>Выбор технологии пакетной обработки в Azure
 

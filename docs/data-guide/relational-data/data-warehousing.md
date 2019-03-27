@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: 6679ff620ca9e64036c02fce38608de38c57df93
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54482179"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58246365"
 ---
 # <a name="data-warehousing-and-data-marts"></a>Хранение данных и киоски данных
 

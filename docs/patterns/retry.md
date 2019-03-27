@@ -9,12 +9,12 @@ ms.topic: design-pattern
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 8d37bc2aed17bfef4d54f29f269b23ce4a5c52c0
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.openlocfilehash: edd73fd68ca4708faed92c6b1bcf5cfa3e6b2f07
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55897666"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58242345"
 ---
 # <a name="retry-pattern"></a>Шаблон повторов
 
@@ -52,7 +52,7 @@ ms.locfileid: "55897666"
 
 Приложение должно записывать в журнал подробные сведения об ошибках и невыполненных операциях. Эти сведения полезны для операторов. Если служба часто недоступна или занята, зачастую это происходит из-за того, что служба исчерпала свои ресурсы. Такие ошибки будут возникать реже, если развернуть службу. Например, если служба базы данных постоянно перегружена, полезно разделить базу данных и распределить нагрузку между несколькими серверами.
 
-> [Microsoft Entity Framework](https://docs.microsoft.com/ef/) предоставляет инструменты для повторного выполнения операций в базе данных. Большинство служб Azure и клиентских пакетов SDK также содержат механизм повтора. Дополнительные сведения см. в статье, посвященной [конкретным рекомендациям по использованию механизма повторов](/azure/architecture/best-practices/retry-service-specific).
+> [Microsoft Entity Framework](/ef) предоставляет инструменты для повторного выполнения операций в базе данных. Большинство служб Azure и клиентских пакетов SDK также содержат механизм повтора. Дополнительные сведения см. в статье, посвященной [конкретным рекомендациям по использованию механизма повторов](/azure/architecture/best-practices/retry-service-specific).
 
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 
@@ -177,4 +177,4 @@ private bool IsTransient(Exception ex)
 
 - [Шаблон прерывателя](./circuit-breaker.md). Шаблон повторов эффективен для обработки временных сбоев. Если предполагается длительный сбой, лучше реализовать шаблон автоматического выключения. Шаблон повторов можно также использовать в сочетании с автоматическим выключением для обеспечения комплексного подхода к обработке сбоев.
 - [Retry guidance for specific services](/azure/architecture/best-practices/retry-service-specific) (Руководство о механизме повторов для отдельных служб)
-- [Connection Resiliency](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) (Устойчивость подключения)
+- [Connection Resiliency](/ef/core/miscellaneous/connection-resiliency) (Устойчивость подключения)

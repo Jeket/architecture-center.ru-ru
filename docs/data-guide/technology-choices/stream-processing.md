@@ -7,11 +7,11 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.openlocfilehash: 342e44d960682c72901a7482caaf328514eb73d8
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54486137"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58246305"
 ---
 # <a name="choosing-a-stream-processing-technology-in-azure"></a>Выбор технологии потоковой обработки в Azure
 

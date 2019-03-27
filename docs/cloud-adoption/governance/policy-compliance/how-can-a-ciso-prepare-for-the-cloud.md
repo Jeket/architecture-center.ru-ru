@@ -3,12 +3,12 @@ title: CAF. Подготовка руководителя по информац�
 description: Подготовка руководителя по информационной безопасности к работе с облаком
 author: BrianBlanchard
 ms.date: 10/03/2018
-ms.openlocfilehash: cedb86488304e2fc84897e1da373730768adce66
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.openlocfilehash: a4535163990797decdacdacdcb6a33f0118366e9
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902576"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58238345"
 ---
 # <a name="ciso-cloud-readiness-guide"></a>Руководство по подготовке руководителя по информационной безопасности к работе с облаком
 
@@ -38,7 +38,7 @@ ms.locfileid: "55902576"
 * [Обязательное обучение безопасности, наведение справок](https://downloads.cloudsecurityalliance.org/star/self-assessment/StandardResponsetoRequestforInformationWindowsAzureSecurityPrivacy.docx)
 * [Выполнение тестов на проникновение, обнаружение вторжений и атак DDoS, аудит и ведение журнала](https://www.microsoft.com/trustcenter/Security/AuditingAndLogging)
 * [Современный центр обработки данных](https://www.microsoft.com/cloud-platform/global-datacenters), физическая безопасность, [безопасная сеть](/azure/security/security-network-overview)
-* [Microsoft Azure Security Response in the Cloud](http://aka.ms/SecurityResponsePaper) (Реагирование на нарушения безопасности в облаке Microsoft Azure (PDF-документ))
+* [Microsoft Azure Security Response in the Cloud](https://aka.ms/SecurityResponsePaper) (Реагирование на нарушения безопасности в облаке Microsoft Azure (PDF-документ))
 
 Конфиденциальность и управление:
 
@@ -58,7 +58,7 @@ ms.locfileid: "55902576"
 Прозрачность:
 
 * [Как корпорация Майкрософт защищает данные клиентов в службах Azure](https://www.microsoft.com/trustcenter/Transparency/default.aspx)
-* [Как корпорация Майкрософт управляет расположением данных в службах Azure](http://azuredatacentermap.azurewebsites.net/)
+* [Как корпорация Майкрософт управляет расположением данных в службах Azure](https://azuredatacentermap.azurewebsites.net/)
 * [Кто в корпорации Майкрософт имеет доступ к вашим данным и на каких условиях](https://www.microsoft.com/trustcenter/Privacy/Who-can-access-your-data-and-on-what-terms)
 * [Как корпорация Майкрософт защищает данные клиентов в службах Azure](https://www.microsoft.com/trustcenter/Transparency/default.aspx)
 * [Проверка сертификации для служб Azure, центр обеспечения прозрачности](https://www.microsoft.com/trustcenter/Compliance/default.aspx)

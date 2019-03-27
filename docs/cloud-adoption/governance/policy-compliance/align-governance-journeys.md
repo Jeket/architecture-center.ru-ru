@@ -4,11 +4,11 @@ description: Как сопоставляются руководства по п�
 author: BrianBlanchard
 ms.date: 01/04/2019
 ms.openlocfilehash: 77a35597585e5f58967ea79d3c7b0fa17b6ab80e
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901299"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58241595"
 ---
 <!---
 I've established policies. How to help developers adopt these policies?

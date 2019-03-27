@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Стратегия развития системы управления для крупных предприятий
 author: BrianBlanchard
 ms.openlocfilehash: 689b600524c3be6c505ade8c5aaa447d772c6e35
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901332"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58245245"
 ---
 # <a name="caf-large-enterprise-governance-journey"></a>CAF. Стратегия развития системы управления для крупных предприятий
 
@@ -48,7 +48,7 @@ ms.locfileid: "55901332"
 
 [!INCLUDE [governance-of-resources](../../../../../includes/cloud-adoption/governance/governance-of-resources.md)]
 
-## <a name="governance-evolutions"></a>Развитие процесса управления
+## <a name="governance-evolutions"></a>Развитие системы управления
 
 После развертывания MVP в среду можно быстро интегрировать дополнительные уровни управления. Ниже приведены некоторые способы развития MVP в соответствии с потребностями конкретной организации.
 

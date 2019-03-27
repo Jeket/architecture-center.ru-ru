@@ -4,11 +4,11 @@ description: Перенос приложений из среды мейнфре�
 author: njray
 ms.date: 12/27/2018
 ms.openlocfilehash: 41fc799f15500276ada1667121e5f1fce3413a3a
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901371"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58247265"
 ---
 # <a name="mainframe-migration-overview"></a>Обзор миграции мейнфреймов
 

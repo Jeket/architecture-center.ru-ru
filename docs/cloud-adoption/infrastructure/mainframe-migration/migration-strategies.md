@@ -4,11 +4,11 @@ description: Перенос приложений из среды мейнфре�
 author: njray
 ms.date: 12/26/2018
 ms.openlocfilehash: 9243f757182f95cc227fd6cd7a5374f9c1371ccc
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902583"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58243115"
 ---
 # <a name="make-the-switch-from-mainframes-to-azure"></a>Переход с мейнфреймов в Azure
 
