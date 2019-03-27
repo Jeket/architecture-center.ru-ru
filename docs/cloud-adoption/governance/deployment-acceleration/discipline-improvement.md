@@ -8,11 +8,11 @@ ms.date: 02/11/2019
 description: Улучшение дисциплины "Ускорение развертывания"
 author: alexbuckgit
 ms.openlocfilehash: 98192c777d8866efb01544737e8cabea6354c4d7
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902588"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58243725"
 ---
 # <a name="deployment-acceleration-discipline-improvement"></a>Улучшение дисциплины "Ускорение развертывания"
 
