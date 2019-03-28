@@ -21,11 +21,11 @@ ms.date: 2/4/2019
 
 Во многих отраслях HPC используются для решения самых сложных проблем.  Сюда входят следующие рабочие нагрузки:
 
-- геномика;
+- Genomics
 - модели для нефтяной и газовой промышленности;
-- финансы;
+- Finance.
 - разработка полупроводников;
-- проектирование;
+- Engineering
 - моделирование погоды.
 
 ### <a name="how-is-hpc-different-on-the-cloud"></a>Чем отличается HPC в облаке?
@@ -143,7 +143,7 @@ Azure предлагает решения разных размеров. Все 
 - [Avere vFXT](https://azure.microsoft.com/services/storage/avere-vfxt/) — быстрое и доступное хранилище данных для высокопроизводительных вычислений на пограничном устройстве.
 - [BeeGFS](https://azure.microsoft.com/resources/implement-glusterfs-on-azure/).
 - [Виртуальные машины, оптимизированные для операций в хранилище](/azure/virtual-machines/windows/sizes-storage?context=/azure/architecture/topics/high-performance-computing/context/hpc-context).
-- [Хранилище BLOB-объектов, таблиц и очередей](/azure/storage/storage-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context).
+- [Хранилище BLOB-объектов, таблиц и очередей](/azure/storage/storage-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context)
 - [Хранилище файлов SMB Azure](/azure/storage/files/storage-files-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context).
 - [Intel Cloud Edition Lustre](https://azuremarketplace.microsoft.com/marketplace/apps/intel.intel-cloud-edition-gs).
 
@@ -157,7 +157,7 @@ Azure предлагает решения разных размеров. Все 
 - [Виртуальная сеть](/azure/virtual-network/virtual-networks-overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context)
 - [ExpressRoute](/azure/expressroute/expressroute-introduction?context=/azure/architecture/topics/high-performance-computing/context/hpc-context)
 
-## <a name="management"></a>Управление
+## <a name="management"></a>управления
 
 ### <a name="do-it-yourself"></a>Модель "Сделай сам"
 
@@ -165,8 +165,8 @@ Azure предлагает решения разных размеров. Все 
 
 1. Настройка собственной кластерной среды на виртуальных машинах Azure или в [масштабируемых наборах виртуальных машин](/azure/virtual-machine-scale-sets/overview?context=/azure/architecture/topics/high-performance-computing/context/hpc-context).
 2. Использование шаблонов Azure Resource Manager для развертывания лучших [диспетчеров рабочих нагрузок](#workload-managers), инфраструктуры и [приложений](#hpc-applications).
-3. Выбор [размеров виртуальной машины с поддержкой графического процессора и HPC](#hpc-and-gpu-sizes), которые включают специальное оборудование и сетевые подключения для рабочих нагрузок графического процессора или MPI.
-4. Добавление [высокопроизводительного хранилища](#hpc-storage) для рабочих нагрузок с большим количеством операций ввода-вывода.
+3. Выбор [размеров виртуальной машины](#compute) с поддержкой графического процессора и HPC, которые включают специальное оборудование и сетевые подключения для рабочих нагрузок графического процессора или MPI.
+4. Добавление [высокопроизводительного хранилища](#storage) для рабочих нагрузок с большим количеством операций ввода-вывода.
 
 ### <a name="hybrid-and-cloud-bursting"></a>Переход в гибридную и облачную среды
 
@@ -231,7 +231,7 @@ Azure предлагает решения разных размеров. Все 
     </li>
 </ul>
 
-Установив безопасное подключение к сети, вы можете начать работу, используя облачные вычислительные ресурсы по требованию и возможности расширения, предоставляемые доступным [диспетчером рабочих нагрузок](#workload-manager).
+Установив безопасное подключение к сети, вы можете начать работу, используя облачные вычислительные ресурсы по требованию и возможности расширения, предоставляемые доступным [диспетчером рабочих нагрузок](#workload-managers).
 
 ### <a name="marketplace-solutions"></a>Решения Marketplace
 
@@ -271,7 +271,7 @@ CycleCloud позволяет:
 - [TIBCO DataSynapse GridServer](https://azure.microsoft.com/blog/tibco-datasynapse-comes-to-the-azure-marketplace/)
 - [Bright Cluster Manager](http://www.brightcomputing.com/technology-partners/microsoft)
 - [IBM Spectrum Symphony и Symphony LSF](https://azure.microsoft.com/blog/ibm-and-microsoft-azure-support-spectrum-symphony-and-spectrum-lsf/)
-- [PBS Pro](http://pbspro.org)
+- [PBS Pro](http://pbspro.org);
 - [Altair](http://www.altair.com/)
 - [Rescale](https://www.rescale.com/azure/)
 - [Пакет высокопроизводительных вычислений Microsoft](https://technet.microsoft.com/library/mt744885.aspx)
@@ -285,7 +285,7 @@ CycleCloud позволяет:
 - [Служба Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes?context=/azure/architecture/topics/high-performance-computing/context/hpc-context)
 - [Реестр контейнеров](/azure/container-registry/container-registry-intro?context=/azure/architecture/topics/high-performance-computing/context/hpc-context)
 
-## <a name="cost-management"></a>Управление затратами
+## <a name="cost-management"></a>управления затратами;
 
 Управление затратами HPC в Azure может осуществляться разными способами.  Чтобы определить наиболее подходящий для вас способ, ознакомьтесь с [вариантами приобретения Azure](https://azure.microsoft.com/pricing/purchase-options/).
 
