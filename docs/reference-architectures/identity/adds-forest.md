@@ -11,12 +11,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18, identity
-ms.openlocfilehash: bf62544028741d500e9c4172d4ac0206c95cb919
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 5fe966f657782b41ec1926d0fd4bb83eb7a3c0fb
+ms.sourcegitcommit: 548374a0133f3caed3934fda6a380c76e6eaecea
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58241355"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420045"
 ---
 # <a name="create-an-active-directory-domain-services-ad-ds-resource-forest-in-azure"></a>Создание леса ресурсов доменных служб Active Directory (AD DS) в Azure
 
@@ -44,10 +44,7 @@ ms.locfileid: "58241355"
 
 ## <a name="recommendations"></a>Рекомендации
 
-Конкретные рекомендации по реализации Active Directory в Azure см. в следующих статьях:
-
-- [Расширение доменных служб Active Directory в Azure][adds-extend-domain].
-- [Руководства по развертыванию Windows Server Active Directory на виртуальных машинах Azure][ad-azure-guidelines].
+Конкретные рекомендации по реализации Active Directory в Azure, см. в разделе [расширение Active Directory доменных служб (AD DS) в Azure][adds-extend-domain].
 
 ### <a name="trust"></a>Доверие
 
@@ -94,7 +91,7 @@ Active Directory автоматически масштабируется для 
 
 Пример развертывания для этой архитектуры можно найти на портале [GitHub][github]. Обратите внимание, что для полного развертывания может потребоваться до двух часов, включая создание VPN-шлюза и запуск скриптов, которые настраивают доменные службы Active Directory.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 1. Клонируйте или скачайте ZIP-файл в [репозитории GitHub](https://github.com/mspnp/identity-reference-architectures) либо создайте для него вилку.
 
@@ -160,7 +157,7 @@ Active Directory автоматически масштабируется для 
 
 ![Снимок экрана с диалоговым окном для создания доверия леса Active Directory](./images/ad-forest-trust.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите рекомендации по [расширению локальных доменов доменных служб Active Directory в Azure][adds-extend-domain]
 - Изучите рекомендации по [созданию инфраструктуры служб федерации Active Directory (AD FS)][adfs] в Azure.
