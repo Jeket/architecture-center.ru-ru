@@ -7,14 +7,14 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: 1b6f10edf098ed8d9fa14c16de113fc765372835
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: cba8d272ddbdbf2c2da94f68b288e9fb79be7de2
+ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58231421"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58887817"
 ---
-# <a name="batch-scoring-of-spark-models-on-azure-databricks"></a>Пакетная оценка моделей Spark в Azure Databricks
+# <a name="batch-scoring-of-spark-machine-learning-models-on-azure-databricks"></a>Пакетная оценка моделей машинного обучения Spark в Azure Databricks
 
 Эта эталонная архитектура позволяет создать масштабируемое решение для пакетной оценки модели классификации Apache Spark по расписанию с помощью Azure Databricks, оптимизированной для Azure аналитической платформы на основе Apache Spark. Вы можете использовать это решение в качестве шаблона, применимого и к другим сценариям.
 

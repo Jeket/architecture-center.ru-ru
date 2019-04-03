@@ -7,14 +7,14 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: 00bea3cae0c3d2f0fea2babd7b0157382cf9890a
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 5f3cc62c81c9ef9e5c3c27b1d66badd3e481c228
+ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58248689"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58887851"
 ---
-# <a name="real-time-scoring-of-r-machine-learning-models"></a>Оценка в реальном времени с помощью моделей машинного обучения на языке R
+# <a name="real-time-scoring-of-r-machine-learning-models-on-azure"></a>Оценка в реальном времени с помощью моделей машинного обучения на языке R в Azure
 
 В этой эталонной архитектуре показано, как реализовать службу для (синхронного) прогнозирования в реальном времени на языке R с помощью Microsoft Machine Learning Server под управлением Службы Azure Kubernetes (AKS). Эта архитектура должна быть универсальной и подходить для любой прогнозной модели, созданной на языке R, которую вы хотите развернуть как службу в режиме реального времени. **[Разверните это решение][github]**.
 
