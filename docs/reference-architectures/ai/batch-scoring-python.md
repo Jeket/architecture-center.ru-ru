@@ -7,14 +7,14 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai, AI
-ms.openlocfilehash: 81dc353735eaa6573c72d9e588c949fe96a329ef
-ms.sourcegitcommit: eee3a35dd5a5a2f0dc117fa1c30f16d6db213ba2
-ms.translationtype: HT
+ms.openlocfilehash: b7607984bcf2c4bd046421aeb6e9d52dd8e7c18e
+ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55782019"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58887749"
 ---
-# <a name="batch-scoring-of-python-models-on-azure"></a>Пакетная оценка моделей Python в Azure
+# <a name="batch-scoring-of-python-machine-learning-models-on-azure"></a>Пакетная оценка моделей машинного обучения Python в Azure
 
 В этой эталонной архитектуре показано, как создать масштабируемое решение для параллельной пакетной оценки нескольких моделей по расписанию, используя службу Машинного обучения Azure. Это решение можно использовать как шаблон и подготовить к использованию для различных проблем.
 
@@ -49,9 +49,9 @@ ms.locfileid: "55782019"
 
 ## <a name="performance-considerations"></a>Рекомендации по производительности
 
-Принято считать, что для обработки рабочей нагрузки стандартных моделей Python достаточно обычных ЦП. Эта архитектура использует ЦП. Однако для [нагрузок с глубоким обучением][deep] GPU выполняют работу намного лучше чем ЦП – для достижения сопоставимой производительности обычно требуется кластер ЦП изменяемого размера.
+Принято считать, что для обработки рабочей нагрузки стандартных моделей Python достаточно обычных ЦП. Эта архитектура использует ЦП. Однако для [рабочие нагрузки глубокого обучения][deep], GPU обычно более эффективны, чем ЦП, значительное &mdash; изменяемого размера кластера ЦП обычно требуется, чтобы получить сравнимую производительность.
 
-### <a name="parallelizing-across-vms-vs-cores"></a>Распараллеливание между виртуальными машинами и ядрами
+### <a name="parallelizing-across-vms-versus-cores"></a>Параллелизации между виртуальными машинами и ядер
 
 При выполнении процессов оценки многих моделей в пакетном режиме задания должны быть распараллелены между виртуальными машинами. Возможны два подхода:
 
@@ -87,7 +87,7 @@ ms.locfileid: "55782019"
 [amls]: /azure/machine-learning/service/overview-what-is-azure-ml
 [automatic-scaling]: /azure/batch/batch-automatic-scaling
 [azure-files]: /azure/storage/files/storage-files-introduction
-[cli]: https://docs.microsoft.com/en-us/cli/azure
+[cli]: /cli/azure
 [create-resources]: https://github.com/Microsoft/AMLBatchScoringPipeline/blob/master/01_create_resources.ipynb
 [deep]: /azure/architecture/reference-architectures/ai/batch-scoring-deep-learning
 [event-hubs]: /azure/event-hubs/event-hubs-geo-dr
@@ -95,10 +95,10 @@ ms.locfileid: "55782019"
 [github]: https://github.com/Microsoft/AMLBatchScoringPipeline
 [one-class-svm]: http://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html
 [portal]: https://portal.azure.com
-[ml-workspace]: https://docs.microsoft.com/en-us/azure/machine-learning/studio/create-workspace
+[ml-workspace]: /azure/machine-learning/studio/create-workspace
 [python-script]: https://github.com/Azure/BatchAIAnomalyDetection/blob/master/batchai/predict.py
 [pyscript]: https://github.com/Microsoft/AMLBatchScoringPipeline/blob/master/scripts/predict.py
 [storage]: /azure/storage/blobs/storage-blobs-overview
 [stream-analytics]: /azure/stream-analytics/
-[sql-database]: https://docs.microsoft.com/en-us/azure/sql-database/
-[app-insights]: https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview
+[sql-database]: /azure/sql-database/
+[app-insights]: /azure/application-insights/app-insights-overview
