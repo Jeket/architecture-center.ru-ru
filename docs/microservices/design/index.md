@@ -7,8 +7,13 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: microservices
+ms.openlocfilehash: 15e9aa16c0e2cfccecbfb84d217c275cc99a66fd
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344416"
 ---
-
 # <a name="designing-a-microservices-architecture"></a>Проектирование архитектуры микрослужб
 
 Архитектура микрослужб широко используется для создания устойчивых, высокомасштабируемых, независимо развертываемых и быстро развивающихся облачных приложений. Но это не просто специальный термин. Применение микрослужб требует другого подхода к разработке и созданию приложений.

@@ -1,15 +1,20 @@
 ---
 title: Антишаблон лишней выборки
 titleSuffix: Performance antipatterns for cloud apps
-description: 'Извлечение большего количества данных, чем требуется для бизнес-операции, может привести к ненужному снижению производительности операции ввода-вывода и снизить скорость реагирования.'
+description: Извлечение большего количества данных, чем требуется для бизнес-операции, может привести к ненужному снижению производительности операции ввода-вывода и снизить скорость реагирования.
 author: dragon119
 ms.date: 06/05/2017
 ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: c1172531b332854a6d4940c072b61cb3f6bcd7ba
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58345113"
 ---
-
 # <a name="extraneous-fetching-antipattern"></a>Антишаблон лишней выборки
 
 Извлечение большего количества данных, чем требуется для бизнес-операции, может привести к ненужному снижению производительности операции ввода-вывода и снизить скорость реагирования.

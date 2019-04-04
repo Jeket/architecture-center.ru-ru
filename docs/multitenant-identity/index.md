@@ -1,13 +1,18 @@
 ---
 title: Управление удостоверениями для мультитенантных приложений
-description: 'Рекомендации по аутентификации, авторизации и управлению удостоверениями в мультитенантных приложениях.'
+description: Рекомендации по аутентификации, авторизации и управлению удостоверениями в мультитенантных приложениях.
 author: MikeWasson
 ms.date: 07/21/2017
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: reference-architecture
+ms.openlocfilehash: be906106fb12c381d57ad40ae22e748dcff9722f
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346082"
 ---
-
 # <a name="manage-identity-in-multitenant-applications"></a>Управление удостоверением в мультитенантных приложениях
 
 В этом цикле статей описываются рекомендации по архитектуре обслуживания одним экземпляром приложения нескольких развертываний, когда Azure AD используется для аутентификации и управления удостоверениями.

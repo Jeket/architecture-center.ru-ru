@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: c61758494435f61814953ab5ba48d8fed1e709ab
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.openlocfilehash: 89434c0ce72b9f061e4b092354b1dcbaf683b7c6
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55897598"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346320"
 ---
 # <a name="azure-for-aws-professionals"></a>Azure для специалистов AWS
 
@@ -300,9 +300,9 @@ Azure предоставляет аналогичное выделенное п�
 
 Azure предоставляет несколько служб реляционных баз данных, эквивалентных службе реляционных баз данных AWS (RDS).
 
-- [База данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-- [База данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/overview)
-- [База данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/overview)
+- [База данных SQL](/azure/sql-database/sql-database-technical-overview)
+- [База данных Azure для MySQL](/azure/mysql/overview)
+- [База данных Azure для PostgreSQL](/azure/postgresql/overview)
 
 Другие ядра СУБД, такие как [SQL Server](https://azure.microsoft.com/services/virtual-machines/sql-server/), [Oracle](https://azure.microsoft.com/campaigns/oracle/) и [MySQL](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-classic-mysql-2008r2/), можно развернуть с помощью экземпляров виртуальных машин Azure.
 
@@ -394,7 +394,7 @@ Device Farm в AWS предоставляет возможность тести�
 
 - [Understanding Microsoft big data solutions](https://msdn.microsoft.com/library/dn749804.aspx) (Общие сведения о решениях Майкрософт для работы с большими данными).
 
-- [Блог Azure Data Lake и Azure HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/).
+- [Блог, посвященный Azure Data Lake и Azure HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/)
 
 ### <a name="internet-of-things"></a>Интернет вещей
 

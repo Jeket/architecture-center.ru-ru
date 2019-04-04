@@ -1,13 +1,18 @@
 ---
 title: Реляционные данные
-description: null
+description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
+ms.openlocfilehash: d68bddcb75e5c8f786a7739e85de2645a2c3d641
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58345419"
 ---
-
 # <a name="traditional-relational-database-solutions"></a>Решения для традиционных реляционных баз данных
 
 Реляционные данные — это данные, которые моделируются с помощью реляционной модели. В этой модели данные представлены в виде кортежей. *Кортеж* — это набор пар "атрибут-значение". Например, кортеж может быть таким: itemid = 5, orderid = 1, item = "Chair", amount = 200. Набор кортежей, в которых совместно используются одни и те же атрибуты, называется *отношением*.

@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: 7d3fe47407eff7168dfd227a1dd1bd5917c7d431
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344858"
 ---
-
 # <a name="busy-database-antipattern"></a>Антишаблон занятости базы данных
 
 В результате разгрузки обработки на сервер базы данных значительная часть времени будет потрачена на выполнение кода, а не на ответ на запросы для хранения и извлечения данных.

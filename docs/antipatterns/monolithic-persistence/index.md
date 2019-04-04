@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: e3d6fbb789e422af22ce54b0defd6bb73099f15a
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346337"
 ---
-
 # <a name="monolithic-persistence-antipattern"></a>Антишаблон монолитной сохраняемости
 
 Хранение всех данных приложения в одном хранилище может привести к снижению уровня производительности. Это связано с возможным конфликтом ресурсов или с тем, что это хранилище не подходит некоторым типам данных.

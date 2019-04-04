@@ -1,15 +1,20 @@
 ---
 title: Запуск сервера Jenkins в Azure
 titleSuffix: Azure Reference Architectures
-description: 'Схема рекомендуемой эталонной архитектуры, на которой показано развертывание и применение в Azure масштабируемого корпоративного сервера Jenkins, защищенного с помощью единого входа (SSO).'
+description: Схема рекомендуемой эталонной архитектуры, на которой показано развертывание и применение в Azure масштабируемого корпоративного сервера Jenkins, защищенного с помощью единого входа (SSO).
 author: njray
 ms.date: 04/30/2018
 ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18
+ms.openlocfilehash: 4b8d84ef6eedd93f1a3ec948e7c6d6e3d1c465fc
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346031"
 ---
-
 # <a name="run-a-jenkins-server-on-azure"></a>Запуск сервера Jenkins в Azure
 
 На схеме этой эталонной архитектуры показано развертывание и применение в Azure масштабируемого корпоративного сервера Jenkins, защищенного с помощью единого входа (SSO). В этой архитектуре также используется платформа Azure Monitor, позволяющая отслеживать состояние сервера Jenkins. [**Разверните это решение**](#deploy-the-solution).

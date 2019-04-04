@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: 5c3062c0a17de708ada83ba81dcb111e6b1f8440
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58343855"
 ---
-
 # <a name="no-caching-antipattern"></a>Антишаблон без кэширования
 
 В облачном приложении, которое обрабатывает много одновременных запросов, многократная выборка тех же данных может снизить производительность и масштабируемость.

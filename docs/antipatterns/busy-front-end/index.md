@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: f1ab728d68747856fb2586804d58d45c4ea4fcc1
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344501"
 ---
-
 # <a name="busy-front-end-antipattern"></a>Антишаблон загруженности внешнего интерфейса
 
 Выполнение асинхронных операций в большом количестве фоновых потоков может замедлить выполнение других задач переднего плана ресурсов, что приводит к уменьшению времени отклика до недопустимого уровня.

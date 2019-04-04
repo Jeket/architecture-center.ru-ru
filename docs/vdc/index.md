@@ -6,8 +6,13 @@ layout: LandingPage
 ms.topic: landing-page
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
+ms.openlocfilehash: 57f28808d3c49c74bc010133c670a186206a4466
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344535"
 ---
-
 # <a name="azure-virtual-datacenter-and-the-enterprise-control-plane"></a>Виртуальный центр обработки данных Azure и плоскость управления предприятием
 
 Виртуальный центр обработки данных Azure помогает максимально эффективно использовать возможности облачной платформы Azure без ущерба для имеющихся политик безопасности и работы сети. Развертывая корпоративные рабочие нагрузки в облаке, ИТ-организации и подразделения компании должны сбалансировать возможности управления с гибкостью разработки. С помощью моделей виртуального центра обработки данных Azure можно достигнуть этого баланса с упором на управление.

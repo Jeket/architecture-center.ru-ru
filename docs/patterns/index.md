@@ -1,7 +1,7 @@
 ---
 title: Конструктивные шаблоны облачных решений
 titleSuffix: Azure Architecture Center
-description: 'Конструктивные шаблоны для создания масштабируемых, надежных и безопасных приложений в облаке.'
+description: Конструктивные шаблоны для создания масштабируемых, надежных и безопасных приложений в облаке.
 keywords: Таблицы Azure
 author: dragon119
 ms.date: 03/01/2018
@@ -9,8 +9,13 @@ ms.topic: design-pattern
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: c8fe971e031825632c2bb157bfd23e15f56520a3
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58343481"
 ---
-
 # <a name="cloud-design-patterns"></a>Конструктивные шаблоны облачных решений
 
 Эти конструктивные шаблоны полезны для создания надежных, масштабируемых, безопасных приложений в облаке.
