@@ -5,12 +5,12 @@ layout: LandingPage
 ms.topic: landing-page
 ms.date: 09/28/2018
 google-site-verification: b-xRLveOzJ9oSOh37wgRTRB2lMOoFY8HiHf9_0DIawE
-ms.openlocfilehash: 3c48ba77b7f97c6047f5d1441a22f2bd79ee0a3e
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+ms.openlocfilehash: e247985aa92e1c2bf3cb4d43514f4d06250f1141
+ms.sourcegitcommit: 548374a0133f3caed3934fda6a380c76e6eaecea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55898295"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58419977"
 ---
 # <a name="azure-architecture-center"></a>Центр архитектуры Azure
 
@@ -104,6 +104,26 @@ ms.locfileid: "55898295"
                         <div class="cardText">
                             <h3>Руководство по архитектуре данных в Azure</h3>
                             <p>Cтруктурированный подход к разработке решений для обработки данных в Microsoft Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- HPC Topic Page -->
+    <li>
+        <a href="./topics/high-performance-computing/index.md">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/hpc-blue-multi.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Высокопроизводительные вычисления (HPC) в Azure</h3>
+                            <p>Руководство по проектированию и сведения о компонентах для создания приложений высокопроизводительных вычислений (HPC) в Azure.</p>
                         </div>
                     </div>
                 </div>
@@ -210,26 +230,6 @@ ms.locfileid: "55898295"
             </div>
         </a>
     </li>
-    <!-- Azure Virtual Datacenter -->
-    <li>
-        <a href="./vdc/index.md">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="_images/virtual-datacenter.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Виртуальный центр обработки данных Azure</h3>
-                            <p>Развертывая корпоративные рабочие нагрузки в облаке, организация должна сбалансировать возможности управления с гибкостью разработки. С помощью моделей виртуального центра обработки данных Azure можно достигнуть этого баланса с упором на управление.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
         <!-- Azure for AWS Professionals -->
     <li>
         <a href="/azure/architecture/aws-professional">
@@ -264,6 +264,26 @@ ms.locfileid: "55898295"
                         <div class="cardText">
                             <h3>Антишаблоны производительности</h3>
                             <p>Как обнаруживать и устранять некоторые общие причины проблем с производительностью и масштабируемостью в облачных приложениях.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- Azure Virtual Datacenter -->
+    <li>
+        <a href="./vdc/index.md">
+            <div class="cardSize">
+                <div class="cardPadding">
+                    <div class="card">
+                        <div class="cardImageOuter">
+                            <div class="cardImage">
+                                <img src="_images/virtual-datacenter.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="cardText">
+                            <h3>Виртуальный центр обработки данных Azure</h3>
+                            <p>Развертывая корпоративные рабочие нагрузки в облаке, организация должна сбалансировать возможности управления с гибкостью разработки. С помощью моделей виртуального центра обработки данных Azure можно достигнуть этого баланса с упором на управление.</p>
                         </div>
                     </div>
                 </div>

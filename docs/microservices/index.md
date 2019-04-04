@@ -1,102 +1,192 @@
 ---
-title: Проектирование, создание и использование микрослужб в Azure с помощью Kubernetes
-description: Проектирование, создание и использование микрослужб в Azure.
-author: MikeWasson
-ms.date: 10/23/2018
-ms.topic: guide
-ms.service: architecture-center
-ms.subservice: reference-architecture
-ms.custom: microservices
-ms.openlocfilehash: 90a6550264e5afd1fc2eda79eeff6557dc7c4163
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
+title: Проектирование микрослужб в Azure
+description: Проектирование, создание и использование архитектуры микрослужб в Azure
+ms.date: 03/07/2019
+layout: LandingPage
+ms.topic: landing-page
+ms.openlocfilehash: e74d6f6098eb68c8bbd737cf3a047ce5de04327d
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55897734"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346150"
 ---
-# <a name="designing-building-and-operating-microservices-on-azure"></a><span data-ttu-id="ea5ec-103">Проектирование, создание и использование микрослужб в Azure</span><span class="sxs-lookup"><span data-stu-id="ea5ec-103">Designing, building, and operating microservices on Azure</span></span>
+# <a name="building-microservices-on-azure"></a>Проектирование микрослужб в Azure
 
-![Схема службы доставки дронами](./images/drone.svg)
+<!-- markdownlint-disable MD033 -->
 
-<span data-ttu-id="ea5ec-105">Архитектура микрослужб широко используется для создания устойчивых, высокомасштабируемых, независимо развертываемых и быстро развивающихся облачных приложений.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-105">Microservices have become a popular architectural style for building cloud applications that are resilient, highly scalable, independently deployable, and able to evolve quickly.</span></span> <span data-ttu-id="ea5ec-106">Но это не просто специальный термин. Применение микрослужб требует другого подхода к разработке и созданию приложений.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-106">To be more than just a buzzword, however, microservices require a different approach to designing and building applications.</span></span>
+<img src="../_images/microservices.svg" style="float:left; margin-top:8px; margin-right:8px; max-width: 80px; max-height: 80px;"/>
 
-<span data-ttu-id="ea5ec-107">В этой серии статей мы рассмотрим, как создать и запустить архитектуру микрослужб в Azure.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-107">In this set of articles, we explore how to build and run a microservices architecture on Azure.</span></span> <span data-ttu-id="ea5ec-108">Будут рассмотрены следующие задачи:</span><span class="sxs-lookup"><span data-stu-id="ea5ec-108">Topics include:</span></span>
+Архитектура микрослужб широко используется для создания устойчивых, высокомасштабируемых, независимо развертываемых и быстро растущих приложений. Но для этого требуется другой подход к проектированию приложений.
 
-- <span data-ttu-id="ea5ec-109">использование предметно-ориентированного проектирования (DDD) для проектирования архитектуры микрослужб;</span><span class="sxs-lookup"><span data-stu-id="ea5ec-109">Using Domain Driven Design (DDD) to design a microservices architecture.</span></span>
-- <span data-ttu-id="ea5ec-110">выбор правильных технологий Azure для вычислений, хранения, обмена сообщениями и других элементов проектирования;</span><span class="sxs-lookup"><span data-stu-id="ea5ec-110">Choosing the right Azure technologies for compute, storage, messaging, and other elements of the design.</span></span>
-- <span data-ttu-id="ea5ec-111">изучение шаблонов проектирования микрослужб;</span><span class="sxs-lookup"><span data-stu-id="ea5ec-111">Understanding microservices design patterns.</span></span>
-- <span data-ttu-id="ea5ec-112">проектирование для обеспечения устойчивости, масштабируемости и производительности;</span><span class="sxs-lookup"><span data-stu-id="ea5ec-112">Designing for resiliency, scalability, and performance.</span></span>
-- <span data-ttu-id="ea5ec-113">создание конвейера непрерывной интеграции и непрерывной доставки.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-113">Building a CI/CD pipeline.</span></span>
+<ul  class="panelContent cardsZ">
+<li style="display: flex; flex-direction: column;">
+    <a href="./introduction.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Что такое микрослужбы?</h3>
+                        <p>Чем отличается архитектура микрослужб и когда ее следует использовать?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="../guide/architecture-styles/microservices.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Стиль архитектуры микрослужб</h3>
+                        <p>Общие сведения об архитектуре микрослужб</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
 
-<span data-ttu-id="ea5ec-114">В рамках всего руководства мы будем рассматривать комплексный сценарий: служба доставки, которая позволяет клиентам планировать забор и доставку посылок с помощью дронов.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-114">Throughout, we focus on an end-to-end scenario: A drone delivery service that lets customers schedule packages to be picked up and delivered via drone.</span></span> <span data-ttu-id="ea5ec-115">Код для реализации примера можно найти на портале GitHub.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-115">You can find the code for our reference implementation on GitHub</span></span>
+## <a name="examples-of-microservices-architectures"></a>Примеры архитектуры микрослужб
 
-<span data-ttu-id="ea5ec-116">[![GitHub](../_images/github.png) Пример реализации][drone-ri]</span><span class="sxs-lookup"><span data-stu-id="ea5ec-116">[![GitHub](../_images/github.png) Reference implementation][drone-ri]</span></span>
+<ul  class="panelContent cardsZ">
+<li style="display: flex; flex-direction: column;">
+    <a href="../example-scenario/infrastructure/service-fabric-microservices.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Использование Service Fabric для декомпозиции монолитных приложений</h3>
+                        <p>Итеративный подход к декомпозиции веб-сайта ASP.NET на микрослужбы.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="../example-scenario/data/ecommerce-order-processing.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Масштабируемая обработка заказов в Azure</h3>
+                        <p>Обработка заказов с использованием модели функционального программирования, реализованной с помощью микрослужб.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
 
-<span data-ttu-id="ea5ec-117">Но давайте начнем с основ.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-117">But first, let's start with fundamentals.</span></span> <span data-ttu-id="ea5ec-118">Что такое микрослужбы и какие преимущества связаны с использованием архитектуры микрослужб?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-118">What are microservices, and what are the advantages of adopting a microservices architecture?</span></span>
+## <a name="build-a-microservices-application"></a>Создание приложений для микрослужб
 
-<!-- markdownlint-disable MD026 -->
+<ul  class="panelContent cardsZ">
+<li style="display: flex; flex-direction: column;">
+    <a href="./model/domain-analysis.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Анализ предметной области для моделирования микрослужб</h3>
+                        <p>Чтобы избежать некоторых распространенных ошибок, используйте анализ предметной области для определения границ микрослужб.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="../reference-architectures/microservices/aks.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Эталонная архитектура для Службы Azure Kubernetes (AKS)</h3>
+                        <p>Эта эталонная архитектура представляет базовую конфигурацию AKS, которая может быть отправной точкой для большинства развертываний.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="../reference-architectures/microservices/service-fabric.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Эталонная архитектура для Azure Service Fabric</h3>
+                        <p>Эта эталонная архитектура представляет рекомендуемую конфигурацию, которая может быть отправной точкой для большинства развертываний.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./design/index.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Проектирование архитектуры микрослужб</h3>
+                        <p>В этих статьях подробно описаны способы создания приложений микрослужб на основе эталонной реализации с использованием Службы Azure Kubernetes (AKS).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./design/patterns.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Шаблоны проектирования</h3>
+                        <p>Набор полезных конструктивных шаблонов для микрослужб.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
 
-## <a name="why-build-microservices"></a><span data-ttu-id="ea5ec-119">Что дает создание микрослужб?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-119">Why build microservices?</span></span>
+## <a name="operate-microservices-in-production"></a>Использование микрослужб в рабочей среде
 
-<!-- markdownlint-enable MD026 -->
-
-<span data-ttu-id="ea5ec-120">Архитектура микрослужб предполагает, что приложение состоит из множества небольших независимых служб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-120">In a microservices architecture, the application is composed of small, independent services.</span></span> <span data-ttu-id="ea5ec-121">Ниже приведены свойства микрослужб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-121">Here are some of the defining characteristics of microservices:</span></span>
-
-- <span data-ttu-id="ea5ec-122">Каждая микрослужба реализует возможности одной компании.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-122">Each microservice implements a single business capability.</span></span>
-- <span data-ttu-id="ea5ec-123">Микрослужба достаточно мала. Поэтому создать и обслуживать ее может небольшая команда разработчиков.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-123">A microservice is small enough that a single small team of developers can write and maintain it.</span></span>
-- <span data-ttu-id="ea5ec-124">Микрослужбы выполняют отдельные процессы и при этом обмениваются данными через точно определенные API-интерфейсы или шаблоны обмена сообщениями.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-124">Microservices run in separate processes, communicating through well-defined APIs or messaging patterns.</span></span>
-- <span data-ttu-id="ea5ec-125">Микрослужбы не используют общие хранилища данных и схемы данных.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-125">Microservices do not share data stores or data schemas.</span></span> <span data-ttu-id="ea5ec-126">Каждая микрослужба отвечает за управление собственными данными.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-126">Each microservice is responsible for managing its own data.</span></span>
-- <span data-ttu-id="ea5ec-127">Микрослужбы используют отдельные базы кода, но не общий исходный код.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-127">Microservices have separate code bases, and do not share source code.</span></span> <span data-ttu-id="ea5ec-128">При этом они могут использовать общие библиотеки служебных программ.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-128">They may use common utility libraries, however.</span></span>
-- <span data-ttu-id="ea5ec-129">Каждую микрослужбу можно развертывать и обновлять отдельно.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-129">Each microservice can be deployed and updated independently of other services.</span></span>
-
-<span data-ttu-id="ea5ec-130">При правильном проектировании микрослужбы могут предоставить ряд полезных преимуществ.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-130">Done correctly, microservices can provide a number of useful benefits:</span></span>
-
-- <span data-ttu-id="ea5ec-131">**Гибкость.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-131">**Agility.**</span></span> <span data-ttu-id="ea5ec-132">Так как микрослужбы развертываются независимо друг от друга, вы можете легко управлять исправлениями ошибок и выпусками компонентов.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-132">Because microservices are deployed independently, it's easier to manage bug fixes and feature releases.</span></span> <span data-ttu-id="ea5ec-133">Вы можете обновить службу без повторного развертывания всего приложения, а также откатить обновление, если что-то работает неправильно.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-133">You can update a service without redeploying the entire application, and roll back an update if something goes wrong.</span></span> <span data-ttu-id="ea5ec-134">Во многих традиционных приложениях ошибка, выявляемая в одной части приложения, может заблокировать процесс выпуска. В результате новые компоненты могут находится в ожидании интеграции, тестирования и публикации исправлений.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-134">In many traditional applications, if a bug is found in one part of the application, it can block the entire release process; as a result, new features may be held up waiting for a bug fix to be integrated, tested, and published.</span></span>
-
-- <span data-ttu-id="ea5ec-135">**Меньше кода и небольшие команды разработчиков.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-135">**Small code, small teams.**</span></span> <span data-ttu-id="ea5ec-136">Микрослужба должна быть достаточно небольшой, чтобы одна команда, которая разрабатывает компонент, могла создать, проверить и развернуть его.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-136">A microservice should be small enough that a single feature team can build, test, and deploy it.</span></span> <span data-ttu-id="ea5ec-137">Небольшие базы кода легче анализировать.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-137">Small code bases are easier to understand.</span></span> <span data-ttu-id="ea5ec-138">В больших монолитных приложениях со временем зависимости в коде усложняются, и, чтобы добавить новый компонент, нужно изменять код в нескольких местах.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-138">In a large monolithic application, there is a tendency over time for code dependencies to become tangled, so that adding a new feature requires touching code in a lot of places.</span></span> <span data-ttu-id="ea5ec-139">Благодаря использованию отдельных баз кода и хранилищ данных в архитектуре микрослужб становится меньше зависимостей, что упрощает добавление новых компонентов.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-139">By not sharing code or data stores, a microservices architecture minimizes dependencies, and that makes it easier to add new features.</span></span> <span data-ttu-id="ea5ec-140">Небольшое количество разработчиков в команде также способствует повышению уровня гибкости.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-140">Small team sizes also promote greater agility.</span></span> <span data-ttu-id="ea5ec-141">Согласно "правилу двух пицц" команда должна настолько малой, чтобы всех участников можно было накормить двумя пиццами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-141">The "two-pizza rule" says that a team should be small enough that two pizzas can feed the team.</span></span> <span data-ttu-id="ea5ec-142">Конечно же, это не точное определение, ведь все зависит от аппетита.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-142">Obviously that's not an exact metric and depends on team appetites!</span></span> <span data-ttu-id="ea5ec-143">Но суть в том, что большие команды, как правило, менее продуктивны из-за замедленного обмена данными, больших расходов на управление и снижения гибкости.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-143">But the point is that large groups tend be less productive, because communication is slower, management overhead goes up, and agility diminishes.</span></span>
-
-- <span data-ttu-id="ea5ec-144">**Сочетание технологий**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-144">**Mix of technologies**.</span></span> <span data-ttu-id="ea5ec-145">При необходимости команды могут применять те технологии, которые лучше всего соответствуют особенностям используемых служб, с помощью стеков технологий.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-145">Teams can pick the technology that best fits their service, using a mix of technology stacks as appropriate.</span></span>
-
-- <span data-ttu-id="ea5ec-146">**Устойчивость.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-146">**Resiliency**.</span></span> <span data-ttu-id="ea5ec-147">Если одна микрослужба станет недоступна, это не нарушит работу всего приложения, так как все вышестоящие микрослужбы спроектированы правильно реагировать на ошибки (например, путем реализации автоматического выключения).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-147">If an individual microservice becomes unavailable, it won't disrupt the entire application, as long as any upstream microservices are designed to handle faults correctly (for example, by implementing circuit breaking).</span></span>
-
-- <span data-ttu-id="ea5ec-148">**Масштабируемость**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-148">**Scalability**.</span></span> <span data-ttu-id="ea5ec-149">Архитектура микрослужб позволяет масштабировать каждую микрослужбу отдельно.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-149">A microservices architecture allows each microservice to be scaled independently of the others.</span></span> <span data-ttu-id="ea5ec-150">Благодаря этому можно масштабировать подсистемы, для которых требуются дополнительные ресурсы, не масштабируя все приложение.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-150">That lets you scale out subsystems that require more resources, without scaling out the entire application.</span></span> <span data-ttu-id="ea5ec-151">Если службы развернуты в контейнерах, вы также можете создать на одном узле пакеты микрослужб с более высокой плотностью, оптимизируя использование ресурсов.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-151">If you deploy services inside containers, you can also pack a higher density of microservices onto a single host, which allows for more efficient utilization of resources.</span></span>
-
-- <span data-ttu-id="ea5ec-152">**Изоляция данных**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-152">**Data isolation**.</span></span> <span data-ttu-id="ea5ec-153">Гораздо проще обновлять схему, так как это отражается на работе только одной микрослужбы.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-153">It is much easier to perform schema updates, because only a single microservice is affected.</span></span> <span data-ttu-id="ea5ec-154">В монолитном приложении обновление схемы может быть очень сложной задачей, так как разные части приложения могут использовать одни и те же данные. Из-за этого внесение любых изменений в схему может оказаться рискованным.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-154">In a monolithic application, schema updates can become very challenging, because different parts of the application may all touch the same data, making any alterations to the schema risky.</span></span>
-
-## <a name="no-free-lunch"></a><span data-ttu-id="ea5ec-155">Обратная сторона медали</span><span class="sxs-lookup"><span data-stu-id="ea5ec-155">No free lunch</span></span>
-
-<span data-ttu-id="ea5ec-156">Все эти преимущества имеют и обратную сторону.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-156">These benefits don't come for free.</span></span> <span data-ttu-id="ea5ec-157">В этой серии статей описано, как устранять некоторые проблемы с созданием устойчивых, масштабируемых и управляемых микрослужб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-157">This series of articles is designed to address some of the challenges of building microservices that are resilient, scalable, and manageable.</span></span>
-
-- <span data-ttu-id="ea5ec-158">**Границы служб**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-158">**Service boundaries**.</span></span> <span data-ttu-id="ea5ec-159">При создании микрослужб необходимо тщательно продумать, как определить границы между службами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-159">When you build microservices, you need to think carefully about where to draw the boundaries between services.</span></span> <span data-ttu-id="ea5ec-160">Так как службы создаются и развертываются в рабочей среде, в рамках этих границ могут возникнуть трудности с рефакторингом.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-160">Once services are built and deployed in production, it can be hard to refactor across those boundaries.</span></span> <span data-ttu-id="ea5ec-161">Правильное определение границ — одна из основных проблем при проектировании архитектуры микрослужб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-161">Choosing the right service boundaries is one of the biggest challenges when designing a microservices architecture.</span></span> <span data-ttu-id="ea5ec-162">Каким должен быть размер службы?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-162">How big should each service be?</span></span> <span data-ttu-id="ea5ec-163">Когда компоненты нужно распределить между несколькими службами, а когда — оставить в пределах одной службы?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-163">When should functionality be factored across several services, and when should it be kept inside the same service?</span></span> <span data-ttu-id="ea5ec-164">В этом руководстве мы рассмотрим подход, в котором для определения границ используется предметно-ориентированное проектирование.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-164">In this guide, we describe an approach that uses domain-driven design to find service boundaries.</span></span> <span data-ttu-id="ea5ec-165">Сначала [анализируется предметная область](./domain-analysis.md) для определения ограниченного контекста, а затем применяется набор [тактических шаблонов DDD](./microservice-boundaries.md) на основе функциональных и нефункциональных требований.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-165">It starts with [Domain analysis](./domain-analysis.md) to find the bounded contexts, then applies a set of [tactical DDD patterns](./microservice-boundaries.md) based on functional and non-functional requirements.</span></span>
-
-- <span data-ttu-id="ea5ec-166">**Согласованность и целостность данных**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-166">**Data consistency and integrity**.</span></span> <span data-ttu-id="ea5ec-167">Основной принцип работы микрослужб заключается в том, что каждая служба управляет собственными данными.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-167">A basic principle of microservices is that each service manages its own data.</span></span> <span data-ttu-id="ea5ec-168">Это обеспечивает независимость служб, но может привести к избыточности или проблемам с целостностью данных.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-168">This keeps services decoupled, but can lead to challenges with data integrity or redundancy.</span></span> <span data-ttu-id="ea5ec-169">Некоторые из этих проблем рассмотрены в статье [Проектирование микрослужб: рекомендации по работе с данными](./data-considerations.md).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-169">We explore some of these issues in the [Data considerations](./data-considerations.md).</span></span>
-
-- <span data-ttu-id="ea5ec-170">**Перегрузки и задержки сети.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-170">**Network congestion and latency**.</span></span> <span data-ttu-id="ea5ec-171">Использование большого числа мелких служб может привести к интенсивному обмену данными между ними и увеличению совокупной задержки.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-171">The use of many small, granular services can result in more interservice communication and longer end-to-end latency.</span></span> <span data-ttu-id="ea5ec-172">В статье [Проектирование микрослужб: обмен данными между службами](./interservice-communication.md) приводятся рекомендации по настройке обмена сообщениями между службами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-172">The chapter [Interservice communication](./interservice-communication.md) describes considerations for messaging between services.</span></span> <span data-ttu-id="ea5ec-173">В микрослужбах можно применять как синхронную, так и асинхронную передачу данных.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-173">Both synchronous and asynchronous communication have a place in microservices architectures.</span></span> <span data-ttu-id="ea5ec-174">Важно правильно [спроектировать API](./api-design.md), чтобы обеспечить слабую связь между службами, а также настроить их независимое развертывание и обновление.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-174">Good [API design](./api-design.md) is important so that services remain loosely coupled, and can be independently deployed and updated.</span></span>
-
-- <span data-ttu-id="ea5ec-175">**Сложность.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-175">**Complexity**.</span></span> <span data-ttu-id="ea5ec-176">Приложение для микрослужб содержит больше перемещаемых частей.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-176">A microservices application has more moving parts.</span></span> <span data-ttu-id="ea5ec-177">Каждая служба может быть простой, но вместе они должны работать как единое целое.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-177">Each service may be simple, but the services have to work together as a whole.</span></span> <span data-ttu-id="ea5ec-178">Операция одного пользователя может задействовать несколько служб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-178">A single user operation may involve multiple services.</span></span> <span data-ttu-id="ea5ec-179">В статье [Проектирование микрослужб: прием данных и рабочий процесс](./ingestion-workflow.md) рассматриваются некоторые проблемы, связанные с принятием запросов при высокой пропускной способности, согласованием рабочего процесса и обработкой сбоев.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-179">In the chapter [Ingestion and workflow](./ingestion-workflow.md), we examine some of the issues around ingesting requests at high throughput, coordinating a workflow, and handling failures.</span></span>
-
-- <span data-ttu-id="ea5ec-180">**Взаимодействие клиентов с приложением.**</span><span class="sxs-lookup"><span data-stu-id="ea5ec-180">**Communication between clients and the application.**</span></span>  <span data-ttu-id="ea5ec-181">Как клиенты должны взаимодействовать со службами при разделении приложения на несколько небольших служб?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-181">When you decompose an application into many small services, how should clients communicate with those services?</span></span> <span data-ttu-id="ea5ec-182">Может ли клиент вызывать каждую службу напрямую или он должен направлять запросы через [шлюз API](./gateway.md)?</span><span class="sxs-lookup"><span data-stu-id="ea5ec-182">Should a client call each individual service directly, or route requests through an [API Gateway](./gateway.md)?</span></span>
-
-- <span data-ttu-id="ea5ec-183">**Мониторинг**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-183">**Monitoring**.</span></span> <span data-ttu-id="ea5ec-184">Мониторинг распределенного приложения может быть гораздо сложнее, чем мониторинг монолитного приложения, так как вам нужно сопоставлять данные телеметрии из нескольких служб.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-184">Monitoring a distributed application can be a lot harder than a monolithic application, because you must correlate telemetry from multiple services.</span></span> <span data-ttu-id="ea5ec-185">Решение этих проблем приводится в статье [Проектирование микрослужб: ведение журнала и мониторинг](./logging-monitoring.md).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-185">The chapter [Logging and monitoring](./logging-monitoring.md) addresses these concerns.</span></span>
-
-- <span data-ttu-id="ea5ec-186">**Непрерывная интеграция и непрерывная поставка (CI/CD)**.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-186">**Continuous integration and delivery (CI/CD)**.</span></span> <span data-ttu-id="ea5ec-187">Одной из основных целей микрослужб является обеспечение гибкости.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-187">One of the main goals of microservices is agility.</span></span> <span data-ttu-id="ea5ec-188">Для этого требуется наладить автоматизированный и бесперебойный процесс [CI/CD](./ci-cd.md), с помощью которого вы сможете быстро и надежно развертывать отдельные службы в тестовой и рабочей средах.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-188">To achieve this, you must have automated and robust [CI/CD](./ci-cd.md), so that you can quickly and reliably deploy individual services into test and production environments.</span></span>
-
-## <a name="the-drone-delivery-application"></a><span data-ttu-id="ea5ec-189">Приложение доставки беспилотными летательными аппаратами</span><span class="sxs-lookup"><span data-stu-id="ea5ec-189">The Drone Delivery application</span></span>
-
-<span data-ttu-id="ea5ec-190">Чтобы изучить эти проблемы и продемонстрировать некоторые рекомендации по использованию архитектуры микрослужб, мы создали пример реализации, который назвали приложением доставки беспилотными летательными аппаратами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-190">To explore these issues, and to illustrate some of the best practices for a microservices architecture, we created a reference implementation that we call the Drone Delivery application.</span></span> <span data-ttu-id="ea5ec-191">Этот пример реализации можно найти на портале [GitHub][drone-ri].</span><span class="sxs-lookup"><span data-stu-id="ea5ec-191">You can find the reference implementation on [GitHub][drone-ri].</span></span>
-
-<span data-ttu-id="ea5ec-192">Компания Fabrikam запускает службу доставки беспилотными летательными аппаратами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-192">Fabrikam, Inc. is starting a drone delivery service.</span></span> <span data-ttu-id="ea5ec-193">Она управляет парком таких аппаратов.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-193">The company manages a fleet of drone aircraft.</span></span> <span data-ttu-id="ea5ec-194">Организации регистрируются с помощью службы, и пользователи могут отправить заявку на использование беспилотного летательного аппарата, чтобы забрать посылки для доставки.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-194">Businesses register with the service, and users can request a drone to pick up goods for delivery.</span></span> <span data-ttu-id="ea5ec-195">Когда клиент планирует отгрузку, серверная система назначает аппарат и сообщает пользователю предполагаемое время доставки.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-195">When a customer schedules a pickup, a backend system assigns a drone and notifies the user with an estimated delivery time.</span></span> <span data-ttu-id="ea5ec-196">В ходе доставки клиент может отслеживать местоположение аппарата, получая актуальные сведения об ожидаемом времени доставки.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-196">While the delivery is in progress, the customer can track the location of the drone, with a continuously updated ETA.</span></span>
-
-<span data-ttu-id="ea5ec-197">Этот сценарий довольной сложный,</span><span class="sxs-lookup"><span data-stu-id="ea5ec-197">This scenario involves a fairly complicated domain.</span></span> <span data-ttu-id="ea5ec-198">так как его этапы включают планирование загруженности беспилотных летательных аппаратов, отслеживание посылок, управление учетными записями пользователей, а также хранение и анализ исторических данных.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-198">Some of the business concerns include scheduling drones, tracking packages, managing user accounts, and storing and analyzing historical data.</span></span> <span data-ttu-id="ea5ec-199">Кроме того, компания Fabrikam хочет быстро выйти на рынок, а затем быстро повторить этот процесс, добавив новые функции и возможности.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-199">Moreover, Fabrikam wants to get to market quickly and then iterate quickly, adding new functionality and capabilities.</span></span> <span data-ttu-id="ea5ec-200">Приложение должно работать в масштабе облака с высоким целевым уровнем обслуживания.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-200">The application needs to operate at cloud scale, with a high service level objective (SLO).</span></span> <span data-ttu-id="ea5ec-201">Компания также ожидает, что в разных частях системы требования к хранению данных и выполнению запросов будут очень отличаться.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-201">Fabrikam also expects that different parts of the system will have very different requirements for data storage and querying.</span></span> <span data-ttu-id="ea5ec-202">С учетом всех этих факторов Fabrikam выбрала архитектуру микрослужб для приложения доставки беспилотными летательными аппаратами.</span><span class="sxs-lookup"><span data-stu-id="ea5ec-202">All of these considerations lead Fabrikam to choose a microservices architecture for the Drone Delivery application.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="ea5ec-203">Если вам нужна помощь в выборе между микрослужбами и другими архитектурами, ознакомьтесь с [руководством по архитектуре приложений Azure](../guide/index.md).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-203">For help in choosing between a microservices architecture and other architectural styles, see the [Azure Application Architecture Guide](../guide/index.md).</span></span>
-
-<span data-ttu-id="ea5ec-204">В примере реализации используется Kubernetes со [Службой Azure Kubernetes](/azure/aks/) (AKS).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-204">Our reference implementation uses Kubernetes with [Azure Kubernetes Service](/azure/aks/) (AKS).</span></span> <span data-ttu-id="ea5ec-205">Но большинство общих архитектурных решений и задач будут применимы к любому оркестратору контейнера, включая [Azure Service Fabric](/azure/service-fabric/).</span><span class="sxs-lookup"><span data-stu-id="ea5ec-205">However, many of the high-level architectural decisions and challenges will apply to any container orchestrator, including [Azure Service Fabric](/azure/service-fabric/).</span></span>
-
-> [!div class="nextstepaction"]
-> [<span data-ttu-id="ea5ec-206">Анализ предметной области</span><span class="sxs-lookup"><span data-stu-id="ea5ec-206">Domain analysis</span></span>](./domain-analysis.md)
-
-<!-- links -->
-
-[drone-ri]: https://github.com/mspnp/microservices-reference-implementation
+<ul  class="panelContent cardsZ">
+<li style="display: flex; flex-direction: column;">
+    <a href="./logging-monitoring.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Ведение журналов и мониторинг</h3>
+                        <p>Распределенный характер архитектуры микрослужб предполагает внимательное отношение к ведению журналов и мониторингу.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<li style="display: flex; flex-direction: column;">
+    <a href="./ci-cd.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Непрерывная интеграция и развертывание</h3>
+                        <p>Использование непрерывной интеграции и непрерывной поставки (CI/CD) является основным требованием для успешной работы с микрослужбами.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>

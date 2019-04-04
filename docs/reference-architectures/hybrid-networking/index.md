@@ -1,15 +1,20 @@
 ---
 title: Подключение локальной сети к Azure
 titleSuffix: Azure Reference Architectures
-description: 'Сравнение нескольких эталонных архитектур, позволяющих подключить локальную сеть к Azure.'
+description: Сравнение нескольких эталонных архитектур, позволяющих подключить локальную сеть к Azure.
 author: telmosampaio
 ms.date: 07/02/2018
 ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: networking
+ms.openlocfilehash: 6172866b08197b0ca1cd3aabb3c14c01b4f06f9c
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58343447"
 ---
-
 # <a name="choose-a-solution-for-connecting-an-on-premises-network-to-azure"></a><span data-ttu-id="e3674-103">Выбор решения для подключения локальной сети к Azure</span><span class="sxs-lookup"><span data-stu-id="e3674-103">Choose a solution for connecting an on-premises network to Azure</span></span>
 
 <span data-ttu-id="e3674-104">В этой статье сравниваются варианты подключения локальной сети к виртуальной сети Azure.</span><span class="sxs-lookup"><span data-stu-id="e3674-104">This article compares options for connecting an on-premises network to an Azure Virtual Network (VNet).</span></span> <span data-ttu-id="e3674-105">Для каждого варианта доступна подробная эталонная архитектура.</span><span class="sxs-lookup"><span data-stu-id="e3674-105">For each option, a more detailed reference architecture is available.</span></span>

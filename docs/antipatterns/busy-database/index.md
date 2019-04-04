@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: 7d3fe47407eff7168dfd227a1dd1bd5917c7d431
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344858"
 ---
-
 # <a name="busy-database-antipattern"></a><span data-ttu-id="d53b3-103">Антишаблон занятости базы данных</span><span class="sxs-lookup"><span data-stu-id="d53b3-103">Busy Database antipattern</span></span>
 
 <span data-ttu-id="d53b3-104">В результате разгрузки обработки на сервер базы данных значительная часть времени будет потрачена на выполнение кода, а не на ответ на запросы для хранения и извлечения данных.</span><span class="sxs-lookup"><span data-stu-id="d53b3-104">Offloading processing to a database server can cause it to spend a significant proportion of time running code, rather than responding to requests to store and retrieve data.</span></span>

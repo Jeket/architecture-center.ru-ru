@@ -4,8 +4,13 @@ ms.topic: landing-page
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.date: 08/30/2018
+ms.openlocfilehash: 651f59344e7785a8a23e7b56dd67b4c4a3044741
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58343736"
 ---
-
 # <a name="azure-application-architecture-guide"></a>Руководство по архитектуре приложений Azure
 
 В этом руководстве представлен структурированный подход к разработке масштабируемых, отказоустойчивых и высокодоступных приложений в Azure. Он основан на проверенных методах, о которых мы узнали благодаря клиентам.

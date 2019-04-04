@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: 5c3062c0a17de708ada83ba81dcb111e6b1f8440
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58343855"
 ---
-
 # <a name="no-caching-antipattern"></a><span data-ttu-id="950dd-103">Антишаблон без кэширования</span><span class="sxs-lookup"><span data-stu-id="950dd-103">No Caching antipattern</span></span>
 
 <span data-ttu-id="950dd-104">В облачном приложении, которое обрабатывает много одновременных запросов, многократная выборка тех же данных может снизить производительность и масштабируемость.</span><span class="sxs-lookup"><span data-stu-id="950dd-104">In a cloud application that handles many concurrent requests, repeatedly fetching the same data can reduce performance and scalability.</span></span>

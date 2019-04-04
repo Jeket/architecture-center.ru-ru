@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: e3d6fbb789e422af22ce54b0defd6bb73099f15a
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58346337"
 ---
-
 # <a name="monolithic-persistence-antipattern"></a><span data-ttu-id="754e5-103">Антишаблон монолитной сохраняемости</span><span class="sxs-lookup"><span data-stu-id="754e5-103">Monolithic Persistence antipattern</span></span>
 
 <span data-ttu-id="754e5-104">Хранение всех данных приложения в одном хранилище может привести к снижению уровня производительности. Это связано с возможным конфликтом ресурсов или с тем, что это хранилище не подходит некоторым типам данных.</span><span class="sxs-lookup"><span data-stu-id="754e5-104">Putting all of an application's data into a single data store can hurt performance, either because it leads to resource contention, or because the data store is not a good fit for some of the data.</span></span>

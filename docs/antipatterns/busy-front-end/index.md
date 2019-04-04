@@ -8,8 +8,13 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: f1ab728d68747856fb2586804d58d45c4ea4fcc1
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344501"
 ---
-
 # <a name="busy-front-end-antipattern"></a><span data-ttu-id="b812e-103">Антишаблон загруженности внешнего интерфейса</span><span class="sxs-lookup"><span data-stu-id="b812e-103">Busy Front End antipattern</span></span>
 
 <span data-ttu-id="b812e-104">Выполнение асинхронных операций в большом количестве фоновых потоков может замедлить выполнение других задач переднего плана ресурсов, что приводит к уменьшению времени отклика до недопустимого уровня.</span><span class="sxs-lookup"><span data-stu-id="b812e-104">Performing asynchronous work on a large number of background threads can starve other concurrent foreground tasks of resources, decreasing response times to unacceptable levels.</span></span>

@@ -1,13 +1,18 @@
 ---
 title: Реляционные данные
-description: null
+description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
+ms.openlocfilehash: d68bddcb75e5c8f786a7739e85de2645a2c3d641
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58345419"
 ---
-
 # <a name="traditional-relational-database-solutions"></a><span data-ttu-id="50492-102">Решения для традиционных реляционных баз данных</span><span class="sxs-lookup"><span data-stu-id="50492-102">Traditional relational database solutions</span></span>
 
 <span data-ttu-id="50492-103">Реляционные данные — это данные, которые моделируются с помощью реляционной модели.</span><span class="sxs-lookup"><span data-stu-id="50492-103">Relational data is data modeled using the relational model.</span></span> <span data-ttu-id="50492-104">В этой модели данные представлены в виде кортежей.</span><span class="sxs-lookup"><span data-stu-id="50492-104">In this model, data is expressed as tuples.</span></span> <span data-ttu-id="50492-105">*Кортеж* — это набор пар "атрибут-значение".</span><span class="sxs-lookup"><span data-stu-id="50492-105">A *tuple* is a set of attribute/value pairs.</span></span> <span data-ttu-id="50492-106">Например, кортеж может быть таким: itemid = 5, orderid = 1, item = "Chair", amount = 200.</span><span class="sxs-lookup"><span data-stu-id="50492-106">For example, a tuple might be (itemid = 5, orderid = 1, item = "Chair", amount = 200.00).</span></span> <span data-ttu-id="50492-107">Набор кортежей, в которых совместно используются одни и те же атрибуты, называется *отношением*.</span><span class="sxs-lookup"><span data-stu-id="50492-107">A set of tuples that all share the same attributes is called a *relation*.</span></span>

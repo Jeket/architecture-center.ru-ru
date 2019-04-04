@@ -1,14 +1,19 @@
 ---
 title: Руководство по архитектуре данных в Azure
-description: null
+description: ''
 author: zoinerTejada
 ms.date: 02/12/2018
 layout: LandingPage
 ms.topic: landing-page
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
+ms.openlocfilehash: 5fb74c6323f8dc571d827eb9a4c65a6c87d0ae36
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344433"
 ---
-
 # <a name="azure-data-architecture-guide"></a>Руководство по архитектуре данных в Azure
 
 В этом руководстве представлен структурированный подход к разработке решений для обработки данных в Microsoft Azure. Подход основан на проверенных методах, которые мы узнали от клиентов.

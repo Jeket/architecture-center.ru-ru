@@ -1,15 +1,20 @@
 ---
 title: Антишаблоны производительности для облачных приложений
 titleSuffix: Azure Architecture Center
-description: 'Распространенная практика, которая, скорее всего, приведет к проблемам масштабируемости.'
+description: Распространенная практика, которая, скорее всего, приведет к проблемам масштабируемости.
 author: dragon119
 ms.date: 06/05/2017
 ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
+ms.openlocfilehash: 212930368942728fc0be0c9b2af1a90293906b39
+ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58344841"
 ---
-
 # <a name="performance-antipatterns-for-cloud-applications"></a><span data-ttu-id="4d1d6-103">Антишаблоны производительности для облачных приложений</span><span class="sxs-lookup"><span data-stu-id="4d1d6-103">Performance antipatterns for cloud applications</span></span>
 
 <span data-ttu-id="4d1d6-104">*Антишаблон производительности* — это распространенная практика, которая приводит к проблемам масштабируемости, если приложение испытывает нагрузку.</span><span class="sxs-lookup"><span data-stu-id="4d1d6-104">A *performance antipattern* is a common practice that is likely to cause scalability problems when an application is under pressure.</span></span>
