@@ -3,7 +3,13 @@ title: Эталонная архитектура Azure
 description: Эталонные архитектуры и руководства по реализации для общих нагрузок в Azure.
 layout: LandingPage
 ms.topic: landing-page
-ms.date: 03/07/2019
+ms.date: 04/02/2019
+ms.openlocfilehash: 7c307c40a710fff7ff07e24570052411b7edd8bf
+ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58887766"
 ---
 <!-- This file is generated! -->
 <!-- See the templates in ./build/reference-architectures  -->
@@ -40,26 +46,6 @@ ms.date: 03/07/2019
         </div>
     </a>
 </li>
-<!-- Training of Python scikit-learn models -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./ai/training-python-models.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../_images/icons/python-powered-h.svg" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Обучение моделей Python Scikit-learn</h3>
-                        <p>Рекомендации по настройке гиперпараметров модели Python Scikit-learn.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
 <!-- Batch scoring for deep learning models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/batch-scoring-deep-learning.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
@@ -74,6 +60,26 @@ ms.date: 03/07/2019
                     <div class="cardText">
                         <h3>Пакетная оценка для моделей глубокого обучения</h3>
                         <p>Автоматизируйте выполнение пакетных заданий, которые применяют алгоритм переноса стиля с помощью нейронных сетей к видео.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Training of Python scikit-learn models -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/training-python-models.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/python-powered-h.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Обучение моделей Python Scikit-learn</h3>
+                        <p>Рекомендации по настройке гиперпараметров модели Python Scikit-learn.</p>
                     </div>
                 </div>
             </div>
@@ -100,26 +106,6 @@ ms.date: 03/07/2019
         </div>
     </a>
 </li>
-<!-- Batch scoring of Spark models on Azure Databricks -->
-<li style="display: flex; flex-direction: column;">
-    <a href="./ai/batch-scoring-databricks.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
-        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
-            <div class="cardPadding" style="display: flex;">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../_images/icons/databricks.png" height="140px" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Пакетная оценка моделей Spark в Azure Databricks</h3>
-                        <p>Создайте масштабируемое решение для пакетной оценки моделей классификации Apache Spark с использованием Azure Databricks.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>
 <!-- Real-time scoring of Python and deep learning models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/realtime-scoring-python.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
@@ -140,6 +126,26 @@ ms.date: 03/07/2019
         </div>
     </a>
 </li>
+<!-- Batch scoring of R machine learning models -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/batch-scoring-R-models.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/logo-r.svg" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Пакетная оценка с использованием моделей машинного обучения на языке R</h3>
+                        <p>Выполнение пакетной оценки с использованием моделей R и пакетной службы Azure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
 <!-- Real-time scoring of R machine learning models -->
 <li style="display: flex; flex-direction: column;">
     <a href="./ai/realtime-scoring-r.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
@@ -154,6 +160,26 @@ ms.date: 03/07/2019
                     <div class="cardText">
                         <h3>Оценка в реальном времени с помощью моделей машинного обучения на языке R</h3>
                         <p>Реализуйте службу для прогнозирования в реальном времени на языке R с помощью Microsoft Machine Learning Server под управлением Службы Azure Kubernetes (AKS).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</li>
+<!-- Batch scoring of Spark models on Azure Databricks -->
+<li style="display: flex; flex-direction: column;">
+    <a href="./ai/batch-scoring-databricks.md" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+        <div class="cardSize" style="flex: 1 0 auto; display: flex;">
+            <div class="cardPadding" style="display: flex;">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="../_images/icons/databricks.png" height="140px" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Пакетная оценка моделей Spark в Azure Databricks</h3>
+                        <p>Создайте масштабируемое решение для пакетной оценки моделей классификации Apache Spark с использованием Azure Databricks.</p>
                     </div>
                 </div>
             </div>
