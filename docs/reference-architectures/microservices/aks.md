@@ -7,18 +7,20 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: microservices
-ms.openlocfilehash: c8ce4c77666ab7b9c55e6f144d514fadc6b6ad73
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 535c53faa810f74299e715a204e427c8919ce360
+ms.sourcegitcommit: 0a8a60d782facc294f7f78ec0e9033e3ee16bf4a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58246085"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069030"
 ---
 # <a name="microservices-architecture-on-azure-kubernetes-service-aks"></a>Архитектура микрослужб в Службе Azure Kubernetes (AKS)
 
-В этой эталонной архитектуре показано приложение микрослужб, развернутое в Службе Azure Kubernetes (AKS). Она демонстрирует основную конфигурацию AKS, которая может быть отправной точкой для большинства развертываний. Дополнительные расширенные параметры, включая расширенные сетевые параметры, будут рассмотрены в отдельной эталонной архитектуре.
+В этой эталонной архитектуре показано приложение микрослужб, развернутое в Службе Azure Kubernetes (AKS). Он описывает базовую конфигурацию AKS, которая может стать отправной точкой для большинства развертываний. В этой статье предполагается, что вы владеете базовыми знаниями о Kubernetes. Статья посвящена главным образом инфраструктуре и вопросам DevOps по запуску архитектуры микрослужб в AKS. Рекомендации о том, как создавать микрослужбы, см. в разделе [создания микрослужб в Azure](../../microservices/index.md).
 
-В этой статье предполагается, что вы владеете базовыми знаниями о Kubernetes. Статья посвящена главным образом инфраструктуре и вопросам DevOps по запуску архитектуры микрослужб в AKS. Инструкции по проектированию микрослужб с использованием предметно-ориентированного проектирования см. в статье [Проектирование, создание и использование микрослужб в Azure](/azure/architecture/microservices).
+![Логотип GitHub](../../_images/github.png) справочную реализацию этой архитектуры можно найти в [GitHub](https://github.com/mspnp/microservices-reference-implementation).
+
+
 
 ![Эталонная архитектура AKS](./_images/aks.png)
 
