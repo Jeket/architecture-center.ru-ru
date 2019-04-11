@@ -8,12 +8,12 @@ ms.topic: best-practice
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 87869d1b38d2b4a71cd5b604436e04deab993131
-ms.sourcegitcommit: 548374a0133f3caed3934fda6a380c76e6eaecea
+ms.openlocfilehash: ed1811495e81965fa514ab66dcfa49d00d2a59f2
+ms.sourcegitcommit: bb75a25bd589a761c79e39f2ccdec4acc7d71d60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420028"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480105"
 ---
 # <a name="naming-conventions-for-azure-resources"></a>Соглашения об именовании для ресурсов Azure
 
@@ -85,6 +85,7 @@ ms.locfileid: "58420028"
 |Группа доступности |Группа ресурсов |От 1 до 80 |Без учета регистра |Буквы, цифры, символ подчеркивания и дефис |`<service-short-name>-<context>-as` |`profx-sql-as` |
 |Тег |Связанная сущность |512 (имя), 256 (значение) |Без учета регистра |Буквы, цифры и специальные символы за исключением `<`, `>`, `%`, `&`, `\`, `?`, `/`. См. сведения об [ограничениях](/azure/azure-resource-manager/resource-group-using-tags). |`"key" : "value"` |`"department" : "Central IT"` |
 |Веб-приложение |Глобальные |1–60 |Без учета регистра |Буквы, цифры, дефис |`<app_name>-<source-slot-name>` |`contoso-staging` |
+|Управление API |Глобальные |1–50 |Без учета регистра |Буквы, цифры, дефис |`<apim-service-name>` |`contoso` |
 
 ### <a name="compute"></a>Службы вычислений
 
@@ -191,7 +192,7 @@ Azure Resource Manager позволяет определять для сущно
 
 Дополнительные сведения об именовании больших двоичных объектов, контейнеров и таблиц см. в следующем списке:
 
-- [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/dd135715.aspx)
+- [Именование и ссылки на контейнеры, большие двоичные объекты и метаданные](https://msdn.microsoft.com/library/dd135715.aspx)
 - [Именование очередей и метаданных](https://msdn.microsoft.com/library/dd179349.aspx)
 - [Именование таблиц](https://msdn.microsoft.com/library/azure/dd179338.aspx)
 
