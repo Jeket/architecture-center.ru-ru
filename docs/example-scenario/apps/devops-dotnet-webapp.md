@@ -9,12 +9,12 @@ ms.service: architecture-center
 ms.subservice: example-scenario
 ms.custom: fasttrack, seodec18
 social_image_url: /azure/architecture/example-scenario/apps/media/architecture-devops-dotnet-webapp.svg
-ms.openlocfilehash: 0d6ac13fb357657a2ec5e6284abadb46d6926907
-ms.sourcegitcommit: 3b15d65e7c35a19506e562c444343f8467b6a073
-ms.translationtype: HT
+ms.openlocfilehash: f999b2ffdf234161f668887d5b2327ecf50f0e55
+ms.sourcegitcommit: bb75a25bd589a761c79e39f2ccdec4acc7d71d60
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54908500"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480139"
 ---
 # <a name="design-a-cicd-pipeline-using-azure-devops"></a>Разработка конвейера CI/CD с использованием Azure DevOps
 
@@ -85,7 +85,7 @@ ms.locfileid: "54908500"
 
 ## <a name="deploy-the-scenario"></a>Развертывание сценария
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -93,11 +93,11 @@ ms.locfileid: "54908500"
 
 ### <a name="walk-through"></a>Пошаговое руководство
 
-[Проект Azure DevOps](/azure/devops-project/azure-devops-project-github) развертывает план Службы приложений Azure, Службу приложений Azure и ресурс App Insights, а также задает все настройки проекта.
+[Проекты Azure DevOps](/azure/devops-project/azure-devops-project-github) будет развернуть план службы приложений службы приложений и ресурса App Insights для вас, а также настроить конвейер конвейеры Azure для вас.
 
-Когда вы развернете проект Azure DevOps и завершите сборку, просмотрите связанные изменения кода, рабочие элементы и результаты тестов. Вы заметите, что результаты теста не отображаются, так как в коде нет никаких тестов для выполнения.
+После того как вы настроили конвейер с помощью проектов Azure DevOps и сборка завершена, просмотрите связанные изменения кода, рабочие элементы и результаты тестирования. Вы заметите, что результаты теста не отображаются, так как в коде нет никаких тестов для выполнения.
 
-Проект создает конвейер выпуска и триггер непрерывного развертывания, развертывая наше приложение в среде разработки. В рамках процесса непрерывного развертывания можно увидеть разброс выпусков в нескольких средах. Выпуск может охватывать обе инфраструктуры (используя такие методы, как инфраструктура как код), а также развертывать необходимые пакеты приложений и все выполняемые после настройки задачи.
+Конвейер создает определение выпуска и триггера непрерывного развертывания, развертывание наше приложение в среде разработки. В рамках процесса непрерывного развертывания можно увидеть разброс выпусков в нескольких средах. Выпуск может охватывать обе инфраструктуры (используя такие методы, как инфраструктура как код), а также развертывать необходимые пакеты приложений и все выполняемые после настройки задачи.
 
 ## <a name="pricing"></a>Цены
 
@@ -115,7 +115,7 @@ Azure DevOps оплачивается в расчете на каждого по
 - [DevOps в Майкрософт. Работа с Azure DevOps][devops-microsoft]
 - [Пошаговые руководства по использованию DevOps вместе с Azure DevOps][devops-with-vsts]
 - [Контрольный список DevOps][devops-checklist]
-- [Создание конвейера CI/CD для .NET с помощью проекта Azure DevOps][devops-project-create]
+- [Создание конвейера CI/CD для .NET с помощью проектов Azure DevOps][devops-project-create]
 
 <!-- links -->
 
