@@ -7,12 +7,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat
-ms.openlocfilehash: 5219d08fce5cf09b075b6d7adfb73970e007ded4
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 34c21f4b5356dc0acbd5c2c85124300a6ed13c99
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58248679"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640504"
 ---
 # <a name="web-application-monitoring-on-azure"></a>Мониторинг веб-приложений в Azure
 
@@ -78,7 +78,7 @@ Azure Monitor, Application Insights и Log Analytics используются д
 
 У Application Insights есть [ограничения][app-insights-limits] на количество обрабатываемых запросов в секунду. Если превысить лимит, то возникнет регулирование количества запросов сообщений. Чтобы этого избежать, необходимо выполнить [фильтрацию][message-filtering] или [выборку][message-sampling], что позволит уменьшить интенсивность передачи данных.
 
-Тем не менее, за рекомендации по высокой доступности, предназначенные для запущенного приложения, ответственность несет разработчик. Например, дополнительные сведения о масштабе см. в разделе [Вопросы масштабируемости](#scalability-considerations) в эталонной архитектуре базового веб-приложения. После развертывания приложения можно использовать Application Insights и настроить тесты для [мониторинга доступности][monitor its availability].
+Тем не менее, за рекомендации по высокой доступности, предназначенные для запущенного приложения, ответственность несет разработчик. Например, дополнительные сведения о масштабе см. в разделе [Вопросы масштабируемости](./basic-web-app.md#scalability-considerations) в эталонной архитектуре базового веб-приложения. После развертывания приложения можно использовать Application Insights и настроить тесты для [мониторинга доступности][monitor its availability].
 
 ### <a name="security"></a>Безопасность
 
@@ -103,7 +103,7 @@ Azure Monitor, Application Insights и Log Analytics используются д
 
 После развертывания можно просмотреть показатели эффективности [Live Metrics Stream][Live Metrics Stream]. Эти данные не сохраняются. Пользователь просматривает метрики в реальном времени. Но телеметрию можно сохранить для последующего анализа. Плата за данные Live Stream не взимается.
 
-Плата за использование Log Analytics начисляется за каждый гигабайт данных, полученных службой. Каждый месяц первые 5 ГБ данных, получаемых службой Azure Log Analytics, предоставляются бесплатно. Также эти данные бесплатно сохраняются в течение первых 31 дней в рабочем пространстве Log Analytics.
+Плата за использование Log Analytics начисляется за каждый гигабайт данных, полученных службой. Каждый месяц первые 5 ГБ данных, получаемых службой Azure Log Analytics, предоставляются бесплатно. Также эти данные бесплатно сохраняются в течение первого 31 дня в рабочей области Log Analytics.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

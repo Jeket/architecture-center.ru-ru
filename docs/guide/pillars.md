@@ -8,12 +8,12 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seojan19
-ms.openlocfilehash: 76870f58fc957f6d82f6dc176d1c538c795a7d20
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: d6eed98c6e224956942c45b52621ec02832be015
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58243065"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639776"
 ---
 # <a name="pillars-of-software-quality"></a>Основные аспекты качества программного обеспечения
 
@@ -76,8 +76,6 @@ ms.locfileid: "58243065"
 
 Приложения часто зависят от нескольких служб. Как правило, вероятность простоя для каждой службы индивидуальна. Например, предположим, что ваше приложение зависит от двух служб, соглашение об уровне обслуживания для каждой из которых гарантирует доступность на уровне 99,9 %. Совокупное соглашение об уровне обслуживания для обеих служб гарантирует доступность на уровне 99,9 % &times; 99,9 % &asymp; 99,8 %. Это немного меньше, чем для каждой службы в отдельности.
 
-Воспользуйтесь [контрольным списком доступности][availability-checklist], чтобы проверить разработку с точки зрения этого аспекта.
-
 ### <a name="availability-guidance"></a>Руководства по обеспечению доступности:
 
 - [Конструктивные шаблоны для обеспечения доступности][availability-patterns].
@@ -104,11 +102,9 @@ ms.locfileid: "58243065"
 
 При разработке устойчивого приложения нужно составить представление о требованиях к доступности. Какое время простоя приемлемо? Это отчасти зависит от затрат. Во сколько возможный простой обойдется вашему бизнесу? Сколько вы должны инвестировать в высокую доступность приложения?
 
-Воспользуйтесь [контрольным списком устойчивости][resiliency-checklist], чтобы проверить разработку с точки зрения этого аспекта.
-
 ### <a name="resiliency-guidance"></a>Руководство по обеспечению устойчивости
 
-- [Проектирование устойчивых приложений для Azure][resiliency]
+- [Проектирование надежных приложений Azure][resiliency]
 - [Конструктивные шаблоны для обеспечения устойчивости][resiliency-patterns].
 - Рекомендации. [Обработка временных сбоев][transient-fault-handling], [повторные попытки для определенных служб][retry-service-specific]
 
@@ -173,7 +169,7 @@ ms.locfileid: "58243065"
 
 [dr-guidance]: ../resiliency/disaster-recovery-azure-applications.md
 [identity-ref-arch]: ../reference-architectures/identity/index.md
-[resiliency]: ../resiliency/index.md
+[resiliency]: ../reliability/index.md
 
 [ad-subscriptions]: /azure/active-directory/active-directory-how-subscriptions-associated-directory
 [data-warehouse-encryption]: /azure/data-lake-store/data-lake-store-security-overview#data-protection
@@ -205,7 +201,5 @@ ms.locfileid: "58243065"
 [transient-fault-handling]: ../best-practices/transient-faults.md
 
 <!-- checklist -->
-[availability-checklist]: ../checklist/availability.md
 [devops-checklist]: ../checklist/dev-ops.md
-[resiliency-checklist]: ../checklist/resiliency.md
 [scalability-checklist]: ../checklist/scalability.md

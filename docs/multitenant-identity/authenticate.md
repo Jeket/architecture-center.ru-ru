@@ -9,12 +9,12 @@ ms.subservice: reference-architecture
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: tailspin
 pnp.series.next: claims
-ms.openlocfilehash: b4a833a18b44e40f544449a222fb082d71e4268d
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
+ms.openlocfilehash: a35342c0e40290332a349577260de316b5e7d503
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54481649"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640437"
 ---
 # <a name="authenticate-using-azure-ad-and-openid-connect"></a>Аутентификация с помощью Azure AD и OpenID Connect
 
@@ -40,7 +40,7 @@ ms.locfileid: "54481649"
 
 В статье [Run the Surveys application](./run-the-app.md) (Запуск приложения Surveys) описаны конкретные шаги для приложения Surveys. Обратите внимание на следующее.
 
-- Для мультитенантного приложения следует явным образом настроить параметр мультитенантности. Это позволит другим организациям обращаться к приложению.
+- Для мультитенантного приложения следует явным образом настроить параметр мультитенантности. Это позволяет другим организациям осуществлять доступ к приложению.
 
 - URL-адрес ответа — это URL-адрес, по которому Azure AD будет отправлять ответы OAuth 2.0. Если вы используете ASP.NET Core, он должен совпадать с адресом, который вы настроили в ПО промежуточного слоя для аутентификации (см. следующий раздел).
 

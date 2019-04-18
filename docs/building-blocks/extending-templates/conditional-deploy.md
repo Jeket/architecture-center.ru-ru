@@ -1,17 +1,17 @@
 ---
 title: Условное развертывание ресурсов в шаблоне Azure Resource Manager
-description: В статье описано, как расширить возможности в шаблоне Azure Resource Manager за счет условного развертывания ресурсов в зависимости от значения определенного параметра.
+description: Описывает способы расширения функциональных возможностей шаблонов Azure Resource Manager для условного развертывания ресурсов в зависимости от значения параметра.
 author: petertay
 ms.date: 10/30/2018
 ms.topic: article
 ms.service: architecture-center
 ms.subservice: reference-architecture
-ms.openlocfilehash: f3d22c6437cdabcd93a781ecf7c99db5a570d7cf
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 437490b2998cfbcde4df13570831e34a776e7afe
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58243805"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640215"
 ---
 # <a name="conditionally-deploy-a-resource-in-an-azure-resource-manager-template"></a>Условное развертывание ресурсов в шаблоне Azure Resource Manager
 
@@ -137,7 +137,7 @@ az group deployment create -g <resource-group-name> \
     --template-uri https://raw.githubusercontent.com/mspnp/template-examples/master/example2-conditional/deploy.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Используйте объекты вместо скалярных значений в качестве параметров шаблона. См. сведения об [использовании объекта в качестве параметра в шаблоне Azure Resource Manager](./objects-as-parameters.md).
 

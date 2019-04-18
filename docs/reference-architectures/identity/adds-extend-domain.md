@@ -1,29 +1,29 @@
 ---
-title: Расширение доменных служб Active Directory в Azure
+title: Расширьте локальный домен Active Directory в Azure
 titleSuffix: Azure Reference Architectures
-description: Как расширить локальный домен Active Directory в Azure.
+description: Развертывание доменных служб Active Directory (AD DS) в виртуальной сети Azure.
 author: telmosampaio
 ms.date: 05/02/2018
 ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18, identity
-ms.openlocfilehash: 67f23ae3676d0fb95ef484fa6dcb7a8bb92e0fa2
-ms.sourcegitcommit: 548374a0133f3caed3934fda6a380c76e6eaecea
+ms.openlocfilehash: c617a0ceba900fc9cd78eff21aadf5c94f6b143b
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420011"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640351"
 ---
-# <a name="extend-active-directory-domain-services-ad-ds-to-azure"></a>Расширение доменных служб Active Directory в Azure
+# <a name="extend-your-on-premises-active-directory-domain-to-azure"></a>Расширьте локальный домен Active Directory в Azure
 
-На схеме эталонной архитектуры представлены способы расширения среды Active Directory в Azure для предоставления распределенных служб аутентификации с помощью доменных служб Active Directory (AD DS). [**Разверните это решение**](#deploy-the-solution).
+Эта архитектура представлены способы расширения локального домена Active Directory в Azure для предоставления распределенных служб аутентификации. [**Разверните это решение**](#deploy-the-solution).
 
 ![Защищенная гибридная сетевая архитектура с Active Directory](./images/adds-extend-domain.png)
 
 *Скачайте [файл Visio][visio-download] этой архитектуры.*
 
-С помощью доменных служб Active Directory вы можете выполнить аутентификацию пользователя, компьютера, приложения или других идентификаторов, которые включены в домен безопасности. Они могут быть размещены локально. Если же приложение размещено частично локально и частично в Azure, эффективней выполнить репликацию этой функциональности в Azure. Это позволяет сократить задержки, вызванные отправкой запросов на аутентификацию и локальную авторизацию из облака обратно в доменные службы Active Directory, запущенные в локальной среде.
+Если приложение размещено частично локальное и частично в Azure, может быть более эффективными для репликации доменных служб Active Directory (AD DS) в Azure. Это может сократить задержки, вызванные отправляя запросы проверки подлинности из облака обратно в AD DS, которые работают в пределах организации.
 
 Эта архитектура чаще всего используется при подключении к локальной и виртуальной сети Azure по VPN или ExpressRoute. Она также поддерживает двунаправленную репликацию. Это означает, что изменения могут быть выполнены локально или в облаке и оба источника будут согласованы. Типичные способы применения этой архитектуры включают гибридные приложения, в которых функции распределяются между локальными приложениями и Azure, а также приложения и службы, которые выполняют аутентификацию с помощью Active Directory.
 

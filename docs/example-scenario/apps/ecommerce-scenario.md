@@ -9,12 +9,12 @@ ms.service: architecture-center
 ms.subservice: example-scenario
 ms.custom: fasttrack
 social_image_url: /azure/architecture/example-scenario/apps/media/architecture-ecommerce-scenario.png
-ms.openlocfilehash: 989dec6afccbb836b61eb32e39904f43ffff65ac
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: b10ffaafb6479fef89e6691a686c018ac6ce5632
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58244015"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640759"
 ---
 # <a name="an-e-commerce-front-end-on-azure"></a>Внешний интерфейс для электронной коммерции в Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "58244015"
 - Рассмотрите возможность использования [шаблона автоматического выключения][circuit-breaker], чтобы обеспечить корректную обработку ошибок, если одна часть приложения будет недоступна.
 - Ознакомьтесь с [распространенными конструктивными шаблонами для обеспечения устойчивости][design-patterns-resiliency] и реализуйте их, если это уместно.
 - [Рекомендации по работе со Службой приложений Azure][resiliency-app-service] см. в Центре архитектуры Azure.
-- Рассмотрите возможность использования активной [георепликации][sql-geo-replication] для хранилища данных и [геоизбыточного хранилища][storage-geo-redudancy] для изображений и очередей.
+- Рассмотрите возможность использования активной [георепликации][sql-geo-replication] для хранилища данных и [геоизбыточного хранилища][storage-geo-redundancy] для изображений и очередей.
 - Сведения об обеспечении [устойчивости][resiliency] см. в соответствующей статье в Центре архитектуры Azure.
 
 ## <a name="deploy-the-scenario"></a>Развертывание сценария
@@ -162,4 +162,4 @@ ms.locfileid: "58244015"
 [secure-development]: https://www.microsoft.com/SDL/process/design.aspx
 [service-bus]: /azure/service-bus-messaging/
 [sql-geo-replication]: /azure/sql-database/sql-database-geo-replication-overview
-[storage-geo-redudancy]: /azure/storage/common/storage-redundancy-grs
+[storage-geo-redundancy]: /azure/storage/common/storage-redundancy-grs

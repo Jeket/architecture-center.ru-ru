@@ -8,12 +8,12 @@ ms.topic: example-scenario
 ms.service: architecture-center
 ms.subservice: example-scenario
 social_image_url: /azure/architecture/example-scenario/apps/media/architecture-devops-with-aks.png
-ms.openlocfilehash: 89e50e67b2c933637442f0f01bf83ecc95743691
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 9be4f828c96c4ac321acf9d9719d0ef465fb35cf
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58244035"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59641184"
 ---
 # <a name="cicd-pipeline-for-container-based-workloads"></a>Конвейер CI/CD для рабочих нагрузок на основе контейнера
 
@@ -70,8 +70,6 @@ ms.locfileid: "58244035"
 
 Как часть кластера службы контейнеров Azure, подсистема балансировки нагрузки распределяет трафик приложения в один или несколько контейнеров (pods), которые запускают приложение. Такой подход к запуску контейнерных приложений в Kubernetes обеспечивает клиентам высокодоступную инфраструктуру.
 
-Сведения о доступности см. в статье [Контрольный список для обеспечения доступности][availability] в Центре архитектуры Azure.
-
 ### <a name="scalability"></a>Масштабируемость
 
 Служба контейнеров Azure позволяет масштабировать число узлов кластера в соответствии с требованиями приложений. По мере увеличения приложения можно развернуть количество узлов Kubernetes, которые запускают службу.
@@ -82,7 +80,7 @@ ms.locfileid: "58244035"
 
 ### <a name="security"></a>Безопасность
 
-Чтобы минимизировать площадь атаки, эти сценарии не предоставляют экземпляр виртуальной машины Jenkins по HTTP. Для любых задач управления, требующих взаимодействия с Jenkins, необходимо создать безопасное удаленное соединение с использованием туннеля SSH на локальном компьютере. Для экземпляров виртуальных машин Jenkins и Grafana аутентификацию можно провести только с помощью открытого ключа SSH. Вход по паролю отключенный. Для получения дополнительных сведений см. [Запуск сервера Jenkins в Azure](../../reference-architectures/jenkins/index.md).
+Чтобы минимизировать площадь атаки, эти сценарии не предоставляют экземпляр виртуальной машины Jenkins по HTTP. Для любых задач управления, требующих взаимодействия с Jenkins, необходимо создать безопасное удаленное соединение с использованием туннеля SSH на локальном компьютере. Для экземпляров виртуальных машин Jenkins и Grafana аутентификацию можно провести только с помощью открытого ключа SSH. Вход по паролю отключенный. Для получения дополнительных сведений см. [Запуск сервера Jenkins в Azure](./jenkins.md).
 
 Этот сценарий использует специальный субъект-службу Azure Active Directory (AD) для разделения учетных данных и разрешений. Учетные данные этого субъекта-службы хранятся в Jenkins в качестве защищенного объекта учетных данных, так что они не отображаются напрямую и не видны внутри сценариев или конвейера сборки.
 
@@ -92,11 +90,11 @@ ms.locfileid: "58244035"
 
 Этот сценарий использует Службу Azure Kubernetes для вашего приложения. В Kubernetes встроены компоненты отказоустойчивости, которые отслеживаются и, в случае проблемы, перезапускают контейнеры (pods). В сочетании с процедурой запуска нескольких узлов Kubernetes, приложение может допускать отключенный модуль или узел.
 
-Общее руководство по проектированию устойчивых решений см. в разделе [Проектирование устойчивых приложений для Azure][resiliency].
+Общие рекомендации по разработке устойчивых решений см. в разделе [Проектирование надежных приложений Azure](../../reliability/index.md).
 
 ## <a name="deploy-the-scenario"></a>Развертывание сценария
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -147,7 +145,6 @@ ms.locfileid: "58244035"
 <!-- links -->
 [architecture]: ./media/architecture-devops-with-aks.png
 [autoscaling]: ../../best-practices/auto-scaling.md
-[availability]: ../../checklist/availability.md
 [docs-aci]: /azure/container-instances/container-instances-overview
 [docs-acr]: /azure/container-registry/container-registry-intro
 [docs-aks]: /azure/aks/intro-kubernetes
@@ -157,7 +154,6 @@ ms.locfileid: "58244035"
 [createsp]: /cli/azure/ad/sp#az-ad-sp-create
 [grafana]: https://grafana.com/
 [jenkins]: https://jenkins.io/
-[resiliency]: ../../resiliency/index.md
 [resource-groups]: /azure/azure-resource-manager/resource-group-overview
 [security]: /azure/security/
 [scalability]: ../../checklist/scalability.md

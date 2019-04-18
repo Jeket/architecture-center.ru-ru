@@ -7,10 +7,10 @@ ms.date: 02/11/2019
 description: Объяснение системы управления облачными ресурсами в Azure
 author: petertaylor9999
 ms.openlocfilehash: 0989a5aad8a6290cce07fd71771c690bbd615e0d
-ms.sourcegitcommit: 0a8a60d782facc294f7f78ec0e9033e3ee16bf4a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59068860"
 ---
 <!-- markdownlint-disable MD026 -->
@@ -42,4 +42,4 @@ RBAC определяет роли и роли определяют возмож
 Теперь, когда вы понимаете концепцию облачной управление ресурсами, Дополнительные сведения о том, как осуществляется доступ к ресурсам в Azure.
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о доступе к ресурсам в Azure](azure-resource-access.md)
+> [Доступ к ресурсам в Azure](azure-resource-access.md)

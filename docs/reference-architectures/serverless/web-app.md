@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18, serverless
-ms.openlocfilehash: 60af3df5bbb75d97d6ba797874c8b37319b2fad5
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
+ms.openlocfilehash: edf569b82a0a632e6ca048fee12c1dc61c039cd9
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54487395"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640810"
 ---
 # <a name="serverless-web-application-on-azure"></a>Бессерверное веб-приложение в Azure
 
@@ -39,9 +39,6 @@ ms.locfileid: "54487395"
 Она состоит из следующих компонентов:
 
 **Хранилище больших двоичных объектов**. Статическое веб-содержимое, такое как файлы HTML, CSS и JavaScript, сохраняется в хранилище BLOB-объектов Azure и обслуживается клиентами с помощью [размещения статических веб-сайтов][static-hosting]. Все динамическое взаимодействие происходит с помощью кода JavaScript, который вызывает API серверной части. Для отображения веб-страницы не используется серверный код. Размещение статических веб-сайтов поддерживает индексированные документы и настраиваемые страницы ошибок 404.
-
-> [!NOTE]
-> Размещение статических веб-сайтов в данный момент предоставляется в [предварительной версии][static-hosting-preview].
 
 **CDN.** Используйте [сеть доставки содержимого Azure][cdn] (CDN), чтобы выполнять кэширование содержимого с меньшей задержкой и более быстрой доставкой, а также предоставлением конечной точки HTTPS.
 
@@ -137,7 +134,7 @@ public static Task<IActionResult> Run(
 
 ### <a name="authentication"></a>Authentication
 
-API `GetStatus` в эталонной реализации использует Azure AD для аутентификации запросов. Azure AD поддерживает Open ID Connect, который является протоколом аутентификации на основе протокола OAuth 2.
+API `GetStatus` в эталонной реализации использует Azure AD для аутентификации запросов. Azure AD поддерживает протокол OpenID Connect, который является протокола проверки подлинности, созданная на основе протокола OAuth 2.
 
 В этой архитектуре клиентское приложение представляет собой одностраничное приложение (SPA), которое запускается в браузере. Этот тип клиентского приложения не может хранить секрет клиента или код авторизации скрытым, поэтому следует использовать поток неявного предоставления разрешений. (См. сведения об [использовании потока OAuth 2.0][oauth-flow]). Вот общая последовательность действий:
 
@@ -329,7 +326,7 @@ API — это контракт между службой и клиентами.
 [functions-zip-deploy]: /azure/azure-functions/deployment-zip-push
 [graph]: https://developer.microsoft.com/graph/docs/concepts/overview
 [key-vault-web-app]: /azure/key-vault/tutorial-web-application-keyvault
-[microservices-domain-analysis]: ../../microservices/domain-analysis.md
+[microservices-domain-analysis]: ../../microservices/model/domain-analysis.md
 [monitor]: /azure/azure-monitor/overview
 [oauth-flow]: https://auth0.com/docs/api-auth/which-oauth-flow-to-use
 [partition-key]: /azure/cosmos-db/partition-data

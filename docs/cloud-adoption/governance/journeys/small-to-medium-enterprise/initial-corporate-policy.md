@@ -1,18 +1,18 @@
 ---
-title: CAF. Малые и средние предприятия. Начальная корпоративная политика, лежащая в основе стратегии управления
+title: CAF. Enterprise мелких и средних — начальное корпоративной политики за стратегии управления
 titleSuffix: Microsoft Cloud Adoption Framework for Azure
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
 ms.custom: governance
-ms.date: 2/11/2019
-description: Малые и средние предприятия. Начальная корпоративная политика, лежащая в основе стратегии управления
+ms.date: 02/11/2019
+description: Enterprise мелких и средних — начальное корпоративной политики за стратегии управления
 author: BrianBlanchard
-ms.openlocfilehash: 4f49d0aae2c6ab5a5c8feba669cbbb904af2773b
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
-ms.translationtype: HT
+ms.openlocfilehash: 2133145c9933ad450ea3cc55ecd68b8a667df783
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55901363"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640028"
 ---
 # <a name="small-to-medium-enterprise-initial-corporate-policy-behind-the-governance-strategy"></a>Малые и средние предприятия. Начальная корпоративная политика, лежащая в основе стратегии управления
 
@@ -37,7 +37,7 @@ ms.locfileid: "55901363"
 
 [!INCLUDE [policy-statements](../../../../../includes/cloud-adoption/governance/policy-statements.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта корпоративная политика подготавливает команду управления облачными решениями к реализации MVP системы управления, который станет основой для внедрения. Следующим шагом является реализация MVP.
 

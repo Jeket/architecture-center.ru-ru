@@ -9,12 +9,12 @@ ms.service: architecture-center
 ms.subservice: example-scenario
 ms.custom: csa-team
 social_image_url: /azure/architecture/example-scenario/apps/media/architecture-decentralized-trust.png
-ms.openlocfilehash: a3c497f91b3861bf02f05981ee92e578a22a14ca
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 3bc75e59a4d391c74a0e606f9670c88509a3375b
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58246285"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640453"
 ---
 # <a name="decentralized-trust-between-banks-on-azure"></a>Децентрализованное доверие между банками в Azure
 
@@ -72,8 +72,6 @@ ms.locfileid: "58246285"
 
 [Azure Monitor][monitor] используется для непрерывного мониторинга сети блокчейна, чтобы обеспечить доступность. Ссылка на пользовательскую панель мониторинга на основе Azure Monitor будет отправлена вам после успешного развертывания шаблона решения блокчейна, используемого в этом сценарии. На панели мониторинга отображаются узлы, сообщающие о пакетах пульса за последние 30 минут, а также другая полезная статистика.
 
-Дополнительные сведения по другим вопросам доступности см. в статье [с контрольным списком для обеспечения доступности][availability] в Центре архитектуры Azure.
-
 ### <a name="scalability"></a>Масштабируемость
 
 Популярной проблемой для блокчейна является количество транзакций, которые он может включать в течение заданного промежутка времени. Этот сценарий использует алгоритм Proof-of-Authority, где такая масштабируемость может быть лучше управляемой, чем Proof-of-Work. В сетях, основанных на алгоритме Proof-of-Authority, участники консенсуса известны и управляемы, что делает консенсус более подходящим для частного блокчейна консорциума организаций, которые известны друг другу. Параметры, такие как среднее время блока, транзакции в минуту и потребление ресурсов вычислений, можно легко контролировать через пользовательскую панель мониторинга. Затем ресурсы можно настроить в зависимости от требований к масштабированию.
@@ -90,7 +88,7 @@ ms.locfileid: "58246285"
 
 Блокчейн Ethereum PoA сам по себе может обеспечить некоторую степень устойчивости, поскольку узлы проверяющего элемента управления могут быть развернуты в разных регионах. Azure имеет параметры для развертывания в более чем 54 регионах по всему миру. Блокчейн, как в этом сценарии, предоставляет уникальные и обновленные возможности сотрудничества для повышения устойчивости. Устойчивость сети обеспечивается не только одной централизованной стороной, но и всеми членами консорциума. Блокчейн, основанный на алгоритме Proof-of-Authority, позволяет повысить устойчивость сети и ее работоспособность.
 
-Общее руководство по проектированию устойчивых решений см. в разделе [Проектирование устойчивых приложений для Azure][resiliency].
+Общие рекомендации по разработке устойчивых решений см. в разделе [Проектирование надежных приложений Azure](../../reliability/index.md).
 
 ## <a name="pricing"></a>Цены
 
@@ -104,7 +102,7 @@ ms.locfileid: "58246285"
 
 Вышеуказанная цена предназначена для того, чтобы один участник консорциума запустил сеть блокчейна или подключился к ней. Как правило, в консорциуме, где задействовано несколько компаний или организаций, каждый участник получит свою собственную подписку Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы увидеть пример этого сценария, разверните [демонстрационное приложение блокчейна Ethereum PoA][deploy] в Azure Затем перейдите к [файлу сведений исходного кода сценария][source].
 
@@ -120,8 +118,6 @@ ms.locfileid: "58246285"
 [deploy]: https://portal.azure.com/?pub_source=email&pub_status=success#create/microsoft-azure-blockchain.azure-blockchain-ethereumethereum-poa-consortium
 [source]: https://github.com/vitoc/creditscoreblockchain
 [monitor]: /azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor
-[availability]: /azure/architecture/checklist/availability
 [scalability]: /azure/architecture/checklist/scalability
-[resiliency]: ../../resiliency/index.md
 [security]: /azure/security/
 [vault]: https://azure.microsoft.com/services/key-vault/

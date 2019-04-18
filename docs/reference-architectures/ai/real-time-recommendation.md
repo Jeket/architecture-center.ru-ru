@@ -7,18 +7,18 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: c4bfd6e92fc9c770a03a63355fc922d19ef27b7b
-ms.sourcegitcommit: f4ed242dff8b204cfd8ebebb7778f356a19f5923
-ms.translationtype: HT
+ms.openlocfilehash: c7e7423da11667c90d53247c2c5303a8fbd1a76a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224170"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640164"
 ---
 # <a name="build-a-real-time-recommendation-api-on-azure"></a>Создание API рекомендаций в режиме реального времени в Azure
 
 В этой эталонной архитектуре показано, как обучить модель рекомендаций с помощью Azure Databricks и развернуть ее как API с помощью Azure Cosmos DB, Машинного обучения Azure и Службы Azure Kubernetes (AKS). Эту архитектуру можно подготовить к использованию для большинства сценариев механизма рекомендаций, включая рекомендации для продуктов, фильмов и новостей.
 
-Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub](https://github.com/Microsoft/Recommenders/blob/master/notebooks/05_operationalize/als_movie_o16n.ipynb).
+Эталонную реализацию для этой архитектуры можно найти на сайте [GitHub][als-example].
 
 ![Архитектура модели машинного обучения для создания рекомендаций к фильмам](./_images/recommenders-architecture.png)
 
@@ -92,14 +92,14 @@ Azure Cosmos DB рекомендуется из-за ее удобства и в
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Чтобы развернуть эту архитектуру, сначала создайте среду Azure Databricks для подготовки данных и обучения модели рекомендации.
+Чтобы развернуть эту архитектуру, выполните **Azure Databricks** инструкциям [документа установки][setup]. Коротко говоря, инструкций необходимо:
 
 1. Создайте [рабочую область Azure Databricks][workspace].
 
-2. Создайте новый кластер Spark в Azure Databricks. Требуются следующие значения конфигурации.
+1. Создайте новый кластер со следующей конфигурацией в Azure Databricks:
 
     - Режим кластера: Стандартная
-    - Версия среды выполнения Databricks: 4.1 (содержит Apache Spark 2.3.0, Scala 2.11)
+    - Версия среды выполнения Databricks: 4.3 (включает Apache Spark 2.3.1, Scala 2.11)
     - Версия Python: 3
     - Тип драйвера: Стандартный \_DS3\_версии 2
     - Тип рабочего процесса: Стандартный\_DS3\_версии 2 (min и max, при необходимости)
@@ -107,30 +107,27 @@ Azure Cosmos DB рекомендуется из-за ее удобства и в
     - Конфигурация Spark: при необходимости
     - Переменные среды: при необходимости
 
-3. Клонируйте репозиторий[Microsoft Recommenders][github] на локальном компьютере.
+1. Создать личный маркер доступа в [рабочей области Azure Databricks][workspace]. См. в разделе проверки подлинности Azure Databricks [документации] [ adbauthentication] сведения.
 
-4. Заархивируйте содержимое папки "Рекомендации".
+1. Клон [моделях рекомендаций Microsoft] [ github] репозитория в среде, где можно выполнить сценарии (например, на локальном компьютере).
 
-    ```console
-    cd Recommenders
-    zip -r Recommenders.zip
-    ```
+1. Выполните **быстрые установки** установки [установить соответствующие библиотеки] [ setup] в Azure Databricks.
 
-5. Подключите библиотеку "Рекомендации" к своему кластеру следующим образом.
+1. Выполните **быстрые установки** установки [Подготовка Azure Databricks для ввода в эксплуатацию][setupo16n].
 
-    1. В следующем меню используйте параметр для импорта библиотеки ("Чтобы импортировать библиотеку, например, jar или egg, щелкните здесь") и **щелкните здесь**.
+1. Импорт [ввода в эксплуатацию фильма образовавшихся из записной книжки] [ als-example] в рабочую область. После входа в рабочую область Azure Databricks, сделайте следующее:
 
-    2. В первом раскрывающемся меню выберите параметр **Передать пакет Python PyPI или Python egg**.
+    a. Нажмите кнопку **Главная** в левой части рабочей области.
 
-    3. Выберите команду **Перетащить сюда библиотеку egg для передачи**, а затем выберите недавно созданный файл Recommenders.zip.
+    2. Щелкните правой кнопкой мыши пустое пространство в домашнем каталоге. Выберите **Импортировать**.
 
-    4. Выберите **Создать библиотеку**, чтобы передать ZIP-файл и сделать его доступным в рабочей области.
+    c. Выберите **URL-адрес**и вставьте следующий код в текстовое поле: `https://github.com/Microsoft/Recommenders/blob/master/notebooks/05_operationalize/als_movie_o16n.ipynb`
 
-    5. В следующем меню подключите библиотеку к своему кластеру.
+    d. Щелкните **Импорт**.
 
-6. В своей рабочей области импортируйте [пример ALS Movie Operationalization][als-example].
+1. Открыть записную книжку в Azure Databricks и подключите настроенном кластере.
 
-7. Запустите записную книжку ALS Movie Operationalization, чтобы создать ресурсы, необходимые для создания API рекомендаций, который предоставляет 10 рекомендаций по фильмам для данного пользователя.
+1. Запустите записную книжку, чтобы создать ресурсы Azure, необходимые для создания API рекомендаций, предоставляющий 10 самых популярных фильмов для данного пользователя.
 
 ## <a name="related-architectures"></a>Связанные архитектуры
 
@@ -139,9 +136,10 @@ Azure Cosmos DB рекомендуется из-за ее удобства и в
 <!-- links -->
 [aci]: /azure/container-instances/container-instances-overview
 [aad]: /azure/active-directory-b2c/active-directory-b2c-overview
+[adbauthentication]: https://docs.azuredatabricks.net/api/latest/authentication.html#generate-a-token
 [aks]: /azure/aks/intro-kubernetes
 [als]: https://spark.apache.org/docs/latest/ml-collaborative-filtering.html
-[als-example]: https://github.com/Microsoft/Recommenders/blob/master/notebooks/04_operationalize/als_movie_o16n.ipynb
+[als-example]: https://github.com/Microsoft/Recommenders/blob/master/notebooks/05_operationalize/als_movie_o16n.ipynb
 [autoscaling]: https://docs.azuredatabricks.net/user-guide/clusters/sizing.html
 [autoscale]: https://docs.azuredatabricks.net/user-guide/clusters/sizing.html#autoscaling
 [availability]: /azure/architecture/checklist/availability
@@ -170,7 +168,8 @@ Azure Cosmos DB рекомендуется из-за ее удобства и в
 [resiliency]: /azure/architecture/resiliency/
 [ru]: /azure/cosmos-db/request-units
 [sec-docs]: /azure/security/
-[setup]: https://github.com/Microsoft/Recommenders/blob/master/SETUP.md%60
+[setup]: https://github.com/Microsoft/Recommenders/blob/master/SETUP.md#repository-installation
+[setupo16n]: https://github.com/Microsoft/Recommenders/blob/master/SETUP.md#prepare-azure-databricks-for-operationalization
 [scale]: /azure/aks/tutorial-kubernetes-scale
 [sla]: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/
 [vm-size]: /azure/virtual-machines/virtual-machines-linux-change-vm-size

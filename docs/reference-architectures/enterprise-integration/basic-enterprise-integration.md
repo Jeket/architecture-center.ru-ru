@@ -10,12 +10,12 @@ ms.date: 12/03/2018
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: integration-services
-ms.openlocfilehash: 76e422ead7e53c582a9d64ab1da643c3990749d6
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 16fce3a85cbc0a94dd93277d942fae51ae0e4c04
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58242965"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640844"
 ---
 # <a name="basic-enterprise-integration-on-azure"></a>Базовые сценарии корпоративной интеграции в Azure
 
@@ -185,7 +185,7 @@ Logic Apps лучше всего работает в сценариях, не т
 
 Logic Apps использует [бессерверную](/azure/logic-apps/logic-apps-serverless-overview) модель. Cчета выставляются на основе действий и выполнения соединителей. Дополнительные сведения см. на странице с [ценами на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/). В настоящее время нет каких-либо рекомендаций по уровню для Logic Apps.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы повысить надежность и масштабируемость, используйте очереди сообщений и событий для разделения серверных систем. Этот подход реализован в эталонной архитектуре, описываемой в серии руководств по [корпоративной интеграции с использованием очередей сообщений и событий](./queues-events.md).
 
@@ -222,4 +222,4 @@ Logic Apps использует [бессерверную](/azure/logic-apps/log
 [logic-apps-sla]: https://azure.microsoft.com/support/legal/sla/logic-apps
 [monitor]: /azure/azure-monitor/overview
 [rbac]: /azure/role-based-access-control/overview
-[rto]: ../../resiliency/index.md#rto-and-rpo
+[rto]: ../../reliability/requirements.md#recovery-metrics

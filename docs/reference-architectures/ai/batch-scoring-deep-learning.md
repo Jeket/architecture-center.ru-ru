@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: azcat-ai
-ms.openlocfilehash: a1c0701185c85f8e7bcbc183b32c4834529fc524
-ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.openlocfilehash: 3459f7895b7b57833da5853a77b2641dc7c85a9e
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58887868"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639722"
 ---
 # <a name="batch-scoring-of-deep-learning-models-on-azure"></a>Пакетная оценка моделей глубокого обучения в Azure
 
@@ -120,7 +120,7 @@ ms.locfileid: "58887868"
 
 ### <a name="logging-with-azure-machine-learning"></a>Ведение журнала средствами Машинного обучения Azure
 
-Машинное обучение Azure автоматически регистрирует в журнале все потоки stdout и stderr для соответствующей учетной записи хранилища BLOB-объектов. Если эта функция не отключена, рабочая область Машинного обучения Azure автоматически подготавливает учетную запись хранения и сохраняет журналы в ней. С помощью средств навигации, например Обозревателя службы хранилища Azure, можно удобно работать с файлами журнала.
+Машинное обучение Azure автоматически выводит все stdout и stderr в учетную запись хранения связывание больших двоичных объектов. Если эта функция не отключена, рабочая область Машинного обучения Azure автоматически подготавливает учетную запись хранения и сохраняет журналы в ней. С помощью средств навигации, например Обозревателя службы хранилища Azure, можно удобно работать с файлами журнала.
 
 ## <a name="cost-considerations"></a>Рекомендации по стоимости
 

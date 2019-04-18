@@ -8,12 +8,12 @@ ms.service: architecture-center
 ms.subservice: reference-architecture
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: client-assertion
-ms.openlocfilehash: 6aa8d33da0b2fd41fdc037bac28bca9f7ff09907
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 170a88863fef4b97e137d7fb047a9168d6463e01
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58249419"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639960"
 ---
 # <a name="use-azure-key-vault-to-protect-application-secrets"></a>Использование Azure Key Vault для защиты секретов приложений
 
@@ -103,6 +103,7 @@ ms.locfileid: "58249419"
     ```powershell
     .\Setup-KeyVault.ps1 -Subject <<subject>>
     ```
+
     Для параметра `Subject` введите любое имя, например "surveysapp". Сценарий создаст самозаверяющий сертификат и сохранит его в хранилище сертификатов "Текущий пользователь/Личные". Выходные данные этого сценария представлены фрагментом JSON. Скопируйте это значение.
 
 2. На [портале Azure][azure-portal] перейдите к каталогу, где зарегистрировано приложение Surveys, выбрав свою учетную запись в правом верхнем углу портала.
@@ -174,6 +175,7 @@ ms.locfileid: "58249419"
     ```powershell
     .\Setup-KeyVault.ps1 -KeyVaultName <<key vault name> -KeyName Redis--Configuration -KeyValue "<<Redis DNS name>>.redis.cache.windows.net,password=<<Redis access key>>,ssl=true"
     ```
+
     где:
 
    * key vault name — имя, присвоенное хранилищу ключей на предыдущем этапе;
@@ -214,6 +216,7 @@ ms.locfileid: "58249419"
     //    config["AzureAd:ClientId"],
     //    config["AzureAd:ClientSecret"]);
     ```
+
 3. В файле Tailspin.Surveys.Web/Startup.cs найдите блок кода, который регистрирует `ICredentialService`. Раскомментируйте строку, в которой используется `CertificateCredentialService`, и закомментируйте строку, в которой используется `ClientCredentialService`:
 
     ```csharp

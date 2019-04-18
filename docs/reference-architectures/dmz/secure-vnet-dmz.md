@@ -8,12 +8,12 @@ ms.topic: reference-architecture
 ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: seodec18, networking
-ms.openlocfilehash: 2595352075c708e015a0f0c536be31ceb5614fcd
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 046ca8c9c67c2d8a77efc87c2106c79670bd153f
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58245685"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640079"
 ---
 # <a name="implement-a-dmz-between-azure-and-the-internet"></a>Реализация сети периметра между Azure и Интернетом
 
@@ -87,7 +87,7 @@ ms.locfileid: "58245685"
 
 В репозитории [GitHub][github-folder] есть шаблон развертывания эталонной архитектуры, для которого реализованы эти рекомендации.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [ref-arch-prerequisites.md](../../../includes/ref-arch-prerequisites.md)]
 
@@ -95,13 +95,13 @@ ms.locfileid: "58245685"
 
 1. Перейдите в папку `/dmz/secure-vnet-dmz` в репозитории эталонных архитектур на сайте GitHub.
 
-2. Выполните следующую команду:
+1. Выполните следующую команду:
 
     ```bash
     azbb -s <subscription_id> -g <resource_group_name> -l <region> -p onprem.json --deploy
     ```
 
-4. Выполните следующую команду:
+1. Выполните следующую команду:
 
     ```bash
     azbb -s <subscription_id> -g <resource_group_name> -l <region> -p secure-vnet-dmz.json --deploy

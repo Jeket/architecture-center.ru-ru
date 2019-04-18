@@ -1,18 +1,18 @@
 ---
-title: CAF. Крупные предприятия. Эволюция использования нескольких облаков
+title: CAF. Большого предприятия — несколько облачных развитие
 titleSuffix: Microsoft Cloud Adoption Framework for Azure
 ms.service: architecture-center
 ms.subservice: enterprise-cloud-adoption
 ms.custom: governance
 ms.date: 02/11/2019
-description: Крупные предприятия. Эволюция использования нескольких облаков
+description: Большого предприятия — несколько облачных развитие
 author: BrianBlanchard
-ms.openlocfilehash: 5ef29aa523c04ff93b2d4f983482f94654a4a039
-ms.sourcegitcommit: 273e690c0cfabbc3822089c7d8bc743ef41d2b6e
-ms.translationtype: HT
+ms.openlocfilehash: 62a2fdd6e340c96494354f4f0cf2f78ab572c251
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55902396"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59641150"
 ---
 # <a name="large-enterprise-multi-cloud-evolution"></a>Крупные предприятия. Эволюция использования нескольких облаков
 
@@ -80,9 +80,9 @@ ms.locfileid: "55902396"
 
 По мере дальнейшего внедрения многооблачных решений описанная выше архитектура будет развиваться и станет стабильнее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-На многих крупных предприятиях дисциплины управления облаком могут стать препятствием для внедрения облака. В следующей статье приведены сведения о том, как сделать управление командной игрой, что позволит обеспечить долгосрочный успех при использовании облака.
+В многих крупных предприятий пять дисциплины облако управления может быть препятствием для внедрения. Следующая статья содержит некоторые дополнительные соображения по поводу делая это командный Спорт руководства помогут добиться стабильного успеха в облаке.
 
 > [!div class="nextstepaction"]
 > [Использование нескольких уровней управления](./multiple-layers-of-governance.md)

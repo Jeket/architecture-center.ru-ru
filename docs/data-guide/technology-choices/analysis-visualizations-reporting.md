@@ -7,12 +7,12 @@ ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: data-analytics
-ms.openlocfilehash: 72b889e2fe0d862ab1ff280cea76c2880b0fadc4
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: bfdfeefe36dd44478f407008e2f9f3749f7a70d6
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58245955"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639760"
 ---
 # <a name="choosing-a-data-analytics-technology-in-azure"></a>Выбор технологии для анализа данных в Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "58245955"
 
 - Нужно ли вам подключаться к нескольким источникам данных и создавать централизованное расположение для отчетов по данным из разных расположений в домене? Если нужно, то выберите вариант, который позволяет подключаться к сотням источников данных.
 
-- Нужно ли вам внедрять динамические визуализации в веб-сайт или приложение стороннего производителя? Если да, то выберите вариант с возможностями внедрения.
+- Вы действительно хотите внедрять динамические визуализации в на внешний веб-сайт или приложение? Если да, то выберите вариант с возможностями внедрения.
 
 - Нужно ли вам создавать визуализации и (или) отчеты в автономном режиме? Если да, то выберите вариант с возможностями автономной работы.
 

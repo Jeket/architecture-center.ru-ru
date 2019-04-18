@@ -8,12 +8,12 @@ ms.topic: example-scenario
 ms.service: architecture-center
 ms.subservice: example-scenario
 social_image_url: /azure/architecture/example-scenario/ai/media/architecture-commerce-chatbot.png
-ms.openlocfilehash: 48f85e7443bcd6149c8024d20fb50816c1a4df38
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: c4859cb0e43603991e4f8e6a0311a28537f29f1a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58245855"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640266"
 ---
 # <a name="conversational-chatbot-for-hotel-reservations-on-azure"></a>Виртуальный собеседник Azure для резервирования отелей
 
@@ -65,8 +65,6 @@ ms.locfileid: "58245855"
 
 Этот сценарий использует Базу данных SQL Azure для хранения данных о резервировании клиента. База данных SQL включает базу данных избыточную в пределах зоны, группы отработки отказа и георепликацию. Дополнительные сведения см. в статье [Azure SQL Database availability capabilities][sqlavailability-docs] (Возможности доступности базы данных Azure SQL).
 
-Дополнительные сведения по другим вопросам доступности см. в статье [с контрольным списком для обеспечения доступности][availability] в Центре архитектуры Azure.
-
 ### <a name="scalability"></a>Масштабируемость
 
 Этот сценарий использует Службу приложений Azure. С помощью службы приложений можно автоматически масштабировать количество экземпляров, которые запускает бот. Эта функциональность позволяет не отставать от потребительского спроса на веб-приложение и чат-бот. См. дополнительные сведения об [автоматическом масштабирование][autoscaling] в центре архитектуры Azure.
@@ -87,17 +85,17 @@ ms.locfileid: "58245855"
 
 Для мониторинга работоспособности приложения этот сценарий использует Application Insights. С помощью Application Insights можно создавать оповещения и реагировать на проблемы с производительностью, которые будут влиять на качество обслуживания и доступность чат-бота. Для дополнительных сведений см. [Что такое Application Insights?][appinsights-docs]
 
-Общее руководство по проектированию устойчивых решений см. в разделе [Проектирование устойчивых приложений для Azure][resiliency].
+Другие темы устойчивости см. в разделе [Проектирование надежных приложений Azure](../../reliability/index.md).
 
 ## <a name="deploy-the-scenario"></a>Развертывание сценария
 
 Этот сценарий состоит из трех компонентов для изучения областей, на которых вы сосредоточены больше всего.
 
-- [Компоненты инфраструктуры](#deploy-infrastructure-components). Используйте шаблон Azure Resource Manager для развертывания основных компонентов инфраструктуры службы приложений, веб-приложений, Application Insights, учетной записи хранения, SQL Server и базы данных.
+- [Компоненты инфраструктуры](#walk-through). Используйте шаблон Azure Resource Manager для развертывания основных компонентов инфраструктуры службы приложений, веб-приложений, Application Insights, учетной записи хранения, SQL Server и базы данных.
 - [Чат-бот веб-приложения](#deploy-web-app-chatbot). Используйте Azure CLI для развертывания бота с помощью службы Azure Bot и приложения Интеллектуальной службы распознавания речи (LUIS).
 - [Пример приложения чат-бота C#](#deploy-chatbot-c-application-code). Используйте Visual Studio, чтобы просмотреть образец кода C# бронирование отеля, и разверните бот в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -170,7 +168,6 @@ az bot create \
 [appservice-docs]: /azure/app-service/
 [architecture]: ./media/architecture-commerce-chatbot.png
 [autoscaling]: ../../best-practices/auto-scaling.md
-[availability]: ../../checklist/availability.md
 [botservice-docs]: /azure/bot-service/
 [cognitive-docs]: /azure/cognitive-services/
 [resiliency]: ../../resiliency/index.md

@@ -6,12 +6,12 @@ ms.date: 02/12/2018
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
-ms.openlocfilehash: 76a101b76497ae2b2aacff973175bb0fe4703d9e
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 31f052cc22f039540c89759c55028c368be1d238
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58245875"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640793"
 ---
 # <a name="choosing-a-data-pipeline-orchestration-technology-in-azure"></a>Выбор технологии для оркестрации конвейеров данных в Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "58245875"
 
 | | Фабрика данных Azure | SQL Server Integration Services (SSIS); | Oozie в HDInsight
 | --- | --- | --- | --- |
-| Управляемые | Yes | Нет  | Yes |
+| Управляемые | Yes | Нет | Yes |
 | Облачные | Yes | Нет (локальные) | Yes |
 | Предварительные требования | Подписка Azure | SQL Server;  | Подписка Azure, кластер HDInsight |
 | Средства управления | Портал Azure, PowerShell, CLI, пакет SDK для .NET | SSMS, PowerShell | Оболочка Bash, REST API Oozie, пользовательский веб-интерфейс Oozie |
@@ -62,7 +62,7 @@ ms.locfileid: "58245875"
 | Оценка с помощью службы "Машинное обучение Azure" | Yes | Да (с помощью скриптов) | Нет  |
 | Создание кластеров по запросу в HDInsight | Yes | Нет  | Нет  |
 | Пакетная служба Azure | Yes | Нет  | Нет  |
-| Pig, Hive, MapReduce | Yes | Нет  | Yes |
+| Pig, Hive, MapReduce | Yes | Нет | Yes |
 | Spark | Yes | Нет  | Нет  |
 | Выполнение пакетов служб SSIS | Yes | Да | Нет  |
 | Поток управления | Yes | Да | Yes |
@@ -74,5 +74,4 @@ ms.locfileid: "58245875"
 | --- | --- | --- | --- |
 | Увеличение масштаба | Yes | Нет  | Нет  |
 | Масштабирование | Yes | Нет  | Да (путем добавления рабочих узлов в кластер) |
-| Оптимизация для больших объемов данных | Yes | Нет  | Yes |
-
+| Оптимизация для больших объемов данных | Yes | Нет | Yes |

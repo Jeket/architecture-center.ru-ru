@@ -8,10 +8,10 @@ ms.date: 02/11/2019
 description: Большого предприятия — рекомендация описано
 author: BrianBlanchard
 ms.openlocfilehash: 2d52797f1c3541fab1c97d97d0438210d2e66f79
-ms.sourcegitcommit: 0a8a60d782facc294f7f78ec0e9033e3ee16bf4a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59068996"
 ---
 # <a name="large-enterprise-best-practice-explained"></a>Крупные предприятия. Описание лучших методик
@@ -100,14 +100,14 @@ ms.locfileid: "59068996"
 
 Если какой-либо из шаблонов, выбранных в этом руководстве по развитию системы управления, не соответствует требованиям читателя, можно выбрать альтернативы для каждого шаблона:
 
-- [Шаблоны шифрования](../../../decision-guides/encryption/overview.md)
-- [Шаблоны идентификаторов](../../../decision-guides/identity/overview.md)
-- [Ведение журнала и шаблоны отчетов](../../../decision-guides/log-and-report/overview.md)
-- [Шаблоны принудительного применения политики](../../../decision-guides/policy-enforcement/overview.md)
-- [Согласованность шаблонов ресурсов](../../../decision-guides/resource-consistency/overview.md)
-- [Добавление тегов шаблонов ресурсов](../../../decision-guides/resource-tagging/overview.md)
-- [Шаблоны программного обеспечения конфигурируемой сети](../../../decision-guides/software-defined-network/overview.md)
-- [Шаблоны проектирования подписки](../../../decision-guides/subscriptions/overview.md)
+- [шаблоны шифрования](../../../decision-guides/encryption/overview.md);
+- [шаблоны идентификации](../../../decision-guides/identity/overview.md);
+- [шаблоны ведения журналов и создания отчетов](../../../decision-guides/log-and-report/overview.md);
+- [шаблоны принудительного применения политик](../../../decision-guides/policy-enforcement/overview.md);
+- [шаблоны согласованности ресурсов](../../../decision-guides/resource-consistency/overview.md);
+- [шаблоны присвоения тегов ресурсам](../../../decision-guides/resource-tagging/overview.md);
+- [шаблоны программно-конфигурируемой сети](../../../decision-guides/software-defined-network/overview.md);
+- [шаблоны проектирования для подписок](../../../decision-guides/subscriptions/overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -116,4 +116,4 @@ ms.locfileid: "59068996"
 Обе команды будут использовать индикаторы допуска для определения последующего развития, необходимого, чтобы и дальше поддерживать внедрение облачной среды. Следующий шаг для компании на этом пути — это развитие базового плана системы управления для поддержки приложений с требованиями использования устаревших или сторонних механизмов многофакторной аутентификации (MFA).
 
 > [!div class="nextstepaction"]
-> [Эволюция основных способов идентификации](./identity-baseline-evolution.md)
+> [Изменение базовой системы идентификации](./identity-baseline-evolution.md)

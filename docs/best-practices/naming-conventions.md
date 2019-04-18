@@ -8,12 +8,12 @@ ms.topic: best-practice
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: ed1811495e81965fa514ab66dcfa49d00d2a59f2
-ms.sourcegitcommit: bb75a25bd589a761c79e39f2ccdec4acc7d71d60
+ms.openlocfilehash: e67da8043beed01c99f36da689dfd0553e012535
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59480105"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640402"
 ---
 # <a name="naming-conventions-for-azure-resources"></a>Соглашения об именовании для ресурсов Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "59480105"
 
 | Сущность | Область | Длина | Регистр | Допустимые символы | Рекомендуемый шаблон | Пример |
 | --- | --- | --- | --- | --- | --- | --- |
-|Пространство имен служебной шины | Глобальные |6-50 |Без учета регистра | Буквы, цифры, дефисы, должно начинаться с leter; см. в разделе [здесь](/rest/api/servicebus/create-namespace) подробные сведения. |`<service short name>-bus` |`app1-bus` |
+|Пространство имен служебной шины | Глобальные |6-50 |Без учета регистра | Буквы, цифры, дефисы, должно начинаться с буквы; см. в разделе [здесь](/rest/api/servicebus/create-namespace) подробные сведения. |`<service short name>-bus` |`app1-bus` |
 
 ## <a name="organize-resources-with-tags"></a>Организация ресурсов с помощью тегов
 
@@ -192,7 +192,7 @@ Azure Resource Manager позволяет определять для сущно
 
 Дополнительные сведения об именовании больших двоичных объектов, контейнеров и таблиц см. в следующем списке:
 
-- [Именование и ссылки на контейнеры, большие двоичные объекты и метаданные](https://msdn.microsoft.com/library/dd135715.aspx)
+- [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/dd135715.aspx)
 - [Именование очередей и метаданных](https://msdn.microsoft.com/library/dd179349.aspx)
 - [Именование таблиц](https://msdn.microsoft.com/library/azure/dd179338.aspx)
 
@@ -202,4 +202,3 @@ Azure Resource Manager позволяет определять для сущно
 
 > [!TIP]
 > Прежде чем начинать разработку новой службы или приложения, рекомендуется установить соглашение об именовании для всех учетных записей и типов хранения.
-

@@ -9,12 +9,12 @@ ms.service: architecture-center
 ms.subservice: example-scenario
 ms.custom: fasttrack, Linux
 social_image_url: /azure/architecture/example-scenario/infrastructure/media/azure-citrix-sample-diagram.png
-ms.openlocfilehash: 77093cba0e5646146ec9de68655754d9ac1e5461
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: e59e785df80efc9de134d27664ba1581a61dd1d1
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58248489"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640283"
 ---
 # <a name="linux-virtual-desktops-with-citrix"></a>Виртуальный рабочий стол Linux с использованием Citrix
 
@@ -71,7 +71,7 @@ ms.locfileid: "58248489"
 - [База данных SQL Azure](/azure/sql-database/sql-database-technical-overview) — это реляционная база данных, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. Она будет использоваться для размещения баз данных Citrix.
 - [ExpressRoute](/azure/expressroute/expressroute-introduction) позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения.
 - [Доменные службы Active Directory используются для служб каталогов и аутентификации пользователей
-- [Группа доступности Azure](/azure/virtual-machines/windows/tutorial-availability-sets) обеспечит, чтобы при развертывании виртуальных машин в Azure они были распределены между несколькими изолированными аппаратными узлами в кластере. Таким образом, в случае сбоя оборудования или программного обеспечения в Azure затрагивается только подмножество виртуальных машин, а общее решение остается доступным для использования.
+- [Группы доступности Azure](/azure/virtual-machines/windows/tutorial-availability-sets) убедитесь, что при развертывании в Azure виртуальных машин распределяются между несколькими изолированными аппаратными узлами в кластере. Таким образом, в случае сбоя оборудования или программного обеспечения в Azure затрагивается только подмножество виртуальных машин, а общее решение остается доступным для использования.
 - [Citrix ADC (NetScaler)](https://www.citrix.com/products/citrix-adc) — контроллер доставки приложений, который выполняет анализ трафика конкретного приложения для умного распространения, оптимизации и защиты сетевого трафика слоя 4 – слоя 7 (L4–L7) для веб-приложений.
 - [Онлайн-магазин Citrix](https://www.citrix.com/products/citrix-virtual-apps-and-desktops/citrix-storefront.html) — это хранилище корпоративного приложения, которое улучшает безопасность и упрощает развертывание, обеспечивая современный, непревзойденный, почти собственный пользовательский интерфейс в Citrix Receiver на любой платформе. Онлайн-магазин упрощает управление средами виртуальных приложений Citrix для нескольких местоположений и версий, а также настольных компьютеров.
 - [Сервер лицензирования Citrix](https://www.citrix.com/buy/licensing/overview.html) будет управлять лицензиями на продукты Citrix.
@@ -109,7 +109,7 @@ ms.locfileid: "58248489"
 - Использование зарезервированных экземпляров значительно уменьшит вычислительную стоимость решения.
 - Стоимость ExpressRoute не включено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Документацию Citrix по планированию и развертыванию см. [здесь](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure).
 - Чтобы развернуть Citrix ADC (NetScaler) в Azure, просмотрите шаблоны диспетчера ресурсов, предоставленные Citrix [здесь](https://github.com/citrix/netscaler-azure-templates).

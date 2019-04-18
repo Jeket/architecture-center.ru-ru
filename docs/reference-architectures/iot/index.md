@@ -4,12 +4,12 @@ description: Рекомендуемая архитектура для прило
 titleSuffix: Azure Reference Architectures
 author: MikeWasson
 ms.date: 01/09/2019
-ms.openlocfilehash: 5a4b104044f3e64ffdce98e3952201d397d41f33
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.openlocfilehash: 04bff9419a30a3610d59e3ca8f27c004a0bcb2be
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58344586"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59641133"
 ---
 # <a name="azure-iot-reference-architecture"></a>Эталонная архитектура Интернета вещей Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "58344586"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о рекомендуемой архитектуре и вариантах реализации см. в PDF-документе об [эталонной архитектуре Центра Интернета вещей Microsoft Azure](http://aka.ms/iotrefarchitecture).
+- Дополнительные сведения о рекомендуемой архитектуре и вариантах реализации см. в PDF-документе об [эталонной архитектуре Центра Интернета вещей Microsoft Azure](https://aka.ms/iotrefarchitecture).
 
 - Подробную документацию по различным службам Интернета вещей Azure см. в статье [Принципы работы Azure IoT](/azure/iot-fundamentals/).
 

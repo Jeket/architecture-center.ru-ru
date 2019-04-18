@@ -3,18 +3,18 @@ title: Настройка Azure Databricks для отправки метрик 
 description: Это библиотека scala, чтобы включить мониторинг метрик и ведения журнала данных в Azure Log Analytics
 author: petertaylor9999
 ms.date: 03/26/2019
-ms.openlocfilehash: af6b6433f87964ac60c179ecf498e54129344126
-ms.sourcegitcommit: 9854bd27fb5cf92041bbfb743d43045cd3552a69
+ms.openlocfilehash: f2fc1fd19da661b74ddf032dd1d5153ce575345c
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58503439"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639892"
 ---
 <!-- markdownlint-disable MD040 -->
 
 # <a name="configure-azure-databricks-to-send-metrics-to-azure-monitor"></a>Настройка Azure Databricks для отправки метрик в Azure Monitor
 
-В этой статье показано, как настроить кластер Azure Databricks для отправки метрик для [рабочей области Log Analytics](/azure/azure-monitor/platform/manage-access). Она использует [библиотека мониторинга Azure Databricks](https://github.com/mspnp/spark-monitoring), которая доступна на сайте GitHub. Основные сведения о Java, Scala и Maven рекомендуется в качестве prerequisistes.
+В этой статье показано, как настроить кластер Azure Databricks для отправки метрик для [рабочей области Log Analytics](/azure/azure-monitor/platform/manage-access). Она использует [библиотека мониторинга Azure Databricks](https://github.com/mspnp/spark-monitoring), которая доступна на сайте GitHub. Основные сведения о Java, Scala и Maven рекомендуется в качестве необходимых компонентов.
 
 ## <a name="about-the-azure-databricks-monitoring-library"></a>Об Azure Databricks, библиотека мониторинга
 

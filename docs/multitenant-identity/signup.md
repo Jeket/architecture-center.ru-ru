@@ -9,12 +9,12 @@ ms.subservice: reference-architecture
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: claims
 pnp.series.next: app-roles
-ms.openlocfilehash: a1ec441b731ba7f2166f9115452b052ec944444f
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: eb4e65b20ec3339b633b65d2adad768e98d1bdbb
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58245045"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640606"
 ---
 # <a name="tenant-sign-up-and-onboarding"></a>Регистрация и адаптации клиента
 
@@ -63,7 +63,7 @@ ms.locfileid: "58245045"
 
 Эти кнопки позволяют вызывать действия в классе `AccountController`.
 
-Действие `SignIn` возвращает **ChallegeResult**, в результате чего ПО промежуточного слоя OpenID Connect выполняет перенаправление в конечную точку проверки подлинности. Это заданный по умолчанию способ запуска проверки подлинности в ASP.NET Core.
+`SignIn` Действие возвращает **ChallengeResult**, что вызывает по промежуточного слоя OpenID Connect для перенаправления на конечную точку проверки подлинности. Это заданный по умолчанию способ запуска проверки подлинности в ASP.NET Core.
 
 ```csharp
 [AllowAnonymous]
@@ -259,7 +259,7 @@ private async Task<Tenant> SignUpTenantAsync(BaseControlContext context, TenantM
 Далее приведено краткое описание всего потока регистрации в приложении Surveys:
 
 1. Пользователь нажимает кнопку **Регистрация** .
-2. Действие `AccountController.SignUp` возвращает ChallengeResult.  Состояние проверки подлинности содержит значение "signup".
+2. `AccountController.SignUp` Действие возвращает результат запроса.  Состояние проверки подлинности содержит значение "signup".
 3. Добавьте строки `admin_consent` в событие `RedirectToAuthenticationEndpoint`.
 4. ПО промежуточного слоя OpenID Connect осуществляет перенаправление в Azure AD, и пользователь проходит проверку подлинности.
 5. В событии `AuthenticationValidated` выполняется поиск состояния "signup".

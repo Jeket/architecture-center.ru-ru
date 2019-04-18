@@ -8,10 +8,10 @@ ms.service: architecture-center
 ms.subservice: reference-architecture
 ms.custom: microservices
 ms.openlocfilehash: 17e275e5b5f45233f7467192402cb28fce35c57b
-ms.sourcegitcommit: 0a8a60d782facc294f7f78ec0e9033e3ee16bf4a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59068911"
 ---
 # <a name="designing-a-microservices-architecture"></a>Проектирование архитектуры микрослужб
@@ -23,8 +23,8 @@ ms.locfileid: "59068911"
 - [Обмен данными между службами](./interservice-communication.md)
 - [Проектирование API](./api-design.md)
 - [Шлюзы API](./gateway.md)
-- [Рекомендации по работе с данными](./data-considerations.md)
-- [Шаблоны проектирования](./patterns.md)
+- [Рекомендации в отношении данных](./data-considerations.md)
+- [Конструктивные шаблоны](./patterns.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

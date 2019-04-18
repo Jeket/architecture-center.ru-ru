@@ -9,12 +9,12 @@ ms.topic: design-pattern
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: c736afced1b0478e8eb1a2694acc4d6a6f0c62fc
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 267d630d97a998c76a75a70191a77f9b74e801ef
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58248729"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59641065"
 ---
 # <a name="queue-based-load-leveling-pattern"></a>Шаблон балансировки нагрузки на основе очередей
 
@@ -67,8 +67,6 @@ ms.locfileid: "58248729"
 Чтобы устранить эту проблему, можно использовать очередь для балансировки нагрузки между экземплярами приложения и хранилищем данных. Приложение Функций Azure считывает сообщения из очереди и выполняет запросы чтения и записи к хранилищу данных. Логика приложения в приложении-функции может контролировать скорость, с которой это приложение передает запросы в хранилище данных, чтобы предотвратить перегрузку хранилища. (В противном случае приложение-функция просто перенесет эту проблему в серверную часть.)
 
 ![Рисунок 3. Использование очереди и приложения-функции для балансировки нагрузки](./_images/queue-based-load-leveling-function.png)
-
-
 
 ## <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 

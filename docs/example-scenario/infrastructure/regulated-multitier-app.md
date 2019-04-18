@@ -9,12 +9,12 @@ ms.service: architecture-center
 ms.subservice: example-scenario
 ms.custom: seodec18, Windows
 social_image_url: /azure/architecture/example-scenario/infrastructure/media/architecture-regulated-multitier-app.png
-ms.openlocfilehash: 440d208b423703fe791dcbe2cad0609fef0e6508
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 2e3bb28abf870a1ce358dd67efeb3f422b983651
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58246225"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59639943"
 ---
 # <a name="building-secure-web-applications-with-windows-virtual-machines-on-azure"></a>Создание безопасных веб-приложений с помощью виртуальных машин Windows в Azure
 
@@ -67,8 +67,6 @@ ms.locfileid: "58246225"
 
 Уровень базы данных можно настроить для использования групп доступности Always On. Если в такой конфигурации SQL Server настроен с одной базой данных-источником в кластере, то он может иметь до восьми баз данных-получателей. Если в базе данных-источнике возникла проблема, кластер выполнит отработку отказа в одну из баз данных-получателей, что позволяет приложению оставаться доступным. Дополнительные сведения см. в статье [Обзор групп доступности AlwaysOn (SQL Server)][sqlalwayson-docs].
 
-Дополнительные сведения по вопросам доступности см. в статье [с контрольным списком для обеспечения доступности][availability] в Центре архитектуры Azure.
-
 ### <a name="scalability"></a>Масштабируемость
 
 В этом сценарии используются масштабируемые наборы виртуальных машин для внешнего и внутреннего компонентов. При использовании масштабируемых наборов количество экземпляров виртуальных машин, работающих на уровне интерфейсных приложений, можно автоматически масштабировать в ответ на потребности клиента или на основе определенного расписания. Дополнительные сведения см. в статье [Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure][vmssautoscale-docs].
@@ -85,11 +83,11 @@ ms.locfileid: "58246225"
 
 В сочетании с использованием Зон доступности и масштабируемых наборов виртуальных машин в этом сценарии используется Шлюз приложений Azure и балансировка нагрузки. Эти два сетевых компонента распространяют трафик на подключенные экземпляры виртуальной машины и включают проверки работоспособности, которые гарантируют, что трафик распространяется только на работоспособные виртуальные машины. Два экземпляра Шлюза приложений настроены в конфигурации "активный — пассивный", а также используется подсистема балансировки нагрузки, избыточная между зонами. Эта конфигурация делает сетевые ресурсы и приложение устойчивыми к проблемам, которые в противном случае нарушали бы трафик и влияли бы на доступ пользователя.
 
-Общие рекомендации по разработке устойчивых решений см. в [этой статье][resiliency].
+Общие рекомендации по разработке устойчивых решений см. в разделе [Проектирование надежных приложений Azure](../../reliability/index.md).
 
 ## <a name="deploy-the-scenario"></a>Развертывание сценария
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Необходимо иметь учетную запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -133,12 +131,10 @@ ms.locfileid: "58246225"
 [appgateway-docs]: /azure/application-gateway/overview
 [architecture]: ./media/architecture-regulated-multitier-app.png
 [autoscaling]: /azure/architecture/best-practices/auto-scaling
-[availability]: ../../checklist/availability.md
 [cloudwitness-docs]: /windows-server/failover-clustering/deploy-cloud-witness
 [loadbalancer-docs]: /azure/load-balancer/load-balancer-overview
 [nsg-docs]: /azure/virtual-network/security-overview
 [ntiersql-ra]: /azure/architecture/reference-architectures/n-tier/n-tier-sql-server
-[resiliency]: /azure/architecture/resiliency/
 [security]: /azure/security/
 [scalability]: /azure/architecture/checklist/scalability
 [scaleset-docs]: /azure/virtual-machine-scale-sets/overview

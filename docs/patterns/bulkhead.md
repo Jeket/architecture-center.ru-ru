@@ -9,12 +9,12 @@ ms.topic: design-pattern
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 4ad221ae5e9bd51c6d304ba33b884f71c5081b16
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
-ms.translationtype: HT
+ms.openlocfilehash: 2b881a6565693642b54d2cabe877853e15282b05
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58244495"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640011"
 ---
 # <a name="bulkhead-pattern"></a>Шаблон отсеков
 
@@ -98,7 +98,7 @@ spec:
 
 ## <a name="related-guidance"></a>Связанные руководства
 
-- [Проектирование устойчивых приложений для Azure](../resiliency/index.md)
+- [Проектирование надежных приложений Azure](../reliability/index.md)
 - [Шаблон автоматического выключения](./circuit-breaker.md)
 - [Шаблон повторов](./retry.md)
 - [Шаблон регулирования](./throttling.md)

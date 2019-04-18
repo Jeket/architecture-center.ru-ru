@@ -6,12 +6,12 @@ ms.date: 03/06/2019
 ms.topic: guide
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
-ms.openlocfilehash: 1020e938a04c6a82e6cc831e6620ec17c9a10cc7
-ms.sourcegitcommit: 9854bd27fb5cf92041bbfb743d43045cd3552a69
+ms.openlocfilehash: e4c81add1a97254f427d67584ff7e2a4799f84a9
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58503236"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640912"
 ---
 # <a name="what-are-the-machine-learning-products-at-microsoft"></a>Какие продукты для машинного обучения предлагает корпорация Майкрософт?
 
@@ -63,7 +63,7 @@ ms.locfileid: "58503236"
 
 Используйте службы машинного обучения Azure для обучения, развертывания и управления моделей машинного обучения с помощью Python и интерфейса командной строки в масштабе облака.
 
-Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 |||
 |-|-|
@@ -190,5 +190,5 @@ ms.locfileid: "58503236"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения обо всех продуктах для разработки с использованием искусственного интеллекта (ИИ), предлагаемых корпорацией Майкрософт, см.в разделе [Microsoft AI platform](https://www.microsoft.com/ai) (Платформа искусственного интеллекта Майкрософт)
+- Дополнительные сведения о всех искусственного интеллекта (ИИ) разработки продуктов корпорации Microsoft, см. в разделе [платформы искусственного Интеллекта Майкрософт](https://www.microsoft.com/ai)
 - Чтобы пройти обучающий курс по разработке решений с использованием ИИ, см. [Microsoft AI School](https://aischool.microsoft.com/learning-paths) (Школа искусственного интеллекта Майкрософт)
