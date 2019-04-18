@@ -9,12 +9,12 @@ ms.subservice: reference-architecture
 pnp.series.title: Manage Identity in Multitenant Applications
 pnp.series.prev: authorize
 pnp.series.next: token-cache
-ms.openlocfilehash: a895276a77c111e660f29397d250373bee53f29e
-ms.sourcegitcommit: 1b50810208354577b00e89e5c031b774b02736e2
-ms.translationtype: HT
+ms.openlocfilehash: fd0ac254604470ba51ea00537490cfb22b224e80
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54480782"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640181"
 ---
 # <a name="secure-a-backend-web-api"></a>Защита серверного веб-API
 
@@ -47,7 +47,7 @@ GET /users/{userId}/surveys
 Доступны два основных подхода:
 
 * Удостоверение делегированного пользователя. Веб-приложение выполняет проверку подлинности с помощью удостоверения пользователя.
-* Удостоверение приложения. Веб-приложение выполняет проверку подлинности с помощью идентификатора клиента, используя поток учетных данных клиента OAuth2.
+* Удостоверение приложения. Веб-приложение выполняет проверку подлинности с помощью идентификатора клиента, используя поток учетных данных клиента OAuth 2.
 
 Приложение Tailspin реализует удостоверение делегированного пользователя. Их основные различия приведены ниже.
 
@@ -116,7 +116,7 @@ public override async Task AuthorizationCodeReceived(AuthorizationCodeReceivedCo
 * `authorizationCode`. Код проверки подлинности, полученный от поставщика удостоверений.
 * `clientId`. Идентификатор клиента веб-приложения.
 * `clientSecret`. Секрет клиента веб-приложения.
-* `redirectUri`. URI перенаправления, заданный для OpenID. Здесь поставщик удостоверений выполняет обратный вызов маркера.
+* `redirectUri`. URI, заданный для OpenID Connect перенаправления. Здесь поставщик удостоверений выполняет обратный вызов маркера.
 * `resourceID`. URI идентификатора приложения для веб-API, который был создан при регистрации веб-API в Azure AD.
 * `tokenCache`. Объект, который кэширует маркеры доступа. См. статью о [кэшировании маркеров].
 
@@ -230,7 +230,7 @@ public override async Task TokenValidated(TokenValidatedContext context)
 
 Общие сведения об авторизации см. в статье об [авторизации на основе ролей и ресурсов][Authorization].
 
-ПО промежуточного слоя JwtBearer обрабатывает ответы на запросы авторизации. Например, вы можете разрешить действие контроллера только для прошедших аутентификацию пользователей, изменив атрибут **[Authorize]** и указав схему проверки подлинности **JwtBearerDefaults.AuthenticationScheme**:
+ПО промежуточного слоя JwtBearer обрабатывает ответы на запросы авторизации. Например, чтобы ограничить действие контроллера пользователям, прошедшим проверку, используйте **[Authorize]** и укажите **JwtBearerDefaults.AuthenticationScheme** схемы проверки подлинности:
 
 ```csharp
 [Authorize(ActiveAuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
