@@ -8,10 +8,10 @@ layout: LandingPage
 ms.topic: landing-page
 author: BrianBlanchard
 ms.openlocfilehash: cb5f5a61ad71d60e0e5805fd7e8d6bd78f893293
-ms.sourcegitcommit: 0a8a60d782facc294f7f78ec0e9033e3ee16bf4a
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59068809"
 ---
 # <a name="microsoft-cloud-adoption-framework-for-azure"></a>Microsoft Cloud Adoption Framework для Azure
@@ -41,4 +41,4 @@ CAF в настоящее время предлагается в качеств�
 Если вашей организации имел опыт работы с Azure и нужна более подробные инструкции и рекомендации для конкретных областей, просмотрите [Обзор управления](./governance/overview.md) и [архитектурным решением руководства](./decision-guides/overview.md). Дополнительные разделы будут добавляться при приближении выпуска общедоступной версии.
 
 > [!div class="nextstepaction"]
-> [Начало работы](./getting-started/overview.md)
+> [Приступая к работе](./getting-started/overview.md)
