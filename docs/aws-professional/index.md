@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: architecture-center
 ms.subservice: cloud-fundamentals
 ms.custom: seodec18
-ms.openlocfilehash: 89434c0ce72b9f061e4b092354b1dcbaf683b7c6
-ms.sourcegitcommit: c053e6edb429299a0ad9b327888d596c48859d4a
+ms.openlocfilehash: 6e44953cccf39cc40be775f4043bcf8b1b890dae
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58346320"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59641167"
 ---
 # <a name="azure-for-aws-professionals"></a>Azure для специалистов AWS
 
@@ -157,7 +157,7 @@ Azure предоставляет несколько способов управ�
 
 - [Обеспечение высокой доступности для приложений Azure](../resiliency/high-availability-azure-applications.md)
 
-- [Disaster recovery for Azure applications](../resiliency/disaster-recovery-azure-applications.md) (Аварийное восстановление для приложений Azure).
+- [Восстановление после сбоев и аварийное восстановление для приложений Azure](../reliability/disaster-recovery.md)
 
 - [Плановое обслуживание виртуальных машин Linux в Azure](/azure/virtual-machines/linux/maintenance-and-updates)
 

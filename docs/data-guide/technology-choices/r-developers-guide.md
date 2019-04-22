@@ -9,12 +9,12 @@ ms.devlang: R
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: jepeach
-ms.openlocfilehash: a14c8ce76f78baa7274f22b939eb28cb025ef87e
-ms.sourcegitcommit: 1a3cc91530d56731029ea091db1f15d41ac056af
+ms.openlocfilehash: 7b263d0f49b3b41c9a25b5842de908d5e507780b
+ms.sourcegitcommit: 579c39ff4b776704ead17a006bf24cd4cdc65edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58888119"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59640487"
 ---
 # <a name="r-developers-guide-to-azure"></a>Руководство по разработке на R в Azure
 
@@ -32,21 +32,21 @@ ms.locfileid: "58888119"
 
 |Service                                                          |ОПИСАНИЕ                                                                       |
 |-----------------------------------------------------------------|----------------------------------------------------------------------------------|
-|[Виртуальная машина для обработки и анализа данных](#data-science-virtual-machine)    |Настраиваемая виртуальная машина, которую можно использовать в качестве рабочей станции обработки и анализа данных или настраиваемого целевого объекта вычислений|
+|[Виртуальные машины для обработки и анализа данных](#data-science-virtual-machine)    |Настраиваемая виртуальная машина, которую можно использовать в качестве рабочей станции обработки и анализа данных или настраиваемого целевого объекта вычислений|
 |[Службы машинного обучения в HDInsight](#ml-services-on-hdinsight)            |Система на основе кластера для выполнения анализа R в больших наборах данных на нескольких узлах   |
 |[Azure Databricks](#azure-databricks)                            |Среда Spark для совместной работы, поддерживающая язык R и другие языки               |
 |[Студия машинного обучения Azure](#azure-machine-learning-studio)  |Выполнение пользовательских R-сценариев в экспериментах машинного обучения Azure                      |
 |[Пакетная служба Azure](#azure-batch)                                      |Предоставляет различные варианты для выполнения кода R на многих узлах в кластере без лишних затрат|
-|[Azure Notebook](#azure-notebooks)                              |Бесплатная облачная версия записных книжек Jupyter                  |
-|[Базы данных SQL Azure](#azure-sql-database)                        |Выполнение R-сценариев в ядре СУБД SQL Server                            |
+|[Azure Notebooks](#azure-notebooks);                              |Бесплатная облачная версия записных книжек Jupyter                  |
+|[база данных SQL Azure;](#azure-sql-database)                        |Выполнение R-сценариев в ядре СУБД SQL Server                            |
 
 ## <a name="data-science-virtual-machine"></a>Виртуальная машина для обработки и анализа данных
 
 [Виртуальная машина для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/overview) — это образ виртуальной машины на облачной платформе Microsoft Azure, специально созданный и настроенный для обработки и анализа данных. В нем есть множество популярных средств обработки и анализа данных, включая следующие:
 
-* [Microsoft R Open](https://mran.microsoft.com/open/)
-* [Сервер машинного обучения Майкрософт.](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
-* [RStudio Desktop](https://www.rstudio.com/products/rstudio/#Desktop)
+* [Microsoft R Open](https://mran.microsoft.com/open/);
+* [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
+* [RStudio Desktop](https://www.rstudio.com/products/rstudio/#Desktop);
 * [RStudio Server](https://www.rstudio.com/products/rstudio/#Server)
 
 Виртуальную машину для обработки и анализа данных (DSVM) можно подготавливать с операционной системой Windows или Linux.  DSVM можно использовать двумя способами: как интерактивную рабочую станцию или как вычислительную платформу для пользовательского кластера.
@@ -129,14 +129,13 @@ DSVM может быть особенно удобна для небольших
 
 Хотя Службы машинного обучения являются частью локального сервера SQL Server с 2016 года, они сравнительно новые для Базы данных SQL Azure.  В данный момент они находятся на этапе [ограниченной предварительной версии](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#azure-sql-database-roadmap), но продолжат свое развитие.
 
-
 ### <a name="next-steps"></a>Дальнейшие действия
 
-* [Выполнение R в Azure с помощью mrsdeploy](https://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
-* [Machine Learning Server в облаке](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-in-the-cloud)
-* [Дополнительные ресурсы для сервера машинного обучения и Microsoft R](https://docs.microsoft.com/machine-learning-server/resources-more)
+* [Запись блога о выполнении кода R в Azure с помощью mrsdeploy](https://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
+* [Machine Learning Server in the Cloud](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-in-the-cloud) (Machine Learning Server в облаке)
+* [Additional Resources for Machine Learning Server and Microsoft R](https://docs.microsoft.com/machine-learning-server/resources-more) (Дополнительные ресурсы для Machine Learning Server и Microsoft R)
 * [R в Azure](https://github.com/yueguoguo/r-on-azure) — общие сведения о пакетах, средствах и примеры использования языка R в Azure.
 
 ---
 
-<sub>Эмблема R- &copy; R Foundation 2016 и используется в соответствии с условиями [лицензии Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).</sub>
+<sub>Логотип R — "&copy; 2016 The R Foundation" используется в соответствии с условиями [лицензии Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).</sub>
